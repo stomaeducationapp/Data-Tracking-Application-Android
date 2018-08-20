@@ -1,11 +1,25 @@
 package capstonegroup2.datatrackingapplication.Observers;
 
 import android.app.Activity;
+import android.content.Context;
 
 /**
- * Created by Patrick on 20-Aug-18.
- * Last Edited by Patrick on 20-Aug-18 4pm
+ * Created by Patrick on 19-Aug-18.
+ * Last Edited by Patrick on 20-Aug-18 10pm
  */
+
+/**
+ * Changes:
+ * 19th
+ * Created Interface 'Form_Change', and created Enum and Change_Form Method
+ * Added Comment Block
+ *
+ * 20th
+ * Changed Comment Style to Java Doc
+ * Added Context context to the Change_Form() Method
+ * Removed Enum Values : Login, and Medical_State_Calculator as they don't need a form
+ */
+
 public interface Form_Change {
     /**
      * Enum to control the logic of the form changing. This is used to allow or deny access to either the Delete Form
@@ -15,11 +29,12 @@ public interface Form_Change {
      * Otherwise it will return, and the next Form_Change Observer will execute the check, until the end of the list has been reached.
      * This List will have a length = number of Concrete Form_Change classes.
      */
-    enum Form_Control {Login, Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Encrypt_and_Export, Gamification, Medical_States}
+    enum Form_Control {Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Encrypt_and_Export, Gamification}
 
     /**
-     * @param form_To_Change_To Enum specifying which form to change to from the current form.
+     * @param form_To_Change_To  Enum specifying which form to change to from the current form.
+     * @param context
+     * @return
      */
-    // NOTE: This may need a second parameter with a reference back to the calling form, so that form can be deleted if required, with a default value of null if not.
-    public void Change_Form(Form_Control form_To_Change_To);
+    boolean Change_Form(Form_Control form_To_Change_To, Context context);
 }
