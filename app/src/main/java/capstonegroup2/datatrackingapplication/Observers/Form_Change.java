@@ -1,7 +1,10 @@
 package capstonegroup2.datatrackingapplication.Observers;
 
+import android.app.Activity;
+
 /**
  * Created by Patrick on 20-Aug-18.
+ * Last Edited by Patrick on 20-Aug-18 4pm
  */
 public interface Form_Change {
     /**
@@ -12,19 +15,11 @@ public interface Form_Change {
      * Otherwise it will return, and the next Form_Change Observer will execute the check, until the end of the list has been reached.
      * This List will have a length = number of Concrete Form_Change classes.
      */
-    enum Form_Control {}
+    enum Form_Control {Login, Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Encrypt_and_Export, Gamification, Medical_States}
 
     /**
-     * public void Change_Form(Form_Control)
-     * <p>
-     * Public method call for changing between forms within the program
-     * <p>
-     * Returns
-     * void
-     *
      * @param form_To_Change_To Enum specifying which form to change to from the current form.
      */
-
     // NOTE: This may need a second parameter with a reference back to the calling form, so that form can be deleted if required, with a default value of null if not.
-    public void Change_Form(Form_Control form_To_Change_To);
+    public void Change_Form(Form_Control form_To_Change_To, Activity current_UI);
 }
