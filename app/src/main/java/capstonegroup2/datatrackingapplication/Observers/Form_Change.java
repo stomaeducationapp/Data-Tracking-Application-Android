@@ -17,7 +17,7 @@ import android.content.Context;
  * 20th
  * Changed Comment Style to Java Doc
  * Added Context context to the Change_Form() Method
- * Removed Enum Values : Login, and Medical_State_Calculator as they don't need a form
+ * Removed Enum Values : Login, and Medical_State_Calculator as they wont be reached through observers, instead back up the call stack.
  */
 
 public interface Form_Change {
