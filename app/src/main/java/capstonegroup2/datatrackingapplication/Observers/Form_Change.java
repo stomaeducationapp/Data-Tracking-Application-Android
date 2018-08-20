@@ -21,5 +21,5 @@ public interface Form_Change {
      * @param form_To_Change_To Enum specifying which form to change to from the current form.
      */
     // NOTE: This may need a second parameter with a reference back to the calling form, so that form can be deleted if required, with a default value of null if not.
-    public void Change_Form(Form_Control form_To_Change_To, Activity current_UI);
+    public void Change_Form(Form_Control form_To_Change_To);
 }
