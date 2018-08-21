@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">DataTrackingApplication</string>
+    <string name="app_name">DataApp</string>
+    <string name="action_settings">Settings</string>
 </resources>
