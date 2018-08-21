@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\DataApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Patrick\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\b2c101a1130de6e63eeb5a36db45e3c6\\res\\values-v16\\values-v16.xml",
