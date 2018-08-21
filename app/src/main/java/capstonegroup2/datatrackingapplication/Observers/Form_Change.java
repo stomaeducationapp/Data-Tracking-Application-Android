@@ -2,6 +2,7 @@ package capstonegroup2.datatrackingapplication.Observers;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 
 /**
  * Created by Patrick on 19-Aug-18.
@@ -10,14 +11,17 @@ import android.content.Context;
 
 /**
  * Changes:
- * 19th
+ * 19th Aug
  * Created Interface 'Form_Change', and created Enum and Change_Form Method
  * Added Comment Block
  *
- * 20th
+ * 20th Aug
  * Changed Comment Style to Java Doc
  * Added Context context to the Change_Form() Method
  * Removed Enum Values : Login, and Medical_State_Calculator as they wont be reached through observers, instead back up the call stack.
+ *
+ * 21st Aug
+ * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical
  */
 
 public interface Form_Change {
@@ -33,8 +37,8 @@ public interface Form_Change {
 
     /**
      * @param form_To_Change_To  Enum specifying which form to change to from the current form.
-     * @param context
+     * @param intent
      * @return
      */
-    boolean Change_Form(Form_Control form_To_Change_To, Context context);
+    boolean Change_Form(Form_Control form_To_Change_To,  Intent intent);
 }
