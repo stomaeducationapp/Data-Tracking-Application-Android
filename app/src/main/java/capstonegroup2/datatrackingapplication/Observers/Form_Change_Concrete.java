@@ -28,15 +28,19 @@ import capstonegroup2.datatrackingapplication.BuildConfig;
  * Refactored code to allow for this change to parameter
  * Added Null Checks for method parameters security
  */
-public class Form_Change_Concrete implements Form_Change {
+class Form_Change_Concrete implements Form_Change {
     private Factory factory;
 
+    public Form_Change_Concrete(Factory factory) {
+        this.factory = factory;
+    }
     /**
      * @param form_To_Change_To Enum specifying which form to change to from the current form.
      * @param intent
      * @return
      * @throws RuntimeException
      */
+
     @Override
     public boolean Change_Form(Form_Control form_To_Change_To, Intent intent) throws RuntimeException {
         //Check Form_Control Enum hasn't somehow been set to Null
