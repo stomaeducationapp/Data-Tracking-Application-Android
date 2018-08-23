@@ -30,10 +30,10 @@ import capstonegroup2.dataapp.BuildConfig;
  * Added Null Checks for method parameters security
  */
 class Form_Change_Concrete implements Form_Change {
-    private Factory factory;
+    //private Factory factory;
 
-    public Form_Change_Concrete(Factory factory) {
-        this.factory = factory;
+    public Form_Change_Concrete(/*Factory factory*/) {
+            //this.factory = factory;
     }
     /**
      * @param form_To_Change_To Enum specifying which form to change to from the current form.
@@ -45,9 +45,8 @@ class Form_Change_Concrete implements Form_Change {
     @Override
     public boolean Change_Form(Form_Control form_To_Change_To, Intent intent) throws RuntimeException {
         //Check Form_Control Enum hasn't somehow been set to Null
+        boolean valid = false;
         if(form_To_Change_To != null && intent != null){
-
-            boolean valid = false;
             Activity activity = null;
             //// TODO: 20-Aug-18 Need to change names as the classes/packages are created so it fits in and switches correctly
             //Logic for which Activity to create and launch
@@ -56,7 +55,7 @@ class Form_Change_Concrete implements Form_Change {
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Account_Creation_Activity();
+                        //activity = factory.Build_Account_Creation_Activity();
                         valid = true;
                     }
                     break;
@@ -64,7 +63,7 @@ class Form_Change_Concrete implements Form_Change {
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Medical_Data_Input_Activity();
+                        //activity = factory.Build_Medical_Data_Input_Activity();
                         valid = true;
                     }
                     break;
@@ -72,7 +71,7 @@ class Form_Change_Concrete implements Form_Change {
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Account_Main_Menu_Activity();
+                        //activity = factory.Build_Account_Main_Menu_Activity();
                         valid = true;
                     }
                     break;
@@ -80,14 +79,14 @@ class Form_Change_Concrete implements Form_Change {
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Password_Recovery_Activity();
+                        //activity = factory.Build_Password_Recovery_Activity();
                     }
                     break;
                 case Review:
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Medical_Review_Activity();
+                        //activity = factory.Build_Medical_Review_Activity();
                         valid = true;
                     }
                     break;
@@ -95,14 +94,14 @@ class Form_Change_Concrete implements Form_Change {
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Account_Information_Activity();
+                        //activity = factory.Build_Account_Information_Activity();
                     }
                     break;
                 case Encrypt_and_Export:
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Encrypt_and_Export_Activity();
+                        //activity = factory.Build_Encrypt_and_Export_Activity();
                         valid = true;
                     }
                     break;
@@ -110,7 +109,7 @@ class Form_Change_Concrete implements Form_Change {
                     if (BuildConfig.DEBUG) {
                         valid = true;
                     } else {
-                        activity = factory.Build_Gamification_Activity();
+                        //activity = factory.Build_Gamification_Activity();
                         valid = true;
                     }
                     break;
@@ -119,7 +118,10 @@ class Form_Change_Concrete implements Form_Change {
                     throw new RuntimeException("Unreachable");
             }
             if (!BuildConfig.DEBUG) {
-                activity.startActivity(intent);
+                try {
+                    activity.startActivity(intent);
+                }
+                catch(NullPointerException e){}
             }
         }else // Null value provided meaning the program is in a faulted state
         //Need to check which one has the null error value

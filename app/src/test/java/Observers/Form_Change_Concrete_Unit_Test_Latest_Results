@@ -1,0 +1,20 @@
+Unit Testing
+
+Test Name: Form_Change_Concrete_1								Tester: Patrick Crockford
+
+Test Priority: High								Test Date: 23rd Aug 2018 1:00pm
+
+Purpose: Test the logic functionality and error handling of Form_Change_Concrete class through unit testing.
+Assumptions/Dependencies: Factory has been removed, will be tested during integration. Empty intent created to satisfy method parameters
+Step Number	Description			Inputs				Outputs				Observation/Comments
+1	Account_Creation_Test			Input: form_to_Change_To = Account_Creation, intent = valid				valid = true				Test worked correctly
+2	Medical_Data_Input_Test			Input: form_to_Change_To = Medical_Data_Input, intent = valid				valid = true				Test worked correctly
+3	Gamification_Test			Input: form_to_Change_To = Gamification, intent = valid				valid = true				Test worked correctly
+4	Account_Information_Test			Input: form_to_Change_To = Account_Information, intent = valid				valid = true				Test worked correctly
+5	Password_Recovery_Test			Input: form_to_Change_To = Password_Recovery, intent = valid				valid = true				Test worked correctly
+6	Review_Test			Input: form_to_Change_To = Review, intent = valid				valid = true				Test worked correctly
+7	Account_Main_Menu_Test			Input: form_to_Change_To = Account_Main_Menu, intent = valid				valid = true				Test worked correctly
+8	Encrypt_And Export_Test			Input: form_to_Change_To = Encrypt_And Export, intent = valid				valid = true				Test worked correctly
+9	Enum_Null_Test			Input: form_to_Change_To = null, intent = valid				NullPointException				NullPointException thrown from correct point
+10	Intent_Null_Test			Input: form_to_Change_To = Account_Creation, intent = null				NullPointException				NullPointException thrown from correct point
+11	Enum_And_Intent_Null_Test			Input: form_to_Change_To = null, intent = null				NullPointException				NullPointException thrown from correct point
