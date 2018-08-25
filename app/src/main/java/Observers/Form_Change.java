@@ -5,9 +5,6 @@ import android.content.Intent;
 /**
  * Created by Patrick on 19-Aug-18.
  * Last Edited by Patrick on 20-Aug-18 10pm
- */
-
-/**
  * Changes:
  * 19th Aug
  * Created Interface 'Form_Change', and created Enum and Change_Form Method

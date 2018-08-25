@@ -10,9 +10,7 @@ import capstonegroup2.dataapp.BuildConfig;
 /**
  * Created by Patrick on 19-Aug-18.
  * Last Edited by Patrick on 20-Aug-18 10pm
- */
-
-/**
+ *
  * Changes:
  * 19th Aug
  * Created Class 'Save_Form_Change', and created the switch statement for Form_Control enum
@@ -29,6 +27,8 @@ import capstonegroup2.dataapp.BuildConfig;
  * Refactored code to allow for this change to parameter
  * Added Null Checks for method parameters security
  */
+
+// TODO: 25-Aug-18 When factory class is created uncomment
 class Form_Change_Concrete implements Form_Change {
     //private Factory factory;
 
