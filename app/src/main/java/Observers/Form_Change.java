@@ -9,14 +9,17 @@ import android.content.Intent;
  * 19th Aug
  * Created Interface 'Form_Change', and created Enum and Change_Form Method
  * Added Comment Block
- *
+ * <p>
  * 20th Aug
  * Changed Comment Style to Java Doc
  * Added Context context to the Change_Form() Method
  * Removed Enum Values : Login, and Medical_State_Calculator as they wont be reached through observers, instead back up the call stack.
- *
+ * <p>
  * 21st Aug
  * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical
+ *
+ * 27th Aug
+ * Added Throws Nullpoint and Invalid_Enum exception method signatures
  */
 
 public interface Form_Change {
@@ -28,12 +31,14 @@ public interface Form_Change {
      * Otherwise it will return, and the next Form_Change Observer will execute the check, until the end of the list has been reached.
      * This List will have a length = number of Concrete Form_Change classes.
      */
-    enum Form_Control {Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Encrypt_and_Export, Gamification}
+    enum Form_Control {
+        Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Encrypt_and_Export, Gamification
+    }
 
     /**
-     * @param form_To_Change_To  Enum specifying which form to change to from the current form.
+     * @param form_To_Change_To Enum specifying which form to change to from the current form.
      * @param intent
      * @return
      */
-    boolean Change_Form(Form_Control form_To_Change_To,  Intent intent);
+    boolean Change_Form(Form_Control form_To_Change_To, Intent intent) throws NullPointerException, Invalid_Enum_Exception;
 }

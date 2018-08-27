@@ -1,7 +1,6 @@
 package Observers;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 
 import capstonegroup2.dataapp.BuildConfig;
@@ -10,18 +9,18 @@ import capstonegroup2.dataapp.BuildConfig;
 /**
  * Created by Patrick on 19-Aug-18.
  * Last Edited by Patrick on 20-Aug-18 10pm
- *
+ * <p>
  * Changes:
  * 19th Aug
  * Created Class 'Save_Form_Change', and created the switch statement for Form_Control enum
  * Added Save_Current_Activity() method
- *
+ * <p>
  * 20th Aug
  * Renamed to Form_Change_Concrete due change in how activities will be saved, these are handled by the activities themselves
  * Deleted Save_Current_Activity() method
  * Added Debug Code for Unit Testing concrete Class, and will test Form_Change Interface at the same time
  * Added JavaDoc code
- *
+ * <p>
  * 21st Aug
  * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical
  * Refactored code to allow for this change to parameter
@@ -33,8 +32,9 @@ class Form_Change_Concrete implements Form_Change {
     //private Factory factory;
 
     public Form_Change_Concrete(/*Factory factory*/) {
-            //this.factory = factory;
+        //this.factory = factory;
     }
+
     /**
      * @param form_To_Change_To Enum specifying which form to change to from the current form.
      * @param intent
@@ -43,10 +43,10 @@ class Form_Change_Concrete implements Form_Change {
      */
 
     @Override
-    public boolean Change_Form(Form_Control form_To_Change_To, Intent intent) throws RuntimeException {
+    public boolean Change_Form(Form_Control form_To_Change_To, Intent intent) throws NullPointerException, Invalid_Enum_Exception {
         //Check Form_Control Enum hasn't somehow been set to Null
         boolean valid = false;
-        if(form_To_Change_To != null && intent != null){
+        if (form_To_Change_To != null && intent != null) {
             Activity activity = null;
             //// TODO: 20-Aug-18 Need to change names as the classes/packages are created so it fits in and switches correctly
             //Logic for which Activity to create and launch
@@ -115,21 +115,22 @@ class Form_Change_Concrete implements Form_Change {
                     break;
                 default:
                     //Shouldn't get here as it is based on enum, Void can get here which is a big error
-                    throw new RuntimeException("Unreachable");
+                    throw new Invalid_Enum_Exception("Invalid Enum given to Form_Change_Concrete");
             }
             if (!BuildConfig.DEBUG) {
                 try {
                     activity.startActivity(intent);
+                } catch (NullPointerException e) {
                 }
-                catch(NullPointerException e){}
             }
-        }else // Null value provided meaning the program is in a faulted state
+        } else // Null value provided meaning the program is in a faulted state
         //Need to check which one has the null error value
         {
-            if(form_To_Change_To == null){
-                throw new NullPointerException("Null Enum Value given");}
-            else {
-                throw new NullPointerException("Null intent Value given");}
+            if (form_To_Change_To == null) {
+                throw new NullPointerException("Null Enum Value given");
+            } else {
+                throw new NullPointerException("Null intent Value given");
+            }
         }
         return valid;
     }
