@@ -3,10 +3,9 @@ package Observers;
 import android.app.Activity;
 import android.content.Intent;
 
-import capstonegroup2.dataapp.BuildConfig;
-
 
 /**
+ *
  * Created by Patrick on 19-Aug-18.
  * Last Edited by Patrick on 21-Aug-18 10pm
  * <p>
@@ -19,15 +18,18 @@ import capstonegroup2.dataapp.BuildConfig;
  * Renamed to Form_Change_Concrete due change in how activities will be saved, these are handled by the activities themselves
  * Deleted Save_Current_Activity() method
  * Added Debug Code for Unit Testing concrete Class, and will test Form_Change Interface at the same time
- * Added JavaDoc code
+ * Added JavaDoc
  * <p>
  * 21st Aug
  * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical
  * Refactored code to allow for this change to parameter
  * Added Null Checks for method parameters security
+ * 29th Aug
+ * Update JavaDoc code to comply with format
  */
 
-// TODO: 25-Aug-18 When factory class is created uncomment
+
+// TODO: 25-Aug-18 When factory class is created uncomment and also comment activity creation and returns when integrating
 class Form_Change_Concrete implements Form_Change {
     //private Factory factory;
 
@@ -52,76 +54,43 @@ class Form_Change_Concrete implements Form_Change {
             //Logic for which Activity to create and launch
             switch (form_To_Change_To) {
                 case Account_Creation:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Account_Creation_Activity();
-                        valid = true;
-                    }
+                    //activity = factory.Build_Account_Creation_Activity();
+                    valid = true;
                     break;
                 case Medical_Data_Input:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Medical_Data_Input_Activity();
-                        valid = true;
-                    }
+                    //activity = factory.Build_Medical_Data_Input_Activity();
+                    valid = true;
                     break;
                 case Account_Main_Menu:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Account_Main_Menu_Activity();
-                        valid = true;
-                    }
+                    //activity = factory.Build_Account_Main_Menu_Activity();
+                    valid = true;
                     break;
                 case Password_Recovery:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Password_Recovery_Activity();
-                    }
-                    break;
+                    //activity = factory.Build_Password_Recovery_Activity();
+                    valid = true;
                 case Review:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Medical_Review_Activity();
-                        valid = true;
-                    }
+                    //activity = factory.Build_Medical_Review_Activity();
+                    valid = true;
                     break;
                 case Account_Information:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Account_Information_Activity();
-                    }
+                    //activity = factory.Build_Account_Information_Activity();
+                    valid = true;
                     break;
                 case Encrypt_and_Export:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Encrypt_and_Export_Activity();
-                        valid = true;
-                    }
+                    //activity = factory.Build_Encrypt_and_Export_Activity();
+                    valid = true;
                     break;
                 case Gamification:
-                    if (BuildConfig.DEBUG) {
-                        valid = true;
-                    } else {
-                        //activity = factory.Build_Gamification_Activity();
-                        valid = true;
-                    }
+                    //activity = factory.Build_Gamification_Activity();
+                    valid = true;
                     break;
                 default:
                     //Shouldn't get here as it is based on enum, Void can get here which is a big error
                     throw new Invalid_Enum_Exception("Invalid Enum given to Form_Change_Concrete");
             }
-            if (!BuildConfig.DEBUG) {
-                try {
-                    activity.startActivity(intent);
-                } catch (NullPointerException e) {
-                }
+            try {
+                //activity.startActivity(intent);
+            } catch (NullPointerException e) {
             }
         } else // Null value provided meaning the program is in a faulted state
         //Need to check which one has the null error value

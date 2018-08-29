@@ -4,14 +4,21 @@ import java.io.FileInputStream;
 
 /**
  * <h1>Export_Data</h1>
- * The Export_Data Java Class is used to trigger the code required to export the current users medical data
+ * The Export_Data Java Class is used to trigger code required to export the current users medical data
  * to an external database. This Observer has been created to reduce the coupling that would be required
- * between the Main Menu of the account screen and Export Data Package.
+ * between the Main Menu Package and Export Data Package.
  * Implements Time_Observer interface
  *
  * @author Patrick Crockford
  * @version 1.0
- * @since 27-Aug-2018 <p> <h>Changes</h1>27th Aug Created Class 'Export_Data', and created null check Added Exception method signature <p> 28th Aug JavaDoc written up
+ * <h>Changes</h1>
+ * 27th Aug
+ * Created Class Export_Data, Patrick Crockford
+ * Added functionality to Notify Method, Patrick Crockford
+ * Created null check Added Exception method signature, Patrick Crockford
+ * <p>
+ * 28th Aug
+ * JavaDoc written up, Patrick Crockford
  */
 public class Export_Data implements Time_Observer {
 // TODO: 28-Aug-18 Uncomment factory references when package is built 
@@ -24,13 +31,13 @@ public class Export_Data implements Time_Observer {
      * Instantiates a new Export_Data.
      */
     public Export_Data(/*Factory factory*/) {
-        //this.factory = factory;
+        //this.factory = factory;-
     }
 
     /**
      * This method is used to construct and call the required class(es) to export users medical data to
      * and external database
-     * @param input_Stream Represents the FileInputStream class to the required file
+     * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
      * @return True data was exported successfully, otherwise false.
      * @throws NullPointerException if input_Stream is null
      */

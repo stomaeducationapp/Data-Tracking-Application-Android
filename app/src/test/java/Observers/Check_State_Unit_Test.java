@@ -6,34 +6,34 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * <h>Export_Data_Unit_Test</h>
- * Tests the logic of Export_Data Class to the fullest extent possible
+ * <h>Check_State_Unit_Test</h>
+ * Tests the logic of Check_State Class to the fullest extent possible
  *
  * @author Patrick Crockford
  * @version 1.0
  * @since 27-Aug-2018
  * <h>Note</h>
- * Cannot test a valid FileInputStream class in the unit testing as it requires a context
+ * Cannot test a valid FileInputStream or FileOutputStream class in the unit testing as it requires a context
  * which is only available in an activity class
  * This will be done during integration testing at a later date and has been noted in the Test Form
  */
-public class Export_Data_Unit_Test {
+public class Check_State_Unit_Test {
 
-    private Time_Observer time_Observer;
+    private State_Observer state_Observer;
 
     /**
      * Initialize.
      */
     @Before
     public void initialize() {
-        time_Observer = new Export_Data();
+        state_Observer = new Check_State();
     }
 
     /**
-     * File stream null.
+     * InputStream and OutputStream are Null
      */
     @Test(expected = NullPointerException.class)
-    public void File_Stream_Null() {
-        assertEquals(time_Observer.Notify(null), false);
+    public void Input_Stream_And_Output_Stream_Null() {
+        assertEquals(state_Observer.Notify(null, null), false);
     }
 }
