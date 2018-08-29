@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
  * The Check_State Java Class is used to trigger code required to calculate the current medical 'state'
  * the current user is in. This Observer has been created to reduce the coupling that would be required
  * between the Medical Data Input Package and Medical States Package.
+ * Implements State_Observer
  *
  * @author Patrick Crockford
  * @version 1.0
