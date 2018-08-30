@@ -38,18 +38,21 @@ import android.content.Intent;
 class Form_Change implements Form_Change_Observer {
     //private Factory factory;
 
+
+    /**
+     * Instantiates a new Form_Change.
+     */
     public Form_Change(/*Factory factory*/) {
         //this.factory = factory;
     }
 
     /**
      * @param activity_To_Change_To Enum specifying which form to change to from the current form.
-     * @param intent
+     * @param intent System Object with information for the new Activity
      * @return True if successfully created and used new Activity, else false
      * @throws NullPointerException if intent, Activity_Control, and/or Activity Objects are Null
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
-
     @Override
     public boolean Change_Form(Activity_Control activity_To_Change_To, Intent intent) throws NullPointerException, Invalid_Enum_Exception {
         //Check Activity_Control Enum hasn't somehow been set to Null
@@ -91,7 +94,7 @@ class Form_Change implements Form_Change_Observer {
                     valid = true;
                     break;
                 default:
-                    //Shouldn't get here as it is based on enum, Void can get here which is a big error
+                    //Shouldn't get here as it is based on enum, is a big error
                     throw new Invalid_Enum_Exception("Invalid Enum given to activity_To_Change_To");
             }
             // TODO: 29-Aug-18 When Factory is creating valid activities uncomment line below

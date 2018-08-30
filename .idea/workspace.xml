@@ -10,13 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a48a3662-4ce3-4f36-9245-38ec30c9a5ec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -34,6 +29,36 @@
     <SUITE FILE_PATH="coverage/2018_02_healthcare_visualization_data_tracking_application$Form_Change_Concrete_Unit_Test.coverage" NAME="Form_Change_Concrete_Unit_Test Coverage Results" MODIFIED="1535001427694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Observers.*</FILTER>
     </SUITE>
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="Form_Change.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="170">
+                    <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Check_State.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="392">
+                    <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="89" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/../../Testing/Android" openResultsInEditor="true" userTempatePath="" />
   <component name="ExternalProjectsData">
@@ -56,8 +81,8 @@
       <file leaf-file-name="Export_Data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+            <state relative-caret-position="255">
+              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -73,21 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Form_Change.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Update_Data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Update_Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+            <state relative-caret-position="289">
+              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -96,8 +111,8 @@
       <file leaf-file-name="Update_Data_For_Account_From_File.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="390">
+              <caret line="213" column="0" lean-forward="true" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2155,13 +2170,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Concrete.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer_Concrete.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Observers/Form_Change__Unit_Test.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java" />
       </list>
     </option>
   </component>
@@ -2189,28 +2204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2278,7 +2271,35 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Observers" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2685,7 +2706,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535544222557</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update_Data_From_Account_From_File: Updated XML reader code to comply with XML document format and Started JavaDoc Commenting">
+      <created>1535615178098</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1535615178098</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2749,7 +2777,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31663114" sideWeight="0.49006623" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2764,6 +2791,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18070363" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -2826,7 +2854,8 @@
     <MESSAGE value="Unit Testing of Export_Data and Time_Observer Interface.&#10;JavaDoc of Export_Data Interface" />
     <MESSAGE value="Unit Testing of Check_State and Updating of JavaDocs&#10;UnitTesting Forms for Export_Data and Check_State" />
     <MESSAGE value="Changed Form_Change -&gt; Form_Change_Observer (Interface)&#10;Changed Form_Change_Concrete -&gt; Form_Change (Concrete)&#10;Updating Java Doc of Form_Change_Observer, Form_Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Form_Change -&gt; Form_Change_Observer (Interface)&#10;Changed Form_Change_Concrete -&gt; Form_Change (Concrete)&#10;Updating Java Doc of Form_Change_Observer, Form_Change" />
+    <MESSAGE value="Update_Data_From_Account_From_File: Updated XML reader code to comply with XML document format and Started JavaDoc Commenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update_Data_From_Account_From_File: Updated XML reader code to comply with XML document format and Started JavaDoc Commenting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3129,6 +3158,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Update_Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -3137,42 +3174,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Update_Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+        <state relative-caret-position="255">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="390">
+          <caret line="213" column="0" lean-forward="true" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding />
         </state>
       </provider>
