@@ -8,22 +8,22 @@ import android.content.Intent;
  * @author Patrick Crockford
  * @version 1.0
  * <h>Changes</h1>
- * Created Interface 'Form_Change_Observer', and created Enum and Change_Form Method
- * Added Comment Block
+ * Created Interface 'Form_Change_Observer', and created Enum and Change_Form Method, Patrick Crockford
+ * Added Comment Block, Patrick Crockford
  * <p>
  * 20th Aug
- * Changed Comment Style to Java Doc
- * Added Context context to the Change_Form() Method
- * Removed Enum Values : Login, and Medical_State_Calculator as they wont be reached through observers, instead back up the call stack.
+ * Changed Comment Style to Java Doc, Patrick Crockford
+ * Added Context context to the Change_Form() Method, Patrick Crockford
+ * Removed Enum Values : Login, and Medical_State_Calculator as they wont be reached through observers, instead back up the call stack, Patrick Crockford
  * <p>
  * 21st Aug
- * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical
+ * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical, Patrick Crockford
  * <p>
  * 27th Aug
- * Added Throws NullPoint and Invalid_Enum exception method signatures
+ * Added Throws NullPoint and Invalid_Enum exception method signatures, Patrick Crockford
  * <p>
  * 29th Aug
- * Renamed to Form_Change_Observer
+ * Renamed to Form_Change_Observer, Patrick Crockford
  * Update JavaDoc code to comply with format, Patrick Crockford
  */
 public interface Form_Change_Observer {

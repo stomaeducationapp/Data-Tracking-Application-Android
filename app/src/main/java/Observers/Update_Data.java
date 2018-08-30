@@ -12,8 +12,14 @@ import java.util.Map;
  * Created Interface 'Update_Data', and created 'Update_Information' method
  * Added Comment Block
  */
-
 public interface Update_Data {
 
-    Map<String, String> Update_Information(InputStream inputStream, String file_Name) throws NullPointerException;
+    /**
+     * Update information map.
+     *
+     * @param inputStream the input stream
+     * @return the map
+     * @throws NullPointerException the null pointer exception
+     */
+    Map<String, String> Update_Information(InputStream inputStream) throws NullPointerException;
 }

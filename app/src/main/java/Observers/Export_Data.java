@@ -20,7 +20,7 @@ import java.io.FileInputStream;
  * 28th Aug
  * JavaDoc written up, Patrick Crockford
  */
-public class Export_Data implements Time_Observer {
+class Export_Data implements Time_Observer {
 // TODO: 28-Aug-18 Uncomment factory references when package is built 
     /**
      * Factory Object to construct classes from external packages

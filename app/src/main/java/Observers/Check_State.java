@@ -11,22 +11,13 @@ import java.io.FileOutputStream;
  * Implements State_Observer
  *
  * @author Patrick Crockford
- * @version 1.0
- * <h>Changes</h1>
- * 27th Aug
- * Created Class Check_State, Patrick Crockford
- * Added functionality to Notify Method, Patrick Crockford
- * Created null check Added Exception method signature, Patrick Crockford
- * <p>
- * 29th Aug
- * JavaDoc written up, Patrick Crockford
- *
+ * @version 1.0 <h>Changes</h1> 27th Aug Created Class Check_State, Patrick Crockford Added functionality to Notify Method, Patrick Crockford Created null check Added Exception method signature, Patrick Crockford <p> 29th Aug JavaDoc written up, Patrick Crockford
  */
-
-public class Check_State implements State_Observer {
+class Check_State implements State_Observer {
 
     // TODO: 27-Aug-18 WHen Factory Class created uncomment 
 //private Factory factory;
+
     /**
      * Instantiates a new Check_State.
      */

@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 /**
  * The type Daily review.
  */
-public class Daily_Review implements Time_Observer {
+class Daily_Review implements Time_Observer {
     // TODO: 27-Aug-18 Remove comments around Factory when class has been created 
     //private Factory factory;
 
