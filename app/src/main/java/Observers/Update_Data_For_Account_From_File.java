@@ -14,7 +14,7 @@ import java.util.Map;
  * <h1>Update_Data_For_Account_From_File</h1>
  * The Update_Data_For_Account_From_File Java Class is used to Read In Account Information from XML file stored on the device.
  * This Observer has been created to reduce the coupling that would be required between the calling package and Operating system.
- * Implements Update_Data interface
+ * Implements Update_Data_Observer interface
  * <h>NOTES</h>
  * XML code is adapted from https://developer.android.com/training/basics/network-ops/xml#instantiate provided by Android for developers.
  *
@@ -36,7 +36,7 @@ import java.util.Map;
  * Need to update how IOException and XmlPullParserException are handled in the class.
  */
 
-class Update_Data_For_Account_From_File implements Update_Data {
+class Update_Data_For_Account_From_File implements Update_Data_Observer {
     /**
      * Name of the initial value which Account Information is Stored Under
      */

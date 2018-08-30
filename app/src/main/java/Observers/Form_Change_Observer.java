@@ -2,12 +2,15 @@ package Observers;
 
 import android.content.Intent;
 
-/**<h1>Form_Change_Observer</h1>
+/**
+ * <h1>Form_Change_Observer</h1>
  * The Form_Change_Observer Interface Java Class is used to Allow access to the package private concrete classes that inherit from it.
  * It also stores the Enum Activity_Control required to navigate to a new activity through the Concrete Observers.
+ *
  * @author Patrick Crockford
  * @version 1.0
  * <h>Changes</h1>
+ * 19 Aug
  * Created Interface 'Form_Change_Observer', and created Enum and Change_Form Method, Patrick Crockford
  * Added Comment Block, Patrick Crockford
  * <p>
@@ -44,7 +47,7 @@ public interface Form_Change_Observer {
      * @param activity_To_Change_To Enum specifying which form to change to from the current form.
      * @param intent
      * @return True if successfully created and used new Activity, else false
-     * @throws NullPointerException if intent, Activity_Control, and/or Activity Objects are Null
+     * @throws NullPointerException   if intent, Activity_Control, and/or Activity Objects are Null
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
     boolean Change_Form(Activity_Control activity_To_Change_To, Intent intent) throws NullPointerException, Invalid_Enum_Exception;

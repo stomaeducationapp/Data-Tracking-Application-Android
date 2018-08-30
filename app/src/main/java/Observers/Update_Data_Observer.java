@@ -9,10 +9,12 @@ import java.util.Map;
  * <p>
  * Changes:
  * 25th Aug
- * Created Interface 'Update_Data', and created 'Update_Information' method
+ * Created Interface 'Update_Data_Observer', and created 'Update_Information' method
  * Added Comment Block
+ * 30th Aug
+ * Renamed from Update_Data to Update_Data_Observer
  */
-public interface Update_Data {
+public interface Update_Data_Observer {
 
     /**
      * Update information map.

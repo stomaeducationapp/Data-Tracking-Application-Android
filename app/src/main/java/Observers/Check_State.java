@@ -11,7 +11,13 @@ import java.io.FileOutputStream;
  * Implements State_Observer
  *
  * @author Patrick Crockford
- * @version 1.0 <h>Changes</h1> 27th Aug Created Class Check_State, Patrick Crockford Added functionality to Notify Method, Patrick Crockford Created null check Added Exception method signature, Patrick Crockford <p> 29th Aug JavaDoc written up, Patrick Crockford
+ * @version 1.0 <h>Changes</h1>
+ * 27th Aug Created Class Check_State, Patrick Crockford
+ * Added functionality to Notify Method, Patrick Crockford
+ * Created null check Added Exception method signature, Patrick Crockford
+ * <p>
+ * 29th Aug
+ * JavaDoc written up, Patrick Crockford
  */
 class Check_State implements State_Observer {
 
@@ -28,7 +34,7 @@ class Check_State implements State_Observer {
     /**
      * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
      * @param output_Stream Represents the FileOutputStream Object used to write users medical data to the correct file stored on the device
-     * @return True is state was successfully calculated and written to file, otherwise false
+     * @return True if state was successfully calculated and written to file, otherwise false
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
