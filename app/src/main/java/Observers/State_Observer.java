@@ -15,7 +15,7 @@ public interface State_Observer {
 
     /**
      * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
-     * @param output_Stream Represents the FileOutputStream Object used to write users medical data to the correct file stored on the device
+     * @param output_Stream Represents the FileOutputStream Object used to write to the users medical data stored on the device
      * @return True if state was successfully calculated and written to file, otherwise false
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */

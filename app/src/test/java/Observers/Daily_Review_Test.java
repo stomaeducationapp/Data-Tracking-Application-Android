@@ -31,10 +31,10 @@ public class Daily_Review_Test {
     }
 
     /**
-     * File stream null.
+     * File streams null.
      */
     @Test(expected = NullPointerException.class)
     public void File_Stream_Null() {
-        assertEquals(time_Observer.Notify(null), false);
+        assertEquals(time_Observer.Notify(null, null), false);
     }
 }

@@ -1,6 +1,7 @@
 package Observers;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 /**
  * <h1>Export_Data</h1>
@@ -37,20 +38,25 @@ class Export_Data implements Time_Observer {
     /**
      * This method is used to construct and call the required class(es) to export users medical data to
      * and external database
-     * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
-     * @return True data was exported successfully, otherwise false.
-     * @throws NullPointerException if input_Stream is null
+     * @param input_Stream  Represents the FileInputStream Object used to read users data file stored on the device
+     * @param output_Stream Represents the FileOutputStream Object used to write to the users medical data file stored on the device
+     * @return True if daily 24 hour review is successfully calculated and saved to file, otherwise false.
+     * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
-    public boolean Notify(FileInputStream input_Stream) throws NullPointerException {
+    public boolean Notify(FileInputStream input_Stream, FileOutputStream output_Stream) throws NullPointerException {
         if (input_Stream != null) {
             boolean valid = false;
             // TODO: 27-Aug-18 Uncomment when export package is created
             //Export_Handler export_handler = factory.Create_Export_Handler();
-            //valid = export_handler.Export_Data(input_Stream);
+            //valid = export_handler.Export_Data(input_Stream, output_Stream);
             return valid;
         } else {
-            throw new NullPointerException("Input Stream Object is Null");
+            if(input_Stream == null){
+                throw new NullPointerException("Input Stream Object is Null");
+            }else{
+                throw new NullPointerException("Output Stream Object is Null");
+            }
         }
     }
 }
