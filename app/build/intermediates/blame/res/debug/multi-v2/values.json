@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\DataApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\DataApp\\app\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
@@ -37,6 +37,42 @@
                         "endLines": "2,10,11,12,13,14,19,22,23,24,27,28,31,34,35,36,37,38,41,44,45,46,47,52,55,58,59,60,65,66,67,70,73,74,77,80,83,86,87,90,93,94,99,100,105,108,111,112,113,114,115,116,117,118,119,120,128",
                         "endColumns": "60,11,47,51,60,45,11,60,59,69,11,67,11,11,61,64,67,66,11,11,66,64,64,11,11,11,65,66,11,68,65,11,11,66,11,11,11,11,64,11,11,64,11,66,11,11,11,64,61,61,61,58,59,60,60,58,11",
                         "endOffsets": "156,447,495,547,608,654,836,991,1051,1121,1254,1322,1451,1577,1639,1704,1772,1839,1962,2087,2154,2219,2284,2465,2586,2707,2773,2840,3050,3119,3185,3310,3436,3503,3629,3756,3881,4008,4073,4199,4322,4387,4595,4662,4842,4962,5082,5147,5209,5271,5333,5392,5452,5513,5574,5633,5973"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "157,57,105",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "198,99,151"
+                    },
+                    "to": {
+                        "startLines": "153,154,155",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "7748,7794,7841",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "7789,7836,7887"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,15,10,17",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "57,540,384,634",
+                        "endLines": "8,15,13,17",
+                        "endColumns": "12,90,12,80",
+                        "endOffsets": "376,626,532,710"
+                    },
+                    "to": {
+                        "startLines": "822,828,829,833",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "68288,68607,68697,68847",
+                        "endLines": "827,828,832,833",
+                        "endColumns": "12,89,12,79",
+                        "endOffsets": "68602,68692,68842,68922"
                     }
                 },
                 {
@@ -112,59 +148,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\DataApp\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "2,1",
-                        "startColumns": "4,4",
-                        "startOffsets": "63,17",
-                        "endColumns": "52,44",
-                        "endOffsets": "111,57"
-                    },
-                    "to": {
-                        "startLines": "801,802",
-                        "startColumns": "4,4",
-                        "startOffsets": "66169,66222",
-                        "endColumns": "52,44",
-                        "endOffsets": "66217,66262"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\DataApp\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,15,10,17",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "57,540,384,634",
-                        "endLines": "8,15,13,17",
-                        "endColumns": "12,90,12,80",
-                        "endOffsets": "376,626,532,710"
-                    },
-                    "to": {
-                        "startLines": "822,828,829,833",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "68288,68607,68697,68847",
-                        "endLines": "827,828,832,833",
-                        "endColumns": "12,89,12,79",
-                        "endOffsets": "68602,68692,68842,68922"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\DataApp\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "157,57,105",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "198,99,151"
-                    },
-                    "to": {
-                        "startLines": "153,154,155",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "7748,7794,7841",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "7789,7836,7887"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Patrick\\.gradle\\caches\\transforms-1\\files-1.1\\transition-26.1.0.aar\\85d15bdfe28818a324632f5f72bc1d95\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -198,6 +181,23 @@
                         "endLines": "186,187,648,649,650,651,652,707,708,709,710,711,712,713,714,715,716,717,718,719,720,721,730,731,739,740,748,749,752,769,812,2104,2108,2110,2116,2118,2302,2303",
                         "endColumns": "68,62,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,33,34,34,69,70,116,12,109,12,128,71,66",
                         "endOffsets": "9875,9938,56575,56643,56715,56785,56846,60501,60562,60624,60688,60750,60811,60879,60979,61039,61105,61178,61247,61304,61356,61418,61943,62019,62399,62434,62800,62835,62962,63926,67554,153096,153297,153473,153857,154052,167690,167757"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,1",
+                        "startColumns": "4,4",
+                        "startOffsets": "63,17",
+                        "endColumns": "52,44",
+                        "endOffsets": "111,57"
+                    },
+                    "to": {
+                        "startLines": "801,802",
+                        "startColumns": "4,4",
+                        "startOffsets": "66169,66222",
+                        "endColumns": "52,44",
+                        "endOffsets": "66217,66262"
                     }
                 }
             ]
