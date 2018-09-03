@@ -5,6 +5,7 @@ package Factory;
  * The Factory Java Class is used to construct classes removing dependence's between classes and packages
  * The Factory Class is a Singleton that has been written to throw a RuntimeException if Java Reflection APIs
  * are used to change the visibility of the constructor and try and use it.
+ *
  * @author Patrick Crockford
  * @version 1.0
  * <h1>Changes</h1>
@@ -22,15 +23,25 @@ public class Factory {
 
     public enum Validate_Choice {Credentials, Account, Answer, UserName, Password}
 
-    public enum XML_Reader_Choice{Login, Account, Medical}
+    public enum XML_Reader_Choice {Login, Account, Medical}
 
-    public enum XML_Writer_Choice{Login, Account, Medical}
+    public enum XML_Writer_Choice {Login, Account, Medical}
+
+    /**
+     * Private Constructor, due to singleton Pattern
+     */
     private Factory() {
         if (factory != null) {
-            throw new RuntimeException("Please Use Get_Factory() method instead of Java Reflection");
+            throw new RuntimeException("Please Use Get_Factory() method instead of Java Reflection!");
         }
     }
 
+    /**
+     * Returns the instance of the factory, either by creating a new one during first call of this method
+     * or returning the existing instance
+     *
+     * @return Factory
+     */
     public static Factory Get_Factory() {
         if (factory == null) {
             factory = new Factory();
