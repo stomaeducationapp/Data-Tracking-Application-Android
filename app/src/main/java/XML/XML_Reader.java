@@ -1,6 +1,7 @@
 package XML;
 
 import java.io.FileInputStream;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -36,5 +37,5 @@ public interface XML_Reader {
      * @param tags         the tags to read from the XML file specified
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      */
-    Map<String, String> Read_File(FileInputStream input_Stream, Tags_To_Read tags);
+    Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception;
 }
