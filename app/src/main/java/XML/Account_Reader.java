@@ -11,16 +11,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//todo to test the classes going to create a Test interface that doesn't require a FileInputStream and instead is hardedcoded file path
-class Login_Reader implements XML_Reader {
+class Account_Reader implements XML_Reader {
     /**
      * Not Using Name Spaces so = NULL
      */
     private static final String NAME_SPACE = null;
     /**
-     * Name of the initial value which Login Information is Stored Under
+     * Name of the initial value which Account Information is Stored Under
      */
-    private static final String ENTRY_TAG = "Login Information";
+    private static final String ENTRY_TAG = "Account Information";
 
     /**
      * Read file map.
@@ -28,8 +27,6 @@ class Login_Reader implements XML_Reader {
      * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
      * @param tags         the tags to read from the XML file specified
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
-     * @throws NullPointerException
-     * @throws XML_Reader_Exception
      */
     @Override
     public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
@@ -52,7 +49,6 @@ class Login_Reader implements XML_Reader {
             throw new NullPointerException("Input Stream Object Null");
         }
     }
-
     /**
      * Method parses the XML File until the initial Tag "ENTRY_TAG' is found or End_DOCUMENT event is reached.
      *
@@ -156,5 +152,5 @@ class Login_Reader implements XML_Reader {
             }
         }
     }
-}
 
+}
