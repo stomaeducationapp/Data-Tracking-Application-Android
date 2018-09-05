@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a48a3662-4ce3-4f36-9245-38ec30c9a5ec" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_Unit_Test.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/Login_Reader_Unit_Test.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -33,12 +30,24 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Export_Data.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="Export_Data.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="374">
-                    <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+                  <state relative-caret-position="544">
+                    <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
                     <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Account_Reader.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="238">
+                    <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="21" selection-end-column="66" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -65,8 +74,8 @@
       <file leaf-file-name="XML_Reader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="39" selection-end-column="139" />
+            <state relative-caret-position="281">
+              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -84,23 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account_Reader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Medical_Reader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="332">
+              <caret line="129" column="81" lean-forward="true" selection-start-line="129" selection-start-column="81" selection-end-line="129" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,8 +108,8 @@
       <file leaf-file-name="Account_Reader_Unit_Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_Unit_Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -2152,7 +2149,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/Factory/Factory.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Factory/Factory_Unit_Test.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Observers/Update_Data_For_Account_From_File_Test.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Test_Interface.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/Login_Reader_Unit_Test.java" />
@@ -2160,13 +2156,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/XML/Account_ReaderTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_Unit_Test.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-18" />
-    <option name="y" value="20" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -2188,13 +2185,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
             <path>
               <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -2203,6 +2201,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2481,7 +2482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536058484496</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created and Coded Account Reader, Created MEdical_Reader and Unit Test classes">
+      <created>1536072851801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536072851801</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2493,7 +2501,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-18" y="20" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2563,7 +2571,8 @@
     <MESSAGE value="Pull Request and Commit From Master to Factory Branch" />
     <MESSAGE value="Added XML Reader Interface, Enum, and Method. Javadoc'd and Comments" />
     <MESSAGE value="Moving of Code from Update_Information_From_File Obser to Login_Reader, Research on how to test with InputStream and OutputStream&#10;Updated Code for dealing with a list of Enums to check against for Tags to read&#10;&#10;Delete of Files Update_data_Form_Account_From_File and Update_data_Observer as no longer needed due to XML package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving of Code from Update_Information_From_File Obser to Login_Reader, Research on how to test with InputStream and OutputStream&#10;Updated Code for dealing with a list of Enums to check against for Tags to read&#10;&#10;Delete of Files Update_data_Form_Account_From_File and Update_data_Observer as no longer needed due to XML package" />
+    <MESSAGE value="Created and Coded Account Reader, Created MEdical_Reader and Unit Test classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created and Coded Account Reader, Created MEdical_Reader and Unit Test classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2572,14 +2581,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="39" selection-end-column="139" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
@@ -2790,31 +2791,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Update_Data_For_Account_From_File.java" />
     <entry file="file://$PROJECT_DIR$/app/src/test/java/Observers/Update_Data_For_Account_From_File_Test.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="39" selection-end-column="139" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Test__Reader_Interface.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/Login_Reader_Unit_Test.java" />
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/XML/Account_ReaderTest.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
@@ -2827,28 +2804,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_Unit_Test.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="544">
+          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="21" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_Unit_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Android/sdk/platforms/android-26/android.jar!/java/util/Date.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="109" column="16" lean-forward="false" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+          <folding>
+            <element signature="e#2431#2432#0" expanded="true" />
+            <element signature="e#2482#2483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="332">
+          <caret line="129" column="81" lean-forward="true" selection-start-line="129" selection-start-column="81" selection-end-line="129" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

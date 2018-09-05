@@ -26,7 +26,10 @@ public interface XML_Reader {
         //Medical Tags
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time,
         //Account Tags
-        Gamification, Notification, State, Account_Name
+        Gamification, Notification, State, Account_Name,
+        //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
+        //Under the Key "Entries". This is for the Medical Data Only currently due to functionality.
+        Last_Entry, Daily_Data, Export_Data
     }
 
 //Note need to Add Throws at a later Date
