@@ -7,6 +7,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -25,18 +26,14 @@ class Medical_Reader implements XML_Reader {
     private static final String DATA_TAG = "Medical Entry";
     private static final String ENTRIES_RETRIEVED = "Entries";
     private static final int DAILY_REVIEW_CUTOFF_TIME = 9;//9AM
+    private static final String ENTRY_ATTRIBUTE_NAME = "Date";
     private Tags_To_Read entries_Required;
     private int number_Of_entries;
     private Boolean entry_Found;// Used to exit XML parser early if required, Usually due to needing a specific entry or date time is outside of requirements for the rest of the entries
     //Please Be careful when using this as it is Class Object Scope and not method!!!!
 
     //Attributes for comparing datetime tags
-    private int current_Day;
-    private int current_Month;
-    private int current_Year;
-    private int previous_Day;
-    private int previous_Month;
-    private int previous_Year;
+private String[] previous_Day_Date;
 
     /**
      * Read file map.
@@ -118,11 +115,13 @@ class Medical_Reader implements XML_Reader {
         Map<String, String> current_Entry;
         xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
         if (entries_Required == Tags_To_Read.Daily_Data) {
+            //Setup date values
+            Setup_Date_Tags();
             while (xmlPullParser.next() != XmlPullParser.END_TAG) {
                 String name = xmlPullParser.getName();
                 if (name.equals(DATA_TAG)) {
-                    //current_Entry = Read_Daily_Entry(xmlPullParser, tags);//TODO Add new Read_Daily_Entry Method for Daily_Report requirements
-                    //account_Information.putAll(current_Entry);
+                    current_Entry = Read_Daily_Entry(xmlPullParser, tags);
+                    account_Information.putAll(current_Entry);
                 } else {
                     Skip(xmlPullParser);
                 }
@@ -131,8 +130,8 @@ class Medical_Reader implements XML_Reader {
             while (xmlPullParser.next() != XmlPullParser.END_TAG) {
                 String name = xmlPullParser.getName();
                 if (name.equals(DATA_TAG)) {
-                    //current_Entry = Read_Export_Entry(xmlPullParser, tags);//TODO Add new Read_Export_Entry Method for Export_Data requirements
-                    //account_Information.putAll(current_Entry);
+                    current_Entry = Read_Entries(xmlPullParser, tags);
+                    account_Information.putAll(current_Entry);
                 } else {
                     Skip(xmlPullParser);
                 }
@@ -141,7 +140,7 @@ class Medical_Reader implements XML_Reader {
             while (xmlPullParser.next() != XmlPullParser.END_TAG || !entry_Found) {
                 String name = xmlPullParser.getName();
                 if (name.equals(DATA_TAG)) {
-                    current_Entry = Read_Single_Entry(xmlPullParser, tags);
+                    current_Entry = Read_Entries(xmlPullParser, tags);
                     account_Information.putAll(current_Entry);
                     entry_Found = true;
                 } else {
@@ -160,8 +159,45 @@ class Medical_Reader implements XML_Reader {
      * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
      * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
      */
-    private Map<String, String> Read_Single_Entry(XmlPullParser
-                                                  xmlPullParser, List<Tags_To_Read> tags) throws IOException, XmlPullParserException {
+    private Map<String, String> Read_Daily_Entry(XmlPullParser
+                                                         xmlPullParser, List<Tags_To_Read> tags) throws IOException, XmlPullParserException {
+        Map<String, String> account_Information = new HashMap<>();
+        xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
+        //Check the entry attribute for valid date-time
+        String entry_Date = xmlPullParser.getAttributeValue(null, ENTRY_ATTRIBUTE_NAME);
+        if (Entry_Date_Valid(entry_Date)) {
+            //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
+            while (xmlPullParser.next() != XmlPullParser.END_TAG) {
+                String name = xmlPullParser.getName();
+                String tag_Information;
+                if (tags.contains(name)) {//WARNING THIS BOOLEAN CHECK IS A LOOP of O(n) = tags.length
+                    tag_Information = readTag(xmlPullParser, name);
+                    account_Information.put(name, tag_Information);
+                } else {
+                    Skip(xmlPullParser);
+                }
+            }
+        }
+        return account_Information;
+    }
+
+    public boolean Entry_Date_Valid(String entry_Date) {
+        Boolean valid = false;
+        String[] entry_Date_Values = entry_Date.split("-");
+        valid = Arrays.equals(entry_Date_Values, previous_Day_Date);
+        return valid;
+    }
+
+    /**
+     * Method iterates through the 'ENTRY_TAG' information until corresponding END_TAG is found
+     *
+     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
+     * @return
+     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     */
+    private Map<String, String> Read_Entries(XmlPullParser
+                                                     xmlPullParser, List<Tags_To_Read> tags) throws IOException, XmlPullParserException {
         Map<String, String> account_Information = new HashMap<>();
         xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
         //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
@@ -239,6 +275,7 @@ class Medical_Reader implements XML_Reader {
     }
 
     private void Setup_Date_Tags() {
+        int current_Day, current_Month, current_Year, previous_Day, previous_Month, previous_Year;
         Calendar calender = Calendar.getInstance();
         current_Day = calender.get(Calendar.DAY_OF_MONTH);
         current_Month = calender.get(Calendar.MONTH);
@@ -269,8 +306,15 @@ class Medical_Reader implements XML_Reader {
                 previous_Month = current_Month - 1; // After Day is sorted go back to previous Month in Calendar
             } else {// otherwise just reduce day by 1
                 previous_Day = current_Day - 1;
+                previous_Month = current_Month;
             }
+            previous_Year = current_Year;
         }
+        previous_Day_Date = new String[4];
+        previous_Day_Date[0] = Integer.toString(DAILY_REVIEW_CUTOFF_TIME);
+        previous_Day_Date[1] = Integer.toString(previous_Day);
+        previous_Day_Date[2] = Integer.toString(previous_Month);
+        previous_Day_Date[3] = Integer.toString(previous_Year);
     }
 }
 
