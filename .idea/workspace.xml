@@ -52,8 +52,8 @@
       <file leaf-file-name="StomaStateCalculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="153" column="41" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="41" />
+            <state relative-caret-position="294">
+              <caret line="62" column="56" lean-forward="false" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2550,7 +2550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536470355105</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="More state calculation logic added">
+      <created>1536473982185</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1536473982185</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2633,7 +2640,8 @@
     <MESSAGE value="Initial method layout setup" />
     <MESSAGE value="State classes expanded.&#10;State Calculator fleshed out a bit more" />
     <MESSAGE value="Started changing some of the logic and working on calculation methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started changing some of the logic and working on calculation methods" />
+    <MESSAGE value="More state calculation logic added" />
+    <option name="LAST_COMMIT_MESSAGE" value="More state calculation logic added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2872,8 +2880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="153" column="41" lean-forward="false" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="41" />
+        <state relative-caret-position="294">
+          <caret line="62" column="56" lean-forward="false" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

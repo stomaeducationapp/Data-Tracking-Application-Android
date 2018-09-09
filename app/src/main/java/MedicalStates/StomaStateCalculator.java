@@ -1,6 +1,9 @@
 package MedicalStates;
 
 import android.content.Context;
+
+import org.xml.sax.XMLReader;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,8 +17,8 @@ import Factory.Factory;
 
 public class StomaStateCalculator {
 
-    private enum State {GREEN,YELLOW,RED}
-    private enum Flag {NUMBAGS,VOLUME}  //add more flags
+    //private enum State {GREEN,YELLOW,RED}
+    //private enum Flag {NUMBAGS,VOLUME}  //add more flags
 
     private StomaState state_Context;
     private Factory factory;
@@ -35,7 +38,7 @@ public class StomaStateCalculator {
             if (!Get_Account_Data()) {
                 //throw exception for data read fail
             }
-            List<Flag> flags = Get_Major_Flags();
+            Map<String, String> flags = Get_Major_Flags();
 
             Calculate_New_State(flags);
         }
@@ -55,15 +58,17 @@ public class StomaStateCalculator {
         return success;
     }
 
-    private List<Flag> Get_Major_Flags() {
+    private Map<String, String> Get_Major_Flags() {
         //Parse account data for presence of flags
-        List<Flag> presentFlags = new ArrayList<>();
-
+        Map<String, String> presentFlags = new HashMap<>();
+        String[] attributes;
         //parse full data and extract only relevant key-value pairs
-        for (String attribute: data) {
 
+        attributes = (String[])data.keySet().toArray();
+
+        for (int i = 0; i < attributes.length; i++) {
+            //iterate all data elements and only copy relevant ones to the new Map
         }
-
     }
 
     private boolean Calculate_New_State(Map<String, Integer> currFlags) {
