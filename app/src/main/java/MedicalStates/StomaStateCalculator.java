@@ -2,12 +2,14 @@ package MedicalStates;
 
 import android.content.Context;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import Factory.Factory;
 
 //
 //REFER TO STOMA STATE LOGIC DOCUMENT
+//SOME METHODS WILL CHANGE DEPENDING ON DATA STORAGE
 //
 
 public class StomaStateCalculator {
@@ -23,7 +25,7 @@ public class StomaStateCalculator {
 
 
     public StomaStateCalculator() {
-        state_Context = new GreenState(); //Probably refactor into factory at some point
+        state_Context = new GreenState(3); //Probably refactor into factory at some point
         factory = Factory.Get_Factory();
     }
 
@@ -35,9 +37,9 @@ public class StomaStateCalculator {
             }
             List<Flag> flags = Get_Major_Flags();
 
-            State newState = Calculate_New_State(flags);
+            Calculate_New_State(flags);
         }
-        catch (Exception e) {}  //change to specific exception when becomes known
+        catch (Exception e) {}  //change to specific exception when possible
     }
 
     private boolean Get_Account_Data() {
@@ -57,16 +59,99 @@ public class StomaStateCalculator {
         //Parse account data for presence of flags
         List<Flag> presentFlags = new ArrayList<>();
 
+        //parse full data and extract only relevant key-value pairs
+        for (String attribute: data) {
+
+        }
 
     }
 
-    private boolean Calculate_New_State(List<Flag> currFlags) {
+    private boolean Calculate_New_State(Map<String, Integer> currFlags) {
         //Check what attributes have been flagged and determine the state
-        int stateIdx = 3;
+        double stateIdx = 3.0 + (state_Context.getStateVal()*0.5);    //Base for new state
+        int stateRef;
         boolean success;
+        String[] attributes;
 
+        attributes = (String[])currFlags.keySet().toArray();
 
-        success = Change_State(stateIdx);
+        for (int i = 0; i < attributes.length; i++) {
+            String temp = attributes[i];
+            if (temp.equals("UrineColour")) {
+                int scale = currFlags.get(temp);
+                if (scale == 1) {
+                    stateIdx += 1;
+                }
+                else if (scale == 2) {
+                    stateIdx += 0.5;
+                }
+                else if (scale == 3) {
+                    stateIdx += 0;
+                }
+                else if (scale == 4) {
+                    stateIdx -= 0.5;
+                }
+                else if (scale == 5) {
+                    stateIdx -= 1;
+                }
+            }
+            else if (temp.equals("Consistency")) {
+                int scale = currFlags.get(temp);
+                if (scale == 1) {
+                    stateIdx += 1;
+                }
+                else if (scale == 2) {
+                    stateIdx += 0.5;
+                }
+                else if (scale == 3) {
+                    stateIdx += 0;
+                }
+                else if (scale == 4) {
+                    stateIdx -= 0.5;
+                }
+                else if (scale == 5) {
+                    stateIdx -= 1;
+                }
+            }
+            else if (temp.equals("Volume")) {   //will need some work to function properly as these are daily totals
+                int scale = currFlags.get(temp);
+                if (scale < 500) {
+                    stateIdx += 2;
+                }
+                else if (scale > 499 && scale < 600) {
+                    stateIdx += 0;
+                }
+                else if (scale > 599 && scale < 1100) {
+                    stateIdx -= 1;
+                }
+                else if (scale > 1099 && scale < 1201) {
+                    stateIdx += 0;
+                }
+                else if (scale > 1200) {
+                    stateIdx += 2;
+                }
+            }
+            else if (temp.equals("PhysicalCharacteristics")) {
+                int numTrue = currFlags.get(temp);
+                if (numTrue == 0) {
+                    stateIdx -= 1;
+                }
+                else {
+                    double dNumTrue = (double)numTrue;
+                    stateIdx += (dNumTrue - 1.0)/2.0;
+                }
+            }
+        }
+
+        stateRef = (int)Math.round(stateIdx);
+        if (stateRef < 1) {
+            stateRef = 1;
+        }
+        else if (stateRef > 10) {
+            stateRef = 10;
+        }
+
+        success = Change_State(stateRef);
         return success;
     }
 
