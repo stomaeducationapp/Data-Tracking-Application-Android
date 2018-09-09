@@ -1,13 +1,14 @@
 package MedicalStates;
 
 import android.content.Context;
-
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import Factory.Factory;
+
+//
+//REFER TO STOMA STATE LOGIC DOCUMENT
+//
 
 public class StomaStateCalculator {
 
@@ -34,7 +35,7 @@ public class StomaStateCalculator {
             }
             List<Flag> flags = Get_Major_Flags();
 
-            State newState = Calculate_New_State(state_Context.getState(), flags);
+            State newState = Calculate_New_State(flags);
         }
         catch (Exception e) {}  //change to specific exception when becomes known
     }
@@ -59,41 +60,42 @@ public class StomaStateCalculator {
 
     }
 
-    private State Calculate_New_State(String currState, List<Flag> currFlags) {
+    private boolean Calculate_New_State(List<Flag> currFlags) {
         //Check what attributes have been flagged and determine the state
-        State newState;
-        switch (currState) {
-            case "Green": newState = State.GREEN;
-                break;
-            case "Yellow": newState = State.YELLOW;
-                break;
-            case "Red": newState = State.RED;
-                break;
-            default: newState = null;
-                break;
-        }
+        int stateIdx = 3;
+        boolean success;
 
 
-        return newState;
+        success = Change_State(stateIdx);
+        return success;
     }
 
-    private boolean Change_State(State newState) {
-        boolean success = false;
+    private boolean Change_State(int stateIdx) {
+        boolean success;
         //Change to the required state
-        if (newState == State.GREEN)
+        if (stateIdx > 0 && stateIdx < 5)
         {
-            state_Context = new GreenState();
+            //must be green state
+            state_Context = new GreenState(stateIdx);
             success = true;
         }
-        else if (newState == State.YELLOW)
+        else if (stateIdx > 4 && stateIdx < 8)
         {
-            state_Context = new YellowState();
+            //must be yellow state
+            state_Context = new YellowState(stateIdx);
             success = true;
         }
-        else if (newState == State.RED)
+        else if (stateIdx > 7 && stateIdx < 11)
         {
-            state_Context = new RedState();
+            //must be red state
+            state_Context = new RedState(stateIdx);
             success = true;
+        }
+        else
+        {
+            //something went wrong - exception or return false
+            //throw new IllegalArgumentException("Error calculating state");
+            success = false;
         }
         return success;
     }
