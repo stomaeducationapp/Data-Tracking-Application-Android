@@ -38,7 +38,7 @@ public class StomaStateCalculator {
             if (!Get_Account_Data()) {
                 //throw exception for data read fail
             }
-            Map<String, String> flags = Get_Major_Flags();
+            Map<String, Integer> flags = Get_Major_Flags();
 
             Calculate_New_State(flags);
         }
@@ -58,16 +58,34 @@ public class StomaStateCalculator {
         return success;
     }
 
-    private Map<String, String> Get_Major_Flags() {
+    private Map<String, Integer> Get_Major_Flags() {
         //Parse account data for presence of flags
-        Map<String, String> presentFlags = new HashMap<>();
+        Map<String, Integer> presentFlags = new HashMap<>();
         String[] attributes;
         //parse full data and extract only relevant key-value pairs
 
         attributes = (String[])data.keySet().toArray();
 
         for (int i = 0; i < attributes.length; i++) {
-            //iterate all data elements and only copy relevant ones to the new Map
+            //iterate all data elements and only copy relevant fields to the new Map
+            String temp = attributes[i];
+            if (temp.equals("UrineColour")) {
+                int value = Integer.parseInt(data.get(temp));
+                presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
+            }
+            else if (temp.equals("Volume")) {
+                //volume code
+            }
+            else if (temp.equals("Consistency")) {
+                int value = Integer.parseInt(data.get(temp));
+                presentFlags.put("Consistency", value); //may need to change depending on format of stored data
+            }
+            else if (temp.equals("PhysicalCharacteristics")) {
+                //Physical characteristics should be stored as CSV format
+                String value = data.get("PhysicalCharacteristics");
+                String[] splitString = value.split(",");
+                presentFlags.put("PhysicalCharacteristics", splitString.length);
+            }
         }
     }
 
@@ -85,61 +103,64 @@ public class StomaStateCalculator {
             if (temp.equals("UrineColour")) {
                 int scale = currFlags.get(temp);
                 if (scale == 1) {
-                    stateIdx += 1;
+                    stateIdx += 1.0;
                 }
                 else if (scale == 2) {
                     stateIdx += 0.5;
                 }
                 else if (scale == 3) {
-                    stateIdx += 0;
+                    stateIdx += 0.0;
                 }
                 else if (scale == 4) {
                     stateIdx -= 0.5;
                 }
                 else if (scale == 5) {
-                    stateIdx -= 1;
+                    stateIdx -= 1.0;
                 }
             }
             else if (temp.equals("Consistency")) {
                 int scale = currFlags.get(temp);
                 if (scale == 1) {
-                    stateIdx += 1;
+                    stateIdx += 1.0;
                 }
                 else if (scale == 2) {
                     stateIdx += 0.5;
                 }
                 else if (scale == 3) {
-                    stateIdx += 0;
+                    stateIdx += 0.0;
                 }
                 else if (scale == 4) {
                     stateIdx -= 0.5;
                 }
                 else if (scale == 5) {
-                    stateIdx -= 1;
+                    stateIdx -= 1.0;
                 }
             }
             else if (temp.equals("Volume")) {   //will need some work to function properly as these are daily totals
                 int scale = currFlags.get(temp);
                 if (scale < 500) {
-                    stateIdx += 2;
+                    stateIdx += 2.0;
                 }
                 else if (scale > 499 && scale < 600) {
-                    stateIdx += 0;
+                    stateIdx += 0.0;
                 }
                 else if (scale > 599 && scale < 1100) {
-                    stateIdx -= 1;
+                    stateIdx -= 1.0;
                 }
-                else if (scale > 1099 && scale < 1201) {
-                    stateIdx += 0;
+                else if (scale > 1099 && scale < 1200) {
+                    stateIdx += 0.0;
                 }
-                else if (scale > 1200) {
-                    stateIdx += 2;
+                else if (scale > 1199) {
+                    stateIdx += 2.0;
                 }
             }
             else if (temp.equals("PhysicalCharacteristics")) {
                 int numTrue = currFlags.get(temp);
                 if (numTrue == 0) {
-                    stateIdx -= 1;
+                    stateIdx -= 1.0;
+                }
+                else if (numTrue > 7) {
+                    stateIdx += 3.0;
                 }
                 else {
                     double dNumTrue = (double)numTrue;
