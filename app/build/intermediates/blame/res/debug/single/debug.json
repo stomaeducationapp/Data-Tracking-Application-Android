@@ -1044,6 +1044,10 @@
         "source": "C:\\Users\\Patrick\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\70e2bf7eeaaff84e94954e78029e4f11\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
+        "merged": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\res\\merged\\debug\\xml_valid_account_data.xml.flat",
+        "source": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\src\\main\\res\\xml\\valid_account_data.xml"
+    },
+    {
         "merged": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
         "source": "C:\\Users\\Patrick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f8ac97b019bae015e78c3d376a036d1f\\res\\color-v23\\abc_color_highlight_material.xml"
     },

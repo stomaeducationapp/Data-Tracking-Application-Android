@@ -4,9 +4,9 @@ import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,10 +18,11 @@ class Login_Reader implements XML_Reader {
      */
     private static final String NAME_SPACE = null;
     /**
-     * Name of the initial value which Login Information is Stored Under
+     * Name of the value which Login Information is Stored Under
      */
     private static final String ENTRY_TAG = "Login Information";
 
+    private static final String ACCOUNT_TAG = "Account";
     /**
      * Read file map.
      *
@@ -32,7 +33,7 @@ class Login_Reader implements XML_Reader {
      * @throws XML_Reader_Exception
      */
     @Override
-    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+    public Map<String, String> Read_File(InputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
         if (input_Stream != null) {
             Map<String, String> account_Information = null;
             XmlPullParser xmlPullParser = Xml.newPullParser();
@@ -75,6 +76,39 @@ class Login_Reader implements XML_Reader {
         return account_Information;
     }
 
+
+
+    /**
+     * Method iterates through the 'ENTRY_TAG' information until corresponding END_TAG is found
+     *
+     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
+     * @return
+     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     */
+    private Map<String, String> readEntry(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws IOException, XmlPullParserException {
+        Map<String, String> account_Information = new HashMap<>();
+        xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
+        //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information),WARNING due to current While{while}} loop o(n^2)
+        while (xmlPullParser.next() != XmlPullParser.END_TAG) {
+            String name = xmlPullParser.getName();
+            if(name.equals(ACCOUNT_TAG)) {
+                while (xmlPullParser.next() != XmlPullParser.END_TAG) {//Another O(n) loop meaning
+                    name = xmlPullParser.getName();
+                    String tag_Information;
+                    if (tags.contains(name)) {//WARNING THIS BOOLEAN CHECK IS A LOOP of O(n) = tags.length
+                        tag_Information = readTag(xmlPullParser, name);
+                        account_Information.put(name, tag_Information);
+                    } else {
+                        Skip(xmlPullParser);
+                    }
+                }
+            } else {
+                Skip(xmlPullParser);
+            }
+        }
+        return account_Information;
+    }
     /**
      * This Method finds the Tag and then calls readText to retrive the information attached to the tag
      *
@@ -108,32 +142,6 @@ class Login_Reader implements XML_Reader {
         }
         return result;
     }
-
-    /**
-     * Method iterates through the 'ENTRY_TAG' information until corresponding END_TAG is found
-     *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
-     * @return
-     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
-     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
-     */
-    private Map<String, String> readEntry(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws IOException, XmlPullParserException {
-        Map<String, String> account_Information = new HashMap<>();
-        xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
-        //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
-        while (xmlPullParser.next() != XmlPullParser.END_TAG) {
-            String name = xmlPullParser.getName();
-            String tag_Information;
-            if (tags.contains(name)) {//WARNING THIS BOOLEAN CHECK IS A LOOP of O(n) = tags.length
-                tag_Information = readTag(xmlPullParser, name);
-                account_Information.put(name, tag_Information);
-            } else {
-                Skip(xmlPullParser);
-            }
-        }
-        return account_Information;
-    }
-
     /**
      * Method Skips current Tag, iterating until corresponding 'END_TAG' is found
      * This Method is taken from https://developer.android.com/training/basics/network-ops/xml#instantiate provided to Android Developers

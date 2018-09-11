@@ -7,6 +7,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -43,7 +44,7 @@ private String[] previous_Day_Date;
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      */
     @Override
-    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+    public Map<String, String> Read_File(InputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
         if (input_Stream != null) {
             number_Of_entries = 0;
             entries_Required = null;
@@ -166,13 +167,14 @@ private String[] previous_Day_Date;
         //Check the entry attribute for valid date-time
         String entry_Date = xmlPullParser.getAttributeValue(null, ENTRY_ATTRIBUTE_NAME);
         if (Entry_Date_Valid(entry_Date)) {
+            number_Of_entries++;
             //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
             while (xmlPullParser.next() != XmlPullParser.END_TAG) {
                 String name = xmlPullParser.getName();
                 String tag_Information;
                 if (tags.contains(name)) {//WARNING THIS BOOLEAN CHECK IS A LOOP of O(n) = tags.length
                     tag_Information = readTag(xmlPullParser, name);
-                    account_Information.put(name, tag_Information);
+                    account_Information.put(name + Integer.toString(number_Of_entries), tag_Information);
                 } else {
                     Skip(xmlPullParser);
                 }
@@ -201,12 +203,13 @@ private String[] previous_Day_Date;
         Map<String, String> account_Information = new HashMap<>();
         xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
         //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
+        number_Of_entries++;
         while (xmlPullParser.next() != XmlPullParser.END_TAG) {
             String name = xmlPullParser.getName();
             String tag_Information;
             if (tags.contains(name)) {//WARNING THIS BOOLEAN CHECK IS A LOOP of O(n) = tags.length
                 tag_Information = readTag(xmlPullParser, name);
-                account_Information.put(name, tag_Information);
+                account_Information.put(name + Integer.toString(number_Of_entries), tag_Information);
             } else {
                 Skip(xmlPullParser);
             }
