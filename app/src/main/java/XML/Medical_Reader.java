@@ -182,7 +182,7 @@ private String[] previous_Day_Date;
         }
         return account_Information;
     }
-
+    //todo check when it was entered, based on Minutes as well!!!!!!!
     public boolean Entry_Date_Valid(String entry_Date) {
         Boolean valid = false;
         String[] entry_Date_Values = entry_Date.split("-");
