@@ -30,7 +30,7 @@ class Account_Reader implements XML_Reader {
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      */
     @Override
-    public Map<String, String> Read_File(InputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
         if (input_Stream != null) {
             Map<String, String> account_Information = null;
             XmlPullParser xmlPullParser = Xml.newPullParser();

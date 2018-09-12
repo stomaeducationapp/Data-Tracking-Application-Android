@@ -44,7 +44,7 @@ private String[] previous_Day_Date;
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      */
     @Override
-    public Map<String, String> Read_File(InputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
         if (input_Stream != null) {
             number_Of_entries = 0;
             entries_Required = null;
