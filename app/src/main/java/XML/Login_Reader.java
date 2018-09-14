@@ -26,20 +26,17 @@ class Login_Reader implements XML_Reader {
     /**
      * Read file map.
      *
-     * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
+     * @param  xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
      * @param tags         the tags to read from the XML file specified
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      * @throws NullPointerException
      * @throws XML_Reader_Exception
      */
     @Override
-    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
-        if (input_Stream != null) {
+    public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+        if (xmlPullParser != null) {
             Map<String, String> account_Information = null;
-            XmlPullParser xmlPullParser = Xml.newPullParser();
             try {
-                xmlPullParser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-                xmlPullParser.setInput(input_Stream, NAME_SPACE);
                 xmlPullParser.nextTag();
                 account_Information = readData(xmlPullParser, tags);
 

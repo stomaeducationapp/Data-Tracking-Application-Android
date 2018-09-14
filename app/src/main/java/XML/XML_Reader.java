@@ -1,6 +1,9 @@
 package XML;
 
+import org.xmlpull.v1.XmlPullParser;
+
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -41,11 +44,11 @@ public interface XML_Reader {
     /**
      * Read file map.
      *
-     * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
+     * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
      * @param tags         the tags to read from the XML file specified
      * @return Map         Map with string pair values, with Tag name attached to the value read in, if empty it will be "".
      * @throws NullPointerException If the input_Stream Object is Null
      * @throws XML_Reader_Exception If an XmlPullParserException or IOException has occurred
      */
-    Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception;
+    Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception;
 }

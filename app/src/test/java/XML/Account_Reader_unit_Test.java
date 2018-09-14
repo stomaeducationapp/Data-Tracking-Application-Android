@@ -1,33 +1,48 @@
 package XML;
 
-import android.util.Log;
-
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class Account_Reader_unit_Test {
 
+    XML_Reader xml_Reader;
+    List<XML_Reader.Tags_To_Read> list;
+    @Before
+    public void setup() {
+        xml_Reader = new Account_Reader();
+        list = new LinkedList<>();
+    }
+
+
     @Test
-    public void read_File() throws IOException {
+    public void Check_File_Stream() {
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream("empty_file.xml");
+        assertNotNull(is);
+    }
 
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream("test.txt");
-        BufferedReader rd = new BufferedReader(new InputStreamReader(is), 4096);
-        String line;
-        StringBuilder sb =  new StringBuilder();
-            while ((line = rd.readLine()) != null) {
-                sb.append(line);
-            }
-            rd.close();
-
-
-        String contentOfMyInputStream = sb.toString();
-        System.out.println(contentOfMyInputStream);
-        assertEquals("reader", contentOfMyInputStream);
+    @Test
+    public void Empty_File_Parse() throws IOException, XmlPullParserException {
+        list.add(XML_Reader.Tags_To_Read.Account_Name);
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream("empty_file.xml");
+        XmlPullParser xmlPullParser = Mockito.mock(XmlPullParser.class);
+        Mockito.when(xmlPullParser.getName()).thenReturn("a");
+        Mockito.when(xmlPullParser.next()).thenReturn(XmlPullParser.END_DOCUMENT);
+        try {
+            Map<String, String> map = xml_Reader.Read_File(xmlPullParser, list);
+            assertNotNull(map);
+        } catch (XML_Reader_Exception e) {
+            e.printStackTrace();
+        }
     }
 }

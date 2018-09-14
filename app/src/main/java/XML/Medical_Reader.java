@@ -1,13 +1,9 @@
 package XML;
 
-import android.util.Xml;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -34,23 +30,22 @@ class Medical_Reader implements XML_Reader {
     //Please Be careful when using this as it is Class Object Scope and not method!!!!
 
     //Attributes for comparing datetime tags
-private String[] previous_Day_Date;
+    private String[] previous_Day_Date;
 
     /**
      * Read file map.
      *
-     * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
-     * @param tags         the tags to read from the XML file specified
+     * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
+     * @param tags          the tags to read from the XML file specified
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      */
     @Override
-    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
-        if (input_Stream != null) {
+    public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+        if (xmlPullParser != null) {
             number_Of_entries = 0;
             entries_Required = null;
             entry_Found = false;
             Map<String, String> account_Information = null;
-            XmlPullParser xmlPullParser = Xml.newPullParser();
             // retrieve and remove tag specifying the entries needed to retrieve and set to an Object Attribute. Also reduces the O(n) of the boolean
             if (tags.contains(Tags_To_Read.Daily_Data)) {
                 entries_Required = Tags_To_Read.Daily_Data;
@@ -65,8 +60,6 @@ private String[] previous_Day_Date;
                 tags.remove(Tags_To_Read.Last_Entry);
             }
             try {
-                xmlPullParser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-                xmlPullParser.setInput(input_Stream, NAME_SPACE);
                 xmlPullParser.nextTag();
                 account_Information = readData(xmlPullParser, tags);
             } catch (XmlPullParserException e) {
@@ -182,6 +175,7 @@ private String[] previous_Day_Date;
         }
         return account_Information;
     }
+
     //todo check when it was entered, based on Minutes as well!!!!!!!
     public boolean Entry_Date_Valid(String entry_Date) {
         Boolean valid = false;

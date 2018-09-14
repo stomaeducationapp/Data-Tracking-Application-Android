@@ -1,13 +1,9 @@
 package XML;
 
-import android.util.Xml;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,21 +21,17 @@ class Account_Reader implements XML_Reader {
     /**
      * Read file map.
      *
-     * @param input_Stream Represents the FileInputStream Object used to read users data file stored on the device
+     * @param  xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
      * @param tags         the tags to read from the XML file specified
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
      */
     @Override
-    public Map<String, String> Read_File(FileInputStream input_Stream, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
-        if (input_Stream != null) {
+    public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception {
+        if (xmlPullParser != null) {
             Map<String, String> account_Information = null;
-            XmlPullParser xmlPullParser = Xml.newPullParser();
             try {
-                xmlPullParser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-                xmlPullParser.setInput(input_Stream, NAME_SPACE);
                 xmlPullParser.nextTag();
                 account_Information = readData(xmlPullParser, tags);
-
             } catch (XmlPullParserException e) {
                 throw new XML_Reader_Exception("Failed to Read Login XML File: " + e);
             } catch (IOException e) {
@@ -59,7 +51,7 @@ class Account_Reader implements XML_Reader {
      * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
      */
     private Map<String, String> readData(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws IOException, XmlPullParserException {
-        Map<String, String> account_Information = null;
+        Map<String, String> account_Information = new HashMap<>();
         //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
         while (xmlPullParser.next() != XmlPullParser.END_DOCUMENT) {
             String entry = xmlPullParser.getName();
@@ -73,10 +65,10 @@ class Account_Reader implements XML_Reader {
     }
 
     /**
-     * This Method finds the Tag and then calls readText to retrive the information attached to the tag
+     * This Method finds the Tag and then calls readText to retrieve the information attached to the tag
      *
      * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
-     * @param tag           The value of the Tag name whos information is to be read.
+     * @param tag           The value of the Tag name who's information is to be read.
      * @return String containing the information read from the xml file for the corresponding tag provided, else ""
      * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
      * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
@@ -109,7 +101,7 @@ class Account_Reader implements XML_Reader {
     /**
      * Method iterates through the 'ENTRY_TAG' information until corresponding END_TAG is found
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
+     * @param  xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
      * @return
      * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
      * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
