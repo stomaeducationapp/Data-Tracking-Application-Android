@@ -1,5 +1,15 @@
 package Factory;
 
+import Observers.Check_State;
+import Observers.Daily_Review;
+import Observers.Export_Data;
+import Observers.Form_Change;
+import Observers.Form_Change_Observer;
+import Observers.State_Observer;
+import Observers.Time_Observer;
+
+
+
 /**
  * <h1>Form_Change</h1>
  * The Factory Java Class is used to construct classes removing dependence's between classes and packages
@@ -15,6 +25,8 @@ package Factory;
  * Added Basic 'Make' methods for all interfaces in the Design UML of the Data Tracking Application, Patrick Crockford
  * Added Comments for future modifications that are required when integrating Factory with other packages, Patrick Crockford
  * JavaDoc, Patrick Crockford
+ * 17th Sept
+ * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
  */
 public class Factory {
     private static Factory factory;
@@ -62,33 +74,48 @@ public class Factory {
      */
 
     //OBSERVER PACKAGE
-    /*
+
+    /**
+     * Make form change observer form change observer.
+     *
+     * @return the form change observer
+     */
     public Form_Change_Observer Make_Form_Change_Observer(){
-        return new Change_Form();
-    }*/
+        return new Form_Change(this);
+    }
 
-    /*
+
+    /**
+     * Make state observer state observer.
+     *
+     * @return the state observer
+     */
     public State_Observer Make_State_Observer() {
-        return new Change_State();
-    }*/
+        return new Check_State(this);
+    }
 
-    /*
+
+    /**
+     * Make time observer time observer.
+     *
+     * @param choice the choice
+     * @return the time observer
+     */
     public Time_Observer Make_Time_Observer(Time_Observer_Choice choice){
-        //Will need Switch logic statement
         Time_Observer time_Observer = null;
         switch(choice){
-            case(Time_Observer_Choice.Daily_Review):
-                time_Observer = new Daily_Review();
+            case Daily_Review:
+                time_Observer = new Daily_Review(this);
                 break;
-            case(Time_Observer_Choice.Export_Data):
-                time_Observer = new Export_Data();
+            case Export_Data:
+                time_Observer = new Export_Data(this);
                 break;
             default:
-                throw new RuntimeException("Invalid Enum given for Time_Observer_Choice")
+                throw new RuntimeException("Invalid Enum given for Time_Observer_Choice");
         }
         return time_Observer;
     }
-    */
+
 
     //LOG_IN PACKAGE
     /*

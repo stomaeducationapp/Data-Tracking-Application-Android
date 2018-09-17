@@ -2,7 +2,7 @@ package Observers;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-
+import Factory.Factory;
 /**
  * <h1>Daily_Review</h1>
  * The Update_Data_For_Account_From_File Java Class is used to Read In Account Information from XML file stored on the device.
@@ -18,20 +18,22 @@ import java.io.FileOutputStream;
  * <p>
  * 30th Aug
  * Changed to JavaDoc Commenting, Patrick Crockford
+ * 17th Sept
+ * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
  * <h>NOTE</h>
  */
-class Daily_Review implements Time_Observer {
+public class Daily_Review implements Time_Observer {
     // TODO: 27-Aug-18 Remove comments around Factory when class has been created
     /**
      * Factory Object for creating Objects with dependency injection
      */
-    //private Factory factory;
+    private Factory factory;
 
     /**
      * Instantiates a new Daily review.
      */
-    public Daily_Review(/*Factory factory*/) {
-        //this.factory = factory;
+    public Daily_Review(Factory factory) {
+        this.factory = factory;
     }
 
     /**
@@ -44,7 +46,7 @@ class Daily_Review implements Time_Observer {
     public boolean Notify(FileInputStream input_Stream, FileOutputStream output_Stream) throws NullPointerException{
         if (input_Stream != null || output_Stream != null) {
             boolean valid = false;
-            // TODO: 27-Aug-18 When Daily Review Package is created uncomment below
+            // TODO: 17-Sep-18 Uncomment and modify when Daily Review package has been created
         //Daily_Review_Calculator daily_review_calculator = factory.Create_Daily_Review_Calculator();
         //valid = daily_review_calculator.Generate_New_Review(input_Stream, output_Stream);
         return valid;
