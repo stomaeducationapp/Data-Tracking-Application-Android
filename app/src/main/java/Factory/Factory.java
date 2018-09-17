@@ -42,7 +42,7 @@ public class Factory {
     /**
      * Private Constructor, due to singleton Pattern
      */
-    private Factory() {
+    private Factory(){
         if (factory != null) {
             throw new RuntimeException("Please Use Get_Factory() method instead of Java Reflection!");
         }
@@ -52,7 +52,7 @@ public class Factory {
      * Returns the instance of the factory, either by creating a new one during first call of this method
      * or returning the existing instance
      *
-     * @return Factory
+     * @return Factory factory
      */
     public static Factory Get_Factory() {
         if (factory == null) {
@@ -76,9 +76,9 @@ public class Factory {
     //OBSERVER PACKAGE
 
     /**
-     * Make form change observer form change observer.
+     * Constructs a Form_Change_Observer Object
      *
-     * @return the form change observer
+     * @return Form_Change_Observer Object
      */
     public Form_Change_Observer Make_Form_Change_Observer(){
         return new Form_Change(this);
@@ -86,9 +86,9 @@ public class Factory {
 
 
     /**
-     * Make state observer state observer.
+     * Constructs a State_Observer Object
      *
-     * @return the state observer
+     * @return State_Observer Object
      */
     public State_Observer Make_State_Observer() {
         return new Check_State(this);
@@ -96,10 +96,10 @@ public class Factory {
 
 
     /**
-     * Make time observer time observer.
+     * Constructs a Time_Observer Object, with one of various concrete class implementations
      *
-     * @param choice the choice
-     * @return the time observer
+     * @param choice enum representing the choice of which concrete class to construct
+     * @return Time_Observer Object
      */
     public Time_Observer Make_Time_Observer(Time_Observer_Choice choice){
         Time_Observer time_Observer = null;

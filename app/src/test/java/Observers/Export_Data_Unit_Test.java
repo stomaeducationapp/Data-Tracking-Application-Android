@@ -3,6 +3,8 @@ package Observers;
 import org.junit.Before;
 import org.junit.Test;
 
+import Factory.Factory;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -26,7 +28,7 @@ public class Export_Data_Unit_Test {
      */
     @Before
     public void initialize() {
-        time_Observer = new Export_Data();
+        time_Observer = new Export_Data(Factory.Get_Factory());
     }
 
     /**

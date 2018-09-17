@@ -3,6 +3,8 @@ package Observers;
 import org.junit.Before;
 import org.junit.Test;
 
+import Factory.Factory;
+
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.*;
 
@@ -27,7 +29,7 @@ public class Daily_Review_Test {
      */
     @Before
     public void initialize() {
-        time_Observer = new Daily_Review();
+        time_Observer = new Daily_Review(Factory.Get_Factory());
     }
 
     /**
