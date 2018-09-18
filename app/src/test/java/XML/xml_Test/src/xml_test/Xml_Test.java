@@ -15,7 +15,7 @@ public class Xml_Test {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Account_Reader_Test account_Reader_Test = new Account_Reader_Test();
+        account_Reader_Test.Run_Tests();
     }
-    
 }
