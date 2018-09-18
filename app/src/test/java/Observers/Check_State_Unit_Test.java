@@ -3,6 +3,8 @@ package Observers;
 import org.junit.Before;
 import org.junit.Test;
 
+import Factory.Factory;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -26,7 +28,7 @@ public class Check_State_Unit_Test {
      */
     @Before
     public void initialize() {
-        state_Observer = new Check_State();
+        state_Observer = new Check_State(Factory.Get_Factory());
     }
 
     /**
