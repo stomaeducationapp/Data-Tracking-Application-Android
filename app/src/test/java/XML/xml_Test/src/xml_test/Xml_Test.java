@@ -17,5 +17,8 @@ public class Xml_Test {
     public static void main(String[] args) {
         Account_Reader_Test account_Reader_Test = new Account_Reader_Test();
         account_Reader_Test.Run_Tests();
+        
+        Login_Reader_Test login_Reader_Test = new Login_Reader_Test();
+        login_Reader_Test.Run_Tests();
     }
 }

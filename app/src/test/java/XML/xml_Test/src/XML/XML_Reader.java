@@ -46,9 +46,11 @@ public interface XML_Reader {
      *
      * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
      * @param tags         the tags to read from the XML file specified
+     * @param account_Name Name of the account for login purposes, Set to Null if not using Login_Reader Functionality
      * @return Map         Map with string pair values, with Tag name attached to the value read in, if empty it will be "".
      * @throws NullPointerException If the input_Stream Object is Null
      * @throws XML_Reader_Exception If an XmlPullParserException or IOException has occurred
      */
-    Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags) throws NullPointerException, XML_Reader_Exception;
+    
+    Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags, String account_Name) throws NullPointerException, XML_Reader_Exception;
 }
