@@ -4,9 +4,7 @@ import android.content.Context;
 
 import org.xml.sax.XMLReader;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import Factory.Factory;
 
@@ -26,31 +24,44 @@ public class StomaStateCalculator {
     //data fields
     private Map<String, String> data;   //might be refactored to become a local var in Calculate_State method
     private int userDailyOutput;        //user entered average stoma output volume
+    private int urineCount;      //total urine frequency counter
+    private int outputVolume;    //total output record
+    private int numEntries;      //number of entries for the current day
 
 
     public StomaStateCalculator() {
         state_Context = new GreenState(3); //Probably refactor into factory at some point
         factory = Factory.Get_Factory();
+        urineCount = 0;
+        outputVolume = 0;
+        numEntries = 0;
+        //sys_Ref = ;
     }
 
     public boolean Calculate_State() {
+        boolean success = true;
+        numEntries++;
         try {
             //Read in the account data
             if (!Get_Account_Data()) {
-                //throw exception for data read fail
+                throw new IllegalArgumentException("Problem reading from file");
             }
-            Map<String, Integer> flags = Get_Major_Flags();
+            Map<String, Integer> flags = Get_Flags_From_Data(); //retrieve and simplify the flag info from the input data
 
-            Calculate_New_State(flags);
+            if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
+                throw new IllegalArgumentException("Problem calculating new state");
+            }
+
         }
-        catch (Exception e) {}  //change to specific exception when possible
+        catch (IllegalArgumentException e) {success = false;}  //change to specific exception when possible
+        return success;
     }
 
     private boolean Get_Account_Data() {
         boolean success = true;
 
         //read in account data from XML file
-        XMLReader dataIn= factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
+        XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
         try {
             data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
         }
@@ -59,14 +70,14 @@ public class StomaStateCalculator {
         return success;
     }
 
-    private Map<String, Integer> Get_Major_Flags() {
+    private Map<String, Integer> Get_Flags_From_Data() {
         //Parse account data for presence of flags
         Map<String, Integer> presentFlags = new HashMap<>();
         String[] attributes;
-        //parse full data and extract only relevant key-value pairs
 
         attributes = (String[])data.keySet().toArray();
 
+        //parse full data and extract only relevant key-value pairs
         for (int i = 0; i < attributes.length; i++) {
             //iterate all data elements and only copy relevant fields to the new Map
             String temp = attributes[i];
@@ -74,20 +85,35 @@ public class StomaStateCalculator {
                 int value = Integer.parseInt(data.get(temp));
                 presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
             }
-            else if (temp.equals("Volume")) {
+            else if (temp.equals("UrineFrequency")) {   //only add if total for current day
+                //frequency code
+                if (numEntries > 1) {   //don't use urine frequency until there has been at least 2 entries
+                    int tmp = Integer.parseInt(data.get(temp));
+                    urineCount += tmp;
+                    presentFlags.put("UrineFrequency", urineCount);
+                }
+            }
+            else if (temp.equals("Volume")) {   //only add if total for current day
                 //volume code
+                if (numEntries > 1) {   //don't use total volume until there has been at least 2 entries
+                    int tmp = Integer.parseInt(data.get(temp));
+                    outputVolume += tmp;
+                    presentFlags.put("Volume", outputVolume);
+                }
             }
             else if (temp.equals("Consistency")) {
                 int value = Integer.parseInt(data.get(temp));
                 presentFlags.put("Consistency", value); //may need to change depending on format of stored data
             }
             else if (temp.equals("PhysicalCharacteristics")) {
-                //Physical characteristics should be stored as CSV format
+                //Physical characteristics should be stored as CSV format. OR just store the number true from the start
                 String value = data.get("PhysicalCharacteristics");
                 String[] splitString = value.split(",");
                 presentFlags.put("PhysicalCharacteristics", splitString.length);
+                //presentFlags.put("PhysicalCharacteristics", Integer.parseInt(value));
             }
         }
+        return presentFlags;
     }
 
     private boolean Calculate_New_State(Map<String, Integer> currFlags) {
@@ -228,5 +254,11 @@ public class StomaStateCalculator {
             success = false;
         }
         return success;
+    }
+
+    public void reset() {
+        urineCount = 0;
+        outputVolume = 0;
+        numEntries = 0;
     }
 }

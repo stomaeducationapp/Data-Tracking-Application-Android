@@ -18,6 +18,11 @@ public class RedState implements StomaState {
         return stateVal;
     }
 
+
+    public String getState() {
+        return "Red";
+    }
+
     @Override
     public boolean Account_State_Information(Context sys_Ref) {
         return false;
