@@ -237,5 +237,7 @@ public class Login_Reader_Test {
             System.out.println("Tests Passed = " + tests_Passed);
             System.out.println("% Passed = NULL ");
         }
+        Xml_Test.passed += tests_Passed;
+        Xml_Test.total += tests_Run;
     }
 }

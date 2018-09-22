@@ -145,7 +145,7 @@ public class Account_Reader_Test {
                     }
                 } catch (XML_Reader_Exception ex) {
                     System.out.println("Valid File Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
-                    
+
                 } catch (NullPointerException ex) {
                     Logger.getLogger(Account_Reader_Test.class
                             .getName()).log(Level.SEVERE, null, ex);
@@ -190,5 +190,7 @@ public class Account_Reader_Test {
             System.out.println("Tests Passed = " + tests_Passed);
             System.out.println("% Passed = NULL ");
         }
+        Xml_Test.passed += tests_Passed;
+        Xml_Test.total += tests_Run;
     }
 }

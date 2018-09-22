@@ -13,13 +13,19 @@ import java.util.Map;
 
 /**
  * <h>Note</h>
- * Due to the way the XML reader assumes that the daily report will be done before any new entries for the day it will cause an error if done after an entry.
- * To Reduce this risk a new value will be added to Account data file with the date of the latest daily review and will trigger a daily review
+ * Due to the way the XML reader assumes that the daily report will be done
+ * before any new entries for the day it will cause an error if done after an
+ * entry. To Reduce this risk a new value will be added to Account data file
+ * with the date of the latest daily review and will trigger a daily review
  */
-
-
 //Todo need to look up catching if a attribute is present as dates attributes will determine the entry, and differentiate between them
-class Medical_Reader implements XML_Reader {
+public class Medical_Reader implements XML_Reader {
+
+    private static final int HOUR = 0;
+    private static final int DAY = 1;
+    private static final int MONTH = 2;
+    private static final int YEAR = 3;
+
     /**
      * Not Using Name Spaces so = NULL
      */
@@ -29,28 +35,27 @@ class Medical_Reader implements XML_Reader {
      */
     private static final String ENTRY_TAG = "Medical_Information";
     private static final String MEDICAL_TAG = "Medical_Entry";
-    private static final String ENTRIES_RETRIEVED = "Entries";
     private static final int DAILY_REVIEW_CUTOFF_TIME = 9;//9:00AM as daily review is 9:00AM to 8:59AM
-    private static final String ENTRY_ATTRIBUTE_NAME = "Date";
     private Tags_To_Read entries_Required;
-    private int number_Of_entries;
-    private Boolean entry_Found;// Used to exit XML parser early if required, Usually due to needing a specific entry or date time is outside of requirements for the rest of the entries
-    //Please Be careful when using this as it is Class Object Scope and not method!!!!
-
+    private int number_Of_Entries;
+    private int prefix_Of_Key;
     //Attributes for comparing datetime tags
     private String[] previous_Day_Date;
 
     /**
      * Read file map.
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
+     * @param xmlPullParser Represents the XML Reader Object used to read users
+     *                      data file stored on the device
      * @param tags          the tags to read from the XML file specified
-     * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be 'NaN' value
+     * @return a Map with string pair values, with Tag name attached to the
+     *         value read in, if empty it will be 'NaN' value
      */
     @Override
     public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
-        if (xmlPullParser != null && enum_Tags != null) {
-            number_Of_entries = 0;
+        if (xmlPullParser != null && enum_Tags != null && !enum_Tags.isEmpty()) {
+            number_Of_Entries = 0;
+            prefix_Of_Key = 1;
             entries_Required = null;
             Map<String, String> account_Information = null;
             // retrieve and remove tag specifying the entries needed to retrieve and set to an Object Attribute. Also reduces the O(n) of the boolean
@@ -59,14 +64,14 @@ class Medical_Reader implements XML_Reader {
                 enum_Tags.remove(Tags_To_Read.Daily_Data);
                 //Setup date values
                 Setup_Date_Tags();
-            }
-            if (enum_Tags.contains(Tags_To_Read.Export_Data)) {
+            } else if (enum_Tags.contains(Tags_To_Read.Export_Data)) {
                 entries_Required = Tags_To_Read.Export_Data;
                 enum_Tags.remove(Tags_To_Read.Export_Data);
-            }
-            if (enum_Tags.contains(Tags_To_Read.Last_Entry)) {
+            } else if (enum_Tags.contains(Tags_To_Read.Last_Entry)) {
                 entries_Required = Tags_To_Read.Last_Entry;
                 enum_Tags.remove(Tags_To_Read.Last_Entry);
+            } else {
+                throw new XML_Reader_Exception("Invalid ENUM given for medical entries required for task provided, please read documentation");
             }
             try {
                 //Convert the ENUM list to String List
@@ -74,91 +79,130 @@ class Medical_Reader implements XML_Reader {
                 for (XML_Reader.Tags_To_Read tag : enum_Tags) {
                     tags.add(tag.toString());
                 }
+                xmlPullParser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
                 xmlPullParser.nextTag();
                 account_Information = readData(xmlPullParser, tags);
-            } catch (XmlPullParserException e) {
-                throw new XML_Reader_Exception("Failed to Read Login XML File: " + e);
-            } catch (IOException e) {
+            } catch (XmlPullParserException | IOException e) {
                 throw new XML_Reader_Exception("Failed to Read Login XML File: " + e);
             }
-            account_Information.put(ENTRIES_RETRIEVED, Integer.toString(number_Of_entries));
             return account_Information;
         } else {
-            throw new NullPointerException("Input Stream Object Null");
+            throw new NullPointerException("One of the following Errors has occurred: XMLPullParser is NULL, List<Tags_To_Read> is NULL or empty");
         }
     }
 
     /**
-     * Method parses the XML File until the initial Tag "ENTRY_TAG' is found or End_DOCUMENT event is reached.
+     * Method parses the XML File until the initial Tag "ENTRY_TAG' is found or
+     * End_DOCUMENT event is reached.
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
+     * @param xmlPullParser Represents the XML Reader Object used to read users
+     *                      account information file stored on the device
      * @param tags
-     * @return Map Object with string pair values of account information if successful, otherwise empty or null Map Object
-     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
-     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     * @return Map Object with string pair values of account information if
+     *         successful, otherwise empty or null Map Object
+     * @throws IOException            if XMLPullParser Class throws an
+     *                                IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an
+     *                                XmlPullParserException when reading from
+     *                                file
      */
     private Map<String, String> readData(XmlPullParser xmlPullParser, List<String> tags) throws IOException, XmlPullParserException {
         Map<String, String> account_Information = new HashMap<>();
         Map<String, String> tempMap;
         xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
-        entry_Found = false;
+        Boolean entry_Found = false;
         //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
-        while (xmlPullParser.next() != XmlPullParser.END_DOCUMENT || !entry_Found) {
+        while (xmlPullParser.next() != XmlPullParser.END_DOCUMENT && !entry_Found) {
             if (xmlPullParser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
             String entry = xmlPullParser.getName();
             if (entry.equals(MEDICAL_TAG)) {
-                if (entries_Required == Tags_To_Read.Last_Entry) {
-                    account_Information = Read_Entry(xmlPullParser, tags);
-                    entry_Found = true;
-                }
-            } else if (entries_Required == Tags_To_Read.Daily_Data) {
-                tempMap = Read_Entry(xmlPullParser, tags);
-                if (tempMap != null) {
-                    if (Entry_Date_Valid(tempMap.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + number_Of_entries))) {
-                        account_Information.putAll(tempMap);
-                        number_Of_entries++;
-                    } else { //Because the entries are in Chronological order from Present -> History (Top -> Bottom) the reader can stop once the entry is outside of the values
+                switch (entries_Required) {
+                    case Last_Entry:
+                        account_Information = Read_Entry(xmlPullParser, tags);
+                        number_Of_Entries++;
+                        prefix_Of_Key++;
                         entry_Found = true;
-                    }
+                        break;
+                    case Daily_Data:
+                        tempMap = Read_Entry(xmlPullParser, tags);
+                        if (Entry_Date_Valid(tempMap.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + prefix_Of_Key))) {
+                            account_Information.putAll(tempMap);
+                            number_Of_Entries++;
+                            prefix_Of_Key++;
+                        } else { //Because the entries are in Chronological order from Present -> History (Top -> Bottom) the reader can stop once the entry is outside of the values
+                            entry_Found = true;
+                        }
+                        break;
+                    case Export_Data:
+                        account_Information.putAll(Read_Entry(xmlPullParser, tags));
+                        number_Of_Entries++;
+                        prefix_Of_Key++;
+                        break;
+                    default:
+                        throw new RuntimeException("Invalid Entry type recieved, Shouldn't get here Critical Fault");
                 }
-            } else if (entries_Required == Tags_To_Read.Export_Data) {
-                account_Information.putAll(Read_Entry(xmlPullParser, tags));
             } else {
                 Skip(xmlPullParser);
             }
+        }
+        if (number_Of_Entries > 0) {
+            account_Information.put(XML_Reader.Tags_To_Read.Entries_Retrieved.toString(), Integer.toString(number_Of_Entries));
         }
         return account_Information;
     }
 
     public boolean Entry_Date_Valid(String entry_Date) {
         Boolean valid = false;
-        String[] entry_Date_Values = entry_Date.split("-");
-        valid = Arrays.equals(entry_Date_Values, previous_Day_Date);
+        try {
+            String[] entry_Date_Values = entry_Date.split("-");
+            //Entry from Yesterday 9am - 12 Midnight or Today 12:01AM to 8:59AM
+            if (Integer.parseInt(entry_Date_Values[YEAR]) >= Integer.parseInt(previous_Day_Date[YEAR])) {
+                if (Integer.parseInt(entry_Date_Values[MONTH]) >= Integer.parseInt(previous_Day_Date[MONTH])) {
+                    if (Integer.parseInt(entry_Date_Values[DAY]) == Integer.parseInt(previous_Day_Date[DAY])) {
+                        if (Integer.parseInt(entry_Date_Values[HOUR]) >= Integer.parseInt(previous_Day_Date[HOUR])) {
+                            valid = true;
+                        }
+                    } else if (Integer.parseInt(entry_Date_Values[DAY]) > Integer.parseInt(previous_Day_Date[DAY])) {
+                        if (Integer.parseInt(entry_Date_Values[HOUR]) < Integer.parseInt(previous_Day_Date[HOUR])) {
+                            valid = true;
+                        }
+                    }
+                }
+            }
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ex) {
+            valid = false;
+        }
         return valid;
     }
 
     /**
-     * Method iterates through the 'ENTRY_TAG' information until corresponding END_TAG is found
+     * Method iterates through the 'ENTRY_TAG' information until corresponding
+     * END_TAG is found
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
+     * @param xmlPullParser Represents the XML Reader Object used to read users
+     *                      account information file stored on the device
      * @return
-     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
-     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     * @throws IOException            if XMLPullParser Class throws an
+     *                                IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an
+     *                                XmlPullParserException when reading from
+     *                                file
      */
-    private Map<String, String> Read_Entry(XmlPullParser
-                                                   xmlPullParser, List<String> tags) throws IOException, XmlPullParserException {
+    private Map<String, String> Read_Entry(XmlPullParser xmlPullParser, List<String> tags) throws IOException, XmlPullParserException {
         Map<String, String> account_Information = new HashMap<>();
-        xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
+        xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, MEDICAL_TAG);
         //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
-        number_Of_entries++;
         while (xmlPullParser.next() != XmlPullParser.END_TAG) {
+            if (xmlPullParser.getEventType() != XmlPullParser.START_TAG) {
+                continue;
+            }
             String name = xmlPullParser.getName();
             String tag_Information;
             if (tags.contains(name)) {//WARNING THIS BOOLEAN CHECK IS A LOOP of O(n) = tags.length
                 tag_Information = readTag(xmlPullParser, name);
-                account_Information.put(name + Integer.toString(number_Of_entries), tag_Information);
+                account_Information.put(name + Integer.toString(prefix_Of_Key), tag_Information);
             } else {
                 Skip(xmlPullParser);
             }
@@ -167,12 +211,18 @@ class Medical_Reader implements XML_Reader {
     }
 
     /**
-     * Method Skips current Tag, iterating until corresponding 'END_TAG' is found
-     * This Method is taken from https://developer.android.com/training/basics/network-ops/xml#instantiate provided to Android Developers
+     * Method Skips current Tag, iterating until corresponding 'END_TAG' is
+     * found This Method is taken from
+     * https://developer.android.com/training/basics/network-ops/xml#instantiate
+     * provided to Android Developers
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
-     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
-     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     * @param xmlPullParser Represents the XML Reader Object used to read users
+     *                      account information file stored on the device
+     * @throws IOException            if XMLPullParser Class throws an
+     *                                IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an
+     *                                XmlPullParserException when reading from
+     *                                file
      */
     private void Skip(XmlPullParser xmlPullParser) throws IOException, XmlPullParserException {
         int depth = 1;
@@ -189,15 +239,21 @@ class Medical_Reader implements XML_Reader {
         }
     }
 
-
     /**
-     * This Method finds the Tag and then calls readText to retrieve the information attached to the tag
+     * This Method finds the Tag and then calls readText to retrieve the
+     * information attached to the tag
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
-     * @param tag           The value of the Tag name whos information is to be read.
-     * @return String containing the information read from the xml file for the corresponding tag provided, else ""
-     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
-     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     * @param xmlPullParser Represents the XML Reader Object used to read users
+     *                      account information file stored on the device
+     * @param tag           The value of the Tag name whos information is to be
+     *                      read.
+     * @return String containing the information read from the xml file for the
+     *         corresponding tag provided, else ""
+     * @throws IOException            if XMLPullParser Class throws an
+     *                                IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an
+     *                                XmlPullParserException when reading from
+     *                                file
      */
     private String readTag(XmlPullParser xmlPullParser, String tag) throws IOException, XmlPullParserException {
         xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, tag);
@@ -207,12 +263,17 @@ class Medical_Reader implements XML_Reader {
     }
 
     /**
-     * This Method reads the text information between the tags given in the XML file
+     * This Method reads the text information between the tags given in the XML
+     * file
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users account information file stored on the device
+     * @param xmlPullParser Represents the XML Reader Object used to read users
+     *                      account information file stored on the device
      * @return String containing the information read from the xml file, else ""
-     * @throws IOException            if XMLPullParser Class throws an IOException when reading from file
-     * @throws XmlPullParserException if XMLPullParser Class throws an XmlPullParserException when reading from file
+     * @throws IOException            if XMLPullParser Class throws an
+     *                                IOException when reading from file
+     * @throws XmlPullParserException if XMLPullParser Class throws an
+     *                                XmlPullParserException when reading from
+     *                                file
      */
     // For valid tags, extracts their text values.
     private String readText(XmlPullParser xmlPullParser) throws IOException, XmlPullParserException {
@@ -228,7 +289,7 @@ class Medical_Reader implements XML_Reader {
         int current_Day, current_Month, current_Year, previous_Day, previous_Month, previous_Year;
         Calendar calender = Calendar.getInstance();
         current_Day = calender.get(Calendar.DAY_OF_MONTH);
-        current_Month = calender.get(Calendar.MONTH);
+        current_Month = calender.get(Calendar.MONTH) + 1; //DUE TO JAVA API DOCUMENTATION JAN = 0, DEC = 11 FOR SOME STUPID REASON
         current_Year = calender.get(Calendar.YEAR);
         // Now get Yesterdays date and also
         //Check Start of Year first as that is a special Case
@@ -261,10 +322,9 @@ class Medical_Reader implements XML_Reader {
             previous_Year = current_Year;
         }
         previous_Day_Date = new String[4];
-        previous_Day_Date[0] = Integer.toString(DAILY_REVIEW_CUTOFF_TIME);
-        previous_Day_Date[1] = Integer.toString(previous_Day);
-        previous_Day_Date[2] = Integer.toString(previous_Month);
-        previous_Day_Date[3] = Integer.toString(previous_Year);
+        previous_Day_Date[HOUR] = Integer.toString(DAILY_REVIEW_CUTOFF_TIME);
+        previous_Day_Date[DAY] = Integer.toString(previous_Day);
+        previous_Day_Date[MONTH] = Integer.toString(previous_Month);
+        previous_Day_Date[YEAR] = Integer.toString(previous_Year);
     }
 }
-

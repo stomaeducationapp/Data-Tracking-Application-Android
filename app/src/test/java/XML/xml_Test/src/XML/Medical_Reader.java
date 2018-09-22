@@ -21,6 +21,11 @@ import java.util.Map;
 //Todo need to look up catching if a attribute is present as dates attributes will determine the entry, and differentiate between them
 public class Medical_Reader implements XML_Reader {
 
+    private static final int HOUR = 0;
+    private static final int DAY = 1;
+    private static final int MONTH = 2;
+    private static final int YEAR = 3;
+
     /**
      * Not Using Name Spaces so = NULL
      */
@@ -59,16 +64,13 @@ public class Medical_Reader implements XML_Reader {
                 enum_Tags.remove(Tags_To_Read.Daily_Data);
                 //Setup date values
                 Setup_Date_Tags();
-            }
-            else if (enum_Tags.contains(Tags_To_Read.Export_Data)) {
+            } else if (enum_Tags.contains(Tags_To_Read.Export_Data)) {
                 entries_Required = Tags_To_Read.Export_Data;
                 enum_Tags.remove(Tags_To_Read.Export_Data);
-            }
-            else if (enum_Tags.contains(Tags_To_Read.Last_Entry)) {
+            } else if (enum_Tags.contains(Tags_To_Read.Last_Entry)) {
                 entries_Required = Tags_To_Read.Last_Entry;
                 enum_Tags.remove(Tags_To_Read.Last_Entry);
-            }
-            else{
+            } else {
                 throw new XML_Reader_Exception("Invalid ENUM given for medical entries required for task provided, please read documentation");
             }
             try {
@@ -153,8 +155,25 @@ public class Medical_Reader implements XML_Reader {
 
     public boolean Entry_Date_Valid(String entry_Date) {
         Boolean valid = false;
-        String[] entry_Date_Values = entry_Date.split("-");
-        valid = Arrays.equals(entry_Date_Values, previous_Day_Date);
+        try {
+            String[] entry_Date_Values = entry_Date.split("-");
+            //Entry from Yesterday 9am - 12 Midnight or Today 12:01AM to 8:59AM
+            if (Integer.parseInt(entry_Date_Values[YEAR]) >= Integer.parseInt(previous_Day_Date[YEAR])) {
+                if (Integer.parseInt(entry_Date_Values[MONTH]) >= Integer.parseInt(previous_Day_Date[MONTH])) {
+                    if (Integer.parseInt(entry_Date_Values[DAY]) == Integer.parseInt(previous_Day_Date[DAY])) {
+                        if (Integer.parseInt(entry_Date_Values[HOUR]) >= Integer.parseInt(previous_Day_Date[HOUR])) {
+                            valid = true;
+                        }
+                    } else if (Integer.parseInt(entry_Date_Values[DAY]) > Integer.parseInt(previous_Day_Date[DAY])) {
+                        if (Integer.parseInt(entry_Date_Values[HOUR]) < Integer.parseInt(previous_Day_Date[HOUR])) {
+                            valid = true;
+                        }
+                    }
+                }
+            }
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException ex) {
+            valid = false;
+        }
         return valid;
     }
 
@@ -270,7 +289,7 @@ public class Medical_Reader implements XML_Reader {
         int current_Day, current_Month, current_Year, previous_Day, previous_Month, previous_Year;
         Calendar calender = Calendar.getInstance();
         current_Day = calender.get(Calendar.DAY_OF_MONTH);
-        current_Month = calender.get(Calendar.MONTH);
+        current_Month = calender.get(Calendar.MONTH) + 1; //DUE TO JAVA API DOCUMENTATION JAN = 0, DEC = 11 FOR SOME STUPID REASON
         current_Year = calender.get(Calendar.YEAR);
         // Now get Yesterdays date and also
         //Check Start of Year first as that is a special Case
@@ -303,9 +322,9 @@ public class Medical_Reader implements XML_Reader {
             previous_Year = current_Year;
         }
         previous_Day_Date = new String[4];
-        previous_Day_Date[0] = Integer.toString(DAILY_REVIEW_CUTOFF_TIME);
-        previous_Day_Date[1] = Integer.toString(previous_Day);
-        previous_Day_Date[2] = Integer.toString(previous_Month);
-        previous_Day_Date[3] = Integer.toString(previous_Year);
+        previous_Day_Date[HOUR] = Integer.toString(DAILY_REVIEW_CUTOFF_TIME);
+        previous_Day_Date[DAY] = Integer.toString(previous_Day);
+        previous_Day_Date[MONTH] = Integer.toString(previous_Month);
+        previous_Day_Date[YEAR] = Integer.toString(previous_Year);
     }
 }
