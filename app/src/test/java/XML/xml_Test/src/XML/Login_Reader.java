@@ -39,7 +39,7 @@ public class Login_Reader implements XML_Reader {
      */
     @Override
     public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
-        if (xmlPullParser != null && !enum_Tags.isEmpty() && account_Name != null) {
+        if (xmlPullParser != null && enum_Tags != null && !enum_Tags.isEmpty() && account_Name != null) {
             //Convert Enum to strings
             List<String> tags = new LinkedList<>();
             for (XML_Reader.Tags_To_Read tag : enum_Tags) {
@@ -56,7 +56,7 @@ public class Login_Reader implements XML_Reader {
             }
             return account_Information;
         } else {
-            throw new NullPointerException("Input Stream Object is Null, No Tags Given, or account_Name Null");
+            throw new NullPointerException("One of the following Errors has occurred: XMLPullParser is NULL, List<Tags_To_Read> is NULL or empty, or Account Name is NULL");
         }
     }
 
@@ -76,6 +76,7 @@ public class Login_Reader implements XML_Reader {
      */
     private Map<String, String> readData(XmlPullParser xmlPullParser, List<String> tags, String account_Name) throws IOException, XmlPullParserException {
         Map<String, String> account_Information = new HashMap<>();
+        Map<String, String> tempMap;
         xmlPullParser.require(XmlPullParser.START_TAG, NAME_SPACE, ENTRY_TAG);
         Boolean account_Found = false;
         //Loop with O(n) = number of lines between start and end tag (Dynamic length based on XML document information)
@@ -85,7 +86,7 @@ public class Login_Reader implements XML_Reader {
             }
             String entry = xmlPullParser.getName();
             if (entry.equals(ACCOUNT_TAG)) {
-                Map<String, String> tempMap = readEntry(xmlPullParser, tags);
+                tempMap = readEntry(xmlPullParser, tags);
                 if (tempMap.containsKey(XML_Reader.Tags_To_Read.Account_Name.toString())) {
                     if (tempMap.get(XML_Reader.Tags_To_Read.Account_Name.toString()).equals(account_Name)) {
                         account_Information = tempMap;

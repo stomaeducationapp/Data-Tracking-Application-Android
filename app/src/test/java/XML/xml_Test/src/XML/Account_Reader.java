@@ -34,7 +34,7 @@ public class Account_Reader implements XML_Reader {
     @Override
     public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
 
-        if (xmlPullParser != null && !enum_Tags.isEmpty()) {
+        if (xmlPullParser != null && enum_Tags != null && !enum_Tags.isEmpty()) {
             //Convert Enum to strings
             List<String> tags = new LinkedList<>();
             for (XML_Reader.Tags_To_Read tag : enum_Tags) {
@@ -50,7 +50,7 @@ public class Account_Reader implements XML_Reader {
             }
             return account_Information;
         } else {
-            throw new NullPointerException("Input Stream Object is Null or No Tags Given");
+            throw new NullPointerException("One of the following Errors has occurred: XMLPullParser is NULL, List<Tags_To_Read> is NULL or empty");
         }
     }
 
