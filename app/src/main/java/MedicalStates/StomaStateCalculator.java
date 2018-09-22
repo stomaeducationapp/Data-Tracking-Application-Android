@@ -25,6 +25,7 @@ public class StomaStateCalculator {
     private Context sys_Ref;
     //data fields
     private Map<String, String> data;   //might be refactored to become a local var in Calculate_State method
+    private int userDailyOutput;        //user entered average stoma output volume
 
 
     public StomaStateCalculator() {
@@ -100,7 +101,7 @@ public class StomaStateCalculator {
 
         for (int i = 0; i < attributes.length; i++) {
             String temp = attributes[i];
-            if (temp.equals("UrineColour")) {
+            if (temp.equals("UrineColour")) {   //change hydration depending on urine colour
                 int scale = currFlags.get(temp);
                 if (scale == 1) {
                     stateIdx += 1.0;
@@ -116,6 +117,24 @@ public class StomaStateCalculator {
                 }
                 else if (scale == 5) {
                     stateIdx -= 1.0;
+                }
+            }
+            else if (temp.equals("UrineFrequency")) {   //check once a day at the end of the day
+                int scale = currFlags.get(temp);
+                if (scale < 3) {
+                    stateIdx += 1.0;
+                }
+                else if (scale > 2 && scale < 5) {
+                    stateIdx += 0;
+                }
+                else if (scale > 4 && scale < 8) {
+                    stateIdx -= 1;
+                }
+                else if (scale > 7 && scale < 10) {
+                    stateIdx += 0;
+                }
+                else if (scale > 10) {
+                    stateIdx += 1;
                 }
             }
             else if (temp.equals("Consistency")) {
@@ -136,21 +155,21 @@ public class StomaStateCalculator {
                     stateIdx -= 1.0;
                 }
             }
-            else if (temp.equals("Volume")) {   //will need some work to function properly as these are daily totals
+            else if (temp.equals("Volume")) {   //should only be checked at the end of the day - so that the daily total is the only one checked
                 int scale = currFlags.get(temp);
-                if (scale < 500) {
+                if (scale < userDailyOutput - 200) {
                     stateIdx += 2.0;
                 }
-                else if (scale > 499 && scale < 600) {
+                else if (scale > userDailyOutput - 199 && scale < userDailyOutput - 99) {
                     stateIdx += 0.0;
                 }
-                else if (scale > 599 && scale < 1100) {
+                else if (scale > userDailyOutput - 100 && scale < userDailyOutput + 100) {
                     stateIdx -= 1.0;
                 }
-                else if (scale > 1099 && scale < 1200) {
+                else if (scale > userDailyOutput + 101 && scale < userDailyOutput + 199) {
                     stateIdx += 0.0;
                 }
-                else if (scale > 1199) {
+                else if (scale > userDailyOutput + 200) {
                     stateIdx += 2.0;
                 }
             }
