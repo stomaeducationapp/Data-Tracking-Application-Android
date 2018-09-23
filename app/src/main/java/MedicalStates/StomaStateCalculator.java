@@ -38,6 +38,24 @@ public class StomaStateCalculator {
         //sys_Ref = ;
     }
 
+    //Alternate constructor if calculator needs to be reconstructed
+    public StomaStateCalculator(int prevState) {
+        if (prevState > 0 && prevState < 5) {
+            state_Context = new GreenState(prevState);
+        }
+        else if (prevState > 4 && prevState < 8) {
+            state_Context = new YellowState(prevState);
+        }
+        else if (prevState > 7 && prevState < 11) {
+            state_Context = new RedState(prevState);
+        }
+        factory = Factory.Get_Factory();
+        urineCount = 0;
+        outputVolume = 0;
+        numEntries = 0;
+        //sys_Ref = ;
+    }
+
     public boolean Calculate_State() {
         boolean success = true;
         numEntries++;
@@ -59,7 +77,6 @@ public class StomaStateCalculator {
 
     private boolean Get_Account_Data() {
         boolean success = true;
-
         //read in account data from XML file
         XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
         try {
@@ -87,17 +104,17 @@ public class StomaStateCalculator {
             }
             else if (temp.equals("UrineFrequency")) {   //only add if total for current day
                 //frequency code
+                int freq = Integer.parseInt(data.get(temp));
+                urineCount += freq;
                 if (numEntries > 1) {   //don't use urine frequency until there has been at least 2 entries
-                    int tmp = Integer.parseInt(data.get(temp));
-                    urineCount += tmp;
                     presentFlags.put("UrineFrequency", urineCount);
                 }
             }
             else if (temp.equals("Volume")) {   //only add if total for current day
                 //volume code
+                int vol = Integer.parseInt(data.get(temp));
+                outputVolume += vol;
                 if (numEntries > 1) {   //don't use total volume until there has been at least 2 entries
-                    int tmp = Integer.parseInt(data.get(temp));
-                    outputVolume += tmp;
                     presentFlags.put("Volume", outputVolume);
                 }
             }
@@ -110,6 +127,7 @@ public class StomaStateCalculator {
                 String value = data.get("PhysicalCharacteristics");
                 String[] splitString = value.split(",");
                 presentFlags.put("PhysicalCharacteristics", splitString.length);
+
                 //presentFlags.put("PhysicalCharacteristics", Integer.parseInt(value));
             }
         }
@@ -145,7 +163,7 @@ public class StomaStateCalculator {
                     stateIdx -= 1.0;
                 }
             }
-            else if (temp.equals("UrineFrequency")) {   //check once a day at the end of the day
+            else if (temp.equals("UrineFrequency")) {
                 int scale = currFlags.get(temp);
                 if (scale < 3) {
                     stateIdx += 1.0;
@@ -181,7 +199,7 @@ public class StomaStateCalculator {
                     stateIdx -= 1.0;
                 }
             }
-            else if (temp.equals("Volume")) {   //should only be checked at the end of the day - so that the daily total is the only one checked
+            else if (temp.equals("Volume")) {
                 int scale = currFlags.get(temp);
                 if (scale < userDailyOutput - 200) {
                     stateIdx += 2.0;
