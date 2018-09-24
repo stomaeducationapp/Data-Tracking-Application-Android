@@ -1,23 +1,32 @@
 package xml_test;
 
-import XML.Medical_Reader;
-import XML.XML_Reader;
-import XML.XML_Reader_Exception;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
+
+import XML.Medical_Reader;
+import XML.XML_Reader;
+import XML.XML_Reader_Exception;
 
 /**
  * @author Patrick Created on Sep 22, 2018
  */
 public class Medical_Reader_Test {
-
+    
+    /*****************************************************************
+     * PLEASE CHANGE THESE VALUES EACH NEW DAY
+     *****************************************************************/
+    private final int todays_date_date = 24;
+    private final int yesterdays_date_date = 23;
+    
+    
     private int tests_Passed;
     private int tests_Run;
     private XML_Reader xML_Reader;
@@ -26,7 +35,7 @@ public class Medical_Reader_Test {
         xML_Reader = new Medical_Reader();
         System.out.println("***************************************************"
                 + System.lineSeparator()
-                + "TESTING ACCOUNT_READER");
+                + "TESTING MEDICAL_READER");
 
         tests_Passed = 0;
         tests_Run = 0;
@@ -64,7 +73,7 @@ public class Medical_Reader_Test {
                     + "Testing Valid File Empty Information For Latest Entry" + System.lineSeparator()
             );
             xpp = factory.newPullParser();
-            tests_Run += 4;
+            tests_Run += 3;
             if (Open_File(xpp, "valid_medical_file_empty_info.xml")) {
                 try {
                     List<XML_Reader.Tags_To_Read> tags = new LinkedList<>();
@@ -115,24 +124,7 @@ public class Medical_Reader_Test {
             } else {
                 System.out.println("Valid Empty File Test Failed --- Failed to Open File");
             }
-            if (Open_File(xpp, "valid_medical_file_empty_info.xml")) {
-                try {
-                    List<XML_Reader.Tags_To_Read> tags = new LinkedList<>();
-                    tags.add(XML_Reader.Tags_To_Read.Name);
-                    try {
-                        xML_Reader.Read_File(xpp, tags, null);
-                        System.out.println("Valid Empty File Test Failed --- Empty File didn't Throw Null Pointer Exception");
-                    } catch (XML_Reader_Exception ex) {
-                        System.out.println("Valid Empty File Test Passed --- XML_Reader_Exception Exception thrown: " + ex);
-                        tests_Passed++;
-                    }
-                } catch (NullPointerException ex) {
-                    System.out.println("Valid Empty File Test Failed --- NullPointerException Exception thrown Correctly: " + ex);
-
-                }
-            } else {
-                System.out.println("Valid Empty File Test Failed --- Failed to Open File");
-            }
+            
             tests_Run++;
             if (Open_File(xpp, "valid_medical_file_empty_info.xml")) {
                 //Asking for all, should return keys only
@@ -297,33 +289,35 @@ public class Medical_Reader_Test {
                     if (!info.isEmpty()) {
                         System.out.println("Valid File for First Entry --- Non Empty");
                         tests_Passed++;
-                        if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "1").equals("a")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "-" + "1").equals("a")) {
                             System.out.println("Valid File for First Entry Passed --- Location value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "1").equals("b")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "-" + "1").equals("b")) {
                             System.out.println("Valid File for First Entry Passed --- Bags value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "1").equals("c")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "-" + "1").equals("c")) {
                             System.out.println("Valid File for First Entry Passed --- Urine value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "1").equals("d")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "-" + "1").equals("d")) {
                             System.out.println("Valid File for First Entry Passed --- Hydration value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "1").equals("e")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "-" + "1").equals("e")) {
                             System.out.println("Valid File for First Entry Passed --- Wellbeing value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "1").equals("f")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "-" + "1").equals("f")) {
                             System.out.println("Valid File for First Entry Passed --- Medical_State value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "1").equals("14-21-9-2018")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "-" + "1").equals("14-"+yesterdays_date_date+ "-9-2018")) {
                             System.out.println("Valid File for First Entry Passed --- Entry_Time value is correct");
                             tests_Passed++;
+                        } else {
+                            System.out.println("Valid File for First Entry Failed --- Entry_Time value is Wrong May need to update test value to new date entered in the xml file as that needs to change for the daily review");
                         }
                     } else {
                         System.out.println("Valid File for First Entry Failed --- Empty Map Given Back");
@@ -368,131 +362,131 @@ public class Medical_Reader_Test {
                         System.out.println("Valid File for Export Data Failed --- Empty Map Given Back");
                     }
                     int ii = 1;
-                    if (info.get(XML_Reader.Tags_To_Read.Location.toString() + ii).equals("a")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "-" + ii).equals("a")) {
                         System.out.println("Valid File for Export Data Passed --- Location value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Location value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + ii).equals("b")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "-" + ii).equals("b")) {
                         System.out.println("Valid File for Export Data Passed --- Bags value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Bags value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + ii).equals("c")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "-" + ii).equals("c")) {
                         System.out.println("Valid File for Export Data Passed --- Urine value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Urine value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + ii).equals("d")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "-" + ii).equals("d")) {
                         System.out.println("Valid File for Export Data Passed --- Hydration value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Hydration value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + ii).equals("e")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "-" + ii).equals("e")) {
                         System.out.println("Valid File for Export Data Passed --- Wellbeing value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Wellbeing value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + ii).equals("f")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "-" + ii).equals("f")) {
                         System.out.println("Valid File for Export Data Passed --- Medical_State value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Failed --- Medical_State value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + ii).equals("14-21-9-2018")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "-" + ii).equals("14-"+yesterdays_date_date+"-9-2018")) {
                         System.out.println("Valid File for Export Data Passed --- Entry_Time value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Failed --- Entry_Time value is Wrong May need to update test value to new date entered in the xml file as that needs to change for the daily review");
                     }
                     ii = 2;
-                    if (info.get(XML_Reader.Tags_To_Read.Location.toString() + ii).equals("g")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "-" + ii).equals("g")) {
                         System.out.println("Valid File for Export Data Passed --- Location value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Location value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + ii).equals("h")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "-" + ii).equals("h")) {
                         System.out.println("Valid File for Export Data Passed --- Bags value is correct");
                         tests_Passed++;
-                    }
+                    } else
                     {
-                        System.out.println("Valid File for Export Data Passed --- Bags value is correct");
+                        System.out.println("Valid File for Export Data Passed --- Bags value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + ii).equals("i")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "-" + ii).equals("i")) {
                         System.out.println("Valid File for Export Data Passed --- Urine value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Urine value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + ii).equals("j")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "-" + ii).equals("j")) {
                         System.out.println("Valid File for Export Data Passed --- Hydration value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Hydration value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + ii).equals("k")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "-" + ii).equals("k")) {
                         System.out.println("Valid File for Export Data Passed --- Wellbeing value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Wellbeing value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + ii).equals("l")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "-" + ii).equals("l")) {
                         System.out.println("Valid File for Export Data Passed --- Medical_State value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Failed --- Medical_State value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + ii).equals("4-22-9-2018")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "-" + ii).equals("4-"+todays_date_date+"-9-2018")) {
                         System.out.println("Valid File for Export Data Passed --- Entry_Time value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Failed --- Entry_Time value is Wrong May need to update test value to new date entered in the xml file as that needs to change for the daily review");
                     }
                     ii = 3;
-                    if (info.get(XML_Reader.Tags_To_Read.Location.toString() + ii).equals("m")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "-" + ii).equals("m")) {
                         System.out.println("Valid File for Export Data Passed --- Location value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Location value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + ii).equals("n")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "-" + ii).equals("n")) {
                         System.out.println("Valid File for Export Data Passed --- Bags value is correct");
                         tests_Passed++;
-                    }
+                    } else
                     {
                         System.out.println("Valid File for Export Data Passed --- Bags value is correct");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + ii).equals("o")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "-" + ii).equals("o")) {
                         System.out.println("Valid File for Export Data Passed --- Urine value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Urine value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + ii).equals("p")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "-" + ii).equals("p")) {
                         System.out.println("Valid File for Export Data Passed --- Hydration value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Hydration value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + ii).equals("q")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "-" + ii).equals("q")) {
                         System.out.println("Valid File for Export Data Passed --- Wellbeing value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Passed --- Wellbeing value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + ii).equals("r")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "-" + ii).equals("r")) {
                         System.out.println("Valid File for Export Data Passed --- Medical_State value is correct");
                         tests_Passed++;
                     } else {
                         System.out.println("Valid File for Export Data Failed --- Medical_State value is Wrong");
                     }
-                    if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + ii).equals("14-20-9-2018")) {
+                    if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "-" + ii).equals("14-20-9-2018")) {
                         System.out.println("Valid File for Export Data Passed --- Entry_Time value is correct");
                         tests_Passed++;
                     } else {
@@ -533,74 +527,78 @@ public class Medical_Reader_Test {
                 try {
                     Map<String, String> info = xML_Reader.Read_File(xpp, tags, null);
                     //Should return first Entry
-                    
+
                     if (!info.isEmpty()) {
                         System.out.println("Valid File for Daily Review Passed --- Non Empty");
                         tests_Passed++;
-                        if(info.get(XML_Reader.Tags_To_Read.Entries_Retrieved.toString()).equals("2")){
+                        if (info.get(XML_Reader.Tags_To_Read.Entries_Retrieved.toString()).equals("2")) {
                             System.out.println("Valid File for Daily Review Passed --- Number of Entries value is correct");
                             tests_Passed++;
                         }
                         int ii = 1;
-                        if (info.get(XML_Reader.Tags_To_Read.Location.toString() + ii).equals("a")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "-" + ii).equals("a")) {
                             System.out.println("Valid File for Daily Review Passed --- Location value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + ii).equals("b")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "-" + ii).equals("b")) {
                             System.out.println("Valid File for Daily Review Passed --- Bags value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + ii).equals("c")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "-" + ii).equals("c")) {
                             System.out.println("Valid File for Daily Review Passed --- Urine value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + ii).equals("d")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "-" + ii).equals("d")) {
                             System.out.println("Valid File for Daily Review Passed --- Hydration value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + ii).equals("e")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "-" + ii).equals("e")) {
                             System.out.println("Valid File for Daily Review Passed --- Wellbeing value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + ii).equals("f")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "-" + ii).equals("f")) {
                             System.out.println("Valid File for Daily Review Passed --- Medical_State value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + ii).equals("14-21-9-2018")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "-" + ii).equals("14-"+yesterdays_date_date+"-9-2018")) {
                             System.out.println("Valid File for Daily Review Passed --- Entry_Time value is correct");
                             tests_Passed++;
+                        } else {
+                            System.out.println("Valid File for Daily Review Failed --- Entry_Time value is Wrong May need to update test value to new date entered in the xml file as that needs to change for the daily review");
                         }
                         ii++;
-                        if (info.get(XML_Reader.Tags_To_Read.Location.toString() + ii).equals("g")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Location.toString() + "-" + ii).equals("g")) {
                             System.out.println("Valid File for Daily Review Passed --- Location value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + ii).equals("h")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Bags.toString() + "-" + ii).equals("h")) {
                             System.out.println("Valid File for Daily Review Passed --- Bags value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + ii).equals("i")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Urine.toString() + "-" + ii).equals("i")) {
                             System.out.println("Valid File for Daily Review Passed --- Urine value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + ii).equals("j")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Hydration.toString() + "-" + ii).equals("j")) {
                             System.out.println("Valid File for Daily Review Passed --- Hydration value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + ii).equals("k")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Wellbeing.toString() + "-" + ii).equals("k")) {
                             System.out.println("Valid File for Daily Review Passed --- Wellbeing value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + ii).equals("l")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Medical_State.toString() + "-" + ii).equals("l")) {
                             System.out.println("Valid File for Daily Review Passed --- Medical_State value is correct");
                             tests_Passed++;
                         }
-                        if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + ii).equals("4-22-9-2018")) {
+                        if (info.get(XML_Reader.Tags_To_Read.Entry_Time.toString() + "-" + ii).equals("4-"+todays_date_date+"-9-2018")) {
                             System.out.println("Valid File for Daily Review Passed --- Entry_Time value is correct");
                             tests_Passed++;
+                        } else {
+                            System.out.println("Valid File for Daily Review Failed --- Entry_Time value is Wrong May need to update test value to new date entered in the xml file as that needs to change for the daily review");
                         }
                     } else {
-                        System.out.println("Valid File for Daily Review Failed --- Empty Map Given Back");
+                        System.out.println("Valid File for Daily Review Failed --- Empty Map Given Back, Check dates as they are based on current day of testing");
                     }
                 } catch (XML_Reader_Exception ex) {
                     System.out.println("Valid File for Daily Review Failed --- XML_Reader_Exception Exception thrown: " + ex);

@@ -69,32 +69,31 @@ public class Account_Reader_Test {
                     List<XML_Reader.Tags_To_Read> tags = new LinkedList<>();
                     try {
                         xML_Reader.Read_File(xpp, tags, null);
-                        System.out.println("Valid Empty File Test Failed --- Empty File didn't Throw Null Pointer Exception");
+                        System.out.println("Empty Tags Test Failed --- Empty File didn't Throw Null Pointer Exception");
                     } catch (XML_Reader_Exception ex) {
-                        System.out.println("Valid Empty File Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
+                        System.out.println("Empty Tags Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
                     }
                 } catch (NullPointerException ex) {
-                    System.out.println("Valid Empty File Test Passed --- NullPointerException Exception thrown Correctly: " + ex);
+                    System.out.println("Empty Tags Test Passed --- NullPointerException Exception thrown Correctly: " + ex);
                     tests_Passed++;
                 }
                 //Asking for all, should return keys only
                 List<XML_Reader.Tags_To_Read> tags = new LinkedList<>();
                 tags.add(XML_Reader.Tags_To_Read.Name);
                 tags.add(XML_Reader.Tags_To_Read.Gamification);
-                tags.add(XML_Reader.Tags_To_Read.Notification);
                 tags.add(XML_Reader.Tags_To_Read.State);
                 try {
                     Map<String, String> info = xML_Reader.Read_File(xpp, tags, null);
-                    if (!info.isEmpty() && info.containsKey("Name") && info.containsKey("Gamification") && info.containsKey("Notification") && info.containsKey("State")) {
-                        System.out.println("Valid Empty File Test Passed --- Map Given Back with all Keys");
+                    if (!info.isEmpty() && info.containsKey("Name") && info.containsKey("Gamification") && !info.containsKey("Notification") && info.containsKey("State")) {
+                        System.out.println("Valid Empty File, no Notification key Test Passed --- Map Given Back with all Keys");
                         tests_Passed++;
                     } else {
-                        System.out.println("Valid Empty File Test Failed --- Empty Map Given Back");
+                        System.out.println("Valid Empty File, no Notification key Test Failed --- Empty Map Given Back");
                     }
                 } catch (XML_Reader_Exception ex) {
-                    System.out.println("Valid Empty File Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
+                    System.out.println("Valid Empty File Test, no Notification key Failed --- XML_Reader_Exception Exception thrown: " + ex);
                 } catch (NullPointerException ex) {
-                    System.out.println("Valid Empty File Test Failed --- NullPointerException Exception thrown: " + ex);
+                    System.out.println("Valid Empty File Test, no Notification key Failed --- NullPointerException Exception thrown: " + ex);
                 }
 
             } else {

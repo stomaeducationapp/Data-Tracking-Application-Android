@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 
 /**
  * <h1>Daily_Review</h1>
- * The Update_Data_For_Account_From_File Java Class is used to Read In Account Information from XML file stored on the device.
+ * The Daily_Review Java Class is used to Read In Account Information from XML file stored on the device.
  * This Observer has been created to reduce the coupling that would be required between the calling package and Operating system.
  * Implements Time_Observer interface
  * @author Patrick Crockford

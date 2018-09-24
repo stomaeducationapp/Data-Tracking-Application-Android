@@ -69,7 +69,7 @@ public class Login_Reader_Test {
                     System.out.println("Null Account Test Failed --- Empty File didn't Throw XML_Reader_Exception Exception");
                 } catch (NullPointerException ex) {
                     tests_Passed++;
-                    System.out.println("Null Account Test Passed --- XML_Reader_Exception Exception thrown correctly: " + ex);
+                    System.out.println("Null Account Test Passed --- NullPointerException Exception thrown correctly: " + ex);
                 } catch (XML_Reader_Exception ex) {
                     System.out.println("Null Account Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
                 }
@@ -86,14 +86,13 @@ public class Login_Reader_Test {
             if (Open_File(xpp, "valid_login_file_empty_info.xml")) {
                 try {
                     List<XML_Reader.Tags_To_Read> tags = new LinkedList<>();
-                    try {
-                        xML_Reader.Read_File(xpp, tags, "Bob");
-                        System.out.println("Valid Empty File Test Failed --- Empty File didn't Throw Null Pointer Exception");
-                    } catch (XML_Reader_Exception ex) {
-                        System.out.println("Valid Empty File Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
-                    }
+
+                    xML_Reader.Read_File(xpp, tags, "Bob");
+                    System.out.println("No tags given Test Failed --- Empty File didn't Throw Null Pointer Exception");
+                } catch (XML_Reader_Exception ex) {
+                    System.out.println("No tags given Test Failed --- XML_Reader_Exception Exception thrown: " + ex);
                 } catch (NullPointerException ex) {
-                    System.out.println("Valid Empty File Test Passed --- NullPointerException Exception thrown Correctly: " + ex);
+                    System.out.println("No tags given Test Passed --- NullPointerException Exception thrown Correctly: " + ex);
                     tests_Passed++;
                 }
                 //Asking for all, should return Nothing
