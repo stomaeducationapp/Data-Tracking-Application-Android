@@ -3,7 +3,6 @@ package MedicalStates;
 import android.content.Context;
 
 import org.xml.sax.XMLReader;
-
 import java.util.HashMap;
 import java.util.Map;
 import Factory.Factory;
@@ -15,10 +14,7 @@ import Factory.Factory;
 
 public class StomaStateCalculator {
 
-    //private enum State {GREEN,YELLOW,RED}
-    //private enum Flag {NUMBAGS,VOLUME}  //add more flags
-
-    private StomaState state_Context;
+    private StomaState account_State;
     private Factory factory;
     private Context sys_Ref;
     //data fields
@@ -30,7 +26,7 @@ public class StomaStateCalculator {
 
 
     public StomaStateCalculator() {
-        state_Context = new GreenState(3); //Probably refactor into factory at some point
+        account_State = new GreenState(3); //maybe refactor into factory at some point
         factory = Factory.Get_Factory();
         urineCount = 0;
         outputVolume = 0;
@@ -41,13 +37,13 @@ public class StomaStateCalculator {
     //Alternate constructor if calculator needs to be reconstructed
     public StomaStateCalculator(int prevState) {
         if (prevState > 0 && prevState < 5) {
-            state_Context = new GreenState(prevState);
+            account_State = new GreenState(prevState);
         }
         else if (prevState > 4 && prevState < 8) {
-            state_Context = new YellowState(prevState);
+            account_State = new YellowState(prevState);
         }
         else if (prevState > 7 && prevState < 11) {
-            state_Context = new RedState(prevState);
+            account_State = new RedState(prevState);
         }
         factory = Factory.Get_Factory();
         urineCount = 0;
@@ -123,12 +119,25 @@ public class StomaStateCalculator {
                 presentFlags.put("Consistency", value); //may need to change depending on format of stored data
             }
             else if (temp.equals("PhysicalCharacteristics")) {
-                //Physical characteristics should be stored as CSV format. OR just store the number true from the start
+                //Physical characteristics should be stored as CSV format
                 String value = data.get("PhysicalCharacteristics");
                 String[] splitString = value.split(",");
-                presentFlags.put("PhysicalCharacteristics", splitString.length);
+                int charIdx = 0;
 
-                //presentFlags.put("PhysicalCharacteristics", Integer.parseInt(value));
+                for (int ii = 0; ii < splitString.length; ii++) {
+                    String tmp = splitString[ii];
+
+                    if (tmp.equals("thirsty") || tmp.equals("headache") || tmp.equals("lightheaded")) {
+                        charIdx += 1;
+                    }
+                    else if (tmp.equals("stomach cramps") || tmp.equals("muscle cramps") || tmp.equals("fatigue")) {
+                        charIdx += 2;
+                    }
+                    else if (tmp.equals("dry mouth") || tmp.equals("confusion") || tmp.equals("tiredness")) {
+                        charIdx += 3;
+                    }
+                }
+                presentFlags.put("PhysicalCharacteristics", charIdx);
             }
         }
         return presentFlags;
@@ -136,7 +145,7 @@ public class StomaStateCalculator {
 
     private boolean Calculate_New_State(Map<String, Integer> currFlags) {
         //Check what attributes have been flagged and determine the state
-        double stateIdx = 3.0 + (state_Context.getStateVal()*0.5);    //Base for new state
+        double stateIdx = 3.0 + (account_State.getStateVal()*0.5);    //Base for new state
         int stateRef;
         boolean success;
         String[] attributes;
@@ -151,34 +160,16 @@ public class StomaStateCalculator {
                     stateIdx += 1.0;
                 }
                 else if (scale == 2) {
-                    stateIdx += 0.5;
-                }
-                else if (scale == 3) {
                     stateIdx += 0.0;
                 }
-                else if (scale == 4) {
-                    stateIdx -= 0.5;
-                }
-                else if (scale == 5) {
+                else if (scale == 3) {
                     stateIdx -= 1.0;
                 }
             }
             else if (temp.equals("UrineFrequency")) {
                 int scale = currFlags.get(temp);
                 if (scale < 3) {
-                    stateIdx += 1.0;
-                }
-                else if (scale > 2 && scale < 5) {
-                    stateIdx += 0;
-                }
-                else if (scale > 4 && scale < 8) {
-                    stateIdx -= 1;
-                }
-                else if (scale > 7 && scale < 10) {
-                    stateIdx += 0;
-                }
-                else if (scale > 10) {
-                    stateIdx += 1;
+                    stateIdx += 2.0;
                 }
             }
             else if (temp.equals("Consistency")) {
@@ -187,33 +178,21 @@ public class StomaStateCalculator {
                     stateIdx += 1.0;
                 }
                 else if (scale == 2) {
-                    stateIdx += 0.5;
-                }
-                else if (scale == 3) {
                     stateIdx += 0.0;
                 }
-                else if (scale == 4) {
-                    stateIdx -= 0.5;
-                }
-                else if (scale == 5) {
+                else if (scale == 3) {
                     stateIdx -= 1.0;
                 }
             }
             else if (temp.equals("Volume")) {
                 int scale = currFlags.get(temp);
-                if (scale < userDailyOutput - 200) {
-                    stateIdx += 2.0;
+                if (scale < userDailyOutput) {
+                    stateIdx -= 2.0;
                 }
-                else if (scale > userDailyOutput - 199 && scale < userDailyOutput - 99) {
-                    stateIdx += 0.0;
+                else if (scale > userDailyOutput && scale < userDailyOutput + 300) {
+                    stateIdx += 1.0;
                 }
-                else if (scale > userDailyOutput - 100 && scale < userDailyOutput + 100) {
-                    stateIdx -= 1.0;
-                }
-                else if (scale > userDailyOutput + 101 && scale < userDailyOutput + 199) {
-                    stateIdx += 0.0;
-                }
-                else if (scale > userDailyOutput + 200) {
+                else if (scale > userDailyOutput + 299) {
                     stateIdx += 2.0;
                 }
             }
@@ -222,12 +201,23 @@ public class StomaStateCalculator {
                 if (numTrue == 0) {
                     stateIdx -= 1.0;
                 }
-                else if (numTrue > 7) {
-                    stateIdx += 3.0;
+                else if (numTrue > 0 && numTrue < 4) {  //1,2,3
+                    stateIdx += 0.5;
                 }
-                else {
-                    double dNumTrue = (double)numTrue;
-                    stateIdx += (dNumTrue - 1.0)/2.0;
+                else if (numTrue > 3 && numTrue < 7){   //4,5,6
+                    stateIdx += 1.0;
+                }
+                else if (numTrue > 6 && numTrue < 10) { //7,8,9
+                    stateIdx += 1.5;
+                }
+                else if (numTrue > 9 && numTrue < 13) {//10,11,12
+                    stateIdx += 2.0;
+                }
+                else if (numTrue > 12 && numTrue < 16) {//13,14,15
+                    stateIdx += 2.5;
+                }
+                else if (numTrue > 15 && numTrue < 19) {//16,17,18
+                    stateIdx += 3.0;
                 }
             }
         }
@@ -250,19 +240,19 @@ public class StomaStateCalculator {
         if (stateIdx > 0 && stateIdx < 5)
         {
             //must be green state
-            state_Context = new GreenState(stateIdx);
+            account_State = new GreenState(stateIdx);
             success = true;
         }
         else if (stateIdx > 4 && stateIdx < 8)
         {
             //must be yellow state
-            state_Context = new YellowState(stateIdx);
+            account_State = new YellowState(stateIdx);
             success = true;
         }
         else if (stateIdx > 7 && stateIdx < 11)
         {
             //must be red state
-            state_Context = new RedState(stateIdx);
+            account_State = new RedState(stateIdx);
             success = true;
         }
         else
