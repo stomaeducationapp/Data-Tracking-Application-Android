@@ -59,11 +59,11 @@ public class StomaStateCalculator {
             if (!Get_Account_Data()) {
                 throw new IllegalArgumentException("Problem reading from file");
             }
-            Map<String, Integer> flags = Get_Flags_From_Data(); //retrieve and simplify the flag info from the input data
+            //change Map<String, Integer> flags = Get_Flags_From_Data(); //retrieve and simplify the flag info from the input data
 
-            if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
-                throw new IllegalArgumentException("Problem calculating new state");
-            }
+            //change if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
+            //change     throw new IllegalArgumentException("Problem calculating new state");
+            //change }
 
         }
         catch (IllegalArgumentException e) {success = false;}  //change to specific exception when possible
@@ -73,9 +73,9 @@ public class StomaStateCalculator {
     public boolean Get_Account_Data() {
         boolean success = true;
         //read in account data from XML file
-        XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
+        //change XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
         try {
-            data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
+            //change data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
         }
         catch (Exception e) {success = false;}
 
@@ -101,17 +101,17 @@ public class StomaStateCalculator {
                 //frequency code
                 int freq = Integer.parseInt(data.get(temp));
                 urineCount += freq;
-                if (numEntries > 1) {   //don't use urine frequency until there has been at least 2 entries
+                //change if (numEntries > 1) {   //don't use urine frequency until there has been at least 2 entries
                     presentFlags.put("UrineFrequency", urineCount);
-                }
+                //change }
             }
             else if (temp.equals("Volume")) {   //only add if total for current day
                 //volume code
                 int vol = Integer.parseInt(data.get(temp));
                 outputVolume += vol;
-                if (numEntries > 1) {   //don't use total volume until there has been at least 2 entries
+                //change if (numEntries > 1) {   //don't use total volume until there has been at least 2 entries
                     presentFlags.put("Volume", outputVolume);
-                }
+                //change}
             }
             else if (temp.equals("Consistency")) {
                 int value = Integer.parseInt(data.get(temp));
@@ -221,7 +221,7 @@ public class StomaStateCalculator {
             }
         }
 
-        stateRef = (int)Math.round(stateIdx);
+        stateRef = (int)Math.ceil(stateIdx);
         if (stateRef < 1) {
             stateRef = 1;
         }
@@ -267,6 +267,10 @@ public class StomaStateCalculator {
         urineCount = 0;
         outputVolume = 0;
         numEntries = 0;
+    }
+
+    public double getStateVal() {
+        return account_State.getStateVal();
     }
 
     public String getState() {

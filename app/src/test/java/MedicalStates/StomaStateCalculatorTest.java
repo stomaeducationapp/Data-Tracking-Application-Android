@@ -43,6 +43,33 @@ public class StomaStateCalculatorTest {
 
         outMap = calc.Get_Flags_From_Data(inMap);
 
+        //if all conditions met, the returned map is correct and complete
         assertTrue(outMap.size() == 5);
+        assertTrue(outMap.get("UrineColour") == 2);
+        assertTrue(outMap.get("UrineFrequency") == 3);
+        assertTrue(outMap.get("Volume") == 600);
+        assertTrue(outMap.get("Consistency") == 2);
+        assertTrue(outMap.get("PhysicalCharacteristics") == 6);
+    }
+
+    /**
+     * Testing unchanging state
+     */
+    @Test
+    public void Test_Calculate_New_State() {
+        Map<String, String> inMap = new HashMap<>();
+        calc = new StomaStateCalculator(3, 800);
+
+        //state initially at 3
+        assertTrue(calc.getStateVal() - 3.0 == 0.0);
+        assertTrue(calc.getState().equals("Green"));
+        inMap.put("UrineColour", "2");                  //make state 3.0
+        inMap.put("UrineFrequency", "3");               //make state 3.0
+        inMap.put("Volume", "600");                     //make state 1.0
+        inMap.put("Consistency", "2");                  //make state 1.0
+        inMap.put("PhysicalCharacteristics", "6");      //make state 1.5
+        //state will be rounded to 2
+        assertTrue(calc.getState().equals("Green"));
+//        assertTrue(calc.getStateVal() - 2.0 == 0.0);
     }
 }
