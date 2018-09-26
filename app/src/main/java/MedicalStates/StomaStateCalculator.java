@@ -7,18 +7,13 @@ import java.util.HashMap;
 import java.util.Map;
 import Factory.Factory;
 
-//
-//REFER TO STOMA STATE LOGIC DOCUMENT
-//SOME METHODS WILL CHANGE DEPENDING ON DATA STORAGE
-//
-
 public class StomaStateCalculator {
 
     private StomaState account_State;
     private Factory factory;
     private Context sys_Ref;
     //data fields
-    private Map<String, String> data;   //might be refactored to become a local var in Calculate_State method
+    //private Map<String, String> data;   //might be refactored to become a local var in Calculate_State method
     private int userDailyOutput;        //user entered average stoma output volume
     private int urineCount;      //total urine frequency counter
     private int outputVolume;    //total output record
@@ -35,7 +30,7 @@ public class StomaStateCalculator {
     }
 
     //Alternate constructor if calculator needs to be reconstructed
-    public StomaStateCalculator(int prevState) {
+    public StomaStateCalculator(int prevState, int userOutput) {
         if (prevState > 0 && prevState < 5) {
             account_State = new GreenState(prevState);
         }
@@ -45,10 +40,14 @@ public class StomaStateCalculator {
         else if (prevState > 7 && prevState < 11) {
             account_State = new RedState(prevState);
         }
+        else {
+            throw new IllegalArgumentException("Invalid state value");
+        }
         factory = Factory.Get_Factory();
         urineCount = 0;
         outputVolume = 0;
         numEntries = 0;
+        userDailyOutput = userOutput;
         //sys_Ref = ;
     }
 
@@ -71,7 +70,7 @@ public class StomaStateCalculator {
         return success;
     }
 
-    private boolean Get_Account_Data() {
+    public boolean Get_Account_Data() {
         boolean success = true;
         //read in account data from XML file
         XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
@@ -83,7 +82,7 @@ public class StomaStateCalculator {
         return success;
     }
 
-    private Map<String, Integer> Get_Flags_From_Data() {
+    public Map<String, Integer> Get_Flags_From_Data(Map<String, String> data) {
         //Parse account data for presence of flags
         Map<String, Integer> presentFlags = new HashMap<>();
         String[] attributes;
@@ -143,7 +142,7 @@ public class StomaStateCalculator {
         return presentFlags;
     }
 
-    private boolean Calculate_New_State(Map<String, Integer> currFlags) {
+    public boolean Calculate_New_State(Map<String, Integer> currFlags) {
         //Check what attributes have been flagged and determine the state
         double stateIdx = 3.0 + (account_State.getStateVal()*0.5);    //Base for new state
         int stateRef;
@@ -234,7 +233,7 @@ public class StomaStateCalculator {
         return success;
     }
 
-    private boolean Change_State(int stateIdx) {
+    public boolean Change_State(int stateIdx) {
         boolean success;
         //Change to the required state
         if (stateIdx > 0 && stateIdx < 5)
@@ -268,5 +267,9 @@ public class StomaStateCalculator {
         urineCount = 0;
         outputVolume = 0;
         numEntries = 0;
+    }
+
+    public String getState() {
+        return account_State.getState();
     }
 }
