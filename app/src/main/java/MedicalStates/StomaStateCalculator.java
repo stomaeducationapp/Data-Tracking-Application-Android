@@ -38,7 +38,14 @@ public class StomaStateCalculator {
         //sys_Ref = ;
     }
 
-    //Alternate constructor if calculator needs to be reconstructed
+    /**
+     * Alternate constructor for the state calculator. This constructor can be used to customise the
+     * initialisation point, for example if the original object needs to be replaced, this constructor
+     * can be used to resume from the previous state.
+     * @param prevState the state value to initialise the state calculator object to.
+     * @param userOutput a customisable value for the users normal daily output to better tailor the
+     *                   state calculations
+     */
     public StomaStateCalculator(int prevState, int userOutput) {
         if (prevState > 0 && prevState < 5) {
             account_State = new GreenState(prevState);
@@ -59,6 +66,12 @@ public class StomaStateCalculator {
         //sys_Ref = ;
     }
 
+    /**
+     * The method that will be called to calculate and update a users hydration state. This method
+     * handles sequentially calling the other retrieval and calculation methods of the class, making
+     * this method the target for the app when it wants to calculate a new state.
+     * @return boolean representing success/failure
+     */
     public boolean Calculate_State() {
         boolean success = true;
         try {
@@ -78,6 +91,11 @@ public class StomaStateCalculator {
         return success;
     }
 
+    /**
+     * This method gets an XML reader from the factory object and uses it to get the users most
+     * recent data input in a map
+     * @return the map storing the data in attribute - value pairs
+     */
     /* Implement when XML reader becomes available
     public Map<String, String> Get_Account_Data() {
         Map<String, String data = new HashMap<>();
@@ -92,6 +110,14 @@ public class StomaStateCalculator {
         return data;
     }
     */
+
+    /**
+     * This method takes the map with all of the user data and extracts only the key - value pairs
+     * that contain information relevant to the state calculation. The map is processed and relevant
+     * fields are translated into number format and added to a hydration flag map.
+     * @param data The full data set from the user input
+     * @return the map containing the flags
+     */
     public Map<String, Integer> Get_Flags_From_Data(Map<String, String> data) {
         //Parse account data for presence of flags
         Map<String, Integer> presentFlags = new HashMap<>();
@@ -148,6 +174,16 @@ public class StomaStateCalculator {
         return presentFlags;
     }
 
+    /**
+     * This method uses the flags found in the users data and uses them to calculate teh hydration state.
+     * The users previous state is also taken into account and will have an effect on the state value.
+     * Flags considered positive will decrement the state value.
+     * Flags considered neutral will not change the state value.
+     * Flags considered negative will increment the state value.
+     * All flags are taken into account to determine the new state.
+     * @param currFlags the map with attributes and their associated values
+     * @return boolean representing success or failure
+     */
     public boolean Calculate_New_State(Map<String, Integer> currFlags) {
         //Check what attributes have been flagged and determine the state
         double stateIdx = 3.0 + (account_State.getStateVal()*0.5);    //Base for new state
@@ -208,22 +244,22 @@ public class StomaStateCalculator {
                 if (numTrue == 0) {
                     stateIdx -= 1.0;
                 }
-                else if (numTrue > 0 && numTrue < 4) {  //1,2,3
+                else if (numTrue > 0 && numTrue < 4) {  //1,2,3 selected
                     stateIdx += 0.5;
                 }
-                else if (numTrue > 3 && numTrue < 7){   //4,5,6
+                else if (numTrue > 3 && numTrue < 7){   //4,5,6 selected
                     stateIdx += 1.0;
                 }
-                else if (numTrue > 6 && numTrue < 10) { //7,8,9
+                else if (numTrue > 6 && numTrue < 10) { //7,8,9 selected
                     stateIdx += 1.5;
                 }
-                else if (numTrue > 9 && numTrue < 13) {//10,11,12
+                else if (numTrue > 9 && numTrue < 13) {//10,11,12 selected
                     stateIdx += 2.0;
                 }
-                else if (numTrue > 12 && numTrue < 16) {//13,14,15
+                else if (numTrue > 12 && numTrue < 16) {//13,14,15 selected
                     stateIdx += 2.5;
                 }
-                else if (numTrue > 15 && numTrue < 19) {//16,17,18
+                else if (numTrue > 15 && numTrue < 19) {//16,17,18 selected
                     stateIdx += 3.0;
                 }
             }
@@ -240,6 +276,12 @@ public class StomaStateCalculator {
         return success;
     }
 
+    /**
+     * This method evaluates the state value calculated from the flags and determines which state the
+     * account_State object should be set to.
+     * @param stateIdx The value representing the users current hydration state
+     * @return boolean representing success/failure
+     */
     public boolean Change_State(int stateIdx) {
         boolean success;
         //Change to the required state
@@ -268,15 +310,37 @@ public class StomaStateCalculator {
         return success;
     }
 
+    /**
+     * Used to reset the daily total urine count and total output volume. This should be called at the
+     * start of each day for the calculator to function properly.
+     */
     public void reset() {
         urineCount = 0;
         outputVolume = 0;
     }
 
+    /**
+     * This method makes it possible to change the users customisable daily output amount. This is so
+     * the calculator can be updated if the user ever changes their average daily output amount to better
+     * suit their condition.
+     * @param dailyOutput number representing the new daily output to be used.
+     */
+    public void setUserDailyOutput(int dailyOutput) {
+        userDailyOutput = dailyOutput;
+    }
+
+    /**
+     * This method can be used in case an external class needs to get the state value.
+     * @return real number representing the state value
+     */
     public double getStateVal() {
         return account_State.getStateVal();
     }
 
+    /**
+     * This method can be used in case an external class needs to get the current state
+     * @return String representing the current state.
+     */
     public String getState() {
         return account_State.getState();
     }
