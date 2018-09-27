@@ -194,8 +194,6 @@ public class StomaStateCalculator {
         attributes = currFlags.keySet().toArray(new String[currFlags.size()]);
 
         for (int i = 0; i < attributes.length; i++) {
-            System.out.println("State = " + stateIdx);
-
             String temp = attributes[i];
             if (temp.equals("UrineColour")) {   //change hydration depending on urine colour
                 int scale = currFlags.get(temp);
