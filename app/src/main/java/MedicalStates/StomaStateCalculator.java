@@ -7,25 +7,34 @@ import java.util.HashMap;
 import java.util.Map;
 import Factory.Factory;
 
+/**
+ * <h1>StomaStateCalculator</h1>
+ * This class holds all of the logic for calculating the state of the users hydration status.
+ * It calls a reader class to obtain the users most recent data input, and uses this along with their
+ * current hydration state to calculate and set a new state.
+ *
+ * @author Ethan
+ * @version 1.0
+ */
 public class StomaStateCalculator {
 
     private StomaState account_State;
     private Factory factory;
     private Context sys_Ref;
     //data fields
-    //private Map<String, String> data;   //might be refactored to become a local var in Calculate_State method
     private int userDailyOutput;        //user entered average stoma output volume
     private int urineCount;      //total urine frequency counter
     private int outputVolume;    //total output record
-    private int numEntries;      //number of entries for the current day
 
 
+    /**
+     * Constructor for the state calculator class. Initialises the state to Green, with a value of 3.
+     */
     public StomaStateCalculator() {
         account_State = new GreenState(3); //maybe refactor into factory at some point
         factory = Factory.Get_Factory();
         urineCount = 0;
         outputVolume = 0;
-        numEntries = 0;
         //sys_Ref = ;
     }
 
@@ -46,48 +55,49 @@ public class StomaStateCalculator {
         factory = Factory.Get_Factory();
         urineCount = 0;
         outputVolume = 0;
-        numEntries = 0;
         userDailyOutput = userOutput;
         //sys_Ref = ;
     }
 
     public boolean Calculate_State() {
         boolean success = true;
-        numEntries++;
         try {
             //Read in the account data
-            if (!Get_Account_Data()) {
-                throw new IllegalArgumentException("Problem reading from file");
-            }
-            //change Map<String, Integer> flags = Get_Flags_From_Data(); //retrieve and simplify the flag info from the input data
+            Map<String, String> data = new HashMap<>();
+            Map<String, Integer> flags = new HashMap<>();
 
-            //change if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
-            //change     throw new IllegalArgumentException("Problem calculating new state");
-            //change }
+            //data = Get_Account_Data();
+            flags = Get_Flags_From_Data(data); //retrieve and simplify the flag info from the input data
+
+             if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
+                 throw new IllegalArgumentException("Problem calculating new state");
+             }
 
         }
         catch (IllegalArgumentException e) {success = false;}  //change to specific exception when possible
         return success;
     }
 
-    public boolean Get_Account_Data() {
-        boolean success = true;
+    /* Implement when XML reader becomes available
+    public Map<String, String> Get_Account_Data() {
+        Map<String, String data = new HashMap<>();
+
         //read in account data from XML file
-        //change XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);    //needs xml reader class
+        XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         try {
-            //change data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
+            data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
         }
-        catch (Exception e) {success = false;}
+        catch (Exception e) {}
 
-        return success;
+        return data;
     }
-
+    */
     public Map<String, Integer> Get_Flags_From_Data(Map<String, String> data) {
         //Parse account data for presence of flags
         Map<String, Integer> presentFlags = new HashMap<>();
         String[] attributes;
 
-        attributes = (String[])data.keySet().toArray();
+        attributes = data.keySet().toArray(new String[data.size()]);
 
         //parse full data and extract only relevant key-value pairs
         for (int i = 0; i < attributes.length; i++) {
@@ -101,17 +111,13 @@ public class StomaStateCalculator {
                 //frequency code
                 int freq = Integer.parseInt(data.get(temp));
                 urineCount += freq;
-                //change if (numEntries > 1) {   //don't use urine frequency until there has been at least 2 entries
-                    presentFlags.put("UrineFrequency", urineCount);
-                //change }
+                presentFlags.put("UrineFrequency", urineCount);
             }
             else if (temp.equals("Volume")) {   //only add if total for current day
                 //volume code
                 int vol = Integer.parseInt(data.get(temp));
                 outputVolume += vol;
-                //change if (numEntries > 1) {   //don't use total volume until there has been at least 2 entries
-                    presentFlags.put("Volume", outputVolume);
-                //change}
+                presentFlags.put("Volume", outputVolume);
             }
             else if (temp.equals("Consistency")) {
                 int value = Integer.parseInt(data.get(temp));
@@ -149,9 +155,11 @@ public class StomaStateCalculator {
         boolean success;
         String[] attributes;
 
-        attributes = (String[])currFlags.keySet().toArray();
+        attributes = currFlags.keySet().toArray(new String[currFlags.size()]);
 
         for (int i = 0; i < attributes.length; i++) {
+            System.out.println("State = " + stateIdx);
+
             String temp = attributes[i];
             if (temp.equals("UrineColour")) {   //change hydration depending on urine colour
                 int scale = currFlags.get(temp);
@@ -228,7 +236,6 @@ public class StomaStateCalculator {
         else if (stateRef > 10) {
             stateRef = 10;
         }
-
         success = Change_State(stateRef);
         return success;
     }
@@ -256,8 +263,6 @@ public class StomaStateCalculator {
         }
         else
         {
-            //something went wrong - exception or return false
-            //throw new IllegalArgumentException("Error calculating state");
             success = false;
         }
         return success;
@@ -266,7 +271,6 @@ public class StomaStateCalculator {
     public void reset() {
         urineCount = 0;
         outputVolume = 0;
-        numEntries = 0;
     }
 
     public double getStateVal() {
