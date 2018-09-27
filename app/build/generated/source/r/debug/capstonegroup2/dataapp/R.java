@@ -14554,4 +14554,9 @@ public final class R {
      */
     public static final int ViewStubCompat_android_inflatedId=2;
   }
+  public static final class xml {
+    public static final int account_file_data=0x7f100000;
+    public static final int empty_file=0x7f100001;
+    public static final int test_one=0x7f100002;
+  }
 }
