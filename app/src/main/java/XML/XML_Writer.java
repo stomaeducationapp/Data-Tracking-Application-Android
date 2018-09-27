@@ -1,16 +1,13 @@
 package XML;
 
-import android.content.Context;
-
 import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 /**
  * <h1>XML_Writer</h1>
@@ -36,15 +33,14 @@ public interface XML_Writer {
         //Login
         Account_Name, Password,
         //Account
-        Gamification, Notification, State, Name,
+        Name, Gamification, Notification, State, Last_Daily_Review_Date,
         //Medical
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Number_Of_Entries_To_Write
     }
     /**
      * @param account_File   Represents the File Object used to write users data to the specified file stored on the device
      * @param values         Map with string pair values, where the Keys correlate to the Enum Tags_To_Write values
-     * @param tags           Div Tags to write the values to in file
      * @return True if successful otherwise false
      */
-    Boolean Write_File(File account_File, Map<String, String> values, List<Tags_To_Write> tags) throws IOException, ParserConfigurationException, SAXException;
+    Boolean Write_File(File account_File, Map<String, String> values) throws IOException, ParserConfigurationException, SAXException, TransformerException;
 }
