@@ -35,7 +35,10 @@ public interface XML_Writer {
         //Account
         Name, Gamification, Notification, State, Last_Daily_Review_Date,
         //Medical
-        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Number_Of_Entries_To_Write
+        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Number_Of_Entries_To_Write,
+        //Control Statements
+        Modify, New
+
     }
     /**
      * @param account_File   Represents the File Object used to write users data to the specified file stored on the device
