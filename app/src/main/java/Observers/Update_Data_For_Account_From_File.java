@@ -36,7 +36,7 @@ import java.util.Map;
  * Need to update how IOException and XmlPullParserException are handled in the class.
  */
 
-class Update_Data_For_Account_From_File implements Update_Data_Observer {
+public class Update_Data_For_Account_From_File implements Update_Data_Observer {
     /**
      * Name of the initial value which Account Information is Stored Under
      */

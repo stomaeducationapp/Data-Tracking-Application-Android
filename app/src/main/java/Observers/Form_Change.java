@@ -2,7 +2,7 @@ package Observers;
 
 import android.app.Activity;
 import android.content.Intent;
-
+import Factory.Factory;
 
 /**
  * <h1>Form_Change</h1>
@@ -31,19 +31,21 @@ import android.content.Intent;
  * <p>
  * 29th Aug
  * Update JavaDoc code to comply with format, Patrick Crockford
+ * 17th Sept
+ * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
  */
 
 
 // TODO: 25-Aug-18 When factory class is created uncomment and also comment activity creation and returns when integrating
-class Form_Change implements Form_Change_Observer {
-    //private Factory factory;
+public class Form_Change implements Form_Change_Observer {
+    private Factory factory;
 
 
     /**
      * Instantiates a new Form_Change.
      */
-    public Form_Change(/*Factory factory*/) {
-        //this.factory = factory;
+    public Form_Change(Factory factory) {
+        this.factory = factory;
     }
 
     /**
@@ -59,7 +61,7 @@ class Form_Change implements Form_Change_Observer {
         boolean valid = false;
         if (activity_To_Change_To != null && intent != null) {
             Activity activity = null;
-            //// TODO: 20-Aug-18 Need to change names as the classes/packages are created so it fits in and switches correctly
+            // TODO: 17-Sep-18 Uncomment and modify when Activities have been created
             //Logic for which Activity to create and launch
             switch (activity_To_Change_To) {
                 case Account_Creation:

@@ -5,6 +5,8 @@ import android.content.Intent;
 import org.junit.Before;
 import org.junit.Test;
 
+import Factory.Factory;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -28,7 +30,7 @@ public class Form_Change__Unit_Test {
     @Before
     public void initialize() {
         intent = new Intent();
-        form_Change_Observer = new Form_Change();
+        form_Change_Observer = new Form_Change(Factory.Get_Factory());
     }
 
     //Testing all Correct Enum Values, should not throw exceptions
