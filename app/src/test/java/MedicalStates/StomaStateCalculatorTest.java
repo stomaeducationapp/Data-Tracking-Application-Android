@@ -1,10 +1,8 @@
 package MedicalStates;
 
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static org.junit.Assert.*;
 
 public class StomaStateCalculatorTest {
@@ -57,19 +55,17 @@ public class StomaStateCalculatorTest {
     /**
      * Testing all possible state changes
      */
-
     //unchanging state
     @Test
     public void Test_Maintain_State() {
         Map<String, Integer> inMap = new HashMap<>();
         calc = new StomaStateCalculator(3, 800);
 
-        //state initially at 4.5
-        inMap.put("UrineColour", 2);                  //make state 4.5
-        inMap.put("UrineFrequency", 3);               //make state 4.5
-        inMap.put("Volume", 600);                     //make state 5.5
-        inMap.put("Consistency", 2);                  //make state 5.5
-        inMap.put("PhysicalCharacteristics", 6);      //make state 3.5
+        inMap.put("UrineColour", 2);
+        inMap.put("UrineFrequency", 3);
+        inMap.put("Volume", 600);
+        inMap.put("Consistency", 2);
+        inMap.put("PhysicalCharacteristics", 6);
 
         assertEquals("Green", calc.getState());
         assertEquals(3.0, calc.getStateVal(), 0.0);
@@ -77,7 +73,7 @@ public class StomaStateCalculatorTest {
         calc.Calculate_New_State(inMap);
 
         assertEquals("Green", calc.getState());
-        assertEquals(4.0, calc.getStateVal(), 0.0);
+        assertEquals(3.0, calc.getStateVal(), 0.0);
     }
 
     @Test
@@ -97,7 +93,7 @@ public class StomaStateCalculatorTest {
         calc.Calculate_New_State(inMap);
 
         assertEquals("Yellow", calc.getState());
-        assertEquals(6.0, calc.getStateVal(), 0.0);
+        assertEquals(5.0, calc.getStateVal(), 0.0);
     }
 
     @Test
@@ -117,7 +113,7 @@ public class StomaStateCalculatorTest {
         calc.Calculate_New_State(inMap);
 
         assertEquals("Red", calc.getState());
-        assertEquals(9.0, calc.getStateVal(), 0.0);
+        assertEquals(8.0, calc.getStateVal(), 0.0);
     }
 
     @Test
@@ -137,7 +133,7 @@ public class StomaStateCalculatorTest {
         calc.Calculate_New_State(inMap);
 
         assertEquals("Green", calc.getState());
-        assertEquals(4.0, calc.getStateVal(), 0.0);
+        assertEquals(3.0, calc.getStateVal(), 0.0);
     }
 
     @Test
@@ -177,7 +173,7 @@ public class StomaStateCalculatorTest {
         calc.Calculate_New_State(inMap);
 
         assertEquals("Green", calc.getState());
-        assertEquals(2.0, calc.getStateVal(), 0.0);
+        assertEquals(1.0, calc.getStateVal(), 0.0);
     }
 
     @Test
@@ -197,6 +193,6 @@ public class StomaStateCalculatorTest {
         calc.Calculate_New_State(inMap);
 
         assertEquals("Yellow", calc.getState());
-        assertEquals(6.0, calc.getStateVal(), 0.0);
+        assertEquals(5.0, calc.getStateVal(), 0.0);
     }
 }

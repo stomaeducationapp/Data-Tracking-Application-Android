@@ -126,49 +126,50 @@ public class StomaStateCalculator {
         attributes = data.keySet().toArray(new String[data.size()]);
 
         //parse full data and extract only relevant key-value pairs
-        for (int i = 0; i < attributes.length; i++) {
+        for (String temp : attributes) {
             //iterate all data elements and only copy relevant fields to the new Map
-            String temp = attributes[i];
-            if (temp.equals("UrineColour")) {
-                int value = Integer.parseInt(data.get(temp));
-                presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
-            }
-            else if (temp.equals("UrineFrequency")) {   //only add if total for current day
-                //frequency code
-                int freq = Integer.parseInt(data.get(temp));
-                urineCount += freq;
-                presentFlags.put("UrineFrequency", urineCount);
-            }
-            else if (temp.equals("Volume")) {   //only add if total for current day
-                //volume code
-                int vol = Integer.parseInt(data.get(temp));
-                outputVolume += vol;
-                presentFlags.put("Volume", outputVolume);
-            }
-            else if (temp.equals("Consistency")) {
-                int value = Integer.parseInt(data.get(temp));
-                presentFlags.put("Consistency", value); //may need to change depending on format of stored data
-            }
-            else if (temp.equals("PhysicalCharacteristics")) {
-                //Physical characteristics should be stored as CSV format
-                String value = data.get("PhysicalCharacteristics");
-                String[] splitString = value.split(",");
-                int charIdx = 0;
-
-                for (int ii = 0; ii < splitString.length; ii++) {
-                    String tmp = splitString[ii];
-
-                    if (tmp.equals("thirsty") || tmp.equals("headache") || tmp.equals("lightheaded")) {
-                        charIdx += 1;
-                    }
-                    else if (tmp.equals("stomach cramps") || tmp.equals("muscle cramps") || tmp.equals("fatigue")) {
-                        charIdx += 2;
-                    }
-                    else if (tmp.equals("dry mouth") || tmp.equals("confusion") || tmp.equals("tiredness")) {
-                        charIdx += 3;
-                    }
+            switch (temp) {
+                case "UrineColour": {
+                    int value = Integer.parseInt(data.get(temp));
+                    presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
+                    break;
                 }
-                presentFlags.put("PhysicalCharacteristics", charIdx);
+                case "UrineFrequency":    //only add if total for current day
+                    //frequency code
+                    int freq = Integer.parseInt(data.get(temp));
+                    urineCount += freq;
+                    presentFlags.put("UrineFrequency", urineCount);
+                    break;
+                case "Volume":    //only add if total for current day
+                    //volume code
+                    int vol = Integer.parseInt(data.get(temp));
+                    outputVolume += vol;
+                    presentFlags.put("Volume", outputVolume);
+                    break;
+                case "Consistency": {
+                    int value = Integer.parseInt(data.get(temp));
+                    presentFlags.put("Consistency", value); //may need to change depending on format of stored data
+
+                    break;
+                }
+                case "PhysicalCharacteristics": {
+                    //Physical characteristics should be stored as CSV format
+                    String value = data.get("PhysicalCharacteristics");
+                    String[] splitString = value.split(",");
+                    int charIdx = 0;
+
+                    for (String tmp : splitString) {
+                        if (tmp.equals("thirsty") || tmp.equals("headache") || tmp.equals("lightheaded")) {
+                            charIdx += 1;
+                        } else if (tmp.equals("stomach cramps") || tmp.equals("muscle cramps") || tmp.equals("fatigue")) {
+                            charIdx += 2;
+                        } else if (tmp.equals("dry mouth") || tmp.equals("confusion") || tmp.equals("tiredness")) {
+                            charIdx += 3;
+                        }
+                    }
+                    presentFlags.put("PhysicalCharacteristics", charIdx);
+                    break;
+                }
             }
         }
         return presentFlags;
@@ -186,80 +187,73 @@ public class StomaStateCalculator {
      */
     public boolean Calculate_New_State(Map<String, Integer> currFlags) {
         //Check what attributes have been flagged and determine the state
-        double stateIdx = 3.0 + (account_State.getStateVal()*0.5);    //Base for new state
+        double stateIdx = 2.0 + (account_State.getStateVal()*0.5);    //Base for new state - might be lowered
         int stateRef;
         boolean success;
         String[] attributes;
 
         attributes = currFlags.keySet().toArray(new String[currFlags.size()]);
 
-        for (int i = 0; i < attributes.length; i++) {
-            String temp = attributes[i];
-            if (temp.equals("UrineColour")) {   //change hydration depending on urine colour
-                int scale = currFlags.get(temp);
-                if (scale == 1) {
-                    stateIdx += 1.0;
+        for (String temp : attributes) {
+            switch (temp) {
+                case "UrineColour": {   //change hydration depending on urine colour
+                    int scale = currFlags.get(temp);
+                    if (scale == 1) {
+                        stateIdx += 1.0;
+                    } else if (scale == 2) {
+                        stateIdx += 0.0;
+                    } else if (scale == 3) {
+                        stateIdx -= 1.0;
+                    }
+                    break;
                 }
-                else if (scale == 2) {
-                    stateIdx += 0.0;
+                case "UrineFrequency": {
+                    int scale = currFlags.get(temp);
+                    if (scale < 3) {
+                        stateIdx += 2.0;
+                    }
+                    break;
                 }
-                else if (scale == 3) {
-                    stateIdx -= 1.0;
+                case "Consistency": {
+                    int scale = currFlags.get(temp);
+                    if (scale == 1) {
+                        stateIdx += 1.0;
+                    } else if (scale == 2) {
+                        stateIdx += 0.0;
+                    } else if (scale == 3) {
+                        stateIdx -= 1.0;
+                    }
+                    break;
                 }
-            }
-            else if (temp.equals("UrineFrequency")) {
-                int scale = currFlags.get(temp);
-                if (scale < 3) {
-                    stateIdx += 2.0;
+                case "Volume": {
+                    int scale = currFlags.get(temp);
+                    if (scale < userDailyOutput) {
+                        stateIdx -= 2.0;
+                    } else if (scale > userDailyOutput && scale < userDailyOutput + 300) {
+                        stateIdx += 1.0;
+                    } else if (scale > userDailyOutput + 299) {
+                        stateIdx += 2.0;
+                    }
+                    break;
                 }
-            }
-            else if (temp.equals("Consistency")) {
-                int scale = currFlags.get(temp);
-                if (scale == 1) {
-                    stateIdx += 1.0;
-                }
-                else if (scale == 2) {
-                    stateIdx += 0.0;
-                }
-                else if (scale == 3) {
-                    stateIdx -= 1.0;
-                }
-            }
-            else if (temp.equals("Volume")) {
-                int scale = currFlags.get(temp);
-                if (scale < userDailyOutput) {
-                    stateIdx -= 2.0;
-                }
-                else if (scale > userDailyOutput && scale < userDailyOutput + 300) {
-                    stateIdx += 1.0;
-                }
-                else if (scale > userDailyOutput + 299) {
-                    stateIdx += 2.0;
-                }
-            }
-            else if (temp.equals("PhysicalCharacteristics")) {
-                int numTrue = currFlags.get(temp);
-                if (numTrue == 0) {
-                    stateIdx -= 1.0;
-                }
-                else if (numTrue > 0 && numTrue < 4) {  //1,2,3 selected
-                    stateIdx += 0.5;
-                }
-                else if (numTrue > 3 && numTrue < 7){   //4,5,6 selected
-                    stateIdx += 1.0;
-                }
-                else if (numTrue > 6 && numTrue < 10) { //7,8,9 selected
-                    stateIdx += 1.5;
-                }
-                else if (numTrue > 9 && numTrue < 13) {//10,11,12 selected
-                    stateIdx += 2.0;
-                }
-                else if (numTrue > 12 && numTrue < 16) {//13,14,15 selected
-                    stateIdx += 2.5;
-                }
-                else if (numTrue > 15 && numTrue < 19) {//16,17,18 selected
-                    stateIdx += 3.0;
-                }
+                case "PhysicalCharacteristics":
+                    int numTrue = currFlags.get(temp);
+                    if (numTrue == 0) {
+                        stateIdx -= 1.0;
+                    } else if (numTrue > 0 && numTrue < 4) {  //1,2,3 selected
+                        stateIdx += 0.5;
+                    } else if (numTrue > 3 && numTrue < 7) {   //4,5,6 selected
+                        stateIdx += 1.0;
+                    } else if (numTrue > 6 && numTrue < 10) { //7,8,9 selected
+                        stateIdx += 1.5;
+                    } else if (numTrue > 9 && numTrue < 13) {//10,11,12 selected
+                        stateIdx += 2.0;
+                    } else if (numTrue > 12 && numTrue < 16) {//13,14,15 selected
+                        stateIdx += 2.5;
+                    } else if (numTrue > 15 && numTrue < 19) {//16,17,18 selected
+                        stateIdx += 3.0;
+                    }
+                    break;
             }
         }
 

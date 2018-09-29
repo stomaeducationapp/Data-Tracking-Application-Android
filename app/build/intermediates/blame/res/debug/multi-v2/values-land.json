@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\7f012aef02b4491a9138c86ae7991d02\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\ce35bc99b73741f3c725f6040ea7e597\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\18cbc9aa529c50d9f18fecef37b4b529\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
