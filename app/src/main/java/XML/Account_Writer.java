@@ -8,7 +8,6 @@ import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,7 +18,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-
+/**
+ * <h1>NOTES</h1>
+ * Method Parameter for Write_File: Tags_To_Write task is not used but is there for future functionality if required in
+ * the future.
+ */
 //Note Have to use Document Builder and DOM as need to read all existing first and add in new then overwrite all
 // http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
 
@@ -35,8 +38,7 @@ class Account_Writer implements XML_Writer {
      */
     // TODO: 27-Sep-18 Will need to catch the exceptions being thrown and throw a custom exception as most of these should never occur. If they do then there is a big error somewhere in the program running
     @Override
-    public Boolean Write_File(File account_File, Map<String, String> values) {
-        Set<String> keys = values.keySet();
+    public Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) {
         Boolean success = false;
         try {//Get Keys of Map
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -52,25 +54,24 @@ class Account_Writer implements XML_Writer {
                         Node node = information_Nodes.item(ii);
                         String node_Name = node.getNodeName();
                         //check if node is one to be changed
-                        if (keys.contains(node_Name)) {
-                            //Using an if/else if chain as enum needs to be converted to String values and cannot be done in Switch due to constant expressions required
-                            //Gamification, Notification, State, Name, Last_Daily_Review_Date,
-                            //Account Tags Only!!!! anything else will throw XML_Writer_Invalid_Enum_Exception
-                            // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
-                            if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
-                                node.setTextContent(values.get(node_Name));
-                            } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
-                                node.setTextContent(values.get(node_Name));
-                            } else if (node_Name.equals(Tags_To_Write.State.toString())) {
-                                node.setTextContent(values.get(node_Name));
-                            } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
-                                node.setTextContent(values.get(node_Name));
-                            } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
-                                node.setTextContent(values.get(node_Name));
-                            } else {
-                                //throw new XML_Writer_Invalid_Enum_Exception("Incorrect Enum given to Write_File, please read XML_Writer Documentation about the Tags_To_Write enum values");
-                            }
+                        //Using an if/else if chain as enum needs to be converted to String values and cannot be done in Switch due to constant expressions required
+                        //Gamification, Notification, State, Name, Last_Daily_Review_Date,
+                        //Account Tags Only!!!! anything else will throw XML_Writer_Invalid_Enum_Exception
+                        // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
+                        if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
+                            node.setTextContent(values.get(node_Name));
+                        } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
+                            node.setTextContent(values.get(node_Name));
+                        } else if (node_Name.equals(Tags_To_Write.State.toString())) {
+                            node.setTextContent(values.get(node_Name));
+                        } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
+                            node.setTextContent(values.get(node_Name));
+                        } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
+                            node.setTextContent(values.get(node_Name));
+                        } else {
+                            //throw new XML_Writer_Invalid_Enum_Exception("Incorrect Enum given to Write_File, please read XML_Writer Documentation about the Tags_To_Write enum values");
                         }
+
                     }
                     //Write Back to File
                     TransformerFactory transformerFactory = TransformerFactory.newInstance();
