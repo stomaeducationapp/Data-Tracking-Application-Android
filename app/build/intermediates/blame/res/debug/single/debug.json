@@ -4,28 +4,28 @@
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_default.xml.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
@@ -37,7 +37,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable\\notification_bg.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable\\notification_bg.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",
@@ -73,7 +73,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout-v16\\notification_template_custom_big.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout-v16\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_fab_background.xml.flat",
@@ -105,7 +105,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout\\notification_template_part_time.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_borderless_material.xml.flat",
@@ -121,7 +121,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout-v21\\notification_template_custom_big.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -212,12 +212,12 @@
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -225,11 +225,11 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout\\notification_action.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable\\notification_bg_low.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable\\notification_bg_low.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
@@ -252,12 +252,12 @@
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_track_material.xml.flat",
@@ -329,7 +329,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_dropdown_item_icons_2line.xml.flat",
@@ -436,12 +436,12 @@
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_password_eye.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\ce35bc99b73741f3c725f6040ea7e597\\res\\drawable\\design_password_eye.xml"
-    },
-    {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\ce35bc99b73741f3c725f6040ea7e597\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_password_eye.xml.flat",
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\ce35bc99b73741f3c725f6040ea7e597\\res\\drawable\\design_password_eye.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -457,7 +457,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_big_media_narrow.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
@@ -493,7 +493,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_big_media.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_big_media.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
@@ -509,7 +509,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -557,7 +557,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -581,7 +581,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_lines_media.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_lines_media.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -665,7 +665,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout-v21\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
@@ -713,7 +713,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -837,7 +837,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -861,7 +861,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -869,7 +869,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable\\notification_tile_bg.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable\\notification_tile_bg.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23_abc_control_background_material.xml.flat",
@@ -897,7 +897,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout-v21\\notification_action.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout-v21\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
@@ -1029,7 +1029,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -1037,7 +1037,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1109,7 +1109,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_big_media_custom.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility.png.flat",
@@ -1189,7 +1189,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -1213,7 +1213,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -1297,7 +1297,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_btn_checkable.xml.flat",
@@ -1349,7 +1349,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_icon_background.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable\\notification_icon_background.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable\\notification_icon_background.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_up_container.xml.flat",
@@ -1385,7 +1385,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout-v21\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -1405,7 +1405,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
@@ -1417,7 +1417,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
@@ -1453,7 +1453,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -1521,7 +1521,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -1557,7 +1557,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
@@ -1621,7 +1621,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_media_custom.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_media_custom.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -1637,7 +1637,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
@@ -1649,7 +1649,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_media_cancel_action.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -1661,7 +1661,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\drawable-v21\\notification_action_background.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_abc_screen_toolbar.xml.flat",
@@ -1701,7 +1701,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_action.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_media_action.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
@@ -1745,7 +1745,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout\\notification_template_icon_group.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_item_layout.xml.flat",
@@ -1773,7 +1773,7 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\layout\\notification_template_media.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -1805,6 +1805,10 @@
     },
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
-        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\2e804bf32b02659a4be912bd15be916e\\res\\layout\\notification_template_part_chronometer.xml"
+        "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout.xml.flat",
+        "source": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\src\\main\\res\\layout\\layout.xml"
     }
 ]
