@@ -36,60 +36,62 @@ class Account_Writer implements XML_Writer {
      * @param values       Map with string pair values, where the Keys correlate to the Enum Tags_To_Write values
      * @return True if successful otherwise false
      */
-    // TODO: 27-Sep-18 Will need to catch the exceptions being thrown and throw a custom exception as most of these should never occur. If they do then there is a big error somewhere in the program running
     @Override
-    public Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) {
-        Boolean success = false;
-        try {//Get Keys of Map
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(account_File);
-            Node account = document.getFirstChild();
-            if (account.getNodeName().equals(ROOT_NODE)) {
-                Node account_Information = document.getElementsByTagName(ACCOUNT_INFORMATION_NODE).item(0);
-                if (account_Information != null) {
-                    //get all nodes within the account_information and loop through modifying as required
-                    NodeList information_Nodes = account_Information.getChildNodes();
-                    for (int ii = 0; ii < information_Nodes.getLength(); ii++) {
-                        Node node = information_Nodes.item(ii);
-                        String node_Name = node.getNodeName();
-                        //check if node is one to be changed
-                        //Using an if/else if chain as enum needs to be converted to String values and cannot be done in Switch due to constant expressions required
-                        //Gamification, Notification, State, Name, Last_Daily_Review_Date,
-                        //Account Tags Only!!!! anything else will throw XML_Writer_Invalid_Enum_Exception
-                        // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
-                        if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
-                            node.setTextContent(values.get(node_Name));
-                        } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
-                            node.setTextContent(values.get(node_Name));
-                        } else if (node_Name.equals(Tags_To_Write.State.toString())) {
-                            node.setTextContent(values.get(node_Name));
-                        } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
-                            node.setTextContent(values.get(node_Name));
-                        } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
-                            node.setTextContent(values.get(node_Name));
-                        } else {
-                            //throw new XML_Writer_Invalid_Enum_Exception("Incorrect Enum given to Write_File, please read XML_Writer Documentation about the Tags_To_Write enum values");
-                        }
-
+    public Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
+        if (values == null || values.isEmpty() || account_File == null) {
+            try {
+                DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+                Document document = documentBuilder.parse(account_File);
+                Node account = document.getFirstChild();
+                if (account.getNodeName().equals(ROOT_NODE)) {
+                    Node account_Information = document.getElementsByTagName(ACCOUNT_INFORMATION_NODE).item(0);
+                    if (account_Information != null) {
+                        NodeList information_Nodes = account_Information.getChildNodes();
+                        Modify_Node_Values(information_Nodes, values);
+                        Boolean success = Write_To_File(document, account_File);
+                        return success;
+                    } else {
+                        throw new XML_Writer_File_Layout_Exception(String.format("Cannot find 'Account_Information' XML Tag/Node in the File '%s'. File is either corrupt or invalid", account_File.getName()));
                     }
-                    //Write Back to File
-                    TransformerFactory transformerFactory = TransformerFactory.newInstance();
-                    Transformer transformer = transformerFactory.newTransformer();
-                    DOMSource source = new DOMSource(document);
-                    StreamResult result = new StreamResult(account_File);
-                    transformer.transform(source, result);
                 } else {
-                    //ERROR
-                    // TODO: 27-Sep-18 need to handle error as it is the wrong/corrupted file!!!
+                    throw new XML_Writer_File_Layout_Exception(String.format("Cannot find 'Account_File' Root XML Tag/Node in the File '%s'. File is either corrupt or invalid", account_File.getName()));
                 }
-            } else {
-                //ERROR
-                // TODO: 27-Sep-18 need to handle error as it is the wrong/corrupted file!!!
+            } catch (IOException | ParserConfigurationException | SAXException | TransformerException ex) {
+                throw new XML_Writer_Failure_Exception((String.format("Failed to Write file '%s' due to '%s'", account_File.getName(), ex)));
             }
-        } catch (IOException | ParserConfigurationException | SAXException | TransformerException ex) {
-            // TODO: 27-Sep-18 will need to throw a custom exception. May need to split the catches us based on what type of error has occured
+        } else {
+            throw new XML_Writer_Failure_Exception("Failed to execute due to File is Null, or Map is Null or Empty");
         }
-        return success;
+    }
+
+    private void Modify_Node_Values(NodeList information_Nodes, Map<String, String> values) throws XML_Writer_File_Layout_Exception {
+        for (int ii = 0; ii < information_Nodes.getLength(); ii++) {
+            Node node = information_Nodes.item(ii);
+            String node_Name = node.getNodeName();
+            // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
+            if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
+                if (values.containsKey(node_Name)) node.setTextContent(values.get(node_Name));
+            } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
+                if (values.containsKey(node_Name)) node.setTextContent(values.get(node_Name));
+            } else if (node_Name.equals(Tags_To_Write.State.toString())) {
+                if (values.containsKey(node_Name)) node.setTextContent(values.get(node_Name));
+            } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
+                if (values.containsKey(node_Name)) node.setTextContent(values.get(node_Name));
+            } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
+                if (values.containsKey(node_Name)) node.setTextContent(values.get(node_Name));
+            } else {
+                throw new XML_Writer_File_Layout_Exception(String.format("Invalid node '%s' found in file. WARNING file maybe modified from an external program and contain malicious code", node_Name));
+            }
+        }
+    }
+
+    private boolean Write_To_File(Document document, File account_File) throws TransformerException {
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(document);
+        StreamResult result = new StreamResult(account_File);
+        transformer.transform(source, result);
+        return true;
     }
 }

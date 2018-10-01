@@ -48,7 +48,7 @@ public interface XML_Writer {
      * @param values       Map with string pair values, where the Keys correlate to the Enum Tags_To_Write values
      * @return True if successful otherwise false
      */
-    Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) throws IOException, ParserConfigurationException, SAXException, TransformerException;
+    Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) throws IOException, ParserConfigurationException, SAXException, TransformerException, XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception;
 
 
 }

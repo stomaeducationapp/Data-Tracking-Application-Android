@@ -70,7 +70,7 @@ public class Medical_Writer implements XML_Writer {
     //https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
     //then merge existing one from file into it!!!! for adding a new entry
     @Override
-    public Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) {
+    public Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) throws XML_Writer_File_Layout_Exception{
         Boolean success = false;
         try {//Get Keys of Map
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -107,7 +107,7 @@ public class Medical_Writer implements XML_Writer {
         return success;
     }
 
-    private Boolean Modify(Node root_Node, Map<String, String> values, File account_File) {
+    private Boolean Modify(Node root_Node, Map<String, String> values, File account_File) throws XML_Writer_File_Layout_Exception {
         NodeList nodeList = root_Node.getChildNodes();
         Node medical = nodeList.item(MEDICAL_NODE_INDEX);
         String node_Name = medical.getNodeName();
@@ -119,27 +119,35 @@ public class Medical_Writer implements XML_Writer {
                 Node node = medicalList.item(ii);
                 node_Name = node.getNodeName();
                 if (node_Name.equals(Tags_To_Write.Bags.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
                 } else if (node_Name.equals(Tags_To_Write.Urine.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
                 } else if (node_Name.equals(Tags_To_Write.Hydration.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
                 } else if (node_Name.equals(Tags_To_Write.WellBeing.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
                 } else if (node_Name.equals(Tags_To_Write.Location.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
                 } else if (node_Name.equals(Tags_To_Write.Entry_Time.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
                 } else if (node_Name.equals(Tags_To_Write.Medical_State.toString())) {
-                    node.setTextContent(values.get(node_Name));
+                    if(values.containsKey(node_Name))
+                        node.setTextContent(values.get(node_Name));
+
                 } else {
-                    //ERROR invalid node found file maybe corrupt or the wrong one
+                   throw new XML_Writer_File_Layout_Exception();
                 }
             }
+            return true;
         } else {
-            //ERROR)
+            throw new XML_Writer_File_Layout_Exception();
         }
-        return null;
     }
 
     private Boolean Add(Node root_Node, Map<String, String> values, File account_File) {
