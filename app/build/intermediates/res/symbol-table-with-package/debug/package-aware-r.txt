@@ -1019,6 +1019,7 @@ layout abc_screen_toolbar
 layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
+layout activity_daily_review
 layout activity_login
 layout content_login
 layout design_bottom_navigation_item
@@ -1035,7 +1036,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action

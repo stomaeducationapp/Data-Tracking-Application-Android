@@ -580,6 +580,10 @@
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\01d04ad51617d3eebcc111b8c6315f2d\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_daily_review.xml.flat",
+        "source": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\src\\main\\res\\layout\\activity_daily_review.xml"
+    },
+    {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\layout\\notification_template_lines_media.xml"
     },
@@ -1806,9 +1810,5 @@
     {
         "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
         "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7d959ae98d3393daf8867f11dbe55530\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
-        "merged": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout.xml.flat",
-        "source": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\src\\main\\res\\layout\\layout.xml"
     }
 ]

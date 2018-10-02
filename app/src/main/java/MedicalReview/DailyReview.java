@@ -3,7 +3,6 @@ package MedicalReview;
 import android.provider.ContactsContract;
 
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -11,6 +10,11 @@ import com.jjoe64.graphview.R;
 
 import java.sql.Date;
 import java.util.Map;
+
+/*
+GRAPH STUFF IS STILL IN PROGRESS
+ */
+
 
 public class DailyReview {
     private static String[] HOURS = {
@@ -20,20 +24,40 @@ public class DailyReview {
             "3:00", "4:00", "5:00", "6:00", "7:00", "8:00"
     };
 
+    //store the series for each graph in classfields
+    private LineGraphSeries<DataPoint> series;
 
     public DailyReview() {
 
     }
 
+    public DailyReview(DailyReview copy) {
+        series = copy.getSeries();
+    }
+
     //Map should have time as key(millis since epoch) and value(corresponding value)
-    public boolean generateGraph(Map<Long, Integer> data, String typeOfGraph) {
+    public boolean generateGraph(Map<Long, Integer> data, ReviewHandler.TYPE typeOfCall) {
         boolean success = true;
 
+        if (typeOfCall == ReviewHandler.TYPE.STATE) {   //calculate the graph with hydration state
+
+        }
+        else if (typeOfCall == ReviewHandler.TYPE.OUTPUT) { //calculate the graph with output volume
+
+        }
 
 
         return success;
     }
 
+    //make the graph visible on the UI
+    public void display() {
+
+    }
+
+    public LineGraphSeries<DataPoint> getSeries() {
+        return series;
+    }
 
     /*
         Map<Double, Integer> stateData
@@ -46,11 +70,12 @@ public class DailyReview {
         DataPoint[] points = new DataPoint[attributes.length];
         int ii = 0;
 
+
         for (Long key: attributes) {
             points[ii] = new DataPoint(new Date(attributes[ii]), stateData.get(key));   //data point with datetime and value
         }
 
-        GraphView graph = (GraphView) findViewById(R.id.graph);
+        GraphView graph = (GraphView) findViewById(R.id.graph);     //needs to connect to the graph in the activity XML
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points);
 
         graph.addSeries(series);
@@ -92,4 +117,5 @@ public class DailyReview {
 
         return success;
     }
+
 }
