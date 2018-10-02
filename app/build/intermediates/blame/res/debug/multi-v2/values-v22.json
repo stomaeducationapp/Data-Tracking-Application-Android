@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Uni\\Project\\Android\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+            "outputFile": "C:\\Users\\Patrick\\Documents\\Uni 2018\\Sem 2\\Capstone\\Android App\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jerst_000\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9ceb100dedabf762e60dfc4ff9ff8591\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\Patrick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\e8305d87975f03eccdc6992ee11154f8\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

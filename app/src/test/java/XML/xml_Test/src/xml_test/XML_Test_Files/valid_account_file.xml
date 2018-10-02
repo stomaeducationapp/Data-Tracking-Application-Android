@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Account_File>
+    <Account_Information>
+        <Name>a</Name>		
+        <Notification>b</Notification>
+        <State>c</State>
+        <Gamification>d</Gamification>
+    </Account_Information>
+</Account_File>
