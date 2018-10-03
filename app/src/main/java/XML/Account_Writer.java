@@ -26,7 +26,7 @@ import javax.xml.transform.stream.StreamResult;
 //Note Have to use Document Builder and DOM as need to read all existing first and add in new then overwrite all
 // http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
 
-class Account_Writer implements XML_Writer {
+public class Account_Writer implements XML_Writer {
     private static final String ROOT_NODE = "Account_File";
     private static final String ACCOUNT_INFORMATION_NODE = "Account_Information";
 
