@@ -23,7 +23,7 @@ public class ReviewData {
 
     }
 
-    public void saveReviews(DailyReview toSave) {
+    public void saveReviews(DailyReview_Old toSave) {
 
     }
 }

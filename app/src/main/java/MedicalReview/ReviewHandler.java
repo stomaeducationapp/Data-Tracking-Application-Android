@@ -7,8 +7,8 @@ public class ReviewHandler {
     private enum DAY {TODAY, YESTERDAY}
     public enum TYPE {STATE, OUTPUT}
 
-    private DailyReview today;
-    private DailyReview yesterday;
+    private DailyReview_Old today;
+    private DailyReview_Old yesterday;
 
     public ReviewHandler() {
         today = null;
@@ -19,9 +19,9 @@ public class ReviewHandler {
     public boolean generateReview() {
         boolean success = true;
         Map<Long, Integer> data = new HashMap<>();
-        yesterday = new DailyReview(today);
+        yesterday = new DailyReview_Old(today);
 
-        today = new DailyReview();
+        today = new DailyReview_Old();
 
         //Read in the account data to create the graphs.
         data = ReviewData.loadData();

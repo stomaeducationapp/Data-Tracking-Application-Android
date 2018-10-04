@@ -2,7 +2,7 @@ package MedicalStates;
 
 import android.content.Context;
 
-import org.xml.sax.XMLReader;
+import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
 import Factory.Factory;
@@ -76,10 +76,10 @@ public class StomaStateCalculator {
         boolean success = true;
         try {
             //Read in the account data
-            Map<String, String> data = new HashMap<>();
-            Map<String, Integer> flags = new HashMap<>();
+            Map<String, String> data;
+            Map<String, Integer> flags;
 
-            //data = Get_Account_Data();
+            data = Get_Account_Data();
             flags = Get_Flags_From_Data(data); //retrieve and simplify the flag info from the input data
 
              if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
@@ -96,20 +96,19 @@ public class StomaStateCalculator {
      * recent data input in a map
      * @return the map storing the data in attribute - value pairs
      */
-    /* Implement when XML reader becomes available
     public Map<String, String> Get_Account_Data() {
-        Map<String, String data = new HashMap<>();
+        Map<String, String> data = new HashMap<>();
 
         //read in account data from XML file
-        XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
+        Reader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         try {
-            data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
+            data = dataIn.Read_File();  //update method call when reader becomes available
         }
-        catch (Exception e) {}
+        catch (Exception e) {/*add handling if nto caught by xml reader*/}
 
         return data;
     }
-    */
+
 
     /**
      * This method takes the map with all of the user data and extracts only the key - value pairs
@@ -123,7 +122,7 @@ public class StomaStateCalculator {
         Map<String, Integer> presentFlags = new HashMap<>();
         String[] attributes;
 
-        attributes = data.keySet().toArray(new String[data.size()]);
+        attributes = data.keySet().toArray(new String[0]);
 
         //parse full data and extract only relevant key-value pairs
         for (String temp : attributes) {
@@ -192,7 +191,7 @@ public class StomaStateCalculator {
         boolean success;
         String[] attributes;
 
-        attributes = currFlags.keySet().toArray(new String[currFlags.size()]);
+        attributes = currFlags.keySet().toArray(new String[0]);
 
         for (String temp : attributes) {
             switch (temp) {
