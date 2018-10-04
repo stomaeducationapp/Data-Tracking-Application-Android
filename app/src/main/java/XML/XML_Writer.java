@@ -34,11 +34,11 @@ public interface XML_Writer {
      */
     public enum Tags_To_Write {
         //Login
-        Account_Name, Password, //Account
-        Name, Gamification, Notification, State, Last_Daily_Review_Date, //Medical
-        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State,
+        Account_Name, Password, New_Account_Name, //Login
+        Name, Gamification, Notification, State, Last_Daily_Review_Date, //Account
+        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State,//Medical
         Number_Of_Entries_To_Write, //Control Statements
-        Modify, New, Export
+        Modify, New, Export, Create
 
     }
 

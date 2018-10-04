@@ -104,9 +104,14 @@ public class Account_Writer_Test {
                     + System.lineSeparator());
             tests_Run += 1;
             if (Open_File("account_writer_target_state_change.xml")) {
+                //Name, Gamification, Notification, State, Last_Daily_Review_Date
                 XML_Writer.Tags_To_Write tag = XML_Writer.Tags_To_Write.Modify;
                 Map<String, String> values = new HashMap<>();
-                values.put(XML_Writer.Tags_To_Write.State.toString(), "purple");
+                values.put(XML_Writer.Tags_To_Write.Name.toString(), "name1");
+                values.put(XML_Writer.Tags_To_Write.Gamification.toString(), "lots");
+                values.put(XML_Writer.Tags_To_Write.Notification.toString(), "all");
+                values.put(XML_Writer.Tags_To_Write.State.toString(), "blue");
+                values.put(XML_Writer.Tags_To_Write.Last_Daily_Review_Date.toString(), "today");
                 if (xML_Writer.Write_File(file, values, tag)) {
                     tests_Passed++;
                     System.out.println("Create New layout, no map data Passed");

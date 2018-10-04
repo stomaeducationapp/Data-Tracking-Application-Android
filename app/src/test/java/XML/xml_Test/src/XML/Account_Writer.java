@@ -1,6 +1,5 @@
 package XML;
 
-import com.sun.org.apache.xml.internal.serializer.OutputPropertiesFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -9,13 +8,7 @@ import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -94,40 +87,46 @@ public class Account_Writer implements XML_Writer {
     }
 
     private Boolean Modify(Node root_Node, Map<String, String> values, File account_File, Document doc) throws XML_Writer_File_Layout_Exception, TransformerException, FileNotFoundException, IOException {
-        NodeList nl = root_Node.getChildNodes();
-        Node account_Information = nl.item(1);
-        if (account_Information != null && account_Information.getNodeName().equals(ACCOUNT_INFORMATION_NODE)) {
-            NodeList information_Nodes = account_Information.getChildNodes();
-            for (int ii = 0; ii < information_Nodes.getLength(); ii++) {
-                Node node = information_Nodes.item(ii);
-                String node_Name = node.getNodeName();
-                // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
-                if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
-                    if (values.containsKey(node_Name)) {
-                        node.setTextContent(values.get(node_Name));
-                    }
-                } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
-                    if (values.containsKey(node_Name)) {
-                        node.setTextContent(values.get(node_Name));
-                    }
-                } else if (node_Name.equals(Tags_To_Write.State.toString())) {
-                    if (values.containsKey(node_Name)) {
-                        System.out.println("Found state");
-                        node.setTextContent(values.get(node_Name));
-                    }
-                } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
-                    if (values.containsKey(node_Name)) {
-                        node.setTextContent(values.get(node_Name));
-                    }
-                } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
-                    if (values.containsKey(node_Name)) {
-                        node.setTextContent(values.get(node_Name));
+        NodeList account_List = root_Node.getChildNodes();
+        Boolean found = true;
+        for (int jj = 0; jj < account_List.getLength(); jj++) {
+            Node temp = account_List.item(jj);
+            if (temp.getNodeName().equals(ACCOUNT_INFORMATION_NODE)) {
+                NodeList information_Nodes = temp.getChildNodes();
+                for (int ii = 0; ii < information_Nodes.getLength(); ii++) {
+                    Node node = information_Nodes.item(ii);
+                    String node_Name = node.getNodeName();
+                    System.out.println(ii + "-" + node_Name);
+                    // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
+                    if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
+                        if (values.containsKey(Tags_To_Write.Gamification.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Gamification.toString()));
+                        }
+                    } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
+                        if (values.containsKey(Tags_To_Write.Notification.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Notification.toString()));
+                        }
+                    } else if (node_Name.equals(Tags_To_Write.State.toString())) {
+                        if (values.containsKey(Tags_To_Write.State.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.State.toString()));
+                        }
+                    } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
+                        if (values.containsKey(Tags_To_Write.Name.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Name.toString()));
+                        }
+                    } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
+                        if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
+                        }
                     }
                 }
             }
-        } else {
+        }
+
+        if (!found) {
             throw new XML_Writer_File_Layout_Exception(String.format("Cannot find 'Account_Information' XML Tag/Node in the File '%s'. File is either corrupt or invalid", account_File.getName()));
         }
+
         return Write_To_File(doc, account_File);
     }
 
@@ -203,8 +202,6 @@ public class Account_Writer implements XML_Writer {
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
         transformer.transform(new DOMSource(document), new StreamResult(account_File));
-        System.out.println(account_File.getPath());
-
         return true;
     }
 

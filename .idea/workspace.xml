@@ -16,16 +16,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a48a3662-4ce3-4f36-9245-38ec30c9a5ec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Writer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.nb-gradle/private/cache/2018-02-healthca-d41d8cd98f00b204e9800998ecf8427e" beforeDir="false" afterPath="$PROJECT_DIR$/.nb-gradle/private/cache/2018-02-healthca-d41d8cd98f00b204e9800998ecf8427e" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.nb-gradle/private/cache/app-0a2c01c04d30118d1d2982912c4327c2" beforeDir="false" afterPath="$PROJECT_DIR$/.nb-gradle/private/cache/app-0a2c01c04d30118d1d2982912c4327c2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nb-gradle/profiles/private/aux-config" beforeDir="false" afterPath="$PROJECT_DIR$/.nb-gradle/profiles/private/aux-config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Reader_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Reader_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_state_change.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_state_change.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Writer_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Writer_Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -65,8 +70,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="255">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -80,24 +85,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Form_Change_Observer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java">
+      <file leaf-file-name="Account_Writer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="70" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="70" />
+            <state relative-caret-position="136">
+              <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account_Writer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
+      <file leaf-file-name="XML_Writer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="method#Modify_Node_Values#0;class#Account_Writer#0" />
-                <element signature="method#Write_To_File#0;class#Account_Writer#0" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -105,8 +106,8 @@
       <file leaf-file-name="Login_Writer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
+            <state relative-caret-position="183">
+              <caret line="110" column="86" selection-start-line="110" selection-start-column="86" selection-end-line="110" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Medical_Writer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Medical_Writer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="2312">
               <caret line="154" column="8" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -2474,14 +2475,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_Exception.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_Failure_Exception.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
       </list>
     </option>
   </component>
@@ -2502,47 +2503,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2600,24 +2560,46 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
             <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
-              <item name="xml_Test" type="462c0819:PsiDirectoryNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -3276,7 +3258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538381578385</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Modified Account_Writer (in test suite only currently) to allow for safely modifying an exisiting file and layout to be human readable.&#10;Worked on Testing of Account Writer, through netbeans test suite and xml test files. Finished all basic testing for Create and Modify">
+      <created>1538563606997</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1538563606997</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3447,7 +3436,8 @@
     <MESSAGE value="Change to .gitignore file test 2" />
     <MESSAGE value="Medical_Writer&#10;Added DateTime Creation for new Entry, and Generating of cutoff datetime for Medical Entry and the check against entries from the medical file.&#10;Added logic surrounding this for export data functionality&#10;Added Constants and started Javadoc" />
     <MESSAGE value="Account_Writer added Exception control, Added extra test statement that was missed first time around. Added new Custom Exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Account_Writer added Exception control, Added extra test statement that was missed first time around. Added new Custom Exceptions" />
+    <MESSAGE value="Modified Account_Writer (in test suite only currently) to allow for safely modifying an exisiting file and layout to be human readable.&#10;Worked on Testing of Account Writer, through netbeans test suite and xml test files. Finished all basic testing for Create and Modify" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Account_Writer (in test suite only currently) to allow for safely modifying an exisiting file and layout to be human readable.&#10;Worked on Testing of Account Writer, through netbeans test suite and xml test files. Finished all basic testing for Create and Modify" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3672,13 +3662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -3721,20 +3704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="38" column="78" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3995">
-          <caret line="243" column="21" selection-start-line="223" selection-start-column="8" selection-end-line="243" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_File_Layout_Exception.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -3749,36 +3718,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="method#Modify_Node_Values#0;class#Account_Writer#0" />
-            <element signature="method#Write_To_File#0;class#Account_Writer#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="2312">
           <caret line="154" column="8" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Export#0;class#Medical_Writer#0" />
             <element signature="method#Check_Date_Times#0;class#Medical_Writer#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3995">
+          <caret line="243" column="21" selection-start-line="223" selection-start-column="8" selection-end-line="243" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="110" column="86" selection-start-line="110" selection-start-column="86" selection-end-line="110" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
         </state>
       </provider>
     </entry>
