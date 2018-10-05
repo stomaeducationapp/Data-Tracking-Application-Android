@@ -41,6 +41,7 @@ public class Detector
         //Call Retrieval to get the file/data back from system
 
         //Pass to Encrypt to convert file to encrypted
+        //TODO - try catch encryptHandle to capture encryption specific exceptions
 
         //Pass encrypted to export
 
