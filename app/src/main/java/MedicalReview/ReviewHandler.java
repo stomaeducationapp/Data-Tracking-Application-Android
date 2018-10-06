@@ -10,7 +10,7 @@ import capstonegroup2.dataapp.DailyReviewGraph;
 
 public class ReviewHandler {
     private enum DAY {TODAY, YESTERDAY}
-    public enum TYPE {STATE, OUTPUT}
+    private enum TYPE {STATELINE, STATEPIE, VOLUMELINE, BAGBAR, WELLBEING}
 
     private DailyReview today;
     private DailyReview yesterday;
@@ -43,20 +43,48 @@ public class ReviewHandler {
         return true;
     }
 
-    public boolean selectReview(DAY choice) {
+    public boolean selectReview(DAY day, TYPE choice) {
         boolean success = true;
-
-        if (choice == DAY.TODAY) {  //display the graph from today
-            today.display();
-        }
-        else if (choice == DAY.YESTERDAY) { //display the graph for yesterday
-            yesterday.display();
-        }
-
         DailyReviewGraph view = new DailyReviewGraph();
 
-        today.displayStateGraph(view);
-
+        if (day == DAY.TODAY) {  //display the graph from today
+            switch (choice) {
+                case STATELINE:
+                    today.displayStateGraph(view);
+                    break;
+                case STATEPIE:
+                    today.displayStateChart(view);
+                    break;
+                case VOLUMELINE:
+                    today.displayVolumeGraph(view);
+                    break;
+                case BAGBAR:
+                    today.displayBagGraph(view);
+                    break;
+                case WELLBEING:
+                    today.displayWellbeingChart(view);
+                    break;
+            }
+        }
+        else if (day == DAY.YESTERDAY) { //display the graph for yesterday
+            switch (choice) {
+                case STATELINE:
+                    yesterday.displayStateGraph(view);
+                    break;
+                case STATEPIE:
+                    yesterday.displayStateChart(view);
+                    break;
+                case VOLUMELINE:
+                    yesterday.displayVolumeGraph(view);
+                    break;
+                case BAGBAR:
+                    yesterday.displayBagGraph(view);
+                    break;
+                case WELLBEING:
+                    yesterday.displayWellbeingChart(view);
+                    break;
+            }
+        }
         return true;
     }
 

@@ -84,7 +84,9 @@ public class DailyReview {
         stateGraph = new LineChart(dataSet, mRenderer);
     }
 
+    //display the state graph
     public void displayStateGraph(Context context) {
+        //need to do the chartfactory stuff here
         GraphicalView chartView = new GraphicalView(context, stateGraph);
     }
 
@@ -128,6 +130,10 @@ public class DailyReview {
         stateChart = new PieChart(series, mRenderer);
     }
 
+    public void displayStateChart(Context context) {
+        //need to do the chartfactory stuff here
+        GraphicalView chartView = new GraphicalView(context, stateChart);
+    }
 
     /*
     OUTPUT STUFF
@@ -170,6 +176,11 @@ public class DailyReview {
         volumeGraph = new LineChart(dataSet, mRenderer);
     }
 
+    public void displayVolumeGraph(Context context) {
+        //need to do the chartfactory stuff here
+        GraphicalView chartView = new GraphicalView(context, volumeGraph);
+    }
+
     //individual bag volume as bar graph
     //Map<DateTime of input, Volume of that input>
     public void calcBagGraph(Map<Date, Integer> data) {
@@ -204,6 +215,11 @@ public class DailyReview {
         dataSet.addSeries(series);
 
         bagGraph = new BarChart(dataSet, mRenderer, BarChart.Type.DEFAULT);
+    }
+
+    public void displayBagGraph(Context context) {
+        //need to do the chartfactory stuff here
+        GraphicalView chartView = new GraphicalView(context, bagGraph);
     }
 
     /*
@@ -241,5 +257,10 @@ public class DailyReview {
         mRenderer.setDisplayValues(false);
 
         wellbeingChart = new PieChart(series, mRenderer);
+    }
+
+    public void displayWellbeingChart(Context context) {
+        //need to do the chartfactory stuff here
+        GraphicalView chartView = new GraphicalView(context, wellbeingChart);
     }
 }
