@@ -21,6 +21,7 @@ package EncryptExport;
  * Keystore use was learned from https://medium.com/@josiassena/using-the-android-keystore-system-to-store-sensitive-information-3a56175a454b
  * GCM padding learned from https://crypto.stackexchange.com/questions/42412/gcm-padding-or-not
  * Reason for using a charset in string byte encoding learned from http://www.java67.com/2017/10/3-ways-to-convert-string-to-byte-array-in-java.html
+ * Reasoning for GCM learned from https://stackoverflow.com/questions/44425846/how-to-make-gcm-encrypt-with-authentication-tag-for-android
  * And all related documentation on https://developer.android.com
  */
 
@@ -35,11 +36,11 @@ import javax.crypto.spec.SecretKeySpec;
 public class Encrypt
 {
 
-    //TODO - DELETE WHEN FIRST TEST DONE!!!
-    public Encrypt() throws Exception
+    public Encrypt() throws Exception //TODO - FIX WITH PROPER EXCEPTION HANDLING
     {
 
     }
+
 
     public static String decrypt(byte[] message, byte[] decKey, byte[] iv) throws Exception
     {
@@ -77,7 +78,7 @@ public class Encrypt
     public static /*Object*/ String encryptHandler(/*Object userFile*/) throws Exception {
 
         //SAMPLE TEST STRING BEFORE USING FILE RETRIEVAL
-        String testString = "Hello - I have secret info I want to send";
+        String testString = "Hello - I have secret info I want to send"; //TODO - DELETE
         System.out.println(testString);
 
         //These are variables you can use to alter how the encryption functions - I have initialised them here instead of hardcoding
@@ -115,7 +116,7 @@ public class Encrypt
         System.out.println("Key is - " + key); //TODO - REMOVE!!!
 
         //Encrypt the data
-        String finalResult = encrypt(key,b);
+        String finalResult = encrypt(key,b); //TODO - CHANGE BACK TO BYTE[] RETURN
 
         return finalResult;
 
@@ -144,9 +145,12 @@ public class Encrypt
         ///Do the encryption
         byte[] encrypted = cipher.doFinal(clear);
         System.out.println("Encrypted is - " + encrypted); //TODO - REMOVE!!!
-        //Before we return the encrypted data - we could encode it to base64 to increase ease of transport across system's (Base64 uses a charset that most can handle easily)
-        String payload = new String(encrypted);//Use NO_WRAP so no line terminators are included (more disinformation)
-        System.out.println("Encrypted String is - " + payload); //TODO - REMOVE!!!
+        //There is some advice online stating that converting the encrypted data to a String/Base64 encoded version will help with transport across systems (due to higher support for those charsets)
+        //While this may be true - using GCM/CCH tends to fail with this approach, this is because the encryption style includes and authentication tag (useful for protection against modification/certification)
+        //When you encrypt the Cipher object includes the tag at the end of the ciphertext returned - so if you encode then decode at receiver this tag may change and cause a failure
+        //You could get around this (especially if using a storage method for key/iv transport) by clipping out the tag from the ciphertext (the tag size is usually the key size) then sending that along with the encoded ciphertext (String/Base64)
+        //BASE64/String reasoning = https://medium.com/@tiensinodev/basic-android-encryption-dos-and-don-ts-7bc2cd3335ff
+        //GCM reasoning = https://stackoverflow.com/questions/44425846/how-to-make-gcm-encrypt-with-authentication-tag-for-android
 
         //TODO - REMOVE!!!
         String result = decrypt(encrypted, raw, iv);
