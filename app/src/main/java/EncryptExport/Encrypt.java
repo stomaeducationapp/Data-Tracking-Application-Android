@@ -29,10 +29,43 @@ import java.security.SecureRandom;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-class Encrypt
+public class Encrypt
 {
+
+    //TODO - DELETE WHEN FIRST TEST DONE!!!
+    public Encrypt() throws Exception
+    {
+
+    }
+
+    public static String decrypt(byte[] message, byte[] decKey, byte[] iv) throws Exception
+    {
+
+        //Another set of variables you can modify to alter how this method encrypts your data
+        String algorithm = "AES"; //The variable for the algorithm type of the key you are going to use
+        String cipherAlgorithm = "AES/GCM/NOPADDING"; //The variable for what type of encryption you are going to use
+        //I have used AES (Current Australian Signals Directorate standard) with
+        //GCM (Galois/Counter Mode - this was most commonly used and provides authentication as well as encryption - see reference below)
+        //and a no padding option (since GCM uses a stream cipher style - no padding is needed)
+        //DO NOT USE ECB (Electronic Codebook) as a mode (included as a restriction in ASD standard as do not use) - as this mode resuses the same key on each block of plaintext, meaning identical blocks will encrypt the same (VERY BAD!!!!)
+        //https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9
+
+        //SecretKeySpec is another interface to increase security
+        SecretKeySpec skeySpec = new SecretKeySpec(decKey, algorithm);
+        //Get a Cipher instance that will encrypt our data according to the algorithm we choose
+        Cipher cipher = Cipher.getInstance(cipherAlgorithm);
+        final GCMParameterSpec spec = new GCMParameterSpec(128, iv);
+        cipher.init(Cipher.DECRYPT_MODE, skeySpec, spec);
+        ///Do the decryption
+        byte[] decrypted = cipher.doFinal(message);
+        System.out.println("Decrypted file - " + decrypted); //TODO - REMOVE!!!
+        String payload = new String(decrypted);
+
+        return payload;
+    }
 
     /* FUNCTION INFORMATION
      * NAME - encryptHandler
@@ -40,15 +73,16 @@ class Encrypt
      * OUTPUTS - encrypted (encrypted version of userFile)
      * PURPOSE - This is the function to begin the encryption process on the userFile provided
      */
-    public static Object encryptHandler(Object userFile) throws Exception {
+    //TODO - REMOVE COMMENTS AND RE-ADD THE PROPER IMPORTS/RETURNS
+    public static /*Object*/ String encryptHandler(/*Object userFile*/) throws Exception {
 
         //SAMPLE TEST STRING BEFORE USING FILE RETRIEVAL
         String testString = "Hello - I have secret info I want to send";
+        System.out.println(testString);
 
         //These are variables you can use to alter how the encryption functions - I have initialised them here instead of hardcoding
         //them into the function calls so whatever encryption type/specifications you need can be easily altered here (also present in private function as well!)
         String algorithm = "AES"; //The variable for determining what encryption standard you wish to encrypt the data in
-        String keyStore = "AndroidKeyStore"; //The variable for the KeyStore you wish to use - Android is most reliable (but can be changed to whatever you use)
         String charSet = "UTF-8"; //The variable for What charset you will use to encode the string bytes as -  this is so you receive less hiccups in transfer across different systems
                                   //This was sourced from references above (http://www.java67.com/2017/10/3-ways-to-convert-string-to-byte-array-in-java.html and https://medium.com/@tiensinodev/basic-android-encryption-dos-and-don-ts-7bc2cd3335ff)
         int keySize = 128; //The variable for the size of the key you want
@@ -58,46 +92,37 @@ class Encrypt
         //The database would be running a Certificate Authority (CA) that controls and distributes the encryption keys across the network
         /* Connect to server CA and request certification
          * This certificate will include what AES keys are valid for this transaction
-         * Then the valid keys should be stored in the AndroidKeyStore (for extra security in using the keys) using the below KeyGenerator code (!KEY)
-         * NOTE: You can move the server handshake (and KeyGenerator code) to any part of the app you want (since KeyStore is a OS level Object) - then just grab the generated key using:
-         *  keyStore = KeyStore.getInstance("AndroidKeyStore"); //Grab an instance of the AndroidKeyStore
-         *  keyStore.load(null);
-         *  final KeyStore.SecretKeyEntry secretKeyEntry = (KeyStore.SecretKeyEntry) keyStore.getEntry(alias, null);
-         *  final SecretKey secretKey = secretKeyEntry.getSecretKey(); //Get the stored key
+         * Then the valid keys could be stored in the AndroidKeyStore (for extra security in using the keys) using the below KeyGenerator code (IF YOU USE API 23 or higher)
+         * NOTE: You can move the server handshake (and KeyGenerator code) to any part of the app you want (since KeyStore is a OS level Object) - then just grab the generated keys in that section
          */
 
         // (!KEY - start) Store all keys generated by this KeyGenerator into the keystore
-        final KeyGenerator keyGenerator = KeyGenerator.getInstance(algorithm, keyStore);
+        final KeyGenerator keyGenerator = KeyGenerator.getInstance(algorithm);
 
-        //ByteArrayOutputStream baos = new ByteArrayOutputStream(); UNUSED OLD CODE FROM REFERENCE _ DELETE ONCE MY VERSION TESTED!!!!
-        //bm.compress(Bitmap.CompressFormat.PNG, 100, baos); // bm is the bitmap object UNUSED OLD CODE FROM REFERENCE _ DELETE ONCE MY VERSION TESTED!!!!
         //Transform user data from string to byte array (what most encryption methods use)
         byte[] b = testString.getBytes(charSet);
 
-        //Create a seed for your random number generator
-        byte[] keyStart = "this is a key".getBytes(); //TODO - consider deleting/refactoring to another way
-        //KeyGenerator kgen = KeyGenerator.getInstance("AES"); UNUSED OLD CODE FROM REFERENCE _ DELETE ONCE MY VERSION TESTED!!!!
         //Create a cryptographic strength random number generator
         SecureRandom sr = new SecureRandom( /*genType*/ ); //genType is the chosen style of randomisation - my research has said that leaving the generation style to Android defaults is not major differnce
                                                            //But you may change to whatever type you want - DO NOT USE "SHA1PRNG" as articles online claim this is not as random as was thought!
-        //Seed the SecureRandom
-        sr.setSeed(keyStart);
-        //Initialise the KeyGenerator to the size of the key we want and hwo to randomly generate data for it
+        //Initialise the KeyGenerator to the size of the key we want and how to randomly generate data for it
         keyGenerator.init(keySize, sr);
         //Store the generated key in a SecretKey object (Android provides this interface to increase secure access to the key itself)
         SecretKey skey = keyGenerator.generateKey();
+        System.out.println("Secret key is - " + keyGenerator.generateKey()); //TODO - REMOVE!!!
         //Get byte version of key (for use in encrypting)
         byte[] key = skey.getEncoded();
+        System.out.println("Key is - " + key); //TODO - REMOVE!!!
 
         //Encrypt the data
-        byte[] encryptedData = encrypt(key,b);
+        String finalResult = encrypt(key,b);
 
-        return encryptedData;
+        return finalResult;
 
     }
 
     //TODO - see if can do instanceof specific exceptions
-    private static byte[] encrypt(byte[] raw, byte[] clear) throws Exception
+    private static String encrypt(byte[] raw, byte[] clear) throws Exception
     {
         //Another set of variables you can modify to alter how this method encrypts your data
         String algorithm = "AES"; //The variable for the algorithm type of the key you are going to use
@@ -114,9 +139,19 @@ class Encrypt
         Cipher cipher = Cipher.getInstance(cipherAlgorithm);
         //Initialize the cipher with our key and tell it we only want it to encrypt or data right now
         cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+        //Grab an initialization Vector - mainly for ability to decrypt later (SAVE THIS - could be in KeyStore - up to you)
+        byte[] iv = cipher.getIV();
         ///Do the encryption
         byte[] encrypted = cipher.doFinal(clear);
-        return encrypted;
+        System.out.println("Encrypted is - " + encrypted); //TODO - REMOVE!!!
+        //Before we return the encrypted data - we could encode it to base64 to increase ease of transport across system's (Base64 uses a charset that most can handle easily)
+        String payload = new String(encrypted);//Use NO_WRAP so no line terminators are included (more disinformation)
+        System.out.println("Encrypted String is - " + payload); //TODO - REMOVE!!!
+
+        //TODO - REMOVE!!!
+        String result = decrypt(encrypted, raw, iv);
+
+        return result;
     }
 
 }

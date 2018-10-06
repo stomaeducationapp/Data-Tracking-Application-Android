@@ -17,7 +17,7 @@ package EncryptExport;
  * X
  */
 
-class Retrieval
+public class Retrieval
 {
 
     /* FUNCTION INFORMATION
@@ -28,7 +28,7 @@ class Retrieval
      */
     public static Object retrieve()
     {
-        Object userFile; //The user's file we are going to try and retrieve
+        Object userFile = null; //The user's file we are going to try and retrieve
 
         //Get user's data from system storage based on known user info
         //Retrieve all data currently stored (We export in batches)
