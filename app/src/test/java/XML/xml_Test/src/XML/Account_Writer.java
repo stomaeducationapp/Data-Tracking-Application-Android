@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -32,6 +33,7 @@ import org.xml.sax.SAXParseException;
 // http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
 public class Account_Writer implements XML_Writer {
 
+    private static final String REGEX_FOR_DATE_TIME = "-";
     private static final String ROOT_NODE = "Account_File";
     private static final String ACCOUNT_INFORMATION_NODE = "Account_Information";
     private static final String DEFAULT_NODE_ENTRY = "No Entry";
@@ -118,6 +120,14 @@ public class Account_Writer implements XML_Writer {
                         if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
                         }
+                    } else if (node_Name.equals(Tags_To_Write.Last_Export_Date.toString())) {
+                        if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
+                        }
+                    } else if (node_Name.equals(Tags_To_Write.Last_Export_Date.toString())) {
+                        if (values.containsKey(Tags_To_Write.Last_Export_Date.toString())) {
+                            node.setTextContent(Get_Current_Date_Time());
+                        }
                     }
                 }
             }
@@ -144,52 +154,44 @@ public class Account_Writer implements XML_Writer {
         } else {
             name.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
-        System.out.println("Name");
         account_Information.appendChild(name);
-
         Element state = document.createElement(Tags_To_Write.State.toString());
         if (values.containsKey(Tags_To_Write.State.toString())) {
-            System.out.println("t");
             state.appendChild(document.createTextNode(values.get(Tags_To_Write.State.toString())));
         } else {
-            System.out.println("f");
             state.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
-        System.out.println("State");
         account_Information.appendChild(state);
 
         Element last_Daily_Review_Date = document.createElement(Tags_To_Write.Last_Daily_Review_Date.toString());
         if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
-            System.out.println("t");
             last_Daily_Review_Date.appendChild(document.createTextNode(values.get(Tags_To_Write.Last_Daily_Review_Date.toString())));
         } else {
-            System.out.println("f");
             last_Daily_Review_Date.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
-        System.out.println("Last_Daily_Review_Date");
         account_Information.appendChild(last_Daily_Review_Date);
+
+        Element export_Date = document.createElement(Tags_To_Write.Gamification.toString());
+        export_Date.appendChild(document.createTextNode(Get_Current_Date_Time()));
+        account_Information.appendChild(export_Date);
 
         Element notification = document.createElement(Tags_To_Write.Notification.toString());
         if (values.containsKey(Tags_To_Write.Notification.toString())) {
-            System.out.println("t");
             notification.appendChild(document.createTextNode(values.get(Tags_To_Write.Notification.toString())));
         } else {
-            System.out.println("f");
             notification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
-        System.out.println("Notification");
         account_Information.appendChild(notification);
 
         Element gamification = document.createElement(Tags_To_Write.Gamification.toString());
         if (values.containsKey(Tags_To_Write.Gamification.toString())) {
-            System.out.println("t");
             gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Gamification.toString())));
         } else {
             System.out.println(gamification.getNodeName());
             gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
-        System.out.println("Gamification");
         account_Information.appendChild(gamification);
+
         Boolean success = Write_To_File(document, account_File);
         return success;
     }
@@ -219,6 +221,19 @@ public class Account_Writer implements XML_Writer {
             public void fatalError(SAXParseException saxpe) throws SAXException {
             }
         });
+    }
+
+    private String Get_Current_Date_Time() {
+        Calendar calender = Calendar.getInstance();
+        StringBuilder current_DateTime = new StringBuilder();
+        current_DateTime.append(calender.get(Calendar.HOUR_OF_DAY));
+        current_DateTime.append(REGEX_FOR_DATE_TIME);
+        current_DateTime.append(calender.get(Calendar.DAY_OF_MONTH));
+        current_DateTime.append(REGEX_FOR_DATE_TIME);
+        current_DateTime.append((calender.get(Calendar.MONTH) + 1));
+        current_DateTime.append(REGEX_FOR_DATE_TIME);
+        current_DateTime.append(calender.get(Calendar.YEAR));
+        return current_DateTime.toString();
     }
 
 }

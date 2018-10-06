@@ -14,7 +14,7 @@ import java.util.Map;
  * When Using the Medical_Reader Concrete Class the Map will contain String Pair Value under the key "Entries_Retrieved"
  * as more than 1 maybe retrieved from file
  * This needs to be used as Keys corresponding to each Medical Entry will be appended with the number of the entry. E.G
- * Medical Entry 2 Hydration will be 'Hydration2"
+ * Medical Entry 2 Hydration will be 'Hydration-2"
  * This is to allow for easy string concatenation with syntax '-'
  *
  * @author Patrick Crockford
@@ -39,9 +39,9 @@ public interface XML_Reader {
         //Login Tags
         Account_Name, Password,
         //Medical Tags
-        Bags, Urine, Hydration, Wellbeing, Location, Entry_Time, Medical_State,
+        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State,
         //Account Tags
-        Gamification, Notification, State, Name, Last_Daily_Review_Date,
+        Gamification, Notification, State, Name, Last_Daily_Review_Date, Last_Export_Date,
         //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
         //Under the Key "Entries". This is for the Medical Data Only currently due to functionality.
         Last_Entry, Daily_Data, Export_Data,

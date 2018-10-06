@@ -5,7 +5,7 @@
         <Bags></Bags>
         <Urine></Urine>
         <Hydration></Hydration>
-        <Wellbeing></Wellbeing>
+        <WellBeing></WellBeing>
         <Medical_State></Medical_State>
     </Medical_Entry>
     <Medical_Entry>
@@ -14,7 +14,7 @@
         <Bags></Bags>
         <Urine></Urine>
         <Hydration></Hydration>
-        <Wellbeing></Wellbeing>
+        <WellBeing></WellBeing>
         <Medical_State></Medical_State>
     </Medical_Entry>
     <Medical_Entry>
@@ -23,7 +23,7 @@
         <Bags></Bags>
         <Urine></Urine>
         <Hydration></Hydration>
-        <Wellbeing></Wellbeing>
+        <WellBeing></WellBeing>
         <Medical_State></Medical_State>
     </Medical_Entry>
 </Medical_Information>
