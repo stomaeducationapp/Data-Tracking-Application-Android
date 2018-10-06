@@ -35,6 +35,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Encrypt
 {
+    //TODO - MAKE ALL VARIABLES FINAL WHERE POSSIBLE
 
     public Encrypt() throws Exception //TODO - FIX WITH PROPER EXCEPTION HANDLING
     {

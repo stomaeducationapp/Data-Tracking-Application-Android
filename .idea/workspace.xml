@@ -49,38 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Detector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Retrieval.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Encrypt.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Encrypt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="152" column="130" selection-start-line="152" selection-start-column="130" selection-end-line="152" selection-end-column="130" />
+            <state relative-caret-position="294">
+              <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,6 +75,54 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Export_Data.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Medical_Reader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="116" column="83" selection-start-line="116" selection-start-column="83" selection-end-line="116" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XML_Reader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XML_Writer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Medical_Writer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -2666,7 +2687,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="XML" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -3190,7 +3229,21 @@
       <option name="project" value="LOCAL" />
       <updated>1538805750424</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit">
+      <created>1538810917503</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1538810917503</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit&#10;- Re added XML file since it bugged up my tests">
+      <created>1538811000593</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1538811000593</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3244,8 +3297,8 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" sideWeight="0.5011261" side_tool="true" weight="0.17114915" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.55117273" side_tool="true" weight="0.32882884" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.46375266" visible="true" weight="0.3310811" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.54339856" side_tool="true" visible="true" weight="0.3310811" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.45660147" visible="true" weight="0.3310811" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.59648186" weight="0.3277027" />
       <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3294621" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.478145" weight="0.32882884" />
@@ -3253,7 +3306,7 @@
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887386" visible="true" weight="0.17114915" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887386" visible="true" weight="0.17114915" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32882884" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Gradle" order="3" />
@@ -3359,7 +3412,9 @@
     <MESSAGE value="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder&#10;- Made an update to bring encrypt/export up to master" />
     <MESSAGE value="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder&#10;- Made an update to bring encrypt/export up to master&#10;- Added a lot of basic functionality following a guide I found online&#10;- Added a metric buttload of comments for understanding and for future development points" />
     <MESSAGE value="- Completed a rudimentary test that encrypted and decrypted a String&#10;- Fixed code to match new info" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Completed a rudimentary test that encrypted and decrypted a String&#10;- Fixed code to match new info" />
+    <MESSAGE value="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit" />
+    <MESSAGE value="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit&#10;- Re added XML file since it bugged up my tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit&#10;- Re added XML file since it bugged up my tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3370,20 +3425,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/debug/res/xml/test_one.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11917">
-          <caret line="711" selection-start-line="711" selection-end-line="711" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/sampledata/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -3510,32 +3551,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Android/sdk/platforms/android-26/android.jar!/org/xmlpull/v1/XmlPullParser.class" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -3574,13 +3594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="203" column="120" lean-forward="true" selection-start-line="203" selection-start-column="120" selection-end-line="203" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -3602,20 +3615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="35" column="104" lean-forward="true" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -3623,27 +3622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3672,6 +3654,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -3679,10 +3692,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="152" column="130" selection-start-line="152" selection-start-column="130" selection-end-line="152" selection-end-column="130" />
+        <state relative-caret-position="410">
+          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-879">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="116" column="83" selection-start-line="116" selection-start-column="83" selection-end-line="116" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
