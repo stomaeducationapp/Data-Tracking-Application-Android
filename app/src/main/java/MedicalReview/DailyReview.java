@@ -1,6 +1,7 @@
 package MedicalReview;
 
 
+import android.content.Context;
 import android.graphics.Color;
 
 import org.achartengine.GraphicalView;
@@ -8,13 +9,10 @@ import org.achartengine.chart.BarChart;
 import org.achartengine.chart.LineChart;
 import org.achartengine.chart.PieChart;
 import org.achartengine.chart.PointStyle;
-import org.achartengine.chart.TimeChart;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.TimeSeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
-import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.DefaultRenderer;
-import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
@@ -34,6 +32,14 @@ public class DailyReview {
         stateGraph = null;
         volumeGraph = null;
         bagGraph = null;
+    }
+
+    public DailyReview(DailyReview review) {
+        stateChart = review.stateChart;
+        wellbeingChart = review.wellbeingChart;
+        stateGraph = review.stateGraph;
+        volumeGraph = review.volumeGraph;
+        bagGraph = review.bagGraph;
     }
 
     /*
@@ -76,6 +82,10 @@ public class DailyReview {
         dataSet.addSeries(series);
 
         stateGraph = new LineChart(dataSet, mRenderer);
+    }
+
+    public void displayStateGraph(Context context) {
+        GraphicalView chartView = new GraphicalView(context, stateGraph);
     }
 
     //state pie chart
@@ -201,7 +211,7 @@ public class DailyReview {
      */
     //amount of day categorised as 'good' in pie chart
     //Map<DateTime of input, Well being string>
-    public void calcWellbeingChart(Map<Date, String> data) {
+    public void calcWellbeingChart(Map<Date, Integer> data) {
         //first find the percentage of each day in each state
         Date[] attributes = data.keySet().toArray(new Date[0]);
         long goodTime = 0, badTime = 0;
@@ -209,12 +219,12 @@ public class DailyReview {
 
         //record elapsed time in millis between inputs for each state
         for (Date key: attributes) {
-            if (data.get(key).equals("Good")) {   //green time
+            if (data.get(key) == 1) {   //good time
                 currTime = key;
                 goodTime += currTime.getTime() - compTime.getTime();
                 compTime = key; //update the time to compare to the most recent record
             }
-            else if (data.get(key).equals("Bad")) {   //green time
+            else if (data.get(key) == 0) {   //bad time
                 currTime = key;
                 badTime += currTime.getTime() - compTime.getTime();
                 compTime = key; //update the time to compare to the most recent record

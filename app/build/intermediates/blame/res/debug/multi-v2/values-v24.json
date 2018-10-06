@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Ethan\\2018 02 Healthcare Visualization Data Tracking Application Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\6fe99f5e8fb0ec9993260b6bd49b6bc5\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Ethan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\54dd7c789910684f0add94d6dbab8fc0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

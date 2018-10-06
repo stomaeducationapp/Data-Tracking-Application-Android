@@ -1,5 +1,6 @@
 package MedicalReview;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,8 +14,8 @@ public class ReviewData {
     }
 
     //should load and return the data
-    public static Map<Long, Integer> loadData() {
-        Map<Long, Integer> data = new HashMap<>();
+    public static Map<Date, Integer> loadData() {
+        Map<Date, Integer> data = new HashMap<>();
 
         return data;
     }
