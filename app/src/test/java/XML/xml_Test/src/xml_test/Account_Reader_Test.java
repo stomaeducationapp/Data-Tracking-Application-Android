@@ -24,9 +24,7 @@ public class Account_Reader_Test {
 
     public void Run_Tests() {
         xML_Reader = new Account_Reader();
-        System.out.println("***************************************************"
-                + System.lineSeparator()
-                + "TESTING ACCOUNT_READER");
+       
 
         tests_Passed = 0;
         tests_Run = 0;

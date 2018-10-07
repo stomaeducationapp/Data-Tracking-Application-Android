@@ -14,38 +14,25 @@ import java.util.Map;
  * When Using the Medical_Reader Concrete Class the Map will contain String Pair Value under the key "Entries_Retrieved"
  * as more than 1 maybe retrieved from file
  * This needs to be used as Keys corresponding to each Medical Entry will be appended with the number of the entry. E.G
- * Medical Entry 2 Hydration will be 'Hydration2"
+ * Medical Entry 2 Hydration will be 'Hydration-2"
  * This is to allow for easy string concatenation with syntax '-'
  *
  * @author Patrick Crockford
  * @version 1.0
  * <h1>Last Edited</h1>
  * Patrick Crockford
- * <h1>Changes</h1>
- * 04th Sept
- * Created Class, Enum, Read_File method, and enum Tags_To_Read, Patrick Crockford
- * Javadoc, Patrick Crockford
- * 13th Sept
- * Modified Read_File() Method parameters. Removed FileInputStream and replaced with XMLPullParser, Patrick
- * Crockford
- * 22nd Sept
- * Added new ENUM Tags_To_Read values - Entries_Retrieved Last_daily_Review_Data, and State, Patrick Crockford
  */
 public interface XML_Reader {
     /**
      * The enum Tags to read from XML file. Covers all Concrete Classes that are broken up into sections
      */
-    public enum Tags_To_Read {
+    enum Tags_To_Read {
         //Login Tags
-        Account_Name, Password,
-        //Medical Tags
-        Bags, Urine, Hydration, Wellbeing, Location, Entry_Time, Medical_State,
-        //Account Tags
-        Gamification, Notification, State, Name, Last_Daily_Review_Date,
-        //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
+        Account_Name, Password, //Medical Tags
+        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Account Tags
+        Gamification, Notification, State, Name, Last_Daily_Review_Date, Last_Export_Date, //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
         //Under the Key "Entries". This is for the Medical Data Only currently due to functionality.
-        Last_Entry, Daily_Data, Export_Data,
-        //Tag for number of entries returned with the medical reader
+        Last_Entry, Daily_Data, Export_Data, //Tag for number of entries returned with the medical reader
         Entries_Retrieved,
 
     }

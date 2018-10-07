@@ -87,13 +87,13 @@ public class Medical_Writer implements XML_Writer {
     /**
      * Public Method Call to writer information specified to the file references by the File object and returns Boolean
      * if successful or not.
-     * This method can only handle the task values of 'Modify', 'New', 'Create', and 'Export'
+     * This method can only handle the task values of 'Modify, New, Create, and Export'
      *
      * @param medical_File Represents the File Object that references the medical_information.xml file to write and or
      *                     modify medical information to.
      * @param values       The Map containing String pair values, with the key representing the field to write to and
      *                     the value what will be written.
-     * @param task         Defines what task should be carried out on the medical_information.xml file
+     * @param task         Defines what task should be carried out on the File
      * @return True if the writer is successful otherwise false
      * @throws XML.XML_Writer_File_Layout_Exception if the XML document given by the account_File object doesn't contain
      *                                              the expected XML layout
@@ -154,8 +154,7 @@ public class Medical_Writer implements XML_Writer {
     }
 
     /**
-     * This private method functionality is to modify the newest medical entry in the medical_information.xml file. This
-     * limited behaviour is
+     * This private method functionality is to modify the newest medical entry in the file. This limited behaviour is
      * due to the narrow modification functionality required by the rest of the program, as only the medical states
      * package requires the ability to modify the medical entries, which is limited to the latest only. To achieve this
      * functionality the method looks for the first medical entry node and goes no further. The keys in the values Map
@@ -174,9 +173,12 @@ public class Medical_Writer implements XML_Writer {
      * @param document     Object representing the document parsed from the medical_information.xml file, which will be
      *                     parsed to the Write_To_File() method if modification of the xml information has occurred
      * @return true if method is successful
-     * @throws TransformerException if an errors occurs from the document builder, SAX parser for transformer
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the medical_File object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
      */
-    private Boolean Modify(Node root_Node, Map<String, String> values, File medical_File, Document document) throws TransformerException {
+    private Boolean Modify(Node root_Node, Map<String, String> values, File medical_File, Document document) throws TransformerException, FileNotFoundException, IOException {
         NodeList medical_Entries_List = root_Node.getChildNodes();
         int jj = 0;
         Boolean found = false;
@@ -242,9 +244,12 @@ public class Medical_Writer implements XML_Writer {
      *                        transfer the new layout to
      * @param medical_File    Represents the File Object that references the medical_information.xml file
      * @return True if the method was successful
-     * @throws TransformerException if an errors occurs from the document builder, SAX parser for transformer
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the medical_File object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
      */
-    private Boolean New(Node root_Node, Map<String, String> values, File medical_File, DocumentBuilder documentBuilder) throws TransformerException {
+    private Boolean New(Node root_Node, Map<String, String> values, File medical_File, DocumentBuilder documentBuilder) throws TransformerException, FileNotFoundException, IOException {
         // create new document
         Document new_Document = documentBuilder.newDocument();
         Element root_element = new_Document.createElement(ROOT_NODE);
@@ -487,7 +492,15 @@ public class Medical_Writer implements XML_Writer {
      */
     private String Get_TimeDate() {
         Calendar calender = Calendar.getInstance();
-        return String.valueOf(calender.get(Calendar.HOUR_OF_DAY)) + REGEX_FOR_DATE_TIME + calender.get(Calendar.DAY_OF_MONTH) + REGEX_FOR_DATE_TIME + (calender.get(Calendar.MONTH) + 1) + REGEX_FOR_DATE_TIME + calender.get(Calendar.YEAR);
+        StringBuilder current_DateTime = new StringBuilder();
+        current_DateTime.append(calender.get(Calendar.HOUR_OF_DAY));
+        current_DateTime.append(REGEX_FOR_DATE_TIME);
+        current_DateTime.append(calender.get(Calendar.DAY_OF_MONTH));
+        current_DateTime.append(REGEX_FOR_DATE_TIME);
+        current_DateTime.append((calender.get(Calendar.MONTH) + 1));
+        current_DateTime.append(REGEX_FOR_DATE_TIME);
+        current_DateTime.append(calender.get(Calendar.YEAR));
+        return current_DateTime.toString();
     }
 
     /**
@@ -555,9 +568,12 @@ public class Medical_Writer implements XML_Writer {
      * @param medical_File Represents the File Object that references the medical_information.xml file to be written to
      * @param document     Object representing the xml file to be written to the medical_information.xml file
      * @return True if document is successfully written
-     * @throws TransformerException if an errors occurs from the transformer
+     * @throws TransformerException  if an errors occurs from the transformer
+     * @throws FileNotFoundException if the  Write_To_File() method cant find the file represented by the medical_File
+     *                               object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
      */
-    private boolean Write_To_File(Document document, File medical_File) throws TransformerException {
+    private boolean Write_To_File(Document document, File medical_File) throws TransformerException, FileNotFoundException, IOException {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
         transformer.setOutputProperty(OutputKeys.METHOD, "xml");
@@ -577,18 +593,15 @@ public class Medical_Writer implements XML_Writer {
     private void Quieten_BD(DocumentBuilder documentBuilder) {
         documentBuilder.setErrorHandler(new ErrorHandler() {
             @Override
-            public void warning(SAXParseException sax) throws SAXException {
-                throw new SAXException(sax);
+            public void warning(SAXParseException saxpe) throws SAXException {
             }
 
             @Override
-            public void error(SAXParseException sax) throws SAXException {
-                throw new SAXException(sax);
+            public void error(SAXParseException saxpe) throws SAXException {
             }
 
             @Override
-            public void fatalError(SAXParseException sax) throws SAXException {
-                throw new SAXException(sax);
+            public void fatalError(SAXParseException saxpe) throws SAXException {
             }
         });
     }
