@@ -769,8 +769,11 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_info_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_notifications_black_24dp
+drawable ic_sync_black_24dp
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1013,9 +1016,8 @@ layout abc_screen_toolbar
 layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
-layout activity_account__modification__main
 layout activity_login
-layout content_account__modification__main
+layout activity_main
 layout content_login
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

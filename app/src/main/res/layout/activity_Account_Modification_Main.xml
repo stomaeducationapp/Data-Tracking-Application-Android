@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Account_Modification.Main">
+
+    <Button
+        android:id="@+id/Account_Name_Button"
+        android:layout_width="205dp"
+        android:layout_height="70dp"
+        android:text="Change Account Name"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/Password_Button"
+        android:layout_width="206dp"
+        android:layout_height="70dp"
+        android:text="Change Password"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="70dp" />
+
+    <Button
+        android:id="@+id/Notification_Button"
+        android:layout_width="207dp"
+        android:layout_height="70dp"
+        android:text="Change_Notification Settings"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <Button
+        android:id="@+id/Gamification_Button"
+        android:layout_width="205dp"
+        android:layout_height="70dp"
+        android:text="Change Gamification Settings"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="210dp" />
+
+    <Button
+        android:id="@+id/Export_Button"
+        android:layout_width="206dp"
+        android:layout_height="70dp"
+        android:text="Change Export Settings"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <Button
+        android:id="@+id/Delete_Account_Button"
+        android:layout_width="385dp"
+        android:layout_height="70dp"
+        android:text="Delete Account"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+</android.support.constraint.ConstraintLayout>

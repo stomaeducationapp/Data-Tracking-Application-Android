@@ -22,7 +22,8 @@
         <activity
             android:name=".Account_Modifcation.Account_Modification_Main"
             android:label="@string/title_activity_account__modification__main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Account_Modification.Main"></activity>
     </application>
 
 </manifest>
