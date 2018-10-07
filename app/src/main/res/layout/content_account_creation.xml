@@ -9,18 +9,21 @@
     tools:showIn="@layout/activity_account_creation">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/acTitle"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:text="@string/ac_title_text"
@@ -28,101 +31,111 @@
                 tools:layout_editor_absoluteY="0dp" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/acUNTitle"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/ac_username_title"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="50dp" />
 
             <EditText
-                android:id="@+id/textView3"
+                android:id="@+id/acUNInput"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
-                android:text="@string/ac_username_placeholder"
+                android:hint="@string/ac_username_placeholder"
+                android:inputType="text"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="79dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/acPassTitle"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/ac_password_title"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="136dp" />
 
             <EditText
-                android:id="@+id/textView5"
+                android:id="@+id/acPassInput"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
-                android:text="@string/ac_password_placeholder"
+                android:hint="@string/ac_password_placeholder"
+                android:inputType="textPassword"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="165dp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/acGameTitle"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/ac_gamification_title"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="136dp" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/acGameSett"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:prompt="@string/ac_gamification_option_title"
                 android:entries="@array/ac_gamification_entries"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="202dp" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/acExportTitle"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/ac_export_title"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="136dp" />
 
             <RadioGroup
+                android:id="@+id/acExportSett"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="256dp">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/acExportSettOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ac_export_option1" />
+                    android:text="@string/ac_export_option1"
+                    android:onClick="exportSet"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/acExportSettTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ac_export_option2" />
+                    android:text="@string/ac_export_option2"
+                    android:onClick="exportSet"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/acExportSettThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ac_export_option3" />
+                    android:text="@string/ac_export_option3"
+                    android:onClick="exportSet"/>
 
             </RadioGroup>
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/acNotTitle"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/ac_notification_title"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="136dp" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/acNotSett"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center"
@@ -131,16 +144,15 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="388dp" />
 
+            <Button
+                android:id="@+id/acCreateButt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:onClick="createAccount"
+                android:text="@string/ac_create_butt" />
+
         </LinearLayout>
     </ScrollView>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="342dp"
-        tools:layout_editor_absoluteY="469dp" />
 
 </android.support.constraint.ConstraintLayout>
