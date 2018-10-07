@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
 MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\eeda30bb8c9d3c288d3a51001d702caa\AndroidManifest.xml:2:1-11:12
@@ -18,25 +18,25 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gr
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
 		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:5:5-22:19
+ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:5:5-26:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:25:5-29:19
@@ -95,6 +95,14 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:17-77
 	android:name
 		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:27-74
+activity#capstonegroup2.dataapp.Account_Modifcation.Account_Modification_Main
+ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:22:9-25:68
+	android:label
+		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:24:13-79
+	android:theme
+		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:23:13-74
 uses-sdk
 INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml

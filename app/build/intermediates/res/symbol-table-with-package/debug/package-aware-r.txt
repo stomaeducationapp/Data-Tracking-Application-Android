@@ -1013,7 +1013,9 @@ layout abc_screen_toolbar
 layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
+layout activity_account__modification__main
 layout activity_login
+layout content_account__modification__main
 layout content_login
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1095,6 +1097,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
+string title_activity_account__modification__main
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
