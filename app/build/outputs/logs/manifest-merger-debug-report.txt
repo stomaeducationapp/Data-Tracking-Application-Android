@@ -1,175 +1,183 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\eeda30bb8c9d3c288d3a51001d702caa\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+MERGED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\afcfadcf0dfd738a86698ada1e4515ca\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:17:1-30:12
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:3:5-37
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:5:5-22:19
-MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\eeda30bb8c9d3c288d3a51001d702caa\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\eeda30bb8c9d3c288d3a51001d702caa\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:24:5-28:19
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:5:5-26:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\afcfadcf0dfd738a86698ada1e4515ca\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\afcfadcf0dfd738a86698ada1e4515ca\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:11:9-40
 activity#capstonegroup2.dataapp.LoginActivity
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:12:9-21:20
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:12:9-21:20
 	android:label
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:14:13-45
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:14:13-45
 	android:theme
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:15:13-56
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:15:13-56
 	android:name
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:13:13-42
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:13:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:27-74
+activity#capstonegroup2.dataapp.accountCreation.AccountCreation
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:22:9-25:68
+	android:label
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:24:13-68
+	android:theme
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:23:13-60
 uses-sdk
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\eeda30bb8c9d3c288d3a51001d702caa\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\eeda30bb8c9d3c288d3a51001d702caa\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\afcfadcf0dfd738a86698ada1e4515ca\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\afcfadcf0dfd738a86698ada1e4515ca\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:20:5-22:41
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\e8305d87975f03eccdc6992ee11154f8\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\49406dbcd87245c373fefef986c72672\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\26c9ae399d8061c763cadca7fdc9937d\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\008b87953dfaeb574d4f18fff4d122fe\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\d6b3d58e5350857c339a735d853630b8\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\5cb249d1bf5af34e720dc6b8ad21bfff\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\ad66aa32315105896680183951066889\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\08b6299d64b1d7630c7135b195e202a9\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\4f301aa6b07502be71c7e95b9dea3b5d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\119aa1ecf9c1e3ed5b64177a8014ff8d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\8617ec2d9130f67a84cc1dc6fce7f69d\AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\9ceb100dedabf762e60dfc4ff9ff8591\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8fb317887eb2c692f9e52688dbad1a3\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\9a1cba4528419838e35d8bbafdbc907a\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\01d04cc4259c9f81aa7fbe2564d2d497\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\4374d6191964b62c7713af44b9c32553\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\179a1de397fb09d8d7599de314d2dff9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\c8ea3a68ad3ad26c230c639421c9abcc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\268c35faac23c910030e0819c455bc22\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\d93e355ec02d70a1278ed88faf166e33\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0219f51b6be092d3e0bb82a71953edb1\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\ce65b2628bb07ff1e47de9e8bd23c6e0\AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:design:26.1.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\ca134ba4530c4ede305da3119b249176\AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:design:26.1.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\42f72992b56caf1900ee0ae0a8bfaac6\AndroidManifest.xml:27:13-51
 meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:25:9-27:47
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:25:9-27:47
 	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:27:13-44
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Patrick\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\596e4ddc19338ca89c5b5513322f3f87\AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\88ad49df726cc0f3cf5d218d8f54483f\AndroidManifest.xml:26:13-58

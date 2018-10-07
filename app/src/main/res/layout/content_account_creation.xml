@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".accountCreation.AccountCreation"
+    tools:showIn="@layout/activity_account_creation">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="@string/ac_title_text"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="@string/ac_username_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="50dp" />
+
+            <EditText
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:text="@string/ac_username_placeholder"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="79dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="@string/ac_password_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <EditText
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:text="@string/ac_password_placeholder"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="165dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="@string/ac_gamification_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/ac_gamification_option_title"
+                android:entries="@array/ac_gamification_entries"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="@string/ac_export_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="256dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ac_export_option1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ac_export_option2" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ac_export_option3" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="@string/ac_notification_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:text="@string/ac_notification_setting"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="388dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="342dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+</android.support.constraint.ConstraintLayout>
