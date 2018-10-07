@@ -21,31 +21,18 @@ import java.util.Map;
  * @version 1.0
  * <h1>Last Edited</h1>
  * Patrick Crockford
- * <h1>Changes</h1>
- * 04th Sept
- * Created Class, Enum, Read_File method, and enum Tags_To_Read, Patrick Crockford
- * Javadoc, Patrick Crockford
- * 13th Sept
- * Modified Read_File() Method parameters. Removed FileInputStream and replaced with XMLPullParser, Patrick
- * Crockford
- * 22nd Sept
- * Added new ENUM Tags_To_Read values - Entries_Retrieved Last_daily_Review_Data, and State, Patrick Crockford
  */
 public interface XML_Reader {
     /**
      * The enum Tags to read from XML file. Covers all Concrete Classes that are broken up into sections
      */
-    public enum Tags_To_Read {
+    enum Tags_To_Read {
         //Login Tags
-        Account_Name, Password,
-        //Medical Tags
-        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State,
-        //Account Tags
-        Gamification, Notification, State, Name, Last_Daily_Review_Date, Last_Export_Date,
-        //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
+        Account_Name, Password, //Medical Tags
+        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Account Tags
+        Gamification, Notification, State, Name, Last_Daily_Review_Date, Last_Export_Date, //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
         //Under the Key "Entries". This is for the Medical Data Only currently due to functionality.
-        Last_Entry, Daily_Data, Export_Data,
-        //Tag for number of entries returned with the medical reader
+        Last_Entry, Daily_Data, Export_Data, //Tag for number of entries returned with the medical reader
         Entries_Retrieved,
 
     }

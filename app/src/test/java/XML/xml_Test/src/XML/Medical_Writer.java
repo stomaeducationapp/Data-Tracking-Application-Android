@@ -4,7 +4,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,61 +24,81 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXParseException;
 
 /**
- * <h1>NOTE</h1>
- * Modify will only modify the first entry in the document as the functionality
- * has been created for the medical state calculator primarily
+ * <h1>Medical_Writer</h1>
+ * The Medical_Writer Java Class is used to modify and/or add information from the medical_information.xml file stored
+ * on
+ * the users device. Implements XML_Writer interface
  * <p>
- * <p>
+ *
+ * @author Patrick Crockford
+ * @version 1.0
+ * <h1>Last Edited</h1>
+ * Patrick Crockford
+ * <h1>References</h1>
+ * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
+ * http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
  */
 public class Medical_Writer implements XML_Writer {
-
     /**
      * Section the hour value is stored under in time arrays
      */
     private static final int HOUR = 0;
-
     /**
      * Section the day value is stored under in time arrays
      */
     private static final int DAY = 1;
-
     /**
      * Section the month value is stored under in time arrays
      */
     private static final int MONTH = 2;
-
     /**
      * Section the year value is stored under in time arrays
      */
     private static final int YEAR = 3;
-
     /**
      * The hour value of the cutoff time for the daily review, daily review is
      * 9:00AM to 8:59AM
      */
     private static final int DAILY_REVIEW_CUTOFF_TIME = 9;
+    /**
+     * The Regex splitter value between date/time values
+     */
     private static final String REGEX_FOR_DATE_TIME = "-";
+    /**
+     * Information line of the medical_information.xml file for initialising due to issues with the required java API we
+     * are using.
+     */
     private static final String FIRST_LINE = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>";
+    /**
+     * The Name value of the root node of the medical_information.xml file
+     */
     private static final String ROOT_NODE = "Medical_Information";
+    /**
+     * The name value of the container node of a medical entry in the medical_information.xml file.
+     */
     private static final String MEDICAL_NODE = "Medical_Entry";
+    /**
+     * The default filler value for an information node in the medical_information.xml file.
+     */
     private static final String DEFAULT_NODE_ENTRY = "No Entry";
 
     /**
-     * @param medical_File
-     * @param values       Map with string pair values, where the Keys correlate
-     *                     to the Enum Tags_To_Write values
-     * @param task
-     * @return True if successful otherwise false
-     * @throws XML.XML_Writer_Failure_Exception
-     * @throws XML.XML_Writer_File_Layout_Exception
+     * Public Method Call to writer information specified to the file references by the File object and returns Boolean
+     * if successful or not.
+     * This method can only handle the task values of 'Modify, New, Create, and Export'
+     *
+     * @param medical_File Represents the File Object that references the medical_information.xml file to write and or
+     *                     modify medical information to.
+     * @param values       The Map containing String pair values, with the key representing the field to write to and
+     *                     the value what will be written.
+     * @param task         Defines what task should be carried out on the File
+     * @return True if the writer is successful otherwise false
+     * @throws XML.XML_Writer_File_Layout_Exception if the XML document given by the account_File object doesn't contain
+     *                                              the expected XML layout
+     * @throws XML.XML_Writer_Failure_Exception     if writing to the XML document encounters an unrecoverable error.
      */
-    //For creating a new document
-    //https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
-    //then merge existing one from file into it!!!! for adding a new entry
     @Override
     public Boolean Write_File(File medical_File, Map<String, String> values, Tags_To_Write task) throws XML_Writer_Failure_Exception, XML_Writer_File_Layout_Exception {
         if (values != null && medical_File != null && medical_File.canWrite() && task != null) {
@@ -131,6 +153,31 @@ public class Medical_Writer implements XML_Writer {
         }
     }
 
+    /**
+     * This private method functionality is to modify the newest medical entry in the file. This limited behaviour is
+     * due to the narrow modification functionality required by the rest of the program, as only the medical states
+     * package requires the ability to modify the medical entries, which is limited to the latest only. To achieve this
+     * functionality the method looks for the first medical entry node and goes no further. The keys in the values Map
+     * define which nodes will be modified with the information provided
+     * <p>
+     * <h1>Note</h1>
+     * To extend this functionality at a later date will provide a big task due to no unique identification, other
+     * than the entry time which is hard to match up
+     * <p>
+     * <h1>Warning</h1>
+     * This method contains nested For loops due to the recursive nature of XML documents.
+     *
+     * @param root_Node    Object representing the Root Node of the original XML file
+     * @param values       Map that contains the keys referencing the files to be modified
+     * @param medical_File Represents the File Object that references the medical_information.xml file
+     * @param document     Object representing the document parsed from the medical_information.xml file, which will be
+     *                     parsed to the Write_To_File() method if modification of the xml information has occurred
+     * @return true if method is successful
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the medical_File object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
+     */
     private Boolean Modify(Node root_Node, Map<String, String> values, File medical_File, Document document) throws TransformerException, FileNotFoundException, IOException {
         NodeList medical_Entries_List = root_Node.getChildNodes();
         int jj = 0;
@@ -138,7 +185,7 @@ public class Medical_Writer implements XML_Writer {
         while (!found && jj < medical_Entries_List.getLength()) {
             Node medical_Node = medical_Entries_List.item(jj);
             if (medical_Node.getNodeName().equals(MEDICAL_NODE)) {
-                found = true;//found first node due to functionality go no futher
+                found = true;//found first node due to functionality go no further
                 NodeList medical_Entry = medical_Node.getChildNodes();
                 //look for State Node
                 for (int ii = 0; ii < medical_Entry.getLength(); ii++) {
@@ -179,7 +226,30 @@ public class Medical_Writer implements XML_Writer {
         return Write_To_File(document, medical_File);
     }
 
-    private Boolean New(Node root_Node, Map<String, String> values, File account_File, DocumentBuilder documentBuilder) throws TransformerException, FileNotFoundException, IOException {
+    /**
+     * This private method functionality is to add a new medical entry node to the top of the medical_information.xml
+     * file. This behaviour has been chosen over appending the medical entry to allow for quicker and easier access to
+     * the Modify(), and Export() methods. This is achieved by creating a new document object to contain the xml and
+     * generating a new medical entry from the values provided by the values Map. The old information, from the
+     * root_Node is then appending to the new document object. This document is then given to the Write_To_File()
+     * method.
+     * <h1>Note</h1>
+     * If no Map entry for the corresponding node is found the DEFAULT_NODE_ENTRY value is placed as a filler
+     * <h1>Warning</h1>
+     * This method contains nested For loops due to the recursive nature of XML documents.
+     *
+     * @param root_Node       Object representing the Root Node of the original XML file
+     * @param values          Map that contains the keys referencing the files to be added
+     * @param documentBuilder Object representing the document builder factor used to create the new XML document to
+     *                        transfer the new layout to
+     * @param medical_File    Represents the File Object that references the medical_information.xml file
+     * @return True if the method was successful
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the medical_File object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
+     */
+    private Boolean New(Node root_Node, Map<String, String> values, File medical_File, DocumentBuilder documentBuilder) throws TransformerException, FileNotFoundException, IOException {
         // create new document
         Document new_Document = documentBuilder.newDocument();
         Element root_element = new_Document.createElement(ROOT_NODE);
@@ -259,11 +329,33 @@ public class Medical_Writer implements XML_Writer {
                 root_element.appendChild(medical_Entry);
             }
         }
-        return Write_To_File(new_Document, account_File);
-
+        return Write_To_File(new_Document, medical_File);
     }
 
-//WILL NEED TO ONLY COPY THE ELEMENTS UP TO CURRENT 24hour PERIOD FOR THE REVIEW DEVELOPMENT
+    /**
+     * This private method functionality is to delete all medical entries that are not required for the current 24 hour
+     * review from the medical_information.xml file. This functionality is to clear the medical_information.xml file
+     * after all the information has been exported to the external database while still allowing for the 24 hour review
+     * functionality to occur.
+     * This is achieved by creating a new XML Document object and copying over each medical entry it finds. The node
+     * containing 'XML_Writer.Tags_To_Write.Entry_Time.toString()' information is checked against the cutoff time. If
+     * the entry is not required, due to the layout of the file, all further entries can also be ignored, due to the
+     * most recent entries are at the top of the file. This is done to reduce the execution time of the method.
+     * If no entries are left after deletion has occurred the medical_information.xml file is re initialised to remove
+     * any unwanted code or errors that could be present.
+     * <h1>Warning</h1>
+     * This method contains nested For loops due to the recursive nature of XML documents.
+     *
+     * @param root_Node       Object representing the Root Node of the original XML file
+     * @param documentBuilder Object representing the document builder factor used to create the new XML document to
+     *                        transfer the new layout to
+     * @param medical_File    Represents the File Object that references the medical_information.xml file
+     * @return True if the method was successful
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the medical_File object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
+     */
     private Boolean Export(Node root_Node, DocumentBuilder documentBuilder, File medical_File) throws TransformerException, FileNotFoundException, IOException {
         String[] cutoff_DateTime = Setup_Date_For_Export();
         boolean success;
@@ -279,7 +371,6 @@ public class Medical_Writer implements XML_Writer {
             Node old_Medical_Node = old_Information.item(ii);
             if (old_Medical_Node.getNodeName().equals(MEDICAL_NODE)) {
                 entries_Left++;
-                System.out.println("Entries " + entries_Left);
                 Element medical_Entry = new_Document.createElement(MEDICAL_NODE);
                 NodeList old_Medical_List = old_Medical_Node.getChildNodes();
                 for (int jj = 0; jj < old_Medical_List.getLength(); jj++) {
@@ -290,28 +381,21 @@ public class Medical_Writer implements XML_Writer {
                         medical_Entry.appendChild(temp_Element);
                     }
                 }
-                if (!found) {
-                    
-                    for (int jj = 0; jj < old_Medical_List.getLength(); jj++) {
-                        Node temp_Node = old_Medical_List.item(jj);
-                        if (temp_Node.getNodeName().equals(XML_Writer.Tags_To_Write.Entry_Time.toString())) {
-                            if (!Check_Date_Times(temp_Node.getTextContent(), cutoff_DateTime)) {
-                                found = true;
-                                entries_Left--;
-                            } else {
-                                root_element.appendChild(medical_Entry);
-                            }
+                for (int jj = 0; jj < old_Medical_List.getLength(); jj++) {
+                    Node temp_Node = old_Medical_List.item(jj);
+                    if (temp_Node.getNodeName().equals(XML_Writer.Tags_To_Write.Entry_Time.toString())) {
+                        if (!Check_Date_Times(temp_Node.getTextContent(), cutoff_DateTime)) {
+                            found = true;
+                            entries_Left--;
+                        } else {
+                            root_element.appendChild(medical_Entry);
                         }
                     }
-                } else {
-                    root_element.appendChild(medical_Entry);
                 }
             }
-            System.out.println("found = " + found);
             ii++;
         }
         if (entries_Left == 0) {
-            System.out.println("Reseting File");
             success = Create(medical_File);
         } else {
             success = Write_To_File(new_Document, medical_File);
@@ -319,16 +403,35 @@ public class Medical_Writer implements XML_Writer {
         return success;
     }
 
-    private Boolean Create(File login_File) throws TransformerException, FileNotFoundException, IOException {
-        PrintWriter pw = new PrintWriter(login_File);
-        pw.println(FIRST_LINE);
-        pw.print("<Medical_Information>");
-        pw.print("</Medical_Information>");
-        pw.flush();
-        pw.close();
+    /**
+     * This private method is used to initialise the medical_information.xml for used by other writer methods and
+     * XML_Reader interface/concrete classes.
+     * <h1>Note</h1>
+     * Due to current issues with the JAVA API and xml writers the information is manually entered, but due to the
+     * simplicity of the initial file structure this results in less code that invoking the xml writer/transformer
+     *
+     * @param medical_File Represents the File Object that references the medical_information.xml file to write and or
+     *                     modify medical_information to
+     * @return true when it reaches the end of the method as it is successful
+     * @throws IOException if an error occurs when trying to read and write from the medical_File object
+     */
+    private Boolean Create(File medical_File) throws IOException {
+        try (PrintWriter pw = new PrintWriter(medical_File)) {
+            pw.println(FIRST_LINE);
+            pw.println("<" + ROOT_NODE + ">");
+            pw.print("</" + ROOT_NODE + ">");
+            pw.flush();
+        }
         return true;
     }
 
+    /**
+     * This private method functionality is to check the name of the node provided against the list of predetermined
+     * valid nodes for the medical_information.xml file.
+     *
+     * @param node The node to be check against valid nodes for the medical_information.xml file
+     * @return true if the node is valid, otherwise false
+     */
     private Boolean Valid_Node(Node node) {
         Boolean valid = false;
         if (node.getNodeName().equals(XML_Writer.Tags_To_Write.Bags.toString())) {
@@ -349,6 +452,14 @@ public class Medical_Writer implements XML_Writer {
         return valid;
     }
 
+    /**
+     * This private method check the values of the entry date of the medical entry parsed in against the date of the
+     * previous day.
+     *
+     * @param entry_Date      The time of the entry to be checked
+     * @param cutoff_DateTime The earliest time that is valid
+     * @return True if the value is between 9AM of the previous day and 8:59AM of the current day, otherwise False
+     */
     private Boolean Check_Date_Times(String entry_Date, String[] cutoff_DateTime) {
         Boolean valid = false;
         try {
@@ -373,6 +484,12 @@ public class Medical_Writer implements XML_Writer {
         return valid;
     }
 
+    /**
+     * This private method functionality generates the current date time of when the method is called.
+     * This Information is setup as (hour)-(day)-(month)-(year)
+     *
+     * @return String containing the for current date time in the pre determined format
+     */
     private String Get_TimeDate() {
         Calendar calender = Calendar.getInstance();
         StringBuilder current_DateTime = new StringBuilder();
@@ -386,6 +503,13 @@ public class Medical_Writer implements XML_Writer {
         return current_DateTime.toString();
     }
 
+    /**
+     * This private method functionality generates the previous days date from the information provided by the Calendar
+     * API. This
+     * method accounts for the edge cases of: New Month, New Year and Leap Year.
+     *
+     * @return String array Object containing the information for the previous days 24 hour review cutoff time
+     */
     private String[] Setup_Date_For_Export() {
         int current_Day, current_Month, current_Year, previous_Day, previous_Month, previous_Year, current_Time;
         Calendar calender = Calendar.getInstance();
@@ -437,6 +561,18 @@ public class Medical_Writer implements XML_Writer {
         return cutoff_Date;
     }
 
+    /**
+     * This private method functionality is to write the xml information contained within the document object to the
+     * medical_information.xml file.
+     *
+     * @param medical_File Represents the File Object that references the medical_information.xml file to be written to
+     * @param document     Object representing the xml file to be written to the medical_information.xml file
+     * @return True if document is successfully written
+     * @throws TransformerException  if an errors occurs from the transformer
+     * @throws FileNotFoundException if the  Write_To_File() method cant find the file represented by the medical_File
+     *                               object
+     * @throws IOException           if an error occurs when trying to read and write from the medical_File object
+     */
     private boolean Write_To_File(Document document, File medical_File) throws TransformerException, FileNotFoundException, IOException {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
@@ -448,6 +584,12 @@ public class Medical_Writer implements XML_Writer {
         return true;
     }
 
+    /**
+     * This private method functionality is to remove the verboseness of the Document builder, as it pushes messages to
+     * the err output channel when and error occurs. This occurs within valid try-catch blocks
+     *
+     * @param documentBuilder Representing the document builder object.
+     */
     private void Quieten_BD(DocumentBuilder documentBuilder) {
         documentBuilder.setErrorHandler(new ErrorHandler() {
             @Override

@@ -158,7 +158,7 @@ public class Login_Writer_Test {
 
             System.out.println("***************************************************"
                     + System.lineSeparator()
-                    + "4. Testing Modifying Password"
+                    + "5. Testing Modifying Password"
                     + System.lineSeparator());
             tests_Run += 1;
             if (Open_File("login_writer_target_change_person.xml")) {
@@ -187,7 +187,7 @@ public class Login_Writer_Test {
 
             System.out.println("***************************************************"
                     + System.lineSeparator()
-                    + "5. Testing Deleteing Person"
+                    + "6. Testing Deleteing Person"
                     + System.lineSeparator());
             tests_Run += 1;
             if (Open_File("login_writer_target_delete_person.xml")) {
@@ -200,6 +200,64 @@ public class Login_Writer_Test {
                     System.out.flush();
                 } else {
                     System.out.println("Failed");
+                }
+
+            } else {
+                System.out.println("Failed");
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+            System.out.println("xml_test.Account_Writer_Test.Run_Tests()");
+            System.out.flush();
+        }
+
+        try {
+
+            System.out.println("***************************************************"
+                    + System.lineSeparator()
+                    + "7. Modification of Person that Doesn't Exist"
+                    + System.lineSeparator());
+            tests_Run += 1;
+            if (Open_File("login_writer_target_change_person.xml")) {
+                XML_Writer.Tags_To_Write tag = XML_Writer.Tags_To_Write.Delete;
+                Map<String, String> values = new HashMap<>();
+                values.put(XML_Writer.Tags_To_Write.Account_Name.toString(), "Yeet");
+                if (xML_Writer.Write_File(file, values, tag)) {
+                    System.out.println("Failed");
+                    System.out.flush();
+                } else {
+                    System.out.println("Passed");
+                    tests_Passed++;
+                }
+
+            } else {
+                System.out.println("Failed");
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+            System.out.println("xml_test.Account_Writer_Test.Run_Tests()");
+            System.out.flush();
+        }
+
+        try {
+
+            System.out.println("***************************************************"
+                    + System.lineSeparator()
+                    + "8. Deletion of Person that Doesn't Exist"
+                    + System.lineSeparator());
+            tests_Run += 1;
+            if (Open_File("login_writer_target_delete_person.xml")) {
+                XML_Writer.Tags_To_Write tag = XML_Writer.Tags_To_Write.Delete;
+                Map<String, String> values = new HashMap<>();
+                values.put(XML_Writer.Tags_To_Write.Account_Name.toString(), "Yeet");
+                if (xML_Writer.Write_File(file, values, tag)) {
+                    System.out.println("Failed");
+                    System.out.flush();
+                } else {
+                    System.out.println("Passed");
+                    tests_Passed++;
                 }
 
             } else {

@@ -1,9 +1,12 @@
 package XML;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,14 +23,14 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Element;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXParseException;
 
 /**
  * <h1>NOTES</h1>
  * Method Parameter for Write_File: Tags_To_Write task is not used but is there
  * for future functionality if required in the future.
+ * <h1>References</h1>
+ * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
+ * http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
  */
 //Note Have to use Document Builder and DOM as need to read all existing first and add in new then overwrite all
 // http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm

@@ -7,7 +7,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -16,35 +16,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a48a3662-4ce3-4f36-9245-38ec30c9a5ec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_add_person.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_change_person.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_delete_person.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_new_file.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_targe_add_entry.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_add_entry.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_export.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_modify.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_new_file.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Writer_Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Writer_Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_new_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_new_file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_add_person.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_add_person.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_change_person.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_change_person.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_delete_person.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_delete_person.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_new_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_new_file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_add_entry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_add_entry.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_export.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_export.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_new_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_new_file.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Reader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Writer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader_Exception.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader_Exception.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Reader_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Reader_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file_empty_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file_empty_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file_empty_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file_empty_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Writer_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Writer_Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -73,11 +72,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login_Writer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
+      <file leaf-file-name="XML_Reader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+            <state relative-caret-position="224">
+              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XML_Reader_Exception.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Account_Reader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="68" column="39" lean-forward="true" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -99,6 +116,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>+ ii</find>
+      <find>system</find>
+      <find>medical</find>
+      <find>login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2395,20 +2415,20 @@
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Reader_Test.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_Exception.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_Failure_Exception.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" />
       </list>
     </option>
   </component>
@@ -2429,6 +2449,47 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2605,47 +2666,6 @@
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="test/java" type="cbb8eebc:String" user="test/java" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -3198,7 +3218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538644900524</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Modification to Account, Login, and Medical Writer for bug fixes and delete functionality(login only)&#10;&#10;added new enums to Writer and Reader interface&#10;&#10;Finished all testing">
+      <created>1538845917379</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1538845917379</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3253,8 +3280,8 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.55117273" side_tool="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.46375266" weight="0.3318535" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.59648186" weight="0.32852387" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.46375266" visible="true" weight="0.3318535" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.478145" weight="0.32963374" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.6759062" weight="0.32963374" />
       <window_info id="Captures" order="2" weight="0.25" />
@@ -3266,48 +3293,48 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7356077" weight="0.39955604" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7356077" weight="0.39955604" />
       <window_info anchor="right" id="Assistant" order="4" weight="0.16044776" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4978678" weight="0.32963374" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Preview" order="4" weight="0.32995737" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4936034" weight="0.32963374" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4488273" visible="true" weight="0.2264151" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4488273" weight="0.2264151" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.59648186" weight="0.32852387" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Captures" order="6" weight="0.25" />
       <window_info id="Capture Tool" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.55117273" side_tool="true" weight="0.32963374" />
-      <window_info anchor="right" id="Preview" order="9" weight="0.32995737" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.32995737" />
-      <window_info anchor="right" id="Assistant" order="0" weight="0.16044776" />
+      <window_info anchor="right" id="Preview" order="8" weight="0.32995737" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Assistant" order="9" weight="0.16044776" />
       <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.6759062" weight="0.32963374" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.46375266" weight="0.33295965" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.46375266" visible="true" weight="0.3318535" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.478145" weight="0.32963374" />
-      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info anchor="right" id="Gradle" order="5" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4978678" weight="0.32963374" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32963374" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4936034" weight="0.32963374" />
@@ -3346,7 +3373,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Pull Request and Commit From Master to Factory Branch" />
     <MESSAGE value="Added XML Reader Interface, Enum, and Method. Javadoc'd and Comments" />
     <MESSAGE value="Moving of Code from Update_Information_From_File Obser to Login_Reader, Research on how to test with InputStream and OutputStream&#10;Updated Code for dealing with a list of Enums to check against for Tags to read&#10;&#10;Delete of Files Update_data_Form_Account_From_File and Update_data_Observer as no longer needed due to XML package" />
     <MESSAGE value="Created and Coded Account Reader, Created MEdical_Reader and Unit Test classes" />
@@ -3371,11 +3397,12 @@
     <MESSAGE value="Account_Writer added Exception control, Added extra test statement that was missed first time around. Added new Custom Exceptions" />
     <MESSAGE value="Modified Account_Writer (in test suite only currently) to allow for safely modifying an exisiting file and layout to be human readable.&#10;Worked on Testing of Account Writer, through netbeans test suite and xml test files. Finished all basic testing for Create and Modify" />
     <MESSAGE value="Addition Modification to Account_Writer, allowing for extendability if format of XML changes in the future&#10;&#10;Modification of Login_Writer to fix error discovered when testing Account_Writer&#10;&#10;XML_Writer added new enums for functionality.&#10;&#10;Login_Writer_Test started&#10;Account_Writer_Test class finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addition Modification to Account_Writer, allowing for extendability if format of XML changes in the future&#10;&#10;Modification of Login_Writer to fix error discovered when testing Account_Writer&#10;&#10;XML_Writer added new enums for functionality.&#10;&#10;Login_Writer_Test started&#10;Account_Writer_Test class finished" />
+    <MESSAGE value="Modification to Account, Login, and Medical Writer for bug fixes and delete functionality(login only)&#10;&#10;added new enums to Writer and Reader interface&#10;&#10;Finished all testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification to Account, Login, and Medical Writer for bug fixes and delete functionality(login only)&#10;&#10;added new enums to Writer and Reader interface&#10;&#10;Finished all testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -3554,13 +3581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="94" lean-forward="true" selection-start-line="13" selection-start-column="94" selection-end-line="13" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -3617,34 +3637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_File_Layout_Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_Failure_Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -3652,48 +3644,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="243" column="21" selection-start-line="223" selection-start-column="8" selection-end-line="243" selection-end-column="21" />
+        <state relative-caret-position="68">
+          <caret line="27" selection-start-line="27" selection-end-line="41" selection-end-column="3" />
+          <folding>
+            <element signature="method#Write_File#0;class#Medical_Writer#0" />
+            <element signature="method#Modify#0;class#Medical_Writer#0" />
+            <element signature="method#New#0;class#Medical_Writer#0" />
+            <element signature="method#Create#0;class#Medical_Writer#0" />
+            <element signature="method#Valid_Node#0;class#Medical_Writer#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="50" lean-forward="true" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+        <state relative-caret-position="554">
+          <caret line="368" selection-start-line="368" selection-end-line="385" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="450" column="62" lean-forward="true" selection-start-line="450" selection-start-column="62" selection-end-line="450" selection-end-column="62" />
+        <state relative-caret-position="-117">
+          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+          <folding>
+            <element signature="method#Write_To_File#0;class#Account_Writer#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        <state relative-caret-position="189">
+          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_Failure_Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer_File_Layout_Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="100" column="58" lean-forward="true" selection-start-line="100" selection-start-column="58" selection-end-line="100" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="68" column="39" lean-forward="true" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
         </state>
       </provider>
     </entry>

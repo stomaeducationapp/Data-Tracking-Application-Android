@@ -9,7 +9,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Map;
@@ -25,12 +24,19 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 /**
- * <h1>NOTES</h1>
- * Method Parameter for Write_File: Tags_To_Write task is not used but is there
- * for future functionality if required in the future.
+ * <h1>Account_Writer</h1>
+ * The Account_Writer Java Class is used to modify and/or add information from the medical_information.xml file stored
+ * on the users device. Implements XML_Writer interface
+ * <p>
+ *
+ * @author Patrick Crockford
+ * @version 1.0
+ * <h1>Last Edited</h1>
+ * Patrick Crockford
+ * <h1>References</h1>
+ * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
+ * http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
  */
-//Note Have to use Document Builder and DOM as need to read all existing first and add in new then overwrite all
-// http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
 public class Account_Writer implements XML_Writer {
 
     private static final String REGEX_FOR_DATE_TIME = "-";
@@ -39,31 +45,32 @@ public class Account_Writer implements XML_Writer {
     private static final String DEFAULT_NODE_ENTRY = "No Entry";
 
     /**
-     * @param account_File Represents the FileOutputStream Object used to write
-     *                     users data to the specified file stored on the device
-     * @param values       Map with string pair values, where the Keys correlate
-     *                     to the Enum Tags_To_Write values
-     * @param task
-     * @return True if successful otherwise false
-     * @throws XML.XML_Writer_File_Layout_Exception
-     * @throws XML.XML_Writer_Failure_Exception
+     * Public Method Call to writer information specified to the file references by the File object and returns Boolean
+     * if successful or not.
+     * This method can only handle the task values of 'Modify' and 'Create'
+     *
+     * @param account_File Represents the File Object that references the account_information.xml file
+     * @param values       The Map containing String pair values, with the key representing the field to write to and
+     *                     the value what will be written.
+     * @param task         Defines what task should be carried out on the account_information.xml file
+     * @return true if the method was successful
+     * @throws XML.XML_Writer_File_Layout_Exception if the XML document given by the account_File object doesn't contain
+     *                                              the expected XML layout
+     * @throws XML.XML_Writer_Failure_Exception     if writing to the XML document encounters an unrecoverable error.
      */
     @Override
     public Boolean Write_File(File account_File, Map<String, String> values, Tags_To_Write task) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
-        Boolean success = false;
+        Boolean success;
         if (values != null && account_File != null && account_File.canWrite() && task != null) {
             try {
                 DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
                 //This section is to make the Document Builder Quiet as it outputs Errors on the err output even when all are within valid try catch
                 Quieten_BD(documentBuilder);
-
                 switch (task) {
                     case Modify:
-                        System.out.println("Modify");
                         Document document = documentBuilder.parse(account_File);
                         Node root_Node = document.getFirstChild();
-                        System.out.println(root_Node.getNodeName());
                         if (root_Node.getNodeName().equals(ROOT_NODE)) {
                             success = Modify(root_Node, values, account_File, document);
                             Write_To_File(document, account_File);
@@ -72,7 +79,6 @@ public class Account_Writer implements XML_Writer {
                         }
                         break;
                     case Create:
-                        System.out.println("Create");
                         success = Create(values, account_File, documentBuilder);
                         break;
                     default:
@@ -88,59 +94,104 @@ public class Account_Writer implements XML_Writer {
         }
     }
 
-    private Boolean Modify(Node root_Node, Map<String, String> values, File account_File, Document doc) throws XML_Writer_File_Layout_Exception, TransformerException, FileNotFoundException, IOException {
+    /**
+     * This private method functionality is to modify the account information in the account_information.xml file. To
+     * achieve this functionality the SAX parser steps through looking for the account_Information node and then
+     * stepping into that. All the children of the account information node are then checked against the keys within the
+     * values Map. If the map contains the keys the attached information is then put into the text value of the node.
+     * If no entries were modified the document writer will not be invoked and false will be returned. This is to
+     * minimise the number of unnecessary IO calls within the method.
+     * <h1>Warning</h1>
+     * This method contains nested For loops due to the recursive nature of XML documents.
+     *
+     * @param root_Node    Object representing the Root Node of the original XML file
+     * @param values       The Map containing String pair values, with the key representing the field to write to and
+     *                     the value what will be written.
+     * @param account_File Represents the File Object that references the account_information.xml file
+     * @param document     Object representing the document parsed from the account_information.xml file, which will be
+     *                     parsed to the Write_To_File() method if modification of the xml information has occurred
+     * @return true if the method was successful
+     * @throws XML_Writer_File_Layout_Exception if the account information node isn't parsed from the
+     *                                          account_information.xml file
+     * @throws TransformerException             if an errors occurs from the document builder, SAX parser for
+     */
+    private Boolean Modify(Node root_Node, Map<String, String> values, File account_File, Document document) throws XML_Writer_File_Layout_Exception, TransformerException {
         NodeList account_List = root_Node.getChildNodes();
-        Boolean found = true;
+        Boolean found = false;
         for (int jj = 0; jj < account_List.getLength(); jj++) {
             Node temp = account_List.item(jj);
             if (temp.getNodeName().equals(ACCOUNT_INFORMATION_NODE)) {
+                found = true;
                 NodeList information_Nodes = temp.getChildNodes();
                 for (int ii = 0; ii < information_Nodes.getLength(); ii++) {
                     Node node = information_Nodes.item(ii);
                     String node_Name = node.getNodeName();
-                    System.out.println(ii + "-" + node_Name);
-                    // TODO: 27-Sep-18 Create Class XML_Writer_Invalid_Enum_Exception
                     if (node_Name.equals(Tags_To_Write.Gamification.toString())) {
                         if (values.containsKey(Tags_To_Write.Gamification.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Gamification.toString()));
+                            found = true;
                         }
                     } else if (node_Name.equals(Tags_To_Write.Notification.toString())) {
                         if (values.containsKey(Tags_To_Write.Notification.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Notification.toString()));
+                            found = true;
                         }
                     } else if (node_Name.equals(Tags_To_Write.State.toString())) {
                         if (values.containsKey(Tags_To_Write.State.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.State.toString()));
+                            found = true;
                         }
                     } else if (node_Name.equals(Tags_To_Write.Name.toString())) {
                         if (values.containsKey(Tags_To_Write.Name.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Name.toString()));
+                            found = true;
                         }
                     } else if (node_Name.equals(Tags_To_Write.Last_Daily_Review_Date.toString())) {
                         if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
+                            found = true;
                         }
                     } else if (node_Name.equals(Tags_To_Write.Last_Export_Date.toString())) {
                         if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
+                            found = true;
                         }
                     } else if (node_Name.equals(Tags_To_Write.Last_Export_Date.toString())) {
                         if (values.containsKey(Tags_To_Write.Last_Export_Date.toString())) {
                             node.setTextContent(Get_Current_Date_Time());
+                            found = true;
                         }
                     }
                 }
             }
         }
-
-        if (!found) {
-            throw new XML_Writer_File_Layout_Exception(String.format("Cannot find 'Account_Information' XML Tag/Node in the File '%s'. File is either corrupt or invalid", account_File.getName()));
+        if (found) {
+            return Write_To_File(document, account_File);
+        } else {
+            throw new XML_Writer_File_Layout_Exception(String.format("Cannot find 'Account_File' Account_Information XML Tag/Node in the File '%s'. File is either corrupt or invalid", account_File.getName()));
         }
-
-        return Write_To_File(doc, account_File);
     }
 
-    private Boolean Create(Map<String, String> values, File account_File, DocumentBuilder documentBuilder) throws TransformerException, FileNotFoundException, IOException {
+    /**
+     * This private method functionality is to create the XML layout of the account_information.xml file. This create
+     * is
+     * also done in conjunction with adding in values, as the create will correspond with the creation of the account
+     * so
+     * all relevant information will be entered at the same time, defined by program functionality. To allow for this
+     * functionality a new XML document object is created and the required XML information and root node are generated.
+     * the account information node is then generated. The children of the account information node are generated and
+     * the values in the values Map corresponding the the given key are added into the text information other node. This
+     * document is then sent to the Write_To_File() method;
+     *
+     * @param values          The Map containing String pair values, with the key representing the field to write to and
+     *                        the value what will be written.
+     * @param account_File    Represents the File Object that references the account_information.xml file
+     * @param documentBuilder Object representing the document builder factor used to create the new XML document to
+     *                        transfer the new layout to
+     * @return true if the method was successful
+     * @throws TransformerException if an errors occurs from the document builder, SAX parser for transformer
+     */
+    private Boolean Create(Map<String, String> values, File account_File, DocumentBuilder documentBuilder) throws TransformerException {
         Document document = documentBuilder.newDocument();
         Element root_element = document.createElement(ROOT_NODE);
         Element account_Information = document.createElement(ACCOUNT_INFORMATION_NODE);
@@ -187,16 +238,23 @@ public class Account_Writer implements XML_Writer {
         if (values.containsKey(Tags_To_Write.Gamification.toString())) {
             gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Gamification.toString())));
         } else {
-            System.out.println(gamification.getNodeName());
             gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(gamification);
 
-        Boolean success = Write_To_File(document, account_File);
-        return success;
+        return Write_To_File(document, account_File);
     }
 
-    private boolean Write_To_File(Document document, File account_File) throws TransformerException, FileNotFoundException, IOException {
+    /**
+     * This private method functionality is to write the xml information contained within the document object to the
+     * account_information.xml file.
+     *
+     * @param account_File Represents the File Object that references the account_information.xml file to be written to
+     * @param document     Object representing the xml file to be written to the account_information.xml file
+     * @return True if document is successfully written
+     * @throws TransformerException if an errors occurs from the transformer
+     */
+    private boolean Write_To_File(Document document, File account_File) throws TransformerException {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
         transformer.setOutputProperty(OutputKeys.METHOD, "xml");
@@ -207,33 +265,40 @@ public class Account_Writer implements XML_Writer {
         return true;
     }
 
+    /**
+     * This private method functionality is to remove the verboseness of the Document builder, as it pushes messages to
+     * the err output channel when and error occurs. This occurs within valid try-catch blocks
+     *
+     * @param documentBuilder Representing the document builder object.
+     */
     private void Quieten_BD(DocumentBuilder documentBuilder) {
         documentBuilder.setErrorHandler(new ErrorHandler() {
             @Override
-            public void warning(SAXParseException saxpe) throws SAXException {
+            public void warning(SAXParseException sax) throws SAXException {
+                throw new SAXException(sax);
             }
 
             @Override
-            public void error(SAXParseException saxpe) throws SAXException {
+            public void error(SAXParseException sax) throws SAXException {
+                throw new SAXException(sax);
             }
 
             @Override
-            public void fatalError(SAXParseException saxpe) throws SAXException {
+            public void fatalError(SAXParseException sax) throws SAXException {
+                throw new SAXException(sax);
             }
         });
     }
 
+    /**
+     * This private method functionality generates the current date time of when the method is called.
+     * This Information is setup as (hour)-(day)-(month)-(year)
+     *
+     * @return String containing the for current date time in the pre determined format
+     */
     private String Get_Current_Date_Time() {
         Calendar calender = Calendar.getInstance();
-        StringBuilder current_DateTime = new StringBuilder();
-        current_DateTime.append(calender.get(Calendar.HOUR_OF_DAY));
-        current_DateTime.append(REGEX_FOR_DATE_TIME);
-        current_DateTime.append(calender.get(Calendar.DAY_OF_MONTH));
-        current_DateTime.append(REGEX_FOR_DATE_TIME);
-        current_DateTime.append((calender.get(Calendar.MONTH) + 1));
-        current_DateTime.append(REGEX_FOR_DATE_TIME);
-        current_DateTime.append(calender.get(Calendar.YEAR));
-        return current_DateTime.toString();
+        return String.valueOf(calender.get(Calendar.HOUR_OF_DAY)) + REGEX_FOR_DATE_TIME + calender.get(Calendar.DAY_OF_MONTH) + REGEX_FOR_DATE_TIME + (calender.get(Calendar.MONTH) + 1) + REGEX_FOR_DATE_TIME + calender.get(Calendar.YEAR);
     }
 
 }

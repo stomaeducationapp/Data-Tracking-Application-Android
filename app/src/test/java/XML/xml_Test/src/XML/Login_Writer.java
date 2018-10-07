@@ -4,7 +4,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,22 +23,53 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXParseException;
 
+/**
+ * <h1>Login_Writer</h1>
+ * The Login_Writer Java Class is used to modify and/or add information from the login_information.xml file stored on
+ * the users device. Implements XML_Writer interface
+ * <p>
+ *
+ * @author Patrick Crockford
+ * @version 1.0
+ * <h1>Last Edited</h1>
+ * Patrick Crockford
+ * <h1>References</h1>
+ * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
+ * http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
+ */
 public class Login_Writer implements XML_Writer {
 
+    /**
+     * Information line of the login_information.xml file for initialising due to issues with the required java API we
+     * are using.
+     */
     private static final String FIRST_LINE = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>";
+
+    /**
+     * The Name value of the root node of the login_information.xml file
+     */
     private static final String ROOT_NODE = "Login_Information";
+    /**
+     * The name value of the container node of a account entry in the login_information.xml file.
+     */
     private static final String ACCOUNT_NODE = "Account";
 
     /**
-     * @param login_File
-     * @param task
-     * @param values     Map with string pair values, where the Keys correlate
-     *                   to the Enum Tags_To_Write values
-     * @return True if successful otherwise false
-     * @throws XML.XML_Writer_Failure_Exception
+     * Public Method Call to writer information specified to the file references by the File object and returns Boolean
+     * if successful or not.
+     * This method can only handle the task values of 'Modify, New, Create, and Delete'
+     *
+     * @param login_File Represents the File Object that references the login_information.xml file to write and or
+     *                   modify login
+     *                   information to.
+     * @param values     The Map containing String pair values, with the key representing the field to write to and
+     *                   the value what will be written.
+     * @param task       Defines what task should be carried out on the File
+     * @return True if the writer is successful otherwise false
+     * @throws XML.XML_Writer_File_Layout_Exception if the XML document given by the account_File object doesn't contain
+     *                                              the expected XML layout
+     * @throws XML.XML_Writer_Failure_Exception     if writing to the XML document encounters an unrecoverable error.
      */
     @Override
     public Boolean Write_File(File login_File, Map<String, String> values, Tags_To_Write task) throws XML_Writer_Failure_Exception, XML_Writer_File_Layout_Exception {
@@ -82,7 +115,7 @@ public class Login_Writer implements XML_Writer {
                         }
                         break;
                     default:
-                        throw new XML_Writer_Failure_Exception("Invalid task given must be either Modify or Create");
+                        throw new XML_Writer_Failure_Exception("Invalid task given : " + task.toString());
                 }
                 return success;
             } catch (IOException | ParserConfigurationException | SAXException | TransformerException ex) {
@@ -94,13 +127,39 @@ public class Login_Writer implements XML_Writer {
 
     }
 
+    /**
+     * This private method functionality is to delete an account from the login_information.xml file, allow for the
+     * functionality of account delete to be available to the user. This is achieved by creating a new XML Document
+     * object. It looks for the account name attached to the 'XML_Writer.Tags_To_Write.Account_Name' key. If this is
+     * found the account entry will be ignored when transferring the entries across, deleting it from the new
+     * login_information.xml file written.
+     * When the account name is found the check is then ignored to reduce the execution time of the method.
+     * If the entry is not found the document writer will not be invoked and false will be returned. This is to
+     * minimise the number of unnecessary IO calls within the method.
+     * If no entries are left after deletion has occurred the login_information.xml file is re initialised to remove
+     * any unwanted code or errors that could be present.
+     * <h1>Warning</h1>
+     * This method contains nested For loops due to the recursive nature of XML documents.
+     *
+     * @param root_Node       Object representing the Root Node of the original XML file
+     * @param values          Map that contains the name of the account to delete from the login_information.xml file,
+     *                        under the key value 'XML_Writer.Tags_To_Write.Account_Name'
+     * @param login_File      Represents the File Object that references the login_information.xml file
+     * @param documentBuilder Object representing the document builder factor used to create the new XML document to
+     *                        transfer the new layout to
+     * @return true if the account was found and deleted successfully, otherwise false
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the login_File object
+     * @throws IOException           if an error occurs when trying to read and write from the login_File object
+     */
     private Boolean Delete(Node root_Node, Map<String, String> values, File login_File, DocumentBuilder documentBuilder) throws TransformerException, FileNotFoundException, IOException {
         Document new_Document = documentBuilder.newDocument();
         Element root_element = new_Document.createElement(ROOT_NODE);
         new_Document.appendChild(root_element);
         NodeList old_Information = root_Node.getChildNodes();
         boolean found = false;
-        Boolean success;
+        Boolean success = false;
         int entries_Left = 0;
         for (int ii = 0; ii < old_Information.getLength(); ii++) {
             Node old_Account = old_Information.item(ii);
@@ -134,31 +193,67 @@ public class Login_Writer implements XML_Writer {
                 }
             }
         }
-        if (entries_Left == 0) {
+        if (entries_Left == 0 && found) {
             success = Create(login_File);
-        } else {
+        } else if (entries_Left > 0 && found) {
             success = Write_To_File(new_Document, login_File);
         }
         return success;
     }
 
-    private Boolean Create(File login_File) throws TransformerException, FileNotFoundException, IOException {
-        PrintWriter pw = new PrintWriter(login_File);
-        pw.println(FIRST_LINE);
-        pw.print("<Login_Information>");
-        pw.print("</Login_Information>");
-        pw.flush();
-        pw.close();
+    /**
+     * This private method functionality is to initialise the login_information.xml for used by other writer methods and
+     * XML_Reader interface/concrete classes.
+     * <h1>Note</h1>
+     * Due to current issues with the JAVA API and xml writers the information is manually entered, but due to the
+     * simplicity of the initial file structure this results in less code that invoking the xml writer/transformer
+     *
+     * @param login_File Represents the File Object that references the login_information.xml file to write and or
+     *                   modify login
+     *                   information to.
+     * @return true when it reaches the end of the method as it is successful
+     * @throws IOException if an error occurs when trying to read and write from the login_File object
+     */
+    private Boolean Create(File login_File) throws IOException {
+        try (PrintWriter pw = new PrintWriter(login_File)) {
+            pw.println(FIRST_LINE);
+            pw.println("<" + ROOT_NODE + ">");
+            pw.print("</" + ROOT_NODE + ">");
+            pw.flush();
+        }
         return true;
     }
 
+    /**
+     * This private method functionality is to modify the information for a specified account. Currently this method
+     * can modify the account name and password value of a given account. This is achieved by stepping through the
+     * document using the SAX parser and document checking all the Account_Name node text values until the required one
+     * is found, or the end of the document is found.
+     * If the entry is not found the document writer will not be invoked and false will be returned. This is to
+     * minimise the number of unnecessary IO calls within the method.
+     * <h1>Warning</h1>
+     * This method contains nested For loops due to the recursive nature of XML documents.
+     *
+     * @param root_Node  Object representing the Root Node of the original XML file
+     * @param values     Map that contains the keys referencing the files to be modified
+     * @param login_File Represents the File Object that references the login_information.xml file to write and or
+     *                   modify login
+     *                   information to.
+     * @param document   Object representing the document parsed from the login_information.xml file, which will be
+     *                   parsed to the Write_To_File() method if modification of the xml information has occurred
+     * @return true if the account was found and modified successfully, otherwise false
+     * @throws TransformerException  if an errors occurs from the document builder, SAX parser for transformer
+     * @throws FileNotFoundException if the document builder, or Write_To_File() method cant find the file represented
+     *                               by the login_File object
+     * @throws IOException           if an error occurs when trying to read and write from the login_File object
+     */
     private Boolean Modify(Node root_Node, Map<String, String> values, File login_File, Document document) throws TransformerException, FileNotFoundException, IOException {
         NodeList information_Nodes = root_Node.getChildNodes();
         Boolean found_Account = false;
         Boolean completed = false;
+        Boolean success = false;
         int ii = 0;
         int jj = 0;
-        //// TODO: 30-Sep-18 Move this code into another method as it should be separated out as dealing with a subset of nodes
         while (ii < information_Nodes.getLength() && !completed) {
             jj = 0;
             Node account_Node = information_Nodes.item(ii);
@@ -196,9 +291,34 @@ public class Login_Writer implements XML_Writer {
             }
             ii++;
         }
-        return Write_To_File(document, login_File);
+        if (found_Account) {
+            success = Write_To_File(document, login_File);
+        }
+        return success;
     }
 
+    /**
+     * This private method functionality is to add a new account entry to the login_information.xml file. This is
+     * achieved by creating a new element from the document element and adding the information from the values Map
+     * to the corresponding nodes. This element is then appended to the root_Node object. The new document is then sent
+     * to the 'Write_To_File' method
+     *
+     * @param root_Node  Object representing the Root Node of the original XML file
+     * @param values     Map that contains the name of the account to delete from the login_information.xml file,
+     *                   under the key value 'XML_Writer.Tags_To_Write.Account_Name'
+     * @param login_File Represents the File Object that references the login_information.xml file to write and or
+     *                   modify login
+     *                   information to.
+     * @param document   Object representing the document parsed from the login_information.xml file, which will be
+     *                   parsed to the Write_To_File() method if modification of the xml information has occurred
+     * @return true if the account was found and modified successfully.
+     * @throws TransformerException         if an errors occurs from the SAX parser or the transformer
+     * @throws FileNotFoundException        if the  Write_To_File() method cant find the file represented by the
+     *                                      login_File object
+     * @throws IOException                  if an error occurs when trying to read and write from the login_File object
+     * @throws XML_Writer_Failure_Exception if the required information is not found within the values Map when creating
+     *                                      a new account entry
+     */
     private Boolean New(Node root_Node, Map<String, String> values, File login_File, Document document) throws TransformerException, FileNotFoundException, IOException, XML_Writer_Failure_Exception {
         // Add new section to the end
         if (values.containsKey(Tags_To_Write.Account_Name.toString()) && values.containsKey(Tags_To_Write.Account_Name.toString())) {
@@ -217,6 +337,13 @@ public class Login_Writer implements XML_Writer {
         }
     }
 
+    /**
+     * This private method functionality is to check the name of the node provided against hte list of predetermined
+     * valid nodes for the login_information.xml file.
+     *
+     * @param node The node to be check against valid nodes for the login_information.xml file
+     * @return true if the node is valid, otherwise false
+     */
     private Boolean Valid_Node(Node node) {
         Boolean valid = false;
         if (node.getNodeName().equals(XML_Reader.Tags_To_Read.Account_Name.toString())) {
@@ -228,6 +355,18 @@ public class Login_Writer implements XML_Writer {
         return valid;
     }
 
+    /**
+     * This private method functionality is to write the xml information contained within the document object to the
+     * login_information.xml file.
+     *
+     * @param login_File Represents the File Object that references the login_information.xml file to be written to
+     * @param document   Object representing the xml file to be written to the login_information.xml file
+     * @return True if document is successfully written
+     * @throws TransformerException  if an errors occurs from the transformer
+     * @throws FileNotFoundException if the  Write_To_File() method cant find the file represented by the login_File
+     *                               object
+     * @throws IOException           if an error occurs when trying to read and write from the login_File object
+     */
     private boolean Write_To_File(Document document, File login_File) throws TransformerException, FileNotFoundException, IOException {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
@@ -239,6 +378,12 @@ public class Login_Writer implements XML_Writer {
         return true;
     }
 
+    /**
+     * This private method functionality is to remove the verboseness of the Document builder, as it pushes messages to
+     * the err output channel when and error occurs. This occurs within valid try-catch blocks
+     *
+     * @param documentBuilder Representing the document builder object.
+     */
     private void Quieten_BD(DocumentBuilder documentBuilder) {
         documentBuilder.setErrorHandler(new ErrorHandler() {
             @Override

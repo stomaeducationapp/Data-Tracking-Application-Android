@@ -53,12 +53,12 @@ public class Xml_Test {
                         }
                         break;
                     case "2":
-                        /*
+                        
                         Account_Writer_Test accout_Writer_Test = new Account_Writer_Test();
                         accout_Writer_Test.Run_Tests();
                         Login_Writer_Test login_Writer_Test = new Login_Writer_Test();
                         login_Writer_Test.Run_Tests();
-                        */
+                        
                         Medical_Writer_Test medical_Writer_Test = new Medical_Writer_Test();
                         medical_Writer_Test.Run_Tests();
                         System.out.println("***************************************************"
