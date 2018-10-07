@@ -18,17 +18,6 @@ import java.util.Map;
  * @version 1.0
  * <h1>Last Edited</h1>
  * Patrick Crockford
- * <p>
- * <h1>Changes</h1> 04th Sept Created Class, Patrick Crockford Implemented Read_File Method, Patrick Crockford Imported
- * code from Update_information_From_File Observer class (Now deleted) that contained XML reader functionality, Patrick
- * Crockford Refactored code to reduce the number of nested loops to improve readability and reduce 0(n) overall,
- * Patrick Crockford 13th Sept Refactored Read_File Method to conform with changes to XML_Reader, Patrick Crockford 20th
- * Sept Modified XML Reader logic due to testing error discovered in the Account_Reader class, Patrick Crockford Added a
- * conversion from ENUM to String for the tags to check to reduce the number of recalls to the .ToString() method within
- * boolean checks, Patrick Crockford Added Code to find the required name of the account specified from Entries instead
- * of attributes, Patrick Crockford 22nd Sept Added Logic checks, both null and empty to the account_Name parameter and
- * enum_tags to stop any issues of checking nulls and empty lists, Patrick Crockford 23rd Sept Added JavaDoc, Patrick
- * Crockford Merged readText method into read_Tag_Information
  */
 public class Login_Reader implements XML_Reader {
 
