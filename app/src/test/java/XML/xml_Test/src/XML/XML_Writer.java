@@ -28,7 +28,7 @@ public interface XML_Writer {
      * Create: Will initialise the .xml file with the correct root tags and other secondary tags as specified in each concrete class, usable in all concrete classes
      * Delete: Will delete the corresponding entry from the .xml file, only usable in the Login_Writer concrete class
      */
-    enum Tags_To_Write {
+    public enum Tags_To_Write {
         Account_Name, Password, New_Account_Name, //Login
         Name, Gamification, Notification, State, Last_Daily_Review_Date, Last_Export_Date,//Account
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Medical
