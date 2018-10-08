@@ -78,31 +78,31 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\ca
 	android:theme
 		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:11:9-40
 activity#capstonegroup2.dataapp.LoginActivity
-ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:12:9-17:20
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:12:9-21:20
 	android:label
 		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:14:13-45
 	android:theme
 		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:15:13-56
 	android:name
 		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:13:13-42
-activity#capstonegroup2.dataapp.accountCreation.AccountCreation
-ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:18:9-26:20
-	android:label
-		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:20:13-68
-	android:theme
-		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:21:13-56
-	android:name
-		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:19:13-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:22:13-25:29
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
-ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:18:27-74
+activity#capstonegroup2.dataapp.accountCreation.AccountCreation
+ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:22:9-26:20
+	android:label
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:24:13-68
+	android:theme
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml:23:13-60
 uses-sdk
 INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\Uni\Project\Android\2018-02-healthcare-visualization-data-tracking-application\app\src\main\AndroidManifest.xml
