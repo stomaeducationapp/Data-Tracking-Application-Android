@@ -804,7 +804,9 @@ id acGameTitle
 id acNotSett
 id acNotTitle
 id acPassInput
+id acPassStrength
 id acPassTitle
+id acStrengthBar
 id acTitle
 id acUNInput
 id acUNTitle
@@ -1115,6 +1117,7 @@ string ac_gamification_title
 string ac_notification_setting
 string ac_notification_title
 string ac_password_placeholder
+string ac_password_strength
 string ac_password_title
 string ac_title_text
 string ac_username_placeholder

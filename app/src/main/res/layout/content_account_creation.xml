@@ -14,8 +14,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,6 +68,30 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="165dp" />
 
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/acPassStrength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
+                    android:text="@string/ac_password_strength"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/acStrengthBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="261dp"
+                    android:layout_height="29dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
             <TextView
                 android:id="@+id/acGameTitle"
                 android:layout_width="match_parent"
@@ -89,6 +115,8 @@
                 android:layout_height="29dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/ac_export_title"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="136dp" />
 
@@ -104,24 +132,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ac_export_option1"
-                    android:onClick="exportSet"/>
+                    android:onClick="exportSet"
+                    android:text="@string/ac_export_option1" />
 
                 <RadioButton
                     android:id="@+id/acExportSettTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ac_export_option2"
-                    android:onClick="exportSet"/>
+                    android:onClick="exportSet"
+                    android:text="@string/ac_export_option2" />
 
                 <RadioButton
                     android:id="@+id/acExportSettThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/ac_export_option3"
-                    android:onClick="exportSet"/>
+                    android:onClick="exportSet"
+                    android:text="@string/ac_export_option3" />
 
             </RadioGroup>
 

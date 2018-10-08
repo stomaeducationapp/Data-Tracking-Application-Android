@@ -19,4 +19,5 @@
     <string name="ac_export_option2">Biweekly</string>
     <string name="ac_export_option3">Never</string>
     <string name="ac_notification_setting">Would you like to recieve push notifications for any alerts you may generate?</string>
+    <string name="ac_password_strength">Strength:</string>
 </resources>
