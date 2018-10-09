@@ -18,10 +18,10 @@ package EncryptExport;
  * X
  */
 
-import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
 public class Detector
@@ -48,51 +48,28 @@ public class Detector
         Retrieval sys = new Retrieval();
         Encrypt en = new Encrypt();
         //Export object to handle the exporting of data
-        FileDescriptor userFD;
-        FileDescriptor serverFD;
-
+        Map<String, String> userFile;
+        Map<String, String> enFile;
+        //Create File for writing from output stream?
 
         try
         {
             //Call Retrieval to get the file/data back from system
-            try
-            {
-                userFD = input.getFD();
-                serverFD = output.getFD();
-            }
-            catch (IOException e)
-            {
-                throw new EncryptHandlerException("Failed to retrieve file descriptors.");
-            }
-            Map<String, String> userFile;
-            Map<String, String> enFile;
-
-            userFile = sys.retrieve(userFD);
+            userFile = sys.retrieve(input);
 
             //Pass to Encrypt to convert file to encrypted
-            try
-            {
-                enFile = en.encryptHandler(userFile);
-            }
-            catch ()
-            {
+            enFile = en.encryptHandler(userFile);
+            //Pass enFile to chosen export method
 
-            }
-
-            //TODO - try catch encryptHandle to capture encryption specific exceptions
-
-            //Pass encrypted to export
-
-            //Call Retrieval? to remove all data from system file storage - to reduce memory and prevent duplicate records messing with other functions
-            boolean success = sys.bookKeeping(userFile);
+            boolean success = sys.bookKeeping(output);
             if(success == true)
             {
                 done = true;
             }
         }
-        catch ()
+        catch ( NoSuchAlgorithmException | UnsupportedEncodingException e)
         {
-
+            throw new EncryptHandlerException("Encryption of file failed: " + e.getMessage());
         }
 
         return done;
