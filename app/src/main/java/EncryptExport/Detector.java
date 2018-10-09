@@ -84,8 +84,11 @@ public class Detector
             //Pass encrypted to export
 
             //Call Retrieval? to remove all data from system file storage - to reduce memory and prevent duplicate records messing with other functions
-            sucess = sys.bookKeeping(userFile);
-            done = true;
+            boolean success = sys.bookKeeping(userFile);
+            if(success == true)
+            {
+                done = true;
+            }
         }
         catch ()
         {
