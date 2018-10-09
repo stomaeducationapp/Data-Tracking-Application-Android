@@ -25,7 +25,7 @@ public class ReviewHandler {
     //moves the current review into the yesterday var. Generates today's review
     public boolean generateReview() {
         boolean success = true;
-        Map<Date, Integer> data = new HashMap<>();
+        Map<String, String> data = new HashMap<>();
 
         //Read in the account data to create the graphs.
         data = ReviewData.loadData();
@@ -34,11 +34,11 @@ public class ReviewHandler {
             yesterday = new DailyReview();
             today = new DailyReview();
 
-            today.calcStateGraph(data);
-            today.calcStateChart(data);
-            today.calcVolumeGraph(data);
-            today.calcBagGraph(data);
-            today.calcWellbeingChart(data);
+            today.calcStateGraph(parseData(data, TYPE.STATELINE));
+            today.calcStateChart(parseData(data, TYPE.STATEPIE));
+            today.calcVolumeGraph(parseData(data, TYPE.VOLUMELINE));
+            today.calcBagGraph(parseData(data, TYPE.BAGBAR));
+            today.calcWellbeingChart(parseData(data, TYPE.WELLBEING));
 
             //since there is no yesterday yet, just make it the same as today
             yesterday = new DailyReview(today);
@@ -50,11 +50,11 @@ public class ReviewHandler {
             yesterday = new DailyReview(today);
 
             //calculate the new graph
-            today.calcStateGraph(data);
-            today.calcStateChart(data);
-            today.calcVolumeGraph(data);
-            today.calcBagGraph(data);
-            today.calcWellbeingChart(data);
+            today.calcStateGraph(parseData(data, TYPE.STATELINE));
+            today.calcStateChart(parseData(data, TYPE.STATEPIE));
+            today.calcVolumeGraph(parseData(data, TYPE.VOLUMELINE));
+            today.calcBagGraph(parseData(data, TYPE.BAGBAR));
+            today.calcWellbeingChart(parseData(data, TYPE.WELLBEING));
         }
         else {
             success = false;
@@ -65,6 +65,7 @@ public class ReviewHandler {
 
     public boolean selectReview(DAY day, TYPE choice) {
         boolean success = true;
+        //creates the activity to display the chart
         DailyReviewGraph view = new DailyReviewGraph();
 
         if (day == DAY.TODAY) {  //display the graph from today
@@ -115,5 +116,43 @@ public class ReviewHandler {
         boolean success = true;
 
         return success;
+    }
+
+
+    /*
+    This is temporary. The logic will need to change depending on structure of the input data
+    BIG ASSUMPTION FOR NOW - Map being read from file will have k=Attribute and v=Date in millis,Value as strings
+     */
+    public Map<Date, Integer> parseData(Map<String, String> temp, TYPE type) {
+        Map<Date, Integer> ret = new HashMap<>();
+
+        //gets ALL data in type value pairs
+        String[] attributes = temp.keySet().toArray(new String[0]);
+
+        if (type == TYPE.STATELINE || type == TYPE.STATEPIE) {  //only want the state entries
+            for (String name: attributes) {
+                if (name.contains("state")) {
+                    String[] elements = temp.get(name).split(",");
+                    ret.put(new Date(Long.parseLong(elements[0])), Integer.parseInt(elements[1]));
+                }
+            }
+        }
+        else if (type == TYPE.VOLUMELINE || type == TYPE.BAGBAR) {  //only want output entries
+            for (String name: attributes) {
+                if (name.contains("output")) {
+                    String[] elements = temp.get(name).split(",");
+                    ret.put(new Date(Long.parseLong(elements[0])), Integer.parseInt(elements[1]));
+                }
+            }
+        }
+        else if (type == TYPE.WELLBEING) {  //only want wellbeing entries
+            for (String name: attributes) {
+                if (name.contains("wellbeing")) {
+                    String[] elements = temp.get(name).split(",");
+                    ret.put(new Date(Long.parseLong(elements[0])), Integer.parseInt(elements[1]));
+                }
+            }
+        }
+        return ret;
     }
 }

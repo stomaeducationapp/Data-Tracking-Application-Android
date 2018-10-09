@@ -47,7 +47,7 @@ public class DailyReview {
     STATE STUFF
      */
     //state line graph - plots values against date
-    //Map<DateTime of input, State at that time>
+    //expects map to have date and value pairs of state data
     public void calcStateGraph (Map<Date, Integer> data) {
         stateGraphSeries = new TimeSeries("State Progression");
 
@@ -194,8 +194,6 @@ public class DailyReview {
         for (Date key: attributes) {
             bagGraphSeries.add(key, data.get(key));
         }
-
-
     }
 
     public Intent displayBagGraph(Context context) {

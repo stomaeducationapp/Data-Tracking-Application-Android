@@ -14,8 +14,8 @@ public class ReviewData {
     }
 
     //should load and return the data
-    public static Map<Date, Integer> loadData() {
-        Map<Date, Integer> data = new HashMap<>();
+    public static Map<String, String> loadData() {
+        Map<String, String> data = new HashMap<>();
 
         //read in the data
 
