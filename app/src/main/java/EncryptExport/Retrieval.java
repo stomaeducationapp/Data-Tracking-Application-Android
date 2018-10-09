@@ -26,7 +26,7 @@ public class Retrieval
      * OUTPUTS - userFile (file with all data needed to be exported contained within)
      * PURPOSE - This is the function to call the OS to retrieve the user's data that must be exported
      */
-    public static Object retrieve()
+    public Object retrieve()
     {
         Object userFile = null; //The user's file we are going to try and retrieve
 
@@ -43,7 +43,7 @@ public class Retrieval
      * PURPOSE - This is the function to go through stored user data and remove all entries that match entries within userFile,
      *           this both keeps memory low, and prevents any duplicate uses in the app (which could have massive ramifications with health tracking)
      */
-    public static void bookKeeping(Object userFile)
+    public boolean bookKeeping(Object userFile)
     {
 
         //Delete every record that matches the date times in the provided file - in case other unsent data was added to file

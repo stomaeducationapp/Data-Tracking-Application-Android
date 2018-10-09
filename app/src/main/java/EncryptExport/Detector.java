@@ -18,6 +18,12 @@ package EncryptExport;
  * X
  */
 
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Map;
+
 public class Detector
 {
 
@@ -36,16 +42,57 @@ public class Detector
      * PURPOSE - This is the function to handle the encrypt/export event triggered by either the user manually or
      *           automatically after 7 days no export
      */
-    public static void handle()
+    public static boolean handle(FileInputStream input, FileOutputStream output) throws EncryptHandlerException
     {
-        //Call Retrieval to get the file/data back from system
+        boolean done = false;
+        Retrieval sys = new Retrieval();
+        Encrypt en = new Encrypt();
+        //Export object to handle the exporting of data
+        FileDescriptor userFD;
+        FileDescriptor serverFD;
 
-        //Pass to Encrypt to convert file to encrypted
-        //TODO - try catch encryptHandle to capture encryption specific exceptions
 
-        //Pass encrypted to export
+        try
+        {
+            //Call Retrieval to get the file/data back from system
+            try
+            {
+                userFD = input.getFD();
+                serverFD = output.getFD();
+            }
+            catch (IOException e)
+            {
+                throw new EncryptHandlerException("Failed to retrieve file descriptors.");
+            }
+            Map<String, String> userFile;
+            Map<String, String> enFile;
 
-        //Call Retrieval? to remove all data from system file storage - to reduce memory and prevent duplicate records messing with other functions
+            userFile = sys.retrieve(userFD);
+
+            //Pass to Encrypt to convert file to encrypted
+            try
+            {
+                enFile = en.encryptHandler(userFile);
+            }
+            catch ()
+            {
+
+            }
+
+            //TODO - try catch encryptHandle to capture encryption specific exceptions
+
+            //Pass encrypted to export
+
+            //Call Retrieval? to remove all data from system file storage - to reduce memory and prevent duplicate records messing with other functions
+            sucess = sys.bookKeeping(userFile);
+            done = true;
+        }
+        catch ()
+        {
+
+        }
+
+        return done;
     }
 
 

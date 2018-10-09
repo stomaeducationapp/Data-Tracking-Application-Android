@@ -15,9 +15,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3555442-4786-49d2-be8a-6cbb64ce075e" name="Default" comment="">
+    <list default="true" id="3abefdc4-f637-4a19-91f9-1888ff60ae5a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/EncryptExport/EncryptHandlerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018-02-healthcare-visualization-data-tracking-application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2018-02-healthcare-visualization-data-tracking-application.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -31,9 +52,6 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/2018_02_healthcare_visualization_data_tracking_application$EncryptTest.ic" NAME="EncryptTest Coverage Results" MODIFIED="1538800184825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -49,11 +67,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="EncryptHandlerException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/EncryptHandlerException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#204#205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Encrypt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+            <state relative-caret-position="978">
+              <caret line="129" column="11" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Detector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,59 +101,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Test.java">
+      <file leaf-file-name="Retrieval.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="670">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Export.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Export_Data.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Medical_Reader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Medical_Reader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="116" column="83" selection-start-line="116" selection-start-column="83" selection-end-line="116" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XML_Reader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XML_Writer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+            <state relative-caret-position="94">
+              <caret line="92" column="16" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -121,8 +122,17 @@
       <file leaf-file-name="Medical_Writer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="-629">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Export.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="118" selection-start-line="9" selection-start-column="118" selection-end-line="9" selection-end-column="118" />
             </state>
           </provider>
         </entry>
@@ -133,10 +143,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Singleton" />
-        <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
+        <option value="valueResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -150,7 +160,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Factory" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -2433,7 +2443,6 @@
         <option value="$PROJECT_DIR$/app/sampledata/test.txt" />
         <option value="$PROJECT_DIR$/app/src/test/assets/test2.xml" />
         <option value="$PROJECT_DIR$/app/src/test/assets/empty_file.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_unit_Test.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/XML/Account_Reader_InstrumentedTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/XML_Test_Suite/README.txt" />
@@ -2448,12 +2457,19 @@
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_account_creation.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_account_creation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/EncryptHandlerException.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Test.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java" />
       </list>
     </option>
   </component>
@@ -2463,7 +2479,9 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages AndroidView="false" />
@@ -2522,6 +2540,70 @@
             <path>
               <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Observers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="XML" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2647,70 +2729,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2721,7 +2739,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="device.picker.selection" value="Dudes_Phone_Approximate_" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/XML" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/EncryptExport" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyApplication" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
@@ -2729,11 +2747,23 @@
       <recent name="XML" />
       <recent name="Factory" />
     </key>
+    <key name="android.template.packageName">
+      <recent name="capstonegroup2.dataapp.accountCreation" />
+      <recent name="capstonegroup2.dataapp" />
+      <recent name="accountCreation" />
+      <recent name="AccountCreation" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="android.template.parentActivityClass">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\test" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="EncryptExport" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2748,7 +2778,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EncryptTest">
+  <component name="RunManager" selected="Android App.AccountCreation">
     <configuration name="Account_Reader_unit_Test.Check_File_Reader" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -2861,6 +2891,55 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccountCreation" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="capstonegroup2.dataapp.accountCreation.AccountCreation" />
+    </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="app" />
       <option name="DEPLOY" value="true" />
@@ -2910,59 +2989,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
     </configuration>
-    <configuration name="File_Stream_Check2()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="File_Stream_Check2" />
-      <option name="CLASS_NAME" value="XML.Account_Reader_InstrumentedTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
-      </Profilers>
-    </configuration>
-    <configuration name="EncryptTest" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="EncryptExport.Test" />
-      <module name="app" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/app/src/main/java/EncryptExport" />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
       <module name="2018-02-healthcare-visualization-data-tracking-application" />
@@ -3054,20 +3082,19 @@
     </configuration>
     <list>
       <item itemvalue="Android App.app" />
-      <item itemvalue="Application.EncryptTest" />
-      <item itemvalue="Android Instrumented Tests.File_Stream_Check2()" />
       <item itemvalue="Android JUnit.Account_Reader_unit_Test.read_File" />
       <item itemvalue="Android JUnit.Account_Reader_unit_Test.Check_File_Reader" />
       <item itemvalue="Android JUnit.Account_Reader_unit_Test.Empty_File_Parse" />
       <item itemvalue="Android JUnit.Account_Reader_unit_Test.Check_File_Stream" />
+      <item itemvalue="Android App.AccountCreation" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.Account_Reader_unit_Test.Empty_File_Parse" />
+        <item itemvalue="Android App.AccountCreation" />
         <item itemvalue="Android JUnit.Account_Reader_unit_Test.Check_File_Stream" />
+        <item itemvalue="Android JUnit.Account_Reader_unit_Test.Empty_File_Parse" />
         <item itemvalue="Android JUnit.Account_Reader_unit_Test.Check_File_Reader" />
         <item itemvalue="Android JUnit.Account_Reader_unit_Test.read_File" />
-        <item itemvalue="Android Instrumented Tests.File_Stream_Check2()" />
       </list>
     </recent_temporary>
   </component>
@@ -3076,7 +3103,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e3555442-4786-49d2-be8a-6cbb64ce075e" name="Default" comment="" />
+      <changelist id="3abefdc4-f637-4a19-91f9-1888ff60ae5a" name="Default" comment="" />
       <created>1534865498707</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -3208,42 +3235,35 @@
       <option name="project" value="LOCAL" />
       <updated>1537782909866</updated>
     </task>
-    <task id="LOCAL-00019" summary="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder&#10;- Made an update to bring encrypt/export up to master">
-      <created>1538453552156</created>
+    <task id="LOCAL-00019" summary="- Created activity file&#10;- Put in basic containers in layout&#10;- Changed gradle design version to have imports for activities work">
+      <created>1538890686051</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1538453552157</updated>
+      <updated>1538890686051</updated>
     </task>
-    <task id="LOCAL-00020" summary="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder&#10;- Made an update to bring encrypt/export up to master&#10;- Added a lot of basic functionality following a guide I found online&#10;- Added a metric buttload of comments for understanding and for future development points">
-      <created>1538738050491</created>
+    <task id="LOCAL-00020" summary="- Completed basic functionality for client demo of this screen">
+      <created>1538904476153</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1538738050491</updated>
+      <updated>1538904476153</updated>
     </task>
-    <task id="LOCAL-00021" summary="- Completed a rudimentary test that encrypted and decrypted a String&#10;- Fixed code to match new info">
-      <created>1538805750424</created>
+    <task id="LOCAL-00021" summary="- Finished all activity specific functionality&#10;- Added comment walkthrough for Validation integration + Log in Integration">
+      <created>1538981077036</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1538805750424</updated>
+      <updated>1538981077036</updated>
     </task>
-    <task id="LOCAL-00022" summary="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit">
-      <created>1538810917503</created>
+    <task id="LOCAL-00022" summary="- Merge update with master">
+      <created>1538981736736</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1538810917503</updated>
+      <updated>1538981736736</updated>
     </task>
-    <task id="LOCAL-00023" summary="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit&#10;- Re added XML file since it bugged up my tests">
-      <created>1538811000593</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1538811000593</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3288,76 +3308,79 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32882884" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49755502" weight="0.32882884" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
-      <window_info id="Build Variants" order="2" sideWeight="0.5011261" side_tool="true" weight="0.17114915" />
+      <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.54339856" side_tool="true" visible="true" weight="0.3310811" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.45660147" visible="true" weight="0.3310811" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.59648186" weight="0.3277027" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3294621" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.478145" weight="0.32882884" />
-      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.6759062" weight="0.32882884" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.53056234" side_tool="true" weight="0.23085585" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.46149144" weight="0.3310811" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.591687" weight="0.3277027" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.47555012" weight="0.32882884" />
+      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.6729829" weight="0.32882884" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887386" visible="true" weight="0.17114915" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32882884" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17114915" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.46943766" weight="0.23085585" />
       <window_info anchor="right" id="Gradle" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.5016835" side_tool="true" weight="0.17114915" />
-      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977476" />
-      <window_info anchor="right" id="Assistant" order="4" weight="0.16044776" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32932693" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7356077" weight="0.39955604" />
       <window_info anchor="right" id="Preview" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="StringPreview" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" sideWeight="0.49938875" weight="0.32995495" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4978678" weight="0.32963374" />
+      <window_info anchor="right" id="Assistant" order="4" weight="0.16044776" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4936034" weight="0.32882884" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4488273" visible="true" weight="0.2264151" />
+      <window_info anchor="right" id="StringPreview" order="3" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.59648186" weight="0.32852387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.591687" weight="0.3277027" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Captures" order="6" weight="0.25" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.55117273" side_tool="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49938875" weight="0.32995495" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.53056234" side_tool="true" visible="true" weight="0.23085585" />
       <window_info anchor="right" id="Preview" order="9" weight="0.32995737" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Assistant" order="10" weight="0.16044776" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4936034" weight="0.32882884" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.32995737" />
-      <window_info anchor="right" id="Assistant" order="0" weight="0.16044776" />
-      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.6759062" weight="0.32963374" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.46375266" weight="0.33295965" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.478145" weight="0.32963374" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.46943766" visible="true" weight="0.23085585" />
+      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.6729829" weight="0.32882884" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.46149144" weight="0.3310811" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.47555012" weight="0.32882884" />
       <window_info anchor="right" id="Gradle" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17114915" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4978678" weight="0.32963374" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32963374" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49755502" weight="0.32882884" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4936034" weight="0.32963374" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7356077" weight="0.39955604" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -3409,59 +3432,18 @@
     <MESSAGE value="Modified XML_Reader interface with new ENUM values for information control in and out&#10;Modified Login Reader Error Messages for Clarity, and Values checks for more NULLS to remove the change of errors&#10;&#10;Modified Account Reader Error Messages for Clarity, Logic Statements for Readability, and Values checks for more NULLS to remove the change of errors&#10;&#10;Modified Medical Reader Code due to errors from previous tests for Account and Login. This resulted in cleaner code and less methods as some where discovered to be nested for no reason. Modified the layout of the XML expected as well to make it easier to read and catch errors&#10; Modified Error Messages for Clarity, Logic Statements for Readability, and Values checks for more NULLS to remove the change of errors&#10; &#10; Added Test Files for Medical reader, including new XML files" />
     <MESSAGE value="Updated Medical Reader Time Logic due to an error discovered.&#10;Currently nested If statements in a private method. If time permits this sprint will need to look at other methods for this check. Will be noted in JavaDoc for future&#10;&#10;Finished Test Suite and all tests" />
     <MESSAGE value="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder" />
-    <MESSAGE value="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder&#10;- Made an update to bring encrypt/export up to master" />
-    <MESSAGE value="Finished Java Doc for Account_Reader, Login_Reader, Medical_Reader, and XML_Reader, and added Excel documents with test results into the test/java/XML/xml_Test folder&#10;- Made an update to bring encrypt/export up to master&#10;- Added a lot of basic functionality following a guide I found online&#10;- Added a metric buttload of comments for understanding and for future development points" />
-    <MESSAGE value="- Completed a rudimentary test that encrypted and decrypted a String&#10;- Fixed code to match new info" />
-    <MESSAGE value="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit" />
-    <MESSAGE value="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit&#10;- Re added XML file since it bugged up my tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed up comments on encrypt code&#10;- Added new TODOs for next commit&#10;- Re added XML file since it bugged up my tests" />
+    <MESSAGE value="- Created activity file&#10;- Put in basic containers in layout&#10;- Changed gradle design version to have imports for activities work" />
+    <MESSAGE value="- Completed basic functionality for client demo of this screen" />
+    <MESSAGE value="- Finished all activity specific functionality&#10;- Added comment walkthrough for Validation integration + Log in Integration" />
+    <MESSAGE value="- Merge update with master" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Merge update with master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="35" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/sampledata/test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/test_resources/test.txt" />
-    <entry file="file://$PROJECT_DIR$/app/sampledata/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2018-02-healthcare-visualization-data-tracking-application.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/Observers/Form_Change__Unit_Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -3477,13 +3459,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/assets/test2.xml" />
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/assets/empty_file.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -3551,6 +3526,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://D:/Android/sdk/platforms/android-26/android.jar!/org/xmlpull/v1/XmlPullParser.class" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3559,10 +3541,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="13" column="94" lean-forward="true" selection-start-line="13" selection-start-column="94" selection-end-line="13" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="35" column="104" lean-forward="true" selection-start-line="35" selection-start-column="104" selection-end-line="35" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="51" column="63" lean-forward="true" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="79" column="13" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="79" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -3589,158 +3620,128 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
+        <state relative-caret-position="512">
           <caret line="52" column="70" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/MainActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="333">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_account_creation.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="79" column="13" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="79" selection-end-column="13" />
-        </state>
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="51" column="63" lean-forward="true" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../SDK/platforms/android-26/android.jar!/android/util/Base64.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/org/jcp/xml/dsig/internal/dom/XMLDSigRI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="e#4757#4917#0" expanded="true" />
-            <element signature="e#4916#4917#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
+    <entry file="android-dummy://F:/Uni/Project/Android/2018-02-healthcare-visualization-data-tracking-application/app/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_account_creation.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="306">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        <state relative-caret-position="-629">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="261">
+          <caret line="48" column="81" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="5" lean-forward="true" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/EncryptHandlerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="116" column="83" selection-start-line="116" selection-start-column="83" selection-end-line="116" selection-end-column="83" />
+        <state relative-caret-position="94">
+          <caret line="92" column="16" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="978">
+          <caret line="129" column="11" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Detector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Export.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="118" selection-start-line="9" selection-start-column="118" selection-end-line="9" selection-end-column="118" />
         </state>
       </provider>
     </entry>

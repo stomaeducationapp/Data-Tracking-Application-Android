@@ -26,6 +26,7 @@ package EncryptExport;
  */
 
 import java.security.SecureRandom;
+import java.util.Map;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -37,13 +38,13 @@ public class Encrypt
 {
     //TODO - MAKE ALL VARIABLES FINAL WHERE POSSIBLE
 
-    public Encrypt() throws Exception //TODO - FIX WITH PROPER EXCEPTION HANDLING
+    public Encrypt() //TODO - FIX WITH PROPER EXCEPTION HANDLING
     {
 
     }
 
 
-    public static String decrypt(byte[] message, byte[] decKey, byte[] iv) throws Exception
+    public String decrypt(byte[] message, byte[] decKey, byte[] iv)
     {
 
         //Another set of variables you can modify to alter how this method encrypts your data
@@ -76,8 +77,10 @@ public class Encrypt
      * PURPOSE - This is the function to begin the encryption process on the userFile provided
      */
     //TODO - REMOVE COMMENTS AND RE-ADD THE PROPER IMPORTS/RETURNS
-    public static /*Object*/ String encryptHandler(/*Object userFile*/) throws Exception {
+    public Map<String, String> encryptHandler(Map<String, String> userFile)
+    {
 
+        Map<String, String> enFile = null;
         //SAMPLE TEST STRING BEFORE USING FILE RETRIEVAL
         String testString = "Hello - I have secret info I want to send"; //TODO - DELETE
         System.out.println(testString);
@@ -119,12 +122,12 @@ public class Encrypt
         //Encrypt the data
         String finalResult = encrypt(key,b); //TODO - CHANGE BACK TO BYTE[] RETURN
 
-        return finalResult;
+        return enFile;
 
     }
 
     //TODO - see if can do instanceof specific exceptions
-    private static String encrypt(byte[] raw, byte[] clear) throws Exception
+    private String encrypt(byte[] raw, byte[] clear)
     {
         //Another set of variables you can modify to alter how this method encrypts your data
         String algorithm = "AES"; //The variable for the algorithm type of the key you are going to use
