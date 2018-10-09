@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 02/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 09/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -12,10 +12,11 @@ package EncryptExport;
 
 /* VERSION HISTORY
  * 02/10/2018 - Created file and added comment design path for future coding
+ * 09/10/2018 - Changed to more like final design
  */
 
 /* REFERENCES
- * X
+ * And all related documentation on https://developer.android.com
  */
 
 import java.io.FileInputStream;
@@ -37,20 +38,23 @@ public class Detector
 
     /* FUNCTION INFORMATION
      * NAME - handle
-     * INPUTS - none
-     * OUTPUTS - none
+     * INPUTS - FileInputStream, FileOutputStream (tied to user files)
+     * OUTPUTS - boolean
      * PURPOSE - This is the function to handle the encrypt/export event triggered by either the user manually or
      *           automatically after 7 days no export
      */
     public static boolean handle(FileInputStream input, FileOutputStream output) throws EncryptHandlerException
     {
-        boolean done = false;
+        boolean done = false; //To tell calling method if we succeeded ot not
+
+        //Package objects
         Retrieval sys = new Retrieval();
         Encrypt en = new Encrypt();
         //Export object to handle the exporting of data
+
+        //Maps for user data
         Map<String, String> userFile;
         Map<String, String> enFile;
-        //Create File for writing from output stream?
 
         try
         {
@@ -59,10 +63,12 @@ public class Detector
 
             //Pass to Encrypt to convert file to encrypted
             enFile = en.encryptHandler(userFile);
+
             //Pass enFile to chosen export method
 
+            //Clean up exported data
             boolean success = sys.bookKeeping(output);
-            if(success == true)
+            if(success == true) //If it was successful
             {
                 done = true;
             }

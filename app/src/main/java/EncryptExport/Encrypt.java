@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 05/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 09/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -13,6 +13,7 @@ package EncryptExport;
 /* VERSION HISTORY
  * 02/10/2018 - Created file and added comment design path for future coding
  * 05/10/2018 - Added a lot of base functionality according to research and loaded with comments for both understanding and future development use
+ * 09/10/2018 - Added proper exception handling and changed imports to match final design
  */
 
 /* REFERENCES
