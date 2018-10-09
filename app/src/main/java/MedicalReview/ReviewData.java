@@ -17,6 +17,9 @@ public class ReviewData {
     public static Map<Date, Integer> loadData() {
         Map<Date, Integer> data = new HashMap<>();
 
+        //read in the data
+
+
         return data;
     }
 
@@ -24,7 +27,7 @@ public class ReviewData {
 
     }
 
-    public void saveReviews(DailyReview_Old toSave) {
+    public void saveReviews(DailyReview toSave) {
 
     }
 }

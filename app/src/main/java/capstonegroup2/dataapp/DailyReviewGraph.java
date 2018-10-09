@@ -1,12 +1,12 @@
 package capstonegroup2.dataapp;
 
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import org.achartengine.GraphicalView;
-import org.achartengine.chart.AbstractChart;
-import org.achartengine.chart.LineChart;
+import MedicalReview.DailyReview;
+
+import MedicalReview.ReviewHandler.TYPE;
 
 public class DailyReviewGraph extends AppCompatActivity {
 
@@ -17,8 +17,28 @@ public class DailyReviewGraph extends AppCompatActivity {
     }
 
     //create and display the chart
-    public void displayGraph(AbstractChart chart) {
-        GraphicalView view = new GraphicalView(this, chart);
-        view.draw();
+    public void displayGraph(DailyReview current, TYPE typeOfChart) {
+        Intent graphIntent;
+
+        switch (typeOfChart) {
+            case STATELINE:
+                graphIntent = current.displayStateGraph(this);
+                break;
+            case STATEPIE:
+                graphIntent = current.displayStateChart(this);
+                break;
+            case VOLUMELINE:
+                graphIntent = current.displayVolumeGraph(this);
+                break;
+            case BAGBAR:
+                graphIntent = current.displayBagGraph(this);
+                break;
+            case WELLBEING:
+                graphIntent = current.displayWellbeingChart(this);
+                break;
+            default:
+                graphIntent = null;
+        }
+        startActivity(graphIntent);
     }
 }

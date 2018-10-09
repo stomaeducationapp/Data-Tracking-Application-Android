@@ -10,37 +10,57 @@ import capstonegroup2.dataapp.DailyReviewGraph;
 
 public class ReviewHandler {
     private enum DAY {TODAY, YESTERDAY}
-    private enum TYPE {STATELINE, STATEPIE, VOLUMELINE, BAGBAR, WELLBEING}
+    public enum TYPE {STATELINE, STATEPIE, VOLUMELINE, BAGBAR, WELLBEING}
 
     private DailyReview today;
     private DailyReview yesterday;
+    private int control;    //determine if it is the first time the graphs are calculated
 
     public ReviewHandler() {
-        today = null;
         yesterday = null;
+        today = null;
+        control = 0;
     }
 
     //moves the current review into the yesterday var. Generates today's review
     public boolean generateReview() {
         boolean success = true;
         Map<Date, Integer> data = new HashMap<>();
-        yesterday = new DailyReview();
-        today = new DailyReview();
 
         //Read in the account data to create the graphs.
         data = ReviewData.loadData();
 
-        today.calcStateGraph(data);
-        today.calcStateChart(data);
-        today.calcVolumeGraph(data);
-        today.calcBagGraph(data);
-        today.calcWellbeingChart(data);
+        if (control == 0) { //must be the first time
+            yesterday = new DailyReview();
+            today = new DailyReview();
 
-        if (yesterday == null) {    //has not yet been set
+            today.calcStateGraph(data);
+            today.calcStateChart(data);
+            today.calcVolumeGraph(data);
+            today.calcBagGraph(data);
+            today.calcWellbeingChart(data);
+
+            //since there is no yesterday yet, just make it the same as today
             yesterday = new DailyReview(today);
+
+            control = 1;
+        }
+        else if (control == 1) {    //any subsequent call
+            //set the current review to the yesterday variable
+            yesterday = new DailyReview(today);
+
+            //calculate the new graph
+            today.calcStateGraph(data);
+            today.calcStateChart(data);
+            today.calcVolumeGraph(data);
+            today.calcBagGraph(data);
+            today.calcWellbeingChart(data);
+        }
+        else {
+            success = false;
         }
 
-        return true;
+        return success;
     }
 
     public boolean selectReview(DAY day, TYPE choice) {
@@ -50,47 +70,50 @@ public class ReviewHandler {
         if (day == DAY.TODAY) {  //display the graph from today
             switch (choice) {
                 case STATELINE:
-                    today.displayStateGraph(view);
+                    view.displayGraph(today, TYPE.STATELINE);
                     break;
                 case STATEPIE:
-                    today.displayStateChart(view);
+                    view.displayGraph(today, TYPE.STATEPIE);
                     break;
                 case VOLUMELINE:
-                    today.displayVolumeGraph(view);
+                    view.displayGraph(today, TYPE.VOLUMELINE);
                     break;
                 case BAGBAR:
-                    today.displayBagGraph(view);
+                    view.displayGraph(today, TYPE.BAGBAR);
                     break;
                 case WELLBEING:
-                    today.displayWellbeingChart(view);
+                    view.displayGraph(today, TYPE.WELLBEING);
                     break;
             }
         }
         else if (day == DAY.YESTERDAY) { //display the graph for yesterday
             switch (choice) {
                 case STATELINE:
-                    yesterday.displayStateGraph(view);
+                    view.displayGraph(yesterday, TYPE.STATELINE);
                     break;
                 case STATEPIE:
-                    yesterday.displayStateChart(view);
+                    view.displayGraph(yesterday, TYPE.STATEPIE);
                     break;
                 case VOLUMELINE:
-                    yesterday.displayVolumeGraph(view);
+                    view.displayGraph(yesterday, TYPE.VOLUMELINE);
                     break;
                 case BAGBAR:
-                    yesterday.displayBagGraph(view);
+                    view.displayGraph(yesterday, TYPE.BAGBAR);
                     break;
                 case WELLBEING:
-                    yesterday.displayWellbeingChart(view);
+                    view.displayGraph(yesterday, TYPE.WELLBEING);
                     break;
             }
         }
-        return true;
+        else {
+            success = false;
+        }
+        return success;
     }
 
     public boolean dismissReview() {
         boolean success = true;
 
-        return true;
+        return success;
     }
 }

@@ -2,9 +2,10 @@ package MedicalReview;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 
-import org.achartengine.GraphicalView;
+import org.achartengine.ChartFactory;
 import org.achartengine.chart.BarChart;
 import org.achartengine.chart.LineChart;
 import org.achartengine.chart.PieChart;
@@ -20,26 +21,26 @@ import java.util.Date;
 import java.util.Map;
 
 public class DailyReview {
-    private PieChart stateChart;
-    private PieChart wellbeingChart;
-    private LineChart stateGraph;
-    private LineChart volumeGraph;
-    private BarChart bagGraph;
+    private TimeSeries stateGraphSeries;
+    private CategorySeries statePieSeries;
+    private TimeSeries volumeGraphSeries;
+    private TimeSeries bagGraphSeries;
+    private CategorySeries wellbeingPieSeries;
 
     public DailyReview() {
-        stateChart = null;
-        wellbeingChart = null;
-        stateGraph = null;
-        volumeGraph = null;
-        bagGraph = null;
+        stateGraphSeries = null;
+        statePieSeries = null;
+        volumeGraphSeries = null;
+        bagGraphSeries = null;
+        wellbeingPieSeries = null;
     }
 
     public DailyReview(DailyReview review) {
-        stateChart = review.stateChart;
-        wellbeingChart = review.wellbeingChart;
-        stateGraph = review.stateGraph;
-        volumeGraph = review.volumeGraph;
-        bagGraph = review.bagGraph;
+        stateGraphSeries = review.stateGraphSeries;
+        statePieSeries = review.statePieSeries;
+        volumeGraphSeries = review.volumeGraphSeries;
+        bagGraphSeries = review.bagGraphSeries;
+        wellbeingPieSeries = review.wellbeingPieSeries;
     }
 
     /*
@@ -48,14 +49,17 @@ public class DailyReview {
     //state line graph - plots values against date
     //Map<DateTime of input, State at that time>
     public void calcStateGraph (Map<Date, Integer> data) {
-        TimeSeries series = new TimeSeries("State Progression");
+        stateGraphSeries = new TimeSeries("State Progression");
 
         //create the data set
         Date[] attributes = data.keySet().toArray(new Date[0]);
         for (Date key: attributes) {
-            series.add(key, data.get(key));
+            stateGraphSeries.add(key, data.get(key));
         }
+    }
 
+    //display the state graph
+    public Intent displayStateGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -79,16 +83,13 @@ public class DailyReview {
         mRenderer.setShowGrid(true);    //display grid lines
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
-        dataSet.addSeries(series);
+        dataSet.addSeries(stateGraphSeries);
 
-        stateGraph = new LineChart(dataSet, mRenderer);
+        Intent stateGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "State Line Graph");
+
+        return stateGraphIntent;
     }
 
-    //display the state graph
-    public void displayStateGraph(Context context) {
-        //need to do the chartfactory stuff here
-        GraphicalView chartView = new GraphicalView(context, stateGraph);
-    }
 
     //state pie chart
     //Map<DateTime of input, state value at that time>
@@ -118,22 +119,24 @@ public class DailyReview {
         }
 
         //add percentage of day to the data series
-        CategorySeries series = new CategorySeries("");
-        series.add("Green", ((double)greenTime)/((double)(greenTime + yellowTime + redTime)));
-        series.add("Yellow",((double)yellowTime)/((double)(greenTime + yellowTime + redTime)));
-        series.add("Red", ((double)redTime)/((double)(greenTime + yellowTime + redTime)));
+        statePieSeries = new CategorySeries("");
+        statePieSeries.add("Green", ((double)greenTime)/((double)(greenTime + yellowTime + redTime)));
+        statePieSeries.add("Yellow",((double)yellowTime)/((double)(greenTime + yellowTime + redTime)));
+        statePieSeries.add("Red", ((double)redTime)/((double)(greenTime + yellowTime + redTime)));
+    }
 
+    public Intent displayStateChart(Context context) {
+        //create the renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
         mRenderer.setStartAngle(90);
         mRenderer.setDisplayValues(false);
 
-        stateChart = new PieChart(series, mRenderer);
+        //create and return the chart intent
+        Intent stateChartIntent = ChartFactory.getPieChartIntent(context, statePieSeries, mRenderer, "State Pie Chart");
+
+        return stateChartIntent;
     }
 
-    public void displayStateChart(Context context) {
-        //need to do the chartfactory stuff here
-        GraphicalView chartView = new GraphicalView(context, stateChart);
-    }
 
     /*
     OUTPUT STUFF
@@ -141,16 +144,18 @@ public class DailyReview {
     //total output volume as line graph
     //Map<DateTime of input, Volume of that input>
     public void calcVolumeGraph(Map<Date, Integer> data) {
-        TimeSeries series = new TimeSeries("Stoma Output Volume");
+        volumeGraphSeries = new TimeSeries("Stoma Output Volume");
         int volume = 0;
 
         //create the data set
         Date[] attributes = data.keySet().toArray(new Date[0]);
         for (Date key: attributes) {
             volume += data.get(key);    //increasing output volume total
-            series.add(key, volume);
+            volumeGraphSeries.add(key, volume);
         }
+    }
 
+    public Intent displayVolumeGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -171,27 +176,29 @@ public class DailyReview {
         mRenderer.setShowGrid(true);    //display grid lines
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
-        dataSet.addSeries(series);
+        dataSet.addSeries(volumeGraphSeries);
 
-        volumeGraph = new LineChart(dataSet, mRenderer);
+        Intent volumeGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "Output Volume Graph");
+
+        return volumeGraphIntent;
     }
 
-    public void displayVolumeGraph(Context context) {
-        //need to do the chartfactory stuff here
-        GraphicalView chartView = new GraphicalView(context, volumeGraph);
-    }
 
     //individual bag volume as bar graph
     //Map<DateTime of input, Volume of that input>
     public void calcBagGraph(Map<Date, Integer> data) {
-        TimeSeries series = new TimeSeries("Individual Bag Output Volume");
+        bagGraphSeries = new TimeSeries("Individual Bag Output Volume");
 
         //create the data set
         Date[] attributes = data.keySet().toArray(new Date[0]);
         for (Date key: attributes) {
-            series.add(key, data.get(key));
+            bagGraphSeries.add(key, data.get(key));
         }
 
+
+    }
+
+    public Intent displayBagGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -212,15 +219,13 @@ public class DailyReview {
         mRenderer.setShowGrid(true);    //display grid lines
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
-        dataSet.addSeries(series);
+        dataSet.addSeries(bagGraphSeries);
 
-        bagGraph = new BarChart(dataSet, mRenderer, BarChart.Type.DEFAULT);
+        Intent bagGraphIntent = ChartFactory.getBarChartIntent(context, dataSet, mRenderer, BarChart.Type.DEFAULT, "Bag Output Volume");
+
+        return bagGraphIntent;
     }
 
-    public void displayBagGraph(Context context) {
-        //need to do the chartfactory stuff here
-        GraphicalView chartView = new GraphicalView(context, bagGraph);
-    }
 
     /*
     WELL BEING STUFF
@@ -248,19 +253,19 @@ public class DailyReview {
         }
 
         //add percentage of day to the data series
-        CategorySeries series = new CategorySeries("");
-        series.add("Good", ((double)goodTime)/((double)(goodTime + badTime)));
-        series.add("Bad", ((double)badTime)/((double)(goodTime + badTime)));
+        wellbeingPieSeries = new CategorySeries("");
+        wellbeingPieSeries.add("Good", ((double)goodTime)/((double)(goodTime + badTime)));
+        wellbeingPieSeries.add("Bad", ((double)badTime)/((double)(goodTime + badTime)));
+    }
 
+    public Intent displayWellbeingChart(Context context) {
+        //create renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
         mRenderer.setStartAngle(90);
         mRenderer.setDisplayValues(false);
 
-        wellbeingChart = new PieChart(series, mRenderer);
-    }
+        Intent wellbeingIntent = ChartFactory.getPieChartIntent(context, wellbeingPieSeries, mRenderer, "Wellbeing Percentage");
 
-    public void displayWellbeingChart(Context context) {
-        //need to do the chartfactory stuff here
-        GraphicalView chartView = new GraphicalView(context, wellbeingChart);
+        return wellbeingIntent;
     }
 }
