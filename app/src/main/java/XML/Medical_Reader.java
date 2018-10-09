@@ -25,31 +25,6 @@ import java.util.Map;
  * @version 1.0
  * <h1>Last Edited</h1>
  * Patrick Crockford
- * <p>
- * <h1>Changes</h1>
- * 04th Sept
- * Created Class
- * Implemented Read_File Method
- * 05th Sept
- * Imported code from Update_information_From_File Observer class (Now deleted) that contained XML reader
- * functionality
- * Added Setup_Previous_Days_Date and created logic for all cases
- * 06th Sept
- * Added functionality for retrieving multiple entries and how they are stored within the String pairs of the Map object
- * returned
- * Added Additional Keys for the calling functions to access for information of number of entries retrieved from the XML
- * file.
- * Refactored Read_File Method to conform with changes to XML_Reader
- * 22nd Sept
- * Modified XML Reader logic due to testing error discovered in the Account_Reader class
- * Added a conversion from ENUM to String for the tags to check to reduce the number of recalls to the .ToString()
- * method within boolean checks
- * Added Code to find the required name of the account specified from Entries instead of attributes
- * Added Logic checks, both null and empty to the account_Name parameter and enum_tags to stop any issues of checking
- * nulls and empty lists
- * 24th Sept
- * Added JavaDoc
- * Merged readText method into read_Tag_Information
  */
 
 public class Medical_Reader implements XML_Reader {
@@ -119,7 +94,7 @@ public class Medical_Reader implements XML_Reader {
             number_Of_Entries = 0;
             prefix_Of_Key = 1;
             entries_Required = null;
-            Map<String, String> account_Information = null;
+            Map<String, String> account_Information;
             // retrieve and remove tag specifying the entries needed to retrieve and set to an Object Attribute. Also reduces the O(n) of the boolean
             if (enum_Tags.contains(Tags_To_Read.Daily_Data)) {
                 entries_Required = Tags_To_Read.Daily_Data;
