@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -52,6 +53,9 @@ import capstonegroup2.dataapp.R;
  * Placing progress bar next to an element learned from https://stackoverflow.com/questions/34915468/display-progress-bar-beside-the-text-in-listview
  * Removing error symbol from EditText learned from https://stackoverflow.com/questions/10206799/remove-error-from-edittext
  * Allowing errors on non-EditText elements learned from https://stackoverflow.com/questions/13508270/android-seterrorerror-not-working-in-textview
+ * Making an element invisible learned from https://stackoverflow.com/questions/4480489/can-you-hide-an-element-in-a-layout-such-as-a-spinner-depending-on-an-activity
+ * Activating ontouch learned from https://stackoverflow.com/questions/38865922/android-hide-toolbar-when-edittext-is-focused
+ * Hiding element after focus change learned from https://stackoverflow.com/questions/4165414/how-to-hide-soft-keyboard-on-android-after-clicking-outside-edittext
  * And many more from https://developer.android.com
  */
 
@@ -71,6 +75,8 @@ public class AccountCreation extends Activity {
     private TextView passStrength;
     //TextView for export - for error state
     private TextView exportText;
+    //TextView for password guide
+    private TextView passGuide;
 
     //Boolean for text change
     private Boolean unKeyCheck;
@@ -95,6 +101,8 @@ public class AccountCreation extends Activity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_creation);
+        /*Toolbar bar = findViewById(R.id.acToolbar);
+        bar.setTitle(getString(R.string.ac_title_text));*/
 
         //Find all the objects we need
         unameInput = findViewById(R.id.acUNInput);
@@ -104,8 +112,8 @@ public class AccountCreation extends Activity {
         passStrength = findViewById(R.id.acPassStrength);
         strengthBar = findViewById(R.id.acStrengthBar);
         exportText = findViewById(R.id.acExportTitle);
-
-        //gameInput.setPrompt(getString(R.string.ac_gamification_option_title));
+        passGuide = findViewById(R.id.acPassGuide);
+        passGuide.setVisibility(View.INVISIBLE);
 
         //Set intial values to false - with nothing in the boxes yet they haven't been checked
         unKeyCheck = false;
@@ -183,6 +191,21 @@ public class AccountCreation extends Activity {
         passInput.addTextChangedListener(pInputTextWatcher);
         //If TextWatcher is not picking up all hardware/software keyboard events - consider adding a onKeyListener to the view in addition (as that can pickup some but not all)
 
+        passInput.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                passGuide.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
+        passInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    passGuide.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 
     /* FUNCTION INFORMATION
