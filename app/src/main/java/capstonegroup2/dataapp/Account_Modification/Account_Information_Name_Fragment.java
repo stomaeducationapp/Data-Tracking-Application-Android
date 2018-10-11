@@ -23,12 +23,10 @@ import capstonegroup2.dataapp.R;
 public class Account_Information_Name_Fragment extends DialogFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "account";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String current_Account_Name;
 
     private OnFragmentInteractionListener mListener;
 
@@ -56,8 +54,7 @@ public class Account_Information_Name_Fragment extends DialogFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            current_Account_Name = getArguments().getString(ARG_PARAM1);
         }
     }
 
