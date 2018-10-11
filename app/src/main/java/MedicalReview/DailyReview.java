@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 
 import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
 import org.achartengine.chart.BarChart;
 import org.achartengine.chart.LineChart;
 import org.achartengine.chart.PieChart;
@@ -84,6 +85,7 @@ public class DailyReview {
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(stateGraphSeries);
+
 
         Intent stateGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "State Line Graph");
 
