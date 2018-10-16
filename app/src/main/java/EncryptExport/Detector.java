@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 09/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 16/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -13,17 +13,19 @@ package EncryptExport;
 /* VERSION HISTORY
  * 02/10/2018 - Created file and added comment design path for future coding
  * 09/10/2018 - Changed to more like final design
+ * 16/10/2018 - Modified code to as close to final design as it known currently
  */
 
 /* REFERENCES
  * And all related documentation on https://developer.android.com
  */
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
+
+import Factory.Factory;
 
 public class Detector
 {
@@ -43,23 +45,23 @@ public class Detector
      * PURPOSE - This is the function to handle the encrypt/export event triggered by either the user manually or
      *           automatically after 7 days no export
      */
-    public static boolean handle(FileInputStream input, FileOutputStream output) throws EncryptHandlerException
+    public static boolean handle(File input, File output, Factory factory) throws EncryptHandlerException
     {
         boolean done = false; //To tell calling method if we succeeded ot not
 
         //Package objects
-        Retrieval sys = new Retrieval();
-        Encrypt en = new Encrypt();
+        Retrieval sys = factory.makeRetrieval();
+        Encrypt en = factory.makeEncrypt();
         //Export object to handle the exporting of data
 
         //Maps for user data
         Map<String, String> userFile;
-        Map<String, String> enFile;
+        byte[] enFile;
 
         try
         {
             //Call Retrieval to get the file/data back from system
-            userFile = sys.retrieve(input);
+            userFile = sys.retrieve(input, factory);
 
             //Pass to Encrypt to convert file to encrypted
             enFile = en.encryptHandler(userFile);
@@ -67,7 +69,7 @@ public class Detector
             //Pass enFile to chosen export method
 
             //Clean up exported data
-            boolean success = sys.bookKeeping(output);
+            boolean success = sys.bookKeeping(output, factory);
             if(success == true) //If it was successful
             {
                 done = true;
