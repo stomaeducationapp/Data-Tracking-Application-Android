@@ -829,7 +829,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
-id chart
+id chartView
 id checkbox
 id chronometer
 id clip_horizontal
@@ -866,6 +866,7 @@ id fixed
 id forever
 id ghost_view
 id gone
+id graphSpinner
 id groups
 id home
 id homeAsUp

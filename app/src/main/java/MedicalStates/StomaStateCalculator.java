@@ -100,9 +100,9 @@ public class StomaStateCalculator {
         Map<String, String> data = new HashMap<>();
 
         //read in account data from XML file
-        Reader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
+        //Reader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         try {
-            data = dataIn.Read_File();  //update method call when reader becomes available
+          //  data = dataIn.Read_File();  //update method call when reader becomes available
         }
         catch (Exception e) {/*add handling if nto caught by xml reader*/}
 

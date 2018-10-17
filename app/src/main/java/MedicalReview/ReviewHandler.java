@@ -71,38 +71,38 @@ public class ReviewHandler {
         if (day == DAY.TODAY) {  //display the graph from today
             switch (choice) {
                 case STATELINE:
-                    view.displayGraph(today, TYPE.STATELINE);
+                    view.displayGraph(today, "State Graph");
                     break;
                 case STATEPIE:
-                    view.displayGraph(today, TYPE.STATEPIE);
+                    view.displayGraph(today, "State Pie Chart");
                     break;
                 case VOLUMELINE:
-                    view.displayGraph(today, TYPE.VOLUMELINE);
+                    view.displayGraph(today, "Volume Graph");
                     break;
                 case BAGBAR:
-                    view.displayGraph(today, TYPE.BAGBAR);
+                    view.displayGraph(today, "Output Graph");
                     break;
                 case WELLBEING:
-                    view.displayGraph(today, TYPE.WELLBEING);
+                    view.displayGraph(today, "Wellbeing Pie Chart");
                     break;
             }
         }
         else if (day == DAY.YESTERDAY) { //display the graph for yesterday
             switch (choice) {
                 case STATELINE:
-                    view.displayGraph(yesterday, TYPE.STATELINE);
+                    view.displayGraph(yesterday, "State Graph");
                     break;
                 case STATEPIE:
-                    view.displayGraph(yesterday, TYPE.STATEPIE);
+                    view.displayGraph(yesterday, "State Pie Chart");
                     break;
                 case VOLUMELINE:
-                    view.displayGraph(yesterday, TYPE.VOLUMELINE);
+                    view.displayGraph(yesterday, "Volume Graph");
                     break;
                 case BAGBAR:
-                    view.displayGraph(yesterday, TYPE.BAGBAR);
+                    view.displayGraph(yesterday, "Output Graph");
                     break;
                 case WELLBEING:
-                    view.displayGraph(yesterday, TYPE.WELLBEING);
+                    view.displayGraph(yesterday, "Wellbeing Pie Chart");
                     break;
             }
         }

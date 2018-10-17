@@ -17,12 +17,15 @@ import MedicalReview.DailyReview;
 import MedicalReview.ReviewHandler.TYPE;
 
 public class DailyReviewGraph extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    Spinner spinner = (Spinner) findViewById(R.id.graphSpinner);
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_review_graph);
+
+        spinner = findViewById(R.id.graphSpinner);
+
         spinner.setOnItemSelectedListener(this);
 
         //create set of spinner elements
@@ -73,6 +76,7 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         String selected = adapterView.getItemAtPosition(position).toString();
+
     }
 
     @Override
