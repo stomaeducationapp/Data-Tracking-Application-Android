@@ -1,6 +1,5 @@
 package xml_test;
 
-import XML.Login_Writer;
 import XML.Medical_Writer;
 import XML.XML_Writer;
 import XML.XML_Writer_Failure_Exception;
@@ -162,7 +161,7 @@ public class Medical_Writer_Test {
 
             System.out.println("***************************************************"
                     + System.lineSeparator()
-                    + "2. Testing Modify Entry"
+                    + "2. Testing Export Entry"
                     + System.lineSeparator());
             tests_Run += 1;
             if (Open_File("medical_writer_target_export.xml")) {
