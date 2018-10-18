@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 16/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 18/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -15,6 +15,7 @@ package EncryptExport;
  * 05/10/2018 - Added a lot of base functionality according to research and loaded with comments for both understanding and future development use
  * 09/10/2018 - Added proper exception handling and changed imports to match final design
  * 16/10/2018 - Modified code to as close to final design as it known currently
+ * 18/10/2018 - Edited functionality to work with map objects we are using to transport user data
  */
 
 /* REFERENCES
@@ -25,6 +26,7 @@ package EncryptExport;
  * Reason for using a charset in string byte encoding learned from http://www.java67.com/2017/10/3-ways-to-convert-string-to-byte-array-in-java.html
  * Reasoning for GCM learned from https://stackoverflow.com/questions/44425846/how-to-make-gcm-encrypt-with-authentication-tag-for-android
  * Iteration of a Map learned from https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
+ * Hashmap order learned from https://stackoverflow.com/questions/1882762/is-the-java-hashmap-keyset-iteration-order-consistent
  * And all related documentation on https://developer.android.com
  */
 
@@ -46,7 +48,6 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class Encrypt
 {
-    //TODO - MAKE ALL VARIABLES FINAL WHERE POSSIBLE
 
     //TODO REMOVE ALL CLASSFIELDS WHEN DECRYPT REMOVED
     private byte[] keyBytes; //The byte values of the encryption key
@@ -103,30 +104,18 @@ public class Encrypt
         boolean firstLine = true;
         boolean validFile = false;
 
-        //TODO MAP DEREFERENCE
         for( Map.Entry<String, String> entry : userFile.entrySet() )
         {
             String key = entry.getKey();
             String value = entry.getValue();
 
-            if(key.contains("Entry_Time")) //This is the start  of a new entry
-            {
-                if(firstLine == true) //This is the first entry we have read
-                {
-                    userString = userString + value + ","; //Create a simple csv format
-                    validFile = true;
-                }
-                else //We have found the next entry
-                {
-                    userString = userString + "\n"; //Close the last line (Could use a delimiter - up to you)
-                    userString = userString + value + ","; //Start the next line
-                }
-            }
-            else if(validFile == true) //We want to add the next value to the string
-            {
-                userString = userString + value + ","; //Start the next line
-            }
-            //If we never find a Entry_Time key - don't include the data
+            //TODO CHANGE IMPLEMENTATION BASED ON GROUP DECISION
+
+            //This is currently done since the object we have chosen to return the information in is a Map
+            //Which does not return keys in an order - meaning if we use expected key values and they appear out of order - important information will be lost
+            //Current implementation will take whatever we have been passed in and encrypt key and value as the csv block
+
+            userString = userString + key + ":" + value + ",";
 
         }
 

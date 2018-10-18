@@ -1,17 +1,10 @@
 package EncryptExport;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentMatchers;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Factory.Factory;
@@ -24,8 +17,9 @@ import XML.XML_Writer_Failure_Exception;
 import XML.XML_Writer_File_Layout_Exception;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.anyObject;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -33,7 +27,7 @@ import static org.mockito.Mockito.when;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 16/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 16/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 18/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -42,6 +36,7 @@ import static org.mockito.Mockito.when;
 
 /* VERSION HISTORY
  * 16/10/2018 - Created test harnesses
+ * 18/10/2018 - Fixed and completed testing
  */
 
 /* REFERENCES
@@ -49,6 +44,8 @@ import static org.mockito.Mockito.when;
  * How to mock objects and check if a method was called learned from https://stackoverflow.com/questions/9841623/mockito-how-to-verify-method-was-called-on-an-object-created-within-a-method
  * How to create static maps learned from https://stackoverflow.com/questions/6802483/how-to-directly-initialize-a-hashmap-in-a-literal-way
  * How to set mock return parameters learned from https://stackoverflow.com/questions/2684630/how-can-i-make-a-method-return-an-argument-that-was-passed-to-it
+ * Mock argument matcher for null learned from https://stackoverflow.com/questions/12707609/how-to-match-null-passed-to-parameter-of-classt-with-mockito
+ * Mock argument matcher for files learned from https://stackoverflow.com/questions/1778744/using-mockitos-generic-any-method
  * And all related documentation on https://developer.android.com
  */
 
@@ -75,14 +72,14 @@ public class EncryptExportTest {
 
         //First mock needed objects and tailor mock returns
         mr = mock(Medical_Reader.class);
-        XmlPullParser userParser = null; //We need this so mockito knows what we will be passing in
+        Map<String, String> mockMap = new HashMap<String, String>();
+
         try
         {
-            userParser = (XmlPullParserFactory.newInstance()).newPullParser();
-            userParser.setInput(new FileInputStream(in), null);
-            when(mr.Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString())).thenReturn(null);
+            when(mr.Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString())).thenReturn(mockMap);
+
         }
-        catch (XmlPullParserException | XML_Reader_Exception | NullPointerException | FileNotFoundException e)
+        catch ( XML_Reader_Exception | NullPointerException e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
@@ -91,8 +88,8 @@ public class EncryptExportTest {
 
         //Case 1: Retrieval with an empty map
         Retrieval testR = new Retrieval();
-        Map<String, String> map;
-
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("TESTKEY", "TESTVALUE"); //Initialise to the opposite of what we want
         try
         {
             map = testR.retrieve(in, f); //Create our object and call it with the mocked factory
@@ -105,7 +102,7 @@ public class EncryptExportTest {
         //Now we verify all mocked methods were called
         try
         {
-            verify(mr, times(1)).Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString());
+            verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
             verify(f, times(1)).Make_Medical_Reader();
         }
         catch (Exception e)
@@ -114,7 +111,7 @@ public class EncryptExportTest {
         }
 
         //Now we assert the final value is what we expected
-        assertEquals("Map was empty", null, map);
+        assertEquals("Map was empty", mockMap, map);
 
     }
 
@@ -125,14 +122,12 @@ public class EncryptExportTest {
         Map<String, String> mockMap = new HashMap<String, String>(); //Create fake map
         mockMap.put("TESTKEY", "TESTVALUE");
         mr = mock(Medical_Reader.class);
-        XmlPullParser userParser = null; //We need this so mockito knows what we will be passing in
+
         try
         {
-            userParser = (XmlPullParserFactory.newInstance()).newPullParser();
-            userParser.setInput(new FileInputStream(in), null);
-            when(mr.Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString())).thenReturn(mockMap);
+            when(mr.Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull())).thenReturn(mockMap);
         }
-        catch (XmlPullParserException | XML_Reader_Exception | NullPointerException | FileNotFoundException e)
+        catch ( XML_Reader_Exception | NullPointerException e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
@@ -155,7 +150,7 @@ public class EncryptExportTest {
         //Now we verify all mocked methods were called
         try
         {
-            verify(mr, times(1)).Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString());
+            verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
             verify(f, times(1)).Make_Medical_Reader();
         }
         catch (Exception e)
@@ -164,7 +159,7 @@ public class EncryptExportTest {
         }
 
         //Now we assert the final value is what we expected
-        assertEquals("Map had a key", "TESTKEY", (map.keySet()).toString()); //Get all keyts in map
+        assertEquals("Map had a key", true, map.containsKey("TESTKEY")); //Check that the map we got back has the values we put in
         assertEquals("Map had a value associated with key", "TESTVALUE", map.get("TESTKEY"));
     }
 
@@ -178,10 +173,12 @@ public class EncryptExportTest {
     public void bookKeepingTestCase1()
     {
 
+        Map<String, String> mockMap = new HashMap<String, String>(); //Create fake map
+        mockMap.put("TESTKEY", "TESTVALUE");
         mw = mock(Medical_Writer.class);
         try
         {
-            when(mw.Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(true);
+            when(mw.Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(true);
         }
         catch (XML_Writer_Failure_Exception | XML_Writer_File_Layout_Exception e)
         {
@@ -192,10 +189,10 @@ public class EncryptExportTest {
 
         //Case 1: BookKeeping was successful (Only real cases are if external code returns correctly)
         Retrieval testR = new Retrieval();
-        boolean success;
+        boolean success = false; //Initialise to the opposite of what we want
         try
         {
-            success = testR.bookKeeping(out, f); //Create our object and call it with the mocked factory
+            success = testR.bookKeeping(out, mockMap, f); //Create our object and call it with the mocked factory
         }
         catch (EncryptHandlerException e)
         {
@@ -205,7 +202,7 @@ public class EncryptExportTest {
         //Now we verify all mocked methods were called
         try
         {
-            verify(mw, times(1)).Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
+            verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
             verify(f, times(1)).Make_Medical_Writer();
         }
         catch (Exception e)
@@ -222,10 +219,12 @@ public class EncryptExportTest {
     public void bookKeepingTestCase2()
     {
 
+        Map<String, String> mockMap = new HashMap<String, String>(); //Create fake map
+        mockMap.put("TESTKEY", "TESTVALUE");
         mw = mock(Medical_Writer.class);
         try
         {
-            when(mw.Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(false);
+            when(mw.Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(false);
         }
         catch (XML_Writer_Failure_Exception | XML_Writer_File_Layout_Exception e)
         {
@@ -236,10 +235,10 @@ public class EncryptExportTest {
 
         //Case 2: BookKeeping failed
         Retrieval testR = new Retrieval();
-        boolean success;
+        boolean success = false; //Initialise to the opposite of what we want
         try
         {
-            success = testR.bookKeeping(out, f); //Create our object and call it with the mocked factory
+            success = testR.bookKeeping(out, mockMap, f); //Create our object and call it with the mocked factory
         }
         catch (EncryptHandlerException e)
         {
@@ -249,7 +248,7 @@ public class EncryptExportTest {
         //Now we verify all mocked methods were called
         try
         {
-            verify(mw, times(1)).Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
+            verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
             verify(f, times(1)).Make_Medical_Writer();
         }
         catch (Exception e)
@@ -276,9 +275,16 @@ public class EncryptExportTest {
         Map<String, String> map = new HashMap<String, String>(); //Create fake map
         map.put("", "");
 
+        String mockMapString = "";
+        for( Map.Entry<String, String> entry : map.entrySet() )
+        {
+            mockMapString = mockMapString + entry.getKey() + ":" + entry.getValue() + ",";
+        }
+        mockMapString = mockMapString + "\n"; //Set up what final string should look like
+
         //Case 1: Encrypt an empty map
         Encrypt testE = new Encrypt();
-        String finalForm;
+        String finalForm = "";
         try //Need to capture the required exceptions
         {
             byte[] encrypted = testE.encryptHandler(map); //Encrypt does not use any external code not designed by me or Android (Android is static an not based on user input - like a Context so does not need to be mocked)
@@ -291,7 +297,7 @@ public class EncryptExportTest {
         }
 
         //Now we assert the final value is what we expected
-        assertEquals("Map was empty", "\n", finalForm); //Since an empty map gets a newline added that's what we expect to come out
+        assertEquals("Map was empty", mockMapString, finalForm); //Since an empty map gets a newline added that's what we expect to come out
 
     }
 
@@ -303,9 +309,16 @@ public class EncryptExportTest {
         Map<String, String> map = new HashMap<String, String>(); //Create fake map
         map.put("TESTKEY", "TESTVALUE");
 
+        String mockMapString = "";
+        for( Map.Entry<String, String> entry : map.entrySet() )
+        {
+            mockMapString = mockMapString + entry.getKey() + ":" + entry.getValue() + ",";
+        }
+        mockMapString = mockMapString + "\n"; //Set up what final string should look like
+
         //Case 2: Encrypt and invalid map
         Encrypt testE = new Encrypt();
-        String finalForm;
+        String finalForm = "";
         try //Need to capture the required exceptions
         {
             byte[] encrypted = testE.encryptHandler(map); //Encrypt does not use any external code not designed by me or Android (Android is static an not based on user input - like a Context so does not need to be mocked)
@@ -318,7 +331,7 @@ public class EncryptExportTest {
         }
 
         //Now we assert the final value is what we expected
-        assertEquals("Map was empty", "\n", finalForm); //Since an invalid map has no tags picked up, we get a newline added so that's what we expect to come out
+        assertEquals("Map was invalid form", mockMapString, finalForm); //Since an invalid map has no tags picked up, we get a newline added so that's what we expect to come out
 
 
     }
@@ -341,13 +354,13 @@ public class EncryptExportTest {
         String mockMapString = "";
         for( Map.Entry<String, String> entry : map.entrySet() )
         {
-            mockMapString = mockMapString + entry.getValue() + ",";
+            mockMapString = mockMapString + entry.getKey() + ":" + entry.getValue() + ",";
         }
         mockMapString = mockMapString + "\n"; //Set up what final string should look like
 
         //Case 3: Encrypt a valid map
         Encrypt testE = new Encrypt();
-        String finalForm;
+        String finalForm = "";
         try //Need to capture the required exceptions
         {
             byte[] encrypted = testE.encryptHandler(map); //Encrypt does not use any external code not designed by me or Android (Android is static an not based on user input - like a Context so does not need to be mocked)
@@ -360,7 +373,7 @@ public class EncryptExportTest {
         }
 
         //Now we assert the final value is what we expected
-        assertEquals("Map was empty", mockMapString, finalForm);
+        assertEquals("Map was valid form", mockMapString, finalForm);
 
     }
 
@@ -375,7 +388,7 @@ public class EncryptExportTest {
     public void entirePackageTestCase1() {
 
         //First mock needed objects and tailor mock returns
-
+        f = mock(Factory.class);
         //Mocked map for encrypt (don't really need it) - mainly for testing normal values and seeing if exceptions are thrown for Android issues
         Map<String, String> map = new HashMap<String, String>(); //Create fake map
         map.put("Entry_Time", "TESTVALUE");
@@ -392,38 +405,36 @@ public class EncryptExportTest {
             mockMapString = mockMapString + entry.getValue() + ",";
         }
         mockMapString = mockMapString + "\n"; //Set up what final string should look like
-        XmlPullParser userParser = null; //We need this so mockito knows what we will be passing in
 
         //Next mock the reader to return our map
         mr = mock(Medical_Reader.class);
         try
         {
-            userParser = (XmlPullParserFactory.newInstance()).newPullParser();
-            userParser.setInput(new FileInputStream(in), null);
-            when(mr.Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString())).thenReturn(map);
+            when(mr.Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull())).thenReturn(map);
         }
-        catch (XmlPullParserException | XML_Reader_Exception | NullPointerException | FileNotFoundException e)
+        catch ( XML_Reader_Exception | NullPointerException e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        f = mock(Factory.class);
+
         when(f.Make_Medical_Reader()).thenReturn(mr);
 
         mw = mock(Medical_Writer.class);
         try
         {
-            when(mw.Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(true);
+            when(mw.Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(true);
         }
         catch (XML_Writer_Failure_Exception | XML_Writer_File_Layout_Exception e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        f = mock(Factory.class);
         when(f.Make_Medical_Writer()).thenReturn(mw);
+        when(f.makeRetrieval()).thenReturn(new Retrieval()); //Since we have successfully tested these (any mocked the objects inside them - we can just construct them
+        when(f.makeEncrypt()).thenReturn(new Encrypt());
 
         //Case 1: Entire process success
         Detector testD = new Detector();
-        boolean success;
+        boolean success = false; //Initialise to the opposite of what we want
         try
         {
             success = testD.handle(in, out, f); //Create our object and call it with the mocked factory
@@ -436,9 +447,9 @@ public class EncryptExportTest {
         //Now we verify all mocked methods were called
         try
         {
-            verify(mr, times(1)).Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString());
+            verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
             verify(f, times(1)).Make_Medical_Reader();
-            verify(mw, times(1)).Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
+            verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
             verify(f, times(1)).Make_Medical_Writer();
         }
         catch (Exception e)
@@ -458,6 +469,7 @@ public class EncryptExportTest {
     {
 
         //First mock needed objects and tailor mock returns
+        f = mock(Factory.class);
 
         //Mocked map for encrypt (don't really need it) - mainly for testing normal values and seeing if exceptions are thrown for Android issues
         Map<String, String> map = new HashMap<String, String>(); //Create fake map
@@ -472,41 +484,38 @@ public class EncryptExportTest {
         String mockMapString = "";
         for( Map.Entry<String, String> entry : map.entrySet() )
         {
-            mockMapString = mockMapString + entry.getValue() + ",";
+            mockMapString = mockMapString + entry.getKey() + ":" + entry.getValue() + ",";
         }
         mockMapString = mockMapString + "\n"; //Set up what final string should look like
-        XmlPullParser userParser = null; //We need this so mockito knows what we will be passing in
 
         //Next mock the reader to return our map
         mr = mock(Medical_Reader.class);
         try
         {
-            userParser = (XmlPullParserFactory.newInstance()).newPullParser();
-            userParser.setInput(new FileInputStream(in), null);
-            when(mr.Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString())).thenReturn(map);
+            when(mr.Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull())).thenReturn(map);
         }
-        catch (XmlPullParserException | XML_Reader_Exception | NullPointerException | FileNotFoundException e)
+        catch ( XML_Reader_Exception | NullPointerException e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        f = mock(Factory.class);
         when(f.Make_Medical_Reader()).thenReturn(mr);
+        when(f.makeRetrieval()).thenReturn(new Retrieval()); //Since we have successfully tested these (any mocked the objects inside them - we can just construct them
+        when(f.makeEncrypt()).thenReturn(new Encrypt());
 
         mw = mock(Medical_Writer.class);
         try
         {
-            when(mw.Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(false);
+            when(mw.Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any())).thenReturn(false);
         }
         catch (XML_Writer_Failure_Exception | XML_Writer_File_Layout_Exception e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        f = mock(Factory.class);
         when(f.Make_Medical_Writer()).thenReturn(mw);
 
         //Case 2: Entire process fails
         Detector testD = new Detector();
-        boolean success;
+        boolean success = true; //Initialise to the opposite of what we want
         try
         {
             success = testD.handle(in, out, f); //Create our object and call it with the mocked factory
@@ -519,9 +528,9 @@ public class EncryptExportTest {
         //Now we verify all mocked methods were called
         try
         {
-            verify(mr, times(1)).Read_File(userParser, ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString());
+            verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
             verify(f, times(1)).Make_Medical_Reader();
-            verify(mw, times(1)).Write_File(out, ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
+            verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
             verify(f, times(1)).Make_Medical_Writer();
         }
         catch (Exception e)

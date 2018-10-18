@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 16/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 18/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -13,6 +13,7 @@ package EncryptExport;
  * 02/10/2018 - Created file and added comment design path for future coding
  * 09/10/2018 - Brought up closer to final design
  * 16/10/2018 - Modified code to as close to final design as it known currently
+ * 18/10/2018 - Updated to match new master pull
  */
 
 /* REFERENCES
@@ -21,13 +22,7 @@ package EncryptExport;
  * And all related documentation on https://developer.android.com
  */
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -63,12 +58,9 @@ public class Retrieval
 
         try
         {
-            XmlPullParser userParser = null; //Pull parser to read the user file//TODO REMOVE WHEN XML CLASS UPDATED
-            userParser = (XmlPullParserFactory.newInstance()).newPullParser(); //TODO REMOVE WHEN XML CLASS UPDATED
-            userParser.setInput(new FileInputStream(input), null); //Create the parser and set to their FileInputStream //TODO REMOVE WHEN XML CLASS UPDATED
-            userFile = reader.Read_File(/*input*/ userParser, tags, null); //Retrieve the data we need
+            userFile = reader.Read_File(input, tags, null); //Retrieve the data we need
         }
-        catch (XmlPullParserException | XML_Reader_Exception | NullPointerException | FileNotFoundException e) //TODO REMOVE FILENOTFOUNDEXCEPTION
+        catch ( XML_Reader_Exception | NullPointerException e)
         {
             throw new EncryptHandlerException("Failed to read in user data" + e.getMessage());
         }
@@ -83,14 +75,14 @@ public class Retrieval
      * PURPOSE - This is the function to go through stored user data and remove all entries that match entries within userFile,
      *           this both keeps memory low, and prevents any duplicate uses in the app (which could have massive ramifications with health tracking)
      */
-    public boolean bookKeeping(File output, Factory factory) throws EncryptHandlerException
+    public boolean bookKeeping(File output, Map<String, String> userData, Factory factory) throws EncryptHandlerException
     {
         boolean success = false;
         Medical_Writer writer = factory.Make_Medical_Writer();
 
         try
         {
-            success = writer.Write_File(output, null,XML_Writer.Tags_To_Write.Export); //Tell writer to do in export mode (automatically cleans up for us)
+            success = writer.Write_File(output, userData, XML_Writer.Tags_To_Write.Export); //Tell writer to do in export mode (automatically cleans up for us)
         }
         catch (XML_Writer_Failure_Exception | XML_Writer_File_Layout_Exception e)
         {

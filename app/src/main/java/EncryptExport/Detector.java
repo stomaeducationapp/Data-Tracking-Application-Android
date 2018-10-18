@@ -69,15 +69,15 @@ public class Detector
             //Pass enFile to chosen export method
 
             //Clean up exported data
-            boolean success = sys.bookKeeping(output, factory);
+            boolean success = sys.bookKeeping(output, userFile, factory);
             if(success == true) //If it was successful
             {
                 done = true;
             }
         }
-        catch ( NoSuchAlgorithmException | UnsupportedEncodingException e)
+        catch ( NoSuchAlgorithmException | UnsupportedEncodingException | NullPointerException e)
         {
-            throw new EncryptHandlerException("Encryption of file failed: " + e.getMessage());
+            throw new EncryptHandlerException("Encryption of file failed: " + e.getMessage() + e.getCause());
         }
 
         return done;
