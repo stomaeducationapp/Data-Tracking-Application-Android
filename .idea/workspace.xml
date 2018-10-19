@@ -3586,10 +3586,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="Account_Reader_unit_Test.Empty_File_Parse" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
@@ -3613,10 +3609,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="EncryptExportTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
@@ -3640,10 +3632,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="EncryptExportTest.retrieveTestCase1" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
@@ -3667,10 +3655,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -3891,8 +3875,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.EncryptExportTest.retrieveTestCase1" />
         <item itemvalue="Android JUnit.EncryptExportTest" />
+        <item itemvalue="Android JUnit.EncryptExportTest.retrieveTestCase1" />
         <item itemvalue="Android App.AccountCreation" />
         <item itemvalue="Android JUnit.Account_Reader_unit_Test.Check_File_Stream" />
         <item itemvalue="Android JUnit.Account_Reader_unit_Test.Empty_File_Parse" />
