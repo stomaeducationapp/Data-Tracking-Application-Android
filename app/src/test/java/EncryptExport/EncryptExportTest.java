@@ -55,8 +55,6 @@ public class EncryptExportTest {
     private File out = in; //We don't care what the files are since we never use them
     //Mock objects we will change each test
     private Factory f;
-    private Retrieval r;
-    private Encrypt e;
     private Medical_Reader mr;
     private Medical_Writer mw;
 
