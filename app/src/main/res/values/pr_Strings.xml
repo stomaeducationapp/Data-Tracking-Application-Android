@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pr_title">PasswordRecovery</string>
+
+    <string name="pr_user_title">Please enter your username</string>
+    <string name="pr_user_entry">Enter your username...</string>
+    <string name="pr_user_button">Find</string>
+
+    <string name="pr_question_title">Your security question is:</string>
+    <string name="pr_question_text">Question goes here</string>
+    <string name="pr_question_entry">Please enter the answer...</string>
+    <string name="pr_question_button">Answer</string>
+
+    <string name=""></string>
+</resources>
