@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import org.achartengine.ChartFactory;
+import org.achartengine.GraphicalView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +24,24 @@ import MedicalReview.ReviewHandler.TYPE;
 
 public class DailyReviewGraph extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner spinner;
+    DailyReview today;
+    DailyReview yesterday;
+    RadioGroup dayGroup;
+    String day;
 
+    //MAYBE LINK DATASETS HERE
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_review_graph);
+
+        day = "today";
+
+        Intent i = getIntent();
+
+        //Gets the data sets to be used in making the graphs
+        today = (DailyReview) i.getParcelableExtra("today");
+        yesterday = (DailyReview) i.getParcelableExtra("yesterday");
 
         spinner = findViewById(R.id.graphSpinner);
 
@@ -44,39 +63,58 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+
+        dayGroup = (RadioGroup)findViewById(R.id.dayGroup);
+        dayGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkID) {
+                //set the day
+                if (R.id.todayButton == checkID) {
+                    day = "today";
+                }
+                else if (R.id.yesterdayButton == checkID) {
+                    day = "yesterday";
+                }
+            }
+        });
     }
 
     //create and display the chart
     public void displayGraph(DailyReview current, String typeOfChart) {
-        Intent graphIntent;
+        //GraphicalView view = (GraphicalView) (findViewById(R.id.chartView));
+        LinearLayout view = (LinearLayout)findViewById(R.id.chartView);
 
         switch (typeOfChart) {
             case "State Graph":
-                graphIntent = current.displayStateGraph(this);
+                view.addView(current.displayStateGraph(this), 0);
                 break;
             case "State Pie Chart":
-                graphIntent = current.displayStateChart(this);
+                view.addView(current.displayStateChart(this), 0);
                 break;
             case "Volume Graph":
-                graphIntent = current.displayVolumeGraph(this);
+                view.addView(current.displayVolumeGraph(this), 0);
                 break;
             case "Output Graph":
-                graphIntent = current.displayBagGraph(this);
+                view.addView(current.displayBagGraph(this), 0);
                 break;
             case "Wellbeing Pie Chart":
-                graphIntent = current.displayWellbeingChart(this);
+                view.addView(current.displayWellbeingChart(this), 0);
                 break;
             default:
-                graphIntent = null;
         }
-        startActivity(graphIntent);
-
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         String selected = adapterView.getItemAtPosition(position).toString();
-
+        if (day != null) {
+            if (day.equals("today")) {
+                displayGraph(today, selected);
+            } else if (day.equals("yesterday")) {
+                displayGraph(yesterday, selected);
+            }
+        }
     }
 
     @Override

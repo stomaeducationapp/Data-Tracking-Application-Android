@@ -840,6 +840,7 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
+id dayGroup
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -962,6 +963,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id todayButton
 id toolbar
 id top
 id topPanel
@@ -979,6 +981,7 @@ id visible
 id withText
 id wrap
 id wrap_content
+id yesterdayButton
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1091,6 +1094,8 @@ string action_settings
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string btnToday
+string btnYesterday
 string character_counter_pattern
 string password_toggle_content_description
 string path_password_eye

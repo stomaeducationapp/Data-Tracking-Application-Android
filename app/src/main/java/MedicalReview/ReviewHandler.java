@@ -1,6 +1,7 @@
 package MedicalReview;
 
 import android.content.Intent;
+import android.support.v4.app.ShareCompat;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -154,5 +155,18 @@ public class ReviewHandler {
             }
         }
         return ret;
+    }
+
+    ///CHANGE MULTIPLE RETURNS -- BAD BAD BAD
+    public DailyReview getTargetSet(String day) {
+        if (day.equals("today")) {
+            return today;
+        }
+        else if (day.equals("yesterday")) {
+            return yesterday;
+        }
+        else {
+            return null;
+        }
     }
 }

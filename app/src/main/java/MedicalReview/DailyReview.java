@@ -4,6 +4,8 @@ package MedicalReview;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
@@ -18,10 +20,12 @@ import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
+import java.io.CharArrayReader;
 import java.util.Date;
 import java.util.Map;
 
-public class DailyReview {
+
+public class DailyReview implements Parcelable {
     private TimeSeries stateGraphSeries;
     private CategorySeries statePieSeries;
     private TimeSeries volumeGraphSeries;
@@ -44,9 +48,50 @@ public class DailyReview {
         wellbeingPieSeries = review.wellbeingPieSeries;
     }
 
+    //PARCELABLE INTERFACE IMPLEMENTATION - FACILITATES PASSING TO ACTIVITY
+    /*
+     * The methods for parcelable so this object can be sent to an activity via intent
+     */
+    protected DailyReview(Parcel in) {
+        //Retrieve in FIFO from the way the values were added
+        stateGraphSeries = (TimeSeries) in.readValue(TimeSeries.class.getClassLoader());
+        statePieSeries = (CategorySeries) in.readValue(CategorySeries.class.getClassLoader());
+        volumeGraphSeries = (TimeSeries) in.readValue(TimeSeries.class.getClassLoader());
+        bagGraphSeries = (TimeSeries) in.readValue(TimeSeries.class.getClassLoader());
+        wellbeingPieSeries = (CategorySeries) in.readValue(CategorySeries.class.getClassLoader());
+    }
+
+    public static final Creator<DailyReview> CREATOR = new Creator<DailyReview>() {
+        @Override
+        public DailyReview createFromParcel(Parcel in) {
+            return new DailyReview(in);
+        }
+
+        @Override
+        public DailyReview[] newArray(int size) {
+            return new DailyReview[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeValue(stateGraphSeries);
+        parcel.writeValue(statePieSeries);
+        parcel.writeValue(volumeGraphSeries);
+        parcel.writeValue(bagGraphSeries);
+        parcel.writeValue(wellbeingPieSeries);
+    }
+
+    //END PARCEL IMPLEMENTATION
+
     /*
     STATE STUFF
-     */
+    */
     //state line graph - plots values against date
     //expects map to have date and value pairs of state data
     public void calcStateGraph (Map<Date, Integer> data) {
@@ -60,7 +105,7 @@ public class DailyReview {
     }
 
     //display the state graph
-    public Intent displayStateGraph(Context context) {
+    public GraphicalView displayStateGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -87,9 +132,11 @@ public class DailyReview {
         dataSet.addSeries(stateGraphSeries);
 
 
-        Intent stateGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "State Line Graph");
+        //Intent stateGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "State Line Graph");
 
-        return stateGraphIntent;
+        GraphicalView stateGraphView = ChartFactory.getLineChartView(context, dataSet, mRenderer);
+
+        return stateGraphView;
     }
 
 
@@ -127,16 +174,18 @@ public class DailyReview {
         statePieSeries.add("Red", ((double)redTime)/((double)(greenTime + yellowTime + redTime)));
     }
 
-    public Intent displayStateChart(Context context) {
+    public GraphicalView displayStateChart(Context context) {
         //create the renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
         mRenderer.setStartAngle(90);
         mRenderer.setDisplayValues(false);
 
         //create and return the chart intent
-        Intent stateChartIntent = ChartFactory.getPieChartIntent(context, statePieSeries, mRenderer, "State Pie Chart");
+        //Intent stateChartIntent = ChartFactory.getPieChartIntent(context, statePieSeries, mRenderer, "State Pie Chart");
 
-        return stateChartIntent;
+        GraphicalView stateChartView = ChartFactory.getPieChartView(context, statePieSeries, mRenderer);
+
+        return stateChartView;
     }
 
 
@@ -157,7 +206,7 @@ public class DailyReview {
         }
     }
 
-    public Intent displayVolumeGraph(Context context) {
+    public GraphicalView displayVolumeGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -180,9 +229,11 @@ public class DailyReview {
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(volumeGraphSeries);
 
-        Intent volumeGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "Output Volume Graph");
+        //Intent volumeGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "Output Volume Graph");
 
-        return volumeGraphIntent;
+        GraphicalView volumeGraphView = ChartFactory.getLineChartView(context, dataSet, mRenderer);
+
+        return volumeGraphView;
     }
 
 
@@ -198,7 +249,7 @@ public class DailyReview {
         }
     }
 
-    public Intent displayBagGraph(Context context) {
+    public GraphicalView displayBagGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -221,9 +272,11 @@ public class DailyReview {
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(bagGraphSeries);
 
-        Intent bagGraphIntent = ChartFactory.getBarChartIntent(context, dataSet, mRenderer, BarChart.Type.DEFAULT, "Bag Output Volume");
+        //Intent bagGraphIntent = ChartFactory.getBarChartIntent(context, dataSet, mRenderer, BarChart.Type.DEFAULT, "Bag Output Volume");
 
-        return bagGraphIntent;
+        GraphicalView bagGraphView = ChartFactory.getBarChartView(context, dataSet, mRenderer, BarChart.Type.DEFAULT);
+
+        return bagGraphView;
     }
 
 
@@ -258,14 +311,16 @@ public class DailyReview {
         wellbeingPieSeries.add("Bad", ((double)badTime)/((double)(goodTime + badTime)));
     }
 
-    public Intent displayWellbeingChart(Context context) {
+    public GraphicalView displayWellbeingChart(Context context) {
         //create renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
         mRenderer.setStartAngle(90);
         mRenderer.setDisplayValues(false);
 
-        Intent wellbeingIntent = ChartFactory.getPieChartIntent(context, wellbeingPieSeries, mRenderer, "Wellbeing Percentage");
+        //Intent wellbeingIntent = ChartFactory.getPieChartIntent(context, wellbeingPieSeries, mRenderer, "Wellbeing Percentage");
 
-        return wellbeingIntent;
+        GraphicalView wellbeingView = ChartFactory.getPieChartView(context, wellbeingPieSeries, mRenderer);
+
+        return wellbeingView;
     }
 }

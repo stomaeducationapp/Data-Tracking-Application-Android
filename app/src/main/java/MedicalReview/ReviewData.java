@@ -23,10 +23,12 @@ public class ReviewData {
         return data;
     }
 
+    //LOADS THE DATASETS FROM FILE TO BE GRAPHED
     public void loadReviews() {
 
     }
 
+    //SAVES THE DATASETS TO FILE FOR LATER ACCESS
     public void saveReviews(DailyReview toSave) {
 
     }
