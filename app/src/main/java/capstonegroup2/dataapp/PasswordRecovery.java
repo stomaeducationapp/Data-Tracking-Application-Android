@@ -19,7 +19,7 @@ import XML.Login_Reader;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 20/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 21/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 22/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -30,6 +30,7 @@ import XML.Login_Reader;
 /* VERSION HISTORY
  * 20/10/2018 - Created file and added comment design path for future coding
  * 21/10/2018 - Finished base functionality for testing
+ * 22/10/2018 - Added attempts to user name checking and performed testing
  */
 
 /* REFERENCES
@@ -161,21 +162,49 @@ public class PasswordRecovery extends Activity {
                 questionText.setText("What is the name of the first person you kissed?"); //Display question to the user
                 userLayout.setVisibility(View.INVISIBLE); //Hide user view
                 questionLayout.setVisibility(View.VISIBLE); //Display question view
+                tries = 0; //Since the user got their name correct - reset the tries for the answers to use
                 break;
             case "Alice":
                 questionText.setText("Who was your first grade teacher?"); //Display question to the user
                 userLayout.setVisibility(View.INVISIBLE); //Hide user view
                 questionLayout.setVisibility(View.VISIBLE); //Display question view
+                tries = 0; //Since the user got their name correct - reset the tries for the answers to use
                 break;
             case "Hannes":
                 questionText.setText("What was your first car?"); //Display question to the user
                 userLayout.setVisibility(View.INVISIBLE); //Hide user view
                 questionLayout.setVisibility(View.VISIBLE); //Display question view
+                tries = 0; //Since the user got their name correct - reset the tries for the answers to use
                 break;
             default:
                 userText.setError("Username does not exist.");
+                tries = tries + 1; //Indicate a failed attempt
                 break;
 
+        }
+
+        if(tries >= 3) //If user has exhausted all correct tries
+        {
+            // Creating alert Dialog with one Button
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(PasswordRecovery.this);
+
+            // Setting Dialog Title
+            alertDialog.setTitle("Max Attempts Reached");
+
+            // Setting Dialog Message
+            alertDialog.setMessage("I'm sorry, but you have used up your available tries for now.");
+
+            // Setting the finished button
+            alertDialog.setNegativeButton("OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            //GO BACK TO LOGIN SCREEN
+                        }
+                    });
+
+            // Showing Alert Message
+            alertDialog.show();
         }
 
 
