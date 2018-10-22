@@ -92,6 +92,27 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/acSQText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_security_question_text" />
+
+            <Spinner
+                android:id="@+id/acSQs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/ac_security_question_entries" />
+
+            <EditText
+                android:id="@+id/acSQAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/ac_security_question_placeholder"
+                android:inputType="textPersonName" />
+
+            <TextView
                 android:id="@+id/acGameTitle"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"

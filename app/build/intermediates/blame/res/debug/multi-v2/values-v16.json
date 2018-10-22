@@ -4,7 +4,7 @@
             "outputFile": "F:\\Uni\\Project\\Android\\2018-02-healthcare-visualization-data-tracking-application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jerst_000\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\ce65b2628bb07ff1e47de9e8bd23c6e0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\jerst_000\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\3fa0cfc8bc9c8a94802c7613fc82f093\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\jerst_000\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\9ceb100dedabf762e60dfc4ff9ff8591\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\jerst_000\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\ac3bde4ba6585df5283a44a99847c337\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

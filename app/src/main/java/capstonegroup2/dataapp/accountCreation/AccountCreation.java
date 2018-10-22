@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -20,7 +21,7 @@ import capstonegroup2.dataapp.R;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 07/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 08/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 21/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -31,6 +32,7 @@ import capstonegroup2.dataapp.R;
 /* VERSION HISTORY
  * 07/10/2018 - Created Activity design layout and added rudimentary code to display back for demo
  * 08/10/2018 - Finished up functionality related to activity (data collection and initial checks) and added draft calls to validation
+ * 21/10/2018 - Fixed functionality to include security questions and added some validation code
  */
 
 /* REFERENCES
@@ -56,6 +58,7 @@ import capstonegroup2.dataapp.R;
  * Making an element invisible learned from https://stackoverflow.com/questions/4480489/can-you-hide-an-element-in-a-layout-such-as-a-spinner-depending-on-an-activity
  * Activating ontouch learned from https://stackoverflow.com/questions/38865922/android-hide-toolbar-when-edittext-is-focused
  * Hiding element after focus change learned from https://stackoverflow.com/questions/4165414/how-to-hide-soft-keyboard-on-android-after-clicking-outside-edittext
+ * Setting a onitemselected listener for a spinner learned from https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android
  * And many more from https://developer.android.com
  */
 
@@ -65,8 +68,11 @@ public class AccountCreation extends Activity {
     //EditTexts for the user input sections
     private EditText unameInput;
     private EditText passInput;
+    private EditText sqInput;
     //Spinner we use for gamification settings
     private Spinner gameInput;
+    //Spinner for the chosen security question
+    private Spinner sqChoice;
     //Checkbox we use for notifications settings
     private CheckBox notInput;
     //Progress bar for password strength
@@ -85,6 +91,10 @@ public class AccountCreation extends Activity {
     //Values for any options that are set via clicks
     private String exportValue;
 
+    //TODO READD WHEN INTEGRATED
+    /*private Factory f;
+    private Validation validator;*/
+
     //Constants - Change here to ease refactoring
     //Maximum length of username
     public static final int UNAME_MAX = 20;
@@ -101,8 +111,6 @@ public class AccountCreation extends Activity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_creation);
-        /*Toolbar bar = findViewById(R.id.acToolbar);
-        bar.setTitle(getString(R.string.ac_title_text));*/
 
         //Find all the objects we need
         unameInput = findViewById(R.id.acUNInput);
@@ -113,12 +121,19 @@ public class AccountCreation extends Activity {
         strengthBar = findViewById(R.id.acStrengthBar);
         exportText = findViewById(R.id.acExportTitle);
         passGuide = findViewById(R.id.acPassGuide);
-        passGuide.setVisibility(View.INVISIBLE);
+        sqInput = findViewById(R.id.acSQAnswer);
+        sqChoice = findViewById(R.id.acSQs);
 
-        //Set intial values to false - with nothing in the boxes yet they haven't been checked
+        sqInput.setVisibility(View.INVISIBLE); //We want the answer to be invisible until user has selected a question
+        passGuide.setVisibility(View.INVISIBLE); //Hide password strength indicator until start typing
+
+        //Set initial values to false - with nothing in the boxes yet they haven't been checked
         unKeyCheck = false;
         pKeyCheck = false;
 
+        //TODO CREATE VALIDATOR AND SET FACTORY HERE
+
+        /* TODO DELETE OR REENABLE DEPENDING ON WHAT CONTROLS WANTED FOR INSTANT FEEDBACK
         //Set an TextWatch listener for each of the two text inputs so that we can do some per character analysis
         //Username listener
         TextWatcher unInputTextWatcher = new TextWatcher() {
@@ -157,13 +172,14 @@ public class AccountCreation extends Activity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 unKeyCheck = false; //Since a key has changed - we may need to edit it
             }
-        };
+        };*/
         TextWatcher pInputTextWatcher = new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 String text  = s.toString(); //Get the string
                 //If the text in the box is empty - don't bother with checking the characters inside
                 if((text.length() - 1) >= 0)
                 {
+                        /*
                         //If there is an unaccepted character in the string
                         if (text.matches(".*[^a-zA-Z0-9_].*") && (pKeyCheck == false))
                         {
@@ -178,7 +194,8 @@ public class AccountCreation extends Activity {
                         else //We only want one error at a time - The bad character takes precedence first since if we remove bad character,strength is same as previous entry
                         {
                             passwordStrength(text); //Check strength of password
-                        }
+                        }*/
+                        passwordStrength(text); //This is needed for demo functionality
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after)
@@ -187,7 +204,7 @@ public class AccountCreation extends Activity {
                 pKeyCheck = false;
             }
         };
-        unameInput.addTextChangedListener(unInputTextWatcher); //Add the TextWatchers to the elements
+        //unameInput.addTextChangedListener(unInputTextWatcher); //Add the TextWatchers to the elements
         passInput.addTextChangedListener(pInputTextWatcher);
         //If TextWatcher is not picking up all hardware/software keyboard events - consider adding a onKeyListener to the view in addition (as that can pickup some but not all)
 
@@ -204,6 +221,14 @@ public class AccountCreation extends Activity {
                 if (!hasFocus) {
                     passGuide.setVisibility(View.INVISIBLE);
                 }
+            }
+        });
+
+        //Set a spinner onitemselected listener to display the security question answer field only if a answer is selected
+        sqChoice.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                sqInput.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -254,11 +279,25 @@ public class AccountCreation extends Activity {
     public void createAccount (View view)
     {
         boolean created = false;
+        /*
+        //TODO READD WE INTEGRATING
+        final String algorithm = "SHA-256"; //Hashing algorithm we use
+        MessageDigest md;
+        try
+        {
+            md =  MessageDigest.getInstance(algorithm);
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            throw new IllegalStateException("Hash failed " + e.getMessage()); //TODO CONSIDER THROWING CUSTOM EXCEPTION
+        }*/
         //Get all the values that the user may have set
         boolean notBox = notInput.isChecked();
         String gameValue = (gameInput.getSelectedItem()).toString(); //We don't check this since it has a default value that is selected
+        String sqValue = (sqChoice.getSelectedItem()).toString(); //Get the question the user selected
         String unameValue = (unameInput.getText()).toString(); //This two we need to check in case they weren't answered
         String passValue = (passInput.getText()).toString();
+        String sqAnswer = (sqInput.getText()).toString();
         String notValue = "";
 
         //Translate notification check box to a string value - this can only be yes or no (if user doesn't answer, default it NO)
@@ -293,14 +332,22 @@ public class AccountCreation extends Activity {
                 }
                 else
                 {
-                    if(exportValue == null) //Need to select an export setting - no default
+                    if(sqAnswer.equals("")) //COULD ALSO DO A LENGTH CHECK HERE MORE LIKELY ADD A TEXTWATCHER
                     {
-                        exportText.requestFocus();
-                        exportText.setError("Please select an export type");
+                        sqInput.requestFocus();
+                        sqInput.setError("Please provide an answer to security question");
                     }
                     else
                     {
-                        created = true;
+                        if (exportValue == null) //Need to select an export setting - no default
+                        {
+                            exportText.requestFocus();
+                            exportText.setError("Please select an export type");
+                        }
+                        else
+                        {
+                            created = true;
+                        }
                     }
                 }
             }
@@ -316,7 +363,7 @@ public class AccountCreation extends Activity {
             alertDialog.setTitle("Form Submission Results");
 
             // Setting Dialog Message
-            alertDialog.setMessage("This is what you submitted\n" + "Username: " + unameValue + "\nPassword: " + passValue + "\nGamification Settings: " + gameValue + "\nData Export Settings: " + exportValue + "\nNotification Settings: " + notValue);
+            alertDialog.setMessage("This is what you submitted\n" + "Username: " + unameValue + "\nPassword: " + passValue + "\nYour security question:" + sqValue + "\nYour Answer:" + sqAnswer + "\nGamification Settings: " + gameValue + "\nData Export Settings: " + exportValue + "\nNotification Settings: " + notValue);
 
             // Setting the finished button
             alertDialog.setNegativeButton("OK",
@@ -331,10 +378,55 @@ public class AccountCreation extends Activity {
         }
 
         //TODO - ADD IN VALIDATE CALLS
-        //Send username/password to validate
-        //Make errors if they failed
-        //Send all as a package to writer
-        //Move to logged in activity
+        /*Validation.Validate_Result validResult; //Enum for result of validation
+        validResult = validator.Validate_Username(unameValue); //Call validation to check if the user input is valid
+        //Do error checking for possible error enums
+        if(validResult != Validate_Result.PASS) //If not a valid username
+        {
+
+            String err = validator.getError(validResult); //Get the specific error code
+            unameInput.setError(err); //Display to the user
+
+        }
+        else
+        {
+
+            if (validator.verify_username(user) != Validate_result.PASS) //If the account name doesn't exist
+            {
+                //OR JUST SET OWN "Username does not exist" error
+                String err = validator.getError(validResult); //Get the specific error code
+                userText.setError(err); //Display to the user
+            } else {
+                validResult = validator.Validate_Password(passValue); //Check the password is valid
+                if (validResult != Validate_Result.PASS) {
+                    String err = validator.getError(validResult); //Get the specific error code
+                    passInput.setError(err); //Display to the user
+                } else {
+                    validResult = validator.Validate_Answer(unameValue); //Check the answer is valid
+                    if (validResult != Validate_Result.PASS) {
+                        String err = validator.getError(validResult); //Get the specific error code
+                        sqInput.setError(err); //Display to the user
+                    } else {
+                        Account_Writer ac = f.Make_Account_Writer();
+                        XML_Writer.Tags_To_Write job = XML_Writer.Tags_To_Write.Create;
+                        Map<String, String> values = new HashMap<String, String>();
+                        values.put("Account_Name", unameValue);
+                        byte[] hashedPass = md.digest(passValue);
+                        values.put("Password", new String(hashedPass));
+                        values.put("Security_Question", sqValue);
+                        values.put("Security_Answer", sqAnswer);
+                        values.put("Gamification", gameValue);
+                        values.put("Notification", notValue);
+                        values.put("Export", exportValue);
+
+                        ac.Write_File(file, values, job); //Create the account in the system
+
+                        //TODO LOGIN TO MAIN MENU
+                    }
+                }
+            }
+
+        }*/
 
     }
 
