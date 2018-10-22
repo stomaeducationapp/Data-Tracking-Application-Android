@@ -16,39 +16,37 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
 /* AUTHOR INFORMATION
- * CREATOR - Jeremy Dunnet 20/10/2018
+ * CREATOR - Jeremy Dunnet 22/10/2018
  * LAST MODIFIED BY - Jeremy Dunnet 22/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
- * This is the GUI that handles a user's request to recover their password, but identifying the username they want to recover the password for and testing that they are the owner
- * of that account by making them answer the security question they set at account creation. The user is then logged on and directed to password reset.
+ * This is the unit test for the Password Recovery UI
  */
 
 /* VERSION HISTORY
- * 20/10/2018 - Created file and added comment design path for future coding
- * 21/10/2018 - Finished base functionality for testing
- * 22/10/2018 - Added attempts to user name checking and performed testing
+ * 22/10/2018 - Created file and completed testing
  */
 
 /* REFERENCES
- * How to layer two layouts over each other learned from https://stackoverflow.com/questions/19424443/how-to-put-2-layouts-on-top-of-each-others
- * Basic setup and layout adapted from my previous activity in this project AccountCreation
- * Creating a list with default values learned from https://stackoverflow.com/questions/21696784/how-to-declare-an-arraylist-with-values
- * Hashing use learned from Security Research summary (https://drive.google.com/open?id=15PTGXy1QBaQXOnlrpta7S6xtsyXgT2g1) and https://developer.android.com/reference/java/security/MessageDigest
+ * Robolectric basic tutorial learned from http://robolectric.org/ and https://android.jlelse.eu/how-to-write-android-unit-tests-using-robolectric-27341d530613
+ * How to test for alert dialog boxes in robolectric learned from https://stackoverflow.com/questions/47655855/how-to-make-robolectric-test-for-alertdialog
+ * How to get titles from alert boxes learned from https://stackoverflow.com/questions/29161994/how-to-get-the-alertdialog-title/29162440#29162440
+ * Difference for test focus methods learned from https://stackoverflow.com/questions/33022310/what-is-the-difference-between-hasfocus-and-isfocused-in-android
+ * Re-instancing an activity learned from https://stackoverflow.com/questions/2486934/programmatically-relaunch-recreate-an-activity
  * And many more from https://developer.android.com/
  */
 
 @RunWith(RobolectricTestRunner.class)
 public class PasswordRecoveryTest {
 
-    private Activity testAct;
+    private Activity testAct; //The activity we will be testing
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - setUp
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that creates the initial activity object we will run our tests on (we will re uses it a few times
      */
     @Before
     public void setUp() {
@@ -56,10 +54,10 @@ public class PasswordRecoveryTest {
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - blank
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that rebuilds the activity (to zero the attempts feature for different test cases)
      */
     private void blank() {
         testAct.recreate(); //Resets the activity
@@ -67,10 +65,10 @@ public class PasswordRecoveryTest {
 
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - setupNotNull
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests if the activity we built in setup is not null (tests for successful activity onCreate functionality)
      */
     @Test
     public void setupNotNull() {
@@ -78,10 +76,10 @@ public class PasswordRecoveryTest {
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - findUserValid
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests the user form part of the activity when it receives a valid user
      */
     @Test
     public void findUserValid() {
@@ -96,16 +94,15 @@ public class PasswordRecoveryTest {
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - findUserInvalid
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests the user form part of the activity when it receives an invalid user
      */
     @Test
     public void findUserInvalid() {
-        blank();
         EditText userField = testAct.findViewById(R.id.user_entry);
-        userField.setText("Jeremy"); //Grab user field an set to a valid value
+        userField.setText("Jeremy"); //Grab user field an set to an invalid value
         (testAct.findViewById(R.id.user_button)).callOnClick(); //Submit the form
 
         assertEquals("User form hidden", View.VISIBLE, (testAct.findViewById(R.id.pr_user_layout).getVisibility())); //Check that the form remains and next one is still hidden
@@ -115,55 +112,55 @@ public class PasswordRecoveryTest {
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - findUserMaxTries
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests the user form displays the error when maximum attempts reached
      */
     @Test
     public void findUserMaxTries() {
-        blank();
+        blank(); //Make sure tries is set to zero
         findUserInvalid(); //Have 3 incorrect guesses
         findUserInvalid();
         findUserInvalid();
 
-        int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" );
-        TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id);
+        int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" ); //Find the id of the alert title
+        TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id); //Grab the TextView containing the title
 
         assertEquals("Alert title is correct", "Max Attempts Reached", alertTitle.getText());
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - findAnswerValid
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests the user form part of the activity when it receives a valid answer
      */
     @Test
     public void answerQuestionValid() {
-        blank();
+        findUserValid(); //Set up the question screen
         EditText qField = testAct.findViewById(R.id.question_entry);
-        qField.setText("Alice"); //Grab user field an set to a valid value
+        qField.setText("Alice"); //Grab answer field an set to a valid value
         (testAct.findViewById(R.id.question_button)).callOnClick(); //Submit the form
 
-        int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" );
-        TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id);
+        int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" ); //Since the correct answer yields an alert detailing all info sent
+        TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id); //We check for the alert title (not the next screen)
 
         assertEquals("Alert title is correct", "Form Submission Results", alertTitle.getText());
 
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - findAnswerValid
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests the user form part of the activity when it receives an invalid answer
      */
     @Test
     public void answerQuestionInvalid() {
-        blank();
+        findUserValid();
         EditText qField = testAct.findViewById(R.id.question_entry);
-        qField.setText("Jeremy"); //Grab user field an set to a valid value
+        qField.setText("Jeremy"); //Grab answer field an set to an invalid value
         (testAct.findViewById(R.id.question_button)).callOnClick(); //Submit the form
 
         assertEquals("Error displayed", true, (testAct.findViewById(R.id.question_entry)).isFocused());
@@ -171,17 +168,19 @@ public class PasswordRecoveryTest {
     }
 
     /* FUNCTION INFORMATION
-     * NAME - findUser
+     * NAME - findUserMaxTries
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that takes the username the user has entered in, and checks if it exists. If it does it locates their security question for them to answer
+     * PURPOSE - This is the function that tests the question form displays the error when maximum attempts reached
      */
     @Test
     public void answerQuestionMaxTries() {
-        blank();
-        answerQuestionInvalid(); //Have 3 incorrect guesses
-        answerQuestionInvalid();
-        answerQuestionInvalid();
+        findUserValid();
+        EditText qField = testAct.findViewById(R.id.question_entry);
+        qField.setText("Jeremy");
+        (testAct.findViewById(R.id.question_button)).callOnClick(); //Have 3 incorrect guesses
+        (testAct.findViewById(R.id.question_button)).callOnClick(); //Since We call findUserValid in the answerQuestionInvalid test - we can't call it to reuse that code
+        (testAct.findViewById(R.id.question_button)).callOnClick(); //Instead we do it manually
 
         int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" );
         TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id);
