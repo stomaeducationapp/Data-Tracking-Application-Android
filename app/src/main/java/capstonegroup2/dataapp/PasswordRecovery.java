@@ -178,6 +178,7 @@ public class PasswordRecovery extends Activity {
                 break;
             default:
                 userText.setError("Username does not exist.");
+                userText.requestFocus();
                 tries = tries + 1; //Indicate a failed attempt
                 break;
 
@@ -288,7 +289,8 @@ public class PasswordRecovery extends Activity {
         else
         {
             questionAnswer.setError("That answer is not correct");
-            tries = tries ++;
+            questionAnswer.requestFocus();
+            tries = tries + 1;
         }
 
         if(tries >= 3) //If user has exhausted all correct tries
