@@ -158,17 +158,17 @@ public class PasswordRecovery extends Activity {
         {
             //Each case simulates a search for a valid user
             case "Bob":
-                questionText.setText("QUESTION 1"); //Display question to the user
+                questionText.setText("What is the name of the first person you kissed?"); //Display question to the user
                 userLayout.setVisibility(View.INVISIBLE); //Hide user view
                 questionLayout.setVisibility(View.VISIBLE); //Display question view
                 break;
             case "Alice":
-                questionText.setText("QUESTION 2"); //Display question to the user
+                questionText.setText("Who was your first grade teacher?"); //Display question to the user
                 userLayout.setVisibility(View.INVISIBLE); //Hide user view
                 questionLayout.setVisibility(View.VISIBLE); //Display question view
                 break;
             case "Hannes":
-                questionText.setText("QUESTION 3"); //Display question to the user
+                questionText.setText("What was your first car?"); //Display question to the user
                 userLayout.setVisibility(View.INVISIBLE); //Hide user view
                 questionLayout.setVisibility(View.VISIBLE); //Display question view
                 break;
@@ -192,7 +192,6 @@ public class PasswordRecovery extends Activity {
 
         String answer = (questionAnswer.getText()).toString(); //Get user's answer
         final String algorithm = "SHA-256"; //Values to create the hash used later on
-        final String charSet = "UTF-8";
         MessageDigest md;
 
         //TODO REFACTOR WHEN INTEGRATING AND OTHER FUNCTIONALITY DONE
@@ -210,7 +209,7 @@ public class PasswordRecovery extends Activity {
         }
         byte[] answerBytes = answer.getBytes();
         byte[] hash = md.digest(answerBytes);
-        String hashedAnswer = hash.toString();
+        String hashedAnswer = new String(hash);
 
         //DEMO/TESTING PURPOSES ONLY TODO DELETE
         String realAnswer = "";
@@ -218,13 +217,13 @@ public class PasswordRecovery extends Activity {
         {
             //Each case simulates a search for a valid user
             case "Bob":
-                realAnswer = (md.digest(("ANSWER 1").getBytes())).toString();
+                realAnswer = new String(md.digest(("Alice").getBytes()));
                 break;
             case "Alice":
-                realAnswer = (md.digest(("ANSWER 2").getBytes())).toString();
+                realAnswer = new String(md.digest(("Miss Krabapple").getBytes()));
                 break;
             case "Hannes":
-                realAnswer = (md.digest(("ANSWER 3").getBytes())).toString();
+                realAnswer = new String(md.digest(("Honda Accord").getBytes()));
                 break;
             default:
                 questionAnswer.setError("Question does not exist.");
