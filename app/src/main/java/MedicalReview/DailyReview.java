@@ -223,7 +223,11 @@ public class DailyReview implements Parcelable {
         mRenderer.setMarginsColor(Color.argb(0x00, 0xff, 0x00, 0x00));  //transparent borders
         mRenderer.setPanEnabled(false, false);  //disable panning
         mRenderer.setYAxisMin(0);   //y axis min 0
-        mRenderer.setYAxisMax(10);  //y axis max 10
+        mRenderer.setYAxisMax(2000);  //y axis max 2000
+        mRenderer.addYTextLabel(500, "500 mL");
+        mRenderer.addYTextLabel(1000, "1000 mL");
+        mRenderer.addYTextLabel(1500, "1500 mL");
+        mRenderer.addYTextLabel(2000, "2000 mL");
         mRenderer.setShowGrid(true);    //display grid lines
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
@@ -266,7 +270,9 @@ public class DailyReview implements Parcelable {
         mRenderer.setMarginsColor(Color.argb(0x00, 0xff, 0x00, 0x00));  //transparent borders
         mRenderer.setPanEnabled(false, false);  //disable panning
         mRenderer.setYAxisMin(0);   //y axis min 0
-        mRenderer.setYAxisMax(10);  //y axis max 10
+        mRenderer.setYAxisMax(1000);  //y axis max 10
+        mRenderer.addYTextLabel(500, "500 mL");
+        mRenderer.addYTextLabel(1000, "1000 mL");
         mRenderer.setShowGrid(true);    //display grid lines
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
@@ -289,7 +295,8 @@ public class DailyReview implements Parcelable {
         //first find the percentage of each day in each state
         Date[] attributes = data.keySet().toArray(new Date[0]);
         long goodTime = 0, badTime = 0;
-        Date currTime, compTime = attributes[0];
+        Date currTime;
+        Date compTime = attributes[0];
 
         //record elapsed time in millis between inputs for each state
         for (Date key: attributes) {

@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="MedicalReviewTest.Daily_Review_Test">
+        <activity android:name="medical_review_test.Daily_Review_Test">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
