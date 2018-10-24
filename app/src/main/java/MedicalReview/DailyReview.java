@@ -17,6 +17,7 @@ import org.achartengine.model.CategorySeries;
 import org.achartengine.model.TimeSeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.renderer.DefaultRenderer;
+import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
@@ -113,6 +114,7 @@ public class DailyReview implements Parcelable {
         renderer.setPointStyle(PointStyle.CIRCLE);
         renderer.setDisplayBoundingPoints(true);
         renderer.setPointStrokeWidth(3);
+        renderer.setChartValuesTextSize(500);
 
         //add this renderer to the display renderer
         XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
@@ -134,7 +136,8 @@ public class DailyReview implements Parcelable {
 
         //Intent stateGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "State Line Graph");
 
-        GraphicalView stateGraphView = ChartFactory.getLineChartView(context, dataSet, mRenderer);
+        //GraphicalView stateGraphView = ChartFactory.getLineChartView(context, dataSet, mRenderer);
+        GraphicalView stateGraphView = ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
 
         return stateGraphView;
     }
@@ -177,9 +180,18 @@ public class DailyReview implements Parcelable {
     public GraphicalView displayStateChart(Context context) {
         //create the renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
-        mRenderer.setStartAngle(90);
-        mRenderer.setDisplayValues(false);
+        mRenderer.setStartAngle(180);
+        mRenderer.setDisplayValues(true);
+        mRenderer.setPanEnabled(false);
 
+        int[] colours = {Color.GREEN, Color.YELLOW, Color.RED};
+        SimpleSeriesRenderer rend = null;
+
+        for (int i = 0; i < 3; i++) {
+            rend = new SimpleSeriesRenderer();
+            rend.setColor(colours[i]);
+            mRenderer.addSeriesRenderer(rend);
+        }
         //create and return the chart intent
         //Intent stateChartIntent = ChartFactory.getPieChartIntent(context, statePieSeries, mRenderer, "State Pie Chart");
 
@@ -256,11 +268,8 @@ public class DailyReview implements Parcelable {
     public GraphicalView displayBagGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
-        renderer.setLineWidth(2);
-        renderer.setColor(Color.BLACK);
-        renderer.setPointStyle(PointStyle.CIRCLE);
-        renderer.setDisplayBoundingPoints(true);
-        renderer.setPointStrokeWidth(3);
+        renderer.setColor(Color.BLUE);
+        renderer.setDisplayChartValues(true);
 
         //add this renderer to the display renderer
         XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
@@ -271,9 +280,12 @@ public class DailyReview implements Parcelable {
         mRenderer.setPanEnabled(false, false);  //disable panning
         mRenderer.setYAxisMin(0);   //y axis min 0
         mRenderer.setYAxisMax(1000);  //y axis max 10
+        mRenderer.addYTextLabel(250, "250 mL");
         mRenderer.addYTextLabel(500, "500 mL");
-        mRenderer.addYTextLabel(1000, "1000 mL");
+        mRenderer.addYTextLabel(750, "750 mL");
         mRenderer.setShowGrid(true);    //display grid lines
+        mRenderer.setBarSpacing(0.5);
+        mRenderer.setBarWidth(100);
 
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(bagGraphSeries);
@@ -321,8 +333,18 @@ public class DailyReview implements Parcelable {
     public GraphicalView displayWellbeingChart(Context context) {
         //create renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
-        mRenderer.setStartAngle(90);
+        mRenderer.setStartAngle(180);
         mRenderer.setDisplayValues(false);
+        mRenderer.setPanEnabled(false);
+
+        int[] colours = {Color.GREEN, Color.RED};
+        SimpleSeriesRenderer rend = null;
+
+        for (int i = 0; i < 2; i++) {
+            rend = new SimpleSeriesRenderer();
+            rend.setColor(colours[i]);
+            mRenderer.addSeriesRenderer(rend);
+        }
 
         //Intent wellbeingIntent = ChartFactory.getPieChartIntent(context, wellbeingPieSeries, mRenderer, "Wellbeing Percentage");
 

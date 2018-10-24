@@ -14,7 +14,7 @@ import capstonegroup2.dataapp.DailyReviewGraph;
 
 public class Daily_Review_Test extends AppCompatActivity {
 
-    @Test
+    //@Test
     public void activate() {
         Intent i = new Intent(getBaseContext(), DailyReviewGraph.class);
 

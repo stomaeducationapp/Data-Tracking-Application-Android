@@ -16,6 +16,7 @@ import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -43,9 +44,9 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
         Intent i = getIntent();
 
         //Gets the data sets to be used in making the graphs
+        //TODO: switch these for integration
         //today = (DailyReview) i.getParcelableExtra("today");
         //yesterday = (DailyReview) i.getParcelableExtra("yesterday");
-
         today = getToday();
         yesterday = getYesterday();
 
@@ -78,9 +79,11 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
                 //set the day
                 if (R.id.todayButton == checkID) {
                     day = "today";
+                    displayHandler(spinner.getSelectedItem().toString());
                 }
                 else if (R.id.yesterdayButton == checkID) {
                     day = "yesterday";
+                    displayHandler(spinner.getSelectedItem().toString());
                 }
             }
         });
@@ -114,13 +117,7 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         String selected = adapterView.getItemAtPosition(position).toString();
-        if (day != null) {
-            if (day.equals("today")) {
-                displayGraph(today, selected);
-            } else if (day.equals("yesterday")) {
-                displayGraph(yesterday, selected);
-            }
-        }
+        displayHandler(selected);
     }
 
     @Override
@@ -128,6 +125,15 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
         //auto generated inherited method
     }
 
+    public void displayHandler(String graph) {
+        if (day != null) {
+            if (day.equals("today")) {
+                displayGraph(today, graph);
+            } else if (day.equals("yesterday")) {
+                displayGraph(yesterday, graph);
+            }
+        }
+    }
 
     //TESTING PURPOSES
     public DailyReview getToday(){
@@ -136,18 +142,24 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
         //CREATE ALL DATASETS
         //STATE DATASET
         Map<Date, Integer> stateData = new HashMap<>();
-        stateData.put(new Date(1540027800), 3);
-        stateData.put(new Date(1540033200), 5);
-        stateData.put(new Date(1540045530), 6);
-        stateData.put(new Date(1540057395), 4);
-        stateData.put(new Date(1540070024), 2);
+        stateData.put(new Date((long)1540027800*1000), 3);
+        stateData.put(new Date((long)1540033200*1000), 5);
+        stateData.put(new Date((long)1540045530*1000), 6);
+        stateData.put(new Date((long)1540057395*1000), 4);
+        stateData.put(new Date((long)1540070024*1000), 2);
 
+        Date test = new Date((long)1540027800*1000);
+        Calendar a = Calendar.getInstance();
+        a.setTime(test);
+        a.setTimeInMillis(((long)1540027800*1000));
 
         //VOLUME DATASET
         Map<Date, Integer> volumeData = new HashMap<>();
         volumeData.put(new Date(1540027800), 400);
+        volumeData.put(new Date(1540033200), 500);
         volumeData.put(new Date(1540045530), 450);
         volumeData.put(new Date(1540070024), 300);
+        volumeData.put(new Date(1540057395), 400);
 
         //WELLBEING DATASET
         Map<Date, Integer> wellbeingData = new HashMap<>();
