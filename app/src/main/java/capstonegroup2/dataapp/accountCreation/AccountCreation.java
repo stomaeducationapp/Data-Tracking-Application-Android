@@ -9,7 +9,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -21,7 +20,7 @@ import capstonegroup2.dataapp.R;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 07/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 21/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 25/10/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -33,6 +32,7 @@ import capstonegroup2.dataapp.R;
  * 07/10/2018 - Created Activity design layout and added rudimentary code to display back for demo
  * 08/10/2018 - Finished up functionality related to activity (data collection and initial checks) and added draft calls to validation
  * 21/10/2018 - Fixed functionality to include security questions and added some validation code
+ * 25/10/2018 - Fixed bugs that arose from testing
  */
 
 /* REFERENCES
@@ -124,7 +124,6 @@ public class AccountCreation extends Activity {
         sqInput = findViewById(R.id.acSQAnswer);
         sqChoice = findViewById(R.id.acSQs);
 
-        sqInput.setVisibility(View.INVISIBLE); //We want the answer to be invisible until user has selected a question
         passGuide.setVisibility(View.INVISIBLE); //Hide password strength indicator until start typing
 
         //Set initial values to false - with nothing in the boxes yet they haven't been checked
@@ -218,17 +217,9 @@ public class AccountCreation extends Activity {
         passInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
+                if (!passInput.hasFocus()) {
                     passGuide.setVisibility(View.INVISIBLE);
                 }
-            }
-        });
-
-        //Set a spinner onitemselected listener to display the security question answer field only if a answer is selected
-        sqChoice.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                sqInput.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -402,7 +393,7 @@ public class AccountCreation extends Activity {
                     String err = validator.getError(validResult); //Get the specific error code
                     passInput.setError(err); //Display to the user
                 } else {
-                    validResult = validator.Validate_Answer(unameValue); //Check the answer is valid
+                    validResult = validator.Validate_Answer(sqAnswer); //Check the answer is valid
                     if (validResult != Validate_Result.PASS) {
                         String err = validator.getError(validResult); //Get the specific error code
                         sqInput.setError(err); //Display to the user
@@ -413,7 +404,7 @@ public class AccountCreation extends Activity {
                         values.put("Account_Name", unameValue);
                         byte[] hashedPass = md.digest(passValue);
                         values.put("Password", new String(hashedPass));
-                        values.put("Security_Question", sqValue);
+                        values.put("Security_Question", sqValue); //TODO SQVALUE IS GENERATED ACCORDING TO LOGIN FILE ID REFERENCES
                         values.put("Security_Answer", sqAnswer);
                         values.put("Gamification", gameValue);
                         values.put("Notification", notValue);

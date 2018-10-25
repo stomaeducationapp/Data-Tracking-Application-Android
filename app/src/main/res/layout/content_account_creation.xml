@@ -108,9 +108,12 @@
                 android:id="@+id/acSQAnswer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:hint="@string/ac_security_question_placeholder"
-                android:inputType="textPersonName" />
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="79dp" />
 
             <TextView
                 android:id="@+id/acGameTitle"
