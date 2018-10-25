@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Medical_Information>
     <Medical_Entry>
+        <Entry_Time>16-17-10-2018</Entry_Time>
+        <Location>No Entry</Location>
+        <Bags>No Entry</Bags>
+        <Urine>No Entry</Urine>
+        <Hydration>No Entry</Hydration>
+        <WellBeing>No Entry</WellBeing>
+        <Medical_State>No Entry</Medical_State>
+    </Medical_Entry>
+    <Medical_Entry>
+        <Entry_Time>16-17-10-2018</Entry_Time>
+        <Location>No Entry</Location>
+        <Bags>No Entry</Bags>
+        <Urine>No Entry</Urine>
+        <Hydration>No Entry</Hydration>
+        <WellBeing>No Entry</WellBeing>
+        <Medical_State>No Entry</Medical_State>
+    </Medical_Entry>
+    <Medical_Entry>
         <Entry_Time>15-7-10-2018</Entry_Time>
         <Location>No Entry</Location>
         <Bags>No Entry</Bags>

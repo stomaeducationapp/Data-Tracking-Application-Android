@@ -1,5 +1,8 @@
 package Factory;
 
+import EncryptExport.Detector;
+import EncryptExport.Encrypt;
+import EncryptExport.Retrieval;
 import Observers.Check_State;
 import Observers.Daily_Review;
 import Observers.Export_Data;
@@ -7,7 +10,8 @@ import Observers.Form_Change;
 import Observers.Form_Change_Observer;
 import Observers.State_Observer;
 import Observers.Time_Observer;
-
+import XML.Medical_Reader;
+import XML.Medical_Writer;
 
 
 /**
@@ -241,4 +245,34 @@ public class Factory {
         return writer;
     }
      */
+
+    //Factory methods for EncryptExport package
+    public Retrieval makeRetrieval()
+    {
+        return new Retrieval();
+    }
+
+    public Encrypt makeEncrypt()
+    {
+        return new Encrypt();
+    }
+
+    public Detector makeDetector()
+    {
+        return new Detector();
+    }
+
+
+    //Mock methods for medical reader and writer (USED FOR TESTING)
+    //TODO REMOVE AFTER SUCCESSFUL TESTING
+
+    public Medical_Reader Make_Medical_Reader()
+    {
+        return new Medical_Reader();
+    }
+
+    public Medical_Writer Make_Medical_Writer()
+    {
+        return new Medical_Writer();
+    }
 }

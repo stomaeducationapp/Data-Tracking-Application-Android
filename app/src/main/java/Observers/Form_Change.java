@@ -13,26 +13,9 @@ import Factory.Factory;
  * Implements Form_Change_Observer interface
  * @author Patrick Crockford
  * @version 1.0
- * <h>Changes</h1>
- * 19th Aug
- * Created Class 'Save_Form_Change', and created the switch statement for Activity_Control enum, Patrick Crockford
- * Added Save_Current_Activity() method, Patrick Crockford
- * <p>
- * 20th Aug
- * Renamed to Form_Change due change in how activities will be saved, these are handled by the activities themselves, Patrick Crockford
- * Deleted Save_Current_Activity() method, Patrick Crockford
- * Added Debug Code for Unit Testing concrete Class, and will test Form_Change_Observer Interface at the same time, Patrick Crockford
- * Added JavaDoc, Patrick Crockford
- * <p>
- * 21st Aug
- * Changed Change_Form() parameter from context to Intent intent, as this can be created within the calling activity and is more logical, Patrick Crockford
- * Refactored code to allow for this change to parameter, Patrick Crockford
- * Added Null Checks for method parameters security, Patrick Crockford
- * <p>
- * 29th Aug
- * Update JavaDoc code to comply with format, Patrick Crockford
- * 17th Sept
- * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
+ * <h1>Last Edited</h1>
+ * 17 Oct 2018
+ * Patrick Crockford
  */
 
 
