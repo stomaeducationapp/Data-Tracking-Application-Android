@@ -1,7 +1,9 @@
-package medical_review_test;
+package capstonegroup2.dataapp;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import org.junit.Test;
 
@@ -14,6 +16,11 @@ import capstonegroup2.dataapp.DailyReviewGraph;
 
 public class Daily_Review_Test extends AppCompatActivity {
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        activate();
+    }
+
     //@Test
     public void activate() {
         Intent i = new Intent(getBaseContext(), DailyReviewGraph.class);
@@ -24,7 +31,7 @@ public class Daily_Review_Test extends AppCompatActivity {
         i.putExtra("today", todayData);
         i.putExtra("yesterday", yesterdayData);
 
-        //startActivity(i);
+        startActivity(i);
     }
 
     public DailyReview getToday(){

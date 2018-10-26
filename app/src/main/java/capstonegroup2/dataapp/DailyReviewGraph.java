@@ -45,10 +45,10 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
 
         //Gets the data sets to be used in making the graphs
         //TODO: switch these for integration
-        //today = (DailyReview) i.getParcelableExtra("today");
-        //yesterday = (DailyReview) i.getParcelableExtra("yesterday");
-        today = getToday();
-        yesterday = getYesterday();
+        today = (DailyReview) i.getParcelableExtra("today");
+        yesterday = (DailyReview) i.getParcelableExtra("yesterday");
+        //today = getToday();
+        //yesterday = getYesterday();
 
         spinner = findViewById(R.id.graphSpinner);
 

@@ -247,7 +247,7 @@ public class DailyReview implements Parcelable {
 
         //Intent volumeGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "Output Volume Graph");
 
-        GraphicalView volumeGraphView = ChartFactory.getLineChartView(context, dataSet, mRenderer);
+        GraphicalView volumeGraphView = ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
 
         return volumeGraphView;
     }
