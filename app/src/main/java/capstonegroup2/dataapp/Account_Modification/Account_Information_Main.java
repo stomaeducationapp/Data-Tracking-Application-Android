@@ -19,7 +19,7 @@ import XML.Account_Reader;
 import XML.XML_Reader;
 import capstonegroup2.dataapp.R;
 
-public class Account_Information_Main extends AppCompatActivity {
+public class Account_Information_Main extends AppCompatActivity implements Account_Information_Name_Fragment.OnAccountFragmentInteractionListener {
     private Account_Data account_data;
     private XML_Reader xml_reader;
 
@@ -34,10 +34,7 @@ public class Account_Information_Main extends AppCompatActivity {
             public void onClick(View v) {
                 FragmentManager fm = getSupportFragmentManager();
                 Account_Information_Name_Fragment account_information_name_fragment = Account_Information_Name_Fragment.newInstance(account_data.getAccount_Name());
-                account_information_name_fragment.show(fm, "fragment_account__information__name_");
-// TODO: 10-Oct-18 will need get information back as true and false maybe 
-
-                //read_Specified_Account_Data();
+                account_information_name_fragment.show(fm, "fragment__account__information__name");
             }
         });
         final Button password_Btn = findViewById(R.id.password_Btn);
@@ -103,7 +100,8 @@ public class Account_Information_Main extends AppCompatActivity {
             factory = XmlPullParserFactory.newInstance();
             XmlPullParser xpp = factory.newPullParser();
             factory.setNamespaceAware(false);
-            Map<String, String> account_Values = xml_reader.Read_File(xpp, tag_List, account_data.getAccount_Name());
+            //File file = new File("text.txt");
+           Map<String, String> account_Values = xml_reader.Read_File(null, tag_List, account_data.getAccount_Name());
             if (!account_Values.isEmpty()) {
                 account_data.setAccount_Name(account_Values.get(XML_Reader.Tags_To_Read.Name.toString()));
                 account_data.setAccount_Name(account_Values.get(XML_Reader.Tags_To_Read.Notification.toString()));
@@ -117,9 +115,20 @@ public class Account_Information_Main extends AppCompatActivity {
 
     private void update_Account_Information(String field, String value) {
         if (field.equals(XML_Reader.Tags_To_Read.Name.toString())) {
+            account_data.setAccount_Name(value);
         } else if (field.equals(XML_Reader.Tags_To_Read.Notification.toString())) {
-        } else if (field.equals(XML_Reader.Tags_To_Read.State.toString())) {
+            account_data.setNotification(value);
+        } else if (field.equals(XML_Reader.Tags_To_Read.Export_Settings.toString())) {
+            account_data.setExport_Settings(value);
         } else if (field.equals(XML_Reader.Tags_To_Read.Gamification.toString())) {
+            account_data.setGamification(value);
+        }
+    }
+
+    @Override
+    public void onFinishAccountDialog(String account_Name) {
+        if(!account_Name.equals(account_data.getAccount_Name())){
+            update_Account_Information(XML_Reader.Tags_To_Read.Name.toString(),account_Name);
         }
     }
 }
