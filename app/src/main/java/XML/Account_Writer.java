@@ -32,6 +32,7 @@ import javax.xml.transform.stream.StreamResult;
  * @author Patrick Crockford
  * @version 1.0
  * <h1>Last Edited</h1>
+ * 17-Oct-2018
  * Patrick Crockford
  * <h1>References</h1>
  * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
@@ -151,6 +152,11 @@ public class Account_Writer implements XML_Writer {
                             node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
                             found = true;
                         }
+                    } else if (node_Name.equals(Tags_To_Write.Export_Settings.toString())) {
+                        if (values.containsKey(Tags_To_Write.Export_Settings.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Export_Settings.toString()));
+                            found = true;
+                        }
                     } else if (node_Name.equals(Tags_To_Write.Last_Export_Date.toString())) {
                         if (values.containsKey(Tags_To_Write.Last_Daily_Review_Date.toString())) {
                             node.setTextContent(values.get(Tags_To_Write.Last_Daily_Review_Date.toString()));
@@ -233,6 +239,15 @@ public class Account_Writer implements XML_Writer {
             notification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(notification);
+
+        Element export_Settings = document.createElement(Tags_To_Write.Export_Settings.toString());
+        if (values.containsKey(Tags_To_Write.Export_Settings.toString())) {
+            export_Settings.appendChild(document.createTextNode(values.get(Tags_To_Write.Export_Settings.toString())));
+        } else {
+            export_Settings.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+        }
+        account_Information.appendChild(export_Settings);
+
 
         Element gamification = document.createElement(Tags_To_Write.Gamification.toString());
         if (values.containsKey(Tags_To_Write.Gamification.toString())) {

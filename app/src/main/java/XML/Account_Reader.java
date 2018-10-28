@@ -2,7 +2,9 @@ package XML;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -17,6 +19,7 @@ import java.util.Map;
  * @author Patrick Crockford
  * @version 1.0
  * <h1>Last Edited</h1>
+ * 17-Oct-2018
  * Patrick Crockford
  */
 public class Account_Reader implements XML_Reader {
@@ -39,34 +42,42 @@ public class Account_Reader implements XML_Reader {
     /**
      * Public call method used to retrieve the information required from the file connected to the XMLPullParser Object
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
-     * @param enum_Tags     the tags to read from the XML file specified. The ENUM for the account name is required for
-     *                      the method call to successfully return the required information, otherwise the account name
-     *                      information will not be read and therefore cannot be compared
-     * @param account_Name  Represents the name of the account to retrieve the login information for. This must be a
-     *                      valid string otherwise method call will fail
+     * @param file         Represents the File Object that references the .xml file to read from
+     * @param enum_Tags    the tags to read from the XML file specified. The ENUM for the account name is required for
+     *                     the method call to successfully return the required information, otherwise the account name
+     *                     information will not be read and therefore cannot be compared
+     * @param account_Name Represents the name of the account to retrieve the login information for. This must be a
+     *                     valid string otherwise method call will fail
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be "";
      * @throws NullPointerException if XmlPullParser Object is Null, No Tags Given, or account_Name Null
      * @throws XML_Reader_Exception if an XMLPullParserException or IOException occurs when trying to read and parse the
      *                              login data file
      */
     @Override
-    public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
+    public Map<String, String> Read_File(File file, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
 
-        if (xmlPullParser != null && !enum_Tags.isEmpty()) {
-            //Convert Enum to strings
-            List<String> tags = new LinkedList<>();
-            for (XML_Reader.Tags_To_Read tag : enum_Tags) {
-                tags.add(tag.toString());
-            }
-            Map<String, String> account_Information;
+        if (file != null && !enum_Tags.isEmpty()) {
             try {
-                xmlPullParser.nextTag();
-                account_Information = readData(xmlPullParser, tags);
-            } catch (XmlPullParserException | IOException ex) {
-                throw new XML_Reader_Exception("Failed to Read Login XML File: " + ex);
+                //Initialise XML Pull Parser
+                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+                factory.setNamespaceAware(false);
+                XmlPullParser xmlPullParser = factory.newPullParser();
+                //Convert Enum to strings
+                List<String> tags = new LinkedList<>();
+                for (XML_Reader.Tags_To_Read tag : enum_Tags) {
+                    tags.add(tag.toString());
+                }
+                Map<String, String> account_Information;
+                try {
+                    xmlPullParser.nextTag();
+                    account_Information = readData(xmlPullParser, tags);
+                } catch (XmlPullParserException | IOException ex) {
+                    throw new XML_Reader_Exception("Failed to Read Login XML File: " + ex);
+                }
+                return account_Information;
+            } catch (XmlPullParserException ex) {
+                throw new XML_Reader_Exception("Cannot create XML Pull Parser from File: " + file.getName());
             }
-            return account_Information;
         } else {
             throw new NullPointerException("Input Stream Object is Null or No Tags Given");
         }

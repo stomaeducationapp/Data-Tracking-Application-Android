@@ -12,4 +12,12 @@
         <Account_Name>Fred</Account_Name>
         <Password>926aa777723</Password>
     </Account>
+<Account>
+        <Account_Name>Fred</Account_Name>
+        <Password>926aa777723</Password>
+    </Account>
+<Account>
+        <Account_Name>Fred</Account_Name>
+        <Password>926aa777723</Password>
+    </Account>
 </Login_Information>
