@@ -18,6 +18,15 @@ public class ReviewData {
         Map<String, String> data = new HashMap<>();
 
         //read in the data
+        //XML_READER_FROM_FACTORY reader = factory.Get_File_Reader();
+        String tmp;// = reader.getRecentData();
+        /*String[] lines = tmp.split(":");    //colon separated by entry time
+        for (String line : lines) {
+            String[] attribute = line.split(",");   //comma separated for attribute/value pair
+            for (String values : attribute) {
+                String[] last = values.split("-");  //will split the attribute name and value
+            }
+        }*/
 
 
         return data;
