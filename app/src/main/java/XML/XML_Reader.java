@@ -17,10 +17,10 @@ import java.util.Map;
  * This is to allow for easy string concatenation with syntax '-'
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17-Oct-2018
- * Patrick Crockford
+ * 4-Nov-2018
+ * Jeremy Dunnet
  */
 public interface XML_Reader {
     /**
@@ -30,7 +30,7 @@ public interface XML_Reader {
         //Login Tags
         Account_Name, Password, //Medical Tags
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Account Tags
-        Gamification, Notification, State, Name, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
+        Gamification, Notification, State, Name, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, Security_Question_ID, Security_Answer, //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
         //Under the Key "Entries". This is for the Medical Data Only currently due to functionality.
         Last_Entry, Daily_Data, Export_Data, //Tag for number of entries returned with the medical reader
         Entries_Retrieved,
