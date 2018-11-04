@@ -30,10 +30,10 @@ import javax.xml.transform.stream.StreamResult;
  * <p>
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17-Oct-2018
- * Patrick Crockford
+ * 4-Nov-2018
+ * Jeremy Dunnet
  * <h1>References</h1>
  * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
  * http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
@@ -168,6 +168,19 @@ public class Account_Writer implements XML_Writer {
                             found = true;
                         }
                     }
+                    //New sections for adding security question related tags
+                    else if (node_Name.equals(Tags_To_Write.Security_Question_ID.toString())) {
+                        if (values.containsKey(Tags_To_Write.Security_Question_ID.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Security_Question_ID.toString()));
+                            found = true;
+                        }
+                    }
+                    else if (node_Name.equals(Tags_To_Write.Security_Answer.toString())) {
+                        if (values.containsKey(Tags_To_Write.Security_Answer.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Security_Answer.toString()));
+                            found = true;
+                        }
+                    }
                 }
             }
         }
@@ -256,6 +269,23 @@ public class Account_Writer implements XML_Writer {
             gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(gamification);
+
+        //New sections to add security question related elements to file
+        Element securityQID = document.createElement(Tags_To_Write.Security_Question_ID.toString());
+        if (values.containsKey(Tags_To_Write.Security_Question_ID.toString())) {
+            gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Security_Question_ID.toString())));
+        } else {
+            gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+        }
+        account_Information.appendChild(securityQID);
+
+        Element securityAnswer = document.createElement(Tags_To_Write.Security_Answer.toString());
+        if (values.containsKey(Tags_To_Write.Security_Answer.toString())) {
+            gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Security_Answer.toString())));
+        } else {
+            gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+        }
+        account_Information.appendChild(securityAnswer);
 
         return Write_To_File(document, account_File);
     }
