@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu.Green_State_Fragment"
+    tools:context=".MainMenu.Fragments.Green_State_Fragment"
     android:background="@android:color/holo_green_light">
 
     <android.support.constraint.ConstraintLayout
@@ -97,12 +97,12 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <android.support.constraint.ConstraintLayout
+                    <TextView
+                        android:id="@+id/News"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                    </android.support.constraint.ConstraintLayout>
+                        android:layout_weight="1"
+                        android:text="TextView" />
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
