@@ -273,17 +273,17 @@ public class Account_Writer implements XML_Writer {
         //New sections to add security question related elements to file
         Element securityQID = document.createElement(Tags_To_Write.Security_Question_ID.toString());
         if (values.containsKey(Tags_To_Write.Security_Question_ID.toString())) {
-            gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Security_Question_ID.toString())));
+            securityQID.appendChild(document.createTextNode(values.get(Tags_To_Write.Security_Question_ID.toString())));
         } else {
-            gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+            securityQID.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(securityQID);
 
         Element securityAnswer = document.createElement(Tags_To_Write.Security_Answer.toString());
         if (values.containsKey(Tags_To_Write.Security_Answer.toString())) {
-            gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Security_Answer.toString())));
+            securityAnswer.appendChild(document.createTextNode(values.get(Tags_To_Write.Security_Answer.toString())));
         } else {
-            gamification.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+            securityAnswer.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(securityAnswer);
 
