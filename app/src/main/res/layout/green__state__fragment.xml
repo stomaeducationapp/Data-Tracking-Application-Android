@@ -78,11 +78,6 @@
                             android:layout_height="80dp"
                             android:text="Export_Data" />
 
-                        <Button
-                            android:id="@+id/button7"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:text="Button" />
                     </LinearLayout>
                 </ScrollView>
             </android.support.constraint.ConstraintLayout>
