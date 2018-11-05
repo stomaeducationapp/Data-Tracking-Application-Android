@@ -7,7 +7,7 @@ import android.view.View;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 04/11/2018
- * LAST MODIFIED BY - Jeremy Dunnet 04/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 05/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -20,7 +20,9 @@ import android.view.View;
  */
 
 /* REFERENCES
- * How to yse fragments learned from https://developer.android.com/guide/components/fragments
+ * How to use fragments learned from https://developer.android.com/guide/components/fragments
+ * Make a TextView a button learned from https://stackoverflow.com/questions/6105860/how-to-use-a-text-as-a-button-in-android
+ * CardView+RecyclerView tutorial from https://www.androidhive.info/2016/05/android-working-with-card-view-and-recycler-view/
  * And many more from https://developer.android.com/
  */
 
@@ -36,6 +38,8 @@ public class Challenges extends AppCompatActivity {
 
         ActionBar bar = getActionBar();
         bar.setTitle(R.string.c_title);
+
+
 
         //Retrieve gamificiation mode and set it
         //Call getNewChallenges
@@ -85,4 +89,64 @@ public class Challenges extends AppCompatActivity {
         //Create fragment with title, type, description, reward and complete/cancel buttons
         //Change focus to that fragment
     }
+
+    /* AUTHOR INFORMATION
+     * CREATOR - Jeremy Dunnet 05/11/2018
+     * LAST MODIFIED BY - Jeremy Dunnet 05/11/2018
+     */
+
+    /* CLASS/FILE DESCRIPTION
+     * This is a private class we will use to contain all relevant information to a challenge so we can access certain info easily
+     */
+
+    /* VERSION HISTORY
+     * 04/11/2018 - Created file and added first draft code
+     */
+
+    /* REFERENCES
+     * Idea sourced from https://www.androidhive.info/2016/05/android-working-with-card-view-and-recycler-view/
+     * And many more from https://developer.android.com/
+     */
+    private class Challenge
+    {
+
+        //Classfields
+        private int challengeID;
+        private String challengeTitle;
+        private String challengeType;
+        private String rewardValue;
+        private String description;
+
+        public Challenge(int id, String title, String type, String value, String des)
+        {
+
+            challengeID = id;
+            challengeTitle = title;
+            challengeType = type;
+            rewardValue = value;
+            description = des;
+
+        }
+
+        public int getChallengeID() {
+            return challengeID;
+        }
+
+        public String getChallengeTitle() {
+            return challengeTitle;
+        }
+
+        public String getChallengeType() {
+            return challengeType;
+        }
+
+        public String getRewardValue() {
+            return rewardValue;
+        }
+
+        public String getDes() {
+            return description;
+        }
+    }
+
 }

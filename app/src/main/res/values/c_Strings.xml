@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="challenges">
-        <string id="1"></string>
-        <string id="2"></string>
-        <string id="3"></string>
-        <string id="4"></string>
-        <string id="5"></string>
-        <string id="6"></string>
-        <string id="7"></string>
-        <string id="8"></string>
-        <string id="9"></string>
-        <string id="10"></string>
-        <string id="11"></string>
-        <string id="12"></string>
-        <string id="13"></string>
-        <string id="14"></string>
-        <string id="15"></string>
-    </array>
     <string name="c_title">Challenges</string>
     <string name="c_description">Here are today\'s challenges:</string>
-    </resources>
+    <string name="c_def_chal_title">TITLE</string>
+    <string name="c_chal_rew_title">Reward:</string>
+    <string name="c_def_chal_rew_value">0</string>
+    <string name="c_def_chal_img_desc">IMAGE</string>
+    <string name="c_chal_view_butt">View Description</string>
+    <string name="c_chal_complete_butt">Complete</string>
+</resources>

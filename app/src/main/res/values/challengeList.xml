@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="challenge1">
+        <item>Go for a jog</item>
+        <item>Physical</item>
+        <item>100</item>
+        <item>Try jogging to get your fitness back up</item>
+    </array>
+    <array name="challenge2">
+        <item>Do some yoga</item>
+        <item>Physical</item>
+        <item>50</item>
+        <item>Do some ytoga to increase fitness/wellbeing and flexibility</item>
+    </array>
+    <array name="challenge3">
+        <item>Meditate</item>
+        <item>Mental</item>
+        <item>10</item>
+        <item>Meditate to calm and center yourself</item>
+    </array>
+    <array name="challenge4">
+        <item>Make a home cooked meal</item>
+        <item>Social</item>
+        <item>10</item>
+        <item>Make a meal personally to enjoy the fruits of you labor</item>
+    </array>
+    <array name="challenge5">
+        <item>Have a chat</item>
+        <item>Social</item>
+        <item>50</item>
+        <item>Talk to someone - find out what's happening with them</item>
+    </array>
+    <array name="challenge6">
+        <item>Watch a tv show</item>
+        <item>Mental</item>
+        <item>10</item>
+        <item>Catch up on your favourite show - or find a new one</item>
+    </array>
+    <array name="challenge7">
+        <item>Read a book</item>
+        <item>Mental</item>
+        <item>10</item>
+        <item>Catch up on your favourite book - or find a new one</item>
+    </array>
+    <array name="challenge8">
+        <item>Eat out at new restaurant</item>
+        <item>Social</item>
+        <item>100</item>
+        <item>Be adventurous - try some food you've never thought about before</item>
+    </array>
+    <array name="challenge9">
+        <item>Give someone a call</item>
+        <item>Social</item>
+        <item>50</item>
+        <item>Talk to someone you don't/can't see very often</item>
+    </array>
+    <array name="challenge10">
+        <item>Invite friends over</item>
+        <item>Social</item>
+        <item>100</item>
+        <item>Invite people over to have a little get together</item>
+    </array>
+    <array name="challenge11">
+        <item>Do some gardening</item>
+        <item>Physical</item>
+        <item>50</item>
+        <item>Health garden - healthy mind</item>
+    </array>
+    <array name="challenge12">
+        <item>Do some chores</item>
+        <item>Physical</item>
+        <item>50</item>
+        <item>Catch up on those jobs you just can't get around to doing</item>
+    </array>
+    <array name="challenge13">
+        <item>Get some new clothes</item>
+        <item>Mental</item>
+        <item>100</item>
+        <item>Try switching styles - you never know what might be in fashion</item>
+    </array>
+    <array name="challenge14">
+        <item>Listen to music</item>
+        <item>Mental</item>
+        <item>10</item>
+        <item>Catch up on your favourite band - or find a new one</item>
+    </array>
+    <array name="challenge15">
+        <item>Play a game</item>
+        <item>Mental</item>
+        <item>10</item>
+        <item>Play your favourite game - or find a new one</item>
+    </array>
+</resources>
