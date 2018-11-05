@@ -40,6 +40,7 @@ import static android.graphics.Color.GREEN;
  * Getting resource ID's using strings learned from https://stackoverflow.com/questions/7493287/android-how-do-i-get-string-from-resources-using-its-name
  * Generating random numbers learned from https://stackoverflow.com/questions/21049747/how-can-i-generate-a-random-number-in-a-certain-range
  * How to change a views background color learned from https://stackoverflow.com/questions/23517879/set-background-color-programmatically
+ * How to obtain parent view from a view learned from https://stackoverflow.com/questions/17879743/get-parents-view-from-a-layout
  * And many more from https://developer.android.com/
  */
 
