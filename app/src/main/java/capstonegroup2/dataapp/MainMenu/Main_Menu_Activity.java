@@ -5,10 +5,20 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 import capstonegroup2.dataapp.MainMenu.Fragments.Green_State_Fragment;
+import capstonegroup2.dataapp.MainMenu.Fragments.Red_State_Fragment;
+import capstonegroup2.dataapp.MainMenu.Fragments.Yellow_State_Fragment;
 import capstonegroup2.dataapp.R;
 
-public class Main_Menu_Activity extends Activity implements Green_State_Fragment.Green_Fragment_Data_Listener {
-
+// TODO: 05-Nov-18 will need to save this activity state when going to another activity, except login screen
+//https://stackoverflow.com/questions/151777/saving-android-activity-state-using-save-instance-state?rq=1
+/**
+ * KNOW BUGS OF THIS SECTION
+ * IF you logged in during the switch over to another 24hour time, -> 9:00am, it will not disable the information and no auto start the daily review generation.
+ *      will need to have a sleeping thread or something like that for it. 5-Nov-18
+ * During Red state the exporting and creating of daily review doesn't occur. this could be done in the background as a future functionality if decided
+ */
+public class Main_Menu_Activity extends Activity implements Green_State_Fragment.Green_Fragment_Data_Listener,Yellow_State_Fragment.Yellow_Fragment_Data_Listener,Red_State_Fragment.Red_Fragment_Data_Listener {
+    // TODO: 05-Nov-18 will need to catch the null point if information is wrong and then return to login screen
     private Account_Data_Container account_data_container;
     private boolean state_Invalid;
     private static final String GREEN = "Green";
@@ -35,9 +45,11 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
                 ft.commit();
                 break;
             case YELLOW:
+                ft.replace(R.id.State_Container, new Yellow_State_Fragment());
                 ft.commit();
                 break;
             case RED:
+                ft.replace(R.id.State_Container, new Red_State_Fragment());
                 ft.commit();
                 break;
             default:
@@ -56,8 +68,19 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
         }
     }
 
+
     @Override
-    public void onChangedData(String field, String value) {
-//this will be complex, as the information given could even change the fragment that is was called from etc etc
+    public void onChangedData(Green_State_Fragment.Fields field, String value) {
+
+    }
+
+    @Override
+    public void onChangedData(Red_State_Fragment.Fields field, String value) {
+
+    }
+
+    @Override
+    public void onChangedData(Yellow_State_Fragment.Fields field, String value) {
+
     }
 }

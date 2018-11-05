@@ -6,14 +6,12 @@ package capstonegroup2.dataapp.MainMenu.News_Package;
  * For now it will have a default set of new it will return to show
  */
 public class News_PlaceHolder {
-    private String[] mockNews;
+    private String mockNews;
 
     public News_PlaceHolder(){
-        mockNews = new String[6];
-        mockNews[0] = "Placeholder News, none of this is real";
-
+        mockNews = "Placeholder News";
     }
-    public String[] getMockNews(){
+    public String getMockNews(){
         return mockNews;
     }
 

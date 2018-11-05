@@ -43,40 +43,40 @@
                         android:orientation="vertical" >
 
                         <Button
-                            android:id="@+id/button"
+                            android:id="@+id/Medical_Input_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Medical Entry" />
+
+                        <Button
+                            android:id="@+id/Review_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Review" />
+
+                        <Button
+                            android:id="@+id/Account_Information_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Account Information" />
+
+                        <Button
+                            android:id="@+id/Gamification_Btn"
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:text="Button" />
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/Challenges_Btn"
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
-                            android:text="Button" />
+                            android:text="Challenges" />
 
                         <Button
-                            android:id="@+id/button3"
+                            android:id="@+id/Export_Btn"
                             android:layout_width="match_parent"
                             android:layout_height="80dp"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button4"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button6"
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:text="Button" />
+                            android:text="Export_Data" />
 
                         <Button
                             android:id="@+id/button7"
@@ -102,7 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/textview" />
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"

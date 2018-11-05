@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textview">TextView</string>
+    <string name="Activities">Activities</string>
+    <string name="reset">Reset</string>
+    <string name="red_State_Information">Warning the application has detected you maybe at
+        serious risk due to current health conditions, please contact your stoma medical
+        professional for information</string>
+    <string name="yellow_State_Information">Please eat salty food, and drink electrolyte
+        solution</string>
+</resources>

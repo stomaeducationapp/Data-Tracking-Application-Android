@@ -24,7 +24,12 @@
             android:label="@string/pr_title"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainMenu.Main_Menu_Activity" />
-        <activity android:name=".MainMenu.Fragments.Green_State_Fragment"></activity>
+        <activity android:name=".MainMenu.Fragments.Green_State_Fragment" />
+        <activity
+            android:name=".MainMenu.Fragments.Yellow_State_Fragment"
+            android:label="@string/title_activity_yellow__state__fragment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainMenu.Fragments.Red_State_Fragment"></activity>
     </application>
 
 </manifest>

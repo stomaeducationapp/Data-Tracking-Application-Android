@@ -106,7 +106,7 @@ public class Factory {
      * @return Time_Observer Object
      */
     public Time_Observer Make_Time_Observer(Time_Observer_Choice choice){
-        Time_Observer time_Observer = null;
+        Time_Observer time_Observer;
         switch(choice){
             case Daily_Review:
                 time_Observer = new Daily_Review(this);
