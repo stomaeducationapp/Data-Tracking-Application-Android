@@ -69,7 +69,9 @@
                 android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:onClick="viewDescription"
                 android:text="@string/c_chal_view_butt"
+                android:textColor="@android:color/holo_blue_light"
                 app:layout_constraintStart_toEndOf="@+id/chalPic"
                 app:layout_constraintTop_toBottomOf="@+id/chalRewTitle" />
 
@@ -83,6 +85,7 @@
                 android:focusable="true"
                 android:onClick="markAsComplete"
                 android:text="@string/c_chal_complete_butt"
+                android:textColor="@android:color/holo_blue_light"
                 app:layout_constraintStart_toEndOf="@+id/chalView"
                 app:layout_constraintTop_toBottomOf="@+id/chalRewValue" />
 

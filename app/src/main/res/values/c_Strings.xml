@@ -8,4 +8,9 @@
     <string name="c_def_chal_img_desc">IMAGE</string>
     <string name="c_chal_view_butt">View Description</string>
     <string name="c_chal_complete_butt">Complete</string>
+    <string name="c_chal_def_des">DESCRIPTION</string>
+    <string name="c_chal_def_type">TYPE</string>
+    <string name="c_chal_def_reward">REWARD</string>
+    <string name="c_chal_type_title">Type:</string>
+    <string name="c_chal_cancel_butt">Cancel</string>
 </resources>
