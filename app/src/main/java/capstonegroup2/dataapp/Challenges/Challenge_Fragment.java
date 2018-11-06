@@ -130,7 +130,8 @@ public class Challenge_Fragment extends Fragment
                 cListener.completedChallenge(chalTitle); //Tell the activity that the challenge is complete
                 //Since in the above method the reward is allocated we do not need to worry about handling rewards here
 
-                cancelButt.callOnClick(); //Close window
+                cancelButt.callOnClick(); //Close window - assume that since the challenge is complete user doesn't need to look at it anymore
+                //FEEL FREE TO CHANGE
             }
         });
 
