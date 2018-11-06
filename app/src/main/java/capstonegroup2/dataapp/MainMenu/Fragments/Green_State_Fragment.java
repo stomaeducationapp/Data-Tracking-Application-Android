@@ -42,7 +42,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
 
     private String gamification_Mode;
     private String account_name;
-    private boolean daily_Review;
+    private boolean daily_Review_Required;
 
     private Button Medical_Input_Btn;
     private Button Review_Btn;
@@ -84,7 +84,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gamification_Mode = getArguments().getString(GAME_MODE_ARG);
-        daily_Review = getArguments().getBoolean(DAILY_REVIEW_DONE_ARG);
+        daily_Review_Required = getArguments().getBoolean(DAILY_REVIEW_DONE_ARG);
         //account_name = getArguments().getString(ACCOUNT_NAME_ARG);
     }
 
@@ -112,7 +112,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         TextView news_Text = view.findViewById(R.id.News);
         news = new News_PlaceHolder();
         news_Text.setText(news.getMockNews());
-        if (!daily_Review) {
+        if (daily_Review_Required) {
             Medical_Input_Btn.setEnabled(false);
             Review_Btn.setEnabled(false);
         }
@@ -285,10 +285,8 @@ public class Green_State_Fragment extends Fragment implements Information_Change
                 gamification_Mode = value;
                 Setup_Gamification();
                 break;
-            case Last_Export_Date:
-                break;
             case Last_Daily_Review_Date:
-                daily_Review = true;
+                daily_Review_Required = false;
                 Medical_Input_Btn.setEnabled(true);
                 Review_Btn.setEnabled(true);
                 break;

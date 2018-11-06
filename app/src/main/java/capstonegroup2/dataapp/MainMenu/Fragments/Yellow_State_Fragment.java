@@ -51,7 +51,7 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
 
     private String gamification_Mode;
     //private String account_name;
-    private boolean daily_Review;
+    private boolean daily_Review_Required;
 
     private Button Medical_Input_Btn;
     private Button Review_Btn;
@@ -81,7 +81,7 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         super.onCreate(savedInstanceState);
         gamification_Mode = getArguments().getString(GAME_MODE_ARG);
         //account_name = getArguments().getString(ACCOUNT_NAME_ARG);
-        daily_Review = getArguments().getBoolean(EXPORT_DONE_ARG);
+        daily_Review_Required = getArguments().getBoolean(EXPORT_DONE_ARG);
     }
 
     @Override
@@ -104,7 +104,7 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         TextView news_Text = view.findViewById(R.id.News);
         news = new News_PlaceHolder();
         news_Text.setText(news.getMockNews());
-        if (!daily_Review) {
+        if (daily_Review_Required) {
             Medical_Input_Btn.setEnabled(false);
             Review_Btn.setEnabled(false);
         }
@@ -240,16 +240,14 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
     @Override
     public void update(Field field, String value) {
         switch (field) {
-
             case Name:
                 break;
             case Gamification:
                 break;
-            case Last_Export_Date:
+            case Last_Daily_Review_Date:
+                daily_Review_Required = false;
                 Medical_Input_Btn.setEnabled(true);
                 Review_Btn.setEnabled(true);
-                break;
-            case Last_Daily_Review_Date:
                 break;
         }
     }
