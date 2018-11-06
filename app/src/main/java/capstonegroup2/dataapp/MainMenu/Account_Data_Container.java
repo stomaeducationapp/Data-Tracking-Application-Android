@@ -7,6 +7,8 @@ public class Account_Data_Container {
     private String notifications;
     private String export_Settings;
     private String Gamification_Mode;
+    private String Last_Export_Date;
+    private String Last_Daily_Review_Date;
 
     public String getAccount_Name() {
         return account_Name;
@@ -46,5 +48,21 @@ public class Account_Data_Container {
 
     public void setGamification_Mode(String gamification_Mode) {
         Gamification_Mode = gamification_Mode;
+    }
+
+    public String getLast_Daily_Review_Date() {
+        return Last_Daily_Review_Date;
+    }
+
+    public void setLast_Daily_Review_Date(String last_Daily_Review_Date) {
+        Last_Daily_Review_Date = last_Daily_Review_Date;
+    }
+
+    public String getLast_Export_Date() {
+        return Last_Export_Date;
+    }
+
+    public void setLast_Export_Date(String last_Export_Date) {
+        Last_Export_Date = last_Export_Date;
     }
 }

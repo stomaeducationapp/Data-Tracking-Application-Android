@@ -6,6 +6,8 @@
     <string name="red_State_Information">Warning the application has detected you maybe at
         serious risk due to current health conditions, please contact your stoma medical
         professional for information</string>
-    <string name="yellow_State_Information">Please eat salty food, and drink electrolyte
+    <string name="yellow_State_Information">Please eat salty food, and drink electrolyte.
+        Challenges are available still but please consider the impacts of each challenge to your
+        current state before undertaking them. Take appropriate precautions
         solution</string>
 </resources>

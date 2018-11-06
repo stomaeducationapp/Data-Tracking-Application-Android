@@ -14,7 +14,6 @@ public class Red_State_Fragment extends Fragment {
 
     public enum Fields {state}
 
-    private static final String RESET_STATE = "Green";
     Red_Fragment_Data_Listener listener;
 
     @Override
@@ -30,16 +29,16 @@ public class Red_State_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.green__state__fragment, container, false);
         Reset_Btn = view.findViewById(R.id.Review_Btn);
 
-        Reset_Btn.setOnClickListener(new Button.OnClickListener() {
+        /*Reset_Btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                listener.onChangedData(Fields.state, RESET_STATE);
+                listener.onChangedData(Fields.state);
             }
-        });
+        });*/
         return view;
     }
 
     public interface Red_Fragment_Data_Listener {
-        void onChangedData(Fields field, String value);
+        void onChangedData(Fields field);
 
     }
 }
