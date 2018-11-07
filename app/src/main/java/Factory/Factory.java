@@ -3,6 +3,9 @@ package Factory;
 import EncryptExport.Detector;
 import EncryptExport.Encrypt;
 import EncryptExport.Retrieval;
+import MedicalReview.DailyReview;
+import MedicalReview.ReviewData;
+import MedicalReview.ReviewHandler;
 import Observers.Check_State;
 import Observers.Daily_Review;
 import Observers.Export_Data;
@@ -169,21 +172,25 @@ public class Factory {
      */
 
     //24 HOUR REVIEW PACKAGE
-    /*
-    public Stoma_Review_Handler Make_Stoma_Review_Handler(){
-        return new Stoma_Review_Handler();
+
+    public ReviewHandler Make_Stoma_Review_Handler(){
+        return new ReviewHandler();
     }
-     */
-    /*
-    public 24_Hour_Data_Calculator Make_24_Hour_Data_Calculator(){
-        return new 24_Hour_Data_Calculator();
+
+    public DailyReview Make_Review_Dataset(){
+        return new DailyReview();
     }
-     */
-    /*
-    public Review_Data Make_Review_Data(){
-        return new Review_Data();
+
+    //copy constructor implementation
+    public DailyReview Make_Review_Dataset(DailyReview copy){
+        return new DailyReview(copy);
     }
-     */
+
+
+    public ReviewData Make_Review_Data_Reader(){
+        return new ReviewData();
+    }
+
 
     //MAIN MENU PACKAGE
     /*

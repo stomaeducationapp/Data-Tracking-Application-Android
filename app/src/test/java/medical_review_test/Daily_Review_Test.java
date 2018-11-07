@@ -64,33 +64,6 @@ public class Daily_Review_Test {
         assertTrue(review.calcWellbeingChart(mockData));
     }
 
-    @Test
-    public void Test_Display_Methods() {
-        DailyReview review = new DailyReview();
-
-        //SETTING THE SERIES FOR THE OBJECT
-        Map<Date, Integer> mockData;
-        //Set values to instance review
-        mockData = setMockStateData();
-        review.calcStateGraph(mockData);
-        review.calcStateChart(mockData);
-        mockData = setMockOutputData();
-        review.calcVolumeGraph(mockData);
-        review.calcBagGraph(mockData);
-        mockData = setMockWellbeingData();
-        review.calcWellbeingChart(mockData);
-
-        Context context = mock(Context.class);
-
-        //ACTUAL STUFF TO BE TESTED
-        //NOTE: Chart engine doesn't work without running activity
-        /*assertNotNull(review.displayStateGraph(context));
-        assertNotNull(review.displayStateChart(context));
-        assertNotNull(review.displayVolumeGraph(context));
-        assertNotNull(review.displayBagGraph(context));
-        assertNotNull(review.displayWellbeingChart(context));*/
-    }
-
     private Map<Date, Integer> setMockStateData() {
         //k=attribute, v=time,value
         Map<Date, Integer> mockData = new HashMap<>();

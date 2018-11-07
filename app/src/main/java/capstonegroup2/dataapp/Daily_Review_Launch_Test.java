@@ -38,11 +38,11 @@ public class Daily_Review_Launch_Test extends Activity {
         //CREATE ALL DATASETS
         //STATE DATASET
         Map<Date, Integer> stateData = new HashMap<>();
-        stateData.put(new Date((long)1540027800*1000), 3);
-        stateData.put(new Date((long)1540033200*1000), 5);
-        stateData.put(new Date((long)1540045530*1000), 6);
-        stateData.put(new Date((long)1540057395*1000), 4);
-        stateData.put(new Date((long)1540070024*1000), 2);
+        stateData.put(new Date(1540027800), 3);
+        stateData.put(new Date(1540033200), 5);
+        stateData.put(new Date(1540045530), 6);
+        stateData.put(new Date(1540057395), 4);
+        stateData.put(new Date(1540070024), 2);
 
         Date test = new Date((long)1540027800*1000);
         Calendar a = Calendar.getInstance();

@@ -1,8 +1,9 @@
 package capstonegroup2.dataapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,7 +21,7 @@ import MedicalReview.DailyReview;
  * Extends: AppCompatActivity. This provides functionality of android activities.
  * Implements: OnItemSelectListener. This is for the spinner event trigger.
  */
-public class DailyReviewGraph extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class DailyReviewGraph extends /*AppCompat*/Activity implements AdapterView.OnItemSelectedListener {
     private Spinner spinner;
     private DailyReview today;
     private DailyReview yesterday;

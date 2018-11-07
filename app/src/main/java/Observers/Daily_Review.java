@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Map;
 
 import Factory.Factory;
+import MedicalReview.ReviewHandler;
 
 /**
  * <h1>Daily_Review</h1>
@@ -41,9 +42,9 @@ public class Daily_Review implements Time_Observer {
     public boolean Notify(Map<Files, File> file_Map) throws NullPointerException {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
-            // TODO: 17-Sep-18 Uncomment and modify when Daily Review package has been created
-            //Daily_Review_Calculator daily_review_calculator = factory.Create_Daily_Review_Calculator();
-            //valid = daily_review_calculator.Generate_New_Review(input_Stream, output_Stream);
+            ReviewHandler daily_review_calculator = factory.Make_Stoma_Review_Handler();
+            //TODO: Uncomment input/output stream when finalised
+            valid = daily_review_calculator.generateReview(/*input_Stream, output_Stream*/);
             return valid;
         } else {
             throw new NullPointerException("file_Map is Null or Empty");

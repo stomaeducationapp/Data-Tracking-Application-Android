@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import Factory.Factory;
 import capstonegroup2.dataapp.DailyReviewGraph;
 
 /**
@@ -16,6 +17,7 @@ import capstonegroup2.dataapp.DailyReviewGraph;
 public class ReviewHandler {
     public enum TYPE {STATELINE, STATEPIE, VOLUMELINE, BAGBAR, WELLBEING}
 
+    private Factory factory;
     private DailyReview today;
     private DailyReview yesterday;
     private int control;    //determine if it is the first time the graphs are calculated
@@ -24,18 +26,22 @@ public class ReviewHandler {
      * Default constructor, sets class fields to default values.
      */
     public ReviewHandler() {
+        factory = Factory.Get_Factory();
         yesterday = null;
         today = null;
         control = 0;
     }
 
+    /**
+     * Handles creating the data reader, then passing this on to the generate review method
+     * @return true if the method succeeds or false otherwise.
+     */
     public boolean generateReview() {
         boolean success = true;
-        ReviewData loader = new ReviewData();
-        Map<String, String> data = new HashMap<>();
+        ReviewData loader = factory.Make_Review_Data_Reader();
+        Map<String, String> data;
 
         //Read in the account data to create the graphs.
-        //TODO: decide between static method or object instance
         data = loader.loadData();
 
         if(!newReview(data)) {
@@ -56,8 +62,8 @@ public class ReviewHandler {
         boolean success = true;
 
         if (control == 0) { //must be the first time the object has been used
-            yesterday = new DailyReview();
-            today = new DailyReview();
+            yesterday = factory.Make_Review_Dataset();
+            today = factory.Make_Review_Dataset();
 
             today.calcStateGraph(parseData(data, TYPE.STATELINE));
             today.calcStateChart(parseData(data, TYPE.STATEPIE));
@@ -72,7 +78,7 @@ public class ReviewHandler {
         }
         else if (control == 1) {    //any subsequent call
             //set the current review to the yesterday variable
-            yesterday = new DailyReview(today);
+            yesterday = factory.Make_Review_Dataset(today);
 
             //calculate the new graph
             today.calcStateGraph(parseData(data, TYPE.STATELINE));

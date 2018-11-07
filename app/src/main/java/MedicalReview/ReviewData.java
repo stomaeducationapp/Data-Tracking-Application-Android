@@ -1,9 +1,11 @@
 package MedicalReview;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 import Factory.Factory;
+import XML.Medical_Reader;
 
 public class ReviewData {
     private Factory factory;
@@ -26,10 +28,19 @@ public class ReviewData {
     public Map<String, String> loadData() {
         Map<String, String> data = new HashMap<>();
 
-        //read in the data - will have 1 entry per line
-        //XML_READER_FROM_FACTORY reader = factory.Get_File_Reader();
-        /*String tmp;// = reader.getRecentData();
-        String[] lines = tmp.split("/n");    //get each line individually
+        //TODO: Check compatibility with reader when factory methods implemented
+        //read in the data - should have 1 entry per line
+        /*Medical_Reader reader = factory.Make_Medical_Reader();
+
+        //TODO: Uncomment the correct file return and remove the other
+        //If data is one string
+        //String tmp = reader.Read_File();
+        //String[] lines = tmp.split("/n");
+
+        //If data comes back as a map. k=entryNum, v="DATE:ATTRIBUTE-VALUE"
+        //Map<String, String> tmp = reader.Read_File();
+        //String[] lines = tmp.keySet().toArray(new String[0]);
+
         for (String line : lines) {
             String[] entry = line.split(":");   //extract the time
             String[] attributes = entry[1].split(",");   //comma separated for attribute/value pair
@@ -37,8 +48,8 @@ public class ReviewData {
                 String[] last = values.split("-");  //will split the attribute name and value
                 data.put(last[0], entry[0]+","+last[1]);    //k=attribute, v=time,value
             }
-        }
-*/
+        }*/
+
         return data;
     }
 
