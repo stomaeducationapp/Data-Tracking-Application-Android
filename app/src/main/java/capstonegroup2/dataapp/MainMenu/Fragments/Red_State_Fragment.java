@@ -12,10 +12,12 @@ import capstonegroup2.dataapp.R;
 public class Red_State_Fragment extends Fragment {
     private Button Reset_Btn;
 
-    public enum Fields {state}
+     public enum Fields {state}
 
     Red_Fragment_Data_Listener listener;
-
+    public static Fragment newInstance() {
+        return new Red_State_Fragment();
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +28,14 @@ public class Red_State_Fragment extends Fragment {
 
         listener = (Red_Fragment_Data_Listener) getActivity();
 
-        View view = inflater.inflate(R.layout.green__state__fragment, container, false);
-        Reset_Btn = view.findViewById(R.id.Review_Btn);
+        View view = inflater.inflate(R.layout.red__state__fragment, container, false);
+        Reset_Btn = view.findViewById(R.id.reset_Btn);
 
-        /*Reset_Btn.setOnClickListener(new Button.OnClickListener() {
+        Reset_Btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 listener.onChangedData(Fields.state);
             }
-        });*/
+        });
         return view;
     }
 

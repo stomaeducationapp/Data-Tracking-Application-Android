@@ -9,7 +9,7 @@ public class News_PlaceHolder {
     private String mockNews;
 
     public News_PlaceHolder(){
-        mockNews = "Placeholder News";
+        mockNews = "News information will go here, Probably use a webpage container and\n" + "display that or work out a format";
     }
     public String getMockNews(){
         return mockNews;

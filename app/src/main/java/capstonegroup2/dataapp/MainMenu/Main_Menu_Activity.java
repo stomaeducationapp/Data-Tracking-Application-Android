@@ -6,16 +6,17 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 import Factory.Factory;
 import capstonegroup2.dataapp.MainMenu.Fragments.Green_State_Fragment;
+import capstonegroup2.dataapp.MainMenu.Fragments.Information_Change;
 import capstonegroup2.dataapp.MainMenu.Fragments.Red_State_Fragment;
 import capstonegroup2.dataapp.MainMenu.Fragments.Yellow_State_Fragment;
 import capstonegroup2.dataapp.R;
-// TODO: 05-Nov-18 will need to save this activity state when going to another activity, except login screen
-//https://stackoverflow.com/questions/151777/saving-android-activity-state-using-save-instance-state?rq=1
+
 
 public class Main_Menu_Activity extends Activity implements Green_State_Fragment.Green_Fragment_Data_Listener, Yellow_State_Fragment.Yellow_Fragment_Data_Listener, Red_State_Fragment.Red_Fragment_Data_Listener {
 
@@ -27,10 +28,10 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
     private boolean state_Invalid;
     private Factory factory;
     private Fragment active_Fragment; // TODO: 06-Nov-18 need to get the active fragment to call back to
-    private Button next_State_Demo;
+
     private boolean review_required;
     private boolean export_required;
-
+    private Information_Change fragment_CallBack;
     // Time_Observer export_Data_Obs;
     // Time_Observer daily_Review_Obs;
 
@@ -56,18 +57,16 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
         Daily_Review_Check();
         Change_Account_State();
         if(review_required){
-            // TODO: 07-Nov-18 async start review observer and then notify fragment to unlock buttons
+            Toast.makeText(getApplicationContext(), "Generating review of previous 24 hours please wait until completed to enter in new medical data", Toast.LENGTH_LONG).show();
         }
-        if(!export_required){
+        if(export_required){
             //check account notification settings and if passes call the fragment to tell the user
-            if(account_data_container.getNotifications().equals(/*Need to get the correct values*?){
-                // TODO: 07-Nov-18 push a notification to the user telling them time to export data 
+            if(account_data_container.getNotifications().equals(/*Need to get the correct values*) && /*Active fragment is not RED_State*){
+                Toast.makeText(getApplicationContext(), "Please Export Data when next connected to the internet", Toast.LENGTH_LONG).show();
         }
         */
-
-
         //Demo code to allow for switching of states
-        next_State_Demo = findViewById(R.id.Demo_Btn);
+        Button next_State_Demo = findViewById(R.id.Demo_Btn);
         next_State_Demo.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 String account_State = account_data_container.getState();
@@ -87,11 +86,23 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
                 }
             }
         });
+Button notification_Demo = findViewById(R.id.Notification_Demo_Btn);
+        notification_Demo.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Please Export Data when next connected to the internet", Toast.LENGTH_LONG).show();
+            }
+        });
 
+        //Demo Code to populate information
+
+        account_data_container.setState(GREEN);
+        account_data_container.setAccount_Name("Bob");
+        account_data_container.setGamification_Mode("Mode 1");
+        Change_Account_State();
 
     }
 
-    private void Populate_Account_Data_Container(){
+    private void Populate_Account_Data_Container() {
         //XML reader.
         // TODO: 07-Nov-18  Get Account information file from context
         //Need to get all fields as any of them could have changed, then check against current values stored
@@ -133,15 +144,21 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
         // TODO: 07-Nov-18 will need to call the custom new instance and give the information
         switch (account_State) {
             case GREEN:
-                ft.replace(R.id.State_Container, new Green_State_Fragment());
+                active_Fragment = Green_State_Fragment.newInstance(account_data_container.getGamification_Mode(), review_required, account_data_container.getAccount_Name());
+                fragment_CallBack = (Information_Change) active_Fragment;
+                ft.replace(R.id.State_Container, active_Fragment);
                 ft.commit();
                 break;
             case YELLOW:
-                ft.replace(R.id.State_Container, new Yellow_State_Fragment());
+                active_Fragment = Yellow_State_Fragment.newInstance(account_data_container.getGamification_Mode(), review_required, account_data_container.getAccount_Name());
+                fragment_CallBack = (Information_Change) active_Fragment;
+                ft.replace(R.id.State_Container, active_Fragment);
                 ft.commit();
                 break;
             case RED:
-                ft.replace(R.id.State_Container, new Red_State_Fragment());
+                active_Fragment = Red_State_Fragment.newInstance();
+                fragment_CallBack = null;
+                ft.replace(R.id.State_Container, active_Fragment);
                 ft.commit();
                 break;
             default:
@@ -176,21 +193,21 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
             if (current_Month == 1) {
                 month_Last = 12;
                 year_Last = current_Year - 1;
-                day_Last = 31-6;
-            }else{
+                day_Last = 31 - 6;
+            } else {
                 if (current_Month % 2 != 0) {//30 days in previous Month
                     if (current_Month == 2) {//FEB
                         //Check Leap Year!!
                         if ((current_Year % 4 == 0) && (current_Year % 100 == 0)) {//leap year
-                            day_Last = 29-6;
+                            day_Last = 29 - 6;
                         } else {
-                            day_Last = 28-6;
+                            day_Last = 28 - 6;
                         }
                     } else {
-                        day_Last = 30-6;
+                        day_Last = 30 - 6;
                     }
                 } else {//31 days in previous Month
-                    day_Last = 31-6;
+                    day_Last = 31 - 6;
                 }
                 month_Last = current_Month - 1; // After Day is sorted go back to previous Month in Calendar
                 year_Last = current_Year;

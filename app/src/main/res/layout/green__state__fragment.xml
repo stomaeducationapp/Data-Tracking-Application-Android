@@ -97,13 +97,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="@string/textview" />
+                        android:text="@string/news" />
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
 
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/stomaboi"
+                            android:contentDescription="TODO" />
                     </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
             </android.support.constraint.ConstraintLayout>

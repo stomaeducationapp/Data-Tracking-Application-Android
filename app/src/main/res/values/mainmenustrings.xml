@@ -11,4 +11,6 @@
         current state before undertaking them. Take appropriate precautions
         solution</string>
     <string name="demo">Next</string>
+    <string name="news"></string>
+    <string name="notification">Notification</string>
 </resources>
