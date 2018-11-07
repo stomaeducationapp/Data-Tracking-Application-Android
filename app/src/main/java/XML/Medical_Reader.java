@@ -2,7 +2,9 @@ package XML;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -24,32 +26,8 @@ import java.util.Map;
  * @author Patrick Crockford
  * @version 1.0
  * <h1>Last Edited</h1>
+ * 17-Oct-2018
  * Patrick Crockford
- * <p>
- * <h1>Changes</h1>
- * 04th Sept
- * Created Class
- * Implemented Read_File Method
- * 05th Sept
- * Imported code from Update_information_From_File Observer class (Now deleted) that contained XML reader
- * functionality
- * Added Setup_Previous_Days_Date and created logic for all cases
- * 06th Sept
- * Added functionality for retrieving multiple entries and how they are stored within the String pairs of the Map object
- * returned
- * Added Additional Keys for the calling functions to access for information of number of entries retrieved from the XML
- * file.
- * Refactored Read_File Method to conform with changes to XML_Reader
- * 22nd Sept
- * Modified XML Reader logic due to testing error discovered in the Account_Reader class
- * Added a conversion from ENUM to String for the tags to check to reduce the number of recalls to the .ToString()
- * method within boolean checks
- * Added Code to find the required name of the account specified from Entries instead of attributes
- * Added Logic checks, both null and empty to the account_Name parameter and enum_tags to stop any issues of checking
- * nulls and empty lists
- * 24th Sept
- * Added JavaDoc
- * Merged readText method into read_Tag_Information
  */
 
 public class Medical_Reader implements XML_Reader {
@@ -102,50 +80,58 @@ public class Medical_Reader implements XML_Reader {
     /**
      * Public call method used to retrieve the information required from the file connected to the XMLPullParser Object
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
-     * @param enum_Tags     the tags to read from the XML file specified. The ENUM for the account name is required for
-     *                      the method call to successfully return the required information, otherwise the account name
-     *                      information will not be read and therefore cannot be compared
-     * @param account_Name  Represents the name of the account to retrieve the login information for. This must be a
-     *                      valid string otherwise method call will fail
+     * @param file         Represents the File Object that references the .xml file to read from
+     * @param enum_Tags    the tags to read from the XML file specified. The ENUM for the account name is required for
+     *                     the method call to successfully return the required information, otherwise the account name
+     *                     information will not be read and therefore cannot be compared
+     * @param account_Name Represents the name of the account to retrieve the login information for. This must be a
+     *                     valid string otherwise method call will fail
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be "";
      * @throws NullPointerException if XmlPullParser Object is Null, No Tags Given, or account_Name Null
      * @throws XML_Reader_Exception if an XMLPullParserException or IOException occurs when trying to read and parse the
      *                              login data file
      */
     @Override
-    public Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
-        if (xmlPullParser != null && enum_Tags != null && !enum_Tags.isEmpty()) {
-            number_Of_Entries = 0;
-            prefix_Of_Key = 1;
-            entries_Required = null;
-            Map<String, String> account_Information = null;
-            // retrieve and remove tag specifying the entries needed to retrieve and set to an Object Attribute. Also reduces the O(n) of the boolean
-            if (enum_Tags.contains(Tags_To_Read.Daily_Data)) {
-                entries_Required = Tags_To_Read.Daily_Data;
-                enum_Tags.remove(Tags_To_Read.Daily_Data);
-                Setup_Previous_Days_Date();
-            } else if (enum_Tags.contains(Tags_To_Read.Export_Data)) {
-                entries_Required = Tags_To_Read.Export_Data;
-                enum_Tags.remove(Tags_To_Read.Export_Data);
-            } else if (enum_Tags.contains(Tags_To_Read.Last_Entry)) {
-                entries_Required = Tags_To_Read.Last_Entry;
-                enum_Tags.remove(Tags_To_Read.Last_Entry);
-            } else {
-                throw new XML_Reader_Exception("Invalid ENUM given for medical entries required for task provided, please read documentation");
-            }
-            //Convert the ENUM list to String List
-            List<String> tags = new LinkedList<>();
-            for (XML_Reader.Tags_To_Read tag : enum_Tags) {
-                tags.add(tag.toString());
-            }
+    public Map<String, String> Read_File(File file, List<Tags_To_Read> enum_Tags, String account_Name) throws NullPointerException, XML_Reader_Exception {
+        if (file != null && enum_Tags != null && !enum_Tags.isEmpty()) {
             try {
-                xmlPullParser.nextTag();
-                account_Information = readData(xmlPullParser, tags);
-            } catch (XmlPullParserException | IOException e) {
-                throw new XML_Reader_Exception("Failed to Read Login XML File: " + e);
+                //Initialise XML Pull Parser
+                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+                factory.setNamespaceAware(false);
+                XmlPullParser xmlPullParser = factory.newPullParser();
+                number_Of_Entries = 0;
+                prefix_Of_Key = 1;
+                entries_Required = null;
+                Map<String, String> account_Information;
+                // retrieve and remove tag specifying the entries needed to retrieve and set to an Object Attribute. Also reduces the O(n) of the boolean
+                if (enum_Tags.contains(Tags_To_Read.Daily_Data)) {
+                    entries_Required = Tags_To_Read.Daily_Data;
+                    enum_Tags.remove(Tags_To_Read.Daily_Data);
+                    Setup_Previous_Days_Date();
+                } else if (enum_Tags.contains(Tags_To_Read.Export_Data)) {
+                    entries_Required = Tags_To_Read.Export_Data;
+                    enum_Tags.remove(Tags_To_Read.Export_Data);
+                } else if (enum_Tags.contains(Tags_To_Read.Last_Entry)) {
+                    entries_Required = Tags_To_Read.Last_Entry;
+                    enum_Tags.remove(Tags_To_Read.Last_Entry);
+                } else {
+                    throw new XML_Reader_Exception("Invalid ENUM given for medical entries required for task provided, please read documentation");
+                }
+                //Convert the ENUM list to String List
+                List<String> tags = new LinkedList<>();
+                for (XML_Reader.Tags_To_Read tag : enum_Tags) {
+                    tags.add(tag.toString());
+                }
+                try {
+                    xmlPullParser.nextTag();
+                    account_Information = readData(xmlPullParser, tags);
+                } catch (XmlPullParserException | IOException e) {
+                    throw new XML_Reader_Exception("Failed to Read Login XML File: " + e);
+                }
+                return account_Information;
+            } catch (XmlPullParserException ex) {
+                throw new XML_Reader_Exception("Cannot create XML Pull Parser from File: " + file.getName());
             }
-            return account_Information;
         } else {
             throw new NullPointerException("One of the following Errors has occurred: XMLPullParser is NULL, List<Tags_To_Read> is NULL or empty");
         }

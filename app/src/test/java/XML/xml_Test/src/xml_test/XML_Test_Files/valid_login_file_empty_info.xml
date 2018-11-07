@@ -1,10 +1,2 @@
-<Login_Information>
-    <Account>
-        <Account_Name></Account_Name>
-        <Password></Password>
-    </Account>
-    <Account>
-        <Account_Name></Account_Name>
-        <Password></Password>
-    </Account>
-</Login_Information>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Login_Information></Login_Information>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_account_creation">AccountCreation</string>
+    <string name="ac_title_text">Account Creation</string>
+    <string name="ac_username_title">Username</string>
+    <string name="ac_password_title">Password</string>
+    <string name="ac_gamification_title">Gamification Settings</string>
+    <string name="ac_export_title">Data Export Settings</string>
+    <string name="ac_notification_title">Notification Settings</string>
+    <string name="ac_create_butt">Create</string>
+    <string name="ac_username_placeholder">Please enter a username…</string>
+    <string name="ac_password_placeholder">Please enter a password…</string>
+    <string name="ac_gamification_option1">Mode 1</string>
+    <string name="ac_gamification_option2">Mode 2</string>
+    <string name="ac_gamification_option3">Mode 3</string>
+    <string name="ac_gamification_option_title">Gamification Mode</string>
+    <string name="ac_export_option1">Weekly</string>
+    <string name="ac_export_option2">Biweekly</string>
+    <string name="ac_export_option3">Never</string>
+    <string name="ac_notification_setting">Would you like to receive push notifications for any alerts you may generate?</string>
+    <string name="ac_password_strength">Strength:</string>
+    <string name="ac_pass_guide">Password must include: A capital letter, A lower case letter, A number and be at least 10 characters long</string>
+    <string name="ac_security_question_text">Please choose a security question</string>
+    <string name="ac_security_question_option1">What is the name of the first person you kissed?</string>
+    <string name="ac_security_question_option2">Who was your first grade teacher?</string>
+    <string name="ac_security_question_option3">What was your first car?</string>
+    <string name="ac_security_question_placeholder">Please enter an answer…</string>
+</resources>
