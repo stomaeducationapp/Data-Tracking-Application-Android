@@ -1,54 +1,51 @@
 package capstonegroup2.dataapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import org.achartengine.ChartFactory;
-import org.achartengine.GraphicalView;
-
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import MedicalReview.DailyReview;
 
-import MedicalReview.ReviewHandler.TYPE;
-
+/**
+ * Class: DailyReviewGraph. This is the activity that displays the graphs and lets the user interact
+ * Extends: AppCompatActivity. This provides functionality of android activities.
+ * Implements: OnItemSelectListener. This is for the spinner event trigger.
+ */
 public class DailyReviewGraph extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    Spinner spinner;
-    DailyReview today;
-    DailyReview yesterday;
-    RadioGroup dayGroup;
-    String day;
+    private Spinner spinner;
+    private DailyReview today;
+    private DailyReview yesterday;
+    private RadioGroup dayGroup;
+    private String day;
 
-    //MAYBE LINK DATASETS HERE
+    /**
+     * onCreate handles what happens when this activity is first created. In this case, it retrieves
+     * the DailyReview objects from the intent and initialises the listeners for the spinner and
+     * radio buttons.
+     * @param savedInstanceState the state if there is a saved instance of this activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_review_graph);
 
+        //default to display the today data
         day = "today";
 
         Intent i = getIntent();
 
         //Gets the data sets to be used in making the graphs
-        //TODO: switch these for integration
-        today = (DailyReview) i.getParcelableExtra("today");
-        yesterday = (DailyReview) i.getParcelableExtra("yesterday");
-        //today = getToday();
-        //yesterday = getYesterday();
+        today = i.getParcelableExtra("today");
+        yesterday = i.getParcelableExtra("yesterday");
 
         spinner = findViewById(R.id.graphSpinner);
 
@@ -90,6 +87,13 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
     }
 
     //create and display the chart
+
+    /**
+     * displayGraph makes the call to the relevant display method of the DailyReview to get the
+     * GraphicalView representation. It then adds this view to the GUIs to be displayed.
+     * @param current the DailyReview object to be used - today or yesterday
+     * @param typeOfChart which graph to display
+     */
     public void displayGraph(DailyReview current, String typeOfChart) {
         //GraphicalView view = (GraphicalView) (findViewById(R.id.chartView));
         LinearLayout view = (LinearLayout)findViewById(R.id.chartView);
@@ -114,6 +118,13 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
         }
     }
 
+    /**
+     * The action listener for the graph name spinner. This determines which graph to display.
+     * @param adapterView the spinner itself.
+     * @param view the parent view where the spinner is located.
+     * @param position which number in the spinner is selected.
+     * @param id the id of the selected entry.
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         String selected = adapterView.getItemAtPosition(position).toString();
@@ -125,6 +136,11 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
         //auto generated inherited method
     }
 
+    /**
+     * displayHandler is an intermediary between the event handlers and the graph display. This
+     * dictates which DailyReview to use - today or yesterday.
+     * @param graph the flag to determine which days graph to use.
+     */
     public void displayHandler(String graph) {
         if (day != null) {
             if (day.equals("today")) {
@@ -133,87 +149,5 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
                 displayGraph(yesterday, graph);
             }
         }
-    }
-
-    //TESTING PURPOSES
-    public DailyReview getToday(){
-        DailyReview tmp = new DailyReview();
-
-        //CREATE ALL DATASETS
-        //STATE DATASET
-        Map<Date, Integer> stateData = new HashMap<>();
-        stateData.put(new Date((long)1540027800*1000), 3);
-        stateData.put(new Date((long)1540033200*1000), 5);
-        stateData.put(new Date((long)1540045530*1000), 6);
-        stateData.put(new Date((long)1540057395*1000), 4);
-        stateData.put(new Date((long)1540070024*1000), 2);
-
-        Date test = new Date((long)1540027800*1000);
-        Calendar a = Calendar.getInstance();
-        a.setTime(test);
-        a.setTimeInMillis(((long)1540027800*1000));
-
-        //VOLUME DATASET
-        Map<Date, Integer> volumeData = new HashMap<>();
-        volumeData.put(new Date(1540027800), 400);
-        volumeData.put(new Date(1540033200), 500);
-        volumeData.put(new Date(1540045530), 450);
-        volumeData.put(new Date(1540070024), 300);
-        volumeData.put(new Date(1540057395), 400);
-
-        //WELLBEING DATASET
-        Map<Date, Integer> wellbeingData = new HashMap<>();
-        wellbeingData.put(new Date(1540027800), 1);
-        wellbeingData.put(new Date(1540033200), 1);
-        wellbeingData.put(new Date(1540045530), 0);
-        wellbeingData.put(new Date(1540057395), 1);
-        wellbeingData.put(new Date(1540070024), 1);
-
-
-        tmp.calcStateGraph(stateData);
-        tmp.calcStateChart(stateData);
-        tmp.calcVolumeGraph(volumeData);
-        tmp.calcBagGraph(volumeData);
-        tmp.calcWellbeingChart(wellbeingData);
-
-        return tmp;
-    }
-
-    public DailyReview getYesterday(){
-        DailyReview tmp = new DailyReview();
-
-        //CREATE ALL DATASETS
-        //STATE DATASET
-        Map<Date, Integer> stateData = new HashMap<>();
-        stateData.put(new Date(1539940844), 6);
-        stateData.put(new Date(1539949223), 7);
-        stateData.put(new Date(1539955222), 7);
-        stateData.put(new Date(1539971162), 5);
-        stateData.put(new Date(1539988252), 4);
-
-
-        //VOLUME DATASET
-        Map<Date, Integer> volumeData = new HashMap<>();
-        volumeData.put(new Date(1539940844), 300);
-        volumeData.put(new Date(1539949223), 400);
-        volumeData.put(new Date(1539955222), 300);
-        volumeData.put(new Date(1539988252), 450);
-
-        //WELLBEING DATASET
-        Map<Date, Integer> wellbeingData = new HashMap<>();
-        wellbeingData.put(new Date(1539940844), 0);
-        wellbeingData.put(new Date(1539949223), 0);
-        wellbeingData.put(new Date(1539955222), 0);
-        wellbeingData.put(new Date(1539971162), 1);
-        wellbeingData.put(new Date(1539988252), 1);
-
-
-        tmp.calcStateGraph(stateData);
-        tmp.calcStateChart(stateData);
-        tmp.calcVolumeGraph(volumeData);
-        tmp.calcBagGraph(volumeData);
-        tmp.calcWellbeingChart(wellbeingData);
-
-        return tmp;
     }
 }

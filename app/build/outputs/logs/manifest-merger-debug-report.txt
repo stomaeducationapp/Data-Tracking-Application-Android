@@ -105,10 +105,10 @@ action#android.intent.action.DEFAULT
 ADDED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml:24:17-72
 	android:name
 		ADDED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml:24:25-69
-activity#capstonegroup2.dataapp.Daily_Review_Test
+activity#capstonegroup2.dataapp.Daily_Review_Launch_Test
 ADDED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml:28:9-32:20
 	android:name
-		ADDED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml:28:19-52
+		ADDED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml:28:19-59
 uses-sdk
 INJECTED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Ethan\2018 02 Healthcare Visualization Data Tracking Application Android\app\src\main\AndroidManifest.xml

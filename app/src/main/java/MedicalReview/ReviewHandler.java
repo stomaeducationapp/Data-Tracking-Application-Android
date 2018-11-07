@@ -1,7 +1,7 @@
 package MedicalReview;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.ShareCompat;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -9,29 +9,53 @@ import java.util.Map;
 
 import capstonegroup2.dataapp.DailyReviewGraph;
 
+/**
+ * Class: ReviewHandler
+ * Purpose: Handles calls to supporting classes to create and maintain the daily review package
+ */
 public class ReviewHandler {
-    private enum DAY {TODAY, YESTERDAY}
     public enum TYPE {STATELINE, STATEPIE, VOLUMELINE, BAGBAR, WELLBEING}
 
     private DailyReview today;
     private DailyReview yesterday;
     private int control;    //determine if it is the first time the graphs are calculated
 
+    /**
+     * Default constructor, sets class fields to default values.
+     */
     public ReviewHandler() {
         yesterday = null;
         today = null;
         control = 0;
     }
 
-    //moves the current review into the yesterday var. Generates today's review
     public boolean generateReview() {
         boolean success = true;
+        ReviewData loader = new ReviewData();
         Map<String, String> data = new HashMap<>();
 
         //Read in the account data to create the graphs.
-        data = ReviewData.loadData();
+        //TODO: decide between static method or object instance
+        data = loader.loadData();
 
-        if (control == 0) { //must be the first time
+        if(!newReview(data)) {
+            success = false;
+        }
+
+        return success;
+    }
+
+    /**
+     * generateReview handles the creation and maintaining of DailyReview objects. If the call is
+     * the first instance of this object, the today and yesterday object will be the same, as there
+     * is only one days worth of data. Any subsequent calls handle making the 'today' object the
+     * 'yesterday' object and calculating hte new 'today' instance.
+     * @return success, a boolean representing whether the method succeeded or failed.
+     */
+    public boolean newReview(Map<String, String> data) {
+        boolean success = true;
+
+        if (control == 0) { //must be the first time the object has been used
             yesterday = new DailyReview();
             today = new DailyReview();
 
@@ -64,65 +88,35 @@ public class ReviewHandler {
         return success;
     }
 
-    public boolean selectReview(DAY day, TYPE choice) {
-        boolean success = true;
+    //returns the intent to launch the graph activity from with the data
+
+    /**
+     * Creates the intent to launch the DailyReviewGraph activity. Packages the 'today' and 'yesterday'
+     * variables as part of the intent so the activity can use this data.
+     * @param context the context of the calling activity.
+     * @return i the intent to be used to launch the DailyReviewGraph activity.
+     */
+    public Intent getViewIntent(Context context) {
         //creates the activity to display the chart
-        DailyReviewGraph view = new DailyReviewGraph();
+        Intent i = new Intent(context, DailyReviewGraph.class);
 
-        if (day == DAY.TODAY) {  //display the graph from today
-            switch (choice) {
-                case STATELINE:
-                    view.displayGraph(today, "State Graph");
-                    break;
-                case STATEPIE:
-                    view.displayGraph(today, "State Pie Chart");
-                    break;
-                case VOLUMELINE:
-                    view.displayGraph(today, "Volume Graph");
-                    break;
-                case BAGBAR:
-                    view.displayGraph(today, "Output Graph");
-                    break;
-                case WELLBEING:
-                    view.displayGraph(today, "Wellbeing Pie Chart");
-                    break;
-            }
-        }
-        else if (day == DAY.YESTERDAY) { //display the graph for yesterday
-            switch (choice) {
-                case STATELINE:
-                    view.displayGraph(yesterday, "State Graph");
-                    break;
-                case STATEPIE:
-                    view.displayGraph(yesterday, "State Pie Chart");
-                    break;
-                case VOLUMELINE:
-                    view.displayGraph(yesterday, "Volume Graph");
-                    break;
-                case BAGBAR:
-                    view.displayGraph(yesterday, "Output Graph");
-                    break;
-                case WELLBEING:
-                    view.displayGraph(yesterday, "Wellbeing Pie Chart");
-                    break;
-            }
-        }
-        else {
-            success = false;
-        }
-        return success;
+        i.putExtra("today", today);
+        i.putExtra("yesterday", yesterday);
+
+        return i;
     }
-
-    public boolean dismissReview() {
-        boolean success = true;
-
-        return success;
-    }
-
 
     /*
     This is temporary. The logic will need to change depending on structure of the input data
-    BIG ASSUMPTION FOR NOW - Map being read from file will have k=Attribute and v=Date in millis,Value as strings
+    BIG ASSUMPTION FOR NOW - Map being read from file will have k=Attribute and v=DateTime in millis,Value as strings
+     */
+    /**
+     * Parses the data read from file to split into each attribute. Since we use different attributes
+     * for each graph, should limit the data to only relevant values.
+     * @param temp map containing the full data set.
+     * @param type which graph type is the new data set targeted to. Determines what attribute to
+     *             look for.
+     * @return ret the map containing only one type of attribute.
      */
     public Map<Date, Integer> parseData(Map<String, String> temp, TYPE type) {
         Map<Date, Integer> ret = new HashMap<>();
@@ -150,23 +144,17 @@ public class ReviewHandler {
             for (String name: attributes) {
                 if (name.contains("wellbeing")) {
                     String[] elements = temp.get(name).split(",");
-                    ret.put(new Date(Long.parseLong(elements[0])), Integer.parseInt(elements[1]));
+                    if (elements[1].equals("good")){
+                        //Value of 1 for good
+                        ret.put(new Date(Long.parseLong(elements[0])), 1);
+                    }
+                    else if (elements[1].equals("bad")) {
+                        //Value of 0 for bad
+                        ret.put(new Date(Long.parseLong(elements[0])), 0);
+                    }
                 }
             }
         }
         return ret;
-    }
-
-    ///CHANGE MULTIPLE RETURNS -- BAD BAD BAD
-    public DailyReview getTargetSet(String day) {
-        if (day.equals("today")) {
-            return today;
-        }
-        else if (day.equals("yesterday")) {
-            return yesterday;
-        }
-        else {
-            return null;
-        }
     }
 }

@@ -11,7 +11,7 @@ import java.util.Map;
 
 import MedicalReview.DailyReview;
 
-public class Daily_Review_Test extends Activity {
+public class Daily_Review_Launch_Test extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activate();

@@ -39,7 +39,7 @@ public class Account_Reader_unit_Test {
         Mockito.when(xmlPullParser.getName()).thenReturn("a");
         Mockito.when(xmlPullParser.next()).thenReturn(XmlPullParser.END_DOCUMENT);
         try {
-            Map<String, String> map = xml_Reader.Read_File(xmlPullParser, list);
+            Map<String, String> map = xml_Reader.Read_File(xmlPullParser, list, null);
             assertNotNull(map);
         } catch (XML_Reader_Exception e) {
             e.printStackTrace();

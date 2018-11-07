@@ -2,7 +2,6 @@ package MedicalReview;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,8 +9,6 @@ import android.os.Parcelable;
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
 import org.achartengine.chart.BarChart;
-import org.achartengine.chart.LineChart;
-import org.achartengine.chart.PieChart;
 import org.achartengine.chart.PointStyle;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.TimeSeries;
@@ -21,11 +18,14 @@ import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
-import java.io.CharArrayReader;
 import java.util.Date;
 import java.util.Map;
 
-
+/**
+ * Class: DailyReview
+ * Purpose: Contains the data sets for each graph for each day and facilitates creating graph views
+ * Implements: Parcelable. The reason for this is so the DailyReview can passed via an intent
+ */
 public class DailyReview implements Parcelable {
     private TimeSeries stateGraphSeries;
     private CategorySeries statePieSeries;
@@ -33,6 +33,9 @@ public class DailyReview implements Parcelable {
     private TimeSeries bagGraphSeries;
     private CategorySeries wellbeingPieSeries;
 
+    /**
+     * DailyReview default constructor to create the object with all series set to null.
+     */
     public DailyReview() {
         stateGraphSeries = null;
         statePieSeries = null;
@@ -41,6 +44,11 @@ public class DailyReview implements Parcelable {
         wellbeingPieSeries = null;
     }
 
+    /**
+     * DailyReview copy constructor. This facilitates creating an object with the same values as
+     * an imported object of the same class.
+     * @param review The object to copy values from.
+     */
     public DailyReview(DailyReview review) {
         stateGraphSeries = review.stateGraphSeries;
         statePieSeries = review.statePieSeries;
@@ -49,9 +57,10 @@ public class DailyReview implements Parcelable {
         wellbeingPieSeries = review.wellbeingPieSeries;
     }
 
-    //PARCELABLE INTERFACE IMPLEMENTATION - FACILITATES PASSING TO ACTIVITY
-    /*
-     * The methods for parcelable so this object can be sent to an activity via intent
+    //PARCELABLE INTERFACE METHODS IMPLEMENTATION
+    /**
+     * DailyReview constructor using an imported parcel object.
+     * @param in the parcel containing values for the class fields.
      */
     protected DailyReview(Parcel in) {
         //Retrieve in FIFO from the way the values were added
@@ -62,6 +71,9 @@ public class DailyReview implements Parcelable {
         wellbeingPieSeries = (CategorySeries) in.readValue(CategorySeries.class.getClassLoader());
     }
 
+    /**
+     * Standard variables/methods required for the parcelable class
+     */
     public static final Creator<DailyReview> CREATOR = new Creator<DailyReview>() {
         @Override
         public DailyReview createFromParcel(Parcel in) {
@@ -79,6 +91,11 @@ public class DailyReview implements Parcelable {
         return 0;
     }
 
+    /**
+     * The writeToParcel method adds the values for the current instance of DailyReview to a parcel object.
+     * @param parcel the parcel to write to
+     * @param i control flags, we don't need any for our implementation
+     */
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeValue(stateGraphSeries);
@@ -91,21 +108,35 @@ public class DailyReview implements Parcelable {
     //END PARCEL IMPLEMENTATION
 
     /*
-    STATE STUFF
-    */
-    //state line graph - plots values against date
-    //expects map to have date and value pairs of state data
-    public void calcStateGraph (Map<Date, Integer> data) {
+     * STATE STUFF
+     */
+    /**
+     * Calculates the data series to be used for the state line graph
+     * @param data the raw data to be put into the series.
+     *             Expects map to hold (Time of entry, Value of entry)
+     */
+    public boolean calcStateGraph (Map<Date, Integer> data) {
+        boolean success = true;
         stateGraphSeries = new TimeSeries("State Progression");
 
-        //create the data set
-        Date[] attributes = data.keySet().toArray(new Date[0]);
-        for (Date key: attributes) {
-            stateGraphSeries.add(key, data.get(key));
+        try {
+            //create the data set
+            Date[] attributes = data.keySet().toArray(new Date[0]);
+            for (Date key : attributes) {
+                stateGraphSeries.add(key, data.get(key));
+            }
         }
+        catch (IndexOutOfBoundsException e) {success = false;}
+        return success;
     }
 
-    //display the state graph
+    /**
+     * Creates a renderer to be used with the data series to display the graph.
+     * Then uses the renderer, data set and calling context to create a graph view (the visual
+     * representation of the graph)
+     * @param context The context of the calling activity
+     * @return stateGraphView, the GraphicalView implementation of the state line graph
+     */
     public GraphicalView displayStateGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
@@ -133,50 +164,49 @@ public class DailyReview implements Parcelable {
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(stateGraphSeries);
 
-
-        //Intent stateGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "State Line Graph");
-
-        //GraphicalView stateGraphView = ChartFactory.getLineChartView(context, dataSet, mRenderer);
-        GraphicalView stateGraphView = ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
-
-        return stateGraphView;
+        return ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
     }
 
 
-    //state pie chart
-    //Map<DateTime of input, state value at that time>
-    public void calcStateChart(Map<Date, Integer> data) {
-        //first find the percentage of each day in each state
-        Date[] attributes = data.keySet().toArray(new Date[0]);
-        long greenTime = 0, yellowTime = 0, redTime = 0;
-        Date currTime, compTime = attributes[0];
+    /**
+     * Calculates the data series to be used for the state pie chart
+     * @param data the raw data to be put into the pie chart series.
+     *             Expects map to hold (Time of entry, Value of entry)
+     */
+    public boolean calcStateChart(Map<Date, Integer> data) {
+        boolean success = true;
+        try {
+            //first find the percentage of each day in each state
+            Date[] attributes = data.keySet().toArray(new Date[0]);
+            int greenTime = 0, yellowTime = 0, redTime = 0;
 
-        //record elapsed time in millis between inputs for each state
-        for (Date key: attributes) {
-            if (data.get(key) > 0 && data.get(key) < 5) {   //green time
-                currTime = key;
-                greenTime += currTime.getTime() - compTime.getTime();
-                compTime = key; //update the time to compare to the most recent record
+            for (Date key : attributes) {
+                if (data.get(key) > 0 && data.get(key) < 5) {   //green time
+                    greenTime++;
+                } else if (data.get(key) > 4 && data.get(key) < 8) {  //yellow time
+                    yellowTime++;
+                } else if (data.get(key) > 7 && data.get(key) < 11) { //red time
+                    redTime++;
+                }
             }
-            else if (data.get(key) > 4 && data.get(key) < 8) {  //yellow time
-                currTime = key;
-                yellowTime += currTime.getTime() - compTime.getTime();
-                compTime = key; //update the time to compare to the most recent record
-            }
-            else if (data.get(key) > 7 && data.get(key) < 11) { //red time
-                currTime = key;
-                redTime += currTime.getTime() - compTime.getTime();
-                compTime = key; //update the time to compare to the most recent record
-            }
+
+            //add percentage of day to the data series
+            statePieSeries = new CategorySeries("");
+            statePieSeries.add("Green", ((double) greenTime) / ((double) (greenTime + yellowTime + redTime)));
+            statePieSeries.add("Yellow", ((double) yellowTime) / ((double) (greenTime + yellowTime + redTime)));
+            statePieSeries.add("Red", ((double) redTime) / ((double) (greenTime + yellowTime + redTime)));
         }
-
-        //add percentage of day to the data series
-        statePieSeries = new CategorySeries("");
-        statePieSeries.add("Green", ((double)greenTime)/((double)(greenTime + yellowTime + redTime)));
-        statePieSeries.add("Yellow",((double)yellowTime)/((double)(greenTime + yellowTime + redTime)));
-        statePieSeries.add("Red", ((double)redTime)/((double)(greenTime + yellowTime + redTime)));
+        catch (IndexOutOfBoundsException e) {success = false;}
+        return success;
     }
 
+    /**
+     * Creates a renderer to be used with the data series to display the chart.
+     * Then uses the renderer, dataset and calling context to create a chart view (the visual
+     * representation of the chart)
+     * @param context The context of the calling activity
+     * @return stateChartView, the GraphicalView implementation of the state pie chart
+     */
     public GraphicalView displayStateChart(Context context) {
         //create the renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
@@ -192,32 +222,43 @@ public class DailyReview implements Parcelable {
             rend.setColor(colours[i]);
             mRenderer.addSeriesRenderer(rend);
         }
-        //create and return the chart intent
-        //Intent stateChartIntent = ChartFactory.getPieChartIntent(context, statePieSeries, mRenderer, "State Pie Chart");
 
-        GraphicalView stateChartView = ChartFactory.getPieChartView(context, statePieSeries, mRenderer);
-
-        return stateChartView;
+        return ChartFactory.getPieChartView(context, statePieSeries, mRenderer);
     }
 
 
     /*
-    OUTPUT STUFF
+     * OUTPUT STUFF
      */
-    //total output volume as line graph
-    //Map<DateTime of input, Volume of that input>
-    public void calcVolumeGraph(Map<Date, Integer> data) {
+    /**
+     * Calculates the data series to be used for the output volume line graph
+     * @param data the raw data to be put into the series.
+     *             Expects map to hold (Time of entry, Value of entry)
+     */
+    public boolean calcVolumeGraph(Map<Date, Integer> data) {
         volumeGraphSeries = new TimeSeries("Stoma Output Volume");
         int volume = 0;
+        boolean success = true;
 
-        //create the data set
-        Date[] attributes = data.keySet().toArray(new Date[0]);
-        for (Date key: attributes) {
-            volume += data.get(key);    //increasing output volume total
-            volumeGraphSeries.add(key, volume);
+        try {
+            //create the data set
+            Date[] attributes = data.keySet().toArray(new Date[0]);
+            for (Date key : attributes) {
+                volume += data.get(key);    //increasing output volume total
+                volumeGraphSeries.add(key, volume);
+            }
         }
+        catch (IndexOutOfBoundsException e) {success = false;}
+        return success;
     }
 
+    /**
+     * Creates a renderer to be used with the data series to display the graph.
+     * Then uses the renderer, dataset and calling context to create a graph view (the visual
+     * representation of the graph)
+     * @param context The context of the calling activity
+     * @return volumeGraphView, the GraphicalView implementation of the volume line graph
+     */
     public GraphicalView displayVolumeGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
@@ -245,26 +286,37 @@ public class DailyReview implements Parcelable {
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(volumeGraphSeries);
 
-        //Intent volumeGraphIntent = ChartFactory.getLineChartIntent(context, dataSet, mRenderer, "Output Volume Graph");
-
-        GraphicalView volumeGraphView = ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
-
-        return volumeGraphView;
+        return ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
     }
 
 
-    //individual bag volume as bar graph
-    //Map<DateTime of input, Volume of that input>
-    public void calcBagGraph(Map<Date, Integer> data) {
+    /**
+     * Calculates the data series to be used for the individual volume bar graph
+     * @param data the raw data to be put into the series.
+     *             Expects map to hold (Time of entry, Value of entry)
+     */
+    public boolean calcBagGraph(Map<Date, Integer> data) {
         bagGraphSeries = new TimeSeries("Individual Bag Output Volume");
+        boolean success = true;
 
-        //create the data set
-        Date[] attributes = data.keySet().toArray(new Date[0]);
-        for (Date key: attributes) {
-            bagGraphSeries.add(key, data.get(key));
+        try {
+            //create the data set
+            Date[] attributes = data.keySet().toArray(new Date[0]);
+            for (Date key : attributes) {
+                bagGraphSeries.add(key, data.get(key));
+            }
         }
+        catch (IndexOutOfBoundsException e) {success = false;}
+        return success;
     }
 
+    /**
+     * Creates a renderer to be used with the data series to display the graph.
+     * Then uses the renderer, dataset and calling context to create a graph view (the visual
+     * representation of the graph)
+     * @param context The context of the calling activity
+     * @return bagGraphView, the GraphicalView implementation of the volume bar graph
+     */
     public GraphicalView displayBagGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
@@ -290,46 +342,52 @@ public class DailyReview implements Parcelable {
         XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
         dataSet.addSeries(bagGraphSeries);
 
-        //Intent bagGraphIntent = ChartFactory.getBarChartIntent(context, dataSet, mRenderer, BarChart.Type.DEFAULT, "Bag Output Volume");
-
-        GraphicalView bagGraphView = ChartFactory.getBarChartView(context, dataSet, mRenderer, BarChart.Type.DEFAULT);
-
-        return bagGraphView;
+        //return ChartFactory.getBarChartView(context, dataSet, mRenderer, BarChart.Type.DEFAULT);
+        return ChartFactory.getBarChartView(context, dataSet, mRenderer, BarChart.Type.DEFAULT);
     }
 
 
     /*
-    WELL BEING STUFF
+     * WELL BEING STUFF
      */
-    //amount of day categorised as 'good' in pie chart
-    //Map<DateTime of input, Well being string>
-    public void calcWellbeingChart(Map<Date, Integer> data) {
-        //first find the percentage of each day in each state
-        Date[] attributes = data.keySet().toArray(new Date[0]);
-        long goodTime = 0, badTime = 0;
-        Date currTime;
-        Date compTime = attributes[0];
+    /**
+     * Calculates the data series to be used for the well being pie chart
+     * @param data the raw data to be put into the series.
+     *             Expects map to hold (Time of entry, Value of entry)
+     */
+    public boolean calcWellbeingChart(Map<Date, Integer> data) {
+        boolean success = true;
 
-        //record elapsed time in millis between inputs for each state
-        for (Date key: attributes) {
-            if (data.get(key) == 1) {   //good time
-                currTime = key;
-                goodTime += currTime.getTime() - compTime.getTime();
-                compTime = key; //update the time to compare to the most recent record
+        try {
+            //first find the percentage of each day in each state
+            Date[] attributes = data.keySet().toArray(new Date[0]);
+            int goodTime = 0, badTime = 0;
+
+            //record elapsed time in millis between inputs for each state
+            for (Date key : attributes) {
+                if (data.get(key) == 1) {   //good time
+                    goodTime++;
+                } else if (data.get(key) == 0) {   //bad time
+                    badTime++;
+                }
             }
-            else if (data.get(key) == 0) {   //bad time
-                currTime = key;
-                badTime += currTime.getTime() - compTime.getTime();
-                compTime = key; //update the time to compare to the most recent record
-            }
+
+            //add percentage of day to the data series
+            wellbeingPieSeries = new CategorySeries("");
+            wellbeingPieSeries.add("Good", ((double) goodTime) / ((double) (goodTime + badTime)));
+            wellbeingPieSeries.add("Bad", ((double) badTime) / ((double) (goodTime + badTime)));
         }
-
-        //add percentage of day to the data series
-        wellbeingPieSeries = new CategorySeries("");
-        wellbeingPieSeries.add("Good", ((double)goodTime)/((double)(goodTime + badTime)));
-        wellbeingPieSeries.add("Bad", ((double)badTime)/((double)(goodTime + badTime)));
+        catch (IndexOutOfBoundsException e) {success = false;}
+        return success;
     }
 
+    /**
+     * Creates a renderer to be used with the data series to display the chart.
+     * Then uses the renderer, dataset and calling context to create a chart view (the visual
+     * representation of the chart)
+     * @param context The context of the calling activity
+     * @return wellbeingView, the GraphicalView implementation of the wellbeing pie chart
+     */
     public GraphicalView displayWellbeingChart(Context context) {
         //create renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
@@ -346,10 +404,6 @@ public class DailyReview implements Parcelable {
             mRenderer.addSeriesRenderer(rend);
         }
 
-        //Intent wellbeingIntent = ChartFactory.getPieChartIntent(context, wellbeingPieSeries, mRenderer, "Wellbeing Percentage");
-
-        GraphicalView wellbeingView = ChartFactory.getPieChartView(context, wellbeingPieSeries, mRenderer);
-
-        return wellbeingView;
+        return ChartFactory.getPieChartView(context, wellbeingPieSeries, mRenderer);
     }
 }
