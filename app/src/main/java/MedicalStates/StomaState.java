@@ -2,6 +2,12 @@ package MedicalStates;
 
 import android.content.Context;
 
+import java.io.File;
+
+import Factory.Factory;
+import XML.XML_Writer_Failure_Exception;
+import XML.XML_Writer_File_Layout_Exception;
+
 /**
  * <h1>StomaState</h1>
  * This interface provides a way to access the current three provided states for the state
@@ -15,10 +21,9 @@ import android.content.Context;
 public interface StomaState {
     /**
      * Allows for interactions with the android system that will change depending on the state
-     * @param sys_Ref reference to the android caller
      * @return boolean representing success/failure
      */
-    boolean Account_State_Information(Context sys_Ref);
+    boolean Account_State_Information(Factory factory, File acc) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception;
 
     /**
      * Returns the numeric value of the current state

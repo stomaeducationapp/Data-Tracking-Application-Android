@@ -6,6 +6,7 @@ import EncryptExport.Retrieval;
 import MedicalReview.DailyReview;
 import MedicalReview.ReviewData;
 import MedicalReview.ReviewHandler;
+import MedicalStates.StomaStateCalculator;
 import Observers.Check_State;
 import Observers.Daily_Review;
 import Observers.Export_Data;
@@ -13,6 +14,8 @@ import Observers.Form_Change;
 import Observers.Form_Change_Observer;
 import Observers.State_Observer;
 import Observers.Time_Observer;
+import XML.Account_Reader;
+import XML.Account_Writer;
 import XML.Medical_Reader;
 import XML.Medical_Writer;
 
@@ -200,11 +203,9 @@ public class Factory {
      */
 
     //MEDICAL_STATES PACKAGE
-    /*
-    public Stoma_State_Calculator Make_Stoma_State_Calculator(){
-        return new Stoma_State_Calculator();
+    public StomaStateCalculator Make_Stoma_State_Calculator(){
+        return new StomaStateCalculator();
     }
-     */
 
     //MEDICAL_DATA_INPUT PACKAGE
     /*
@@ -281,5 +282,15 @@ public class Factory {
     public Medical_Writer Make_Medical_Writer()
     {
         return new Medical_Writer();
+    }
+
+    public Account_Reader Make_Account_Reader()
+    {
+        return new Account_Reader();
+    }
+
+    public Account_Writer Make_Account_Writer()
+    {
+        return new Account_Writer();
     }
 }

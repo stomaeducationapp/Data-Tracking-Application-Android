@@ -2,6 +2,18 @@ package MedicalStates;
 
 import android.content.Context;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import Factory.Factory;
+import XML.Account_Writer;
+import XML.XML_Writer;
+import XML.XML_Writer_Failure_Exception;
+import XML.XML_Writer_File_Layout_Exception;
+
 public class YellowState implements StomaState {
     private double stateVal;
 
@@ -40,11 +52,18 @@ public class YellowState implements StomaState {
     /**
      * This method is to handle any specific android system calls that must be done in the yellow state.
      * It has been left empty as the exact purpose is not yet known
-     * @param sys_Ref reference to the android caller
      * @return boolean representing success/failure
      */
+    //TODO: Verify if working in integration
     @Override
-    public boolean Account_State_Information(Context sys_Ref) {
+    public boolean Account_State_Information(Factory factory, File acc) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
+        Account_Writer writer = factory.Make_Account_Writer();
+
+        Map<String, String> content = new HashMap<>();
+
+        content.put("State", Double.toString(stateVal));
+
+        writer.Write_File(acc, content, XML_Writer.Tags_To_Write.State);
         return true;
     }
 }
