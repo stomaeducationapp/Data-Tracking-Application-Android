@@ -3,9 +3,24 @@ package MedicalStates;
 import android.content.Context;
 
 import org.xml.sax.XMLReader;
+
+import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import Factory.Factory;
+import XML.Medical_Reader;
+import XML.XML_Reader;
+import XML.XML_Reader.Tags_To_Read;
+import XML.XML_Writer_Failure_Exception;
+import XML.XML_Writer_File_Layout_Exception;
+
+import static XML.XML_Reader.Tags_To_Read.Colour;
+import static XML.XML_Reader.Tags_To_Read.Consistency;
+import static XML.XML_Reader.Tags_To_Read.Physical;
+import static XML.XML_Reader.Tags_To_Read.Urine;
+import static XML.XML_Reader.Tags_To_Read.Volume;
 
 /**
  * <h1>StomaStateCalculator</h1>
@@ -20,22 +35,24 @@ public class StomaStateCalculator {
 
     private StomaState account_State;
     private Factory factory;
-    private Context sys_Ref;
     //data fields
     private int userDailyOutput;        //user entered average stoma output volume
     private int urineCount;      //total urine frequency counter
     private int outputVolume;    //total output record
-
+    private File med;
+    private File acc;
 
     /**
      * Constructor for the state calculator class. Initialises the state to Green, with a value of 3.
      */
     public StomaStateCalculator() {
-        account_State = new GreenState(3); //maybe refactor into factory at some point
+        account_State = new GreenState(3);
         factory = Factory.Get_Factory();
         urineCount = 0;
         outputVolume = 0;
-        //sys_Ref = ;
+        userDailyOutput = 1200;
+        med = null;
+        acc = null;
     }
 
     /**
@@ -63,7 +80,8 @@ public class StomaStateCalculator {
         urineCount = 0;
         outputVolume = 0;
         userDailyOutput = userOutput;
-        //sys_Ref = ;
+        med = null;
+        acc = null;
     }
 
     /**
@@ -72,14 +90,16 @@ public class StomaStateCalculator {
      * this method the target for the app when it wants to calculate a new state.
      * @return boolean representing success/failure
      */
-    public boolean Calculate_State() {
+    public boolean Calculate_State(File medical, File account) {
         boolean success = true;
         try {
             //Read in the account data
             Map<String, String> data = new HashMap<>();
             Map<String, Integer> flags = new HashMap<>();
+            med = medical;
+            acc = account;
 
-            //data = Get_Account_Data();
+            data = Get_Account_Data(medical);
             flags = Get_Flags_From_Data(data); //retrieve and simplify the flag info from the input data
 
              if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
@@ -96,20 +116,27 @@ public class StomaStateCalculator {
      * recent data input in a map
      * @return the map storing the data in attribute - value pairs
      */
-    /* Implement when XML reader becomes available
-    public Map<String, String> Get_Account_Data() {
-        Map<String, String data = new HashMap<>();
+    //Implement when XML reader becomes available
+    public Map<String, String> Get_Account_Data(File medical) {
+        Map<String, String> data = new HashMap<>();
+        List<XML_Reader.Tags_To_Read> tags = new ArrayList<>();
+        tags.add(Colour);
+        tags.add(Urine);
+        tags.add(Volume);
+        tags.add(Consistency);
+        tags.add(Physical);
 
-        //read in account data from XML file
-        XMLReader dataIn = factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
+        //read in medical data from file
+        //todo: make sure this file stuff actually works in integration
+        Medical_Reader dataIn = factory.Make_Medical_Reader();
         try {
-            data = dataIn.Read_Medical_Data();  //update method call when reader becomes available
+            data = dataIn.Read_File(medical, tags, null);  //update method call when reader becomes available
         }
-        catch (Exception e) {}
+        catch (Exception e) {/*todo:add catch block*/}
 
         return data;
     }
-    */
+
 
     /**
      * This method takes the map with all of the user data and extracts only the key - value pairs
@@ -123,36 +150,32 @@ public class StomaStateCalculator {
         Map<String, Integer> presentFlags = new HashMap<>();
         String[] attributes;
 
-        attributes = data.keySet().toArray(new String[data.size()]);
+        attributes = data.keySet().toArray(new String[0]);
 
         //parse full data and extract only relevant key-value pairs
         for (String temp : attributes) {
             //iterate all data elements and only copy relevant fields to the new Map
-            switch (temp) {
-                case "UrineColour": {
-                    int value = Integer.parseInt(data.get(temp));
-                    presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
-                    break;
-                }
-                case "UrineFrequency":    //only add if total for current day
-                    //frequency code
-                    int freq = Integer.parseInt(data.get(temp));
-                    urineCount += freq;
-                    presentFlags.put("UrineFrequency", urineCount);
-                    break;
-                case "Volume":    //only add if total for current day
-                    //volume code
-                    int vol = Integer.parseInt(data.get(temp));
-                    outputVolume += vol;
-                    presentFlags.put("Volume", outputVolume);
-                    break;
-                case "Consistency": {
+            if (temp.contains("UrineColour")) {
+                int value = Integer.parseInt(data.get(temp));
+                presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
+            }
+            else if (temp.contains("UrineFrequency")) {
+                //frequency code
+                int freq = Integer.parseInt(data.get(temp));
+                urineCount += freq;
+                presentFlags.put("UrineFrequency", urineCount);
+            }
+            else if (temp.contains("Volume")) {
+                //volume code
+                int vol = Integer.parseInt(data.get(temp));
+                outputVolume += vol;
+                presentFlags.put("Volume", outputVolume);
+            }
+            else if (temp.contains("Consistency")) {
                     int value = Integer.parseInt(data.get(temp));
                     presentFlags.put("Consistency", value); //may need to change depending on format of stored data
-
-                    break;
-                }
-                case "PhysicalCharacteristics": {
+            }
+            else if (temp.contains("Physical")) {
                     //Physical characteristics should be stored as CSV format
                     String value = data.get("PhysicalCharacteristics");
                     String[] splitString = value.split(",");
@@ -168,8 +191,6 @@ public class StomaStateCalculator {
                         }
                     }
                     presentFlags.put("PhysicalCharacteristics", charIdx);
-                    break;
-                }
             }
         }
         return presentFlags;
@@ -276,29 +297,28 @@ public class StomaStateCalculator {
      */
     public boolean Change_State(int stateIdx) {
         boolean success;
-        //Change to the required state
-        if (stateIdx > 0 && stateIdx < 5)
-        {
-            //must be green state
-            account_State = new GreenState(stateIdx);
-            success = true;
-        }
-        else if (stateIdx > 4 && stateIdx < 8)
-        {
-            //must be yellow state
-            account_State = new YellowState(stateIdx);
-            success = true;
-        }
-        else if (stateIdx > 7 && stateIdx < 11)
-        {
-            //must be red state
-            account_State = new RedState(stateIdx);
-            success = true;
-        }
-        else
-        {
-            success = false;
-        }
+        //try {
+            //Change to the required state
+            if (stateIdx > 0 && stateIdx < 5) {
+                //must be green state
+                account_State = new GreenState(stateIdx);
+                success = true;
+            } else if (stateIdx > 4 && stateIdx < 8) {
+                //must be yellow state
+                account_State = new YellowState(stateIdx);
+                success = true;
+            } else if (stateIdx > 7 && stateIdx < 11) {
+                //must be red state
+                account_State = new RedState(stateIdx);
+                success = true;
+            } else {
+                success = false;
+            }
+            //todo: uncomment this line and try/catch block when account writer integrated
+            //account_State.Account_State_Information(factory, acc);
+        //}
+        //catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e) {success = false;}
+
         return success;
     }
 

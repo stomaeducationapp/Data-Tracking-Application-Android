@@ -64,6 +64,7 @@ public class EncryptExportTest {
      * OUTPUTS - none
      * PURPOSE - These are the tests that performs asserts on each function call/return value of the retrieve method in Retrieval.java
      */
+
     @Test
     public void retrieveTestCase1()
     {
@@ -167,6 +168,7 @@ public class EncryptExportTest {
      * OUTPUTS - none
      * PURPOSE - These are the tests that performs asserts on each function call/return value of the bookKeeping method in Retrieval.java
      */
+
     @Test
     public void bookKeepingTestCase1()
     {
@@ -265,6 +267,7 @@ public class EncryptExportTest {
      * OUTPUTS - none
      * PURPOSE - These are the tests that performs asserts on each function call/return value of the encryptHandler method in Encrypt.java
      */
+
     @Test
     public void encryptHandlerTestCase1()
     {
@@ -382,6 +385,7 @@ public class EncryptExportTest {
      * PURPOSE - These are the tests that performs asserts on each function call/return value of the handle method in Detector.java (which will run through all previous tests done in this file
      *           giving us a entire package test)
      */
+
     @Test
     public void entirePackageTestCase1() {
 
