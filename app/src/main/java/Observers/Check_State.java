@@ -42,6 +42,7 @@ public class Check_State implements State_Observer {
             boolean valid = false;
             // TODO: 17-Sep-18 Uncomment and modify when State Calculator package has been created
             StomaStateCalculator stoma_state_calculator = factory.Make_Stoma_State_Calculator();
+            //todo: make sure file reading/writing works when integrated
             valid = stoma_state_calculator.Calculate_State(medical, account);
             return valid;
         } else {
