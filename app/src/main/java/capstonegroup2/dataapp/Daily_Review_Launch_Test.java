@@ -18,7 +18,6 @@ public class Daily_Review_Launch_Test extends Activity {
     }
 
 
-    //@Test
     public void activate() {
         Intent i = new Intent(getBaseContext(), DailyReviewGraph.class);
 

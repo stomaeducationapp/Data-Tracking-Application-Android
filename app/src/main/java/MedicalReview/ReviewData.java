@@ -32,7 +32,7 @@ public class ReviewData {
         //read in the data - should have 1 entry per line
         /*Medical_Reader reader = factory.Make_Medical_Reader();
 
-        //TODO: Uncomment the correct file return and remove the other
+        //TODO: Uncomment the correct file method return and remove the other
         //If data is one string
         //String tmp = reader.Read_File();
         //String[] lines = tmp.split("/n");

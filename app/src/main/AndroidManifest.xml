@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
 
+        <!--TODO: can be removed from final instance - here for testing purposes-->
         <activity android:name=".Daily_Review_Launch_Test">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
