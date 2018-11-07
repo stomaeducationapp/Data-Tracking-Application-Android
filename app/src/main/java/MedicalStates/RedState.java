@@ -52,7 +52,7 @@ public class RedState implements StomaState {
      * It has been left empty as the exact purpose is not yet known
      * @return boolean representing success/failure
      */
-    //TODO: Verify if working in integration
+    //TODO: Verify if writer working in integration
     @Override
     public boolean Account_State_Information(Factory factory, File acc) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
         Account_Writer writer = factory.Make_Account_Writer();
