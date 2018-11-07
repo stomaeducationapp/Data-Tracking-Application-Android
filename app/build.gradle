@@ -16,6 +16,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        test.resources.srcDirs += '/src/test/assets'
+    }
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -30,12 +33,15 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:design:26.1.0'
     testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.7.22'
-    testImplementation "org.robolectric:robolectric:3.6.1"
+    // required if you want to use Mockito for unit tests
+    testImplementation 'org.mockito:mockito-core:2.8.9'
+    // required if you want to use Mockito for Android tests
     androidTestImplementation 'org.mockito:mockito-android:2.7.22'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //implementation 'org.achartengine:achartengine:1.2.0'
-    //implementation 'com.android.support:appcompat-v7:26.1.0'
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    //Robolectric for UI tests
+    testImplementation "org.robolectric:robolectric:3.6.1"
+    implementation 'com.android.support:cardview-v7:26.1.0'
     implementation files('libs/achartengine-1.2.0.jar')
 }

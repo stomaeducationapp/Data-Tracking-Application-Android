@@ -13,8 +13,10 @@ import java.util.Map;
  * supported due to available functionality
  *
  * @author Patrick Crockford
- * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
+ * <h1>Last Edited</h1>
+ * 4-Nov-2018
+ * Jeremy Dunnet
  */
 public interface XML_Writer {
 
@@ -30,7 +32,7 @@ public interface XML_Writer {
      */
     enum Tags_To_Write {
         Account_Name, Password, New_Account_Name, //Login
-        Name, Gamification, Notification, State, Last_Daily_Review_Date, Last_Export_Date,//Account
+        Name, Gamification, Notification, State, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, Security_Question_ID, Security_Answer,//Account
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Medical
         Modify, New, Export, Create, Delete//Task Statements
     }

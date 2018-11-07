@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".accountCreation.AccountCreation"
+    tools:showIn="@layout/activity_account_creation">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/acUNTitle"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_username_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="50dp" />
+
+            <EditText
+                android:id="@+id/acUNInput"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:hint="@string/ac_username_placeholder"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="79dp" />
+
+            <TextView
+                android:id="@+id/acPassTitle"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_password_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <EditText
+                android:id="@+id/acPassInput"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:hint="@string/ac_password_placeholder"
+                android:inputType="textPassword"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="165dp" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/acPassStrength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
+                    android:text="@string/ac_password_strength"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/acStrengthBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="261dp"
+                    android:layout_height="29dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/acPassGuide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/ac_pass_guide"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/acSQText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_security_question_text" />
+
+            <Spinner
+                android:id="@+id/acSQs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/ac_security_question_entries" />
+
+            <EditText
+                android:id="@+id/acSQAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/ac_security_question_placeholder"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="79dp" />
+
+            <TextView
+                android:id="@+id/acGameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_gamification_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <Spinner
+                android:id="@+id/acGameSett"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/ac_gamification_entries"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+            <TextView
+                android:id="@+id/acExportTitle"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_export_title"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <RadioGroup
+                android:id="@+id/acExportSett"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="256dp">
+
+                <RadioButton
+                    android:id="@+id/acExportSettOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="exportSet"
+                    android:text="@string/ac_export_option1" />
+
+                <RadioButton
+                    android:id="@+id/acExportSettTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="exportSet"
+                    android:text="@string/ac_export_option2" />
+
+                <RadioButton
+                    android:id="@+id/acExportSettThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="exportSet"
+                    android:text="@string/ac_export_option3" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/acNotTitle"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/ac_notification_title"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <CheckBox
+                android:id="@+id/acNotSett"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:text="@string/ac_notification_setting"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="388dp" />
+
+            <Button
+                android:id="@+id/acCreateButt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:onClick="createAccount"
+                android:text="@string/ac_create_butt" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
