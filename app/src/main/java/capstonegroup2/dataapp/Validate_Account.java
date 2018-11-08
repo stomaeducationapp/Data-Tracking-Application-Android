@@ -7,6 +7,20 @@ import XML.Account_Reader;
 /**
  * <h1>Validate_Account</h1>
  * Contains functions to sanitize and ensure account information is in the correct format.
+ *
+ * Purpose: Class aim is to check for correct parameters and sanitise input. Class is to be
+ * instantiated and the general function isAccountNameValid called. The calling program will pass
+ * the value to be checked and the function will return an enum value. The potential enum return
+ * values are:
+ *     GOOD - The input argument is correct as per requirements
+ *     BADLENGTH - The input argument does not match the required size
+ *     BADCHAR - The input argument contains characters that are not approved, such as '!' or '<'
+ *     BADCODE - There is an attempt at code injection in the input argument (feature in progress)
+ *     BADOTHER - There is an unspecified problem with the input argument
+ *     BADACCOUNT - There is an error with the specific account, such as the account not existing
+ *
+ * Progress: Specific implementation of input validation for
+ *
  * @author Oliver Yeudall
  * @version 1.0
  */
@@ -30,6 +44,8 @@ public class Validate_Account implements Account_Reader {
      * @return boolean indicating if the account name is already in use
      */
     private boolean accountAvailable(String inAccountName) {
+
+        //Function in progress
 
         String testAccountName = inAccountName;
         boolean isValid = true;
@@ -79,6 +95,8 @@ public class Validate_Account implements Account_Reader {
      * @return boolean representing an account name without executable code
      */
     private boolean validNoCode(String inAccountName) {
+
+        //Function in progress
 
         String testAccountName = inAccountName;
         boolean isValid = true;
