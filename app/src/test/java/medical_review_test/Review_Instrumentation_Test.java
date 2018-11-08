@@ -103,11 +103,11 @@ public class Review_Instrumentation_Test {
     public void Test_Graphical_View() {
         DailyReview today = getTodayTestData();
 
-        //assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
-        //assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
-        //assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
-        //assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
-        //assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
+        assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
+        assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
+        assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
+        assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
+        assertNotNull(today.displayStateGraph(activity.getApplicationContext()));
     }
 
     private DailyReview getTodayTestData(){
