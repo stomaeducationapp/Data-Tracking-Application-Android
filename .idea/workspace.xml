@@ -15,11 +15,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8b2824-02f8-4a68-b40a-a6769febe1e2" name="Default" comment="Updated Validate_Answer javadocs, general comments.">
+    <list default="true" id="4f8b2824-02f8-4a68-b40a-a6769febe1e2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -69,20 +67,38 @@
       <file leaf-file-name="Validate_Answer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+            <state relative-caret-position="221">
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Validate_Credentials.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Validate_Credentials.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="119">
+              <caret line="10" column="11" selection-start-line="10" selection-end-line="21" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Password.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="14" selection-start-line="10" selection-end-line="20" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Username.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1343">
+              <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -2425,8 +2441,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/GreenState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/YellowState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/RedState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AccountTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AnswerTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_CredentialsTest.java" />
@@ -2435,12 +2449,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="390" />
-    <option name="y" value="91" />
+    <option name="x" value="341" />
+    <option name="y" value="58" />
     <option name="width" value="1440" />
     <option name="height" value="875" />
   </component>
@@ -3377,7 +3393,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541675073825</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updated Validate_Credentials javadocs, general javadoc updates and added comments.">
+      <created>1541675273396</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1541675273396</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Updated Validate_Password javadocs, general javadoc updates and added comments.">
+      <created>1541675769092</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1541675769092</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3422,7 +3452,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="390" y="91" width="1440" height="875" extended-state="0" />
+    <frame x="341" y="58" width="1440" height="875" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
@@ -3527,8 +3557,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Created and Coded Account Reader, Created MEdical_Reader and Unit Test classes" />
-    <MESSAGE value="Medical Reader Code for getting and checking datetime of entry attribute, exiting xml reader when required (so dont need to iterate through it all when needing 1 entry.)" />
     <MESSAGE value="Refactor Medical Reader &#10;Refactoring due to different reader requirements for medical data when getting for latest, Daily, Export&#10;Is still ongoing but very close to finished" />
     <MESSAGE value="Refactor Medical Reader v2, Added checks for date and time when reading for daily," />
     <MESSAGE value="Testing was attempted for XML reader with Robolectrec which failed, then started the Instrumentedtesting which will be more done today" />
@@ -3552,7 +3580,9 @@
     <MESSAGE value="Added Validate_UsernameTest class. Minor fixes too." />
     <MESSAGE value="Updated Validate_Account javadocs." />
     <MESSAGE value="Updated Validate_Answer javadocs, general comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Validate_Answer javadocs, general comments." />
+    <MESSAGE value="Updated Validate_Credentials javadocs, general javadoc updates and added comments." />
+    <MESSAGE value="Updated Validate_Password javadocs, general javadoc updates and added comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Validate_Password javadocs, general javadoc updates and added comments." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3835,24 +3865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-788">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
-          <folding>
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -3893,18 +3905,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+        <state relative-caret-position="221">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        <state relative-caret-position="119">
+          <caret line="10" column="11" selection-start-line="10" selection-end-line="21" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="14" selection-start-line="10" selection-end-line="20" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
         </state>
       </provider>
     </entry>

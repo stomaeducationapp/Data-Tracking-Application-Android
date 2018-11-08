@@ -6,7 +6,20 @@ import XML.Account_Reader;
 
 /**
  * <h1>Validate_Username</h1>
- * Contains functions to sanitize and evaluate usernames.
+ * Contains functions to sanitize and evaluate usernames to make sure they fit the requirements.
+ *
+ * Purpose: Class aim is to check for correct parameters and sanitise input. Class is to be
+ * instantiated and the general function isPasswordValid called. The calling program will pass
+ * the value to be checked and the function will return an enum value. The potential enum return
+ * values are:
+ *     GOOD - The input argument is correct as per requirements
+ *     BADLENGTH - The input argument does not match the required size
+ *     BADCHAR - The input argument contains characters that are not approved, such as '!' or '<'
+ *     BADCODE - There is an attempt at code injection in the input argument (feature in progress)
+ *     BADOTHER - There is an unspecified problem with the input argument
+ *
+ * Progress: Mostly done, needs to have validNoCode() finished
+ *
  * @author Oliver Yeudall
  * @version 1.0
  */
@@ -65,6 +78,8 @@ public class Validate_Username implements Account_Reader {
      * @return boolean representing a username string without executable code
      */
     private boolean validNoCode(String inUsername) {
+
+        // Needs finishing, currently only a dummy function
 
         String testUsername = inUsername;
         boolean isValid = true;
