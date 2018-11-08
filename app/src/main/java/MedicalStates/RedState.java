@@ -12,6 +12,14 @@ import XML.XML_Writer;
 import XML.XML_Writer_Failure_Exception;
 import XML.XML_Writer_File_Layout_Exception;
 
+/**
+ * <h1>RedState</h1>
+ * This class encompasses the functionality specific to the red state.
+ *
+ * @author Ethan Bell
+ * @version 1.0
+ *
+ */
 public class RedState implements StomaState {
     private double stateVal;
 

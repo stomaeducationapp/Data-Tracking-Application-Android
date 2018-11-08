@@ -43,5 +43,6 @@ dependencies {
     //Robolectric for UI tests
     testImplementation "org.robolectric:robolectric:3.6.1"
     implementation 'com.android.support:cardview-v7:26.1.0'
-    implementation files('libs/achartengine-1.2.0.jar')
+    implementation 'org.achartengine:achartengine:1.2.0'
+    //implementation files('libs/achartengine-1.2.0.jar')
 }

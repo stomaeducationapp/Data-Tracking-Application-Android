@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.achartengine.ChartFactory;
+//import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
 import org.achartengine.chart.BarChart;
 import org.achartengine.chart.PointStyle;
@@ -25,6 +25,7 @@ import java.util.Map;
  * Class: DailyReview
  * Purpose: Contains the data sets for each graph for each day and facilitates creating graph views
  * Implements: Parcelable. The reason for this is so the DailyReview can passed via an intent
+ * @author Ethan
  */
 public class DailyReview implements Parcelable {
     private TimeSeries stateGraphSeries;
@@ -137,7 +138,7 @@ public class DailyReview implements Parcelable {
      * @param context The context of the calling activity
      * @return stateGraphView, the GraphicalView implementation of the state line graph
      */
-    public GraphicalView displayStateGraph(Context context) {
+    /*public GraphicalView displayStateGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -165,7 +166,7 @@ public class DailyReview implements Parcelable {
         dataSet.addSeries(stateGraphSeries);
 
         return ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
-    }
+    }*/
 
 
     /**
@@ -207,7 +208,7 @@ public class DailyReview implements Parcelable {
      * @param context The context of the calling activity
      * @return stateChartView, the GraphicalView implementation of the state pie chart
      */
-    public GraphicalView displayStateChart(Context context) {
+    /*public GraphicalView displayStateChart(Context context) {
         //create the renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
         mRenderer.setStartAngle(180);
@@ -224,7 +225,7 @@ public class DailyReview implements Parcelable {
         }
 
         return ChartFactory.getPieChartView(context, statePieSeries, mRenderer);
-    }
+    }*/
 
 
     /*
@@ -259,7 +260,7 @@ public class DailyReview implements Parcelable {
      * @param context The context of the calling activity
      * @return volumeGraphView, the GraphicalView implementation of the volume line graph
      */
-    public GraphicalView displayVolumeGraph(Context context) {
+    /*public GraphicalView displayVolumeGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setLineWidth(2);
@@ -287,7 +288,7 @@ public class DailyReview implements Parcelable {
         dataSet.addSeries(volumeGraphSeries);
 
         return ChartFactory.getTimeChartView(context, dataSet, mRenderer, "SHORT");
-    }
+    }*/
 
 
     /**
@@ -317,7 +318,7 @@ public class DailyReview implements Parcelable {
      * @param context The context of the calling activity
      * @return bagGraphView, the GraphicalView implementation of the volume bar graph
      */
-    public GraphicalView displayBagGraph(Context context) {
+    /*public GraphicalView displayBagGraph(Context context) {
         //create the renderer
         XYSeriesRenderer renderer = new XYSeriesRenderer();
         renderer.setColor(Color.BLUE);
@@ -344,7 +345,7 @@ public class DailyReview implements Parcelable {
 
         //return ChartFactory.getBarChartView(context, dataSet, mRenderer, BarChart.Type.DEFAULT);
         return ChartFactory.getBarChartView(context, dataSet, mRenderer, BarChart.Type.DEFAULT);
-    }
+    }*/
 
 
     /*
@@ -388,7 +389,7 @@ public class DailyReview implements Parcelable {
      * @param context The context of the calling activity
      * @return wellbeingView, the GraphicalView implementation of the wellbeing pie chart
      */
-    public GraphicalView displayWellbeingChart(Context context) {
+    /*public GraphicalView displayWellbeingChart(Context context) {
         //create renderer
         DefaultRenderer mRenderer = new DefaultRenderer();
         mRenderer.setStartAngle(180);
@@ -405,5 +406,5 @@ public class DailyReview implements Parcelable {
         }
 
         return ChartFactory.getPieChartView(context, wellbeingPieSeries, mRenderer);
-    }
+    }*/
 }

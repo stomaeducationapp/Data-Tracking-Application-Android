@@ -20,6 +20,7 @@ import MedicalReview.DailyReview;
  * Class: DailyReviewGraph. This is the activity that displays the graphs and lets the user interact
  * Extends: AppCompatActivity. This provides functionality of android activities.
  * Implements: OnItemSelectListener. This is for the spinner event trigger.
+ * @author Ethan
  */
 public class DailyReviewGraph extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Spinner spinner;
@@ -101,19 +102,19 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
 
         switch (typeOfChart) {
             case "State Graph":
-                view.addView(current.displayStateGraph(this), 0);
+                //view.addView(current.displayStateGraph(this), 0);
                 break;
             case "State Pie Chart":
-                view.addView(current.displayStateChart(this), 0);
+                //view.addView(current.displayStateChart(this), 0);
                 break;
             case "Volume Graph":
-                view.addView(current.displayVolumeGraph(this), 0);
+                //view.addView(current.displayVolumeGraph(this), 0);
                 break;
             case "Output Graph":
-                view.addView(current.displayBagGraph(this), 0);
+                //view.addView(current.displayBagGraph(this), 0);
                 break;
             case "Wellbeing Pie Chart":
-                view.addView(current.displayWellbeingChart(this), 0);
+                //view.addView(current.displayWellbeingChart(this), 0);
                 break;
             default:
         }
