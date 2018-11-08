@@ -247,17 +247,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         });
         Export_Btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                 /*try {
-                 Context context = view.getContext;
-                 //This will need to change as it is a rough draft of what should happen
-                 File medical_Data = new File(context.getFilesDir(), ACCOUNT_FILE + FILE_SEPARATOR + account_Name + MEDICAL_INFORMATION_FILE)
-                 export_Data_Obs.notify(medical_Data);
-                    // TODO: 05-Nov-18 get the current time to send
-                    listener.onChangedData(Fields.export_Time);
-                }catch(Invalid_Enum_Exception ex){
-                    //This should never happen and will be a run time error
-                    // TODO: 04-Nov-18 look up how to display a big warning that the code itself is bad
-                }*/
+                 //listener.export();
             }
         });
     }
@@ -296,5 +286,6 @@ public class Green_State_Fragment extends Fragment implements Information_Change
 
     public interface Green_Fragment_Data_Listener {
         void onChangedData(Fields field);
+        void export();
     }
 }
