@@ -14,6 +14,10 @@ import static org.mockito.Mockito.mock;
 
 import MedicalReview.DailyReview;
 
+/**
+ * Tests elements of the DailyReview class
+ * @author Ethan
+ */
 public class Daily_Review_Test {
 
     @Test

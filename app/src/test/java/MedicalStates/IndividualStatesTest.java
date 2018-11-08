@@ -3,6 +3,10 @@ package MedicalStates;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * Testing for the states test.
+ * @author Ethan
+ */
 public class IndividualStatesTest {
     /**
      * Testing available Green State methods

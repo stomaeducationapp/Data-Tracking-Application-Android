@@ -14,6 +14,14 @@ import XML.XML_Writer;
 import XML.XML_Writer_Failure_Exception;
 import XML.XML_Writer_File_Layout_Exception;
 
+/**
+ * <h1>YellowState</h1>
+ * This class encompasses the functionality specific to the yellow state.
+ *
+ * @author Ethan Bell
+ * @version 1.0
+ *
+ */
 public class YellowState implements StomaState {
     private double stateVal;
 

@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import static org.junit.Assert.*;
 
+/**
+ * tests the state calculation functionality
+ * @author Ethan
+ */
 public class StomaStateCalculatorTest {
     /**
      * Test state calculator object creation

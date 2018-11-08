@@ -7,6 +7,11 @@ import java.util.Map;
 import Factory.Factory;
 import XML.Medical_Reader;
 
+/**
+ * Class: ReviewData
+ * Purpose: Handles methods for reading in data to be used by the medical review package
+ * @author Ethan
+ */
 public class ReviewData {
     private Factory factory;
 

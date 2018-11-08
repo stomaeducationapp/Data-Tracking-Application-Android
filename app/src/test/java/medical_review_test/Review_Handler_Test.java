@@ -20,6 +20,7 @@ import MedicalReview.ReviewHandler;
 
 /**
  * Testing the support classes and methods of the MedicalReview package
+ * @author Ethan
  */
 public class Review_Handler_Test {
 

@@ -13,6 +13,7 @@ import capstonegroup2.dataapp.DailyReviewGraph;
 /**
  * Class: ReviewHandler
  * Purpose: Handles calls to supporting classes to create and maintain the daily review package
+ * @author Ethan
  */
 public class ReviewHandler {
     public enum TYPE {STATELINE, STATEPIE, VOLUMELINE, BAGBAR, WELLBEING}
