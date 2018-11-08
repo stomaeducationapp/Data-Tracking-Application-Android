@@ -33,7 +33,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:checked="true"
-                    android:text="@string/btnToday" />
+                    android:text="@string/btntoday" />
 
                 <RadioButton
                     android:id="@+id/yesterdayButton"
@@ -41,7 +41,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:checked="false"
-                    android:text="@string/btnYesterday" />
+                    android:text="@string/btnyesterday" />
             </RadioGroup>
         </LinearLayout>
 

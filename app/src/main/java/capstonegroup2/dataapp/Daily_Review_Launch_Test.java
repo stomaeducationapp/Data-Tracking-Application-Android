@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,11 +45,6 @@ public class Daily_Review_Launch_Test extends Activity {
         stateData.put(new Date(1540045530), 6);
         stateData.put(new Date(1540057395), 4);
         stateData.put(new Date(1540070024), 2);
-
-        Date test = new Date((long)1540027800*1000);
-        Calendar a = Calendar.getInstance();
-        a.setTime(test);
-        a.setTimeInMillis(((long)1540027800*1000));
 
         //VOLUME DATASET
         Map<Date, Integer> volumeData = new HashMap<>();
