@@ -22,6 +22,16 @@ import capstonegroup2.dataapp.R;
     will probably check when logged in and record a time that is checked after awhile
     or have a back end thread sleep for that long.
      */
+
+/**
+ * The Green_State_Fragment is used to contain all the information and functionality to show to the user on the main
+ * activity, through dynamic fragments within it. This fragment is used when the users health is detected to be at a
+ * health and stable level allowing them access to all features and functionality of the application.
+ * <h1>Notes</h1>
+ * There is currently commented out code that is there for when integration with other activities and the file
+ * system.
+ * Will probably need a gamification object to accept the gamification data and update itself from the fragment
+ */
 public class Green_State_Fragment extends Fragment implements Information_Change {
     private static final String GAME_MODE_ARG = "Gamification_State";
     private static final String DAILY_REVIEW_DONE_ARG = "Daily_Done";
@@ -29,16 +39,10 @@ public class Green_State_Fragment extends Fragment implements Information_Change
     private static final String MODE_1 = "Mode 1";
     private static final String MODE_2 = "Mode 2";
     private static final String MODE_3 = "Mode 3";
-    //private static final String ACCOUNT_FILE = "Accounts";
-    //private static final String PATH_SEPARATOR = System.getProperty("");
-    /**
-     * Name of the Medical file for each account
-     */
-    //private static final String MEDICAL_INFORMATION_FILE = "MedicalInformationFile.xml";
-    /**
-     * Name of the Review file for each account
-     */
-    //private static final String REVIEW_FILE_NAME = "ReviewInformationFile.xml";
+    private static final String ACCOUNT_FILE = "Accounts";
+    private static final String PATH_SEPARATOR = System.getProperty("");
+    private static final String MEDICAL_INFORMATION_FILE = "MedicalInformationFile.xml";
+    private static final String REVIEW_FILE_NAME = "ReviewInformationFile.xml";
 
     private String gamification_Mode;
     private String account_name;
@@ -56,20 +60,25 @@ public class Green_State_Fragment extends Fragment implements Information_Change
     Factory factory;
 
 
-
     // Time_Observer export_Data_Obs;
     // Time_Observer daily_Review_Obs;
     // Form_Change_Observer form_Switcher_Obs;
 
-    /******
-     * Will probably need a gamification object to accept the gamification data and update itself from the fragment
-     * There will need to be communication and reading/writing to file from this fragment for it
+    /**
+     * Enum to use with the Green_Fragment_Data_Listener interface
      */
-    //Code has been commented out for when integration occurs
     public enum Fields {
         export_Time, daily_Review, account_Information, state
     }
 
+    /**
+     * Override of the new instance method to send information to the fragment for creation information
+     *
+     * @param gamification_Mode What mode the user has for gamification
+     * @param daily_Review      If a daily review is currently being done
+     * @param account_Name      The account name
+     * @return new instance of the class
+     */
     public static Green_State_Fragment newInstance(String gamification_Mode, Boolean daily_Review, String account_Name) {
         Green_State_Fragment green_state_fragment = new Green_State_Fragment();
         Bundle args = new Bundle();
@@ -80,17 +89,29 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         return green_state_fragment;
     }
 
+    /**
+     * Override of the onCreate method to retrieve the information from the bundle to be used in the fragment lifecycle.
+     *
+     * @param savedInstanceState state for if application is paused
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gamification_Mode = getArguments().getString(GAME_MODE_ARG);
         daily_Review_Required = getArguments().getBoolean(DAILY_REVIEW_DONE_ARG);
-        //account_name = getArguments().getString(ACCOUNT_NAME_ARG);
+        account_name = getArguments().getString(ACCOUNT_NAME_ARG);
     }
 
+    /**
+     * Override of the onCreateView() method. This method will create the callback listener to the main activity,
+     * retrieve references to all object on the GUI to be setup, and create all other support objects.
+     * All the buttons functionality is added in this method, through calls to private methods.
+     *
+     * @return view of this class
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-// Will need to probably get the gamification data from xml reader.
+
         listener = (Green_Fragment_Data_Listener) getActivity();
 
         View view = inflater.inflate(R.layout.green__state__fragment, container, false);
@@ -101,7 +122,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         Gamification_Btn = view.findViewById(R.id.Gamification_Btn);
         Challenges_Btn = view.findViewById(R.id.Challenges_Btn);
         Export_Btn = view.findViewById(R.id.Export_Btn);
-        factory = Factory.Get_Factory();
+        //factory = Factory.Get_Factory();
         //export_Data_Obs = factory.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
         //daily_Review_Obs = factory.Make_Time_Observer(Factory.Time_Observer_Choice.Daily_Review);
         //form_Switcher_Obs = factory.Make_Form_Change_Observer();
@@ -116,37 +137,38 @@ public class Green_State_Fragment extends Fragment implements Information_Change
             Medical_Input_Btn.setEnabled(false);
             Review_Btn.setEnabled(false);
         }
-         return view;
+        return view;
     }
 
+    /**
+     * This private methods functionality is to control which mode is created in the view through a switch control for
+     * the value of gamification_Mode. This has been separated out to better allow cohesiveness of the class and allow
+     * for simpler modification at a later date.
+     */
     private void Setup_Gamification() {
-        if (gamification_Mode != null) {
-            switch (gamification_Mode) {
-                case MODE_1:
-                    Mode_1_Creation();
-                    break;
-                case MODE_2:
-                    Mode_2_Creation();
-                    break;
-                case MODE_3:
-                    Mode_3_Creation();
-                    break;
-                default:
-                    //will need to probably load mode 1 or 3 and tell the user to set it in their settings
-                    break;
-            }
-        } else {
-            throw new NullPointerException("Gamification Mode == Null!!");
-            //is an error will need to stop the creation of the fragment
-            // This should never happen as the app logic is then corrupt or been modified wrongly!!!
+        switch (gamification_Mode) {
+            case MODE_1:
+                Mode_1_Creation();
+                break;
+            case MODE_2:
+                Mode_2_Creation();
+                break;
+            case MODE_3:
+                Mode_3_Creation();
+                break;
+            default:
+                //Write to account information and reset as mode 1
+                Mode_1_Creation();
+                break;
         }
     }
 
 
-    //.setVisibility(View.GONE);
-    //setVisibility(View.VISIBLE);
-
-    //Setup both buttons for full gamification
+    /**
+     * Setup gamification related buttons for Mode 1 gamification. Enable everything. Is missing some functionality as
+     * these will call a
+     * specific challenges section and avatar/store
+     */
     private void Mode_1_Creation() {
         Generic_Button_Creation();
         Gamification_Btn.setOnClickListener(new Button.OnClickListener() {
@@ -174,7 +196,10 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         });
     }
 
-    //Disable Gamification and setup challenges. THe mode will be handled by challenges section
+    /**
+     * Setup gamification related buttons for Mode 2 gamification. Disable Gamification and setup challenges. Is missing
+     * some functionality as these will call a specific challenges section and avatar/store
+     */
     private void Mode_2_Creation() {
         Generic_Button_Creation();
         Gamification_Btn.setVisibility(View.GONE);
@@ -191,7 +216,11 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         });
     }
 
-    //Disable gamification and change challenges to activities
+    /**
+     * Setup gamification related buttons for Mode 2 gamification. Disable Gamification and changes challenges to
+     * activities. Is missing
+     * some functionality as these will call a specific challenges section and avatar/store
+     */
     private void Mode_3_Creation() {
         Generic_Button_Creation();
         Gamification_Btn.setVisibility(View.GONE);
@@ -209,6 +238,9 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         });
     }
 
+    /**
+     * Setup all other buttons that don't change between gamification modes for the fragment.
+     */
     private void Generic_Button_Creation() {
         Medical_Input_Btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -247,27 +279,36 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         });
         Export_Btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                 //listener.export();
+                //listener.export();
             }
         });
     }
 
+    /**
+     * Placeholder for when gamification is available. Currently a hardcoded picture is loaded but will have to load
+     * from information provided by account information to reflect current setup.
+     */
     private void Setup_Avatar() {
         //Will be hardcoded for now as no avatar available and no functionality
     }
 
+    /**
+     * Placeholder for later. Need client input for what should be displayed instead of avatar
+     */
     private void Mode2_Extra_Info() {
         //Filler for future what to put in the space the avatar is for game mode 1. Probably some tips or other information/fun stuff like a picture from St John or Kate
     }
 
-    private void Mode3_Extra_Info() {
-        //Filler for future what to put in the space the avatar is for game mode 1. Will be probably very basic information for a nice picture from St John or Kate
-    }
-
+    /**
+     * Concrete implementation of update method from Information_Change interface. Used to update class fields to new
+     * values while running and change display sections as required
+     *
+     * @param field Enum value for what to change
+     * @param value Value to change to
+     */
     @Override
     public void update(Field field, String value) {
         switch (field) {
-
             case Name:
                 account_name = value;
                 break;
@@ -283,9 +324,12 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         }
     }
 
-
+    /**
+     * Interface to allow the fragment to communicate back to the main activity.
+     */
     public interface Green_Fragment_Data_Listener {
         void onChangedData(Fields field);
+
         void export();
     }
 }

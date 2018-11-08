@@ -16,18 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b8b5d71-418c-4696-b378-d3073a3d825f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Information_Change.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Information_Change.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Yellow_State_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Yellow_State_Fragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -57,56 +47,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Green_State_Fragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java">
+      <file leaf-file-name="Main_Menu_Activity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4063">
-              <caret line="249" column="17" selection-start-line="249" selection-start-column="17" selection-end-line="249" selection-end-column="37" />
+            <state relative-caret-position="-1085">
+              <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Yellow_State_Fragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Yellow_State_Fragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3638">
-              <caret line="224" column="36" selection-start-line="224" selection-start-column="36" selection-end-line="224" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Information_Change.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Information_Change.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="19" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Time_Observer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Time_Observer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -2462,10 +2410,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/News_Package/News_PlaceHolder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Red_State_Fragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity__main__menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Yellow_State_Fragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Information_Change.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java" />
       </list>
     </option>
   </component>
@@ -2617,34 +2565,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="Factory" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="XML" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Android Instrumented Tests">
           <expand>
@@ -2771,6 +2691,34 @@
             <path>
               <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
               <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Factory" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="XML" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -3440,7 +3388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541617304423</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added more thread support and allow export button to call back to main activity.&#10;all javadoc for main activity done.">
+      <created>1541678419249</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1541678419249</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3486,7 +3441,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49755502" weight="0.32882884" />
@@ -3494,15 +3448,15 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5522388" side_tool="true" visible="true" weight="0.3307436" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.55277187" side_tool="true" visible="true" weight="0.3307436" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5910758" weight="0.3277027" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4477612" visible="true" weight="0.3307436" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.44722813" visible="true" weight="0.3307436" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4749467" weight="0.32852387" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.6721748" weight="0.32852387" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17643923" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24520256" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4610874" weight="0.2308546" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -3592,7 +3546,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added Account Writer and started Code. Basic Unit Testing of XML Reader, but cannot do any more within JUnit due to complex logic and recursive calls. Mockito cant handle this with my current knowledge." />
     <MESSAGE value="Added New Test Suite for testing XML, This Commit Message also applies to previous commit, Forgot to update it." />
     <MESSAGE value="Test Cases for Account Reader in XML_Test program" />
     <MESSAGE value="Testing Done for Account_Reader and Login_Reader&#10;&#10;Modifications made to XML_Reader and all concrete classes, Added new String Parameter to Read_File() method required for the Login_reader.&#10;&#10;Modified Login_Reader and Account_Reader loops and checks for the XML Pull Parser.&#10;Added new logic inside both classes that covert all the ENUMS to Strings to allow for simple x.equals(y) checks instead of conversions happening every loop.&#10;&#10;Added new XML Test files, these will be presented at Group Meeting on 21st Sept 2018 on the layout and feedback will be gathered.&#10;&#10;Due to Updates to files Javadocs will be modified at a later date to reflect changes" />
@@ -3617,7 +3570,8 @@
     <MESSAGE value="Added callback interface to allow Activity to talk to current active fragment to update itself with that information. added that logic into fragments and activity" />
     <MESSAGE value="Main Menu Activity:&#10;-Daily review time check and passing information to fragment&#10;-Export Data check, no code yet for notifying user" />
     <MESSAGE value="Ran manual testing and added demo buttons. Alot of the class cannot bet tested as it required integration with other sections and context.&#10;&#10;Is viable to to used to show client. Still need comments and cleanup up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ran manual testing and added demo buttons. Alot of the class cannot bet tested as it required integration with other sections and context.&#10;&#10;Is viable to to used to show client. Still need comments and cleanup up code" />
+    <MESSAGE value="Added more thread support and allow export button to call back to main activity.&#10;all javadoc for main activity done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more thread support and allow export button to call back to main activity.&#10;all javadoc for main activity done." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/PasswordRecoveryTest.java">
@@ -3663,35 +3617,35 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Yellow_State_FragmentFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_yellow__state__fragment.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_login.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content__yellow__state__fragment.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_password_recovery.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_password_recovery.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="text-editor">
         <state />
       </provider>
     </entry>
@@ -3851,23 +3805,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/green__state__fragment.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="45" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/yellow__state__fragment.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/News_Package/News_PlaceHolder.java">
@@ -3886,13 +3840,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/MainMenu/Main_Menu_ActivityTest.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/red__state__fragment.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="26" column="28" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="28" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Red_State_Fragment.java">
@@ -3909,13 +3863,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity__main__menu.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
@@ -3932,32 +3886,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Time_Observer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4252">
-          <caret line="393" column="66" lean-forward="true" selection-start-line="393" selection-start-column="66" selection-end-line="393" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="246">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Yellow_State_Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3638">
+        <state relative-caret-position="17">
           <caret line="224" column="36" selection-start-line="224" selection-start-column="36" selection-end-line="224" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4063">
-          <caret line="249" column="17" selection-start-line="249" selection-start-column="17" selection-end-line="249" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#9842#9975#0" expanded="true" />
+            <element signature="e#9974#9975#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3969,20 +3922,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Fragments/Green_State_Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="19" />
+        <state relative-caret-position="246">
+          <caret line="320" column="51" selection-start-line="320" selection-start-column="51" selection-end-line="320" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7405#7956#0" expanded="true" />
+            <element signature="e#7955#7956#0" expanded="true" />
+            <element signature="e#8001#8533#0" expanded="true" />
+            <element signature="e#8532#8533#0" expanded="true" />
+            <element signature="e#8937#9469#0" expanded="true" />
+            <element signature="e#9468#9469#0" expanded="true" />
+            <element signature="e#9926#10459#0" expanded="true" />
+            <element signature="e#10458#10459#0" expanded="true" />
+            <element signature="e#10599#11199#0" expanded="true" />
+            <element signature="e#11198#11199#0" expanded="true" />
+            <element signature="e#11240#11769#0" expanded="true" />
+            <element signature="e#11768#11769#0" expanded="true" />
+            <element signature="e#11823#12437#0" expanded="true" />
+            <element signature="e#12436#12437#0" expanded="true" />
+            <element signature="e#12478#12611#0" expanded="true" />
+            <element signature="e#12610#12611#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Time_Observer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MainMenu/Main_Menu_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="-1085">
+          <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

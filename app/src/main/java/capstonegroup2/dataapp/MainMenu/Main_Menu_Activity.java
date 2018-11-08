@@ -76,8 +76,11 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
 
         state_Invalid = false;
         account_data_container = new Account_Data_Container();
+
+       //THis is to get the current account name in case the user changes it in account_information package so the account file can be found.
         //Intent intent = this.getIntent();
         //account_data_container.setAccount_Name(intent.getStringExtra(ACCOUNT_NAME));
+
         factory = Factory.Get_Factory();
         review_required = false;
         export_required = false;
@@ -86,8 +89,7 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
         // export_Data_Obs = factory.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
         //daily_Review_Obs = factory.Make_Time_Observer(Factory.Time_Observer_Choice.Daily_Review);
 
-        /* *********** Uncomment when not demo
-
+        /* *********** Uncomment when not demo and integration occurring and required
          Populate_Account_Data_Container();
          Export_Data_Check();
          Daily_Review_Check();
