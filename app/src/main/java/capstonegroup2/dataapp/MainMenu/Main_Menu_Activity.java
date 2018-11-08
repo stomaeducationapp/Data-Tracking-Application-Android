@@ -80,7 +80,6 @@ public class Main_Menu_Activity extends Activity implements Green_State_Fragment
        //THis is to get the current account name in case the user changes it in account_information package so the account file can be found.
         //Intent intent = this.getIntent();
         //account_data_container.setAccount_Name(intent.getStringExtra(ACCOUNT_NAME));
-
         factory = Factory.Get_Factory();
         review_required = false;
         export_required = false;

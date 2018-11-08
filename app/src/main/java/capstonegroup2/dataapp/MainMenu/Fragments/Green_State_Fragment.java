@@ -12,17 +12,6 @@ import Factory.Factory;
 import capstonegroup2.dataapp.MainMenu.News_Package.News_PlaceHolder;
 import capstonegroup2.dataapp.R;
 
-
-/**
- * When navigating from this page need to save the instance and reload it when returning, including the activity
- */
-// TODO: 04-Nov-18 will need to add checks to start the exporting/generating of data
-    /*
-    work out a system to work out when th check for it even when the app is active,
-    will probably check when logged in and record a time that is checked after awhile
-    or have a back end thread sleep for that long.
-     */
-
 /**
  * The Green_State_Fragment is used to contain all the information and functionality to show to the user on the main
  * activity, through dynamic fragments within it. This fragment is used when the users health is detected to be at a
@@ -39,10 +28,6 @@ public class Green_State_Fragment extends Fragment implements Information_Change
     private static final String MODE_1 = "Mode 1";
     private static final String MODE_2 = "Mode 2";
     private static final String MODE_3 = "Mode 3";
-    private static final String ACCOUNT_FILE = "Accounts";
-    private static final String PATH_SEPARATOR = System.getProperty("");
-    private static final String MEDICAL_INFORMATION_FILE = "MedicalInformationFile.xml";
-    private static final String REVIEW_FILE_NAME = "ReviewInformationFile.xml";
 
     private String gamification_Mode;
     private String account_name;
@@ -99,7 +84,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         super.onCreate(savedInstanceState);
         gamification_Mode = getArguments().getString(GAME_MODE_ARG);
         daily_Review_Required = getArguments().getBoolean(DAILY_REVIEW_DONE_ARG);
-        account_name = getArguments().getString(ACCOUNT_NAME_ARG);
+        //account_name = getArguments().getString(ACCOUNT_NAME_ARG);
     }
 
     /**
@@ -122,7 +107,7 @@ public class Green_State_Fragment extends Fragment implements Information_Change
         Gamification_Btn = view.findViewById(R.id.Gamification_Btn);
         Challenges_Btn = view.findViewById(R.id.Challenges_Btn);
         Export_Btn = view.findViewById(R.id.Export_Btn);
-        //factory = Factory.Get_Factory();
+        factory = Factory.Get_Factory();
         //export_Data_Obs = factory.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
         //daily_Review_Obs = factory.Make_Time_Observer(Factory.Time_Observer_Choice.Daily_Review);
         //form_Switcher_Obs = factory.Make_Form_Change_Observer();

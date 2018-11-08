@@ -13,44 +13,27 @@ import capstonegroup2.dataapp.MainMenu.News_Package.News_PlaceHolder;
 import capstonegroup2.dataapp.R;
 
 /**
- * When navigating from this page need to save the instance and reload it when returning, including the activity
- * <p>
- * // TODO: 04-Nov-18 will need to add checks to start the exporting/generating of data
- * <p>
- * work out a system to work out when th check for it even when the app is active,
- * will probably check when logged in and record a time that is checked after awhile
- * or have a back end thread sleep for that long.
- * <p>
- * <p>
- * Gamification data will need to be managed within the state as the activity doesn't know about it
- * <p>
+ * The Yellow_State_Fragment is used to contain all the information and functionality to show to the user on the main
+ * activity, through dynamic fragments within it. This fragment is used when the users health is detected to be at a
+ * unhealthy and possibly unstable level allowing them limited access to features and functionality of the application.
+ * <h1>Notes</h1>
+ * There is currently commented out code that is there for when integration with other activities and the file
+ * system.
  * Will probably need a gamification object to accept the gamification data and update itself from the fragment
- * There will need to be communication and reading/writing to file from this fragment for it
+ * There is a section in the GUI that currently has placeholder information, bottom right instead of an avatar. This
+ * will need to be filled with information at a later date from the client.
  */
 public class Yellow_State_Fragment extends Fragment implements Information_Change {
 
-    public enum Fields {export_Time, daily_Review, account_Information, state}
-
     private static final String GAME_MODE_ARG = "gamification_State";
-    private static final String EXPORT_DONE_ARG = "export_Done";
+    private static final String DAILY_REVIEW_DONE_ARG = "Daily_Done";
     private static final String ACCOUNT_NAME_ARG = "Account_Name";
     private static final String MODE_1 = "Mode 1";
     private static final String MODE_2 = "Mode 2";
     private static final String MODE_3 = "Mode 3";
-    //private static final String ACCOUNT_FILE = "Accounts";
-    //private static final String PATH_SEPARATOR = System.getProperty("");
-    /**
-     * Name of the Medical file for each account
-     */
-    //private static final String MEDICAL_INFORMATION_FILE = "MedicalInformationFile.xml";
-    /**
-     * Name of the Review file for each account
-     */
-    //private static final String REVIEW_FILE_NAME = "ReviewInformationFile.xml";
-
 
     private String gamification_Mode;
-    //private String account_name;
+    private String account_name;
     private boolean daily_Review_Required;
 
     private Button Medical_Input_Btn;
@@ -65,12 +48,19 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
     // Time_Observer daily_Review_Obs;
     // Form_Change_Observer form_Switcher_Obs;
 
+    /**
+     * Enum to use with the Yellow_Fragment_Data_Listener interface
+     */
+    public enum Fields {
+        export_Time, daily_Review, account_Information, state
+    }
+
     public static Yellow_State_Fragment newInstance(String gamification_Mode, Boolean daily_Review, String account_Name) {
         Yellow_State_Fragment yellow_state_fragment = new Yellow_State_Fragment();
         Bundle args = new Bundle();
         args.putString(GAME_MODE_ARG, gamification_Mode);
         args.putString(ACCOUNT_NAME_ARG, account_Name);
-        args.putBoolean(EXPORT_DONE_ARG, daily_Review);
+        args.putBoolean(DAILY_REVIEW_DONE_ARG, daily_Review);
         yellow_state_fragment.setArguments(args);
         return yellow_state_fragment;
     }
@@ -81,7 +71,7 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         super.onCreate(savedInstanceState);
         gamification_Mode = getArguments().getString(GAME_MODE_ARG);
         //account_name = getArguments().getString(ACCOUNT_NAME_ARG);
-        daily_Review_Required = getArguments().getBoolean(EXPORT_DONE_ARG);
+        daily_Review_Required = getArguments().getBoolean(DAILY_REVIEW_DONE_ARG);
     }
 
     @Override
@@ -111,6 +101,11 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         return view;
     }
 
+    /**
+     * This private methods functionality is to control which mode is created in the view through a switch control for
+     * the value of gamification_Mode. This has been separated out to better allow cohesiveness of the class and allow
+     * for simpler modification at a later date.
+     */
     private void Setup_Gamification() {
         if (gamification_Mode != null) {
             switch (gamification_Mode) {
@@ -135,7 +130,12 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
     }
 
 
-    //Setup both buttons for full gamification
+    /**
+     * Setup gamification related buttons for Mode 1 gamification they are allowed to access. Enable Challenges. Is
+     * missing some functionality as
+     * these will call a
+     * specific challenges section and avatar/store
+     */
     private void Mode_1_Creation() {
         Generic_Button_Creation();
         Challenges_Btn.setOnClickListener(new Button.OnClickListener() {
@@ -151,7 +151,10 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         });
     }
 
-    //Disable Gamification and setup challenges. THe mode will be handled by challenges section
+    /**
+     * Setup gamification related buttons for Mode 2 gamification. Disable Gamification, Enable Challenges. Is missing
+     * some functionality as these will call a specific challenges section and avatar/store
+     */
     private void Mode_2_Creation() {
         Generic_Button_Creation();
         Challenges_Btn.setOnClickListener(new Button.OnClickListener() {
@@ -167,7 +170,10 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         });
     }
 
-    //Disable gamification and change challenges to activities
+    /**
+     * Setup gamification related buttons for Mode 2 gamification. Disable Gamification and changes challenges to
+     * activities.
+     */
     private void Mode_3_Creation() {
         Generic_Button_Creation();
         Challenges_Btn.setText(R.string.Activities);
@@ -184,6 +190,9 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         });
     }
 
+    /**
+     * Setup all other buttons that don't change between gamification modes for the fragment.
+     */
     private void Generic_Button_Creation() {
         Medical_Input_Btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -227,10 +236,18 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         });
     }
 
+    /**
+     * Concrete implementation of update method from Information_Change interface. Used to update class fields to new
+     * values while running and change display sections as required
+     *
+     * @param field Enum value for what to change
+     * @param value Value to change to
+     */
     @Override
     public void update(Field field, String value) {
         switch (field) {
             case Name:
+                account_name = value;
                 break;
             case Gamification:
                 break;
@@ -242,9 +259,13 @@ public class Yellow_State_Fragment extends Fragment implements Information_Chang
         }
     }
 
+    /**
+     * Interface to allow the fragment to communicate back to the main activity.
+     */
     public interface Yellow_Fragment_Data_Listener {
         void onChangedData(Fields field);
 
+        void export();
     }
 
 }
