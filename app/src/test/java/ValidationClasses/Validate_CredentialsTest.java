@@ -1,4 +1,4 @@
-package capstonegroup2.dataapp;
+package ValidationClasses;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -12,15 +12,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import ValidationClasses.Validate_Credentials;
 import XML.Account_Reader;
 import XML.XML_Reader;
 import XML.XML_Reader_Exception;
 
-import static capstonegroup2.dataapp.Validate_Account.retMessage.BADCHAR;
-import static capstonegroup2.dataapp.Validate_Account.retMessage.BADLENGTH;
-import static capstonegroup2.dataapp.Validate_Account.retMessage.GOOD;
-import static capstonegroup2.dataapp.Validate_Account.retMessage.BADACCOUNT;
-import static capstonegroup2.dataapp.Validate_Account.retMessage.BADOTHER;
+import static ValidationClasses.Validate_Account.retMessage.BADCHAR;
+import static ValidationClasses.Validate_Account.retMessage.BADLENGTH;
+import static ValidationClasses.Validate_Account.retMessage.GOOD;
 import static org.junit.Assert.assertNotNull;
 
 /**

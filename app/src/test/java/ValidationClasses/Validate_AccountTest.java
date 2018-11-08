@@ -1,8 +1,9 @@
-package capstonegroup2.dataapp;
+package ValidationClasses;
+
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 import org.mockito.Mockito;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -11,32 +12,32 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import ValidationClasses.Validate_Account;
 import XML.Account_Reader;
 import XML.XML_Reader;
 import XML.XML_Reader_Exception;
 
-import static capstonegroup2.dataapp.Validate_Password.retMessage.BADLENGTH;
-import static capstonegroup2.dataapp.Validate_Password.retMessage.GOOD;
-import static capstonegroup2.dataapp.Validate_Password.retMessage.BADCHAR;
+import static ValidationClasses.Validate_Account.retMessage.GOOD;
+import static ValidationClasses.Validate_Account.retMessage.BADLENGTH;
+import static ValidationClasses.Validate_Account.retMessage.BADCHAR;
+
 import static org.junit.Assert.assertNotNull;
 
-
 /**
- * <h1>Validate_PasswordTest</h1>
- * Contains functions to sanitize and ensure password is in the correct format.
+ * <h1>Validate_AccountTest</h1>
+ * Contains functions to sanitize and ensure account information is in the correct format.
  * @author Oliver Yeudall
  * @version 1.0
  */
 
-public class Validate_PasswordTest {
-
-    Validate_Password passwordValidator1;
+public class Validate_AccountTest {
+    Validate_Account accountValidator1;
     XML_Reader xml_Reader;
     List<XML_Reader.Tags_To_Read> list;
 
     @Before
     public void setUp() throws Exception {
-        passwordValidator1 = new Validate_Password();
+        accountValidator1 = new Validate_Account();
 
         xml_Reader = new Account_Reader();
         list = new LinkedList<>();
@@ -47,7 +48,7 @@ public class Validate_PasswordTest {
     }
 
     @Test
-    public void isPasswordValid() {
+    public void isAccountNameValid() {
         list.add(XML_Reader.Tags_To_Read.Account_Name);
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("empty_file.xml");
         XmlPullParser xmlPullParser = Mockito.mock(XmlPullParser.class);
@@ -61,11 +62,10 @@ public class Validate_PasswordTest {
         }
 
 
-        Assert.assertEquals(GOOD, passwordValidator1.isPasswordValid("mypassword"));
-        Assert.assertEquals(BADLENGTH, passwordValidator1.isPasswordValid("mypass"));
-        Assert.assertEquals(BADCHAR, passwordValidator1.isPasswordValid("my<pass"));
-        //Assert.assertEquals(BADCODE, passwordValidator2.isPasswordValid("my<pass"));
-        //Assert.assertEquals(BADOTHER, passwordValidator2.isPasswordValid("my<pass"));
-
+        Assert.assertEquals(GOOD, accountValidator1.isAccountNameValid("myaccname"));
+        Assert.assertEquals(BADLENGTH, accountValidator1.isAccountNameValid("myacc"));
+        Assert.assertEquals(BADCHAR, accountValidator1.isAccountNameValid("my<account"));
+        //Assert.assertEquals(BADCODE, accountValidator1.isPasswordValid("my<pass"));
+        //Assert.assertEquals(BADOTHER, accountValidator1.isPasswordValid("my<pass"));
     }
 }
