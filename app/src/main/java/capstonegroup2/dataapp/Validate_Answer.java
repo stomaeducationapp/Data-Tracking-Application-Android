@@ -17,7 +17,6 @@ import XML.Account_Reader;
  *     BADCHAR - The input argument contains characters that are not approved, such as '!' or '<'
  *     BADCODE - There is an attempt at code injection in the input argument (feature in progress)
  *     BADOTHER - There is an unspecified problem with the input argument
- *     BADACCOUNT - There is an error with the specific account, such as the account not existing
  *
  * Progress: Specific implementation needs to occur. Could not complete by end of project deadline
  * without information from data entry class design. Current implementation is example only.

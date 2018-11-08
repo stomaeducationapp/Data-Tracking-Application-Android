@@ -15,11 +15,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8b2824-02f8-4a68-b40a-a6769febe1e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AnswerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_CredentialsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_PasswordTest.java" afterDir="false" />
+    <list default="true" id="4f8b2824-02f8-4a68-b40a-a6769febe1e2" name="Default" comment="Updated Validate_Answer javadocs, general comments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -45,75 +45,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Validate_Credentials.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PasswordRecovery.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Account.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" selection-start-line="9" selection-end-line="21" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Answer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Credentials.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_Password.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
-              <folding>
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#671#672#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_Username.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-788">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_AccountTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AccountTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_AnswerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AnswerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_CredentialsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_CredentialsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_PasswordTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_PasswordTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2418,7 +2384,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/debug/res/xml/test_one.xml" />
         <option value="$PROJECT_DIR$/app/sampledata/test.xml" />
         <option value="$PROJECT_DIR$/app/sampledata/test.txt" />
         <option value="$PROJECT_DIR$/app/src/test/assets/test2.xml" />
@@ -2460,15 +2425,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/GreenState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/YellowState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/RedState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Password.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AccountTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AnswerTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_CredentialsTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_PasswordTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_UsernameTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java" />
       </list>
     </option>
   </component>
@@ -2632,6 +2598,25 @@
               <item name="main" type="cbb8eebc:String" user="main" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="capstonegroup2/dataapp" type="cbb8eebc:String" user="capstonegroup2/dataapp" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="capstonegroup2/dataapp" type="cbb8eebc:String" user="capstonegroup2/dataapp" />
+              <item name="accountCreation" type="cbb8eebc:String" user="accountCreation" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="MedicalStates" type="cbb8eebc:String" user="MedicalStates" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -3364,7 +3349,35 @@
       <option name="project" value="LOCAL" />
       <updated>1541673189387</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added Validate_AccountTest, Validate_CredentialsTest and Validate_PasswordTest classes. Minor fixes too.">
+      <created>1541673564145</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1541673564145</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added Validate_UsernameTest class. Minor fixes too.">
+      <created>1541673704250</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1541673704250</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Updated Validate_Account javadocs.">
+      <created>1541674714054</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1541674714054</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Updated Validate_Answer javadocs, general comments.">
+      <created>1541675073825</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1541675073825</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3514,9 +3527,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Pull Request and Commit From Master to Factory Branch" />
-    <MESSAGE value="Added XML Reader Interface, Enum, and Method. Javadoc'd and Comments" />
-    <MESSAGE value="Moving of Code from Update_Information_From_File Obser to Login_Reader, Research on how to test with InputStream and OutputStream&#10;Updated Code for dealing with a list of Enums to check against for Tags to read&#10;&#10;Delete of Files Update_data_Form_Account_From_File and Update_data_Observer as no longer needed due to XML package" />
     <MESSAGE value="Created and Coded Account Reader, Created MEdical_Reader and Unit Test classes" />
     <MESSAGE value="Medical Reader Code for getting and checking datetime of entry attribute, exiting xml reader when required (so dont need to iterate through it all when needing 1 entry.)" />
     <MESSAGE value="Refactor Medical Reader &#10;Refactoring due to different reader requirements for medical data when getting for latest, Daily, Export&#10;Is still ongoing but very close to finished" />
@@ -3538,7 +3548,11 @@
     <MESSAGE value="Added Validate_Password class, minor fixes too." />
     <MESSAGE value="Added Validate_Username class, minor fixes too." />
     <MESSAGE value="Added Validate_AccountTest class, minor fixes too." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Validate_AccountTest class, minor fixes too." />
+    <MESSAGE value="Added Validate_AccountTest, Validate_CredentialsTest and Validate_PasswordTest classes. Minor fixes too." />
+    <MESSAGE value="Added Validate_UsernameTest class. Minor fixes too." />
+    <MESSAGE value="Updated Validate_Account javadocs." />
+    <MESSAGE value="Updated Validate_Answer javadocs, general comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Validate_Answer javadocs, general comments." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3546,14 +3560,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java" />
@@ -3690,13 +3696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -3722,13 +3721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/GreenState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -3778,13 +3770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4069">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Daily_Review_Launch_Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -3809,20 +3794,51 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_UsernameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-924">
-          <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state relative-caret-position="113">
+          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_PasswordTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+        <state relative-caret-position="1190">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_CredentialsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AnswerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AccountTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-788">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -3837,51 +3853,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Username.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-788">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="476">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AnswerTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="816">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/GreenState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="62" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" selection-start-line="9" selection-end-line="21" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Answer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="73" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Validate_Credentials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_AccountTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_CredentialsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/Validate_PasswordTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        <state relative-caret-position="272">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

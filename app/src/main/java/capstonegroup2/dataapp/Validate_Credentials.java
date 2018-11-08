@@ -7,6 +7,20 @@ import XML.Account_Reader;
 /**
  * <h1>Validate_Credentials</h1>
  * Contains functions to sanitize and ensure user credentials have been entered in the correct format.
+ *
+ * Purpose: Class aim is to check for correct parameters and sanitise input. Class is to be
+ * instantiated and the general function isCredentialsValid called. The calling program will pass
+ * the value to be checked and the function will return an enum value. The potential enum return
+ * values are:
+ *     GOOD - The input argument is correct as per requirements
+ *     BADLENGTH - The input argument does not match the required size
+ *     BADCHAR - The input argument contains characters that are not approved, such as '!' or '<'
+ *     BADCODE - There is an attempt at code injection in the input argument (feature in progress)
+ *     BADOTHER - There is an unspecified problem with the input argument
+ *
+ * Progress: Specific implementation needs to occur. Could not complete by end of project deadline
+ * without information from other class designs. Current implementation is example only.
+ *
  * @author Oliver Yeudall
  * @version 1.0
  */

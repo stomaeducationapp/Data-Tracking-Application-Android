@@ -19,7 +19,7 @@ import XML.Account_Reader;
  *     BADOTHER - There is an unspecified problem with the input argument
  *     BADACCOUNT - There is an error with the specific account, such as the account not existing
  *
- * Progress: Specific implementation of input validation for
+ * Progress: Specific implementation of input validation for BADCODE and BADACCOUNT
  *
  * @author Oliver Yeudall
  * @version 1.0
