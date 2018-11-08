@@ -89,7 +89,7 @@ public class Validate_Account implements Account_Reader {
     /**
      * @return enum value returning the results of the account validation test
      */
-    public boolean isAccountNameValid(String inAccountName){
+    public retMessage isAccountNameValid(String inAccountName){
 
         String testAccountName = inAccountName;
 
@@ -100,7 +100,7 @@ public class Validate_Account implements Account_Reader {
                         return retMessage.GOOD;
                     }
                     else {
-                        retMessage.BADACCOUNT;
+                        return retMessage.BADACCOUNT;
                     }
                 }
                 else {
