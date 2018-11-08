@@ -1,4 +1,4 @@
-package capstonegroup2.dataapp;
+package ValidationClasses;
 
 import java.util.regex.Pattern;
 

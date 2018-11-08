@@ -1,15 +1,13 @@
-package capstonegroup2.dataapp;
+package ValidationClasses;
 
 import java.util.regex.Pattern;
 
-import XML.Account_Reader;
-
 /**
- * <h1>Validate_Username</h1>
- * Contains functions to sanitize and evaluate usernames to make sure they fit the requirements.
+ * <h1>Validate_Answer</h1>
+ * Contains functions to sanitize and ensure user's entered answers have been entered properly.
  *
  * Purpose: Class aim is to check for correct parameters and sanitise input. Class is to be
- * instantiated and the general function isPasswordValid called. The calling program will pass
+ * instantiated and the general function isAnswerValid called. The calling program will pass
  * the value to be checked and the function will return an enum value. The potential enum return
  * values are:
  *     GOOD - The input argument is correct as per requirements
@@ -18,14 +16,15 @@ import XML.Account_Reader;
  *     BADCODE - There is an attempt at code injection in the input argument (feature in progress)
  *     BADOTHER - There is an unspecified problem with the input argument
  *
- * Progress: Mostly done, needs to have validNoCode() finished
+ * Progress: Specific implementation needs to occur. Could not complete by end of project deadline.
+ * Current implementation is example only.
  *
  * @author Oliver Yeudall
  * @version 1.0
  */
-public class Validate_Username implements Account_Reader {
+public class Validate_Answer {
 
-    private static final int minLength = 6; // Minimum allowable username length
+    private static final int minLength = 1; // Minimum allowable answer length
     public enum retMessage{
         GOOD, BADLENGTH, BADCHAR, BADCODE, BADOTHER
     }
@@ -34,22 +33,21 @@ public class Validate_Username implements Account_Reader {
      * Default Constructor
      * DESCRIPTION: Sets all string field variables to empty strings
      */
-    Validate_Username() {
+    Validate_Answer() {
 
     }
 
-
     /**
      *
-     * @return boolean representing a username of acceptable minimum length
+     * @return boolean which indicates that an answer has at least 1 character in it
      */
-    private boolean validLength(String inUsername) {
+    private boolean validLength(String inAnswer) {
 
-        String testUsername = inUsername;
+        String testAnswer = inAnswer;
         boolean isValid = false;
 
-        if (testUsername.length() != null) {
-            if (testUsername.length() > minLength) {
+        if (testAnswer.length() != null) {
+            if (testAnswer.length() > minLength) {
                 isValid = true;
             }
         }
@@ -58,14 +56,14 @@ public class Validate_Username implements Account_Reader {
     }
 
     /**
-     * @return boolean representing a username with the approved used character set
+     * @return boolean representing an answer with the approved used character set
      */
-    private boolean validCharacters(String inUsername) {
+    private boolean validCharacters(String inAnswer) {
 
-        String testUsername = inUsername;
+        String testAnswer = inAnswer;
         boolean isValid = false;
 
-        if(Pattern.matches("[a-zA-Z]",testUsername)) {
+        if(Pattern.matches("[a-zA-Z]",testAnswer)) {
             isValid = true;
         }
 
@@ -75,28 +73,26 @@ public class Validate_Username implements Account_Reader {
     }
 
     /**
-     * @return boolean representing a username string without executable code
+     * @return boolean representing an answer without executable code
      */
-    private boolean validNoCode(String inUsername) {
+    private boolean validNoCode(String inAnswer) {
 
-        // Needs finishing, currently only a dummy function
-
-        String testUsername = inUsername;
+        String testAnswer = inAnswer;
         boolean isValid = true;
 
         return isValid;
     }
 
     /**
-     * @return enum value returning the results of the username validation test
+     * @return enum value returning the results of the answer validation test
      */
-    public retMessage isUsernameValid(String inUsername){
+    public boolean isAnswerValid(String inAnswer){
 
-        String testUsername = inUsername;
+        String testAnswer = inAnswer;
 
-        if (validLength(testUsername)) {
-            if(validCharacters(testUsername)) {
-                if(validNoCode(testUsername)) {
+        if (validLength(testAnswer)) {
+            if(validCharacters(testAnswer)) {
+                if(validNoCode(testAnswer)) {
                     return retMessage.GOOD;
                 }
                 else {
@@ -107,8 +103,7 @@ public class Validate_Username implements Account_Reader {
                 return retMessage.BADCHAR;
             }
         }
-        else
-        {
+        else {
             return retMessage.BADLENGTH;
         }
 
