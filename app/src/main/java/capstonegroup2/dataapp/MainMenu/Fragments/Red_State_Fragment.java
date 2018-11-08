@@ -9,6 +9,9 @@ import android.widget.Button;
 
 import capstonegroup2.dataapp.R;
 
+/**
+ *
+ */
 public class Red_State_Fragment extends Fragment {
     private Button Reset_Btn;
 
