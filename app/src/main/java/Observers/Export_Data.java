@@ -1,7 +1,8 @@
 package Observers;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.File;
+import java.util.Map;
+
 import Factory.Factory;
 
 /**
@@ -13,16 +14,9 @@ import Factory.Factory;
  *
  * @author Patrick Crockford
  * @version 1.0
- * <h>Changes</h1>
- * 27th Aug
- * Created Class Export_Data, Patrick Crockford
- * Added functionality to Notify Method, Patrick Crockford
- * Created null check Added Exception method signature, Patrick Crockford
- * <p>
- * 28th Aug
- * JavaDoc written up, Patrick Crockford
- * 17th Sept
- * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
+ * <h1>Last Edited</h1>
+ * 17 Oct 2018
+ * Patrick Crockford
  */
 public class Export_Data implements Time_Observer {
     /**
@@ -38,27 +32,21 @@ public class Export_Data implements Time_Observer {
     }
 
     /**
-     * This method is used to construct and call the required class(es) to export users medical data to
-     * and external database
-     * @param input_Stream  Represents the FileInputStream Object used to read users data file stored on the device
-     * @param output_Stream Represents the FileOutputStream Object used to write to the users medical data file stored on the device
+     * @param file_Map Map Object containing File Objects representing the type of file in relations to the Enum value
+     *                 Key it is stored under, specific to the account currently logged in
      * @return True if daily 24 hour review is successfully calculated and saved to file, otherwise false.
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
-    public boolean Notify(FileInputStream input_Stream, FileOutputStream output_Stream) throws NullPointerException {
-        if (input_Stream != null) {
+    public boolean Notify(Map<Files, File> file_Map) throws NullPointerException {
+        if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
             // TODO: 17-Sep-18 Uncomment and modify when export package has been created
             //Export_Handler export_handler = factory.Create_Export_Handler();
             //valid = export_handler.Export_Data(input_Stream, output_Stream);
             return valid;
         } else {
-            if(input_Stream == null){
-                throw new NullPointerException("Input Stream Object is Null");
-            }else{
-                throw new NullPointerException("Output Stream Object is Null");
-            }
+            throw new NullPointerException("file_Map is Null or Empty");
         }
     }
 }

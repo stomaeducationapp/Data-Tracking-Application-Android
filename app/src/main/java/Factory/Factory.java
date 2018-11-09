@@ -1,5 +1,12 @@
 package Factory;
 
+import EncryptExport.Detector;
+import EncryptExport.Encrypt;
+import EncryptExport.Retrieval;
+import MedicalReview.DailyReview;
+import MedicalReview.ReviewData;
+import MedicalReview.ReviewHandler;
+import MedicalStates.StomaStateCalculator;
 import Observers.Check_State;
 import Observers.Daily_Review;
 import Observers.Export_Data;
@@ -7,7 +14,10 @@ import Observers.Form_Change;
 import Observers.Form_Change_Observer;
 import Observers.State_Observer;
 import Observers.Time_Observer;
-
+import XML.Account_Reader;
+import XML.Account_Writer;
+import XML.Medical_Reader;
+import XML.Medical_Writer;
 
 
 /**
@@ -165,21 +175,25 @@ public class Factory {
      */
 
     //24 HOUR REVIEW PACKAGE
-    /*
-    public Stoma_Review_Handler Make_Stoma_Review_Handler(){
-        return new Stoma_Review_Handler();
+
+    public ReviewHandler Make_Stoma_Review_Handler(){
+        return new ReviewHandler();
     }
-     */
-    /*
-    public 24_Hour_Data_Calculator Make_24_Hour_Data_Calculator(){
-        return new 24_Hour_Data_Calculator();
+
+    public DailyReview Make_Review_Dataset(){
+        return new DailyReview();
     }
-     */
-    /*
-    public Review_Data Make_Review_Data(){
-        return new Review_Data();
+
+    //copy constructor implementation
+    public DailyReview Make_Review_Dataset(DailyReview copy){
+        return new DailyReview(copy);
     }
-     */
+
+
+    public ReviewData Make_Review_Data_Reader(){
+        return new ReviewData();
+    }
+
 
     //MAIN MENU PACKAGE
     /*
@@ -189,11 +203,9 @@ public class Factory {
      */
 
     //MEDICAL_STATES PACKAGE
-    /*
-    public Stoma_State_Calculator Make_Stoma_State_Calculator(){
-        return new Stoma_State_Calculator();
+    public StomaStateCalculator Make_Stoma_State_Calculator(){
+        return new StomaStateCalculator();
     }
-     */
 
     //MEDICAL_DATA_INPUT PACKAGE
     /*
@@ -241,4 +253,44 @@ public class Factory {
         return writer;
     }
      */
+
+    //Factory methods for EncryptExport package
+    public Retrieval makeRetrieval()
+    {
+        return new Retrieval();
+    }
+
+    public Encrypt makeEncrypt()
+    {
+        return new Encrypt();
+    }
+
+    public Detector makeDetector()
+    {
+        return new Detector();
+    }
+
+
+    //Mock methods for medical reader and writer (USED FOR TESTING)
+    //TODO REMOVE AFTER SUCCESSFUL TESTING
+
+    public Medical_Reader Make_Medical_Reader()
+    {
+        return new Medical_Reader();
+    }
+
+    public Medical_Writer Make_Medical_Writer()
+    {
+        return new Medical_Writer();
+    }
+
+    public Account_Reader Make_Account_Reader()
+    {
+        return new Account_Reader();
+    }
+
+    public Account_Writer Make_Account_Writer()
+    {
+        return new Account_Writer();
+    }
 }

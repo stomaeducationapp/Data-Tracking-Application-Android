@@ -1,0 +1,3 @@
+This package (app/java/org.achartengine) includes any missing files from the achartengine snapshot included by gradle.
+The snapshot version was missing core classes ChartFactory, GraphicalActivity, ITouchHandler, TouchHandler which are necessary for charting functionality.
+Instead, the required files (acquired from https://github.com/ddanny/achartengine) have been manually added here for use by the application.

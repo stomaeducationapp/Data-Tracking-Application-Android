@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenu.Fragments.Green_State_Fragment"
+    android:background="@android:color/holo_green_light">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:baselineAligned="false">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/Medical_Input_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Medical Entry" />
+
+                        <Button
+                            android:id="@+id/Review_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Review" />
+
+                        <Button
+                            android:id="@+id/Account_Information_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Account Information" />
+
+                        <Button
+                            android:id="@+id/Gamification_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Button" />
+
+                        <Button
+                            android:id="@+id/Challenges_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Challenges" />
+
+                        <Button
+                            android:id="@+id/Export_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:text="Export_Data" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/News"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/news" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/stomaboi"
+                            android:contentDescription="TODO" />
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

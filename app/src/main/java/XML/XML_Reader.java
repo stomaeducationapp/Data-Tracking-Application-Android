@@ -1,7 +1,6 @@
 package XML;
 
-import org.xmlpull.v1.XmlPullParser;
-
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -18,9 +17,10 @@ import java.util.Map;
  * This is to allow for easy string concatenation with syntax '-'
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * Patrick Crockford
+ * 4-Nov-2018
+ * Jeremy Dunnet
  */
 public interface XML_Reader {
     /**
@@ -29,8 +29,8 @@ public interface XML_Reader {
     enum Tags_To_Read {
         //Login Tags
         Account_Name, Password, //Medical Tags
-        Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Account Tags
-        Gamification, Notification, State, Name, Last_Daily_Review_Date, Last_Export_Date, //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
+        Bags, Urine, Colour, Volume, Physical, Consistency, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Account Tags
+        Gamification, Notification, State, Name, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, Security_Question_ID, Security_Answer, //Tags used for multiple entries retrieved, for use when getting last 24hours or all data to export. The number of entries will be recorded and returned the Map
         //Under the Key "Entries". This is for the Medical Data Only currently due to functionality.
         Last_Entry, Daily_Data, Export_Data, //Tag for number of entries returned with the medical reader
         Entries_Retrieved,
@@ -41,14 +41,14 @@ public interface XML_Reader {
      * Public Method Call to read information specified in the file linked to the XMLPullParser and return results as
      * String pairs in a Map object
      *
-     * @param xmlPullParser Represents the XML Reader Object used to read users data file stored on the device
-     * @param tags          the tags to read from the XML file specified
-     * @param account_Name  Name of the account for login purposes, Set to Null if not using Login_Reader Functionality
+     * @param file         Represents the File Object that references the .xml file to read from
+     * @param tags         the tags to read from the XML file specified
+     * @param account_Name Name of the account for login purposes, Set to Null if not using Login_Reader Functionality
      * @return a Map with string pair values, with Tag name attached to the value read in, if empty it will be "";
      * @throws NullPointerException if XmlPullParser Object is Null, No Tags Given, or account_Name Null
      * @throws XML_Reader_Exception if an XMLPullParserException or IOException occurs when trying to read and parse
      *                              the login data file
      */
 
-    Map<String, String> Read_File(XmlPullParser xmlPullParser, List<Tags_To_Read> tags, String account_Name) throws NullPointerException, XML_Reader_Exception;
+    Map<String, String> Read_File(File file, List<Tags_To_Read> tags, String account_Name) throws NullPointerException, XML_Reader_Exception;
 }
