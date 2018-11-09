@@ -103,9 +103,9 @@ public class StomaStateCalculator {
             data = Get_Account_Data(medical);
             flags = Get_Flags_From_Data(data); //retrieve and simplify the flag info from the input data
 
-             if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
-                 throw new IllegalArgumentException("Problem calculating new state");
-             }
+            if (!Calculate_New_State(flags)) {  //calculate and set the hydration state with the newly calculated data
+                throw new IllegalArgumentException("Problem calculating new state");
+            }
 
         }
         catch (IllegalArgumentException e) {success = false;}  //change to specific exception when possible
@@ -173,25 +173,25 @@ public class StomaStateCalculator {
                 presentFlags.put("Volume", outputVolume);
             }
             else if (temp.contains("Consistency")) {
-                    int value = Integer.parseInt(data.get(temp));
-                    presentFlags.put("Consistency", value); //may need to change depending on format of stored data
+                int value = Integer.parseInt(data.get(temp));
+                presentFlags.put("Consistency", value); //may need to change depending on format of stored data
             }
             else if (temp.contains("Physical")) {
-                    //Physical characteristics should be stored as CSV format
-                    String value = data.get("PhysicalCharacteristics");
-                    String[] splitString = value.split(",");
-                    int charIdx = 0;
+                //Physical characteristics should be stored as CSV format
+                String value = data.get("PhysicalCharacteristics");
+                String[] splitString = value.split(",");
+                int charIdx = 0;
 
-                    for (String tmp : splitString) {
-                        if (tmp.equals("thirsty") || tmp.equals("headache") || tmp.equals("lightheaded")) {
-                            charIdx += 1;
-                        } else if (tmp.equals("stomach cramps") || tmp.equals("muscle cramps") || tmp.equals("fatigue")) {
-                            charIdx += 2;
-                        } else if (tmp.equals("dry mouth") || tmp.equals("confusion") || tmp.equals("tiredness")) {
-                            charIdx += 3;
-                        }
+                for (String tmp : splitString) {
+                    if (tmp.equals("thirsty") || tmp.equals("headache") || tmp.equals("lightheaded")) {
+                        charIdx += 1;
+                    } else if (tmp.equals("stomach cramps") || tmp.equals("muscle cramps") || tmp.equals("fatigue")) {
+                        charIdx += 2;
+                    } else if (tmp.equals("dry mouth") || tmp.equals("confusion") || tmp.equals("tiredness")) {
+                        charIdx += 3;
                     }
-                    presentFlags.put("PhysicalCharacteristics", charIdx);
+                }
+                presentFlags.put("PhysicalCharacteristics", charIdx);
             }
         }
         return presentFlags;
@@ -299,24 +299,24 @@ public class StomaStateCalculator {
     public boolean Change_State(int stateIdx) {
         boolean success;
         //try {
-            //Change to the required state
-            if (stateIdx > 0 && stateIdx < 5) {
-                //must be green state
-                account_State = new GreenState(stateIdx);
-                success = true;
-            } else if (stateIdx > 4 && stateIdx < 8) {
-                //must be yellow state
-                account_State = new YellowState(stateIdx);
-                success = true;
-            } else if (stateIdx > 7 && stateIdx < 11) {
-                //must be red state
-                account_State = new RedState(stateIdx);
-                success = true;
-            } else {
-                success = false;
-            }
-            //todo: uncomment this line and try/catch block when account writer integrated
-            //account_State.Account_State_Information(factory, acc);
+        //Change to the required state
+        if (stateIdx > 0 && stateIdx < 5) {
+            //must be green state
+            account_State = new GreenState(stateIdx);
+            success = true;
+        } else if (stateIdx > 4 && stateIdx < 8) {
+            //must be yellow state
+            account_State = new YellowState(stateIdx);
+            success = true;
+        } else if (stateIdx > 7 && stateIdx < 11) {
+            //must be red state
+            account_State = new RedState(stateIdx);
+            success = true;
+        } else {
+            success = false;
+        }
+        //todo: uncomment this line and try/catch block when account writer integrated
+        //account_State.Account_State_Information(factory, acc);
         //}
         //catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e) {success = false;}
 

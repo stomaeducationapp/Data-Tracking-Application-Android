@@ -43,6 +43,7 @@ public class Daily_Review implements Time_Observer {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
             ReviewHandler daily_review_calculator = factory.Make_Stoma_Review_Handler();
+            // TODO: 17-Sep-18 Uncomment and modify when Daily Review package has been created
             //TODO: Uncomment input/output stream when finalised
             valid = daily_review_calculator.generateReview(/*input_Stream, output_Stream*/);
             return valid;

@@ -15,20 +15,8 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-        <activity android:name=".DailyReviewGraph">
-            <intent-filter>
-                <action android:name="android.intent.action.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!--TODO: can be removed from final instance - here for testing purposes-->
-        <activity android:name=".Daily_Review_Launch_Test">
-            <intent-filter>
-                <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -39,11 +27,23 @@
         <activity
             android:name=".PasswordRecovery"
             android:label="@string/pr_title"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+    </activity>
+
         <activity
-            android:name=".Challenges.ChallengeGUI"
-            android:label="@string/c_title"
+            android:name=".MainMenu.Main_Menu_Activity"
+            android:label="@string/pr_title"
             android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
 
