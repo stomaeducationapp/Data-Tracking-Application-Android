@@ -24,7 +24,7 @@ import XML.Account_Reader;
  * @author Oliver Yeudall
  * @version 1.0
  */
-public class Validate_Credentials implements Account_Reader {
+public class Validate_Credentials {
 
     private static final int minLength = 1; // Minimum allowable account name length
     public enum retMessage{
@@ -63,10 +63,9 @@ public class Validate_Credentials implements Account_Reader {
         String testAccountName = inAccountName;
         boolean isValid = false;
 
-        if (testAccountName.length() != null) {
-            if (testAccountName.length() > minLength) {
-                isValid = true;
-            }
+
+        if (testAccountName.length() > minLength) {
+            isValid = true;
         }
 
         return isValid;
@@ -130,6 +129,6 @@ public class Validate_Credentials implements Account_Reader {
             return retMessage.BADLENGTH;
         }
 
-        return retMessage.BADOTHER;
+        //return retMessage.BADOTHER;
     }
 }

@@ -23,7 +23,7 @@ import XML.Account_Reader;
  * @author Oliver Yeudall
  * @version 1.0
  */
-public class Validate_Password implements Account_Reader {
+public class Validate_Password {
 
     private static final int minLength = 6; // Minimum allowable password length
     public enum retMessage{
@@ -47,10 +47,8 @@ public class Validate_Password implements Account_Reader {
         String testPassword = inPassword;
         boolean isValid = false;
 
-        if (testPassword.length() != null) {
-            if (testPassword.length() > minLength) {
-                isValid = true;
-            }
+        if (testPassword.length() > minLength) {
+            isValid = true;
         }
 
         return isValid;
@@ -111,6 +109,6 @@ public class Validate_Password implements Account_Reader {
             return retMessage.BADLENGTH;
         }
 
-        return retMessage.BADOTHER;
+        //return retMessage.BADOTHER;
     }
 }

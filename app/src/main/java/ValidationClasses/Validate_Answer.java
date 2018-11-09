@@ -46,11 +46,11 @@ public class Validate_Answer {
         String testAnswer = inAnswer;
         boolean isValid = false;
 
-        if (testAnswer.length() != null) {
-            if (testAnswer.length() > minLength) {
-                isValid = true;
-            }
+
+        if (testAnswer.length() > minLength) {
+            isValid = true;
         }
+
 
         return isValid;
     }
@@ -86,7 +86,7 @@ public class Validate_Answer {
     /**
      * @return enum value returning the results of the answer validation test
      */
-    public boolean isAnswerValid(String inAnswer){
+    public retMessage isAnswerValid(String inAnswer){
 
         String testAnswer = inAnswer;
 
@@ -107,6 +107,6 @@ public class Validate_Answer {
             return retMessage.BADLENGTH;
         }
 
-        return retMessage.BADOTHER;
+        //return retMessage.BADOTHER;
     }
 }

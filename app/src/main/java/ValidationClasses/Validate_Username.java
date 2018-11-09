@@ -23,7 +23,7 @@ import XML.Account_Reader;
  * @author Oliver Yeudall
  * @version 1.0
  */
-public class Validate_Username implements Account_Reader {
+public class Validate_Username {
 
     private static final int minLength = 6; // Minimum allowable username length
     public enum retMessage{
@@ -48,11 +48,9 @@ public class Validate_Username implements Account_Reader {
         String testUsername = inUsername;
         boolean isValid = false;
 
-        if (testUsername.length() != null) {
-            if (testUsername.length() > minLength) {
-                isValid = true;
-            }
-        }
+         if (testUsername.length() > minLength) {
+             isValid = true;
+         }
 
         return isValid;
     }
@@ -112,6 +110,6 @@ public class Validate_Username implements Account_Reader {
             return retMessage.BADLENGTH;
         }
 
-        return retMessage.BADOTHER;
+        //return retMessage.BADOTHER;
     }
 }
