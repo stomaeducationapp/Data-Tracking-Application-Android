@@ -16,11 +16,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f8b2824-02f8-4a68-b40a-a6769febe1e2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Credentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Answer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Credentials.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Password.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Username.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -40,26 +46,30 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="2018-02-healthcare-visualization-data-tracking-application" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PasswordRecovery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Validate_Account.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+            <state relative-caret-position="442">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,26 +77,8 @@
       <file leaf-file-name="Validate_Answer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Answer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_Password.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Validate_Username.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="844">
-              <caret line="109" column="40" lean-forward="true" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
+            <state relative-caret-position="408">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -94,8 +86,38 @@
       <file leaf-file-name="Validate_Credentials.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Credentials.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2193">
-              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+            <state relative-caret-position="442">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Password.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_Username.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_AccountTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -2457,8 +2479,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="294" />
-    <option name="y" value="118" />
+    <option name="x" value="231" />
+    <option name="y" value="217" />
     <option name="width" value="1440" />
     <option name="height" value="875" />
   </component>
@@ -2613,8 +2635,7 @@
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="main" type="cbb8eebc:String" user="main" />
-              <item name="java" type="cbb8eebc:String" user="java" />
-              <item name="ValidationClasses" type="cbb8eebc:String" user="ValidationClasses" />
+              <item name="res" type="cbb8eebc:String" user="res" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -2639,10 +2660,6 @@
               <item name="test" type="cbb8eebc:String" user="test" />
               <item name="java" type="cbb8eebc:String" user="java" />
               <item name="ValidationClasses" type="cbb8eebc:String" user="ValidationClasses" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
             </path>
           </expand>
           <select />
@@ -2784,18 +2801,22 @@
       <recent name="XML" />
       <recent name="Factory" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="capstonegroup2.dataapp" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\braunman\AndroidStudioProjects\2018-02-healthcare-visualization-data-tracking-application\app\src\test\java\ValidationClasses" />
       <recent name="C:\Users\braunman\AndroidStudioProjects\2018-02-healthcare-visualization-data-tracking-application\app\src\test\java" />
       <recent name="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\app\src\test" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\braunman\AndroidStudioProjects\2018-02-healthcare-visualization-data-tracking-application\app\src\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="capstonegroup2.dataapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -3535,7 +3556,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="294" y="118" width="1440" height="875" extended-state="0" />
+    <frame x="231" y="217" width="1440" height="875" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
@@ -3545,8 +3566,8 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Build Variants" order="3" sideWeight="0.502849" side_tool="true" weight="0.1704698" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.54492754" side_tool="true" visible="true" weight="0.41248304" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.45507246" visible="true" weight="0.41248304" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.54565215" side_tool="true" visible="true" weight="0.41248304" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.45434782" visible="true" weight="0.41248304" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.59648186" weight="0.32763532" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.478145" weight="0.32897604" />
       <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.6759062" weight="0.3278867" />
@@ -3554,9 +3575,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497151" visible="true" weight="0.23405798" />
-      <window_info anchor="bottom" id="Build" order="9" weight="0.251634" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.78695655" weight="0.25101763" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49927536" weight="0.3283582" />
-      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.32971016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -3699,35 +3720,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/EncryptExport/EncryptExportTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8466">
-          <caret line="546" selection-start-line="546" selection-end-line="546" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/DailyReview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5372">
-          <caret line="322" column="36" selection-start-line="322" selection-start-column="36" selection-end-line="322" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="37" column="23" lean-forward="true" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/DailyReviewGraph.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3966,43 +3958,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="476">
           <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Credentials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        <state relative-caret-position="442">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+        <state relative-caret-position="442">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Answer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+        <state relative-caret-position="408">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+        <state relative-caret-position="391">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="109" column="40" lean-forward="true" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
+        <state relative-caret-position="351">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
         </state>
       </provider>
     </entry>
