@@ -16,17 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f8b2824-02f8-4a68-b40a-a6769febe1e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Answer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Credentials.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Password.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_Username.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="C:\Users\Patrick\Documents\Uni 2018\Sem 2\Capstone\Android App\2018-02-healthcare-visualization-data-tracking-application\.idea\shelf/" />
@@ -113,11 +108,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Validate_AccountTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Validate_AccountTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+            <state relative-caret-position="187">
+              <caret line="29" column="3" selection-start-line="29" selection-end-line="31" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_AnswerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_CredentialsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_PasswordTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-516">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validate_UsernameTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-584">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -2424,11 +2458,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java" />
@@ -2475,12 +2504,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Answer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="231" />
-    <option name="y" value="217" />
+    <option name="x" value="225" />
+    <option name="y" value="64" />
     <option name="width" value="1440" />
     <option name="height" value="875" />
   </component>
@@ -3511,7 +3545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541729541638</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Re-added my test files to the project, deleted duplicate Validation files">
+      <created>1541739045444</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1541739045444</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3556,7 +3597,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="231" y="217" width="1440" height="875" extended-state="0" />
+    <frame x="225" y="64" width="1440" height="875" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4914712" weight="0.32963374" />
@@ -3687,7 +3728,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Instrumentation tests for Account reader started, Compatibility fixes added to build.grade, Please note some warnings will occur due to the fix using soon to be depreciated commands. Fine to Ignore atm" />
     <MESSAGE value="Added and Deleted different files and directories, Will be removing more as testing occurs.&#10;&#10;Finally solved the issue of not reading from files and alot of spare files and tests are currently present due to trying different fixes" />
     <MESSAGE value="Added Account Writer and started Code. Basic Unit Testing of XML Reader, but cannot do any more within JUnit due to complex logic and recursive calls. Mockito cant handle this with my current knowledge." />
     <MESSAGE value="Added New Test Suite for testing XML, This Commit Message also applies to previous commit, Forgot to update it." />
@@ -3712,7 +3752,8 @@
     <MESSAGE value="Committing due to android issues" />
     <MESSAGE value="123" />
     <MESSAGE value="Re-added my work to the project after the files were deleted without my knowledge." />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-added my work to the project after the files were deleted without my knowledge." />
+    <MESSAGE value="Re-added my test files to the project, deleted duplicate Validation files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-added my test files to the project, deleted duplicate Validation files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4004,38 +4045,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="187">
+          <caret line="29" column="3" selection-start-line="29" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="-516">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+        <state relative-caret-position="-584">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
