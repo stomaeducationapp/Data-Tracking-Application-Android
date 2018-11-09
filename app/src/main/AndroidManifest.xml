@@ -34,7 +34,7 @@
         <activity
             android:name=".accountCreation.AccountCreation"
             android:label="@string/title_activity_account_creation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PasswordRecovery"
             android:label="@string/pr_title"
@@ -42,11 +42,18 @@
         <activity
             android:name=".Challenges.ChallengeGUI"
             android:label="@string/c_title"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Account_Modification.Account_Modification"
             android:label="@string/title_activity_account__modification"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Account_Modification.Account_Information_Export_Settings_Fragment"></activity>
     </application>
 
 </manifest>
