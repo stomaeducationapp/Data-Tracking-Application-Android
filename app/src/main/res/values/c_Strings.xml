@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c_title">Challenges</string>
+    <string name="c_description">Here are today\'s challenges:</string>
+    <string name="c_def_chal_title">TITLE</string>
+    <string name="c_chal_rew_title">Reward:</string>
+    <string name="c_def_chal_rew_value">0</string>
+    <string name="c_def_chal_img_desc">IMAGE</string>
+    <string name="c_chal_view_butt">View Description</string>
+    <string name="c_chal_complete_butt">Complete</string>
+    <string name="c_chal_def_des">DESCRIPTION</string>
+    <string name="c_chal_def_type">TYPE</string>
+    <string name="c_chal_def_reward">REWARD</string>
+    <string name="c_chal_type_title">Type:</string>
+    <string name="c_chal_cancel_butt">Cancel</string>
+</resources>

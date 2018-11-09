@@ -15,35 +15,13 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".accountCreation.AccountCreation"
-            android:label="@string/title_activity_account_creation"
-            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".PasswordRecovery"
             android:label="@string/pr_title"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-    </activity>
-
-        <activity
-            android:name=".MainMenu.Main_Menu_Activity"
-            android:label="@string/pr_title"
             android:theme="@style/AppTheme.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
     </application>
 
