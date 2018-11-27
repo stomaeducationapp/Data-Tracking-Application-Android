@@ -23,13 +23,23 @@ package EncryptExport;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import Factory.Factory;
 
 public class Detector
 {
+
+    //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+    private byte[] testB;
+    private Encrypt testE;
 
     /* FUNCTION INFORMATION
      * NAME - handle
@@ -60,6 +70,10 @@ public class Detector
             //Pass to Encrypt to convert file to encrypted
             enBytes = en.encryptHandler(userFile);
 
+            //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+            testB = enBytes;
+            testE = en;
+
             //TODO PASS ENBYTES TO EXPORT ONCE CONFIGURED
 
             //Clean up exported data
@@ -75,6 +89,18 @@ public class Detector
         }
 
         return done;
+    }
+
+    //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+    public String test() throws EncryptHandlerException {
+        try {
+            return testE.decrypt(testB);
+        }
+        catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException e)
+        {
+            throw new EncryptHandlerException("BAD");
+        }
+
     }
 
 

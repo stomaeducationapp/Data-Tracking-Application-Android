@@ -129,11 +129,11 @@ public class StomaStateCalculator {
 
         //read in medical data from file
         //todo: make sure this file stuff actually works in integration
-        Medical_Reader dataIn = factory.Make_Medical_Reader();
+        /*Medical_Reader dataIn = factory.Make_Medical_Reader(); //TODO FIX
         try {
             data = dataIn.Read_File(medical, tags, null);  //update method call when reader becomes available
         }
-        catch (Exception e) {/*todo:add catch block*/}
+        catch (Exception e) {//todo:add catch block}*/
 
         return data;
     }
