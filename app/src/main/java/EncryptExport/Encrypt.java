@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 18/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -16,6 +16,7 @@ package EncryptExport;
  * 09/10/2018 - Added proper exception handling and changed imports to match final design
  * 16/10/2018 - Modified code to as close to final design as it known currently
  * 18/10/2018 - Edited functionality to work with map objects we are using to transport user data
+ * 27/11/2018 - Added some additional functionality to shore up some weaknesses and prepared for integration.
  */
 
 /* REFERENCES
@@ -31,6 +32,7 @@ package EncryptExport;
  */
 
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -101,25 +103,26 @@ public class Encrypt
 
         byte[] enStream = null;
         String userString = "";
-        boolean firstLine = true;
-        boolean validFile = false;
+        boolean validLine = false;
 
         for( Map.Entry<String, String> entry : userFile.entrySet() )
         {
-            String key = entry.getKey();
+            String mapKey = entry.getKey(); //To avoid confusion with other key variable (encryption key value)
             String value = entry.getValue();
 
-            //TODO CHANGE IMPLEMENTATION BASED ON GROUP DECISION
-
-            //This is currently done since the object we have chosen to return the information in is a Map
-            //Which does not return keys in an order - meaning if we use expected key values and they appear out of order - important information will be lost
-            //Current implementation will take whatever we have been passed in and encrypt key and value as the csv block
-
-            userString = userString + key + ":" + value + ",";
+            //Since when maps are dereferenced they do not retrieve values in the same order as they were stored - we cannot do rigorous file structure checks to make sure
+            //the file looks the way it should (we can only do a check to see if the key is one of an approved list). This checkKey takes additional time you may want to
+            //remove (in which case this method takes whatever data you give it an encrypts that - could be useful to expand encryption to other areas but is also a security
+            //risk since then malicious users could encrypt any data they want to hide using this app).
+            //Since the map is out of order is also means any decryption functionality needs to be abe to rebuild the data itself
+            if(checkKey(mapKey) == true)
+            {
+                userString = userString + mapKey + ":" + value + ",";
+            }
 
         }
 
-        userString = userString + "\n"; //Close off the last line (can be removed if don't need a matching line for each entry)
+        userString = userString + "\n"; //Close off the last entry
 
         //These are variables you can use to alter how the encryption functions - I have initialised them here instead of hardcoding
         //them into the function calls so whatever encryption type/specifications you need can be easily altered here (also present in private function as well!)
@@ -152,7 +155,7 @@ public class Encrypt
         final SecretKey skey = keyGenerator.generateKey();
         //Get byte version of key (for use in encrypting)
         byte[] key = skey.getEncoded();
-        keyBytes = key; //TODO REMOVE
+        keyBytes = key; //TODO REMOVE WITH DECRYPT
 
         try
         {
@@ -164,6 +167,7 @@ public class Encrypt
             throw new EncryptHandlerException("Encryption of file failed: " + e.getMessage());
         }
 
+        key = zero(key); //Clear bytes early to prevent reading sensitive data when no longer needed
 
         return enStream;
 
@@ -187,9 +191,9 @@ public class Encrypt
         final Cipher cipher = Cipher.getInstance(cipherAlgorithm);
         //Initialize the cipher with our key and tell it we only want it to encrypt or data right now
         cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
-        //Grab an initialization Vector - mainly for ability to decrypt later (SAVE THIS - could be in KeyStore - up to you)
+        //Initialization Vector can be grabbed from this cipher object - mainly for ability to decrypt later (SAVE THIS - could be in KeyStore - up to you)
         byte[] iv = cipher.getIV();
-        dIV = iv; //TODO REMOVE
+        dIV = iv; //TODO REMOVE WITH DECRYPT
         ///Do the encryption
         byte[] encrypted = cipher.doFinal(clear);
         //There is some advice online stating that converting the encrypted data to a String/Base64 encoded version will help with transport across systems (due to higher support for those charsets)
@@ -200,6 +204,58 @@ public class Encrypt
         //GCM reasoning = https://stackoverflow.com/questions/44425846/how-to-make-gcm-encrypt-with-authentication-tag-for-android
 
         return encrypted;
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - zero
+     * INPUTS - x (array to be cleared)
+     * OUTPUTS - x (cleared array replaces old one)
+     * PURPOSE - This is the function that clears any sensitive data within a byte array
+     */
+    private byte[] zero(byte[] x)
+    {
+
+        for(int ii = 0; ii < x.length; ii++)
+        {
+            x[ii] = 0;
+        }
+
+        return x;
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - checkKey
+     * INPUTS - key (to be checked)
+     * OUTPUTS - validKey (result of check)
+     * PURPOSE - This is the function that confirms a key is a valid one (listed in our tags of a Medical File) to allow encrypt to process it
+     */
+    private boolean checkKey(String key)
+    {
+
+        boolean validKey = false;
+
+        switch(key)
+        {
+
+            //Since maps are out of order - we just check that the key is any of our expected values
+            case "Entry_Time":
+            case "Location":
+            case "Bags":
+            case "Urine":
+            case "Hydration":
+            case "Wellbeing":
+            case "Medical_State":
+                validKey = true;
+                break;
+            default:
+                validKey = false;
+                break;
+
+        }
+
+        return validKey;
+
     }
 
 }

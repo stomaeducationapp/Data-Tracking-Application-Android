@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 09/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 09/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -11,18 +11,19 @@ package EncryptExport;
 
 /* VERSION HISTORY
  * 08/10/2018 - Created class
+ * 27/11/2018 - Updated to a public class so observers can use
  */
 
 /* REFERENCES
  * Based on similar custom exception used by team member Patrick Crockford (in XML_Reader and related classes)
  */
 
-class EncryptHandlerException extends Exception {
+public class EncryptHandlerException extends Exception {
     public EncryptHandlerException()
     {
     }
 
-    public EncryptHandlerException(String message)
+    EncryptHandlerException(String message)
     {
         super(message);
     }

@@ -3,6 +3,9 @@ package Observers;
 import java.io.File;
 import java.util.Map;
 
+import EncryptExport.Detector;
+import EncryptExport.Encrypt;
+import EncryptExport.EncryptHandlerException;
 import Factory.Factory;
 
 /**
@@ -13,10 +16,10 @@ import Factory.Factory;
  * Implements Time_Observer interface
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17 Oct 2018
- * Patrick Crockford
+ * 27th Nov 2018
+ * Added integration code to implement EncyrptExport - Jeremy Dunnet
  */
 public class Export_Data implements Time_Observer {
     /**
@@ -41,9 +44,16 @@ public class Export_Data implements Time_Observer {
     public boolean Notify(Map<Files, File> file_Map) throws NullPointerException {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
-            // TODO: 17-Sep-18 Uncomment and modify when export package has been created
-            //Export_Handler export_handler = factory.Create_Export_Handler();
-            //valid = export_handler.Export_Data(input_Stream, output_Stream);
+
+            Detector d = factory.makeDetector();
+            try {
+                valid = d.handle(file_Map.get(Files.Medical), file_Map.get(Files.Medical), factory);
+            }
+            catch (EncryptHandlerException e)
+            {
+                throw new RuntimeException("SOMETHING WENT HORRIBLY WRONG"); //TODO UPDATE WITH A BETTER EXCEPTION WHEN MAIN IMPLEMENTED
+            }
+
             return valid;
         } else {
             throw new NullPointerException("file_Map is Null or Empty");
