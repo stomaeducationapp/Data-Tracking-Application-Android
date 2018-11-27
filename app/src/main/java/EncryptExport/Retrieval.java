@@ -24,6 +24,7 @@ package EncryptExport;
  */
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -52,8 +53,8 @@ public class Retrieval
 
         Map<String, String> userFile = null; //The user's file we are going to try and retrieve
         Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
-        List<XML_Reader.Tags_To_Read> tags = Arrays.asList(XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Urine, XML_Reader.Tags_To_Read.WellBeing,
-                XML_Reader.Tags_To_Read.Location, XML_Reader.Tags_To_Read.Entry_Time, XML_Reader.Tags_To_Read.Medical_State); //Tags we want to read from the user's file
+        ArrayList<XML_Reader.Tags_To_Read> tags = new ArrayList<XML_Reader.Tags_To_Read>(Arrays.asList(XML_Reader.Tags_To_Read.Export_Data, XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Urine, XML_Reader.Tags_To_Read.WellBeing,
+                XML_Reader.Tags_To_Read.Location, XML_Reader.Tags_To_Read.Entry_Time, XML_Reader.Tags_To_Read.Medical_State)); //Tags we want to read from the user's file
 
 
         try

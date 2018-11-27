@@ -1,85 +1,84 @@
 package Integration.StreamOne;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentMatchers;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import EncryptExport.EncryptHandlerException;
-import EncryptExport.Retrieval;
 import Factory.Factory;
-import XML.Medical_Reader;
-import XML.Medical_Writer;
-import XML.XML_Reader;
-import XML.XML_Reader_Exception;
-import XML.XML_Writer;
-import XML.XML_Writer_Failure_Exception;
-import XML.XML_Writer_File_Layout_Exception;
+import Observers.Export_Data;
+import Observers.Time_Observer;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+
+/* AUTHOR INFORMATION
+ * CREATOR - Jeremy Dunnet 27/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
+ */
+
+/* CLASS/FILE DESCRIPTION
+ * This is the test file for all testing related to the EncryptExport package integration with it's connected features (XML to read files and Observers to call the encrypt)
+ */
+
+/* VERSION HISTORY
+ * 27/11/2018 - Created test harnesses
+ * 28/11/2018 - Fixed and completed testing
+ */
+
+/* REFERENCES
+ * Android studio test research on https://drive.google.com/open?id=11L9vChloJtNgOaYAJQpCSJlA2hajMQCe
+ * And all related documentation on https://developer.android.com
+ */
 
 public class StreamOneTest {
 
-    private File in = mock(File.class);
-    private File out = in; //We don't care what the files are since we never use them
-    //Mock objects we will change each test
     private Factory f;
-    private Medical_Reader mr;
-    private Medical_Writer mw;
 
     /* FUNCTION INFORMATION
-     * NAME - retrieveTestCaseX
+     * NAME - setUp
+     * INPUTS - view
+     * OUTPUTS - none
+     * PURPOSE - This is the function that creates the initial factory object we will reuse
+     */
+    @Before
+    public void setUp()
+    {
+        f = Factory.Get_Factory();
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - StreamOneTestCaseX
      * INPUTS - none
      * OUTPUTS - none
-     * PURPOSE - These are the tests that performs asserts on each function call/return value of the retrieve method in Retrieval.java
+     * PURPOSE - These are the tests that performs asserts on each end result of the integration of Encrypt/Export with observers
      */
     @Test
-    public void retrieveTestCase1()
+    public void StreamOneTestCase1()
     {
 
-        //First mock needed objects and tailor mock returns
-        mr = mock(Medical_Reader.class);
-        Map<String, String> mockMap = new HashMap<String, String>();
+        boolean valid = false;
+        String message = "";
+
+        //First we create the fileMap we need for the test
+        Map<Time_Observer.Files, File> fileMap =  new HashMap<Time_Observer.Files, File>();
+        fileMap.put(Time_Observer.Files.Medical, new File("/app/src/test/java/Integration/StreamOne/iso_valid_file.xml"));
 
         try
         {
-            when(mr.Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), anyString())).thenReturn(mockMap);
-
+            Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
+            valid  = e.Notify(fileMap);
+            message = e.dTest();
         }
-        catch ( XML_Reader_Exception | NullPointerException e)
+        catch (NullPointerException e)
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        f = mock(Factory.class);
-        when(f.Make_Reader(Factory.XML_Reader_Choice.Medical)).thenReturn(mr);
-
-        //Case 1: Retrieval with an empty map
-        Retrieval testR = new Retrieval();
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("TESTKEY", "TESTVALUE"); //Initialise to the opposite of what we want
-
-        //Now we verify all mocked methods were called
-        try
-        {
-            verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
-            verify(f, times(1)).Make_Reader(Factory.XML_Reader_Choice.Medical);
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
 
         //Now we assert the final value is what we expected
-        assertEquals("Map was empty", mockMap, map);
+        assertEquals("Operation was successful", true, valid);
+        System.out.println(message);
 
     }
 }

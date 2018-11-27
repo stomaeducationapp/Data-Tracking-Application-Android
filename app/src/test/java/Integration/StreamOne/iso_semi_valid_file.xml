@@ -1,0 +1,16 @@
+<Medical_Information>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <This>This</This>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Is>Is</Is>
+        <An>An</An>
+        <Hydration>d</Hydration>
+        <Wellbeing>e</Wellbeing>
+        <Invalid>Invalid</Invalid>
+        <File>File</File>
+        <Medical_State>f</Medical_State>
+    </Medical_Entry>
+</Medical_Information>

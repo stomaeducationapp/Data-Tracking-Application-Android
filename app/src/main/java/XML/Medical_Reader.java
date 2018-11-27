@@ -5,6 +5,8 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -99,6 +101,19 @@ public class Medical_Reader implements XML_Reader {
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(false);
                 XmlPullParser xmlPullParser = factory.newPullParser();
+
+                //TODO REMOVE WHEN MOVED TO APP TESTING
+                FileInputStream inStream = null;
+                try{
+                    inStream = new FileInputStream(file);
+                }
+                catch (FileNotFoundException e)
+                {
+                    int ii = 0 + 1;
+                }
+                xmlPullParser.setInput(inStream, "UTF-8"); //Added this so pullparser with hook into file given to it
+
+
                 number_Of_Entries = 0;
                 prefix_Of_Key = 1;
                 entries_Required = null;

@@ -27,6 +27,9 @@ public class Export_Data implements Time_Observer {
      */
     private Factory factory;
 
+    //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+    Detector testD;
+
     /**
      * Instantiates a new Export_Data.
      */
@@ -46,6 +49,10 @@ public class Export_Data implements Time_Observer {
             boolean valid = false;
 
             Detector d = factory.makeDetector();
+
+            //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+            testD = d;
+
             try {
                 valid = d.handle(file_Map.get(Files.Medical), file_Map.get(Files.Medical), factory);
             }
@@ -58,5 +65,19 @@ public class Export_Data implements Time_Observer {
         } else {
             throw new NullPointerException("file_Map is Null or Empty");
         }
+    }
+
+    public String dTest()
+    {
+        String m = "";
+        try {
+            m = testD.test();
+        }
+        catch(EncryptHandlerException e)
+        {
+            ;
+        }
+
+        return m;
     }
 }
