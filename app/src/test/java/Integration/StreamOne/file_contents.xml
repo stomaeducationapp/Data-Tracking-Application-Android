@@ -1,0 +1,44 @@
+<!-- This is the layout for each of the test files in this directory - since the tests of this stream also test clearing the data - you will need to recopy in for each test -->
+<!-- Empty file -->
+<Medical_Information>
+
+</Medical_Information>
+<!-- Invalid File -->
+<Medical_Information>
+    <Medical_Entry>
+        <This>This</This>
+        <Is>Is</Is>
+        <An>An</An>
+        <Invalid>Invalid</Invalid>
+        <File>File</File>
+    </Medical_Entry>
+</Medical_Information>
+<!-- Semi-valid File -->
+<Medical_Information>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <This>This</This>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Is>Is</Is>
+        <An>An</An>
+        <Hydration>d</Hydration>
+        <Wellbeing>e</Wellbeing>
+        <Invalid>Invalid</Invalid>
+        <File>File</File>
+        <Medical_State>f</Medical_State>
+    </Medical_Entry>
+</Medical_Information>
+<!-- Valid File -->
+<Medical_Information>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Hydration>d</Hydration>
+        <Wellbeing>e</Wellbeing>
+        <Medical_State>f</Medical_State>
+    </Medical_Entry>
+</Medical_Information>

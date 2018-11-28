@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,7 +64,8 @@ public class StreamOneTest {
 
         //First we create the fileMap we need for the test
         Map<Time_Observer.Files, File> fileMap =  new HashMap<Time_Observer.Files, File>();
-        fileMap.put(Time_Observer.Files.Medical, new File("/app/src/test/java/Integration/StreamOne/iso_valid_file.xml"));
+
+        fileMap.put(Time_Observer.Files.Medical, new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamOne\\iso_valid_file.xml"));
 
         try
         {
