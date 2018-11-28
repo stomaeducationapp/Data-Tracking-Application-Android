@@ -62,7 +62,7 @@ public class Retrieval
         try
         {
             userFile = reader.Read_File(input, tags, null); //Retrieve the data we need
-            //TODO UPDATE ACCOUNT NAME IF FILE STORAGE METHOD CHANGES
+            //TODO UPDATE TO USE ACCOUNT NAME IF FILE STORAGE METHOD CHANGES
         }
         catch ( XML_Reader_Exception | NullPointerException e)
         {
