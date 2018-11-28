@@ -37,7 +37,7 @@ public class Account_Modification extends Activity implements Account_Informatio
             public void onClick(View v) {
                 android.app.FragmentManager fm = getFragmentManager();
                 Account_Information_Name_Fragment account_information_name_fragment = Account_Information_Name_Fragment.newInstance(account_data.getAccount_Name());
-                account_information_name_fragment.show(fm, "Account_Information_Name_Fragment");
+                //account_information_name_fragment.show(fm, "Account_Information_Name_Fragment"); //TODO FIX
             }
         });
             /*final Button password_Btn = findViewById(R.id.password_Btn);

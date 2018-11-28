@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 18/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -14,6 +14,7 @@ package EncryptExport;
  * 09/10/2018 - Brought up closer to final design
  * 16/10/2018 - Modified code to as close to final design as it known currently
  * 18/10/2018 - Updated to match new master pull
+ * 27/11/2018 - Updated to prepare for integration of XML
  */
 
 /* REFERENCES
@@ -23,6 +24,7 @@ package EncryptExport;
  */
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -50,15 +52,15 @@ public class Retrieval
     {
 
         Map<String, String> userFile = null; //The user's file we are going to try and retrieve
-        Medical_Reader reader = factory.Make_Medical_Reader(); //TODO UPDATE WITH REAL CALL
-        List<XML_Reader.Tags_To_Read> tags = Arrays.asList(XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Urine, XML_Reader.Tags_To_Read.WellBeing,
-                XML_Reader.Tags_To_Read.Location, XML_Reader.Tags_To_Read.Entry_Time, XML_Reader.Tags_To_Read.Medical_State); //Tags we want to read from the user's file
-        //TODO FIND OUT IF THIS NEEDS FACTORY CALL
+        Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
+        ArrayList<XML_Reader.Tags_To_Read> tags = new ArrayList<XML_Reader.Tags_To_Read>(Arrays.asList(XML_Reader.Tags_To_Read.Export_Data, XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Urine, XML_Reader.Tags_To_Read.WellBeing,
+                XML_Reader.Tags_To_Read.Location, XML_Reader.Tags_To_Read.Entry_Time, XML_Reader.Tags_To_Read.Medical_State)); //Tags we want to read from the user's file
 
 
         try
         {
             userFile = reader.Read_File(input, tags, null); //Retrieve the data we need
+            //TODO UPDATE ACCOUNT NAME IF FILE STORAGE METHOD CHANGES
         }
         catch ( XML_Reader_Exception | NullPointerException e)
         {
@@ -78,7 +80,7 @@ public class Retrieval
     public boolean bookKeeping(File output, Map<String, String> userData, Factory factory) throws EncryptHandlerException
     {
         boolean success = false;
-        Medical_Writer writer = factory.Make_Medical_Writer();
+        Medical_Writer writer = (Medical_Writer) factory.Make_Writer(Factory.XML_Writer_Choice.Medical);
 
         try
         {

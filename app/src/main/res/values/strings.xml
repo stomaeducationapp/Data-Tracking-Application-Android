@@ -8,11 +8,10 @@
     <string name="change_export_settings">Change Export Settings</string>
     <string name="change_notification_settings">Change Notification Settings</string>
     <string name="modify_password">Modify Password</string>
-    <string name="modify_account_name">Modify Account Name</string>
     <string name="return_to_main_menu">Return To Main Menu</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="textview">Account Information</string>
+    <string name="title_account_information">Account Information</string>
     <string name="return_Btn"><![CDATA[<-]]></string>
     <string name="current_account_name">Current Account Name</string>
     <string name="enter_new_account_name">Enter New Account Name</string>

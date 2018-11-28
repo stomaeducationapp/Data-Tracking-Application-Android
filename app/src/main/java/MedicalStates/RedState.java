@@ -63,13 +63,13 @@ public class RedState implements StomaState {
     //TODO: Verify if writer working in integration
     @Override
     public boolean Account_State_Information(Factory factory, File acc) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
-        Account_Writer writer = factory.Make_Account_Writer();
+        /*Account_Writer writer = factory.Make_Account_Writer(); //TODO FIX
 
         Map<String, String> content = new HashMap<>();
 
         content.put("State", Double.toString(stateVal));
 
-        writer.Write_File(acc, content, XML_Writer.Tags_To_Write.State);
+        writer.Write_File(acc, content, XML_Writer.Tags_To_Write.State);*/
         return true;
     }
 }

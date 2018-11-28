@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 16/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -14,6 +14,7 @@ package EncryptExport;
  * 02/10/2018 - Created file and added comment design path for future coding
  * 09/10/2018 - Changed to more like final design
  * 16/10/2018 - Modified code to as close to final design as it known currently
+ * 27/11/2018 - Updated code to integrate in XML functionality and enable Export_Data to integrate this in to it
  */
 
 /* REFERENCES
@@ -22,21 +23,23 @@ package EncryptExport;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import Factory.Factory;
 
 public class Detector
 {
 
-    //Classfields
-    private Object file; //The file that holds the user's data
-    private Object enFile; //The final encrypted file
-
-    //Constructors
-
-    //Getters+Setters
+    //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+    private byte[] testB;
+    private Encrypt testE;
 
     /* FUNCTION INFORMATION
      * NAME - handle
@@ -45,7 +48,7 @@ public class Detector
      * PURPOSE - This is the function to handle the encrypt/export event triggered by either the user manually or
      *           automatically after 7 days no export
      */
-    public static boolean handle(File input, File output, Factory factory) throws EncryptHandlerException
+    public boolean handle(File input, File output, Factory factory) throws EncryptHandlerException
     {
         boolean done = false; //To tell calling method if we succeeded ot not
 
@@ -54,9 +57,10 @@ public class Detector
         Encrypt en = factory.makeEncrypt();
         //Export object to handle the exporting of data
 
-        //Maps for user data
+        //Map for user data
         Map<String, String> userFile;
-        byte[] enFile;
+        //Array of encrypted bytes from above map
+        byte[] enBytes;
 
         try
         {
@@ -64,9 +68,13 @@ public class Detector
             userFile = sys.retrieve(input, factory);
 
             //Pass to Encrypt to convert file to encrypted
-            enFile = en.encryptHandler(userFile);
+            enBytes = en.encryptHandler(userFile);
 
-            //Pass enFile to chosen export method
+            //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+            testB = enBytes;
+            testE = en;
+
+            //TODO PASS ENBYTES TO EXPORT ONCE CONFIGURED
 
             //Clean up exported data
             boolean success = sys.bookKeeping(output, userFile, factory);
@@ -81,6 +89,18 @@ public class Detector
         }
 
         return done;
+    }
+
+    //TODO REMOVE WHEN FINISHED INTEGRATION TESTING
+    public String test() throws EncryptHandlerException {
+        try {
+            return testE.decrypt(testB);
+        }
+        catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException e)
+        {
+            throw new EncryptHandlerException("BAD");
+        }
+
     }
 
 

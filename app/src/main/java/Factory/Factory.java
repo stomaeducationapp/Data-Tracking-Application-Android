@@ -16,8 +16,12 @@ import Observers.State_Observer;
 import Observers.Time_Observer;
 import XML.Account_Reader;
 import XML.Account_Writer;
+import XML.Login_Reader;
+import XML.Login_Writer;
 import XML.Medical_Reader;
 import XML.Medical_Writer;
+import XML.XML_Reader;
+import XML.XML_Writer;
 
 
 /**
@@ -27,7 +31,7 @@ import XML.Medical_Writer;
  * are used to change the visibility of the constructor and try and use it.
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Changes</h1>
  * 03rd Sept
  * Created Factory Package and Class, Patrick Crockford
@@ -37,6 +41,8 @@ import XML.Medical_Writer;
  * JavaDoc, Patrick Crockford
  * 17th Sept
  * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
+ * 27th Nov
+ * Updated factory methods to properly created all Encyrpt package objects and XML objects - Jeremy Dunnet
  */
 public class Factory {
     private static Factory factory;
@@ -215,46 +221,43 @@ public class Factory {
      */
     //May need to add Bag and Urine constructors here depending on if package private or not.
 
-    //XML PACKAGE
-    /*
-    public Reader Make_Reader( XML_Reader_Choice choice){
-        Reader reader = null
+    //Factory methods for XML Package
+    public XML_Reader Make_Reader(XML_Reader_Choice choice){
+        XML_Reader reader = null;
         switch(choice){
-            case(XML_Reader_Choice.Login):
-                reader = new Login_Information();
+            case Login:
+                reader = new Login_Reader();
                 break;
-            case(XML_Reader_Choice.Account):
-                reader = new Account_Information();
+            case Account:
+                reader = new Account_Reader();
                 break;
-            case(XML_Reader_Choice.Medical):
-                reader = new Medical_Information();
+            case Medical:
+                reader = new Medical_Reader();
                 break;
             default:
         }
         return reader;
     }
-     */
 
-    /*
-    public Reader Make_Reader( XML_Writer_Choice choice){
-        Reader writer = null
+
+    public XML_Writer Make_Writer(XML_Writer_Choice choice){
+        XML_Writer writer = null;
         switch(choice){
-            case(XML_Reader_Choice.Login):
-                writer = new Login_Information();
+            case Login:
+                writer = new Login_Writer();
                 break;
-            case(XML_Reader_Choice.Account):
-                writer = new Account_Information();
+            case Account:
+                writer = new Account_Writer();
                 break;
-            case(XML_Reader_Choice.Medical):
-                writer = new Medical_Information();
+            case Medical:
+                writer = new Medical_Writer();
                 break;
             default:
         }
         return writer;
     }
-     */
 
-    //Factory methods for EncryptExport package
+    //Factory methods for EncryptExport Package
     public Retrieval makeRetrieval()
     {
         return new Retrieval();
@@ -268,29 +271,5 @@ public class Factory {
     public Detector makeDetector()
     {
         return new Detector();
-    }
-
-
-    //Mock methods for medical reader and writer (USED FOR TESTING)
-    //TODO REMOVE AFTER SUCCESSFUL TESTING
-
-    public Medical_Reader Make_Medical_Reader()
-    {
-        return new Medical_Reader();
-    }
-
-    public Medical_Writer Make_Medical_Writer()
-    {
-        return new Medical_Writer();
-    }
-
-    public Account_Reader Make_Account_Reader()
-    {
-        return new Account_Reader();
-    }
-
-    public Account_Writer Make_Account_Writer()
-    {
-        return new Account_Writer();
     }
 }

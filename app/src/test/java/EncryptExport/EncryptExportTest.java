@@ -82,7 +82,7 @@ public class EncryptExportTest {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
         f = mock(Factory.class);
-        when(f.Make_Medical_Reader()).thenReturn(mr);
+        when(f.Make_Reader(Factory.XML_Reader_Choice.Medical)).thenReturn(mr);
 
         //Case 1: Retrieval with an empty map
         Retrieval testR = new Retrieval();
@@ -101,7 +101,7 @@ public class EncryptExportTest {
         try
         {
             verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
-            verify(f, times(1)).Make_Medical_Reader();
+            verify(f, times(1)).Make_Reader(Factory.XML_Reader_Choice.Medical);
         }
         catch (Exception e)
         {
@@ -130,7 +130,7 @@ public class EncryptExportTest {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
         f = mock(Factory.class);
-        when(f.Make_Medical_Reader()).thenReturn(mr);
+        when(f.Make_Reader(Factory.XML_Reader_Choice.Medical)).thenReturn(mr);
 
         //Case 2: Retrieval with a map with values (could be valid/invalid - would be set up the same)
         Retrieval testR = new Retrieval();
@@ -149,7 +149,7 @@ public class EncryptExportTest {
         try
         {
             verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
-            verify(f, times(1)).Make_Medical_Reader();
+            verify(f, times(1)).Make_Reader(Factory.XML_Reader_Choice.Medical);
         }
         catch (Exception e)
         {
@@ -183,7 +183,7 @@ public class EncryptExportTest {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
         f = mock(Factory.class);
-        when(f.Make_Medical_Writer()).thenReturn(mw);
+        when(f.Make_Writer(Factory.XML_Writer_Choice.Medical)).thenReturn(mw);
 
         //Case 1: BookKeeping was successful (Only real cases are if external code returns correctly)
         Retrieval testR = new Retrieval();
@@ -201,7 +201,7 @@ public class EncryptExportTest {
         try
         {
             verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
-            verify(f, times(1)).Make_Medical_Writer();
+            verify(f, times(1)).Make_Writer(Factory.XML_Writer_Choice.Medical);
         }
         catch (Exception e)
         {
@@ -229,7 +229,7 @@ public class EncryptExportTest {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
         f = mock(Factory.class);
-        when(f.Make_Medical_Writer()).thenReturn(mw);
+        when(f.Make_Writer(Factory.XML_Writer_Choice.Medical)).thenReturn(mw);
 
         //Case 2: BookKeeping failed
         Retrieval testR = new Retrieval();
@@ -247,7 +247,7 @@ public class EncryptExportTest {
         try
         {
             verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
-            verify(f, times(1)).Make_Medical_Writer();
+            verify(f, times(1)).Make_Writer(Factory.XML_Writer_Choice.Medical);
         }
         catch (Exception e)
         {
@@ -415,7 +415,7 @@ public class EncryptExportTest {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
 
-        when(f.Make_Medical_Reader()).thenReturn(mr);
+        when(f.Make_Reader(Factory.XML_Reader_Choice.Medical)).thenReturn(mr);
 
         mw = mock(Medical_Writer.class);
         try
@@ -426,7 +426,7 @@ public class EncryptExportTest {
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        when(f.Make_Medical_Writer()).thenReturn(mw);
+        when(f.Make_Writer(Factory.XML_Writer_Choice.Medical)).thenReturn(mw);
         when(f.makeRetrieval()).thenReturn(new Retrieval()); //Since we have successfully tested these (any mocked the objects inside them - we can just construct them
         when(f.makeEncrypt()).thenReturn(new Encrypt());
 
@@ -446,9 +446,9 @@ public class EncryptExportTest {
         try
         {
             verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
-            verify(f, times(1)).Make_Medical_Reader();
+            verify(f, times(1)).Make_Reader(Factory.XML_Reader_Choice.Medical);
             verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
-            verify(f, times(1)).Make_Medical_Writer();
+            verify(f, times(1)).Make_Writer(Factory.XML_Writer_Choice.Medical);
         }
         catch (Exception e)
         {
@@ -496,7 +496,7 @@ public class EncryptExportTest {
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        when(f.Make_Medical_Reader()).thenReturn(mr);
+        when(f.Make_Reader(Factory.XML_Reader_Choice.Medical)).thenReturn(mr);
         when(f.makeRetrieval()).thenReturn(new Retrieval()); //Since we have successfully tested these (any mocked the objects inside them - we can just construct them
         when(f.makeEncrypt()).thenReturn(new Encrypt());
 
@@ -509,7 +509,7 @@ public class EncryptExportTest {
         {
             System.out.println("Failed to read in user data" + e.getMessage());
         }
-        when(f.Make_Medical_Writer()).thenReturn(mw);
+        when(f.Make_Writer(Factory.XML_Writer_Choice.Medical)).thenReturn(mw);
 
         //Case 2: Entire process fails
         Detector testD = new Detector();
@@ -527,9 +527,9 @@ public class EncryptExportTest {
         try
         {
             verify(mr, times(1)).Read_File((File) any(), ArgumentMatchers.<XML_Reader.Tags_To_Read>anyList(), (String) isNull());
-            verify(f, times(1)).Make_Medical_Reader();
+            verify(f, times(1)).Make_Reader(Factory.XML_Reader_Choice.Medical);
             verify(mw, times(1)).Write_File((File) any(), ArgumentMatchers.<String, String>anyMap() , ArgumentMatchers.<XML_Writer.Tags_To_Write>any());
-            verify(f, times(1)).Make_Medical_Writer();
+            verify(f, times(1)).Make_Writer(Factory.XML_Writer_Choice.Medical);
         }
         catch (Exception e)
         {

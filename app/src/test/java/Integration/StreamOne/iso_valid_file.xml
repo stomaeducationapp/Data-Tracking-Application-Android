@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Medical_Information>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Hydration>d</Hydration>
+        <Wellbeing>e</Wellbeing>
+        <Medical_State>f</Medical_State>
+    </Medical_Entry>
+</Medical_Information>
