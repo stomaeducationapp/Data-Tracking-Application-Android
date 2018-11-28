@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 28/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -15,6 +15,7 @@ package EncryptExport;
  * 16/10/2018 - Modified code to as close to final design as it known currently
  * 18/10/2018 - Updated to match new master pull
  * 27/11/2018 - Updated to prepare for integration of XML
+ * 28/11/2018 - Added tags I missed
  */
 
 /* REFERENCES
@@ -53,8 +54,9 @@ public class Retrieval
 
         Map<String, String> userFile = null; //The user's file we are going to try and retrieve
         Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
-        ArrayList<XML_Reader.Tags_To_Read> tags = new ArrayList<XML_Reader.Tags_To_Read>(Arrays.asList(XML_Reader.Tags_To_Read.Export_Data, XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Urine, XML_Reader.Tags_To_Read.WellBeing,
-                XML_Reader.Tags_To_Read.Location, XML_Reader.Tags_To_Read.Entry_Time, XML_Reader.Tags_To_Read.Medical_State)); //Tags we want to read from the user's file
+        ArrayList<XML_Reader.Tags_To_Read> tags = new ArrayList<XML_Reader.Tags_To_Read>(Arrays.asList(XML_Reader.Tags_To_Read.Export_Data, XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Urine, XML_Reader.Tags_To_Read.Wellbeing,
+                XML_Reader.Tags_To_Read.Location, XML_Reader.Tags_To_Read.Entry_Time, XML_Reader.Tags_To_Read.Medical_State, XML_Reader.Tags_To_Read.Colour, XML_Reader.Tags_To_Read.Consistency, XML_Reader.Tags_To_Read.Physical,
+                XML_Reader.Tags_To_Read.Volume, XML_Reader.Tags_To_Read.Hydration)); //Tags we want to read from the user's file
 
 
         try

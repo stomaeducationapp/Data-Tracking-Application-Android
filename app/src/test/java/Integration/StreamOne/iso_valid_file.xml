@@ -7,6 +7,10 @@
         <Urine>c</Urine>
         <Hydration>d</Hydration>
         <Wellbeing>e</Wellbeing>
+        <Volume>V</Volume>
+        <Colour>C</Colour>
+        <Consistency>c</Consistency>
+        <Physical>P</Physical>
         <Medical_State>f</Medical_State>
     </Medical_Entry>
 </Medical_Information>

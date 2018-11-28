@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 28/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -17,6 +17,7 @@ package EncryptExport;
  * 16/10/2018 - Modified code to as close to final design as it known currently
  * 18/10/2018 - Edited functionality to work with map objects we are using to transport user data
  * 27/11/2018 - Added some additional functionality to shore up some weaknesses and prepared for integration.
+ * 28/11/2018 - Updated new methods to work as intended
  */
 
 /* REFERENCES
@@ -28,6 +29,8 @@ package EncryptExport;
  * Reasoning for GCM learned from https://stackoverflow.com/questions/44425846/how-to-make-gcm-encrypt-with-authentication-tag-for-android
  * Iteration of a Map learned from https://stackoverflow.com/questions/1066589/iterate-through-a-hashmap
  * Hashmap order learned from https://stackoverflow.com/questions/1882762/is-the-java-hashmap-keyset-iteration-order-consistent
+ * Getting the index of a character in a string learned from https://stackoverflow.com/questions/6435889/how-to-get-the-position-of-selected-character-or-string-in-edittext
+ * Getting substring of a string learned from https://stackoverflow.com/questions/5414657/extract-substring-from-a-string
  * And all related documentation on https://developer.android.com
  */
 
@@ -167,7 +170,7 @@ public class Encrypt
             throw new EncryptHandlerException("Encryption of file failed: " + e.getMessage());
         }
 
-        key = zero(key); //Clear bytes early to prevent reading sensitive data when no longer needed
+        //key = zero(key); //Clear bytes early to prevent reading sensitive data when no longer needed //TODO - RE ENABLE WHEN DONE TESTING - THIS BREAKS ABILITY TO STORE KEY AS CLASSFIELD
 
         return enStream;
 
@@ -235,6 +238,12 @@ public class Encrypt
 
         boolean validKey = false;
 
+        int index = key.indexOf("-"); //All tags have '-X' to mark what entry they are (we need to remove this for now to do a check)
+        if(index != -1) //One tag does not contain the '-X' which is the number of entries retrieved
+        {
+            key = key.substring(0, index);
+        }
+
         switch(key)
         {
 
@@ -246,6 +255,11 @@ public class Encrypt
             case "Hydration":
             case "Wellbeing":
             case "Medical_State":
+            case "Volume":
+            case "Colour":
+            case "Physical":
+            case "Consistency":
+            case "Entries_Retrieved":
                 validKey = true;
                 break;
             default:

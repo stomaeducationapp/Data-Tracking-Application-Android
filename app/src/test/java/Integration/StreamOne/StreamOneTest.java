@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 27/11/2018
- * LAST MODIFIED BY - Jeremy Dunnet 27/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 28/11/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -83,4 +83,110 @@ public class StreamOneTest {
         System.out.println(message);
 
     }
+
+    /* FUNCTION INFORMATION
+     * NAME - StreamOneTestCaseX
+     * INPUTS - none
+     * OUTPUTS - none
+     * PURPOSE - These are the tests that performs asserts on each end result of the integration of Encrypt/Export with observers
+     */
+    @Test
+    public void StreamOneTestCase2()
+    {
+
+        boolean valid = false;
+        String message = "";
+
+        //First we create the fileMap we need for the test
+        Map<Time_Observer.Files, File> fileMap =  new HashMap<Time_Observer.Files, File>();
+
+        fileMap.put(Time_Observer.Files.Medical, new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamOne\\iso_invalid_file.xml"));
+
+        try
+        {
+            Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
+            valid  = e.Notify(fileMap);
+            message = e.dTest();
+        }
+        catch (NullPointerException e)
+        {
+            System.out.println("Failed to read in user data" + e.getMessage());
+        }
+
+        //Now we assert the final value is what we expected
+        assertEquals("Operation was successful", true, valid);
+        System.out.println(message);
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - StreamOneTestCaseX
+     * INPUTS - none
+     * OUTPUTS - none
+     * PURPOSE - These are the tests that performs asserts on each end result of the integration of Encrypt/Export with observers
+     */
+    @Test
+    public void StreamOneTestCase3()
+    {
+
+        boolean valid = false;
+        String message = "";
+
+        //First we create the fileMap we need for the test
+        Map<Time_Observer.Files, File> fileMap =  new HashMap<Time_Observer.Files, File>();
+
+        fileMap.put(Time_Observer.Files.Medical, new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamOne\\iso_semi_valid_file.xml"));
+
+        try
+        {
+            Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
+            valid  = e.Notify(fileMap);
+            message = e.dTest();
+        }
+        catch (NullPointerException e)
+        {
+            System.out.println("Failed to read in user data" + e.getMessage());
+        }
+
+        //Now we assert the final value is what we expected
+        assertEquals("Operation was successful", true, valid);
+        System.out.println(message);
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - StreamOneTestCaseX
+     * INPUTS - none
+     * OUTPUTS - none
+     * PURPOSE - These are the tests that performs asserts on each end result of the integration of Encrypt/Export with observers
+     */
+    @Test
+    public void StreamOneTestCase4()
+    {
+
+        boolean valid = false;
+        String message = "";
+
+        //First we create the fileMap we need for the test
+        Map<Time_Observer.Files, File> fileMap =  new HashMap<Time_Observer.Files, File>();
+
+        fileMap.put(Time_Observer.Files.Medical, new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamOne\\iso_empty_file.xml"));
+
+        try
+        {
+            Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
+            valid  = e.Notify(fileMap);
+            message = e.dTest();
+        }
+        catch (NullPointerException e)
+        {
+            System.out.println("Failed to read in user data" + e.getMessage());
+        }
+
+        //Now we assert the final value is what we expected
+        assertEquals("Operation was successful", true, valid);
+        System.out.println(message);
+
+    }
+
 }
