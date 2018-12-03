@@ -2,7 +2,6 @@ package capstonegroup2.dataapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,13 +9,10 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import Observers.Form_Change_Observer;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
@@ -75,11 +71,11 @@ public class Login extends AppCompatActivity
         splashLayout = findViewById(R.id.splashLayout);
         loginLayout = findViewById(R.id.loginLayout);
         splashText = findViewById(R.id.loginSplash);
-        unameText = findViewById(R.id.unameBox);
-        passText = findViewById(R.id.passBox);
-        settingsButt = findViewById(R.id.settingsButt);
-        registerButt = findViewById(R.id.registerButt);
-        recoverButt = findViewById(R.id.recoverButt);
+        unameText = findViewById(R.id.loginUnameBox);
+        passText = findViewById(R.id.loginPassBox);
+        settingsButt = findViewById(R.id.loginSettingsButt);
+        registerButt = findViewById(R.id.loginRegisterButt);
+        recoverButt = findViewById(R.id.loginRecoverButt);
         submitButt = findViewById(R.id.loginButt);
 
         //Hide the loginLayout until the user decides to login
@@ -88,8 +84,8 @@ public class Login extends AppCompatActivity
         //Set up a blinking text animation - for some flair
         Animation anim = new AlphaAnimation(0.0f, 1.0f); //Alpha is a useful Animation object for fading in and out (what we aim to do)
                                                          //The floats describe how the animation will progress (0.0(invisible) to 1.0(opaque))
-        anim.setDuration(50); //Change how long the animation runs for (in ms)
-        anim.setStartOffset(20); //How long after creation to start (in ms)
+        anim.setDuration(500); //Change how long the animation runs for (in ms)
+        anim.setStartOffset(500); //How long after creation to start (in ms)
         anim.setRepeatMode(Animation.REVERSE); //What to do when animation finishes (could do RESTART to do a loop animation)
         anim.setRepeatCount(Animation.INFINITE); //How many times to repeat animation
         splashText.startAnimation(anim);
@@ -165,105 +161,120 @@ public class Login extends AppCompatActivity
     {
         //Grab the two strings the user input
         String uInput = (unameText.getText()).toString();
-        String pInput = (passText.getText()).toString();
-
-        /* //TODO REDO WHEN VALIDATION DONE
-        Enum<Validate_Result> validResult; //Boolean check for if the entry by the user was valid
-
-        validResult = validator.Validate_Username(uInput); //Call validation to check if the user input is valid
-        //Do error checking for possible error enums
-        if(validResult != Validate_Result.PASS) //If not a valid username
+        if(uInput.equals(""))
         {
-
-            String err = validator.getError(validResult); //Get the specific error code
-            unameText.setError(err); //Display to the user
-
+            unameText.requestFocus();
+            unameText.setError("Please provide a username");
         }
         else
         {
-
-            if(validator.verify_username(uInput) != Validate_result.PASS) //If the account name doesn't exist
+            String pInput = (passText.getText()).toString();
+            if(pInput.equals(""))
             {
-                //OR JUST SET OWN "Username does not exist" error
-                String err = validator.getError(validResult); //Get the specific error code
-                unameText.setError(err); //Display to the user
+                passText.requestFocus();
+                passText.setError("Please provide a password");
             }
             else
             {
 
-                validResult = validator.Validate_Password(pInput); //Call validation to check if the user input is valid
+                /* //TODO REDO WHEN VALIDATION DONE
+                Enum<Validate_Result> validResult; //Boolean check for if the entry by the user was valid
+
+                validResult = validator.Validate_Username(uInput); //Call validation to check if the user input is valid
+                //Do error checking for possible error enums
                 if(validResult != Validate_Result.PASS) //If not a valid username
                 {
 
-                    String err = validator.getError(validResult); //Get the specific error code
-                    passText.setError(err); //Display to the user
+                   String err = validator.getError(validResult); //Get the specific error code
+                    unameText.setError(err); //Display to the user
 
                 }
                 else
                 {
-                */
 
-                    //Hash password (we only store hashed passwords to protect them)
-                    final String algorithm = "SHA-256"; //Values to create the hash used later on
-                    MessageDigest md;
-
-                    try {
-                        md = MessageDigest.getInstance(algorithm);
-                    }
-                    catch (NoSuchAlgorithmException e)
-                    {
-                        throw new IllegalStateException("No algorithm exists"); //TODO POSSIBLE REWORK TO CUSTOM EXCEPTION CLASS
-                    }
-                    byte[] answerBytes = pInput.getBytes();
-                    byte[] hash = md.digest(answerBytes);
-                    String hashedPass = new String(hash);
-
-                    /* //TODO UNCOMMENT WHEN MAIN MENU DONE
-                    lr = f.Make_Login_Reader();
-                    Map<String, String> userInfo;
-                    List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Password));
-
-                    userInfo = lr.Read_File(loginFile, list, uInput);
-
-                    String storedPass = userInfo.get("Password");
-
-                    if(storedPass.equals(hashedPass))
-                    {
-
-                        //Create the intent we want to change to
-                        Intent switchAct = new Intent(this, MainMenu.class);
-                        //Need to add username in as a bundle parameter to pass to main menu
-
-                        //Call our Form_Change Observer to do the switching for us
-                        fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, switchAct);
-
-                    }
-
+                if(validator.verify_username(uInput) != Validate_result.PASS) //If the account name doesn't exist
+                {
+                    //OR JUST SET OWN "Username does not exist" error
+                    String err = validator.getError(validResult); //Get the specific error code
+                    unameText.setError(err); //Display to the user
                 }
-        */
+                else
+                {
 
-        //TODO REMOVE WHEN INTEGRATED
+                    validResult = validator.Validate_Password(pInput); //Call validation to check if the user input is valid
+                    if(validResult != Validate_Result.PASS) //If not a valid username
+                    {
 
-        // Creating alert Dialog with one Button
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
+                        String err = validator.getError(validResult); //Get the specific error code
+                        passText.setError(err); //Display to the user
 
-        // Setting Dialog Title
-        alertDialog.setTitle("Login Results");
-
-        // Setting Dialog Message
-        alertDialog.setMessage("You logged in with:\nUsername: " + uInput + "\nPassword: " + pInput + "\nHashed Password: " + hashedPass);
-
-        // Setting the finished button
-        alertDialog.setNegativeButton("OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel(); //Simply close screen
                     }
-                });
+                    else
+                    {
+                    */
 
-        // Showing Alert Message
-        alertDialog.show();
+                        //Hash password (we only store hashed passwords to protect them)
+                        final String algorithm = "SHA-256"; //Values to create the hash used later on
+                        MessageDigest md;
 
+                        try {
+                            md = MessageDigest.getInstance(algorithm);
+                        }
+                        catch (NoSuchAlgorithmException e)
+                        {
+                            throw new IllegalStateException("No algorithm exists"); //TODO POSSIBLE REWORK TO CUSTOM EXCEPTION CLASS
+                        }
+                        byte[] answerBytes = pInput.getBytes();
+                        byte[] hash = md.digest(answerBytes);
+                        String hashedPass = new String(hash);
+
+                        /* //TODO UNCOMMENT WHEN MAIN MENU DONE
+                        lr = f.Make_Login_Reader();
+                        Map<String, String> userInfo;
+                        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Password));
+
+                        userInfo = lr.Read_File(loginFile, list, uInput);
+
+                        String storedPass = userInfo.get("Password");
+
+                        if(storedPass.equals(hashedPass))
+                        {
+
+                            //Create the intent we want to change to
+                            Intent switchAct = new Intent(this, MainMenu.class);
+                            //Need to add username in as a bundle parameter to pass to main menu
+
+                            //Call our Form_Change Observer to do the switching for us
+                            fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, switchAct);
+
+                        }
+
+                    }
+                    */
+
+                //TODO REMOVE WHEN INTEGRATED
+
+                // Creating alert Dialog with one Button
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
+
+                // Setting Dialog Title
+                alertDialog.setTitle("Login Results");
+
+                // Setting Dialog Message
+                alertDialog.setMessage("You logged in with:\nUsername: " + uInput + "\nPassword: " + pInput + "\nHashed Password: " + hashedPass);
+
+                // Setting the finished button
+                alertDialog.setNegativeButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel(); //Simply close screen
+                            }
+                        });
+
+                // Showing Alert Message
+                alertDialog.show();
+            }
+        }
 
     }
 
