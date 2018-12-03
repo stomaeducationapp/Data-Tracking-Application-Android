@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="l_log_butt">Tap to start</string>
+    <string name="l_setting_butt">Settings</string>
+    <string name="l_logo">LOGO</string>
+    <string name="l_uname">Enter Username...</string>
+    <string name="l_pass">Enter Password...</string>
+    <string name="l_enter">Login</string>
+    <string name="l_register">Register</string>
+    <string name="l_recover">Recover</string>
+    <string name="l_register_text">Don\'t have an account?</string>
+    <string name="l_recover_text">Forgot your password?</string>
+</resources>
