@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import Observers.Form_Change_Observer;
 
 /* AUTHOR INFORMATION
@@ -43,12 +46,15 @@ public class Login extends AppCompatActivity
     /* //TODO UNCOMMENT WHEN INTEGRATED
     private Factory f; //The factory class we use to build every object in the app
     private Form_Change fc; //The Form_Change observer we will use for any activity changes in this activity
+    private File loginFile = "PATH"; //Path to static login file where all created accounts have details stored
      */
 
     private ConstraintLayout splashLayout;
     private ConstraintLayout loginLayout;
 
     private TextView splashText;
+    private TextView unameText;
+    private TextView passText;
 
     private Button settingsButt;
     private Button registerButt;
@@ -69,6 +75,8 @@ public class Login extends AppCompatActivity
         splashLayout = findViewById(R.id.splashLayout);
         loginLayout = findViewById(R.id.loginLayout);
         splashText = findViewById(R.id.loginSplash);
+        unameText = findViewById(R.id.unameBox);
+        passText = findViewById(R.id.passBox);
         settingsButt = findViewById(R.id.settingsButt);
         registerButt = findViewById(R.id.registerButt);
         recoverButt = findViewById(R.id.recoverButt);
@@ -155,11 +163,108 @@ public class Login extends AppCompatActivity
      */
     public void loginClick(View View)
     {
-        //Validate both fields
+        //Grab the two strings the user input
+        String uInput = (unameText.getText()).toString();
+        String pInput = (passText.getText()).toString();
 
-        //Call loginXML to perform check
+        /* //TODO REDO WHEN VALIDATION DONE
+        Enum<Validate_Result> validResult; //Boolean check for if the entry by the user was valid
 
-        //Change to main menu
+        validResult = validator.Validate_Username(uInput); //Call validation to check if the user input is valid
+        //Do error checking for possible error enums
+        if(validResult != Validate_Result.PASS) //If not a valid username
+        {
+
+            String err = validator.getError(validResult); //Get the specific error code
+            unameText.setError(err); //Display to the user
+
+        }
+        else
+        {
+
+            if(validator.verify_username(uInput) != Validate_result.PASS) //If the account name doesn't exist
+            {
+                //OR JUST SET OWN "Username does not exist" error
+                String err = validator.getError(validResult); //Get the specific error code
+                unameText.setError(err); //Display to the user
+            }
+            else
+            {
+
+                validResult = validator.Validate_Password(pInput); //Call validation to check if the user input is valid
+                if(validResult != Validate_Result.PASS) //If not a valid username
+                {
+
+                    String err = validator.getError(validResult); //Get the specific error code
+                    passText.setError(err); //Display to the user
+
+                }
+                else
+                {
+                */
+
+                    //Hash password (we only store hashed passwords to protect them)
+                    final String algorithm = "SHA-256"; //Values to create the hash used later on
+                    MessageDigest md;
+
+                    try {
+                        md = MessageDigest.getInstance(algorithm);
+                    }
+                    catch (NoSuchAlgorithmException e)
+                    {
+                        throw new IllegalStateException("No algorithm exists"); //TODO POSSIBLE REWORK TO CUSTOM EXCEPTION CLASS
+                    }
+                    byte[] answerBytes = pInput.getBytes();
+                    byte[] hash = md.digest(answerBytes);
+                    String hashedPass = new String(hash);
+
+                    /* //TODO UNCOMMENT WHEN MAIN MENU DONE
+                    lr = f.Make_Login_Reader();
+                    Map<String, String> userInfo;
+                    List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Password));
+
+                    userInfo = lr.Read_File(loginFile, list, uInput);
+
+                    String storedPass = userInfo.get("Password");
+
+                    if(storedPass.equals(hashedPass))
+                    {
+
+                        //Create the intent we want to change to
+                        Intent switchAct = new Intent(this, MainMenu.class);
+                        //Need to add username in as a bundle parameter to pass to main menu
+
+                        //Call our Form_Change Observer to do the switching for us
+                        fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, switchAct);
+
+                    }
+
+                }
+        */
+
+        //TODO REMOVE WHEN INTEGRATED
+
+        // Creating alert Dialog with one Button
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
+
+        // Setting Dialog Title
+        alertDialog.setTitle("Login Results");
+
+        // Setting Dialog Message
+        alertDialog.setMessage("You logged in with:\nUsername: " + uInput + "\nPassword: " + pInput + "\nHashed Password: " + hashedPass);
+
+        // Setting the finished button
+        alertDialog.setNegativeButton("OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel(); //Simply close screen
+                    }
+                });
+
+        // Showing Alert Message
+        alertDialog.show();
+
+
     }
 
     /* FUNCTION INFORMATION
