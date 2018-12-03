@@ -55,6 +55,8 @@
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
             android:textSize="24sp"
+            android:onClick="splashClick"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +124,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
-            android:id="@+id/enterButt"
+            android:id="@+id/loginButt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
