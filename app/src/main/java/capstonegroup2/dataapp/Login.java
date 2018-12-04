@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity
 
     //Classfields
     private Factory f; //The factory class we use to build every object in the app
-    private Form_Change fc; //The Form_Change observer we will use for any activity changes in this activity
+    private Form_Change_Observer fc; //The Form_Change observer we will use for any activity changes in this activity
     /* //TODO UNCOMMENT WHEN INTEGRATED
     private File loginFile = "PATH"; //Path to static login file where all created accounts have details stored
      */
@@ -69,10 +69,8 @@ public class Login extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        /* //TODO UNCOMMENT WHEN INTEGRATED
         f = Factory.Get_Factory();
-        fc = f.makeFormChange();
-         */
+        fc = f.Make_Form_Change_Observer();
 
         //Grab all the needed objects from the layout
         splashLayout = findViewById(R.id.splashLayout);
@@ -294,12 +292,9 @@ public class Login extends AppCompatActivity
     public void registerClick(View View)
     {
 
-        //Create the intent we want to change to
-        Intent switchAct = new Intent(this, AccountCreation.class);
-
         //Call our Form_Change Observer to do the switching for us
         try {
-            fc.Change_Form(Form_Change_Observer.Activity_Control.Account_Creation, switchAct);
+            fc.Change_Form(Form_Change_Observer.Activity_Control.Account_Creation, this);
         }
         catch (Invalid_Enum_Exception e)
         {
@@ -317,12 +312,9 @@ public class Login extends AppCompatActivity
     public void recoverClick(View view)
     {
 
-        //Create the intent we want to change to
-        Intent switchAct = new Intent(this, PasswordRecovery.class);
-
         //Call our Form_Change Observer to do the switching for us
         try {
-            fc.Change_Form(Form_Change_Observer.Activity_Control.Password_Recovery, switchAct);
+            fc.Change_Form(Form_Change_Observer.Activity_Control.Password_Recovery, this);
         }
         catch (Invalid_Enum_Exception e)
         {

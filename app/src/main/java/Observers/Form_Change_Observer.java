@@ -1,5 +1,6 @@
 package Observers;
 
+import android.content.Context;
 import android.content.Intent;
 
 /**
@@ -28,6 +29,11 @@ import android.content.Intent;
  * 29th Aug
  * Renamed to Form_Change_Observer, Patrick Crockford
  * Update JavaDoc code to comply with format, Patrick Crockford
+ * <p>
+ * 4th Dec
+ * Updated method to use context rather than intent since old version of observer could not start new activities as it did not bring the context from the previous
+ * activity. Reworked observer code to keep inital purpose of separation of functionality but enabled it to work as intended. Jeremy Dunnet
+ *
  */
 public interface Form_Change_Observer {
 
@@ -45,10 +51,10 @@ public interface Form_Change_Observer {
 
     /**
      * @param activity_To_Change_To Enum specifying which form to change to from the current form.
-     * @param intent
+     * @param context the system object which contains all the apps current focus (memory loaded - which activities are in focus)
      * @return True if successfully created and used new Activity, else false
      * @throws NullPointerException   if intent, Activity_Control, and/or Activity Objects are Null
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
-    boolean Change_Form(Activity_Control activity_To_Change_To, Intent intent) throws NullPointerException, Invalid_Enum_Exception;
+    boolean Change_Form(Activity_Control activity_To_Change_To, Context context) throws NullPointerException, Invalid_Enum_Exception;
 }

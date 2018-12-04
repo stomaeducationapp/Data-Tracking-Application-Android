@@ -1,8 +1,11 @@
 package Observers;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import Factory.Factory;
+import capstonegroup2.dataapp.PasswordRecovery;
+import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
 /**
  * <h1>Form_Change</h1>
@@ -12,14 +15,12 @@ import Factory.Factory;
  * occur easily and with a reduce chance of errors occurring at a later date
  * Implements Form_Change_Observer interface
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17 Oct 2018
- * Patrick Crockford
+ * 4 Dec 2018
+ * Jeremy Dunnet
  */
 
-
-// TODO: 25-Aug-18 When factory class is created uncomment and also comment activity creation and returns when integrating
 public class Form_Change implements Form_Change_Observer {
     private Factory factory;
 
@@ -33,22 +34,22 @@ public class Form_Change implements Form_Change_Observer {
 
     /**
      * @param activity_To_Change_To Enum specifying which form to change to from the current form.
-     * @param intent System Object with information for the new Activity
+     * @param context System Object with information about the current running acivity (to move system resources over to new one)
      * @return True if successfully created and used new Activity, else false
      * @throws NullPointerException if intent, Activity_Control, and/or Activity Objects are Null
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
     @Override
-    public boolean Change_Form(Activity_Control activity_To_Change_To, Intent intent) throws NullPointerException, Invalid_Enum_Exception {
+    public boolean Change_Form(Activity_Control activity_To_Change_To, Context context) throws NullPointerException, Invalid_Enum_Exception {
         //Check Activity_Control Enum hasn't somehow been set to Null
         boolean valid = false;
-        if (activity_To_Change_To != null && intent != null) {
-            Activity activity = null;
+        if (activity_To_Change_To != null && context != null) {
+            Intent intent = null;
             // TODO: 17-Sep-18 Uncomment and modify when Activities have been created
             //Logic for which Activity to create and launch
             switch (activity_To_Change_To) {
                 case Account_Creation:
-                    activity = factory.Build_Account_Creation_Activity();
+                    intent =  new Intent(context, AccountCreation.class);
                     valid = true;
                     break;
                 case Medical_Data_Input:
@@ -60,7 +61,7 @@ public class Form_Change implements Form_Change_Observer {
                     valid = true;
                     break;
                 case Password_Recovery:
-                    activity = factory.Build_Password_Recovery_Activity();
+                    intent =  new Intent(context, PasswordRecovery.class);
                     valid = true;
                 case Review:
                     //activity = factory.Build_Medical_Review_Activity();
@@ -83,7 +84,7 @@ public class Form_Change implements Form_Change_Observer {
                     throw new Invalid_Enum_Exception("Invalid Enum given to activity_To_Change_To");
             }
             //This Throws an NullPointerException if null, but shouldn't due to being created in a factory
-                activity.startActivity(intent);
+                context.startActivity(intent);
         } else // Null value provided meaning the program is in a faulted state
         //Need to check which one has the null error value
         {
