@@ -35,7 +35,7 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * are used to change the visibility of the constructor and try and use it.
  *
  * @author Patrick Crockford
- * @version 1.1
+ * @version 1.2
  * <h1>Changes</h1>
  * 03rd Sept
  * Created Factory Package and Class, Patrick Crockford
@@ -47,6 +47,8 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
  * 27th Nov
  * Updated factory methods to properly created all Encyrpt package objects and XML objects - Jeremy Dunnet
+ * 4th Dec
+ * Updated factory methods to remove any activity creation methods (not needed any more)
  */
 public class Factory {
     private static Factory factory;
@@ -137,24 +139,6 @@ public class Factory {
     }
 
 
-    //LOG_IN PACKAGE
-    /*
-    public Login_Screen_Handler Make_Login_Screen_Handler(){
-        return new Login_Screen_Handler();
-    }
-    */
-
-    //PASSWORD_RECOVERY PACKAGE
-    public Activity Build_Password_Recovery_Activity(){
-        return new PasswordRecovery();
-    }
-
-
-    //ACCOUNT_CREATION PACKAGE
-    public Activity Build_Account_Creation_Activity(){
-        return new AccountCreation();
-    }
-
 
     //VALIDATION PACKAGE
     /*
@@ -201,14 +185,6 @@ public class Factory {
     public ReviewData Make_Review_Data_Reader(){
         return new ReviewData();
     }
-
-
-    //MAIN MENU PACKAGE
-    /*
-    public Account_Main_Menu_Handler Make_Account_Main_Menu_Handler(){
-        return new Account_Main_Menu_Handler();
-    )
-     */
 
     //MEDICAL_STATES PACKAGE
     public StomaStateCalculator Make_Stoma_State_Calculator(){

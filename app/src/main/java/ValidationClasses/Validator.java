@@ -1,0 +1,145 @@
+package ValidationClasses;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/* AUTHOR INFORMATION
+ * CREATOR - Jeremy Dunnet 4/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 4/12/2018
+ */
+
+/* CLASS/FILE DESCRIPTION
+ * This is the class that handles input validation (process of checking user input for non-allowed characters)
+ * to ensure any input that is stored/passed to important classes is not malicious in nature.
+ */
+
+/* VERSION HISTORY
+ * 4/12/2018 - Created basic code setup from previous iteration by Oliver Yeudall (Combined since splitting into separate classes seemed redundant)
+ */
+
+/* REFERENCES
+ * And many more from https://developer.android.com/
+ */
+
+public class Validator 
+{
+    
+    enum Validate_Result
+    {
+        
+        Pass, Fail
+        
+    }
+    
+    private final Map<Validate_Result, String> errors = new HashMap<>()/*Initialise to a constant list of available messages with each key being an enum*/;
+    
+    public Validator()
+    {
+        //Empty constructor
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - validateLength
+     * INPUTS - input (string that needs to be checked), min/maxLen (how long the string should be)
+     * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
+     * PURPOSE - This is the function that performs length checks on an input string to see if it is too long/short than it should be
+     */
+    private Validate_Result validateLength(String input, int minLen, int maxLen)
+    {
+        
+        Validate_Result result = Validate_Result.Fail;
+        
+        //Do a check input is bigger than minimum length and not bigger than maxLen
+        
+        return result;
+        
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - validateCharacters
+     * INPUTS - input (string that needs to be checked), allowX (booleans denoting whether or not the input string is allowed to have that character type in it)
+     * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
+     * PURPOSE - This is the function that performs regex operations to identify if an input string contains characters it is not meant to have
+     */
+    private Validate_Result validateCharacters(String input, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean[] allowSpecial /*Consider changing to Map*/)
+    {
+
+        Validate_Result result = Validate_Result.Fail;
+
+        //Perform regex checks on each boolean if false - if present produce error
+
+        return result;
+        
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - getValidatorError
+     * INPUTS - result (the Validate_Result enum that the calling class got and wants to find the error for)
+     * OUTPUTS - message (a string of the error message the result enum described)
+     * PURPOSE - This is the function that takes a Validate_Result another class got and returns an error message so that class can display it to the user
+     */
+    public String getValidatorError(Validate_Result result)
+    {
+        
+        String message = "";
+        
+        //Retrieve error from a map where the key is the enum
+        
+        return message;
+        
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - validateUsername
+     * INPUTS - input (string that needs to be checked)
+     * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
+     * PURPOSE - This is the function that performs validation checks on any username the user submits/creates
+     */
+    public Validate_Result validateUsername(String input)
+    {
+        
+        Validate_Result result = Validate_Result.Fail;
+
+        //Call each needed private method (length, characters) with required inputs based on what a username needs
+
+        return result;
+        
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - validatePassword
+     * INPUTS - input (string that needs to be checked)
+     * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
+     * PURPOSE - This is the function that performs validation checks on any password a user inputs/creates
+     * NOTE - Password hashing is not done here and is not done before coming here (since hashed passwords would be impossible to properly regex check). So this must
+     *        be done AFTER the result comes back as a PASS
+     */
+    public Validate_Result validatePassword(String input)
+    {
+
+        Validate_Result result = Validate_Result.Fail;
+
+        //Call each needed private method (length, characters) with required inputs based on what a password needs to have checked
+
+        return result;
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - validateFreeInput
+     * INPUTS - input (string that needs to be checked)
+     * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
+     * PURPOSE - This is the function that performs validation checks on any free input a user submits in the entire application
+     */
+    public Validate_Result validateFreeInput(String input)
+    {
+
+        Validate_Result result = Validate_Result.Fail;
+
+        //Call each needed private method (length, characters) with required inputs based on what needs to be checked for any free input
+
+        return result;
+
+    }
+    
+}

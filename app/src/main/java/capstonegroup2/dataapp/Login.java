@@ -2,10 +2,9 @@ package capstonegroup2.dataapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -15,15 +14,13 @@ import android.widget.TextView;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import Observers.Form_Change;
 import Factory.Factory;
 import Observers.Form_Change_Observer;
 import Observers.Invalid_Enum_Exception;
-import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
- * LAST MODIFIED BY - Jeremy Dunnet 3/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 4/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -32,6 +29,7 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
 /* VERSION HISTORY
  * 3/12/2018 - Created file and added comment design path for future coding
+ * 4/12/2018 - Integrated Form_Change observer's in to enable switching of GUIs
  */
 
 /* REFERENCES
@@ -245,12 +243,8 @@ public class Login extends AppCompatActivity
                         if(storedPass.equals(hashedPass))
                         {
 
-                            //Create the intent we want to change to
-                            Intent switchAct = new Intent(this, MainMenu.class);
-                            //Need to add username in as a bundle parameter to pass to main menu
-
                             //Call our Form_Change Observer to do the switching for us
-                            fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, switchAct);
+                            fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, this);
 
                         }
 
