@@ -2,6 +2,7 @@ package capstonegroup2.dataapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,12 @@ import android.widget.TextView;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import Observers.Form_Change;
+import Factory.Factory;
+import Observers.Form_Change_Observer;
+import Observers.Invalid_Enum_Exception;
+import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
@@ -39,9 +46,9 @@ public class Login extends AppCompatActivity
 {
 
     //Classfields
-    /* //TODO UNCOMMENT WHEN INTEGRATED
     private Factory f; //The factory class we use to build every object in the app
     private Form_Change fc; //The Form_Change observer we will use for any activity changes in this activity
+    /* //TODO UNCOMMENT WHEN INTEGRATED
     private File loginFile = "PATH"; //Path to static login file where all created accounts have details stored
      */
 
@@ -287,34 +294,18 @@ public class Login extends AppCompatActivity
     public void registerClick(View View)
     {
 
-        //TODO REMOVE WHEN INTEGRATED
-        // Creating alert Dialog with one Button
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
-
-        // Setting Dialog Title
-        alertDialog.setTitle("Missing Transition - AC");
-
-        // Setting Dialog Message
-        alertDialog.setMessage("Purely here for test purposes");
-
-        // Setting the finished button
-        alertDialog.setNegativeButton("OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel(); //Simply close screen
-                    }
-                });
-
-        // Showing Alert Message
-        alertDialog.show();
-
-        /* //TODO UNCOMMENT WHEN INTEGRATED
         //Create the intent we want to change to
         Intent switchAct = new Intent(this, AccountCreation.class);
 
         //Call our Form_Change Observer to do the switching for us
-        fc.Change_From(Form_Change_Observer.Activity_Control.Account_Creation, switchAct);
-        */
+        try {
+            fc.Change_Form(Form_Change_Observer.Activity_Control.Account_Creation, switchAct);
+        }
+        catch (Invalid_Enum_Exception e)
+        {
+            throw new RuntimeException("Unknown enum - program failed");
+        }
+
     }
 
     /* FUNCTION INFORMATION
@@ -326,34 +317,17 @@ public class Login extends AppCompatActivity
     public void recoverClick(View view)
     {
 
-        //TODO REMOVE WHEN INTEGRATED
-        // Creating alert Dialog with one Button
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
-
-        // Setting Dialog Title
-        alertDialog.setTitle("Missing Transition - PR");
-
-        // Setting Dialog Message
-        alertDialog.setMessage("Purely here for test purposes");
-
-        // Setting the finished button
-        alertDialog.setNegativeButton("OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel(); //Simply close screen
-                    }
-                });
-
-        // Showing Alert Message
-        alertDialog.show();
-
-        /* //TODO UNCOMMENT WHEN INTEGRATED
         //Create the intent we want to change to
         Intent switchAct = new Intent(this, PasswordRecovery.class);
 
         //Call our Form_Change Observer to do the switching for us
-        fc.Change_From(Form_Change_Observer.Activity_Control.Password_Recovery, switchAct);
-        */
+        try {
+            fc.Change_Form(Form_Change_Observer.Activity_Control.Password_Recovery, switchAct);
+        }
+        catch (Invalid_Enum_Exception e)
+        {
+            throw new RuntimeException("Unknown enum - program failed");
+        }
 
     }
 

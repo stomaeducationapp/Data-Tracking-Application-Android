@@ -1,5 +1,7 @@
 package Factory;
 
+import android.app.Activity;
+
 import EncryptExport.Detector;
 import EncryptExport.Encrypt;
 import EncryptExport.Retrieval;
@@ -22,6 +24,8 @@ import XML.Medical_Reader;
 import XML.Medical_Writer;
 import XML.XML_Reader;
 import XML.XML_Writer;
+import capstonegroup2.dataapp.PasswordRecovery;
+import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
 
 /**
@@ -141,18 +145,16 @@ public class Factory {
     */
 
     //PASSWORD_RECOVERY PACKAGE
-    /*
-    public Password_Recovery_Screen_Event_Handler Make_Password_Recovery_Screen_Event_Handler(){
-        return new Password_Recovery_Screen_Event_Handler();
+    public Activity Build_Password_Recovery_Activity(){
+        return new PasswordRecovery();
     }
-     */
+
 
     //ACCOUNT_CREATION PACKAGE
-    /*
-    public Account_Creation_Screen_Event_Handler Make_Account_Creation_Screen_Event_Handler(){
-        return new Account_Creation_Screen_Event_Handler();
+    public Activity Build_Account_Creation_Activity(){
+        return new AccountCreation();
     }
-     */
+
 
     //VALIDATION PACKAGE
     /*

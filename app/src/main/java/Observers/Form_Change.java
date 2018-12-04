@@ -48,7 +48,7 @@ public class Form_Change implements Form_Change_Observer {
             //Logic for which Activity to create and launch
             switch (activity_To_Change_To) {
                 case Account_Creation:
-                    //activity = factory.Build_Account_Creation_Activity();
+                    activity = factory.Build_Account_Creation_Activity();
                     valid = true;
                     break;
                 case Medical_Data_Input:
@@ -60,7 +60,7 @@ public class Form_Change implements Form_Change_Observer {
                     valid = true;
                     break;
                 case Password_Recovery:
-                    //activity = factory.Build_Password_Recovery_Activity();
+                    activity = factory.Build_Password_Recovery_Activity();
                     valid = true;
                 case Review:
                     //activity = factory.Build_Medical_Review_Activity();
@@ -82,9 +82,8 @@ public class Form_Change implements Form_Change_Observer {
                     //Shouldn't get here as it is based on enum, is a big error
                     throw new Invalid_Enum_Exception("Invalid Enum given to activity_To_Change_To");
             }
-            // TODO: 29-Aug-18 When Factory is creating valid activities uncomment line below
             //This Throws an NullPointerException if null, but shouldn't due to being created in a factory
-                //activity.startActivity(intent);
+                activity.startActivity(intent);
         } else // Null value provided meaning the program is in a faulted state
         //Need to check which one has the null error value
         {
