@@ -18,6 +18,7 @@ import java.util.Map;
  */
 
 /* REFERENCES
+ * Regex checks for validation learned from AccountCreation.java (one of my previous classes that dealt with password complexity)
  * And many more from https://developer.android.com/
  */
 
@@ -27,15 +28,36 @@ public class Validator
     enum Validate_Result
     {
         
-        Pass, Fail, TooBig, TooShort
-        
+        Pass, Fail, TooBig, NoCapitals, NoLowers, NoNumbers, NoSpecial, NoOthers, TooShort
+
     }
     
-    private final Map<Validate_Result, String> errors = new HashMap<>()/*Initialise to a constant list of available messages with each key being an enum*/;
+    private final Map<Validate_Result, String> errors;
 
     public Validator()
     {
-        //Empty constructor
+        //These are declared in the constructor so they are destroyed after construction to lower overhead
+        final Validate_Result[] eNames = {Validate_Result.Fail, Validate_Result.TooBig, Validate_Result.NoCapitals, Validate_Result.NoLowers,
+                                    Validate_Result.NoNumbers, Validate_Result.NoSpecial, Validate_Result.NoOthers, Validate_Result.TooShort};
+        final String[] eMessages = {"Something major has failed within this input.", "This input is above the maximum length." /*Consider changing the way Big/Short errors work to display the require length to meet*/
+                                , "No uppercase characters are allowed.", "No lowercase characters are allowed.", "No numbers are allowed.", "No special characters are allowed."
+                                , "No unsanctioned characters (anything but ' ,.\"\'!?& ') are allowed.", "This input is below the minimum length."}; //CONSIDER REWORKING THESES TO MORE USER FRIENDLY MESSAGES
+        Map<Validate_Result, String> messages = new HashMap<Validate_Result, String>();
+        if(eNames.length == eMessages.length) //Make sure the enums have an equal number of messages
+        {
+            for(int ii = 0; ii < eNames.length; ii++)
+            {
+
+                messages.put(eNames[ii], eMessages[ii]);
+
+            }
+        }
+        else
+        {
+            throw new RuntimeException("Validation errors are out of sync - errors will not work");
+        }
+
+        errors = messages;
     }
 
     /* FUNCTION INFORMATION
@@ -55,7 +77,7 @@ public class Validator
         {
             result =  Validate_Result.TooShort; //We do individual checks rather than a min < len > max so we can return unique errors for each case
         }
-        else if(length > maxLen)
+        else if(length > maxLen) //Could include a comparison that if maxLen == -1 then no maximum bound so skip check
         {
             result = Validate_Result.TooBig;
         }
@@ -79,9 +101,68 @@ public class Validator
 
         Validate_Result result = Validate_Result.Fail;
 
-        //Perform regex checks on each boolean if false - if present produce error
+        //The first three checks only perform validation if the boolean is false (means we need to check if they are in input - since they agent allowed to be there)
+        //If the boolean is true then we don't care about the content since we are not enforcing the use of Upper/Lower/Number in a input string
+        //NOTE - the enforcement of complexity (passwords/usernames etc.) must be done in the class that generates the input - since it it technically not a correct
+        //input until those complexity requirements are satisfied and we only validate seemingly "valid" inputs
+        if(allowUCase == false)
+        {
+            if(input.matches(".*[A-Z].*"))
+            {
+                result = Validate_Result.NoCapitals;
+            }
+            else
+            {
+                result = Validate_Result.Pass;
+            }
+        }
 
-        //Special characters that are allowed A-Z, 0-9, ,.""!?*&
+        if(allowLCase == false)
+        {
+            if(input.matches(".*[a-z].*"))
+            {
+                result = Validate_Result.NoLowers;
+            }
+            else
+            {
+                result = Validate_Result.Pass;
+            }
+        }
+
+        if(allowNum == false)
+        {
+            if(input.matches(".*[0-9].*"))
+            {
+                result = Validate_Result.NoNumbers;
+            }
+            else
+            {
+                result = Validate_Result.Pass;
+            }
+        }
+
+        if(allowSpecial == false)
+        {
+            if(input.matches(".*[,.\"\'!?&]")) //List of characters we would allow (Edit if you wish to allow/restrict more)
+            {
+                result = Validate_Result.NoSpecial;
+            }
+            else
+            {
+                result = Validate_Result.Pass;
+            }
+        }
+
+        //Special characters has an additional check since while we may allow special characters - we do not allow all of them (removed for both simplicity/clarity of
+        //names/passwords as well as to enhance security by restricting use of characters that can give a lot of power in code (brackets, asterisks, slashes etc)
+        if(input.matches(".*[^0-9A-Za-z,.\"\'!?&].*"))
+        {
+            result = Validate_Result.NoOthers;
+        }
+        else
+        {
+            result = Validate_Result.Pass;
+        }
 
         return result;
         
@@ -115,7 +196,7 @@ public class Validator
         
         Validate_Result result = Validate_Result.Fail;
 
-        result =  validateLength(input, 1, 20); //Check the length (to edit change constants at top
+        result =  validateLength(input, 5, 20); //Check the length (edit to your required length)
         if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
         {
             result = validateCharacters(input, true, true, true, false); //Edit to match what you require in a username
@@ -138,7 +219,11 @@ public class Validator
 
         Validate_Result result = Validate_Result.Fail;
 
-        //Call each needed private method (length, characters) with required inputs based on what a password needs to have checked
+        result =  validateLength(input, 10, 20); //Check the length (edit to your required length)
+        if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
+        {
+            result = validateCharacters(input, true, true, true, true); //Edit to match what you require for a password
+        }
 
         return result;
 
@@ -155,7 +240,11 @@ public class Validator
 
         Validate_Result result = Validate_Result.Fail;
 
-        //Call each needed private method (length, characters) with required inputs based on what needs to be checked for any free input
+        result =  validateLength(input, 1, 10000); //Check the length (edit to your required length)
+        if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
+        {
+            result = validateCharacters(input, true, true, true, true); //Edit to match what you require in complete free input (descriptions etc with no complexity restrictions)
+        }
 
         return result;
 
