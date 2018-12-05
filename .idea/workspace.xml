@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
@@ -12,20 +15,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43eee2e2-d214-4e7d-90cf-af5556c486e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/Validation/ValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Factory/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/OldFiles/Validate_Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/OldFiles/Validate_Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/OldFiles/Validate_Credentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/OldFiles/Validate_Password.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validate_Username.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/OldFiles/Validate_Username.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/Validation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_AccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_AnswerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_AnswerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_CredentialsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_CredentialsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_PasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_PasswordTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/ValidationClasses/Validate_UsernameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_UsernameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$Time_Observer_Choice.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$Time_Observer_Choice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$Validate_Choice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$XML_Reader_Choice.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$XML_Reader_Choice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$XML_Writer_Choice.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory$XML_Writer_Choice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Factory/Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Validation/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Validation/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/Observers/Form_Change__Unit_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/Validation/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Validation/ValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_unit_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Account Reader.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Account Writer.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Login Reader.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Login Writer.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Medical Reader.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Medical Writer.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_new_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_state_change.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/empty_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_add_person.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_change_person.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_delete_person.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_new_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_targe_add_entry.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_add_entry.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_export.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_modify.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_new_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/test1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_account_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_account_file_empty_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_medical_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_medical_file_empty_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Writer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Writer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader_Exception.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer_Failure_Exception.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer_File_Layout_Exception.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Reader_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Writer_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Reader_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Writer_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Reader_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Writer_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/empty_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file_empty_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file_empty_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/xmlpull-xpp3-1.1.4c.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +125,8 @@
       <file leaf-file-name="Validation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Validation/Validation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="50" column="103" lean-forward="true" selection-start-line="50" selection-start-column="103" selection-end-line="50" selection-end-column="103" />
+            <state relative-caret-position="176">
+              <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2093#2118#0" expanded="true" />
@@ -65,8 +138,8 @@
       <file leaf-file-name="ValidatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/Validation/ValidatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="353" column="55" selection-start-line="353" selection-start-column="55" selection-end-line="353" selection-end-column="55" />
+            <state relative-caret-position="221">
+              <caret line="214" column="14" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2456,8 +2529,8 @@
         <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/ValidatorTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_UsernameTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Factory/Factory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Validation/Validation.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Validation/ValidatorTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Validation/Validation.java" />
       </list>
     </option>
   </component>
@@ -2769,6 +2842,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Observers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Validation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -2821,7 +2903,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android App.Login">
+  <component name="RunManager" selected="Android JUnit.ValidatorTest">
     <configuration name="LoginTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -2890,6 +2972,33 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
+    </configuration>
+    <configuration name="ValidatorTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Validation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Validation" />
+      <option name="MAIN_CLASS_NAME" value="Validation.ValidatorTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+      <method>
+        <option name="Make" enabled="false" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -3044,13 +3153,14 @@
       <item itemvalue="Android JUnit.StreamOneTest.StreamOneTestCase1" />
       <item itemvalue="Android App.Login" />
       <item itemvalue="Android JUnit.LoginTest" />
+      <item itemvalue="Android JUnit.ValidatorTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.ValidatorTest" />
         <item itemvalue="Android App.Login" />
         <item itemvalue="Android JUnit.LoginTest" />
         <item itemvalue="Android JUnit.StreamOneTest.StreamOneTestCase1" />
-        <item itemvalue="Android JUnit.StreamOneTest" />
         <item itemvalue="Android JUnit.StreamOneTest" />
       </list>
     </recent_temporary>
@@ -3192,22 +3302,17 @@
       <option name="project" value="LOCAL" />
       <updated>1543992264574</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- Created test harness but not run&#10;- Reorganized Validation files into a new package to represent rework that occured">
+      <created>1543996878930</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1543996878930</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StreamOneTest - 2018.11.28 at 11h 27m 58s.xml">
-      <configuration name="StreamOneTest" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="StreamOneTest - 2018.11.28 at 11h 28m 16s.xml">
-      <configuration name="StreamOneTest" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="StreamOneTest - 2018.11.28 at 11h 28m 36s.xml">
-      <configuration name="StreamOneTest" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="StreamOneTest - 2018.11.28 at 11h 30m 49s.xml">
-      <configuration name="StreamOneTest" configurationId="AndroidJUnit" />
-    </history-entry>
     <history-entry file="StreamOneTest - 2018.11.28 at 11h 40m 14s.xml">
       <configuration name="StreamOneTest" configurationId="AndroidJUnit" />
     </history-entry>
@@ -3226,6 +3331,18 @@
     <history-entry file="LoginTest - 2018.12.03 at 18h 39m 32s.xml">
       <configuration name="LoginTest" configurationId="AndroidJUnit" />
     </history-entry>
+    <history-entry file="ValidatorTest - 2018.12.05 at 16h 06m 02s.xml">
+      <configuration name="ValidatorTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTest - 2018.12.05 at 16h 12m 15s.xml">
+      <configuration name="ValidatorTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTest - 2018.12.05 at 16h 12m 52s.xml">
+      <configuration name="ValidatorTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ValidatorTest - 2018.12.05 at 16h 14m 09s.xml">
+      <configuration name="ValidatorTest" configurationId="AndroidJUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3241,21 +3358,22 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49938875" weight="0.32995495" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4987775" weight="0.32995495" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5103912" side_tool="true" visible="true" weight="0.32995495" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49022004" weight="0.32995495" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4896088" visible="true" weight="0.32995495" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4896088" visible="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.48899755" weight="0.32995495" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4987775" weight="0.32995495" />
-      <window_info anchor="bottom" id="Logcat" order="7" />
+      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49938875" weight="0.32995495" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49633253" weight="0.32995495" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49511003" weight="0.32995495" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32995495" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
@@ -3273,7 +3391,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Assistant" order="4" weight="0.16044776" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32995495" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="StringPreview" order="4" />
@@ -3334,11 +3451,12 @@
     <MESSAGE value="- Updated comments on all newly edited classes&#10;- Modified Login Form_Change call to switch to main menu for later integrations&#10;- Created first draft of new Validation class implementation" />
     <MESSAGE value="- Begun validation coding" />
     <MESSAGE value="- Finished validation coding" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Finished validation coding" />
+    <MESSAGE value="- Created test harness but not run&#10;- Reorganized Validation files into a new package to represent rework that occured" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Created test harness but not run&#10;- Reorganized Validation files into a new package to represent rework that occured" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -3512,6 +3630,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="174" column="67" selection-start-line="174" selection-start-column="67" selection-end-line="174" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3579,6 +3700,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="53" column="124" selection-start-line="53" selection-start-column="124" selection-end-line="53" selection-end-column="124" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3706,8 +3830,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Validation/Validation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="50" column="103" lean-forward="true" selection-start-line="50" selection-start-column="103" selection-end-line="50" selection-end-column="103" />
+        <state relative-caret-position="176">
+          <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2093#2118#0" expanded="true" />
@@ -3717,8 +3841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/Validation/ValidatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="353" column="55" selection-start-line="353" selection-start-column="55" selection-end-line="353" selection-end-column="55" />
+        <state relative-caret-position="221">
+          <caret line="214" column="14" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

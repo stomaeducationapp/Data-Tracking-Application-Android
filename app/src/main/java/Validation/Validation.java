@@ -160,15 +160,18 @@ public class Validation
             }
         }
 
-        //Special characters has an additional check since while we may allow special characters - we do not allow all of them (removed for both simplicity/clarity of
-        //names/passwords as well as to enhance security by restricting use of characters that can give a lot of power in code (brackets, asterisks, slashes etc)
-        if(input.matches(".*[^0-9A-Za-z,.\"\'!?&].*"))
+        if(result == Validate_Result.Pass) //If no other error was found - else we want to return that error
         {
-            result = Validate_Result.NoOthers;
-        }
-        else
-        {
-            result = Validate_Result.Pass;
+            //Special characters has an additional check since while we may allow special characters - we do not allow all of them (removed for both simplicity/clarity of
+            //names/passwords as well as to enhance security by restricting use of characters that can give a lot of power in code (brackets, asterisks, slashes etc)
+            if(input.matches(".*[^0-9A-Za-z,.\"\'!?&].*"))
+            {
+                result = Validate_Result.NoOthers;
+            }
+            else
+            {
+                result = Validate_Result.Pass;
+            }
         }
 
         return result;

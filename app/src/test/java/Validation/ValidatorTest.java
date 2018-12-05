@@ -78,13 +78,13 @@ public class ValidatorTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername(null, 10, 1, true, true, true, true);
+        result = v.validateUsername("hello", 10, 1, true, true, true, true);
         assertEquals("Bad Length error was returned", Validation.Validate_Result.BadLength, result);
 
-        result = v.validatePassword(null, 10, 1, true, true, true, true);
+        result = v.validatePassword("hello", 10, 1, true, true, true, true);
         assertEquals("Bad Length error was returned", Validation.Validate_Result.BadLength, result);
 
-        result = v.validateFreeInput(null, 10, 1, true, true, true, true);
+        result = v.validateFreeInput("hello", 10, 1, true, true, true, true);
         assertEquals("Bad Length error was returned", Validation.Validate_Result.BadLength, result);
 
         //Since both errors are the same - only need to do one error check
