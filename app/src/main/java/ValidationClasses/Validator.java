@@ -27,12 +27,12 @@ public class Validator
     enum Validate_Result
     {
         
-        Pass, Fail
+        Pass, Fail, TooBig, TooShort
         
     }
     
     private final Map<Validate_Result, String> errors = new HashMap<>()/*Initialise to a constant list of available messages with each key being an enum*/;
-    
+
     public Validator()
     {
         //Empty constructor
@@ -47,10 +47,23 @@ public class Validator
     private Validate_Result validateLength(String input, int minLen, int maxLen)
     {
         
-        Validate_Result result = Validate_Result.Fail;
-        
-        //Do a check input is bigger than minimum length and not bigger than maxLen
-        
+        Validate_Result result = Validate_Result.Fail; //Here in case of errors
+        int length = input.length();
+
+        //Build as an if-else since if the first too checks pass the string must of an appropriate length
+        if(length < minLen)
+        {
+            result =  Validate_Result.TooShort; //We do individual checks rather than a min < len > max so we can return unique errors for each case
+        }
+        else if(length > maxLen)
+        {
+            result = Validate_Result.TooBig;
+        }
+        else
+        {
+            result = Validate_Result.Pass;
+        }
+
         return result;
         
     }
@@ -61,12 +74,14 @@ public class Validator
      * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
      * PURPOSE - This is the function that performs regex operations to identify if an input string contains characters it is not meant to have
      */
-    private Validate_Result validateCharacters(String input, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean[] allowSpecial /*Consider changing to Map*/)
+    private Validate_Result validateCharacters(String input, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean allowSpecial)
     {
 
         Validate_Result result = Validate_Result.Fail;
 
         //Perform regex checks on each boolean if false - if present produce error
+
+        //Special characters that are allowed A-Z, 0-9, ,.""!?*&
 
         return result;
         
@@ -83,7 +98,7 @@ public class Validator
         
         String message = "";
         
-        //Retrieve error from a map where the key is the enum
+        message = errors.get(result); //Grab the error message that is tied to this key
         
         return message;
         
@@ -100,7 +115,11 @@ public class Validator
         
         Validate_Result result = Validate_Result.Fail;
 
-        //Call each needed private method (length, characters) with required inputs based on what a username needs
+        result =  validateLength(input, 1, 20); //Check the length (to edit change constants at top
+        if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
+        {
+            result = validateCharacters(input, true, true, true, false); //Edit to match what you require in a username
+        }
 
         return result;
         
