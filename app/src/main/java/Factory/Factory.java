@@ -1,7 +1,5 @@
 package Factory;
 
-import android.app.Activity;
-
 import EncryptExport.Detector;
 import EncryptExport.Encrypt;
 import EncryptExport.Retrieval;
@@ -16,6 +14,7 @@ import Observers.Form_Change;
 import Observers.Form_Change_Observer;
 import Observers.State_Observer;
 import Observers.Time_Observer;
+import Validation.Validation;
 import XML.Account_Reader;
 import XML.Account_Writer;
 import XML.Login_Reader;
@@ -24,8 +23,6 @@ import XML.Medical_Reader;
 import XML.Medical_Writer;
 import XML.XML_Reader;
 import XML.XML_Writer;
-import capstonegroup2.dataapp.PasswordRecovery;
-import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
 
 /**
@@ -35,7 +32,7 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * are used to change the visibility of the constructor and try and use it.
  *
  * @author Patrick Crockford
- * @version 1.2
+ * @version 1.3
  * <h1>Changes</h1>
  * 03rd Sept
  * Created Factory Package and Class, Patrick Crockford
@@ -46,16 +43,16 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * 17th Sept
  * Modified Code to comply with Requirements for Observer - Factory Integration, Patrick Crockford
  * 27th Nov
- * Updated factory methods to properly created all Encyrpt package objects and XML objects - Jeremy Dunnet
+ * Updated factory methods to properly created all Encrypt package objects and XML objects - Jeremy Dunnet
  * 4th Dec
- * Updated factory methods to remove any activity creation methods (not needed any more)
+ * Updated factory methods to remove any activity creation methods (not needed any more) - Jeremy Dunnet
+ * 5th Dec
+ * Updated factory methods to include Validation - Jeremy Dunnet
  */
 public class Factory {
     private static Factory factory;
 
     public enum Time_Observer_Choice {Daily_Review, Export_Data}
-
-    public enum Validate_Choice {Credentials, Account, Answer, UserName, Password}
 
     public enum XML_Reader_Choice {Login, Account, Medical}
 
@@ -141,31 +138,9 @@ public class Factory {
 
 
     //VALIDATION PACKAGE
-    /*
-    public Validate Make_Validate(Validate_Choice choice){
-        Validate validate = null;
-        switch(choice){
-            case(Validate_Choice.Credentials):
-                validate = new Validate_Credentials();
-                break;
-            case(Validate_Choice.Account):
-                validate = new Validate_Account();
-                break;
-            case(Validate_Choice.Answer):
-                validate = new Validate_Answer();
-                break;
-            case(Validate_Choice.UserName):
-                validate = new Validate_UserName();
-                break;
-            case(Validate_Choice.Password):
-                validate = new Validate_Password();
-                break;
-            default:
-                throw new RuntimeException("Invalid Enum given for Validate_Choice")
-        }
-        return validate;
-     */
-
+    public Validation Make_Validation() {
+        return new Validation();
+    }
     //24 HOUR REVIEW PACKAGE
 
     public ReviewHandler Make_Stoma_Review_Handler(){

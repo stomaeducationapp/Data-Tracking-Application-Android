@@ -1,6 +1,8 @@
-package ValidationClasses;
+package Validation.OldFiles;
 
 import java.util.regex.Pattern;
+
+import Validation.Validation;
 
 /**
  * <h1>Validate_Answer</h1>

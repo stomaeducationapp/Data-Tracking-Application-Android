@@ -1,12 +1,12 @@
-package ValidationClasses;
+package Validation.OldFiles;
 
 import java.util.regex.Pattern;
 
-import XML.Account_Reader;
+import Validation.Validation;
 
 /**
- * <h1>Validate_Password</h1>
- * Contains functions to sanitize and assess input passwords against requirements.
+ * <h1>Validate_Username</h1>
+ * Contains functions to sanitize and evaluate usernames to make sure they fit the requirements.
  *
  * Purpose: Class aim is to check for correct parameters and sanitise input. Class is to be
  * instantiated and the general function isPasswordValid called. The calling program will pass
@@ -23,9 +23,9 @@ import XML.Account_Reader;
  * @author Oliver Yeudall
  * @version 1.0
  */
-public class Validate_Password {
+public class Validate_Username {
 
-    private static final int minLength = 6; // Minimum allowable password length
+    private static final int minLength = 6; // Minimum allowable username length
     public enum retMessage{
         GOOD, BADLENGTH, BADCHAR, BADCODE, BADOTHER
     }
@@ -34,35 +34,36 @@ public class Validate_Password {
      * Default Constructor
      * DESCRIPTION: Sets all string field variables to empty strings
      */
-    Validate_Password() {
+    Validate_Username() {
 
     }
+
 
     /**
      *
-     * @return boolean representing a password of acceptable minimum length
+     * @return boolean representing a username of acceptable minimum length
      */
-    private boolean validLength(String inPassword) {
+    private boolean validLength(String inUsername) {
 
-        String testPassword = inPassword;
+        String testUsername = inUsername;
         boolean isValid = false;
 
-        if (testPassword.length() > minLength) {
-            isValid = true;
-        }
+         if (testUsername.length() > minLength) {
+             isValid = true;
+         }
 
         return isValid;
     }
 
     /**
-     * @return boolean representing a password with the approved used character set
+     * @return boolean representing a username with the approved used character set
      */
-    private boolean validCharacters(String inPassword) {
+    private boolean validCharacters(String inUsername) {
 
-        String testPassword = inPassword;
+        String testUsername = inUsername;
         boolean isValid = false;
 
-        if(Pattern.matches("[a-zA-Z]",testPassword)) {
+        if(Pattern.matches("[a-zA-Z]",testUsername)) {
             isValid = true;
         }
 
@@ -72,28 +73,28 @@ public class Validate_Password {
     }
 
     /**
-     * @return boolean representing a password without executable code
+     * @return boolean representing a username string without executable code
      */
-    private boolean validNoCode(String inPassword) {
+    private boolean validNoCode(String inUsername) {
 
-        //In progress, needs finishing
+        // Needs finishing, currently only a dummy function
 
-        String testPassword = inPassword;
+        String testUsername = inUsername;
         boolean isValid = true;
 
         return isValid;
     }
 
     /**
-     * @return enum value returning the results of the password validation test
+     * @return enum value returning the results of the username validation test
      */
-    public retMessage isPasswordValid(String inPassword){
+    public retMessage isUsernameValid(String inUsername){
 
-        String testPassword = inPassword;
+        String testUsername = inUsername;
 
-        if (validLength(testPassword)) {
-            if(validCharacters(testPassword)) {
-                if(validNoCode(testPassword)) {
+        if (validLength(testUsername)) {
+            if(validCharacters(testUsername)) {
+                if(validNoCode(testUsername)) {
                     return retMessage.GOOD;
                 }
                 else {

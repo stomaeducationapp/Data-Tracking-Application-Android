@@ -1,8 +1,8 @@
-package ValidationClasses;
+package Validation.OldFiles;
 
 import java.util.regex.Pattern;
 
-import XML.Account_Reader;
+import Validation.Validation;
 
 /**
  * <h1>Validate_Account</h1>

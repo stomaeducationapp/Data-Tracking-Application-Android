@@ -1,4 +1,4 @@
-package ValidationClasses;
+package Validation.OldFiles;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -10,38 +10,36 @@ import org.xmlpull.v1.XmlPullParser;
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
-import ValidationClasses.Validate_Credentials;
 import XML.Account_Reader;
 import XML.XML_Reader;
-import XML.XML_Reader_Exception;
 
-import static ValidationClasses.Validate_Account.retMessage.BADCHAR;
-import static ValidationClasses.Validate_Account.retMessage.BADLENGTH;
-import static ValidationClasses.Validate_Account.retMessage.GOOD;
+import static Validation.OldFiles.Validate_Answer.retMessage.BADCHAR;
+import static Validation.OldFiles.Validate_Answer.retMessage.BADLENGTH;
+import static Validation.OldFiles.Validate_Answer.retMessage.GOOD;
 import static org.junit.Assert.assertNotNull;
 
+
 /**
- * <h1>Validate_CredentialsTest</h1>
- * Contains functions to sanitize and ensure account information is in the correct format.
+ * <h1>Validate_AnswerTest</h1>
+ * Contains functions to sanitize and ensure username is in the correct format.
  *
  * Known Bugs:
- *     Lines 60-66 Mockito issues. Code may not be needed for testing, so they have been
+ *     Lines 61-67 Mockito issues. Code may not be needed for testing, so they have been
  *     temporarily commented out.
  *
  * @author Oliver Yeudall
  * @version 1.0
  */
 
-public class Validate_CredentialsTest {
-    Validate_Credentials credentialValidator1;
+public class Validate_AnswerTest {
+    Validate_Answer answerValidator1;
     XML_Reader xml_Reader;
     List<XML_Reader.Tags_To_Read> list;
 
     @Before
     public void setUp() throws Exception {
-        credentialValidator1 = new Validate_Credentials();
+        answerValidator1 = new Validate_Answer();
 
         xml_Reader = new Account_Reader();
         list = new LinkedList<>();
@@ -66,11 +64,10 @@ public class Validate_CredentialsTest {
         }*/
 
 
-        Assert.assertEquals(GOOD, credentialValidator1.isCredentialsValid("myaccname"));
-        Assert.assertEquals(BADLENGTH, credentialValidator1.isCredentialsValid("myacc"));
-        Assert.assertEquals(BADCHAR, credentialValidator1.isCredentialsValid("my<account"));
-        //Assert.assertEquals(BADCODE, credentialValidator1.isCredentialsValid("my<pass"));
-        //Assert.assertEquals(BADOTHER, credentialValidator1.isCredentialsValid("my<pass"));
-        //Assert.assertEquals(BADACCOUNT, credentialValidator1.isCredentialsValid("my<pass"));
+        Assert.assertEquals(GOOD, answerValidator1.isAnswerValid("myusername"));
+        Assert.assertEquals(BADLENGTH, answerValidator1.isAnswerValid("myuser"));
+        Assert.assertEquals(BADCHAR, answerValidator1.isAnswerValid("my<pass"));
+        //Assert.assertEquals(BADCODE, answerValidator1.isAnswerValid("my<pass"));
+        //Assert.assertEquals(BADOTHER, answerValidator1.isAnswerValid("my<pass"));
     }
 }
