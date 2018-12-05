@@ -1,18 +1,10 @@
 package Validation;
 
 import org.junit.Test;
-import org.mockito.ArgumentMatchers;
 
 import Factory.Factory;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 5/12/2018
@@ -32,7 +24,7 @@ import static org.mockito.Mockito.when;
  * And all related documentation on https://developer.android.com
  */
 
-public class ValidatorTest
+public class ValidationTest
 {
 
     //Classfields
