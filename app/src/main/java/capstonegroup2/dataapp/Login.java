@@ -29,7 +29,7 @@ import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
- * LAST MODIFIED BY - Jeremy Dunnet 4/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 6/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -39,6 +39,7 @@ import XML.XML_Reader_Exception;
 /* VERSION HISTORY
  * 3/12/2018 - Created file and added comment design path for future coding
  * 4/12/2018 - Integrated Form_Change observer's in to enable switching of GUIs
+ * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
  */
 
 /* REFERENCES

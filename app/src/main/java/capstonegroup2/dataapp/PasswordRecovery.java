@@ -27,7 +27,7 @@ import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 20/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 22/10/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 6/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -39,6 +39,7 @@ import XML.XML_Reader_Exception;
  * 20/10/2018 - Created file and added comment design path for future coding
  * 21/10/2018 - Finished base functionality for testing
  * 22/10/2018 - Added attempts to user name checking and performed testing
+ * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
  */
 
 /* REFERENCES
@@ -164,16 +165,23 @@ public class PasswordRecovery extends Activity {
 
                     String qID = userInfo.get("Security_Question_ID"); //Store the ID of the question
 
-                    /*lr = factory.Make_Login_Reader();
+                    Login_Reader lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login);
                     Map<String, String> qInfo;
+                    list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Question));
 
-                    qInfo = lr.Read_File(file, list, qID); //Since each qID is unique - can be used like an account name
-                    String question = qInfo.get("Security Question"); //Fetch the question text
+                    try{
+                        qInfo = lr.Read_File(loginFile, list, qID); //Since each qID is unique - can be used like an account name
+                    }
+                    catch(XML_Reader_Exception e)
+                    {
+                        throw new RuntimeException ("FIX THIS" + e.getMessage());
+                    }
+
+                    String question = qInfo.get("Security_Question"); //Fetch the question text
 
                     //TODO FIND OUT ABOUT IF NEED AN ASYNC LOADING SCREEN
 
                     questionText.setText(question); //Display question to the user
-                    */
 
                     userLayout.setVisibility(View.INVISIBLE); //Hide user view
                     questionLayout.setVisibility(View.VISIBLE); //Display question view

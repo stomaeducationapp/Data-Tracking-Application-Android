@@ -10,4 +10,9 @@
         <item>@string/ac_security_question_option2</item>
         <item>@string/ac_security_question_option3</item>
     </string-array>
+    <string-array name="ac_security_question_ids">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>
