@@ -79,6 +79,7 @@ import capstonegroup2.dataapp.R;
  * Activating ontouch learned from https://stackoverflow.com/questions/38865922/android-hide-toolbar-when-edittext-is-focused
  * Hiding element after focus change learned from https://stackoverflow.com/questions/4165414/how-to-hide-soft-keyboard-on-android-after-clicking-outside-edittext
  * Setting a onitemselected listener for a spinner learned from https://stackoverflow.com/questions/20151414/how-can-i-use-onitemselected-in-android
+ * Getting an array from arrays.xml resource file learned from https://stackoverflow.com/questions/2453989/how-to-get-string-array-from-arrays-xml-file
  * And many more from https://developer.android.com
  */
 
