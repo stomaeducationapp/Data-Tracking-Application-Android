@@ -10,12 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import Factory.Factory;
+import Validation.Validation;
 import XML.Account_Reader;
 import XML.Login_Reader;
+import XML.XML_Reader;
+import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 20/10/2018
@@ -48,7 +56,9 @@ public class PasswordRecovery extends Activity {
     private Factory f; //Factory for creating all objects
     private String correctUser; //Username of user who passes account check - need it to re access file for security question checks
     private Login_Reader lr; //XML_Readers that are tied to the user above
+    private File loginFile; //File for checking if accounts exist
     private Account_Reader ar;
+    private File accountFile; //File for reading in security questions
     private int tries; //Amount of goes a user gets in a row to answer the question correctly
 
     //Objects in the first layout (User identification)
@@ -64,13 +74,13 @@ public class PasswordRecovery extends Activity {
     private EditText questionAnswer;
     private Button questionButt;
 
-    public PasswordRecovery() {
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_recovery);
+
+        f = Factory.Get_Factory();
+        loginFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
 
         //Grab references to all objects on the screen
         userLayout = findViewById(R.id.pr_user_layout);
@@ -101,86 +111,74 @@ public class PasswordRecovery extends Activity {
     public void findUser(View view)
     {
 
-        //TODO UPDATE WHEN VALIDATION AND OTHER SECTIONS ARE FINISHED AND READY TO INTEGRATE
-        /*Enum<Validate_Result> validResult; //Boolean check for if the entry by the user was valid
+        Validation.Validate_Result validResult; //Boolean check for if the entry by the user was valid
+        Validation validator = f.Make_Validation();
         correctUser = (userText.getText()).toString(); //Store it as the valid classfield so we can use it later
 
-        validResult = validator.Validate_Username(user); //Call validation to check if the user input is valid
+        validResult = validator.validateUsername(correctUser); //Call validation to check if the user input is valid
         //Do error checking for possible error enums
-        if(validResult != Validate_Result.PASS) //If not a valid username
+        if(validResult != Validation.Validate_Result.Pass) //If not a valid username
         {
 
-            String err = validator.getError(validResult); //Get the specific error code
+            String err = validator.getValidatorError(validResult); //Get the specific error code
+            userText.requestFocus();
             userText.setError(err); //Display to the user
 
         }
         else
         {
 
-            if(validator.verify_username(user) != Validate_result.PASS) //If the account name doesn't exist
-            {
-                //OR JUST SET OWN "Username does not exist" error
-                String err = validator.getError(validResult); //Get the specific error code
-                userText.setError(err); //Display to the user
-            }
-            else
-            {
-
-                ar = f.Make_Account_Reader();
-                //TODO GET FILE SOMEHOW FROM CONTEXT
+                lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login);
                 Map<String, String> userInfo;
-                List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Question));
+                List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name));
 
-                userInfo = ar.Read_File(file, list, correctUser); //Read in the user's answered security question
-                String qID = userInfo.get("Security_Question"); //Store the ID of the question
+                try{
+                    userInfo = lr.Read_File(loginFile, list, correctUser);
+                }
+                catch(XML_Reader_Exception e)
+                {
+                    throw new RuntimeException ("FIX THIS" + e.getMessage());
+                }
 
-                lr = factory.Make_Login_Reader();
-                Map<String, String> qInfo;
+                if(userInfo.isEmpty()) //No entries returned - no user by that name
+                {
+                    userText.requestFocus();
+                    userText.setError("No user found with that name.");
+                    tries = tries + 1;
+                }
+                else
+                {
 
-                qInfo = lr.Read_File(file, list, qID); //Since each qID is unique - can be used like an account name
-                String question = qInfo.get("Security Question"); //Fetch the question text
+                    ar = (Account_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Account);
+                    list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Question_ID));
+                    //TODO GRAB ACCOUNT FILE PATH FROM LOGIN FILE
+                    accountFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\account_information.xml");
 
-                //TODO FIND OUT ABOUT IF NEED AN ASYNC LOADING SCREEN
+                    try{
+                        userInfo = ar.Read_File(accountFile, list, correctUser);
+                    }
+                    catch(XML_Reader_Exception e)
+                    {
+                        throw new RuntimeException ("FIX THIS" + e.getMessage());
+                    }
 
-                questionText.setText(question); //Display question to the user
+                    String qID = userInfo.get("Security_Question_ID"); //Store the ID of the question
 
-                userLayout.setVisibility(View.INVISIBLE); //Hide user view
-                questionLayout.setVisibility(View.VISIBLE); //Display question view
+                    /*lr = factory.Make_Login_Reader();
+                    Map<String, String> qInfo;
 
+                    qInfo = lr.Read_File(file, list, qID); //Since each qID is unique - can be used like an account name
+                    String question = qInfo.get("Security Question"); //Fetch the question text
 
-            }
+                    //TODO FIND OUT ABOUT IF NEED AN ASYNC LOADING SCREEN
 
-        } */
+                    questionText.setText(question); //Display question to the user
+                    */
 
-        //FOR DEMO/UNIT TEST PURPOSES ONLY TODO DELETE
-        correctUser = (userText.getText()).toString(); //Store it as the valid classfield so we can use it later
+                    userLayout.setVisibility(View.INVISIBLE); //Hide user view
+                    questionLayout.setVisibility(View.VISIBLE); //Display question view
 
-        switch (correctUser)
-        {
-            //Each case simulates a search for a valid user
-            case "Bob":
-                questionText.setText("What is the name of the first person you kissed?"); //Display question to the user
-                userLayout.setVisibility(View.INVISIBLE); //Hide user view
-                questionLayout.setVisibility(View.VISIBLE); //Display question view
-                tries = 0; //Since the user got their name correct - reset the tries for the answers to use
-                break;
-            case "Alice":
-                questionText.setText("Who was your first grade teacher?"); //Display question to the user
-                userLayout.setVisibility(View.INVISIBLE); //Hide user view
-                questionLayout.setVisibility(View.VISIBLE); //Display question view
-                tries = 0; //Since the user got their name correct - reset the tries for the answers to use
-                break;
-            case "Hannes":
-                questionText.setText("What was your first car?"); //Display question to the user
-                userLayout.setVisibility(View.INVISIBLE); //Hide user view
-                questionLayout.setVisibility(View.VISIBLE); //Display question view
-                tries = 0; //Since the user got their name correct - reset the tries for the answers to use
-                break;
-            default:
-                userText.setError("Username does not exist.");
-                userText.requestFocus();
-                tries = tries + 1; //Indicate a failed attempt
-                break;
+                }
 
         }
 

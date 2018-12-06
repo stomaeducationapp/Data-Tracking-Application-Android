@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Account_File>
+    <Account_Information>
+        <Name>Bob</Name>
+        <Password>Alice</Password>
+    </Account_Information>
+</Account_File>

@@ -43,10 +43,10 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername(null, 1, 1, true, true, true, true);
+        result = v.validateUsername(null);
         assertEquals("Null error was returned", Validation.Validate_Result.NoNull, result);
 
-        result = v.validatePassword(null, 1, 1, true, true, true, true);
+        result = v.validatePassword(null);
         assertEquals("Null error was returned", Validation.Validate_Result.NoNull, result);
 
         result = v.validateFreeInput(null, 1, 1, true, true, true, true);
@@ -70,12 +70,6 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("hello", 10, 1, true, true, true, true);
-        assertEquals("Bad Length error was returned", Validation.Validate_Result.BadLength, result);
-
-        result = v.validatePassword("hello", 10, 1, true, true, true, true);
-        assertEquals("Bad Length error was returned", Validation.Validate_Result.BadLength, result);
-
         result = v.validateFreeInput("hello", 10, 1, true, true, true, true);
         assertEquals("Bad Length error was returned", Validation.Validate_Result.BadLength, result);
 
@@ -97,10 +91,10 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("", 1, 1, true, true, true, true);
+        result = v.validateUsername("");
         assertEquals("Too short error was returned", Validation.Validate_Result.TooShort, result);
 
-        result = v.validatePassword("", 1, 1, true, true, true, true);
+        result = v.validatePassword("");
         assertEquals("Too short error was returned", Validation.Validate_Result.TooShort, result);
 
         result = v.validateFreeInput("", 1, 1, true, true, true, true);
@@ -124,12 +118,6 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("abcd", 5, 10, true, true, true, true);
-        assertEquals("Too short error was returned", Validation.Validate_Result.TooShort, result);
-
-        result = v.validatePassword("abcd", 5, 10, true, true, true, true);
-        assertEquals("Too short error was returned", Validation.Validate_Result.TooShort, result);
-
         result = v.validateFreeInput("abcd", 5, 10, true, true, true, true);
         assertEquals("Too short error was returned", Validation.Validate_Result.TooShort, result);
 
@@ -151,10 +139,10 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("Hello", 1, 3, true, true, true, true);
+        result = v.validateUsername("HelloHelloHelloHelloHello");
         assertEquals("Too big error was returned", Validation.Validate_Result.TooBig, result);
 
-        result = v.validatePassword("Hello", 1, 3, true, true, true, true);
+        result = v.validatePassword("HelloHelloHelloHelloHello");
         assertEquals("Too big error was returned", Validation.Validate_Result.TooBig, result);
 
         result = v.validateFreeInput("Hello", 1, 3, true, true, true, true);
@@ -178,10 +166,10 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("Hello", 1, 10, true, true, true, true);
+        result = v.validateUsername("Hello");
         assertEquals("Pass was returned", Validation.Validate_Result.Pass, result);
 
-        result = v.validatePassword("Hello", 1, 10, true, true, true, true);
+        result = v.validatePassword("Hello");
         assertEquals("Pass was returned", Validation.Validate_Result.Pass, result);
 
         result = v.validateFreeInput("Hello", 1, 10, true, true, true, true);
@@ -204,12 +192,6 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("Hello", 1, 10, false, true, true, true);
-        assertEquals("No capitals error was returned", Validation.Validate_Result.NoCapitals, result);
-
-        result = v.validatePassword("Hello", 1, 10, false, true, true, true);
-        assertEquals("No capitals error was returned", Validation.Validate_Result.NoCapitals, result);
-
         result = v.validateFreeInput("Hello", 1, 10, false, true, true, true);
         assertEquals("No capitals error was returned", Validation.Validate_Result.NoCapitals, result);
 
@@ -230,12 +212,6 @@ public class ValidationTest
 
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
-
-        result = v.validateUsername("Hello", 1, 10, true, false, true, true);
-        assertEquals("No lowers error was returned", Validation.Validate_Result.NoLowers, result);
-
-        result = v.validatePassword("Hello", 1, 10, true, false, true, true);
-        assertEquals("No lowers error was returned", Validation.Validate_Result.NoLowers, result);
 
         result = v.validateFreeInput("Hello", 1, 10, true, false, true, true);
         assertEquals("No lowers error was returned", Validation.Validate_Result.NoLowers, result);
@@ -258,12 +234,6 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("Hello9", 1, 10, true, true, false, true);
-        assertEquals("No numbers error was returned", Validation.Validate_Result.NoNumbers, result);
-
-        result = v.validatePassword("Hello9", 1, 10, true, true, false, true);
-        assertEquals("No numbers error was returned", Validation.Validate_Result.NoNumbers, result);
-
         result = v.validateFreeInput("Hello9", 1, 10, true, true, false, true);
         assertEquals("No numbers error was returned", Validation.Validate_Result.NoNumbers, result);
 
@@ -285,10 +255,7 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("Hello?", 1, 10, true, true, true, false);
-        assertEquals("No special error was returned", Validation.Validate_Result.NoSpecial, result);
-
-        result = v.validatePassword("Hello?", 1, 10, true, true, true, false);
+        result = v.validateUsername("Hello?"); //Usernames are not allowed special in current build
         assertEquals("No special error was returned", Validation.Validate_Result.NoSpecial, result);
 
         result = v.validateFreeInput("Hello?", 1, 10, true, true, true, false);
@@ -312,10 +279,10 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("Hello@#", 1, 10, true, true, true, true);
+        result = v.validateUsername("Hello@#");
         assertEquals("No other characters error was returned", Validation.Validate_Result.NoOthers, result);
 
-        result = v.validatePassword("Hello@#", 1, 10, true, true, true, true);
+        result = v.validatePassword("Hello@#");
         assertEquals("No other characters error was returned", Validation.Validate_Result.NoOthers, result);
 
         result = v.validateFreeInput("Hello@#", 1, 10, true, true, true, true);
@@ -339,10 +306,10 @@ public class ValidationTest
         Validation v = f.Make_Validation();
         Validation.Validate_Result result;
 
-        result = v.validateUsername("H3!!0", 1, 10, true, true, true, true);
+        result = v.validateUsername("H3!!0");
         assertEquals("Pass was returned", Validation.Validate_Result.Pass, result);
 
-        result = v.validatePassword("H3!!0", 1, 10, true, true, true, true);
+        result = v.validatePassword("H3!!0");
         assertEquals("Pass was returned", Validation.Validate_Result.Pass, result);
 
         result = v.validateFreeInput("H3!!0", 1, 10, true, true, true, true);

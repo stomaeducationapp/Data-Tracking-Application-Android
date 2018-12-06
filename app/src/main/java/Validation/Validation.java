@@ -22,22 +22,27 @@ import java.util.Map;
  * Regex checks for validation learned from AccountCreation.java (one of my previous classes that dealt with password complexity)
  * And many more from https://developer.android.com/
  *
- * NOTE
- * The methods in this validation use import parameters to determine what checks are done on an input string - this means if a class if compromised an attacker could submit
- * their own options that allow it to bypass the checks. I advise that any calls to validation use constant modifiers so they are difficult to change even if classes are compromised
  */
 
 public class Validation
 {
     
-    enum Validate_Result
+    public enum Validate_Result
     {
         
         Pass, Fail, TooBig, NoCapitals, NoLowers, NoNumbers, NoSpecial, NoOthers, NoNull, BadLength, TooShort
 
     }
-    
-    private final Map<Validate_Result, String> errors;
+
+    //Constants
+
+    private final Map<Validate_Result, String> errors; //Map containing all error messages for each enum above
+    //These are the constants for username and password restrictions (placed up here for easy edit)
+    //Passwords and usernames need tight restrictions which we enforce here (to stop manipulation of those checks) but free input allows you to specify restrictions since that type of input can be vastly varied
+    private final int MINLENGTH = 1; //Length is the same for username/password to keep things uniform (and 20 characters is enough for both to be complex)
+    private final int MAXLENGTH = 20;
+    private final boolean[] UCHARPERM = {true, true, true, false}; //Permission arrays to denote what characters are allowed in each type
+    private final boolean[] PCHARPERM = {true, true, true, true};
 
     public Validation()
     {
@@ -76,7 +81,7 @@ public class Validation
     private Validate_Result validateLength(String input, int minLen, int maxLen)
     {
         
-        Validate_Result result = Validate_Result.Fail; //Here in case of errors
+        Validate_Result result; //Here in case of errors
         int length = input.length();
 
         //Build as an if-else since if the first too checks pass the string must of an appropriate length
@@ -99,14 +104,14 @@ public class Validation
 
     /* FUNCTION INFORMATION
      * NAME - validateCharacters
-     * INPUTS - input (string that needs to be checked), allowX (booleans denoting whether or not the input string is allowed to have that character type in it)
+     * INPUTS - input (string that needs to be checked), allowX (booleans denoting whether or not the input string is allowed to have that character type in it), currentResult (here to allow final check to work - see below)
      * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
      * PURPOSE - This is the function that performs regex operations to identify if an input string contains characters it is not meant to have
      */
-    private Validate_Result validateCharacters(String input, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean allowSpecial)
+    private Validate_Result validateCharacters(String input, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean allowSpecial, Validate_Result currentResult)
     {
 
-        Validate_Result result = Validate_Result.Fail;
+        Validate_Result result = currentResult;
 
         //The first three checks only perform validation if the boolean is false (means we need to check if they are in input - since they agent allowed to be there)
         //If the boolean is true then we don't care about the content since we are not enforcing the use of Upper/Lower/Number in a input string
@@ -160,7 +165,7 @@ public class Validation
             }
         }
 
-        if(result == Validate_Result.Pass) //If no other error was found - else we want to return that error
+        if(result == Validate_Result.Pass) //If no other error was found - else we want to return that error (if we set the result to fail at the start - an input that accepts all four types of characters would fail even if it was correct) since this is skipped
         {
             //Special characters has an additional check since while we may allow special characters - we do not allow all of them (removed for both simplicity/clarity of
             //names/passwords as well as to enhance security by restricting use of characters that can give a lot of power in code (brackets, asterisks, slashes etc)
@@ -197,11 +202,11 @@ public class Validation
 
     /* FUNCTION INFORMATION
      * NAME - validateUsername
-     * INPUTS - input (string that needs to be checked), XLen (integers denoting the desired length restrictions), allowX (booleans denoting whether or not the input string is allowed to have that character type in it)
+     * INPUTS - input (string that needs to be checked)
      * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
      * PURPOSE - This is the function that performs validation checks on any username the user submits/creates
      */
-    public Validate_Result validateUsername(String input, int minLen, int maxLen, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean allowSpecial)
+    public Validate_Result validateUsername(String input)
     {
         
         Validate_Result result = Validate_Result.Fail;
@@ -210,16 +215,12 @@ public class Validation
         {
             result = Validate_Result.NoNull;
         }
-        else if (minLen > maxLen) //If the lengths are in the wrong order/not set properly (if the are equal doesn't matter - means string must be an exact size)
-        {
-            result = Validate_Result.BadLength;
-        }
         else
         {
-            result =  validateLength(input, minLen, maxLen); //Check the length (edit to your required length)
+            result =  validateLength(input, MINLENGTH, MAXLENGTH); //Check the length (edit constants to your required length)
             if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
             {
-                result = validateCharacters(input, allowUCase, allowLCase, allowNum, allowSpecial); //Edit to match what you require in a username
+                result = validateCharacters(input, UCHARPERM[0], UCHARPERM[1], UCHARPERM[2], UCHARPERM[3], result); //Edit constants to match what you require in a username
             }
         }
 
@@ -229,13 +230,13 @@ public class Validation
 
     /* FUNCTION INFORMATION
      * NAME - validatePassword
-     * INPUTS - input (string that needs to be checked), XLen (integers denoting the desired length restrictions), allowX (booleans denoting whether or not the input string is allowed to have that character type in it)
+     * INPUTS - input (string that needs to be checked)
      * OUTPUTS - result (the Validate_Result enum tat details the status of the check (failure error/pass)
      * PURPOSE - This is the function that performs validation checks on any password a user inputs/creates
      * NOTE - Password hashing is not done here and is not done before coming here (since hashed passwords would be impossible to properly regex check). So this must
      *        be done AFTER the result comes back as a PASS
      */
-    public Validate_Result validatePassword(String input, int minLen, int maxLen, boolean allowUCase, boolean allowLCase, boolean allowNum, boolean allowSpecial)
+    public Validate_Result validatePassword(String input)
     {
 
         Validate_Result result = Validate_Result.Fail;
@@ -244,16 +245,12 @@ public class Validation
         {
             result = Validate_Result.NoNull;
         }
-        else if (minLen > maxLen) //If the lengths are in the wrong order/not set properly (if the are equal doesn't matter - means string must be an exact size)
-        {
-            result = Validate_Result.BadLength;
-        }
         else
         {
-            result =  validateLength(input, minLen, maxLen); //Check the length (edit to your required length)
+            result =  validateLength(input, MINLENGTH, MAXLENGTH); //Check the length (edit constants to your required length)
             if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
             {
-                result = validateCharacters(input, allowUCase, allowLCase, allowNum, allowSpecial); //Edit to match what you require for a password
+                result = validateCharacters(input, PCHARPERM[0], PCHARPERM[1], PCHARPERM[2], PCHARPERM[3], result); //Edit constants to match what you require for a password
             }
         }
 
@@ -285,7 +282,7 @@ public class Validation
             result =  validateLength(input, minLen, maxLen); //Check the length (edit to your required length)
             if (result == Validate_Result.Pass) //Only do next check if passed - otherwise we want to return the error
             {
-                result = validateCharacters(input, allowUCase, allowLCase, allowNum, allowSpecial); //Edit to match what you require in complete free input (descriptions etc with no complexity restrictions)
+                result = validateCharacters(input, allowUCase, allowLCase, allowNum, allowSpecial, result); //Edit to match what you require in complete free input (descriptions etc with no complexity restrictions)
             }
         }
 

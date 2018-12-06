@@ -11,12 +11,21 @@ import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.File;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import Factory.Factory;
 import Observers.Form_Change_Observer;
 import Observers.Invalid_Enum_Exception;
+import Validation.Validation;
+import XML.Login_Reader;
+import XML.XML_Reader;
+import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
@@ -46,9 +55,7 @@ public class Login extends AppCompatActivity
     //Classfields
     private Factory f; //The factory class we use to build every object in the app
     private Form_Change_Observer fc; //The Form_Change observer we will use for any activity changes in this activity
-    /* //TODO UNCOMMENT WHEN INTEGRATED
-    private File loginFile = "PATH"; //Path to static login file where all created accounts have details stored
-     */
+    private File loginFile; //Path to static login file where all created accounts have details stored
 
     private ConstraintLayout splashLayout;
     private ConstraintLayout loginLayout;
@@ -67,8 +74,10 @@ public class Login extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Set up classfields for objects we wil need later
         f = Factory.Get_Factory();
         fc = f.Make_Form_Change_Observer();
+        loginFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\login_information.xml"); //TODO CHANGE WITH REAL FILE
 
         //Grab all the needed objects from the layout
         splashLayout = findViewById(R.id.splashLayout);
@@ -169,52 +178,37 @@ public class Login extends AppCompatActivity
             unameText.requestFocus();
             unameText.setError("Please provide a username");
         }
-        else
-        {
+        else {
             String pInput = (passText.getText()).toString();
-            if(pInput.equals(""))
-            {
+            if (pInput.equals("")) {
                 passText.requestFocus();
                 passText.setError("Please provide a password");
-            }
-            else
-            {
+            } else {
 
-                /* //TODO REDO WHEN VALIDATION DONE
-                Enum<Validate_Result> validResult; //Boolean check for if the entry by the user was valid
+                Validation.Validate_Result validResult; //Boolean check for if the entry by the user was valid
+                Validation validator = f.Make_Validation();
 
-                validResult = validator.Validate_Username(uInput); //Call validation to check if the user input is valid
+                validResult = validator.validateUsername(uInput); //Call validation to check if the user input is valid
                 //Do error checking for possible error enums
-                if(validResult != Validate_Result.PASS) //If not a valid username
+                if (validResult != Validation.Validate_Result.Pass) //If not a valid username
                 {
 
-                   String err = validator.getError(validResult); //Get the specific error code
+                    String err = validator.getValidatorError(validResult); //Get the specific error code
+                    unameText.requestFocus();
                     unameText.setError(err); //Display to the user
 
-                }
-                else
-                {
+                } else {
 
-                if(validator.verify_username(uInput) != Validate_result.PASS) //If the account name doesn't exist
-                {
-                    //OR JUST SET OWN "Username does not exist" error
-                    String err = validator.getError(validResult); //Get the specific error code
-                    unameText.setError(err); //Display to the user
-                }
-                else
-                {
 
-                    validResult = validator.Validate_Password(pInput); //Call validation to check if the user input is valid
-                    if(validResult != Validate_Result.PASS) //If not a valid username
+                    validResult = validator.validatePassword(pInput); //Call validation to check if the user input is valid
+                    if (validResult != Validation.Validate_Result.Pass) //If not a valid password
                     {
 
-                        String err = validator.getError(validResult); //Get the specific error code
+                        String err = validator.getValidatorError(validResult); //Get the specific error code
+                        passText.requestFocus();
                         passText.setError(err); //Display to the user
 
-                    }
-                    else
-                    {
-                    */
+                    } else {
 
                         //Hash password (we only store hashed passwords to protect them)
                         final String algorithm = "SHA-256"; //Values to create the hash used later on
@@ -222,56 +216,81 @@ public class Login extends AppCompatActivity
 
                         try {
                             md = MessageDigest.getInstance(algorithm);
-                        }
-                        catch (NoSuchAlgorithmException e)
-                        {
-                            throw new IllegalStateException("No algorithm exists"); //TODO POSSIBLE REWORK TO CUSTOM EXCEPTION CLASS
+                        } catch (NoSuchAlgorithmException e) {
+                            throw new IllegalStateException("No algorithm exists" + e.getMessage()); //TODO POSSIBLE REWORK TO CUSTOM EXCEPTION CLASS
                         }
                         byte[] answerBytes = pInput.getBytes();
                         byte[] hash = md.digest(answerBytes);
                         String hashedPass = new String(hash);
 
-                        /* //TODO UNCOMMENT WHEN MAIN MENU DONE
-                        lr = f.Make_Login_Reader();
+                        Login_Reader lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login); //Get a reader to the login file setup
                         Map<String, String> userInfo;
                         List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Password));
 
-                        userInfo = lr.Read_File(loginFile, list, uInput);
+                        try{
+                            userInfo = lr.Read_File(loginFile, list, uInput);
+                        }
+                        catch (XML_Reader_Exception e)
+                        {
+                            throw new RuntimeException("Failed to read the login file" + e.getMessage());
+                        }
 
-                        String storedPass = userInfo.get("Password");
-
-                        if(storedPass.equals(hashedPass))
+                        if(userInfo.isEmpty()) //If the map is empty - the username does not exist
+                        {
+                            unameText.requestFocus();
+                            unameText.setError("Username or password incorrect"); //Security through obscurity
+                        }
+                        else
                         {
 
+                            String storedPass = userInfo.get("Password"); //Grab the password
+                            String successfulLogin = "No"; //TODO REMOVE WHEN INTEGRATED WITH MAIN MENU
+
+                            //If the hashes match we can log this user in
+                            if (storedPass.equals(hashedPass)) { //TODO THIS WONT WORK UNTIL ACCOUNT CREATION SETUP
+
+                            /* //TODO UNCOMMENT WHEN MAIN MENU DONE
                             //Call our Form_Change Observer to do the switching for us
                             fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, this);
+                            */
+
+                                //TODO REMOVE WHEN INTEGRATED WITH MAIN MENU
+                                successfulLogin = "Yes";
+
+                            }
+                            else
+                            {
+                                unameText.requestFocus();
+                                unameText.setError("Username or password incorrect");
+                            }
+
+                            //TODO REMOVE WHEN INTEGRATED WITH MAIN MENU
+
+                            // Creating alert Dialog with one Button
+                            AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
+
+                            // Setting Dialog Title
+                            alertDialog.setTitle("Login Results");
+
+                            // Setting Dialog Message
+                            alertDialog.setMessage("You logged in with:\nUsername: " + uInput + "\nPassword: " + pInput + "\nHashed Password: " + hashedPass + "\nStored Password: " + storedPass + "\nSuccess on login: " + successfulLogin);
+
+                            // Setting the finished button
+                            alertDialog.setNegativeButton("OK",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel(); //Simply close screen
+                                        }
+                                    });
+
+                            // Showing Alert Message
+                            alertDialog.show();
 
                         }
 
                     }
-                    */
+                }
 
-                //TODO REMOVE WHEN INTEGRATED
-
-                // Creating alert Dialog with one Button
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
-
-                // Setting Dialog Title
-                alertDialog.setTitle("Login Results");
-
-                // Setting Dialog Message
-                alertDialog.setMessage("You logged in with:\nUsername: " + uInput + "\nPassword: " + pInput + "\nHashed Password: " + hashedPass);
-
-                // Setting the finished button
-                alertDialog.setNegativeButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel(); //Simply close screen
-                            }
-                        });
-
-                // Showing Alert Message
-                alertDialog.show();
             }
         }
 
