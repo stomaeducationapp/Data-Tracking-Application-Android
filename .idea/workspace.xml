@@ -15,8 +15,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43eee2e2-d214-4e7d-90cf-af5556c486e4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/capstonegroup2/dataapp/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/capstonegroup2/dataapp/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/XML_Reader$Tags_To_Read.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/XML_Reader$Tags_To_Read.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$attr.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$attr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$bool.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$bool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$dimen.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$dimen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$integer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$mipmap.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$mipmap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$xml.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$xml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/account_file_data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/account_file_data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login_information.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login_information.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,12 +70,12 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="account_information.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="51">
+              <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -52,17 +83,8 @@
       <file leaf-file-name="login_information.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login_information.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="arrays.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state>
+              <caret selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -70,38 +92,53 @@
       <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="262" column="29" lean-forward="true" selection-start-line="262" selection-start-column="29" selection-end-line="262" selection-end-column="29" />
+            <state relative-caret-position="17">
+              <caret line="262" column="29" selection-start-line="262" selection-start-column="29" selection-end-line="262" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11523#11822#0" expanded="true" />
-                <element signature="e#11821#11822#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasswordRecovery.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PasswordRecovery.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
+            <state relative-caret-position="238">
+              <caret line="205" column="47" lean-forward="true" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="47" />
               <folding>
-                <element signature="e#8500#8767#0" expanded="true" />
-                <element signature="e#8766#8767#0" expanded="true" />
+                <element signature="e#12015#12228#0" expanded="true" />
+                <element signature="e#12227#12228#0" expanded="true" />
+                <element signature="e#13055#13322#0" expanded="true" />
+                <element signature="e#13321#13322#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountCreation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AccountCreation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
-              <folding>
-                <element signature="e#20227#20243#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="182">
+              <caret line="428" selection-start-line="428" selection-end-line="428" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Medical_Writer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="103" column="73" selection-start-line="103" selection-start-column="73" selection-end-line="103" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Account_Writer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -2421,7 +2458,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/EncryptHandlerException.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Factory/StreamOne/StreamOneTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/StreamOne/StreamOneTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/ISO_Valid_file.xml" />
@@ -2449,7 +2485,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/l_strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/LoginTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validator.java" />
@@ -2461,17 +2496,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/xml/login.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/Validation/ValidationTest.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login_information.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/Validation/Validation.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/account_information.xml" />
-        <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/security_questions.xml" />
+        <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login_information.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/account_file_data.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java" />
       </list>
     </option>
   </component>
@@ -2490,6 +2527,146 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="XML" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="xml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Integration" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamFour" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Integration" type="462c0819:PsiDirectoryNode" />
+              <item name="StreamOne" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Validation" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Android Instrumented Tests">
           <expand>
@@ -2686,210 +2863,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-              <item name="accountCreation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Validation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="values" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Integration" type="462c0819:PsiDirectoryNode" />
-              <item name="StreamFour" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Integration" type="462c0819:PsiDirectoryNode" />
-              <item name="StreamOne" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Validation" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -2937,7 +2910,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.ValidationTest">
+  <component name="RunManager" selected="Android App.Login">
     <configuration name="LoginTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -3006,10 +2979,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-      <method>
-        <option name="Make" enabled="false" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="ValidatorTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
@@ -3191,9 +3160,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Android App.Login" />
         <item itemvalue="Android JUnit.ValidationTest" />
         <item itemvalue="Android JUnit.ValidatorTest" />
-        <item itemvalue="Android App.Login" />
         <item itemvalue="Android JUnit.LoginTest" />
         <item itemvalue="Android JUnit.StreamOneTest.StreamOneTestCase1" />
       </list>
@@ -3371,7 +3340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544087423313</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="- Fixed some comments&#10;- Readded temporarily quarantined files">
+      <created>1544087665439</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1544087665439</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3419,48 +3395,48 @@
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4987775" weight="0.32995495" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.51283616" side_tool="true" weight="0.32995495" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.32995737" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48777506" weight="0.32995495" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.4871638" visible="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4871638" weight="0.32995495" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4987775" weight="0.32995495" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49938875" weight="0.32995495" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49511003" weight="0.32995495" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49266502" weight="0.39977476" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49266502" visible="true" weight="0.39977476" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.32995737" />
       <window_info anchor="right" id="StringPreview" order="3" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="13" sideWeight="0.49938875" weight="0.32995495" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49816626" weight="0.32995495" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Assistant" order="4" weight="0.16044776" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32995495" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="StringPreview" order="3" />
+      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49511003" weight="0.32995495" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48777506" weight="0.32995495" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="StringPreview" order="3" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -3470,11 +3446,11 @@
       <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49938875" weight="0.32995495" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51283616" side_tool="true" visible="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Preview" order="9" weight="0.32995737" />
-      <window_info anchor="right" id="Assistant" order="10" weight="0.16044776" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32995495" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.49511003" weight="0.32995495" />
+      <window_info anchor="right" id="Assistant" order="10" weight="0.16044776" />
       <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.49938875" weight="0.32995495" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4871638" visible="true" weight="0.32995495" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4987775" weight="0.32995495" />
@@ -3487,8 +3463,8 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32995495" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49266502" weight="0.39977476" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3519,28 +3495,32 @@
     <MESSAGE value="- Begun XML + Validation Integration for Stream Four (Login complete, PasswordRecovery in progress)&#10;- Fixed Validation to remove some customizable imports that weren't as secure as new form is" />
     <MESSAGE value="- Finished writing up code to integrate XML+Validation with StreamFour (no testing yet)" />
     <MESSAGE value="- Finished writing up code to integrate XML+Validation with StreamFour (no testing yet)&#10;- Fixed some missing enums and spacings in the XML classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Finished writing up code to integrate XML+Validation with StreamFour (no testing yet)&#10;- Fixed some missing enums and spacings in the XML classes" />
+    <MESSAGE value="- Fixed some comments&#10;- Readded temporarily quarantined files" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Fixed some comments&#10;- Readded temporarily quarantined files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="35" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java</url>
+          <line>428</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>account_File.canWrite()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/ExampleUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/AccountCreationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -3593,19 +3573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="28" column="56" lean-forward="true" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-          <folding>
-            <element signature="e#1079#1120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/Observers/Form_Change__Unit_Test.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3618,6 +3585,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="53" column="124" selection-start-line="53" selection-start-column="124" selection-end-line="53" selection-end-column="124" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3703,27 +3673,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/account_file_data.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader_Exception.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/file_contents.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/iso_empty_file.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -3783,13 +3736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -3805,24 +3751,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
-          <folding>
-            <element signature="e#8500#8767#0" expanded="true" />
-            <element signature="e#8766#8767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="52" column="78" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4063">
@@ -3834,13 +3762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="34" column="115" lean-forward="true" selection-start-line="34" selection-start-column="115" selection-end-line="34" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -3859,22 +3780,24 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="262" column="29" lean-forward="true" selection-start-line="262" selection-start-column="29" selection-end-line="262" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11523#11822#0" expanded="true" />
-            <element signature="e#11821#11822#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/security_questions.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        <state relative-caret-position="34">
+          <caret line="2" column="69" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SDK/sources/android-26/android/os/StrictMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1498" selection-start-line="1498" selection-end-line="1498" />
         </state>
       </provider>
     </entry>
@@ -3883,24 +3806,94 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state>
+          <caret selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/file_contents.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/iso_empty_file.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Login_Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/account_file_data.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="103" column="73" selection-start-line="103" selection-start-column="73" selection-end-line="103" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="262" column="29" selection-start-line="262" selection-start-column="29" selection-end-line="262" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        <state relative-caret-position="182">
+          <caret line="428" selection-start-line="428" selection-end-line="428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="205" column="47" lean-forward="true" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="47" />
           <folding>
-            <element signature="e#20227#20243#0" expanded="true" />
+            <element signature="e#12015#12228#0" expanded="true" />
+            <element signature="e#12227#12228#0" expanded="true" />
+            <element signature="e#13055#13322#0" expanded="true" />
+            <element signature="e#13321#13322#0" expanded="true" />
           </folding>
         </state>
       </provider>

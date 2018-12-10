@@ -118,10 +118,8 @@ public class AccountCreation extends Activity {
     private File accountFile;
 
     //Constants - Change here to ease refactoring
-    //Maximum length of username
-    public static final int UNAME_MAX = 20;
     //Constants for validation of answers (since it is free input we need to detail what can be put in)
-    private final int MINLENGTH = 1;
+    private final int MINLENGTH = 5;
     private final int MAXLENGTH = 40; //Just a sample idea
     private final boolean[] ACHARPERM = {true, true, false, false}; //No numbers or special characters - just for simple tests now
 

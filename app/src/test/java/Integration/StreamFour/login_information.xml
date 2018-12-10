@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Login_Information>
+    <!-- This is the records for each available security question (allow it to be retrieved dynamically when needed) -->
     <Account>
-        <Account_Name>Terry</Account_Name>
-        <Password>Alice</Password>
+        <Account_Name>1</Account_Name>
+        <Security_Question>What is the name of the first person you kissed?</Security_Question>
+    </Account>
+    <Account>
+        <Account_Name>2</Account_Name>
+        <Security_Question>Who was your first grade teacher?</Security_Question>
+    </Account>
+    <Account>
+        <Account_Name>3</Account_Name>
+        <Security_Question>What was your first car?</Security_Question>
     </Account>
 </Login_Information>

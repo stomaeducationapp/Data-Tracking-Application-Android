@@ -124,6 +124,7 @@ public class PasswordRecovery extends Activity {
             String err = validator.getValidatorError(validResult); //Get the specific error code
             userText.requestFocus();
             userText.setError(err); //Display to the user
+            tries = tries + 1;
 
         }
         else
@@ -206,7 +207,7 @@ public class PasswordRecovery extends Activity {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();
-                            //GO BACK TO LOGIN SCREEN
+                            finish(); //TODO MAYBE ADD TO FORM_CHANGE
                         }
                     });
 
@@ -230,10 +231,17 @@ public class PasswordRecovery extends Activity {
         final String algorithm = "SHA-256"; //Values to create the hash used later on
         MessageDigest md;
 
-        //TODO REFACTOR WHEN INTEGRATING AND OTHER FUNCTIONALITY DONE
-        /*List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Answer));
-        String realAnswer = ar.Read_File(file, list, correctUser); //Get user's stored (hashed) answer to compare
-        */
+        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Answer));
+        Map<String, String> aInfo;
+
+        try{
+            aInfo = ar.Read_File(accountFile, list, correctUser); //Since each qID is unique - can be used like an account name
+        }
+        catch(XML_Reader_Exception e)
+        {
+            throw new RuntimeException ("FIX THIS" + e.getMessage());
+        }
+        String realAnswer = aInfo.get("Security_Answer");
 
         //Since the realAnswer is stored securely as a hash - we need to hash the user's answer to check if they are the same
         try {
@@ -247,29 +255,9 @@ public class PasswordRecovery extends Activity {
         byte[] hash = md.digest(answerBytes);
         String hashedAnswer = new String(hash);
 
-        //DEMO/TESTING PURPOSES ONLY TODO DELETE
-        String realAnswer = "";
-        switch (correctUser)
-        {
-            //Each case simulates a search for a valid user
-            case "Bob":
-                realAnswer = new String(md.digest(("Alice").getBytes()));
-                break;
-            case "Alice":
-                realAnswer = new String(md.digest(("Miss Krabapple").getBytes()));
-                break;
-            case "Hannes":
-                realAnswer = new String(md.digest(("Honda Accord").getBytes()));
-                break;
-            default:
-                questionAnswer.setError("Question does not exist.");
-                break;
-
-        }
-
         if(hashedAnswer.equals(realAnswer)) //If answer was correct
         {
-            //LOGIN TO MAIN MENU
+            //TODO LOGIN TO MAIN MENU
 
             //DEMO/TESTING PURPOSES ONLY TODO DELETE
             // Creating alert Dialog with one Button
@@ -315,7 +303,7 @@ public class PasswordRecovery extends Activity {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.cancel();
-                            //GO BACK TO LOGIN SCREEN
+                            finish(); //TODO MAYBE ADD TO FORM_CHANGE
                         }
                     });
 
