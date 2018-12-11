@@ -5,6 +5,8 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -17,9 +19,9 @@ import java.util.Map;
  * users device that contains the login information of each account. Implements XML_Reader interface
  *
  * @author Patrick Crockfords
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17-Oct-2018
+ * 11-Dec-2018
  * Patrick Crockford
  */
 public class Login_Reader implements XML_Reader {
@@ -61,6 +63,18 @@ public class Login_Reader implements XML_Reader {
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(false);
                 XmlPullParser xmlPullParser = factory.newPullParser();
+
+                //TODO REMOVE WHEN MOVED TO APP TESTING
+                FileInputStream inStream = null;
+                try{
+                    inStream = new FileInputStream(file);
+                }
+                catch (FileNotFoundException e)
+                {
+                    int ii = 0 + 1;
+                }
+                xmlPullParser.setInput(inStream, "UTF-8"); //Added this so pullparser with hook into file given to it
+
                 //Convert Enum to strings
                 List<String> tags = new LinkedList<>();
                 for (XML_Reader.Tags_To_Read tag : enum_Tags) {

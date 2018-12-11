@@ -39,7 +39,7 @@ import capstonegroup2.dataapp.R;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 07/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 6/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 11/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -53,6 +53,7 @@ import capstonegroup2.dataapp.R;
  * 21/10/2018 - Fixed functionality to include security questions and added some validation code
  * 25/10/2018 - Fixed bugs that arose from testing
  * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
+ * 11/12/2018 - Fixed integration errors that stopped XML working and added username verification check
  */
 
 /* REFERENCES
@@ -156,8 +157,8 @@ public class AccountCreation extends Activity {
 
         f = Factory.Get_Factory();
         validator = f.Make_Validation();
-        loginFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
-        accountFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\account_information.xml");
+        loginFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
+        accountFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml");
 
         /* TODO DELETE OR REENABLE DEPENDING ON WHAT CONTROLS WANTED FOR INSTANT FEEDBACK
         //Set an TextWatch listener for each of the two text inputs so that we can do some per character analysis
@@ -385,80 +386,147 @@ public class AccountCreation extends Activity {
         else
         {
 
-            validResult = validator.validatePassword(passValue); //Check the password is valid
-            if (validResult != Validation.Validate_Result.Pass) {
-                String err = validator.getValidatorError(validResult); //Get the specific error code
-                passInput.requestFocus();
-                passInput.setError(err); //Display to the user
-            } else {
-                validResult = validator.validateFreeInput(sqAnswer, MINLENGTH, MAXLENGTH, ACHARPERM[0], ACHARPERM[1], ACHARPERM[2], ACHARPERM[3]); //Check the answer is valid
+            Login_Reader lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login);
+            Map<String, String> userInfo;
+            List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name));
+
+            try{
+                userInfo = lr.Read_File(loginFile, list, unameValue);
+            }
+            catch(XML_Reader_Exception e)
+            {
+                throw new RuntimeException ("FIX THIS" + e.getMessage());
+            }
+
+            if(userInfo.isEmpty() == false) //Entry found - username already taken
+            {
+                unameInput.requestFocus();
+                unameInput.setError("Username already taken.");
+            }
+            else
+            {
+
+                validResult = validator.validatePassword(passValue); //Check the password is valid
                 if (validResult != Validation.Validate_Result.Pass) {
                     String err = validator.getValidatorError(validResult); //Get the specific error code
-                    sqInput.requestFocus();
-                    sqInput.setError(err); //Display to the user
+                    passInput.requestFocus();
+                    passInput.setError(err); //Display to the user
                 } else {
-                    boolean success = false;
-                    String sqID = "";
+                    validResult = validator.validateFreeInput(sqAnswer, MINLENGTH, MAXLENGTH, ACHARPERM[0], ACHARPERM[1], ACHARPERM[2], ACHARPERM[3]); //Check the answer is valid
+                    if (validResult != Validation.Validate_Result.Pass) {
+                        String err = validator.getValidatorError(validResult); //Get the specific error code
+                        sqInput.requestFocus();
+                        sqInput.setError(err); //Display to the user
+                    } else {
+                        boolean success = false;
+                        String sqID = "";
 
-                    //Write newly created account to file
-                    Account_Writer ac = (Account_Writer) f.Make_Writer(Factory.XML_Writer_Choice.Account);
-                    XML_Writer.Tags_To_Write job = XML_Writer.Tags_To_Write.Create;
-                    Map<String, String> values = new HashMap<String, String>();
+                        //Write newly created account to file
+                        Account_Writer ac = (Account_Writer) f.Make_Writer(Factory.XML_Writer_Choice.Account);
+                        XML_Writer.Tags_To_Write job = XML_Writer.Tags_To_Write.Create;
+                        Map<String, String> values = new HashMap<String, String>();
 
-                    values.put("Name", unameValue);
-                    byte[] hashedPass = md.digest( (passValue.getBytes()) );
-                    values.put("Password", new String(hashedPass));
-                    values.put("Security_Answer", sqAnswer);
-                    values.put("Gamification", gameValue);
-                    values.put("Notification", notValue);
-                    values.put("Export_Settings", exportValue);
-
-                    //Now we need to find the security question ID of the question selected
-                    String[] questions = getResources().getStringArray(R.array.ac_security_question_entries);
-                    String[] ids = getResources().getStringArray(R.array.ac_security_question_ids);
-                    for(int ii= 0; ii < questions.length; ii++)
-                    {
-                        if(questions[ii].equals(sqValue)) //If the question matches
-                        {
-                            sqID = ids[ii];
-                        }
-                    }
-                    values.put("Security_Question_ID", sqID);
-
-                    try{
-                        success = ac.Write_File(accountFile, values, job); //Create the account in the system
-                    }
-                    catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
-                    {
-                        throw new RuntimeException("FIX THIS" + e.getMessage());
-                    }
-
-                    //If file succesfully written - add to login file so user can login later
-                    if(success ==  true)
-                    {
-                        //LOGIN FILE
-                        Login_Writer lw = (Login_Writer) f.Make_Writer(Factory.XML_Writer_Choice.Login);
-                        job = XML_Writer.Tags_To_Write.New;
-                        values = new HashMap<String, String>();
-
-                        values.put("Account_Name", unameValue);
+                        values.put("Name", unameValue);
+                        byte[] hashedPass = md.digest( (passValue.getBytes()) );
+                        byte[] hashedAnswer = md.digest(sqAnswer.getBytes());
                         values.put("Password", new String(hashedPass));
+                        values.put("Security_Answer", new String(hashedAnswer));
+                        values.put("Gamification", gameValue);
+                        values.put("Notification", notValue);
+                        values.put("Export_Settings", exportValue);
+
+                        //Now we need to find the security question ID of the question selected
+                        String[] questions = getResources().getStringArray(R.array.ac_security_question_entries);
+                        String[] ids = getResources().getStringArray(R.array.ac_security_question_ids);
+                        for(int ii= 0; ii < questions.length; ii++)
+                        {
+                            if(questions[ii].equals(sqValue)) //If the question matches
+                            {
+                                sqID = ids[ii];
+                            }
+                        }
+                        values.put("Security_Question_ID", sqID);
 
                         try{
-                            success = lw.Write_File(loginFile, values, job); //Create the account in the system
+                            success = ac.Write_File(accountFile, values, job); //Create the account in the system
                         }
                         catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
                         {
                             throw new RuntimeException("FIX THIS" + e.getMessage());
                         }
 
-                        if(success == true)
+                        //If file succesfully written - add to login file so user can login later
+                        if(success ==  true)
                         {
-                            //TODO LOGIN TO MAIN MENU
+                            //LOGIN FILE
+                            Login_Writer lw = (Login_Writer) f.Make_Writer(Factory.XML_Writer_Choice.Login);
+                            job = XML_Writer.Tags_To_Write.New;
+                            values = new HashMap<String, String>();
+
+                            values.put("Account_Name", unameValue);
+                            values.put("Password", new String(hashedPass));
+
+                            try{
+                                success = lw.Write_File(loginFile, values, job); //Create the account in the system
+                            }
+                            catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
+                            {
+                                throw new RuntimeException("FIX THIS" + e.getMessage());
+                            }
+
+                            if(success == true)
+                            {
+                                //TODO LOGIN TO MAIN MENU
                             /* //TODO UNCOMMENT WHEN MAIN MENU DONE
                                 //Call our Form_Change Observer to do the switching for us
                                 fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, this);
                             */
+
+                                //TODO DELETE THIS MARKER TO SHOW MAKE WAS SUCCESSFUL WHEN MAIN MENU DONE
+                                // Creating alert Dialog with one Button
+                                AlertDialog.Builder alertDialog = new AlertDialog.Builder(AccountCreation.this);
+
+                                // Setting Dialog Title
+                                alertDialog.setTitle("File write success");
+
+                                // Setting Dialog Message
+                                alertDialog.setMessage("Account was successfully created");
+
+                                // Setting the finished button
+                                alertDialog.setNegativeButton("OK",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                                finish();
+                                            }
+                                        });
+
+                                // Showing Alert Message
+                                alertDialog.show();
+                            }
+                            else
+                            {
+                                // Creating alert Dialog with one Button
+                                AlertDialog.Builder alertDialog = new AlertDialog.Builder(AccountCreation.this);
+
+                                // Setting Dialog Title
+                                alertDialog.setTitle("File write failure");
+
+                                // Setting Dialog Message
+                                alertDialog.setMessage("Something went wrong trying to add you into the system - please reboot the app and try again.");
+
+                                // Setting the finished button
+                                alertDialog.setNegativeButton("OK",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                            }
+                                        });
+
+                                // Showing Alert Message
+                                alertDialog.show();
+                            }
+
                         }
                         else
                         {
@@ -484,30 +552,8 @@ public class AccountCreation extends Activity {
                         }
 
                     }
-                    else
-                    {
-                        // Creating alert Dialog with one Button
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(AccountCreation.this);
-
-                        // Setting Dialog Title
-                        alertDialog.setTitle("File write failure");
-
-                        // Setting Dialog Message
-                        alertDialog.setMessage("Something went wrong trying to add you into the system - please reboot the app and try again.");
-
-                        // Setting the finished button
-                        alertDialog.setNegativeButton("OK",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-
-                        // Showing Alert Message
-                        alertDialog.show();
-                    }
-
                 }
+
             }
 
         }

@@ -30,9 +30,9 @@ import javax.xml.transform.stream.StreamResult;
  * <p>
  *
  * @author Patrick Crockford
- * @version 1.1
+ * @version 1.2
  * <h1>Last Edited</h1>
- * 4-Nov-2018
+ * 11-Dec-2018
  * Jeremy Dunnet
  * <h1>References</h1>
  * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
@@ -241,7 +241,7 @@ public class Account_Writer implements XML_Writer {
         }
         account_Information.appendChild(last_Daily_Review_Date);
 
-        Element export_Date = document.createElement(Tags_To_Write.Gamification.toString());
+        Element export_Date = document.createElement(Tags_To_Write.Last_Export_Date.toString());
         export_Date.appendChild(document.createTextNode(Get_Current_Date_Time()));
         account_Information.appendChild(export_Date);
 

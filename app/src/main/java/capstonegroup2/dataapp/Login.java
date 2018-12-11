@@ -29,7 +29,7 @@ import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
- * LAST MODIFIED BY - Jeremy Dunnet 6/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 11/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -40,6 +40,7 @@ import XML.XML_Reader_Exception;
  * 3/12/2018 - Created file and added comment design path for future coding
  * 4/12/2018 - Integrated Form_Change observer's in to enable switching of GUIs
  * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
+ * 11/12/2018 - Fixed integration errors that caused XML to not work
  */
 
 /* REFERENCES
@@ -78,7 +79,7 @@ public class Login extends AppCompatActivity
         //Set up classfields for objects we wil need later
         f = Factory.Get_Factory();
         fc = f.Make_Form_Change_Observer();
-        loginFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\login_information.xml"); //TODO CHANGE WITH REAL FILE
+        loginFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml"); //TODO CHANGE WITH REAL FILE
 
         //Grab all the needed objects from the layout
         splashLayout = findViewById(R.id.splashLayout);
@@ -226,7 +227,7 @@ public class Login extends AppCompatActivity
 
                         Login_Reader lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login); //Get a reader to the login file setup
                         Map<String, String> userInfo;
-                        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Password));
+                        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name, XML_Reader.Tags_To_Read.Password));
 
                         try{
                             userInfo = lr.Read_File(loginFile, list, uInput);

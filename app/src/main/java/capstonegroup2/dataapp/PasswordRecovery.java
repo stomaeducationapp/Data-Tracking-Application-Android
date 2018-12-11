@@ -27,7 +27,7 @@ import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 20/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 6/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 11/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -40,6 +40,7 @@ import XML.XML_Reader_Exception;
  * 21/10/2018 - Finished base functionality for testing
  * 22/10/2018 - Added attempts to user name checking and performed testing
  * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
+ * 11/12/2018 - Fixed some integration errors to get XML working right
  */
 
 /* REFERENCES
@@ -81,7 +82,7 @@ public class PasswordRecovery extends Activity {
         setContentView(R.layout.activity_password_recovery);
 
         f = Factory.Get_Factory();
-        loginFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
+        loginFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
 
         //Grab references to all objects on the screen
         userLayout = findViewById(R.id.pr_user_layout);
@@ -154,7 +155,7 @@ public class PasswordRecovery extends Activity {
                     ar = (Account_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Account);
                     list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Question_ID));
                     //TODO GRAB ACCOUNT FILE PATH FROM LOGIN FILE
-                    accountFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamFour\\account_information.xml");
+                    accountFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml");
 
                     try{
                         userInfo = ar.Read_File(accountFile, list, correctUser);
@@ -168,7 +169,7 @@ public class PasswordRecovery extends Activity {
 
                     Login_Reader lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login);
                     Map<String, String> qInfo;
-                    list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Question));
+                    list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name, XML_Reader.Tags_To_Read.Security_Question));
 
                     try{
                         qInfo = lr.Read_File(loginFile, list, qID); //Since each qID is unique - can be used like an account name
