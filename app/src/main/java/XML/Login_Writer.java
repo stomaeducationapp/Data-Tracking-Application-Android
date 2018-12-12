@@ -31,9 +31,9 @@ import javax.xml.transform.stream.StreamResult;
  * <p>
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * Patrick Crockford
+ * Jeremy Dunnet
  * <h1>References</h1>
  * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
  * http://www.java2s.com/Tutorials/Java/XML_HTML_How_to/DOM/Append_a_node_to_an_existing_XML_file.htm
@@ -225,7 +225,7 @@ public class Login_Writer implements XML_Writer {
 
     /**
      * This private method functionality is to modify the information for a specified account. Currently this method
-     * can modify the account name and password value of a given account. This is achieved by stepping through the
+     * can modify the account name, password value and related account file of a given account. This is achieved by stepping through the
      * document using the SAX parser and document checking all the Account_Name node text values until the required one
      * is found, or the end of the document is found.
      * If the entry is not found the document writer will not be invoked and false will be returned. This is to
@@ -274,6 +274,12 @@ public class Login_Writer implements XML_Writer {
                             completed = true;
                         }
                     }
+                    else if (account_Child.getNodeName().equals(Tags_To_Write.Account_File.toString()) && found_Account) {
+                        if (values.containsKey(Tags_To_Write.Account_File.toString())) {
+                            account_Child.setTextContent(values.get(Tags_To_Write.Account_File.toString()));
+                            completed = true;
+                        }
+                    }
                     jj++;
                 }
             }
@@ -315,6 +321,9 @@ public class Login_Writer implements XML_Writer {
             Element password = document.createElement(Tags_To_Write.Password.toString());
             password.appendChild(document.createTextNode(values.get(Tags_To_Write.Password.toString())));
             account_Node.appendChild(password);
+            Element accountFile = document.createElement(Tags_To_Write.Account_File.toString());
+            accountFile.appendChild(document.createTextNode(values.get(Tags_To_Write.Account_File.toString())));
+            account_Node.appendChild(accountFile);
             root_Node.appendChild(account_Node);
             return Write_To_File(document, login_File);
         } else {

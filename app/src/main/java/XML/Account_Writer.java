@@ -30,9 +30,9 @@ import javax.xml.transform.stream.StreamResult;
  * <p>
  *
  * @author Patrick Crockford
- * @version 1.2
+ * @version 1.3
  * <h1>Last Edited</h1>
- * 11-Dec-2018
+ * 12-Dec-2018
  * Jeremy Dunnet
  * <h1>References</h1>
  * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
@@ -181,6 +181,12 @@ public class Account_Writer implements XML_Writer {
                             found = true;
                         }
                     }
+                    else if (node_Name.equals(Tags_To_Write.Medical_File.toString())) {
+                        if (values.containsKey(Tags_To_Write.Medical_File.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Medical_File.toString()));
+                            found = true;
+                        }
+                    }
                 }
             }
         }
@@ -286,6 +292,13 @@ public class Account_Writer implements XML_Writer {
             securityAnswer.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(securityAnswer);
+        Element medicalFileAnswer = document.createElement(Tags_To_Write.Medical_File.toString());
+        if (values.containsKey(Tags_To_Write.Medical_File.toString())) {
+            medicalFileAnswer.appendChild(document.createTextNode(values.get(Tags_To_Write.Medical_File.toString())));
+        } else {
+            medicalFileAnswer.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+        }
+        account_Information.appendChild(medicalFileAnswer);
 
         return Write_To_File(document, account_File);
     }

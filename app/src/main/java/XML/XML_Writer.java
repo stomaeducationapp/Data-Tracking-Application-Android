@@ -13,9 +13,9 @@ import java.util.Map;
  * supported due to available functionality
  *
  * @author Patrick Crockford
- * @version 1.1
+ * @version 1.2
  * <h1>Last Edited</h1>
- * 4-Nov-2018
+ * 12-Dec-2018
  * Jeremy Dunnet
  */
 public interface XML_Writer {
@@ -31,8 +31,8 @@ public interface XML_Writer {
      * Delete: Will delete the corresponding entry from the .xml file, only usable in the Login_Writer concrete class
      */
     enum Tags_To_Write {
-        Account_Name, Password, New_Account_Name, //Login
-        Name, Gamification, Notification, State, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, Security_Question_ID, Security_Answer, //Account
+        Account_Name, Password, New_Account_Name, Account_File, //Login
+        Name, Gamification, Notification, State, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, Security_Question_ID, Security_Answer, Medical_File, //Account
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Medical
         Modify, New, Export, Create, Delete//Task Statements
     }

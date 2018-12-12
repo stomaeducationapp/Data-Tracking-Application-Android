@@ -3,13 +3,16 @@ package Observers;
 import android.content.Context;
 import android.content.Intent;
 
+import java.io.File;
+import java.util.HashMap;
+
 /**
  * <h1>Form_Change_Observer</h1>
  * The Form_Change_Observer Interface Java Class is used to Allow access to the package private concrete classes that inherit from it.
  * It also stores the Enum Activity_Control required to navigate to a new activity through the Concrete Observers.
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.2
  * <h>Changes</h1>
  * 19 Aug
  * Created Interface 'Form_Change_Observer', and created Enum and Change_Form Method, Patrick Crockford
@@ -33,6 +36,10 @@ import android.content.Intent;
  * 4th Dec
  * Updated method to use context rather than intent since old version of observer could not start new activities as it did not bring the context from the previous
  * activity. Reworked observer code to keep inital purpose of separation of functionality but enabled it to work as intended. Jeremy Dunnet
+ * <p>
+ * 12th Dec
+ * Added a new method that allows files to be passed between activities to enable already opened files that need to stay open to be passed through rather than closed and
+ * reopened multiple times. It is a sperate method since many activities many not require this additional feature. Jeremy Dunnet
  *
  */
 public interface Form_Change_Observer {
@@ -57,4 +64,14 @@ public interface Form_Change_Observer {
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
     boolean Change_Form(Activity_Control activity_To_Change_To, Context context) throws NullPointerException, Invalid_Enum_Exception;
+
+    /**
+     * @param activity_To_Change_To Enum specifying which form to change to from the current form.
+     * @param context System Object with information about the current running acivity (to move system resources over to new one)
+     * @param fileMap Map that contains any important files that the next activity will use (save reinitializing any files multiple times)
+     * @return True if successfully created and used new Activity, else false
+     * @throws NullPointerException if intent, Activity_Control, and/or Activity Objects are Null
+     * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
+     */
+    boolean Change_Form_File(Activity_Control activity_To_Change_To, Context context, HashMap<Time_Observer.Files, File> fileMap) throws NullPointerException, Invalid_Enum_Exception;
 }

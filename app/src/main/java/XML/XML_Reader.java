@@ -17,9 +17,9 @@ import java.util.Map;
  * This is to allow for easy string concatenation with syntax '-'
  *
  * @author Patrick Crockford
- * @version 1.1
+ * @version 1.2
  * <h1>Last Edited</h1>
- * 28-Nov-2018
+ * 12-Dec-2018
  * Jeremy Dunnet
  */
 public interface XML_Reader {
@@ -28,7 +28,7 @@ public interface XML_Reader {
      */
     enum Tags_To_Read {
         //Login Tags
-        Account_Name, Password, Security_Question,
+        Account_Name, Password, Security_Question, Account_File,
         //Medical Tags
         Bags, Urine, Colour, Volume, Physical, Consistency, Hydration, Wellbeing, Location, Entry_Time, Medical_State,
         //Account Tags

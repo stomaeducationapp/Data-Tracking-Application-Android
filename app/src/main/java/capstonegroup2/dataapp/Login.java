@@ -16,12 +16,14 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import Factory.Factory;
 import Observers.Form_Change_Observer;
 import Observers.Invalid_Enum_Exception;
+import Observers.Time_Observer;
 import Validation.Validation;
 import XML.Login_Reader;
 import XML.XML_Reader;
@@ -29,7 +31,7 @@ import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 3/12/2018
- * LAST MODIFIED BY - Jeremy Dunnet 11/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 12/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -41,6 +43,7 @@ import XML.XML_Reader_Exception;
  * 4/12/2018 - Integrated Form_Change observer's in to enable switching of GUIs
  * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
  * 11/12/2018 - Fixed integration errors that caused XML to not work
+ * 12/12/2018 - Updated form change to work with new file passing method
  */
 
 /* REFERENCES
@@ -227,7 +230,7 @@ public class Login extends AppCompatActivity
 
                         Login_Reader lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login); //Get a reader to the login file setup
                         Map<String, String> userInfo;
-                        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name, XML_Reader.Tags_To_Read.Password));
+                        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name, XML_Reader.Tags_To_Read.Password, XML_Reader.Tags_To_Read.Account_File));
 
                         try{
                             userInfo = lr.Read_File(loginFile, list, uInput);
@@ -253,7 +256,10 @@ public class Login extends AppCompatActivity
 
                             /* //TODO UNCOMMENT WHEN MAIN MENU DONE
                             //Call our Form_Change Observer to do the switching for us
-                            fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, this);
+                            File accountFile = new File(userInfo.get("Account_File")); //Retrieve the account information file tied to this user so main menu can grab importnat info
+                            HashMap<Time_Observer.Files, File> files = new HashMap<Time_Observer.Files, File>();
+                            files.put(Time_Observer.Files.Account, accountFile);
+                            fc.Change_From(Form_Change_Observer.Activity_Control.Main_Menu, this, files);
                             */
 
                                 //TODO REMOVE WHEN INTEGRATED WITH MAIN MENU
@@ -307,9 +313,12 @@ public class Login extends AppCompatActivity
     public void registerClick(View View)
     {
 
+        HashMap<Time_Observer.Files, File> files =  new HashMap<Time_Observer.Files, File>();
+        files.put(Time_Observer.Files.Login, loginFile);
+
         //Call our Form_Change Observer to do the switching for us
         try {
-            fc.Change_Form(Form_Change_Observer.Activity_Control.Account_Creation, this);
+            fc.Change_Form_File(Form_Change_Observer.Activity_Control.Account_Creation, this, files);
         }
         catch (Invalid_Enum_Exception e)
         {
@@ -326,10 +335,12 @@ public class Login extends AppCompatActivity
      */
     public void recoverClick(View view)
     {
+        HashMap<Time_Observer.Files, File> files =  new HashMap<Time_Observer.Files, File>();
+        files.put(Time_Observer.Files.Login, loginFile);
 
         //Call our Form_Change Observer to do the switching for us
         try {
-            fc.Change_Form(Form_Change_Observer.Activity_Control.Password_Recovery, this);
+            fc.Change_Form_File(Form_Change_Observer.Activity_Control.Password_Recovery, this, files);
         }
         catch (Invalid_Enum_Exception e)
         {

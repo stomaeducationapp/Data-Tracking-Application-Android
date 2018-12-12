@@ -12,9 +12,9 @@ import java.util.Map;
  * The Map of File objects can be accessed through the public enum Files from this interface.
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17 Oct 2018
+ * 12 Dec 2018
  * Patrick Crockford
  */
 public interface Time_Observer {
@@ -24,7 +24,7 @@ public interface Time_Observer {
      * concrete implementations
      */
     enum Files {
-        Medical, Review, Account
+        Medical, Review, Account, Login
     }
 
     /**
