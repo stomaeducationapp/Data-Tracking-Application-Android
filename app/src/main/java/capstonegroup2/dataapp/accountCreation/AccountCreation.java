@@ -162,8 +162,8 @@ public class AccountCreation extends Activity {
 
         Bundle bundle = this.getIntent().getExtras();
         HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) bundle.getSerializable("fileMap");
-        loginFile = files.get(Time_Observer.Files.Login); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
-        accountFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml");
+        loginFile = files.get(Time_Observer.Files.Login);
+        accountFile = new File(this.getFilesDir().getPath() + "/accounts/account_information.xml");
 
         /* TODO DELETE OR REENABLE DEPENDING ON WHAT CONTROLS WANTED FOR INSTANT FEEDBACK
         //Set an TextWatch listener for each of the two text inputs so that we can do some per character analysis

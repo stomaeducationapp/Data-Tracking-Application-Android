@@ -1,6 +1,7 @@
 package capstonegroup2.dataapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -82,7 +83,7 @@ public class Login extends AppCompatActivity
         //Set up classfields for objects we wil need later
         f = Factory.Get_Factory();
         fc = f.Make_Form_Change_Observer();
-        loginFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml"); //TODO CHANGE WITH REAL FILE
+        loginFile = new File(this.getFilesDir().getPath() + "/accounts/login_information.xml");
 
         //Grab all the needed objects from the layout
         splashLayout = findViewById(R.id.splashLayout);
