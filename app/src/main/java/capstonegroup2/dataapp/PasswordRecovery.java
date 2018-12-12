@@ -15,10 +15,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import Factory.Factory;
+import Observers.Time_Observer;
 import Validation.Validation;
 import XML.Account_Reader;
 import XML.Login_Reader;
@@ -27,7 +29,7 @@ import XML.XML_Reader_Exception;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 20/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 11/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 12/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -41,6 +43,7 @@ import XML.XML_Reader_Exception;
  * 22/10/2018 - Added attempts to user name checking and performed testing
  * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
  * 11/12/2018 - Fixed some integration errors to get XML working right
+ * 12/12/2018 - Updated class to grab files from calling activity and to read in account file from login file
  */
 
 /* REFERENCES
@@ -80,9 +83,10 @@ public class PasswordRecovery extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_recovery);
+        HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) savedInstanceState.getSerializable("fileMap");
 
         f = Factory.Get_Factory();
-        loginFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
+        loginFile = files.get(Time_Observer.Files.Login); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
 
         //Grab references to all objects on the screen
         userLayout = findViewById(R.id.pr_user_layout);
@@ -133,7 +137,7 @@ public class PasswordRecovery extends Activity {
 
                 lr = (Login_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Login);
                 Map<String, String> userInfo;
-                List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name));
+                List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Account_Name, XML_Reader.Tags_To_Read.Account_File));
 
                 try{
                     userInfo = lr.Read_File(loginFile, list, correctUser);
@@ -155,7 +159,7 @@ public class PasswordRecovery extends Activity {
                     ar = (Account_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Account);
                     list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Security_Question_ID));
                     //TODO GRAB ACCOUNT FILE PATH FROM LOGIN FILE
-                    accountFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml");
+                    accountFile = new File(userInfo.get("Account_File"));
 
                     try{
                         userInfo = ar.Read_File(accountFile, list, correctUser);

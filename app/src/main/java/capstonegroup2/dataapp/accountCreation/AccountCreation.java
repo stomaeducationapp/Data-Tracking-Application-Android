@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import Factory.Factory;
+import Observers.Time_Observer;
 import Validation.Validation;
 import XML.Account_Writer;
 import XML.Login_Reader;
@@ -39,7 +40,7 @@ import capstonegroup2.dataapp.R;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 07/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 11/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 12/12/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -54,6 +55,7 @@ import capstonegroup2.dataapp.R;
  * 25/10/2018 - Fixed bugs that arose from testing
  * 6/12/2018 - Uncommented integration code and updated to work with XML/Validation
  * 11/12/2018 - Fixed integration errors that stopped XML working and added username verification check
+ * 12/12/2018 - Updated class to retrieve passed in files from calling activity and to write account file path into login file
  */
 
 /* REFERENCES
@@ -157,7 +159,9 @@ public class AccountCreation extends Activity {
 
         f = Factory.Get_Factory();
         validator = f.Make_Validation();
-        loginFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml"); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
+
+        HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) savedInstanceState.getSerializable("fileMap");
+        loginFile = files.get(Time_Observer.Files.Login); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
         accountFile = new File("/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml");
 
         /* TODO DELETE OR REENABLE DEPENDING ON WHAT CONTROLS WANTED FOR INSTANT FEEDBACK
@@ -465,6 +469,7 @@ public class AccountCreation extends Activity {
 
                             values.put("Account_Name", unameValue);
                             values.put("Password", new String(hashedPass));
+                            values.put("Account_File", accountFile.getAbsolutePath());
 
                             try{
                                 success = lw.Write_File(loginFile, values, job); //Create the account in the system
