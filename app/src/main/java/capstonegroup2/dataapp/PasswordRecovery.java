@@ -83,7 +83,10 @@ public class PasswordRecovery extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_recovery);
-        HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) savedInstanceState.getSerializable("fileMap");
+
+        Bundle bundle = this.getIntent().getExtras();
+        HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) bundle.getSerializable("fileMap");
+        loginFile = files.get(Time_Observer.Files.Login);
 
         f = Factory.Get_Factory();
         loginFile = files.get(Time_Observer.Files.Login); //TODO REPLACE WITH ACTUAL PATH WHEN FULLY INTEGRATED
