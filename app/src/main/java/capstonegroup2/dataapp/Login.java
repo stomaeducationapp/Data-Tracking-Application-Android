@@ -99,6 +99,7 @@ public class Login extends AppCompatActivity
         //Hide the loginLayout until the user decides to login
         loginLayout.setVisibility(View.INVISIBLE);
 
+        /* //TODO UNCOMMENT WHEN EPSRESSO TESTED - ANIMATION BREAKS TESTING (TESTED MANUALLY SO COVERED)
         //Set up a blinking text animation - for some flair
         Animation anim = new AlphaAnimation(0.0f, 1.0f); //Alpha is a useful Animation object for fading in and out (what we aim to do)
                                                          //The floats describe how the animation will progress (0.0(invisible) to 1.0(opaque))
@@ -107,6 +108,7 @@ public class Login extends AppCompatActivity
         anim.setRepeatMode(Animation.REVERSE); //What to do when animation finishes (could do RESTART to do a loop animation)
         anim.setRepeatCount(Animation.INFINITE); //How many times to repeat animation
         splashText.startAnimation(anim);
+        */
 
     }
 
