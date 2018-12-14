@@ -54,6 +54,7 @@ import static org.hamcrest.Matchers.is;
  * How to find if a string is within a dialog learned from https://stackoverflow.com/questions/43934662/espresso-textview-contains-string
  * How to clear text in a EditText learned from https://stackoverflow.com/questions/23780857/updating-an-edittext-with-espresso
  * How to scroll in espresso learned from https://stackoverflow.com/questions/30387255/espresso-how-to-scroll-to-the-bottom-of-scrollview
+ * How to handle intent recording learned from https://stackoverflow.com/questions/37869418/espresso-intent-test-failing
  * And many more from https://developer.android.com/
  *
  * NOTE
