@@ -58,7 +58,7 @@ import static org.hamcrest.Matchers.is;
  * And many more from https://developer.android.com/
  *
  * NOTE
- * This test was done using the files in test/java/Integration/StreamFour which was then imported directly onto the emulated device (use the file paths in the respective classes)
+ * This test was done using the files in test/java/Integration/StreamFour which was then imported directly onto the emulator device (use the file paths in the respective classes)
  */
 @RunWith(AndroidJUnit4.class)
 public class StreamFourTest {
