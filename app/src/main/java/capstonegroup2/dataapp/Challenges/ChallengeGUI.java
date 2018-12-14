@@ -66,6 +66,8 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
     public final int numStartChallenges = 5; //Number of challenges to generate on creation
     public final int MAX = 15; //Number of challenges that currently exist on file
 
+    //TODO WORK ON THIS!
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
