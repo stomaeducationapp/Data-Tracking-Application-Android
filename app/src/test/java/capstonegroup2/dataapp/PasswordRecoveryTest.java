@@ -90,7 +90,7 @@ public class PasswordRecoveryTest {
 
         assertEquals("User form hidden", View.INVISIBLE, (testAct.findViewById(R.id.pr_user_layout).getVisibility())); //Check that the form has disappeared and the next one has appeared
         assertEquals("Question form visible", View.VISIBLE, (testAct.findViewById(R.id.pr_question_layout).getVisibility())); //Indicates functionality worked
-        assertEquals("Question has loaded", "What is the name of the first person you kissed?", ((TextView) (testAct.findViewById(R.id.question_text))).getText()); //Check the right question has loaded
+        assertEquals("Question has loaded", "What is the name of the first person you kissed?", ((TextView) (testAct.findViewById(R.id.pr_question_text))).getText()); //Check the right question has loaded
     }
 
     /* FUNCTION INFORMATION

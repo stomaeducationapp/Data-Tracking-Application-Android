@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Account_File>
-
+    <Account_Information>
+        <Name>Bob</Name>
+        <State>No Entry</State>
+        <Last_Daily_Review_Date>No Entry</Last_Daily_Review_Date>
+        <Last_Export_Date>16-12-12-2018</Last_Export_Date>
+        <Notification>Yes</Notification>
+        <Export_Settings>Weekly</Export_Settings>
+        <Gamification>Mode 1</Gamification>
+        <Security_Question_ID>1</Security_Question_ID>
+        <Security_Answer>;�&#16;b�&lt;E�Zo-�d�#$cT�~&#6;K&#30;N&#0;�Ƞi�0C</Security_Answer>
+        <Medical_File>No Entry</Medical_File>
+    </Account_Information>
 </Account_File>

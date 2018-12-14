@@ -13,4 +13,9 @@
         <Account_Name>3</Account_Name>
         <Security_Question>What was your first car?</Security_Question>
     </Account>
+    <Account>
+        <Account_Name>Bob</Account_Name>
+        <Password>��\��J���p�޶�%�m�c�&#21;��&#23;���&#14;�&#23;i</Password>
+        <Account_File>/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml</Account_File>
+    </Account>
 </Login_Information>

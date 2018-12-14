@@ -93,15 +93,15 @@ public class PasswordRecovery extends Activity {
 
         //Grab references to all objects on the screen
         userLayout = findViewById(R.id.pr_user_layout);
-        userTitle = findViewById(R.id.user_text);
-        userText = findViewById(R.id.user_entry);
-        userButt = findViewById(R.id.user_button);
+        userTitle = findViewById(R.id.pr_user_text);
+        userText = findViewById(R.id.pr_user_entry);
+        userButt = findViewById(R.id.pr_user_button);
 
         questionLayout = findViewById(R.id.pr_question_layout);
-        questionTitle = findViewById(R.id.question_title);
-        questionText = findViewById(R.id.question_text);
-        questionAnswer = findViewById(R.id.question_entry);
-        questionButt = findViewById(R.id.question_button);
+        questionTitle = findViewById(R.id.pr_question_title);
+        questionText = findViewById(R.id.pr_question_text);
+        questionAnswer = findViewById(R.id.pr_question_entry);
+        questionButt = findViewById(R.id.pr_question_button);
 
         //Now we want the layout to only display the user layout (for now)
         questionLayout.setVisibility(View.INVISIBLE);
