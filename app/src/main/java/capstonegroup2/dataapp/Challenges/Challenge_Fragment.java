@@ -43,6 +43,7 @@ public class Challenge_Fragment extends Fragment
     private String chalDes;
     private String chalReward;
     private int gameMode;
+    private String chalComp;
     private ChallengeCompleteListener cListener;
     //Constants
     public final static String ARG_TITLE = "ChalTitle";
@@ -50,6 +51,7 @@ public class Challenge_Fragment extends Fragment
     public final static String ARG_DES = "ChalDes";
     public final static String ARG_REWARD = "ChalReward";
     public final static String ARG_MODE = "ChalMode";
+    public final static String ARG_COMP = "ChalComp";
 
     public Challenge_Fragment()
     {
@@ -72,6 +74,14 @@ public class Challenge_Fragment extends Fragment
         args.putString(ARG_DES, c.getDes());
         args.putString(ARG_REWARD, c.getRewardValue());
         args.putString(ARG_MODE, ("" + gameMode));
+        if(c.isComplete())
+        {
+            args.putString(ARG_COMP, ("TRUE"));
+        }
+        else
+        {
+            args.putString(ARG_COMP, ("FALSE"));
+        }
 
         fragment.setArguments(args);
         return fragment;
@@ -93,6 +103,7 @@ public class Challenge_Fragment extends Fragment
         chalDes = getArguments().getString(ARG_DES);
         chalReward = getArguments().getString(ARG_REWARD);
         gameMode = Integer.valueOf( (getArguments().getString(ARG_MODE)) );
+        chalComp = getArguments().getString(ARG_COMP);
 
         //Locate layout objects we need and set them to the new values
         TextView title = view.findViewById(R.id.chalFragTitle);
@@ -120,20 +131,30 @@ public class Challenge_Fragment extends Fragment
             }
         });
 
-        TextView comButt = view.findViewById(R.id.chalFragComplete);
-        comButt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                View challenge = (View)(v.getParent());
-                challenge.setBackgroundColor(GREEN); //Mark the challenge as complete
+        if(chalComp.equals("FALSE")) //If challenge has not been completed - allow it to be completed
+        {
+            TextView comButt = view.findViewById(R.id.chalFragComplete);
+            comButt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    View challenge = (View)(v.getParent());
+                    challenge.setBackgroundColor(GREEN); //Mark the challenge as complete
 
-                cListener.completedChallenge(chalTitle); //Tell the activity that the challenge is complete
-                //Since in the above method the reward is allocated we do not need to worry about handling rewards here
+                    cListener.completedChallenge(chalTitle); //Tell the activity that the challenge is complete
+                    //Since in the above method the reward is allocated we do not need to worry about handling rewards here
 
-                cancelButt.callOnClick(); //Close window - assume that since the challenge is complete user doesn't need to look at it anymore
-                //FEEL FREE TO CHANGE
-            }
-        });
+                    cancelButt.callOnClick(); //Close window - assume that since the challenge is complete user doesn't need to look at it anymore
+                    //FEEL FREE TO CHANGE
+                }
+            });
+        }
+        else
+        {
+            view.setBackgroundColor(GREEN); //Mark the challenge as complete
+            TextView comp = view.findViewById(R.id.chalFragComplete);
+            comp.setTextColor(getResources().getColor(R.color.grey)); //Change colour to indicate has been disabled
+            comp.setClickable(false);
+        }
 
     }
 

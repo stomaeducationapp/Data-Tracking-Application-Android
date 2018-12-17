@@ -17,9 +17,9 @@ import java.util.Map;
  * This is to allow for easy string concatenation with syntax '-'
  *
  * @author Patrick Crockford
- * @version 1.2
+ * @version 1.3
  * <h1>Last Edited</h1>
- * 12-Dec-2018
+ * 17-Dec-2018
  * Jeremy Dunnet
  */
 public interface XML_Reader {
@@ -38,7 +38,8 @@ public interface XML_Reader {
         Last_Entry, Daily_Data, Export_Data,
         //Tag for number of entries returned with the medical reader
         Entries_Retrieved,
-
+        //Gamification specific tags (Stored in account file for now - could be moved to separate file)
+        Points,
     }
 
     /**

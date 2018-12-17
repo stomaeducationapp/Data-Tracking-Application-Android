@@ -30,9 +30,9 @@ import javax.xml.transform.stream.StreamResult;
  * <p>
  *
  * @author Patrick Crockford
- * @version 1.3
+ * @version 1.4
  * <h1>Last Edited</h1>
- * 12-Dec-2018
+ * 17-Dec-2018
  * Jeremy Dunnet
  * <h1>References</h1>
  * https://www.tutorialspoint.com/java_xml/java_dom_create_document.htm
@@ -44,6 +44,7 @@ public class Account_Writer implements XML_Writer {
     private static final String ROOT_NODE = "Account_File";
     private static final String ACCOUNT_INFORMATION_NODE = "Account_Information";
     private static final String DEFAULT_NODE_ENTRY = "No Entry";
+    private static final String DEFAULT_POINTS_ENTRY = "0";
 
     /**
      * Public Method Call to writer information specified to the file references by the File object and returns Boolean
@@ -187,6 +188,12 @@ public class Account_Writer implements XML_Writer {
                             found = true;
                         }
                     }
+                    else if (node_Name.equals(Tags_To_Write.Points.toString())) {
+                        if (values.containsKey(Tags_To_Write.Points.toString())) {
+                            node.setTextContent(values.get(Tags_To_Write.Points.toString()));
+                            found = true;
+                        }
+                    }
                 }
             }
         }
@@ -267,7 +274,6 @@ public class Account_Writer implements XML_Writer {
         }
         account_Information.appendChild(export_Settings);
 
-
         Element gamification = document.createElement(Tags_To_Write.Gamification.toString());
         if (values.containsKey(Tags_To_Write.Gamification.toString())) {
             gamification.appendChild(document.createTextNode(values.get(Tags_To_Write.Gamification.toString())));
@@ -292,13 +298,22 @@ public class Account_Writer implements XML_Writer {
             securityAnswer.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
         account_Information.appendChild(securityAnswer);
-        Element medicalFileAnswer = document.createElement(Tags_To_Write.Medical_File.toString());
+
+        Element medicalFile = document.createElement(Tags_To_Write.Medical_File.toString());
         if (values.containsKey(Tags_To_Write.Medical_File.toString())) {
-            medicalFileAnswer.appendChild(document.createTextNode(values.get(Tags_To_Write.Medical_File.toString())));
+            medicalFile.appendChild(document.createTextNode(values.get(Tags_To_Write.Medical_File.toString())));
         } else {
-            medicalFileAnswer.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
+            medicalFile.appendChild(document.createTextNode(DEFAULT_NODE_ENTRY));
         }
-        account_Information.appendChild(medicalFileAnswer);
+        account_Information.appendChild(medicalFile);
+
+        Element pointsEntry = document.createElement(Tags_To_Write.Points.toString());
+        if (values.containsKey(Tags_To_Write.Points.toString())) {
+            pointsEntry.appendChild(document.createTextNode(values.get(Tags_To_Write.Points.toString())));
+        } else {
+            pointsEntry.appendChild(document.createTextNode(DEFAULT_POINTS_ENTRY)); //Since points should be 0 by default
+        }
+        account_Information.appendChild(pointsEntry);
 
         return Write_To_File(document, account_File);
     }

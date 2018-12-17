@@ -86,7 +86,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\jerst_000\.gradle\ca
 	android:theme
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:13:9-40
 activity#capstonegroup2.dataapp.Login
-ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:14:9-22:20
+ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:14:9-23:20
 	android:label
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:16:13-45
 	android:theme
@@ -94,31 +94,35 @@ ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main
 	android:name
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:15:13-34
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:18:13-21:29
+ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
 ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:19:17-69
 	android:name
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:21:27-74
 activity#capstonegroup2.dataapp.PasswordRecovery
-ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:23:9-27:20
+ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:24:9-27:68
 	android:label
-		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:25:13-45
+		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:26:13-45
 	android:theme
-		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:26:13-56
+		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:27:13-56
 	android:name
-		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:24:13-45
+		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:25:13-45
 activity#capstonegroup2.dataapp.accountCreation.AccountCreation
-ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:28:9-32:20
+ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:28:9-31:68
 	android:label
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:30:13-68
 	android:theme
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:31:13-56
 	android:name
 		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:29:13-60
+activity#capstonegroup2.dataapp.TestActivity
+ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:32:9-59
+	android:name
+		ADDED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml:32:19-47
 uses-sdk
 INJECTED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\Uni\Project\Android\Data-Tracking-Application-Android\app\src\main\AndroidManifest.xml

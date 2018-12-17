@@ -7,6 +7,8 @@ import java.io.File;
 import java.util.HashMap;
 
 import Factory.Factory;
+import capstonegroup2.dataapp.Challenges.Challenge;
+import capstonegroup2.dataapp.Challenges.ChallengeGUI;
 import capstonegroup2.dataapp.PasswordRecovery;
 import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
@@ -18,9 +20,9 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * occur easily and with a reduce chance of errors occurring at a later date
  * Implements Form_Change_Observer interface
  * @author Patrick Crockford
- * @version 1.2
+ * @version 1.3
  * <h1>Last Edited</h1>
- * 12 Dec 2018
+ * 17 Dec 2018
  * Jeremy Dunnet
  */
 
@@ -81,6 +83,9 @@ public class Form_Change implements Form_Change_Observer {
                 case Gamification:
                     //activity = factory.Build_Gamification_Activity();
                     valid = true;
+                    break;
+                case Challenges:
+                    intent =  new Intent(context, ChallengeGUI.class);
                     break;
                 default:
                     //Shouldn't get here as it is based on enum, is a big error
@@ -148,6 +153,11 @@ public class Form_Change implements Form_Change_Observer {
                     break;
                 case Gamification:
                     //activity = factory.Build_Gamification_Activity();
+                    valid = true;
+                    break;
+                case Challenges:
+                    intent =  new Intent(context, ChallengeGUI.class);
+                    intent.putExtra("fileMap", fileMap);
                     valid = true;
                     break;
                 default:

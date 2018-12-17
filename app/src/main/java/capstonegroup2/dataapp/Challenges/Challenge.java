@@ -28,6 +28,7 @@ public class Challenge
     private String rewardValue;
     private String description;
     private String imageName;
+    private boolean complete;
 
     public Challenge(int gameMode, String title, String type, String value, String des, String image)
     {
@@ -37,6 +38,7 @@ public class Challenge
         rewardValue = value;
         description = des;
         imageName = image;
+        complete = false; //Should always be incomplete on construction
 
     }
 
@@ -60,7 +62,9 @@ public class Challenge
     public String getDes() {
         return description;
     }
-    public String getImageName() {
-        return imageName;
-    }
+
+    public String getImageName() { return imageName; }
+
+    public void setComplete(boolean complete) { this.complete = complete; }
+    public boolean isComplete() { return complete; }
 }

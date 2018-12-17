@@ -13,9 +13,9 @@ import java.util.Map;
  * supported due to available functionality
  *
  * @author Patrick Crockford
- * @version 1.2
+ * @version 1.3
  * <h1>Last Edited</h1>
- * 12-Dec-2018
+ * 17-Dec-2018
  * Jeremy Dunnet
  */
 public interface XML_Writer {
@@ -34,7 +34,8 @@ public interface XML_Writer {
         Account_Name, Password, New_Account_Name, Account_File, //Login
         Name, Gamification, Notification, State, Export_Settings, Last_Daily_Review_Date, Last_Export_Date, Security_Question_ID, Security_Answer, Medical_File, //Account
         Bags, Urine, Hydration, WellBeing, Location, Entry_Time, Medical_State, //Medical
-        Modify, New, Export, Create, Delete//Task Statements
+        Modify, New, Export, Create, Delete,//Task Statements
+        Points, //Gamification specific tags (Stored in account file for now - could be moved to separate file)
     }
 
     /**

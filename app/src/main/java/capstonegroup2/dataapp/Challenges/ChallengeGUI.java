@@ -15,10 +15,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
+import Factory.Factory;
+import Observers.Time_Observer;
+import XML.Account_Reader;
+import XML.Account_Writer;
+import XML.XML_Reader;
+import XML.XML_Reader_Exception;
+import XML.XML_Writer;
+import XML.XML_Writer_Failure_Exception;
+import XML.XML_Writer_File_Layout_Exception;
 import capstonegroup2.dataapp.R;
 
 import static android.graphics.Color.GREEN;
@@ -62,6 +75,9 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
     private ChallengeAdapter adapter;
     private List<Challenge> challengeList;
     private ConstraintLayout fragmentArea;
+    private Factory f;
+    private File accountFile;
+    private int userPoints; //Point value the user currently has earned
     //Constants
     public final int numStartChallenges = 5; //Number of challenges to generate on creation
     public final int MAX = 15; //Number of challenges that currently exist on file
@@ -90,8 +106,36 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
         list.addItemDecoration(new VerticalSpaceItemDecoration(10)); //Add spacing between items for looks
         list.setAdapter(adapter);
 
-        //TODO GET GAMIFICATION MODE FROM FILE AND SET IT TO GAMEMODE
-        gameMode = 1;//Hardcoded mode for now until integrated
+        //Get our information from the file we received
+        Bundle bundle = this.getIntent().getExtras();
+        HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) bundle.getSerializable("fileMap");
+        accountFile = files.get(Time_Observer.Files.Account);
+
+        f =  Factory.Get_Factory();
+
+        Account_Reader ar = (Account_Reader) f.Make_Reader(Factory.XML_Reader_Choice.Account);
+        List<XML_Reader.Tags_To_Read> readList = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Gamification, XML_Reader.Tags_To_Read.Points));
+        Map<String, String> userInfo = new HashMap<String, String>();
+
+        try{
+            userInfo = ar.Read_File(accountFile, readList, "Bob"); //TODO HARDCODED UNTIL INTEGRATION OF MAIN MENU - WHERE USERNAME PASSING WILL BE SOLVED
+        }
+        catch(XML_Reader_Exception e)
+        {
+            throw new RuntimeException ("FIX THIS" + e.getMessage());
+        }
+
+        String mode = userInfo.get("Gamification"); //Get mode from what was read in
+
+        if(mode.equals("Mode 1"))
+        {
+            gameMode = 1;
+            userPoints = Integer.valueOf(userInfo.get("Points")); //Record the points of the user since we will need it later
+        }
+        else
+        {
+            gameMode = 2; //Two is only other mode that could make it here (since mode 3 disables challenge button to load this activity)
+        }
 
         getNewChallenges(numStartChallenges, gameMode);
 
@@ -99,14 +143,19 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
 
     /* FUNCTION INFORMATION
      * NAME - getNewChallenges
-     * INPUTS - numChallenges (amount of new challenges to retrieve)
+     * INPUTS - numChallenges (amount of new challenges to retrieve), mode (what gamification mode we are in)
      * OUTPUTS - none
      * PURPOSE - This is the function that generates and displays the new challenges to display on activity creation
      * NOTE - This is built as a separate method to enable future builds to replace old challenges with new ones (simply pass in number of new challenges you need)
      */
     private void getNewChallenges(int numChallenges, int mode)
     {
-        int[] numbers = {0, 0, 0, 0, 0};
+        int[] numbers = new int[numChallenges];
+        for(int ii = 0; ii < numChallenges; ii++) //So the array can be as long as the challenges we need
+        {
+            numbers[ii] = 0;
+        }
+
         Random gen = new Random();
 
         for(int ii = 0; ii < numChallenges; ii++)
@@ -124,7 +173,14 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
             int resId = getResources().getIdentifier(("challenge" + challengeNumber), "array", packageName);
 
             String[] challengeInfo = getResources().getStringArray(resId);
-            Challenge c = new Challenge(mode, challengeInfo[0], challengeInfo[1], challengeInfo[2], challengeInfo[3], challengeInfo[4]); //Create a challenge object and store in the list
+            String reward = "";
+
+            if(mode == 1) //If we are in full gamification mode we need to record the point reward
+            {
+                reward = challengeInfo[2];
+            }//Any other has no reward listed since they do not use that feature
+
+            Challenge c = new Challenge(mode, challengeInfo[0], challengeInfo[1], reward, challengeInfo[3], challengeInfo[4]); //Create a challenge object and store in the list
             challengeList.add(c);
 
         }
@@ -170,11 +226,38 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
 
         if(gameMode == 1)
         {
-            //TODO GET REWARD AND SAVE IN GAMIFICATION FILE
+            //Update the points of the user
+            TextView reward = card.findViewById(R.id.chalRewValue);
+            userPoints = userPoints + (Integer.valueOf( (reward.getText()).toString() ));
+
+            //Write newly created account to file
+            boolean success;
+            Account_Writer ac = (Account_Writer) f.Make_Writer(Factory.XML_Writer_Choice.Account);
+            XML_Writer.Tags_To_Write job = XML_Writer.Tags_To_Write.Modify;
+            Map<String, String> values = new HashMap<String, String>();
+
+            values.put("Points", (userPoints + ""));
+
+            try{
+                success = ac.Write_File(accountFile, values, job); //Create the account in the system
+            }
+            catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
+            {
+                throw new RuntimeException("FIX THIS" + e.getMessage());
+            }
         }
 
+        //Disable challenge complete button
+        TextView comp = card.findViewById(R.id.chalComplete);
+        comp.setTextColor(getResources().getColor(R.color.grey)); //Change colour to indicate has been disabled
+        comp.setOnClickListener(null); //Remove ability to complete again
+        comp.setClickable(false);
 
         //TODO LEAVE THIS HERE FOR POSSIBLE REMOVAL OF CHALLENGE AFTER COMPLETION
+        //Currently a challenge that is completed is not cleared and replaced with a new one (give sense of daily completion)
+        //If you wish to rotate this may require a rewrite of some methods of the class to accommodate (since this feature was low priority so only a demo/low functionality version was designed)
+        //You will need to add a flag to getNewChallenges to alert the method that a challenge list was previously generated (and would need to check all listed challenges for duplicates)
+        //and the system would need to record the position of the completed challenge so that the method can replace that position in the list with the new challenge
     }
 
     /* FUNCTION INFORMATION
@@ -200,6 +283,7 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
         Challenge_Fragment fragment = Challenge_Fragment.newInstance(c, gameMode); //Create a fragment to display the challenge
         fragmentArea.setVisibility(View.VISIBLE);
 
+        //Could move to Form_Change if desired but since this is a container within an activity - not seen to be needed
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.challenge_des, fragment);
@@ -227,6 +311,14 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
             {
                 TextView comButt = v.findViewById(R.id.chalComplete);
                 comButt.callOnClick();
+
+                for(int ii = 0; ii < challengeList.size(); ii++) {
+                    Challenge challenge = challengeList.get(ii);
+                    if ( title.equals(challenge.getChallengeTitle()) )
+                    {
+                        challenge.setComplete(true); //Find the challenge object and mark it as complete so future viewDes calls will continue to show it as completed
+                    }
+                }
             }
         }
 
