@@ -64,6 +64,8 @@ import static android.graphics.Color.GREEN;
  * Performing string comparison of a TextView learned from https://stackoverflow.com/questions/13073307/compare-text-in-edittext-with-defined-string
  * Passing data between fragment and activity learned from https://stackoverflow.com/questions/9343241/passing-data-between-a-fragment-and-its-container-activity
  * Creating a fragment learned from https://examples.javacodegeeks.com/android/core/app/fragment/android-fragments-example/ and team member Patrick Crockford's implementation of fragments (Account_Information_Main.java and Account_Information_Name_Fragment.java)
+ * Changing Text colour programmatically learned from https://stackoverflow.com/questions/8472349/how-to-set-text-color-to-a-text-view-programmatically
+ * How to disable onClick learned from https://stackoverflow.com/questions/5195321/remove-an-onclick-listener
  * And many more from https://developer.android.com/
  */
 
@@ -216,13 +218,22 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
      * NAME - markAsComplete
      * INPUTS - view
      * OUTPUTS - none
-     * PURPOSE - This is the function that marks a challenge (that calls this function as a onclick listener) as complete and rewards user depending on game mode
+     * PURPOSE - This is the function that marks a challenge as complete and rewards user depending on game mode
      */
     public void markAsComplete(View view)
     {
         //Set challenge to green colour
         View card = (View)((view.getParent()).getParent()); //Find the challenge card View
         card.setBackgroundColor(GREEN); //Colour it green
+        String title = ((TextView)(card.findViewById(R.id.chalTitle))).getText().toString();
+
+        for(int ii = 0; ii < challengeList.size(); ii++) {
+            Challenge challenge = challengeList.get(ii);
+            if ( title.equals(challenge.getChallengeTitle()) )
+            {
+                challenge.setComplete(true); //Find the challenge object and mark it as complete so future viewDes calls will continue to show it as completed
+            }
+        }
 
         if(gameMode == 1)
         {
@@ -311,14 +322,6 @@ public class ChallengeGUI extends AppCompatActivity implements Challenge_Fragmen
             {
                 TextView comButt = v.findViewById(R.id.chalComplete);
                 comButt.callOnClick();
-
-                for(int ii = 0; ii < challengeList.size(); ii++) {
-                    Challenge challenge = challengeList.get(ii);
-                    if ( title.equals(challenge.getChallengeTitle()) )
-                    {
-                        challenge.setComplete(true); //Find the challenge object and mark it as complete so future viewDes calls will continue to show it as completed
-                    }
-                }
             }
         }
 

@@ -15,11 +15,6 @@
             android:name=".Login"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".PasswordRecovery"
@@ -29,7 +24,20 @@
             android:name=".accountCreation.AccountCreation"
             android:label="@string/title_activity_account_creation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".TestActivity"></activity>
+        <activity
+            android:name=".Challenges.ChallengeGUI"
+            android:label="@string/c_title"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".TestActivity"
+            android:label="Test"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

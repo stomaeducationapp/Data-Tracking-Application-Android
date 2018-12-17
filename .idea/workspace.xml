@@ -15,15 +15,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43eee2e2-d214-4e7d-90cf-af5556c486e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/ChildPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/MyViewAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFiveTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/Observers/Form_Change__Unit_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_unit_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Account Reader.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Account Writer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Login Reader.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Login Writer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Medical Reader.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Medical Writer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_new_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_state_change.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/empty_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_add_person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_change_person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_delete_person.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_new_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_targe_add_entry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_add_entry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_export.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_modify.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_new_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/test1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_account_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_account_file_empty_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_medical_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_medical_file_empty_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Writer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Writer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader_Exception.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer_Failure_Exception.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer_File_Layout_Exception.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Reader_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Writer_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Reader_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Writer_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Reader_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Writer_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/empty_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file_empty_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file_empty_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/xmlpull-xpp3-1.1.4c.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java" afterDir="false" />
@@ -38,83 +111,72 @@
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/capstonegroup2/dataapp/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/capstonegroup2/dataapp/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Observers/Form_Change$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Observers/Form_Change$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Observers/Form_Change.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/Observers/Form_Change.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/Account_Writer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/Account_Writer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/Account_Writer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/Account_Writer$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/Account_Writer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/Account_Writer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/XML_Reader$Tags_To_Read.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/XML_Reader$Tags_To_Read.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/XML_Writer$Tags_To_Write.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/XML/XML_Writer$Tags_To_Write.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/animated/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/animated/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/animated/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/animated/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/animated/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/animated/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$color.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$dimen.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$dimen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$integer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$mipmap.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$mipmap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$xml.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/capstonegroup2/dataapp/R$xml.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge_Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/Observers/Form_Change__Unit_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/Account_Reader_unit_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Account Reader.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Account Writer.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Login Reader.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Login Writer.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Medical Reader.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Medical Writer.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_new_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/account_writer_target_state_change.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/empty_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_add_person.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_change_person.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_delete_person.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/login_writer_target_new_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_targe_add_entry.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_add_entry.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_export.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_modify.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/medical_writer_target_new_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/test1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_account_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_account_file_empty_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_login_file_empty_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_medical_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/Test_XML/valid_medical_file_empty_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/private/private.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Reader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Account_Writer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Reader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Login_Writer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Reader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/Medical_Writer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Reader_Exception.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer_Failure_Exception.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/XML/XML_Writer_File_Layout_Exception.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Reader_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Account_Writer_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Reader_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Login_Writer_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Reader_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Medical_Writer_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/empty_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_account_file_empty_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_login_file_empty_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/XML_Test_Files/valid_medical_file_empty_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/src/xml_test/Xml_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/XML/xml_Test/xmlpull-xpp3-1.1.4c.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -141,20 +203,22 @@
       <file leaf-file-name="ChallengeGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="67" selection-end-column="3" />
+            <state relative-caret-position="276">
+              <caret line="141" column="53" selection-start-line="141" selection-start-column="53" selection-end-line="141" selection-end-column="53" />
               <folding>
-                <element signature="e#5530#5546#0" expanded="true" />
+                <element signature="e#5928#5944#0" expanded="true" />
+                <element signature="e#15132#15133#0" expanded="true" />
+                <element signature="e#15190#15191#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="57" column="96" lean-forward="true" selection-start-line="57" selection-start-column="96" selection-end-line="57" selection-end-column="96" />
+            <state relative-caret-position="428">
+              <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
               <folding>
                 <element signature="e#1182#1209#0" expanded="true" />
                 <element signature="e#1524#1958#0" expanded="true" />
@@ -164,11 +228,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java">
+      <file leaf-file-name="StreamFiveTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFiveTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="262" column="28" lean-forward="true" selection-start-line="262" selection-start-column="28" selection-end-line="264" selection-end-column="105" />
+            <state relative-caret-position="187">
+              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChildPosition.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/ChildPosition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="106" selection-start-line="16" selection-start-column="106" selection-end-line="16" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,41 +249,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_test.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="account_information.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml">
+      <file leaf-file-name="MyViewAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/MyViewAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Challenge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="67" column="75" selection-start-line="67" selection-start-column="75" selection-end-line="67" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Challenge_Fragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge_Fragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="24" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -240,6 +286,7 @@
       <find>result (the Validate_Result enum tat details the status of the check (failure error/pass)</find>
       <find>function that performs length checks on an input string to see if it is too long/short than it should be</find>
       <find>android.R.id.button1</find>
+      <find>AccountCreation screen</find>
     </findStrings>
     <replaceStrings>
       <replace>TextView s</replace>
@@ -250,6 +297,7 @@
       <replace>none</replace>
       <replace>test that</replace>
       <replace>android.R.id.button2</replace>
+      <replace>Challenges screen</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -2535,13 +2583,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/l_strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/LoginTest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ValidationClasses/Validation.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/ValidationClasses/ValidatorTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Validation/OldFiles/Validate_UsernameTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Factory/Factory.java" />
@@ -2557,7 +2598,6 @@
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/iso_invalid_file.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/iso_semi_valid_file.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/iso_valid_file.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml" />
         <option value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/user/0/capstonegroup2.dataapp/files/accounts/login_information.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Reader.java" />
@@ -2569,7 +2609,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/ExampleInstrumentedTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_password_recovery.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/login_information.xml" />
@@ -2581,15 +2620,24 @@
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge_Fragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/challenge.xml" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/MyViewAction.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/a.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/Challenges/ChallengeGUITest.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFiveTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/MyViewAction.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/ChildPosition.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-12" />
     <option name="width" value="1700" />
     <option name="height" value="1056" />
@@ -2626,103 +2674,7 @@
               <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-              <item name="accountCreation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-              <item name="Challenges" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
@@ -2737,44 +2689,7 @@
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Integration" type="462c0819:PsiDirectoryNode" />
-              <item name="StreamFour" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Integration" type="462c0819:PsiDirectoryNode" />
-              <item name="StreamOne" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -3040,53 +2955,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.StreamOneTest.StreamOneTestCase1">
-    <configuration name="StreamOneTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Integration.StreamOne.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Integration.StreamOne" />
-      <option name="MAIN_CLASS_NAME" value="Integration.StreamOne.StreamOneTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="StreamOneTest.StreamOneTestCase1" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Integration.StreamOne.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Integration.StreamOne" />
-      <option name="MAIN_CLASS_NAME" value="Integration.StreamOne.StreamOneTest" />
-      <option name="METHOD_NAME" value="StreamOneTestCase1" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
+  <component name="RunManager" selected="Android Instrumented Tests.cRecomplete()">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -3106,6 +2975,55 @@
         <option name="Make" enabled="false" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="TestActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="capstonegroup2.dataapp.TestActivity" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="app" />
@@ -3156,12 +3074,12 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
     </configuration>
-    <configuration name="StreamFourTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamFiveTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="2" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFourTest" />
+      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFiveTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
@@ -3202,12 +3120,12 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
       </Profilers>
     </configuration>
-    <configuration name="acSwitchTest()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="cFragComplete()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="acSwitchTest" />
-      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFourTest" />
+      <option name="METHOD_NAME" value="cFragComplete" />
+      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFiveTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
@@ -3248,12 +3166,58 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
       </Profilers>
     </configuration>
-    <configuration name="prFail()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="cRecomplete()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <option name="TESTING_TYPE" value="3" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="prFail" />
-      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFourTest" />
+      <option name="METHOD_NAME" value="cRecomplete" />
+      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFiveTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
+      </Profilers>
+    </configuration>
+    <configuration name="cViewDes()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="cViewDes" />
+      <option name="CLASS_NAME" value="capstonegroup2.dataapp.StreamFiveTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
@@ -3325,19 +3289,19 @@
     </configuration>
     <list>
       <item itemvalue="Android App.app" />
-      <item itemvalue="Android Instrumented Tests.StreamFourTest" />
-      <item itemvalue="Android Instrumented Tests.prFail()" />
-      <item itemvalue="Android Instrumented Tests.acSwitchTest()" />
-      <item itemvalue="Android JUnit.StreamOneTest" />
-      <item itemvalue="Android JUnit.StreamOneTest.StreamOneTestCase1" />
+      <item itemvalue="Android Instrumented Tests.StreamFiveTest" />
+      <item itemvalue="Android Instrumented Tests.cViewDes()" />
+      <item itemvalue="Android App.TestActivity" />
+      <item itemvalue="Android Instrumented Tests.cFragComplete()" />
+      <item itemvalue="Android Instrumented Tests.cRecomplete()" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Android JUnit.StreamOneTest.StreamOneTestCase1" />
-        <item itemvalue="Android JUnit.StreamOneTest" />
-        <item itemvalue="Android Instrumented Tests.StreamFourTest" />
-        <item itemvalue="Android Instrumented Tests.acSwitchTest()" />
-        <item itemvalue="Android Instrumented Tests.prFail()" />
+        <item itemvalue="Android Instrumented Tests.cRecomplete()" />
+        <item itemvalue="Android Instrumented Tests.StreamFiveTest" />
+        <item itemvalue="Android Instrumented Tests.cFragComplete()" />
+        <item itemvalue="Android Instrumented Tests.cViewDes()" />
+        <item itemvalue="Android App.TestActivity" />
       </list>
     </recent_temporary>
   </component>
@@ -3611,39 +3575,46 @@
       <option name="project" value="LOCAL" />
       <updated>1544787797965</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="- Edited classes to work with new features&#10;- Challenges now reads user info from account file and records points back&#10;- Challenge completion now persists through fragment for activity lifespan&#10;- XML updated to handle Points&#10;- Form_Change updated to switch to Challenges&#10;- TestActivity was created to ease future integration tests">
+      <created>1545022742182</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1545022742182</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StreamFourTest - 2018.12.14 at 19h 08m 49s.xml">
-      <configuration name="StreamFourTest" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cViewDes() - 2018.12.17 at 17h 12m 39s.xml">
+      <configuration name="cViewDes()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="StreamFourTest - 2018.12.14 at 19h 12m 20s.xml">
-      <configuration name="StreamFourTest" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cViewDes() - 2018.12.17 at 17h 24m 33s.xml">
+      <configuration name="cViewDes()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="acSuccess() - 2018.12.14 at 19h 13m 58s.xml">
-      <configuration name="acSuccess()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cViewDes() - 2018.12.17 at 17h 28m 49s.xml">
+      <configuration name="cViewDes()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="acSuccess() - 2018.12.14 at 19h 14m 32s.xml">
-      <configuration name="acSuccess()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cViewDes() - 2018.12.17 at 17h 33m 23s.xml">
+      <configuration name="cViewDes()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="prFail() - 2018.12.14 at 19h 14m 50s.xml">
-      <configuration name="prFail()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cFragComplete() - 2018.12.17 at 17h 38m 44s.xml">
+      <configuration name="cFragComplete()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="prFail() - 2018.12.14 at 19h 15m 16s.xml">
-      <configuration name="prFail()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="StreamFiveTest - 2018.12.17 at 17h 47m 17s.xml">
+      <configuration name="StreamFiveTest" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="acSwitchTest() - 2018.12.14 at 19h 15m 32s.xml">
-      <configuration name="acSwitchTest()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="StreamFiveTest - 2018.12.17 at 17h 49m 17s.xml">
+      <configuration name="StreamFiveTest" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="acSwitchTest() - 2018.12.14 at 19h 19m 17s.xml">
-      <configuration name="acSwitchTest()" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cRecomplete() - 2018.12.17 at 17h 52m 50s.xml">
+      <configuration name="cRecomplete()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="StreamFourTest - 2018.12.14 at 19h 19m 52s.xml">
-      <configuration name="StreamFourTest" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cRecomplete() - 2018.12.17 at 17h 58m 36s.xml">
+      <configuration name="cRecomplete()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="StreamFourTest - 2018.12.14 at 19h 23m 56s.xml">
-      <configuration name="StreamFourTest" configurationId="AndroidTestRunConfigurationType" />
+    <history-entry file="cRecomplete() - 2018.12.17 at 18h 11m 36s.xml">
+      <configuration name="cRecomplete()" configurationId="AndroidTestRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -3656,26 +3627,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4987775" weight="0.32995495" />
       <window_info anchor="right" id="Palette&#9;" order="10" />
       <window_info id="Image Layers" order="7" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.51466995" side_tool="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51466995" side_tool="true" weight="0.32995495" />
       <window_info anchor="right" id="Preview" order="8" weight="0.32995737" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.48655257" weight="0.32995495" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.48655257" visible="true" weight="0.32995495" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48533008" weight="0.32995495" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4987775" weight="0.32995495" />
-      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.49938875" weight="0.32995495" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4987775" weight="0.32995495" />
+      <window_info anchor="bottom" id="Logcat" order="9" sideWeight="0.49938875" weight="0.32995495" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="9" sideWeight="0.4944988" visible="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.4944988" weight="0.32995495" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" weight="0.3294621" />
@@ -3684,10 +3654,10 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4871638" weight="0.39977476" />
       <window_info anchor="right" id="StringPreview" order="6" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49938875" weight="0.32995495" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" sideWeight="0.49938875" weight="0.32995495" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49816626" weight="0.32995495" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49816626" weight="0.32995495" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Assistant" order="9" weight="0.16044776" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -3735,9 +3705,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Completed unit testing of login activity" />
-    <MESSAGE value="- Uncommented Form_Change and Factory code to attempt integrating of activity switching" />
-    <MESSAGE value="- Edited Form_Change to work as intended, updated documentation&#10;- Successfully integrated use of Form_Change to switch Login to AccountCreation and PasswordRecovery GUIs" />
     <MESSAGE value="- Updated comments on all newly edited classes&#10;- Modified Login Form_Change call to switch to main menu for later integrations&#10;- Created first draft of new Validation class implementation" />
     <MESSAGE value="- Begun validation coding" />
     <MESSAGE value="- Finished validation coding" />
@@ -3760,7 +3727,10 @@
     <MESSAGE value="- Figured out how to do instrumentation testing - set up simple harness" />
     <MESSAGE value="- Merged StreamFour into master" />
     <MESSAGE value="- Created Branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Created Branch" />
+    <MESSAGE value="- Edited classes to work with new features&#10;- Challenges now reads user info from account file and records points back&#10;- Challenge completion now persists through fragment for activity lifespan&#10;- XML updated to handle Points&#10;- Form_Change updated to switch to Challenges&#10;- TestActivity was created to ease future integration tests" />
+    <MESSAGE value="- Finished testing of StreamFive&#10;- Added two classes to help with future espresso tests&#10;- Fixed challenges to squash bugs I found" />
+    <MESSAGE value="- Finished testing of StreamFive&#10;- Added two classes to help with future espresso tests&#10;- Fixed challenges to squash bugs I found&#10;- Readded removed files" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Finished testing of StreamFive&#10;- Added two classes to help with future espresso tests&#10;- Fixed challenges to squash bugs I found&#10;- Readded removed files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3817,48 +3787,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Time_Observer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/StreamOneTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/LoginTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="224" selection-start-line="224" selection-end-line="224" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/shadowapi/3.6.1/e44d9cd0d23518a219e47c6b20131ee9466e9c80/shadowapi-3.6.1-sources.jar!/org/robolectric/util/ReflectionHelpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="338" selection-start-line="338" selection-end-line="338" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/robolectric/3.6.1/cfedbd4012f903f60bbbe0efd6f78089783d884f/robolectric-3.6.1-sources.jar!/org/robolectric/Robolectric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SDK/sources/android-26/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="6597" selection-start-line="6597" selection-end-line="6597" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatViewInflater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -3877,6 +3805,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-316">
           <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3907,13 +3838,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
@@ -3997,7 +3921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/Dudes_Phone_Approximate_ [emulator-5554]/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_account_creation.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -4012,6 +3935,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4029,13 +3955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFourTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="60" column="124" selection-start-line="60" selection-start-column="124" selection-end-line="60" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -4046,25 +3965,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_challenges.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/challengeList.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="67" column="75" selection-start-line="67" selection-start-column="75" selection-end-line="67" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -4073,14 +3977,6 @@
         <state relative-caret-position="102">
           <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/challenge_fragment.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/PasswordRecovery.java">
@@ -4095,21 +3991,6 @@
         <state relative-caret-position="-184">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge_Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/challenge.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/accountCreation/AccountCreation.java">
@@ -4133,13 +4014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Account_Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -4157,16 +4031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="67" selection-end-column="3" />
-          <folding>
-            <element signature="e#5530#5546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -4177,14 +4041,149 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="67" column="75" selection-start-line="67" selection-start-column="75" selection-end-line="67" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge_Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/StreamFour/account_information.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/challenge_fragment.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/Dudes_Phone_Approximate_ [emulator-5554]/data/user/0/capstonegroup2.dataapp/files/accounts/account_information.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="43" column="84" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_challenges.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/challenge.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/capstonegroup2/dataapp/ChallengesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/Challenges/ChallengeGUITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding>
+            <element signature="e#1154#1171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/ChallengeGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="141" column="53" selection-start-line="141" selection-start-column="53" selection-end-line="141" selection-end-column="53" />
+          <folding>
+            <element signature="e#5928#5944#0" expanded="true" />
+            <element signature="e#15132#15133#0" expanded="true" />
+            <element signature="e#15190#15191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="57" column="96" lean-forward="true" selection-start-line="57" selection-start-column="96" selection-end-line="57" selection-end-column="96" />
+        <state relative-caret-position="428">
+          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
           <folding>
             <element signature="e#1182#1209#0" expanded="true" />
             <element signature="e#1524#1958#0" expanded="true" />
             <element signature="e#1957#1958#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFourTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFiveTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/MyViewAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="24" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/ChildPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="106" selection-start-line="16" selection-start-column="106" selection-end-line="16" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
