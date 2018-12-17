@@ -40,10 +40,10 @@ import static org.hamcrest.Matchers.not;
 
 /* REFERENCES
  * Espresso basics learned from https://developer.android.com/training/testing/espresso/setup and https://developer.android.com/training/testing/espresso/basics
- * How to test for activity switches learned from https://stackoverflow.com/questions/25998659/espresso-how-can-i-check-if-an-activity-is-launched-after-performing-a-certain
- * How to handle intent recording learned from https://stackoverflow.com/questions/37869418/espresso-intent-test-failing
- * How to check for fragment loading learned from https://stackoverflow.com/questions/36380046/espresso-2-2-1-check-if-fragment-layout-is-displayed
- * How to check if a button isn't clickable learned from https://stackoverflow.com/questions/36536523/determine-if-a-button-isnt-clickable-with-espresso
+ * How to test for Activity switches learned from https://stackoverflow.com/questions/25998659/espresso-how-can-i-check-if-an-activity-is-launched-after-performing-a-certain
+ * How to handle Intent recording learned from https://stackoverflow.com/questions/37869418/espresso-intent-test-failing
+ * How to check for Fragment loading learned from https://stackoverflow.com/questions/36380046/espresso-2-2-1-check-if-fragment-layout-is-displayed
+ * How to check if a Button isn't clickable learned from https://stackoverflow.com/questions/36536523/determine-if-a-button-isnt-clickable-with-espresso
  * How to perform a click on an item within a RecyclerView learned from https://gist.github.com/quentin7b/9c5669fd940865cf2e89
  * And many more from https://developer.android.com/
  *
