@@ -1,5 +1,7 @@
 package Observers;
 
+import android.content.Context;
+
 import java.io.File;
 import java.util.Map;
 
@@ -16,10 +18,10 @@ import Factory.Factory;
  * Implements Time_Observer interface
  *
  * @author Patrick Crockford
- * @version 1.1
+ * @version 1.2
  * <h1>Last Edited</h1>
- * 27th Nov 2018
- * Added integration code to implement EncyrptExport - Jeremy Dunnet
+ * 31st Dec 2018
+ * Updated to fit new Time_Observer template - Jeremy Dunnet
  */
 public class Export_Data implements Time_Observer {
     /**
@@ -44,7 +46,7 @@ public class Export_Data implements Time_Observer {
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
-    public boolean Notify(Map<Files, File> file_Map) throws NullPointerException {
+    public boolean Notify(Map<Files, File> file_Map, Context context) throws NullPointerException {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
 

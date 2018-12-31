@@ -46,6 +46,7 @@ public class DailyReviewGraph extends AppCompatActivity implements AdapterView.O
         Intent i = getIntent();
 
         //Gets the data sets to be used in making the graphs
+        //TODO REWORK TO GET THIS DATA FROM FILE WHICH HAS BEEN SENT VIA INTENT
         today = i.getParcelableExtra("today");
         yesterday = i.getParcelableExtra("yesterday");
 

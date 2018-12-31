@@ -20,9 +20,9 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * occur easily and with a reduce chance of errors occurring at a later date
  * Implements Form_Change_Observer interface
  * @author Patrick Crockford
- * @version 1.3
+ * @version 1.4
  * <h1>Last Edited</h1>
- * 17 Dec 2018
+ * 31 Dec 2018
  * Jeremy Dunnet
  */
 
@@ -68,16 +68,12 @@ public class Form_Change implements Form_Change_Observer {
                 case Password_Recovery:
                     intent =  new Intent(context, PasswordRecovery.class);
                     valid = true;
-                case Review:
-                    //activity = factory.Build_Medical_Review_Activity();
-                    valid = true;
-                    break;
                 case Account_Information:
                     //activity = factory.Build_Account_Information_Activity();
                     valid = true;
                     break;
-                case Encrypt_and_Export:
-                    //activity = factory.Build_Encrypt_and_Export_Activity();
+                case Review:
+                    //activity = factory.Build_Medical_Review_Activity();
                     valid = true;
                     break;
                 case Gamification:
@@ -145,10 +141,6 @@ public class Form_Change implements Form_Change_Observer {
                     break;
                 case Account_Information:
                     //activity = factory.Build_Account_Information_Activity();
-                    valid = true;
-                    break;
-                case Encrypt_and_Export:
-                    //activity = factory.Build_Encrypt_and_Export_Activity();
                     valid = true;
                     break;
                 case Gamification:

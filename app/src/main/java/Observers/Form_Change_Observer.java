@@ -53,7 +53,7 @@ public interface Form_Change_Observer {
      * This List will have a length = number of Concrete Form_Change_Observer classes.
      */
     enum Activity_Control {
-        Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Encrypt_and_Export, Gamification, Challenges
+        Account_Creation, Medical_Data_Input, Account_Main_Menu, Password_Recovery, Review, Account_Information, Gamification, Challenges
     }
 
     /**

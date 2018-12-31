@@ -4290,14 +4290,16 @@ public final class R {
     public static final int reset=0x7f0e0073;
     public static final int return_Btn=0x7f0e0074;
     public static final int return_to_main_menu=0x7f0e0075;
-    public static final int search_menu_title=0x7f0e0076;
-    public static final int status_bar_notification_info_overflow=0x7f0e0077;
-    public static final int submit=0x7f0e0078;
-    public static final int textview=0x7f0e0079;
-    public static final int title_account_information=0x7f0e007a;
-    public static final int title_activity_account__modification__main=0x7f0e007b;
-    public static final int title_activity_account_creation=0x7f0e007c;
-    public static final int yellow_State_Information=0x7f0e007d;
+    public static final int review_screen=0x7f0e0076;
+    public static final int review_test=0x7f0e0077;
+    public static final int search_menu_title=0x7f0e0078;
+    public static final int status_bar_notification_info_overflow=0x7f0e0079;
+    public static final int submit=0x7f0e007a;
+    public static final int textview=0x7f0e007b;
+    public static final int title_account_information=0x7f0e007c;
+    public static final int title_activity_account__modification__main=0x7f0e007d;
+    public static final int title_activity_account_creation=0x7f0e007e;
+    public static final int yellow_State_Information=0x7f0e007f;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;

@@ -18,4 +18,6 @@
     <string name="submit">Submit</string>
     <string name="enter_in_a_new_account">Enter in a new account</string>
     <string name="account_info_Name">Return</string>
+    <string name="review_test">Daily Review Test</string>
+    <string name="review_screen">24hr Review</string>
 </resources>

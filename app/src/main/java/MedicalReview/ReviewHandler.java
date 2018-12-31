@@ -56,7 +56,7 @@ public class ReviewHandler {
      * generateReview handles the creation and maintaining of DailyReview objects. If the call is
      * the first instance of this object, the today and yesterday object will be the same, as there
      * is only one days worth of data. Any subsequent calls handle making the 'today' object the
-     * 'yesterday' object and calculating hte new 'today' instance.
+     * 'yesterday' object and calculating the new 'today' instance.
      * @return success, a boolean representing whether the method succeeded or failed.
      */
     public boolean newReview(Map<String, String> data) {

@@ -1,5 +1,7 @@
 package Observers;
 
+import android.content.Context;
+
 import java.io.File;
 import java.util.Map;
 
@@ -12,10 +14,10 @@ import java.util.Map;
  * The Map of File objects can be accessed through the public enum Files from this interface.
  *
  * @author Patrick Crockford
- * @version 1.1
+ * @version 1.2
  * <h1>Last Edited</h1>
- * 12 Dec 2018
- * Patrick Crockford
+ * 31 Dec 2018
+ * Jeremy Dunnet
  */
 public interface Time_Observer {
 
@@ -30,8 +32,9 @@ public interface Time_Observer {
     /**
      * @param file_Map Map Object containing File Objects representing the type of file in relations to the Enum value
      *                 Key it is stored under, specific to the account currently logged in
+     * @param context This is the context that refers to the calling class (in case a connected handler needs to reference this)
      * @return True if daily 24 hour review is successfully calculated and saved to file, otherwise false.
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
-    boolean Notify(Map<Files, File> file_Map) throws NullPointerException;
+    boolean Notify(Map<Files, File> file_Map, Context context) throws NullPointerException;
 }
