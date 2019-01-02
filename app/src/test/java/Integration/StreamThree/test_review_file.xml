@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Medical_Information>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Hydration>d</Hydration>
+        <Wellbeing>Good</Wellbeing>
+        <Volume>450</Volume>
+        <Colour>C</Colour>
+        <Consistency>c</Consistency>
+        <Physical>P</Physical>
+        <Medical_State>4</Medical_State>
+    </Medical_Entry>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Hydration>d</Hydration>
+        <Wellbeing>Bad</Wellbeing>
+        <Volume>900</Volume>
+        <Colour>C</Colour>
+        <Consistency>c</Consistency>
+        <Physical>P</Physical>
+        <Medical_State>6</Medical_State>
+    </Medical_Entry>
+    <Medical_Entry>
+        <Entry_Time>14-23-9-2018</Entry_Time>
+        <Location>a</Location>
+        <Bags>b</Bags>
+        <Urine>c</Urine>
+        <Hydration>d</Hydration>
+        <Wellbeing>Good</Wellbeing>
+        <Volume>500</Volume>
+        <Colour>C</Colour>
+        <Consistency>c</Consistency>
+        <Physical>P</Physical>
+        <Medical_State>5</Medical_State>
+    </Medical_Entry>
+</Medical_Information>

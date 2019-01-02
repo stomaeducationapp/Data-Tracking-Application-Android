@@ -1,11 +1,17 @@
 package MedicalReview;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import Factory.Factory;
+import XML.Login_Reader;
 import XML.Medical_Reader;
+import XML.XML_Reader;
+import XML.XML_Reader_Exception;
 
 /**
  * Class: ReviewData
@@ -31,29 +37,21 @@ public class ReviewData {
      * @return data, the map containing the most recent 24 hours data.
      */
     public Map<String, String> loadData() {
-        Map<String, String> data = new HashMap<>();
 
-        //TODO: Check compatibility with reader when factory methods implemented
         //read in the data - should have 1 entry per line
-        /*Medical_Reader reader = factory.Make_Medical_Reader();
+        File medicalFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamThree\\test_review_file.xml");
+        Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
+        Map<String, String> data;
+        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Daily_Data, XML_Reader.Tags_To_Read.Volume, XML_Reader.Tags_To_Read.Medical_State,
+                                                            XML_Reader.Tags_To_Read.Wellbeing, XML_Reader.Tags_To_Read.Entries_Retrieved, XML_Reader.Tags_To_Read.Entry_Time));
 
-        //TODO: Uncomment the correct file method return and remove the other
-        //If data is one string
-        //String tmp = reader.Read_File();
-        //String[] lines = tmp.split("/n");
-
-        //If data comes back as a map. k=entryNum, v="DATE:ATTRIBUTE-VALUE"
-        //Map<String, String> tmp = reader.Read_File();
-        //String[] lines = tmp.keySet().toArray(new String[0]);
-
-        for (String line : lines) {
-            String[] entry = line.split(":");   //extract the time
-            String[] attributes = entry[1].split(",");   //comma separated for attribute/value pair
-            for (String values : attributes) {
-                String[] last = values.split("-");  //will split the attribute name and value
-                data.put(last[0], entry[0]+","+last[1]);    //k=attribute, v=time,value
-            }
-        }*/
+        try{
+            data = reader.Read_File(medicalFile, list, "Bob");
+        }
+        catch (XML_Reader_Exception e)
+        {
+            throw new RuntimeException("Failed to read the login file" + e.getMessage());
+        }
 
         return data;
     }

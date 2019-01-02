@@ -3,6 +3,7 @@ package MedicalReview;
 import android.content.Context;
 import android.content.Intent;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,6 +63,7 @@ public class ReviewHandler {
     public boolean newReview(Map<String, String> data) {
         boolean success = true;
 
+        //TODO POSSIBLE REWORK SINCE REVIEW OBJECTS MAY BE LOST ON APP CLOSE
         if (control == 0) { //must be the first time the object has been used
             yesterday = factory.Make_Review_Dataset();
             today = factory.Make_Review_Dataset();
@@ -113,10 +115,6 @@ public class ReviewHandler {
         return i;
     }
 
-    /*
-    This is temporary. The logic will need to change depending on structure of the input data
-    BIG ASSUMPTION FOR NOW - Map being read from file will have k=Attribute and v=DateTime in millis,Value as strings
-     */
     /**
      * Parses the data read from file to split into each attribute. Since we use different attributes
      * for each graph, should limit the data to only relevant values.
@@ -127,37 +125,79 @@ public class ReviewHandler {
      */
     public Map<Date, Integer> parseData(Map<String, String> temp, TYPE type) {
         Map<Date, Integer> ret = new HashMap<>();
+        int day, month, year, hour; //Integers we will use to create a entry time from string we retrieve from file
+        int min = 0; //As of now we do not store the minutes recorded - TODO CONSIDER ADDING THIS TO FILE
+
+        //TODO REQORK WE FILE READ SUCCESS TO HANDLE READING IN ORDER IF THE POINTS ARE OUT OF WACK
 
         //gets ALL data in type value pairs
         String[] attributes = temp.keySet().toArray(new String[0]);
 
         if (type == TYPE.STATELINE || type == TYPE.STATEPIE) {  //only want the state entries
             for (String name: attributes) {
-                if (name.contains("state")) {
-                    String[] elements = temp.get(name).split(",");
-                    ret.put(new Date(Long.parseLong(elements[0])), Integer.parseInt(elements[1]));
+                if (name.contains("Medical_State")) {
+                    //Lets find the date associated with this entry
+                    String[] dElements = name.split("-"); //Since multiple entries have been retrieved - there is a -X indicating the number of the entry
+                    String numEntry =  dElements[1]; //Should always be second entry due to our xml structure
+                    String dateValue = temp.get( ("Entry_Time-" + numEntry) ); //Extract the date string
+                    dElements = dateValue.split("-"); //Split the date string into the individual numbers
+                    hour = Integer.parseInt(dElements[0]);
+                    day = Integer.parseInt(dElements[1]);
+                    month = Integer.parseInt(dElements[2]);
+                    year = Integer.parseInt(dElements[3]);
+                    Calendar c = Calendar.getInstance();
+                    //TODO TEST WHETHER NEED + 1990 IN YEAR
+                    c.set(year, month, day, hour, min); //We need to do this variant since older versions of creating Date objects using this method are deprecated
+
+                    String value = temp.get(name); //grab the value associated with our key
+                    ret.put(c.getTime(), Integer.parseInt(value));
                 }
             }
         }
         else if (type == TYPE.VOLUMELINE || type == TYPE.BAGBAR) {  //only want output entries
             for (String name: attributes) {
-                if (name.contains("output")) {
-                    String[] elements = temp.get(name).split(",");
-                    ret.put(new Date(Long.parseLong(elements[0])), Integer.parseInt(elements[1]));
+                if (name.contains("Volume")) {
+                    //Lets find the date associated with this entry
+                    String[] dElements = name.split("-"); //Since multiple entries have been retrieved - there is a -X indicating the number of the entry
+                    String numEntry =  dElements[1]; //Should always be second entry due to our xml structure
+                    String dateValue = temp.get( ("Entry_Time-" + numEntry) ); //Extract the date string
+                    dElements = dateValue.split("-"); //Split the date string into the individual numbers
+                    hour = Integer.parseInt(dElements[0]);
+                    day = Integer.parseInt(dElements[1]);
+                    month = Integer.parseInt(dElements[2]);
+                    year = Integer.parseInt(dElements[3]);
+                    Calendar c = Calendar.getInstance();
+                    //TODO TEST WHETHER NEED + 1990 IN YEAR
+                    c.set(year, month, day, hour, min); //We need to do this variant since older versions of creating Date objects using this method are deprecated
+
+                    String value = temp.get(name); //grab the value associated with our key
+                    ret.put(c.getTime(), Integer.parseInt(value));
                 }
             }
         }
         else if (type == TYPE.WELLBEING) {  //only want wellbeing entries
             for (String name: attributes) {
-                if (name.contains("wellbeing")) {
-                    String[] elements = temp.get(name).split(",");
-                    if (elements[1].equals("good")){
-                        //Value of 1 for good
-                        ret.put(new Date(Long.parseLong(elements[0])), 1);
+                if (name.contains("Wellbeing")) {
+                    //Lets find the date associated with this entry
+                    String[] dElements = name.split("-"); //Since multiple entries have been retrieved - there is a -X indicating the number of the entry
+                    String numEntry =  dElements[1]; //Should always be second entry due to our xml structure
+                    String dateValue = temp.get( ("Entry_Time-" + numEntry) ); //Extract the date string
+                    dElements = dateValue.split("-"); //Split the date string into the individual numbers
+                    hour = Integer.parseInt(dElements[0]);
+                    day = Integer.parseInt(dElements[1]);
+                    month = Integer.parseInt(dElements[2]);
+                    year = Integer.parseInt(dElements[3]);
+                    Calendar c = Calendar.getInstance();
+                    //TODO TEST WHETHER NEED + 1990 IN YEAR
+                    c.set(year, month, day, hour, min); //We need to do this variant since older versions of creating Date objects using this method are deprecated
+
+                    String value = temp.get(name); //grab the value associated with our key
+                    //Temporary assumption that values for wellbeing are good (1) or bad (0)
+                    if (value.equals("Good")){
+                        ret.put(c.getTime(), 1);
                     }
-                    else if (elements[1].equals("bad")) {
-                        //Value of 0 for bad
-                        ret.put(new Date(Long.parseLong(elements[0])), 0);
+                    else if (value.equals("Bad")) {
+                        ret.put(c.getTime(), 0);
                     }
                 }
             }

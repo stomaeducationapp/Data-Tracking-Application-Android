@@ -47,10 +47,14 @@ public class Daily_Review implements Time_Observer {
             boolean valid = false;
             ReviewHandler daily_review_calculator = factory.Make_Stoma_Review_Handler();
             valid = daily_review_calculator.generateReview();
-            Intent data = daily_review_calculator.getViewIntent(context);
-            //This currently breaks the rule to only use form_change to swap activities - but this is dude to the current setup of how review data is retrieved
-            //If this is still present - a rework may be considered to pull review data from activity itself rather than extra classes
-            context.startActivity(data); //TODO REWORK IF POSSIBLE INTO FORM_CHANGE
+            if(valid ==  true)
+            {
+                Intent data = daily_review_calculator.getViewIntent(context);
+                //This currently breaks the rule to only use form_change to swap activities - but this is dude to the current setup of how review data is retrieved
+                //If this is still present - a rework may be considered to pull review data from activity itself rather than extra classes
+                context.startActivity(data); //TODO REWORK IF POSSIBLE INTO FORM_CHANGE
+            }
+
             return valid;
         } else {
             throw new NullPointerException("file_Map is Null or Empty");
