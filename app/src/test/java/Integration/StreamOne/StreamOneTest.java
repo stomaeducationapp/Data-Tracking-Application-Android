@@ -1,5 +1,7 @@
 package Integration.StreamOne;
 
+import android.content.Context;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -70,7 +72,7 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap);
+            valid  = e.Notify(fileMap, null);
             message = e.dTest();
         }
         catch (NullPointerException e)
@@ -105,7 +107,7 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap);
+            valid  = e.Notify(fileMap, null);
             message = e.dTest();
         }
         catch (NullPointerException e)
@@ -140,7 +142,7 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap);
+            valid  = e.Notify(fileMap, null);
             message = e.dTest();
         }
         catch (NullPointerException e)
@@ -175,7 +177,7 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap);
+            valid  = e.Notify(fileMap, null);
             message = e.dTest();
         }
         catch (NullPointerException e)

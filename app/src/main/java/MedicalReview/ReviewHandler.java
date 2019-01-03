@@ -128,7 +128,7 @@ public class ReviewHandler {
         int day, month, year, hour; //Integers we will use to create a entry time from string we retrieve from file
         int min = 0; //As of now we do not store the minutes recorded - TODO CONSIDER ADDING THIS TO FILE
 
-        //TODO REQORK WE FILE READ SUCCESS TO HANDLE READING IN ORDER IF THE POINTS ARE OUT OF WACK
+        //TODO REWORK WHEN FILE READ SUCCESS TO HANDLE READING IN ORDER IF THE POINTS ARE OUT OF WACK
 
         //gets ALL data in type value pairs
         String[] attributes = temp.keySet().toArray(new String[0]);

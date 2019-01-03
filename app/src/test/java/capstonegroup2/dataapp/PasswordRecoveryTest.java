@@ -84,9 +84,9 @@ public class PasswordRecoveryTest {
     @Test
     public void findUserValid() {
         blank();
-        EditText userField = testAct.findViewById(R.id.user_entry);
+        EditText userField = testAct.findViewById(R.id.pr_user_entry);
         userField.setText("Bob"); //Grab user field an set to a valid value
-        (testAct.findViewById(R.id.user_button)).callOnClick(); //Submit the form
+        (testAct.findViewById(R.id.pr_user_button)).callOnClick(); //Submit the form
 
         assertEquals("User form hidden", View.INVISIBLE, (testAct.findViewById(R.id.pr_user_layout).getVisibility())); //Check that the form has disappeared and the next one has appeared
         assertEquals("Question form visible", View.VISIBLE, (testAct.findViewById(R.id.pr_question_layout).getVisibility())); //Indicates functionality worked
@@ -101,14 +101,14 @@ public class PasswordRecoveryTest {
      */
     @Test
     public void findUserInvalid() {
-        EditText userField = testAct.findViewById(R.id.user_entry);
+        EditText userField = testAct.findViewById(R.id.pr_user_entry);
         userField.setText("Jeremy"); //Grab user field an set to an invalid value
-        (testAct.findViewById(R.id.user_button)).callOnClick(); //Submit the form
+        (testAct.findViewById(R.id.pr_user_button)).callOnClick(); //Submit the form
 
         assertEquals("User form hidden", View.VISIBLE, (testAct.findViewById(R.id.pr_user_layout).getVisibility())); //Check that the form remains and next one is still hidden
         assertEquals("Question form visible", View.INVISIBLE, (testAct.findViewById(R.id.pr_question_layout).getVisibility())); //Indicates functionality worked
-        assertEquals("Error displayed", true, (testAct.findViewById(R.id.user_entry)).isFocused());
-        assertEquals("Error content", "Username does not exist.", ((TextView) (testAct.findViewById(R.id.user_entry))).getError()); //Check the error has loaded
+        assertEquals("Error displayed", true, (testAct.findViewById(R.id.pr_user_entry)).isFocused());
+        assertEquals("Error content", "Username does not exist.", ((TextView) (testAct.findViewById(R.id.pr_user_entry))).getError()); //Check the error has loaded
     }
 
     /* FUNCTION INFORMATION
@@ -139,9 +139,9 @@ public class PasswordRecoveryTest {
     @Test
     public void answerQuestionValid() {
         findUserValid(); //Set up the question screen
-        EditText qField = testAct.findViewById(R.id.question_entry);
+        EditText qField = testAct.findViewById(R.id.pr_question_entry);
         qField.setText("Alice"); //Grab answer field an set to a valid value
-        (testAct.findViewById(R.id.question_button)).callOnClick(); //Submit the form
+        (testAct.findViewById(R.id.pr_question_button)).callOnClick(); //Submit the form
 
         int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" ); //Since the correct answer yields an alert detailing all info sent
         TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id); //We check for the alert title (not the next screen)
@@ -159,12 +159,12 @@ public class PasswordRecoveryTest {
     @Test
     public void answerQuestionInvalid() {
         findUserValid();
-        EditText qField = testAct.findViewById(R.id.question_entry);
+        EditText qField = testAct.findViewById(R.id.pr_question_entry);
         qField.setText("Jeremy"); //Grab answer field an set to an invalid value
-        (testAct.findViewById(R.id.question_button)).callOnClick(); //Submit the form
+        (testAct.findViewById(R.id.pr_question_button)).callOnClick(); //Submit the form
 
-        assertEquals("Error displayed", true, (testAct.findViewById(R.id.question_entry)).isFocused());
-        assertEquals("Error content", "That answer is not correct", ((TextView) (testAct.findViewById(R.id.question_entry))).getError()); //Check the error has loaded
+        assertEquals("Error displayed", true, (testAct.findViewById(R.id.pr_question_entry)).isFocused());
+        assertEquals("Error content", "That answer is not correct", ((TextView) (testAct.findViewById(R.id.pr_question_entry))).getError()); //Check the error has loaded
     }
 
     /* FUNCTION INFORMATION
@@ -176,11 +176,11 @@ public class PasswordRecoveryTest {
     @Test
     public void answerQuestionMaxTries() {
         findUserValid();
-        EditText qField = testAct.findViewById(R.id.question_entry);
+        EditText qField = testAct.findViewById(R.id.pr_question_entry);
         qField.setText("Jeremy");
-        (testAct.findViewById(R.id.question_button)).callOnClick(); //Have 3 incorrect guesses
-        (testAct.findViewById(R.id.question_button)).callOnClick(); //Since We call findUserValid in the answerQuestionInvalid test - we can't call it to reuse that code
-        (testAct.findViewById(R.id.question_button)).callOnClick(); //Instead we do it manually
+        (testAct.findViewById(R.id.pr_question_button)).callOnClick(); //Have 3 incorrect guesses
+        (testAct.findViewById(R.id.pr_question_button)).callOnClick(); //Since We call findUserValid in the answerQuestionInvalid test - we can't call it to reuse that code
+        (testAct.findViewById(R.id.pr_question_button)).callOnClick(); //Instead we do it manually
 
         int id = testAct.getResources().getIdentifier( "alertTitle", "id", "android" );
         TextView alertTitle = (ShadowAlertDialog.getLatestAlertDialog()).findViewById(id);
