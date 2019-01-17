@@ -2,6 +2,7 @@ package Observers;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import java.io.File;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import java.util.HashMap;
  * It also stores the Enum Activity_Control required to navigate to a new activity through the Concrete Observers.
  *
  * @author Patrick Crockford
- * @version 1.2
+ * @version 1.3
  * <h>Changes</h1>
  * 19 Aug
  * Created Interface 'Form_Change_Observer', and created Enum and Change_Form Method, Patrick Crockford
@@ -40,6 +41,9 @@ import java.util.HashMap;
  * 12th Dec
  * Added a new method that allows files to be passed between activities to enable already opened files that need to stay open to be passed through rather than closed and
  * reopened multiple times. It is a sperate method since many activities many not require this additional feature. Jeremy Dunnet
+ * 17th Jan 2019
+ * Edited the file method to take a generic bundle so that multiple activities that need to pass information around can use one simple function instead of multiple
+ * specific ones. Jeremy Dunnet
  *
  */
 public interface Form_Change_Observer {
@@ -68,10 +72,10 @@ public interface Form_Change_Observer {
     /**
      * @param activity_To_Change_To Enum specifying which form to change to from the current form.
      * @param context System Object with information about the current running acivity (to move system resources over to new one)
-     * @param fileMap Map that contains any important files that the next activity will use (save reinitializing any files multiple times)
+     * @param bundle Bundle that contains any important data that the next activity will need to use
      * @return True if successfully created and used new Activity, else false
      * @throws NullPointerException if intent, Activity_Control, and/or Activity Objects are Null
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
-    boolean Change_Form_File(Activity_Control activity_To_Change_To, Context context, HashMap<Time_Observer.Files, File> fileMap) throws NullPointerException, Invalid_Enum_Exception;
+    boolean Change_Form_Bundle(Activity_Control activity_To_Change_To, Context context, Bundle bundle) throws NullPointerException, Invalid_Enum_Exception;
 }

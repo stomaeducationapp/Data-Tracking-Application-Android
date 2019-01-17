@@ -2,6 +2,7 @@ package MedicalReview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -102,17 +103,16 @@ public class ReviewHandler {
     /**
      * Creates the intent to launch the DailyReviewGraph activity. Packages the 'today' and 'yesterday'
      * variables as part of the intent so the activity can use this data.
-     * @param context the context of the calling activity.
-     * @return i the intent to be used to launch the DailyReviewGraph activity.
+     * @return b the bundle to be used to load the reviews into the DailyReviewGraph activity.
      */
-    public Intent getViewIntent(Context context) {
+    public Bundle getViewData() {
         //creates the activity to display the chart
-        Intent i = new Intent(context, DailyReviewGraph.class);
+        Bundle b = new Bundle();
 
-        i.putExtra("today", today);
-        i.putExtra("yesterday", yesterday);
+        b.putParcelable("today", today);
+        b.putParcelable("yesterday", yesterday);
 
-        return i;
+        return b;
     }
 
     /**

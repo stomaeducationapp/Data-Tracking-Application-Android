@@ -2,6 +2,7 @@ package Observers;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import java.io.File;
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import java.util.HashMap;
 import Factory.Factory;
 import capstonegroup2.dataapp.Challenges.Challenge;
 import capstonegroup2.dataapp.Challenges.ChallengeGUI;
+import capstonegroup2.dataapp.DailyReviewGraph;
 import capstonegroup2.dataapp.PasswordRecovery;
 import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
@@ -68,6 +70,7 @@ public class Form_Change implements Form_Change_Observer {
                 case Password_Recovery:
                     intent =  new Intent(context, PasswordRecovery.class);
                     valid = true;
+                    break;
                 case Account_Information:
                     //activity = factory.Build_Account_Information_Activity();
                     valid = true;
@@ -104,13 +107,13 @@ public class Form_Change implements Form_Change_Observer {
     /**
      * @param activity_To_Change_To Enum specifying which form to change to from the current form.
      * @param context System Object with information about the current running acivity (to move system resources over to new one)
-     * @param fileMap Map that contains any important files that the next activity will use (save reinitializing any files multiple times)
+     * @param bundle Bundle that contains any important data that the next activity will need to use
      * @return True if successfully created and used new Activity, else false
      * @throws NullPointerException if intent, Activity_Control, and/or Activity Objects are Null
      * @throws Invalid_Enum_Exception if Activity_Control Enum value is a non-valid value. Primary cause will be addition of new Enum in the Form_Change_Observer interface but not yet added to switch statement
      */
     @Override
-    public boolean Change_Form_File(Activity_Control activity_To_Change_To, Context context, HashMap<Time_Observer.Files, File> fileMap) throws NullPointerException, Invalid_Enum_Exception {
+    public boolean Change_Form_Bundle(Activity_Control activity_To_Change_To, Context context, Bundle bundle) throws NullPointerException, Invalid_Enum_Exception {
         //Check Activity_Control Enum hasn't somehow been set to Null
         boolean valid = false;
         if (activity_To_Change_To != null && context != null) {
@@ -120,7 +123,7 @@ public class Form_Change implements Form_Change_Observer {
             switch (activity_To_Change_To) {
                 case Account_Creation:
                     intent =  new Intent(context, AccountCreation.class);
-                    intent.putExtra("fileMap", fileMap);
+                    intent.putExtras(bundle);
                     valid = true;
                     break;
                 case Medical_Data_Input:
@@ -133,10 +136,12 @@ public class Form_Change implements Form_Change_Observer {
                     break;
                 case Password_Recovery:
                     intent =  new Intent(context, PasswordRecovery.class);
-                    intent.putExtra("fileMap", fileMap);
+                    intent.putExtras(bundle);
                     valid = true;
+                    break;
                 case Review:
-                    //activity = factory.Build_Medical_Review_Activity();
+                    intent =  new Intent(context, DailyReviewGraph.class);
+                    intent.putExtras(bundle);
                     valid = true;
                     break;
                 case Account_Information:
@@ -149,7 +154,7 @@ public class Form_Change implements Form_Change_Observer {
                     break;
                 case Challenges:
                     intent =  new Intent(context, ChallengeGUI.class);
-                    intent.putExtra("fileMap", fileMap);
+                    intent.putExtras(bundle);
                     valid = true;
                     break;
                 default:

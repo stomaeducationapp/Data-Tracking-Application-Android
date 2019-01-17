@@ -2,6 +2,7 @@ package Observers;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import java.io.File;
 import java.util.Map;
@@ -38,21 +39,29 @@ public class Daily_Review implements Time_Observer {
     /**
      * @param file_Map Map Object containing File Objects representing the type of file in relations to the Enum value
      *                 Key it is stored under, specific to the account currently logged in
+     * @param context The context of the application
+     * @param fc The Form_Change observer reference so that the observer can change the activity to DailyReviewGraph
      * @return True if daily 24 hour review is successfully calculated and saved to file, otherwise false.
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
-    public boolean Notify(Map<Files, File> file_Map, Context context) throws NullPointerException {
+    public boolean Notify(Map<Files, File> file_Map, Context context, Form_Change fc) throws NullPointerException {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
             ReviewHandler daily_review_calculator = factory.Make_Stoma_Review_Handler();
             valid = daily_review_calculator.generateReview();
             if(valid ==  true)
             {
-                Intent data = daily_review_calculator.getViewIntent(context);
-                //This currently breaks the rule to only use form_change to swap activities - but this is dude to the current setup of how review data is retrieved
-                //If this is still present - a rework may be considered to pull review data from activity itself rather than extra classes
-                context.startActivity(data); //TODO REWORK IF POSSIBLE INTO FORM_CHANGE
+                Bundle data = daily_review_calculator.getViewData();
+
+                try {
+                    fc.Change_Form_Bundle(Form_Change_Observer.Activity_Control.Review, context, data);
+                }
+                catch (Invalid_Enum_Exception e)
+                {
+                    throw new RuntimeException("Invalid Enum passed." + e.getMessage());
+                }
+
             }
 
             return valid;

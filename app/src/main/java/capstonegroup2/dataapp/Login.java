@@ -319,9 +319,12 @@ public class Login extends AppCompatActivity
         HashMap<Time_Observer.Files, File> files =  new HashMap<Time_Observer.Files, File>();
         files.put(Time_Observer.Files.Login, loginFile);
 
+        Bundle fileBundle = new Bundle();
+        fileBundle.putSerializable("fileMap", files);
+
         //Call our Form_Change Observer to do the switching for us
         try {
-            fc.Change_Form_File(Form_Change_Observer.Activity_Control.Account_Creation, this, files);
+            fc.Change_Form_Bundle(Form_Change_Observer.Activity_Control.Account_Creation, this, fileBundle);
         }
         catch (Invalid_Enum_Exception e)
         {
@@ -341,9 +344,12 @@ public class Login extends AppCompatActivity
         HashMap<Time_Observer.Files, File> files =  new HashMap<Time_Observer.Files, File>();
         files.put(Time_Observer.Files.Login, loginFile);
 
+        Bundle fileBundle = new Bundle();
+        fileBundle.putSerializable("fileMap", files);
+
         //Call our Form_Change Observer to do the switching for us
         try {
-            fc.Change_Form_File(Form_Change_Observer.Activity_Control.Password_Recovery, this, files);
+            fc.Change_Form_Bundle(Form_Change_Observer.Activity_Control.Account_Creation, this, fileBundle);
         }
         catch (Invalid_Enum_Exception e)
         {

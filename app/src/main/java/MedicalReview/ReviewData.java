@@ -39,7 +39,7 @@ public class ReviewData {
     public Map<String, String> loadData() {
 
         //read in the data - should have 1 entry per line
-        File medicalFile = new File("F:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamThree\\test_review_file.xml");
+        File medicalFile = new File("E:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamThree\\test_review_file.xml");
         Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         Map<String, String> data;
         List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Daily_Data, XML_Reader.Tags_To_Read.Volume, XML_Reader.Tags_To_Read.Medical_State,

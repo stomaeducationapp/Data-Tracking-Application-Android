@@ -20,7 +20,7 @@ import Factory.Factory;
  * @author Patrick Crockford
  * @version 1.2
  * <h1>Last Edited</h1>
- * 31st Dec 2018
+ * 17th Jan 2019
  * Updated to fit new Time_Observer template - Jeremy Dunnet
  */
 public class Export_Data implements Time_Observer {
@@ -42,11 +42,13 @@ public class Export_Data implements Time_Observer {
     /**
      * @param file_Map Map Object containing File Objects representing the type of file in relations to the Enum value
      *                 Key it is stored under, specific to the account currently logged in
+     * @param context Context of the application
+     * @param fc Form_Change observer reference
      * @return True if daily 24 hour review is successfully calculated and saved to file, otherwise false.
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
-    public boolean Notify(Map<Files, File> file_Map, Context context) throws NullPointerException {
+    public boolean Notify(Map<Files, File> file_Map, Context context, Form_Change fc) throws NullPointerException {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
 
