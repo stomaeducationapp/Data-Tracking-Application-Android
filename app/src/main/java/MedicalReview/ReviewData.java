@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import Factory.Factory;
+import Observers.Time_Observer;
 import XML.Login_Reader;
 import XML.Medical_Reader;
 import XML.XML_Reader;
@@ -36,10 +37,10 @@ public class ReviewData {
      * File that is being read from should only contain the entries to be used in this review.
      * @return data, the map containing the most recent 24 hours data.
      */
-    public Map<String, String> loadData() {
+    public Map<String, String> loadData(Map<Time_Observer.Files, File> fileMap) {
 
         //read in the data - should have 1 entry per line
-        File medicalFile = new File("E:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\src\\test\\java\\Integration\\StreamThree\\test_review_file.xml");
+        File medicalFile = fileMap.get(Time_Observer.Files.Medical);
         Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         Map<String, String> data;
         List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Daily_Data, XML_Reader.Tags_To_Read.Volume, XML_Reader.Tags_To_Read.Medical_State,

@@ -7,18 +7,20 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.InputStream;
+import java.text.Normalizer;
 import java.util.HashMap;
 import java.util.Map;
 
 import Factory.Factory;
 import Observers.Export_Data;
+import Observers.Form_Change;
 import Observers.Time_Observer;
 
 import static org.junit.Assert.assertEquals;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 27/11/2018
- * LAST MODIFIED BY - Jeremy Dunnet 28/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 21/01/2019
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -28,6 +30,7 @@ import static org.junit.Assert.assertEquals;
 /* VERSION HISTORY
  * 27/11/2018 - Created test harnesses
  * 28/11/2018 - Fixed and completed testing
+ * 21/01/2019 - Updated to make new observer signature
  */
 
 /* REFERENCES
@@ -72,7 +75,8 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap, null);
+            Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
+            valid  = e.Notify(fileMap, null, fc);
             message = e.dTest();
         }
         catch (NullPointerException e)
@@ -107,7 +111,8 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap, null);
+            Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
+            valid  = e.Notify(fileMap, null, fc);
             message = e.dTest();
         }
         catch (NullPointerException e)
@@ -142,7 +147,8 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap, null);
+            Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
+            valid  = e.Notify(fileMap, null, fc);
             message = e.dTest();
         }
         catch (NullPointerException e)
@@ -177,7 +183,8 @@ public class StreamOneTest {
         try
         {
             Export_Data e = (Export_Data) f.Make_Time_Observer(Factory.Time_Observer_Choice.Export_Data);
-            valid  = e.Notify(fileMap, null);
+            Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
+            valid  = e.Notify(fileMap, null, fc);
             message = e.dTest();
         }
         catch (NullPointerException e)

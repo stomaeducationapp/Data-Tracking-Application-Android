@@ -11,6 +11,8 @@ import java.io.File;
 import java.util.HashMap;
 
 import Factory.Factory;
+import MedicalReview.DailyReview;
+import Observers.Daily_Review;
 import Observers.Form_Change;
 import Observers.Form_Change_Observer;
 import Observers.Invalid_Enum_Exception;
@@ -18,7 +20,7 @@ import Observers.Time_Observer;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 17/12/2018
- * LAST MODIFIED BY - Jeremy Dunnet 17/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 21/01/2019
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -27,6 +29,7 @@ import Observers.Time_Observer;
 
 /* VERSION HISTORY
  * 17/12/2018 - Created file and added first test code
+ * 21/09/2019 - Rewrote to match Daily review test harness
  */
 
 /* REFERENCES
@@ -41,11 +44,12 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
         Factory f= Factory.Get_Factory();
+        final Daily_Review d = (Daily_Review) f.Make_Time_Observer(Factory.Time_Observer_Choice.Daily_Review);
         final Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
 
-        File account = new File(this.getFilesDir().getPath() + "/accounts/account_information.xml");
+        File medFile = new File(this.getFilesDir().getPath() + "/accounts/test_review_file.xml");
         final HashMap<Time_Observer.Files, File> files = new HashMap<Time_Observer.Files, File>();
-        files.put(Time_Observer.Files.Account, account);
+        files.put(Time_Observer.Files.Medical, medFile);
 
         final Context context = this;
 
@@ -53,14 +57,7 @@ public class TestActivity extends AppCompatActivity {
         testButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try
-                {
-                    fc.Change_Form_File(Form_Change_Observer.Activity_Control.Challenges, context, files);
-                }
-                catch (Invalid_Enum_Exception e)
-                {
-                    throw new RuntimeException("HALP" + e.getMessage());
-                }
+                d.Notify(files, context, fc);
             }
         });
 

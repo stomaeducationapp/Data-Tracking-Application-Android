@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import Factory.Factory;
+import Observers.Time_Observer;
 import capstonegroup2.dataapp.DailyReviewGraph;
 
 /**
@@ -39,13 +41,13 @@ public class ReviewHandler {
      * Handles creating the data reader, then passing this on to the generate review method
      * @return true if the method succeeds or false otherwise.
      */
-    public boolean generateReview() {
+    public boolean generateReview(Map<Time_Observer.Files, File> fileMap) {
         boolean success = true;
         ReviewData loader = factory.Make_Review_Data_Reader();
         Map<String, String> data;
 
         //Read in the account data to create the graphs.
-        data = loader.loadData();
+        data = loader.loadData(fileMap);
 
         if(!newReview(data)) {
             success = false;

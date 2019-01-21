@@ -49,7 +49,7 @@ public class Daily_Review implements Time_Observer {
         if (file_Map != null && !file_Map.isEmpty()) {
             boolean valid = false;
             ReviewHandler daily_review_calculator = factory.Make_Stoma_Review_Handler();
-            valid = daily_review_calculator.generateReview();
+            valid = daily_review_calculator.generateReview(file_Map);
             if(valid ==  true)
             {
                 Bundle data = daily_review_calculator.getViewData();

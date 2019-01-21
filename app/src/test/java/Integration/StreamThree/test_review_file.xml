@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Medical_Information>
-    <!-- These three entries should be the date before the day you perform the test -->
+    <!-- These three entries should be the date (H/D/M/Y) before the day you perform the test -->
     <Medical_Entry>
-        <Entry_Time>14-2-1-2019</Entry_Time>
+        <Entry_Time>14-20-1-2019</Entry_Time>
         <Location>a</Location>
         <Bags>b</Bags>
         <Urine>c</Urine>
@@ -12,10 +12,10 @@
         <Colour>C</Colour>
         <Consistency>c</Consistency>
         <Physical>P</Physical>
-        <Medical_State>4</Medical_State>
+        <Medical_State>1</Medical_State>
     </Medical_Entry>
     <Medical_Entry>
-        <Entry_Time>16-2-1-2019</Entry_Time>
+        <Entry_Time>16-20-1-2019</Entry_Time>
         <Location>a</Location>
         <Bags>b</Bags>
         <Urine>c</Urine>
@@ -28,22 +28,22 @@
         <Medical_State>6</Medical_State>
     </Medical_Entry>
     <Medical_Entry>
-        <Entry_Time>21-2-1-2019</Entry_Time>
+        <Entry_Time>21-20-1-2019</Entry_Time>
         <Location>a</Location>
         <Bags>b</Bags>
         <Urine>c</Urine>
         <Hydration>d</Hydration>
-        <Wellbeing>Good</Wellbeing>
-        <Volume>500</Volume>
+        <Wellbeing>Bad</Wellbeing>
+        <Volume>700</Volume>
         <Colour>C</Colour>
         <Consistency>c</Consistency>
         <Physical>P</Physical>
         <Medical_State>5</Medical_State>
     </Medical_Entry>
 
-    <!-- These three entries should be the date of the day you are performing the test -->
+    <!-- These three entries should be the date (H/D/M/Y) before the date above (previous review) you are performing the test -->
     <Medical_Entry>
-        <Entry_Time>14-2-1-2019</Entry_Time>
+        <Entry_Time>14-19-1-2019</Entry_Time>
         <Location>a</Location>
         <Bags>b</Bags>
         <Urine>c</Urine>
@@ -56,7 +56,7 @@
         <Medical_State>4</Medical_State>
     </Medical_Entry>
     <Medical_Entry>
-        <Entry_Time>16-2-1-2019</Entry_Time>
+        <Entry_Time>16-19-1-2019</Entry_Time>
         <Location>a</Location>
         <Bags>b</Bags>
         <Urine>c</Urine>
@@ -69,7 +69,7 @@
         <Medical_State>6</Medical_State>
     </Medical_Entry>
     <Medical_Entry>
-        <Entry_Time>21-2-1-2019</Entry_Time>
+        <Entry_Time>21-19-1-2019</Entry_Time>
         <Location>a</Location>
         <Bags>b</Bags>
         <Urine>c</Urine>
