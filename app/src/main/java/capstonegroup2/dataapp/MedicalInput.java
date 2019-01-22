@@ -60,7 +60,6 @@ public class MedicalInput extends Activity{
 
 
     /**
-     *
      * @param savedInstanceState is the state of the app when opened, allowing to set the layout view
      *                           *On Create declares all buttons used in the view
      *                           *Once initialized they can be used for input and saved into their classes
