@@ -23,6 +23,9 @@ public class Bag {
     private Date time;
 
 
+    //TODO MAKE CONSTRUCTOR
+
+
     /**
      * @param amountInput Represents the amount input by the bag contents
      * @return True if the input data is valid, otherwise false.

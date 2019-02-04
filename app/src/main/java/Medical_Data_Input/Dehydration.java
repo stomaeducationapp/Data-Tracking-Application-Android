@@ -18,6 +18,8 @@ public class Dehydration {
 
     private String[] symptoms;
 
+    //TODO ADD CONSTRUCTOR
+
     /**
      * @param symptomsInput Represents the symptoms of a user to describe their dehydration levels
      * @return True if the input data is valid, otherwise false.

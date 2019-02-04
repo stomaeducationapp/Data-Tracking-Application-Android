@@ -19,6 +19,8 @@ public class Urine {
     private String amount;
     private String colour;
 
+    //TODO MAKE CONSTRUCTOR
+
     /**
      * @param amountInput Represents the amount of time a person has urinated
      * @return True if the input data is valid, otherwise false.

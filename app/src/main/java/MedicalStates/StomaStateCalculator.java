@@ -51,7 +51,7 @@ public class StomaStateCalculator {
         factory = Factory.Get_Factory();
         urineCount = 0;
         outputVolume = 0;
-        userDailyOutput = 1200;
+        userDailyOutput = 1200; //DECIDED UPON CONSTANT?
         med = null;
         acc = null;
     }
@@ -138,6 +138,7 @@ public class StomaStateCalculator {
         return data;
     }
 
+    //TODO UPDATE ABOVE TO READ PROPERLY, UPDATE BELOW TO PULL DATA FROM MAP PROPERLY
 
     /**
      * This method takes the map with all of the user data and extracts only the key - value pairs

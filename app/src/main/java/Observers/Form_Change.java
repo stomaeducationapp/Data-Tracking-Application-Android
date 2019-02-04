@@ -11,6 +11,7 @@ import Factory.Factory;
 import capstonegroup2.dataapp.Challenges.Challenge;
 import capstonegroup2.dataapp.Challenges.ChallengeGUI;
 import capstonegroup2.dataapp.DailyReviewGraph;
+import capstonegroup2.dataapp.MedicalInput;
 import capstonegroup2.dataapp.PasswordRecovery;
 import capstonegroup2.dataapp.accountCreation.AccountCreation;
 
@@ -22,9 +23,9 @@ import capstonegroup2.dataapp.accountCreation.AccountCreation;
  * occur easily and with a reduce chance of errors occurring at a later date
  * Implements Form_Change_Observer interface
  * @author Patrick Crockford
- * @version 1.4
+ * @version 1.5
  * <h1>Last Edited</h1>
- * 31 Dec 2018
+ * 4 Feb 2019
  * Jeremy Dunnet
  */
 
@@ -60,7 +61,7 @@ public class Form_Change implements Form_Change_Observer {
                     valid = true;
                     break;
                 case Medical_Data_Input:
-                    //activity = factory.Build_Medical_Data_Input_Activity();
+                    intent =  new Intent(context, MedicalInput.class);
                     valid = true;
                     break;
                 case Account_Main_Menu:
@@ -127,7 +128,8 @@ public class Form_Change implements Form_Change_Observer {
                     valid = true;
                     break;
                 case Medical_Data_Input:
-                    //activity = factory.Build_Medical_Data_Input_Activity();
+                    intent =  new Intent(context, MedicalInput.class);
+                    intent.putExtras(bundle);
                     valid = true;
                     break;
                 case Account_Main_Menu:

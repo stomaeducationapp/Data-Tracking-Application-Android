@@ -57,7 +57,8 @@ public class MedicalInput extends Activity{
     private RadioButton thick_butt;
     private RadioButton toothpaste_butt;
 
-
+    //TODO CHECK ALL BUTTON ALLOCATIONS AND MAKE SURE SUBMIT COLLECTS ALL INFO
+    //TODO ADD BUNDLE EXTRACTION OF MEDICAL FILE FOR USE IN SAVING DATA
 
     /**
      * @param savedInstanceState is the state of the app when opened, allowing to set the layout view

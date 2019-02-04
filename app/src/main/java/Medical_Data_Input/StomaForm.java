@@ -25,6 +25,8 @@ public class StomaForm {
     private Date entryTime; // need to set DateTime java class
     //private Object location; //This class field may not be needed for the final demo, but can be implemented in the future
 
+    //TODO MAKE CONSTRUCTOR AND MAKE SURE ALL CONTAINERS INSIDE ARE REFERENCED NON-STATICALLY
+
     /**
      * @param numBag Represents bag which will be selected in the list of Bags
      * @return Bag object selected from the list
