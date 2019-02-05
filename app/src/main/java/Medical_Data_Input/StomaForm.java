@@ -26,6 +26,7 @@ public class StomaForm {
     //private Object location; //This class field may not be needed for the final demo, but can be implemented in the future
 
     //TODO MAKE CONSTRUCTOR AND MAKE SURE ALL CONTAINERS INSIDE ARE REFERENCED NON-STATICALLY
+    //TODO TO CHECK IF A CONTAINER IS NOT SUCCESSFULLY CREATED - CHECK IF EITHER GETX IS NULL
 
     /**
      * @param numBag Represents bag which will be selected in the list of Bags

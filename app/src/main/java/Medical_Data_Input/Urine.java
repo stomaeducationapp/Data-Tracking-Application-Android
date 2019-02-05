@@ -10,8 +10,8 @@ package Medical_Data_Input;
  * 2nd October
  * Created Urine Class which is owned by he StomaForm class
  * <p>
- * Insert new changes here
- * <h>NOTE</h>
+ * 5th February
+ * Updated class to have specific constructor and fixed setColour - Jeremy Dunnet
  */
 
 public class Urine {
@@ -19,7 +19,15 @@ public class Urine {
     private String amount;
     private String colour;
 
-    //TODO MAKE CONSTRUCTOR
+    public Urine(String inAmount, String inColour)
+    {
+
+        amount = null; //If either set fails - other classes can check by getting the value and checking if null
+        colour = null;
+
+        setAmount(inAmount);
+        setColour(inColour);
+    }
 
     /**
      * @param amountInput Represents the amount of time a person has urinated
@@ -64,9 +72,16 @@ public class Urine {
         String[] colours = {"Dark", "Normal", "Light", "Clear"};
 
         for(int ii = 0 ; ii < colours.length; ii++)
+        {
             if (!colourInput.equals(colours[ii])) {
                 dataValidation = false;
             }
+        }
+
+        if(dataValidation == true)
+        {
+            colour = colourInput;
+        }
 
         return dataValidation;
     }

@@ -11,17 +11,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c7136df-ed80-4a6c-97b9-93fcbd99bc32" name="Default" comment="- Created branch">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7c7136df-ed80-4a6c-97b9-93fcbd99bc32" name="Default" comment="- Went through and added notes on planned changes for integration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,36 +40,37 @@
     <session id="-254623144">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1571" />
-          <entry key="txt" value="277" />
+          <entry key="java" value="2378" />
+          <entry key="txt" value="344" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1571" />
-          <entry key="PLAIN_TEXT" value="277" />
+          <entry key="JAVA" value="2378" />
+          <entry key="PLAIN_TEXT" value="344" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="29" />
+          <entry key="java" value="39" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="29" />
+          <entry key="JAVA" value="39" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
@@ -90,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="238">
               <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
             </state>
           </provider>
@@ -105,11 +101,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2023">
-              <caret line="140" column="85" selection-start-line="140" selection-start-column="85" selection-end-line="140" selection-end-column="85" />
+            <state relative-caret-position="-476">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="28" column="93" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -2422,14 +2430,14 @@
         <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFiveTest.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamThreeTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamThree/test_review_file.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java" />
       </list>
     </option>
   </component>
@@ -2447,6 +2455,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2505,6 +2524,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="MedicalReview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="MedicalStates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2515,28 +2543,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Observers" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -2733,6 +2739,17 @@
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="test/java" type="cbb8eebc:String" user="test/java" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
           </expand>
           <select />
@@ -3081,7 +3098,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548136069281</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- Went through and added notes on planned changes for integration">
+      <created>1549256744136</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549256744136</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3185,7 +3209,8 @@
     <MESSAGE value="- Fixed file loading to work as it would in final app (passed in from main menu)&#10;- Performed Android studio update&#10;- Fixed some old classes using outdated observer methods&#10;- Created and performed manual UI testing" />
     <MESSAGE value="- Integration Stream Three merged" />
     <MESSAGE value="- Created branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Created branch" />
+    <MESSAGE value="- Went through and added notes on planned changes for integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Went through and added notes on planned changes for integration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3423,44 +3448,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="238">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
@@ -3472,10 +3462,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Input_Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="140" column="85" selection-start-line="140" selection-start-column="85" selection-end-line="140" selection-end-column="85" />
+        <state relative-caret-position="-476">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/StomaForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="93" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
         </state>
       </provider>
     </entry>
