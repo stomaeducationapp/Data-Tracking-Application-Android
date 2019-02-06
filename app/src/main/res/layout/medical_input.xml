@@ -1,212 +1,375 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/medLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Urine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Urine colour (Average)"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <TextView
-        android:id="@+id/Urine_Amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Times Urinated"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="117dp" />
-
-    <Button
-        android:id="@+id/bag_fragment"
-        android:name="capstonegroup2.dataapp.MedicalInput$bagFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Bag..."
-        tools:layout_editor_absoluteX="257dp"
-        tools:layout_editor_absoluteY="162dp" />
-
-    <TextView
-        android:id="@+id/Wellbeing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Well being"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="366dp" />
-
-    <TextView
-        android:id="@+id/Symptoms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dehydration Symptoms"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="226dp" />
-
-    <Button
-        android:id="@+id/Light"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Light"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="35dp" />
-
-    <Button
-        android:id="@+id/Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Medium"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="35dp" />
-
-    <Button
-        android:id="@+id/Dark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dark"
-        tools:layout_editor_absoluteX="265dp"
-        tools:layout_editor_absoluteY="35dp" />
-
-    <LinearLayout
-        android:id="@+id/check_group"
-        android:layout_width="384dp"
-        android:layout_height="98dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="253dp">
+    <ScrollView
+        android:id="@+id/medScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/dry_mouth"
-                android:layout_width="141dp"
-                android:layout_height="wrap_content"
-                android:text="Dry Mouth" />
-
-            <CheckBox
-                android:id="@+id/Confusion"
-                android:layout_width="136dp"
-                android:layout_height="wrap_content"
-                android:text="Confusion" />
-
-            <CheckBox
-                android:id="@+id/Tiredness"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/bagLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tiredness" />
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/bagTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_bag_title"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/consisHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_bag_list_heading_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bagTitle" />
+
+                <TextView
+                    android:id="@+id/amountHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_bag_list_heading_2"
+                    app:layout_constraintStart_toEndOf="@+id/consisHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/bagTitle" />
+
+                <TextView
+                    android:id="@+id/timeHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_bag_list_heading_3"
+                    app:layout_constraintStart_toEndOf="@+id/amountHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/bagTitle" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/bagList"
+                    android:layout_width="395dp"
+                    android:layout_height="129dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/amountHeader" />
+
+                <Button
+                    android:id="@+id/bag_fragment"
+                    android:name="capstonegroup2.dataapp.MedicalInput$bagFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="160dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/mi_bag_add_butt"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bagList" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/urineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/urineTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_urine_title"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/urineTimesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_urine_times_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/urineTitle" />
+
+                <EditText
+                    android:id="@+id/urine_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/mi_urineTimes_hint"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/urineTimesText" />
+
+                <TextView
+                    android:id="@+id/urineColourText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_urine_colour_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/urine_input" />
+
+                <RadioGroup
+                    android:id="@+id/urineGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/urineColourText">
+
+                    <RadioButton
+                        android:id="@+id/urineOptOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mi_urine_colour_option_1" />
+
+                    <RadioButton
+                        android:id="@+id/urineOptTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:baselineAligned="false"
+                        android:text="@string/mi_urine_colour_option_2" />
+
+                    <RadioButton
+                        android:id="@+id/urineOptThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mi_urine_colour_option_3" />
+
+                </RadioGroup>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/dehyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/dehyHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_dehy_title"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dehyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_dehy_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dehyHeader" />
+
+                <LinearLayout
+                    android:id="@+id/dehySympt"
+                    android:layout_width="384dp"
+                    android:layout_height="98dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dehyText">
+
+                    <LinearLayout
+                        android:id="@+id/dehyRowOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/dehyOptOne"
+                            android:layout_width="141dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_1" />
+
+                        <CheckBox
+                            android:id="@+id/dehyOptTwo"
+                            android:layout_width="136dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_2" />
+
+                        <CheckBox
+                            android:id="@+id/dehyOptThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_3" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dehyRowTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/dehyOptFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_4" />
+
+                        <CheckBox
+                            android:id="@+id/dehyOptFive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_5" />
+
+                        <CheckBox
+                            android:id="@+id/dehyOptSix"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_6" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dehyRowThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="108dp"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/dehyOptSeven"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_7" />
+
+                        <CheckBox
+                            android:id="@+id/dehyOptEight"
+                            android:layout_width="137dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_8" />
+
+                        <CheckBox
+                            android:id="@+id/dehyOptNine"
+                            android:layout_width="136dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mi_dehy_option_9" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/wellBLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/wellBTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_wellB_title"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/wellBText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mi_wellB_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wellBTitle" />
+
+                <RadioGroup
+                    android:id="@+id/wellBGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wellBText">
+
+                    <RadioButton
+                        android:id="@+id/wellBOptOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mi_wellB_option_1" />
+
+                    <RadioButton
+                        android:id="@+id/wellBOptTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:baselineAligned="false"
+                        android:text="@string/mi_wellB_option_2" />
+
+                    <RadioButton
+                        android:id="@+id/wellBOptThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mi_wellB_option_3" />
+
+                </RadioGroup>
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/submit_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mi_submit_butt"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="460dp" />
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/stomach_cramps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Stomach Cramps" />
-
-            <CheckBox
-                android:id="@+id/Muscle_cramps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Muscle Scramps" />
-
-            <CheckBox
-                android:id="@+id/Fatigue"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="Fatigue" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="108dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/Thirsty"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="Thirsty" />
-
-            <CheckBox
-                android:id="@+id/Light_headed"
-                android:layout_width="137dp"
-                android:layout_height="wrap_content"
-                android:text="Lightheaded" />
-
-            <CheckBox
-                android:id="@+id/Headache"
-                android:layout_width="136dp"
-                android:layout_height="wrap_content"
-                android:text="Headache" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <RadioGroup
-        android:layout_width="260dp"
-        android:layout_height="94dp"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="366dp">
-
-        <RadioButton
-            android:id="@+id/Good"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Good" />
-
-        <RadioButton
-            android:id="@+id/Okay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:baselineAligned="false"
-            android:text="Okay" />
-
-        <RadioButton
-            android:id="@+id/Bad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Bad" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/submit_main"
-        android:layout_width="383dp"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="460dp" />
-
-    <EditText
-        android:id="@+id/urine_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="On Average"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="90dp" />
-
-    <TextView
-        android:id="@+id/bag_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bag Empty"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="175dp" />
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

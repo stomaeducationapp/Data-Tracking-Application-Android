@@ -12,8 +12,8 @@ import java.util.*;
  * 2nd October
  * Created Urine Class which is owned by he StomaForm class
  * <p>
- * Insert new changes here
- * <h>NOTE</h>
+ * 6th February
+ * Updated class to contain objects with validation - Jeremy Dunnet
  */
 
 public class StomaForm {
@@ -25,8 +25,14 @@ public class StomaForm {
     private Date entryTime; // need to set DateTime java class
     //private Object location; //This class field may not be needed for the final demo, but can be implemented in the future
 
-    //TODO MAKE CONSTRUCTOR AND MAKE SURE ALL CONTAINERS INSIDE ARE REFERENCED NON-STATICALLY
-    //TODO TO CHECK IF A CONTAINER IS NOT SUCCESSFULLY CREATED - CHECK IF EITHER GETX IS NULL
+    public StomaForm()
+    {
+        bags = new ArrayList<Bag>();
+        dehydration = null;
+        urine = null;
+        wellbeing = null;
+        entryTime = null;
+    }
 
     /**
      * @param numBag Represents bag which will be selected in the list of Bags
@@ -35,8 +41,14 @@ public class StomaForm {
      */
     public Bag getBag(int numBag) throws NullPointerException
     {
-        //TODO: Do Validation here
-        return bags.get(numBag);
+        Bag bag = null;
+
+        if(numBag < bags.size()) //List is 0-indexed
+        {
+            bag = bags.get(numBag);
+        }
+
+        return bag;
     }
 
     /**
@@ -47,46 +59,44 @@ public class StomaForm {
     public boolean addBag(Bag newBag)
     {
 
-        boolean checkBag;
-        checkBag = true;
-        //TODO: Do validation here
-        bags.add(newBag);
+        boolean checkBag = false;
+
+        if((newBag.getAmount() > 0) && (newBag.getTime() != null)) // A valid bag has information tied to it
+        {
+            checkBag = true;
+            bags.add(newBag);
+        }
+
         return checkBag;
 
     }
 
 
     /**
-     * @param numUrine Represents a value of Urine(returns color and amount)
      * @return Urine object (can gather color and amount)
-     * @throws NullPointerException if the bag number is null
+     * @throws NullPointerException if the urine object is null
      */
-    public Urine getUrine(int numUrine) throws NullPointerException
+    public Urine getUrine() throws NullPointerException
     {
         return urine;
     }
 
     /**
-     * @param urine_value Represents a new urine description to be added to the list
+     * @param u Represents the urine object we are validating to add to the form
      * @return True if Urine is valid and added, or false if otherwise
-     * @throws NullPointerException if the bag number is null
+     * @throws NullPointerException if any of the imported values are null
      */
-    public boolean addUrine(int urine_value)
+    public boolean addUrine(Urine u)
     {
-        // 1 for light
-        // 2 for medium
-        // 3 for dark
-        boolean checkUrine;
-        checkUrine = true;
-        String urine_string = Integer.toString(urine_value);
-        urine.setColour(urine_string);
-        return checkUrine;
-    }
+        boolean checkUrine = false;
 
-    //TIMES URINATED ON AVERAGE
-    public void addTimesUrinated(String times_urinated)
-    {
-        urine.setAmount(times_urinated);
+        if((u.getAmount() >= 0) && (u.getColour() != null))
+        {
+            checkUrine = true;
+            urine = u;
+        }
+
+        return checkUrine;
     }
 
     /**
@@ -97,9 +107,14 @@ public class StomaForm {
 
     public boolean setDehydration(Dehydration inDehydration) throws NullPointerException
     {
-        boolean checkDehydration;
-        checkDehydration = true;
-        dehydration = inDehydration;
+        boolean checkDehydration = false;
+
+        if(inDehydration.getSymptoms() != null)
+        {
+            checkDehydration = true;
+            dehydration = inDehydration;
+        }
+
         return checkDehydration;
     }
 
@@ -115,8 +130,14 @@ public class StomaForm {
      */
     public boolean setWellbeing(String inWellbeing)
     {
-        boolean checkWellbeing = true;
-        wellbeing = inWellbeing;
+        boolean checkWellbeing = false;
+
+        if((wellbeing != null) && (!wellbeing.equals("")))
+        {
+            wellbeing = inWellbeing;
+            checkWellbeing = true;
+        }
+
         return checkWellbeing;
     }
 
@@ -132,8 +153,14 @@ public class StomaForm {
      */
     public boolean setTime(Date inTime)
     {
-        boolean checkTime = true;
-        entryTime = inTime;
+        boolean checkTime = false;
+
+        if(inTime != null)
+        {
+            entryTime = inTime;
+            checkTime = true;
+        }
+
         return checkTime;
     }
 

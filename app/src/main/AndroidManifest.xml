@@ -39,11 +39,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Daily_Review_Launch_Test"
-            android:label="@string/review_test"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
             android:name=".DailyReviewGraph"
             android:label="@string/review_screen"
             android:theme="@style/AppTheme.NoActionBar">

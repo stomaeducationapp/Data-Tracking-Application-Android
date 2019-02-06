@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mi_bag_title"><u>Bags Emptied</u></string>
+    <string name="mi_bag_list_heading_1">Consistency</string>
+    <string name="mi_bag_list_heading_2">Amount</string>
+    <string name="mi_bag_list_heading_3">Empty time</string>
+    <string name="mi_bag_add_butt">Add bag</string>
+    <string name="mi_wellB_title"><u>Wellbeing</u></string>
+    <string name="mi_wellB_text">How do you feel currently?</string>
+    <string name="mi_wellB_option_1">Good</string>
+    <string name="mi_wellB_option_2">Okay</string>
+    <string name="mi_wellB_option_3">Bad</string>
+    <string name="mi_submit_butt">Submit</string>
+    <string name="mi_dehy_title"><u>Dehydration symptoms</u></string>
+    <string name="mi_dehy_text">Please select all the symptoms you have experienced since the last entry</string>
+    <string name="mi_dehy_option_1">Dry mouth</string>
+    <string name="mi_dehy_option_2">Confusion</string>
+    <string name="mi_dehy_option_3">Tiredness</string>
+    <string name="mi_dehy_option_4">Stomach Cramps</string>
+    <string name="mi_dehy_option_5">Muscle Cramps</string>
+    <string name="mi_dehy_option_6">Fatigue</string>
+    <string name="mi_dehy_option_7">Thirsty</string>
+    <string name="mi_dehy_option_8">Light-headed</string>
+    <string name="mi_dehy_option_9">Headache</string>
+    <string name="mi_urine_title"><u>Urine</u></string>
+    <string name="mi_urine_times_text">How many times have you urinated since last entry?</string>
+    <string name="mi_urineTimes_hint">Times Urinated</string>
+    <string name="mi_urine_colour_text">What was the average colour of all the times mentioned above?</string>
+    <string name="mi_urine_colour_option_1">Light</string>
+    <string name="mi_urine_colour_option_2">Medium</string>
+    <string name="mi_urine_colour_option_3">Dark</string>
+    <string name="mi_bag_list_consis">CONSISTENCY</string>
+    <string name="mi_bag_list_amount">AMOUNT</string>
+    <string name="mi_bag_list_time">TIME</string>
+    <string name="mi_delete_bag_button">DELETE</string>
+    <string name="mi_bag_frag_title"><u>Please record:</u></string>
+    <string name="mi_bag_frag_amount_text">The amount emptied from the bag (mL):</string>
+    <string name="mi_bag_frag_amount_hint">Amount in millilitres</string>
+    <string name="mi_bag_frag_consis_text">The consistency of the bag when emptied:</string>
+    <string name="mi_bag_frag_consis_option_1">Watery</string>
+    <string name="mi_bag_frag_consis_option_2">Thick</string>
+    <string name="mi_bag_frag_consis_option_3">Toothpaste-like</string>
+    <string name="mi_bag_frag_time_text">Time of emptying:</string>
+    <string name="mi_bag_frag_submit_butt">Add bag</string>
+</resources>

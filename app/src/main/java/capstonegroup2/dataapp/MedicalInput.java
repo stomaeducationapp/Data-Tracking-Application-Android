@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -110,6 +111,18 @@ public class MedicalInput extends Activity{
         toothpaste_butt = findViewById(R.id.toothpaste);
 
 
+        /* TODO REWORK SO RECYLERVIEW WORKS IN THIS ACTIVITY
+
+            //Set up recycler view
+        fAdapter = new FineAdapter(fineList, this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(fAdapter);
+
+         */
+
+
     }
 
     //ALL CHECKED VALUES ARE ADDED TO THE VALUES ARRAY AND SENT TO BE SAVED
@@ -154,7 +167,7 @@ public class MedicalInput extends Activity{
                 //Call fillForm for adding colour of urine
                 //Select one of the buttons to fill urine colour
                 //Light button can be set to 1, 2, 3
-                light_butt.setOnClickListener(new View.OnClickListener()
+                /*light_butt.setOnClickListener(new View.OnClickListener()
                 {
                     @Override
                     public void onClick(View v){
@@ -193,7 +206,7 @@ public class MedicalInput extends Activity{
 
                 //TIMES URINATED ON AVERAGE ENTERED BY THE USER
                 String times_urinated = urine_number.getText().toString();
-                stomaForm.addTimesUrinated(times_urinated);
+                stomaForm.addTimesUrinated(times_urinated);*/
 
                 //WELLBEING RADIO BUTTONS
                 good_butt.setOnClickListener(new View.OnClickListener()
@@ -251,9 +264,187 @@ public class MedicalInput extends Activity{
             // Inflate the layout for this fragment
             return inflater.inflate(R.layout.bag_fragment, container, false);
 
+            //TODO SET THE INITIAL TIME AND DATE OF THE TWO SPINNERS TO CURRENT TIME
+            //USE https://www.tutorialspoint.com/android/android_timepicker_control.htm and https://developer.android.com/guide/topics/ui/controls/pickers
+
         }
 
     }
+
+    /* TODO REWITE FOR HOLDING A BAG ENTRY TO DISPLAY BACK TO USER
+    private class FineAdapter extends RecyclerView.Adapter<FineAdapter.MyViewHolder> {
+
+
+        private List<Fine> finesList;
+        private ItemDeleteInterface itemDeleteInterface;
+
+        public FineAdapter(List<Fine> finesList, ItemDeleteInterface mainActivity)
+        {
+
+            this.finesList = finesList;
+            this.itemDeleteInterface = mainActivity; //Attach interface implementation
+        }
+
+        public class MyViewHolder extends RecyclerView.ViewHolder
+        {
+            public TextView name, amount;
+            public Button fineButt;
+            public ImageButton deleteButt;
+            public RelativeLayout fineLayout;
+
+            public MyViewHolder(View view) {
+                super(view);
+                name = (TextView) view.findViewById(R.id.fineName); //Find all the layout objects in the fine row
+                amount = (TextView) view.findViewById(R.id.amount);
+                fineButt = (Button) view.findViewById(R.id.fine_button);
+                deleteButt = (ImageButton) view.findViewById(R.id.delete_entry_button);
+                fineLayout = (RelativeLayout) view.findViewById(R.id.fineRow);
+            }
+        }
+
+        @Override
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.fine_list_row, parent, false);
+
+            return new MyViewHolder(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(MyViewHolder holder, int position) {
+            final int pos = position;
+            Fine fine = finesList.get(pos); //Get the fine object and assign all the values to the layout objects
+            holder.name.setText(fine.getName());
+            if(fine.getAmount().equals("DOUBLE MAX"))
+            {
+                holder.amount.setText(fine.getAmount());
+
+                holder.fineLayout.setClickable(false);
+
+                holder.fineButt.setOnClickListener(null);
+                holder.fineButt.setClickable(false); //Disable fine button as hit the cap
+            }
+            else
+            {
+                holder.amount.setText(fine.getAmount());
+                holder.fineButt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Fine finee = finesList.get(pos); //Click listener for adding a fine increment
+                        finee.fine();
+                        finesList.set(pos, finee);
+                        notifyItemChanged(pos);
+                    }
+                });
+            }
+            holder.deleteButt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemDeleteInterface.deleteRecyclerItem(pos); //Set up listener for deleting the item
+                }
+            });
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return finesList.size();
+        }
+
+        /* FUNCTION INFORMATION
+         * NAME - removeAt
+         * INPUTS - position (position of the element to be deleted)
+         * OUTPUTS - none
+         * PURPOSE - This is the function that facilitates removal of a member from the list
+         *
+        public void removeAt(int position) {
+            finesList.remove(position);
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, finesList.size()); //Need to tell adapter to reorganise list order (in case element had elements after it)
+        }
+
+        /* AUTHOR INFORMATION
+         * CREATOR - Jeremy Dunnet ??/??/2018 (Project went on hiatus early 2018 so no concrete date on when I first designed each class)
+         * LAST MODIFIED BY - Jeremy Dunnet 30/01/2019 (when comment sweep was done)
+         */
+
+        /* CLASS/FILE DESCRIPTION
+         * This is the recyclerview interface for the ability to remove an item from the adapter and list
+         */
+
+        /* VERSION HISTORY
+         * 30/01/2019 - Created comment log block and swept through and updated comments/references
+         */
+
+        /* REFERENCES
+         * RecyclerView Item Removal/Addition Interface learned from https://stackoverflow.com/questions/26076965/android-recyclerview-addition-removal-of-items
+         * Developer tutorials from https://developer.android.com/
+         *
+        public interface ItemDeleteInterface
+        {
+            void deleteRecyclerItem(int pos);
+        }
+
+    }*/
+
+
+    /* TODO REWRITE DELETERECYLERITEM TO MAKE SURE WORKS WITH REMOVING A BAG
+       TODO REWRITE GETCURRENTDATE FOR USE IN RECORDING ENTRY TIME
+       /* FUNCTION INFORMATION
+     * NAME - deleteRecyclerItem
+     * INPUTS - pos (position of the element to be deleted)
+     * OUTPUTS - none
+     * PURPOSE - This is the function that facilitates removal of a member from the list
+     * NOTE - This is an override of the FineAdapter Interface to allow connection between activity and list
+     *
+    @Override
+    public void deleteRecyclerItem(final int pos)
+    {
+        // Creating alert Dialog with two buttons
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+
+        // Setting Dialog Title
+        alertDialog.setTitle("Delete entry");
+
+        // Setting Dialog Message
+        alertDialog.setMessage("Are you sure?");
+
+        // Setting Positive "Yes" Button
+        alertDialog.setPositiveButton("I'm sure",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        fAdapter.removeAt(pos);
+                    }
+                }); //Call the adapter to delete at that position
+        // Setting Negative "NO" Button
+        alertDialog.setNegativeButton("CANCEL",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        // Showing Alert Message
+        alertDialog.show();
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - getCurrentDate
+     * INPUTS - none
+     * OUTPUTS - date (A string representing today's date
+     * PURPOSE - This is the function that returns a string detailing today's date for use in file recording
+
+    private String getCurrentDate()
+    {
+        String date =  "";
+        Calendar rightNow = Calendar.getInstance();
+
+        date = date + rightNow.get(Calendar.DAY_OF_MONTH) + "_" + (rightNow.get(Calendar.MONTH) + 1) + "_" + rightNow.get(Calendar.YEAR);
+        //Month is 0-indexed so we add one to display correctly to the user
+
+        return date;
+    }
+     */
 
         private void loadBagFragment(Fragment fragment) {
         // create a FragmentManager

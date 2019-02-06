@@ -12,17 +12,19 @@ package Medical_Data_Input;
  * <p>
  * 5th February
  * Updated class to have specific constructor and fixed setColour - Jeremy Dunnet
+ * 6th February
+ * Updated class to use more appropriate variable types for its field - Jeremy Dunnet
  */
 
 public class Urine {
 
-    private String amount;
+    private int amount;
     private String colour;
 
-    public Urine(String inAmount, String inColour)
+    public Urine(int inAmount, String inColour)
     {
 
-        amount = null; //If either set fails - other classes can check by getting the value and checking if null
+        amount = -1; //If either set fails - other classes can check by getting the value and checking if null
         colour = null;
 
         setAmount(inAmount);
@@ -34,16 +36,13 @@ public class Urine {
      * @return True if the input data is valid, otherwise false.
      * @throws IndexOutOfBoundsException if the bag input is invalid
      */
-    public boolean setAmount(String amountInput) throws IndexOutOfBoundsException
+    public boolean setAmount(int amountInput) throws IndexOutOfBoundsException
     {
 
         boolean dataValidation;
-        int iAmount;
-
-        iAmount = Integer.parseInt(amountInput);
 
         //Assuming max is 15 time
-        if(iAmount < 0 || iAmount > 15)
+        if(amountInput < 0 || amountInput > 15) //15 is an arbitrary limit for now
         {
             dataValidation = false;
         }
@@ -86,7 +85,7 @@ public class Urine {
         return dataValidation;
     }
 
-    public String getAmount()
+    public int getAmount()
     {
         return amount;
     }

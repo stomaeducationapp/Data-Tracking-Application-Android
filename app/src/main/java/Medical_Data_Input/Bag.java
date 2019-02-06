@@ -16,19 +16,21 @@ import java.util.*;
  * <p>
  * 5th February
  * Updated class to have specific constructor and fixed setTime - Jeremy Dunnet
+ * 6th February
+ * Updated class to use more appropriate variable types for its field - Jeremy Dunnet
  */
 
 
 public class Bag {
 
-    private String amount;
-    private Date time;
+    private int amount;
+    private String time;
 
 
-    public Bag(String inAmount, Date inTime)
+    public Bag(int inAmount, String inTime)
     {
 
-        amount = null; //If either set fails - other classes can check by getting the value and checking if null
+        amount = 0; //If either set fails - other classes can check by getting the value and checking if null
         time = null;
 
         setAmount(inAmount); //Setters validate the input
@@ -42,15 +44,12 @@ public class Bag {
      * @return True if the input data is valid, otherwise false.
      * @throws IndexOutOfBoundsException if the bag input is invalid
      */
-    public boolean setAmount(String amountInput) throws IndexOutOfBoundsException
+    public boolean setAmount(int amountInput) throws IndexOutOfBoundsException
     {
 
         boolean dataValidation;
-        int iAmount;
 
-        iAmount = Integer.parseInt(amountInput);
-
-        if(iAmount < 0 || iAmount > 500)
+        if(amountInput < 0 || amountInput > 500) //500 is arbitrary limit for now - change when full range of bag sizes known
         {
             dataValidation = false;
         }
@@ -67,27 +66,28 @@ public class Bag {
      * @return True if the input data is valid, otherwise false.
      * @throws IndexOutOfBoundsException if the time input is invalid
      */
-    public boolean setTime(Date timeInput)
+    public boolean setTime(String timeInput)
     {
         boolean dataValidation;
-        int iDay,iYear,iMonth;
+        int iHour, iMin, iDay,iYear,iMonth;
 
-        DateFormat df = new SimpleDateFormat("dd/MM/yy"); //Need to format the Date object to the correct string style we need
-        String date = df.format(timeInput);
+        //assuming the time string will be entered as HH-mm-DD-MM-YY (mm is minutes)
+        String[] timeArray = timeInput.split("-");
 
-        //assuming the time string will be entered as xx/xx/xx
-        String[] timeArray = date.split("/");
+        String hour = timeArray[0];
+        String min = timeArray[1];
+        String day = timeArray[2];
+        String month = timeArray[3];
+        String year = timeArray[4];
 
-        String day = timeArray[0];
-        String month = timeArray[1];
-        String year = timeArray[2];
-
+        iHour = Integer.parseInt(hour);
+        iMin = Integer.parseInt(min);
         iDay = Integer.parseInt(day);
         iMonth = Integer.parseInt(month);
         iYear = Integer.parseInt(year);
 
 
-        if((iDay >= 0 && iDay <= 31) && (iMonth >= 0 && iMonth <= 12) && (iYear >= 2018))
+        if((iHour >= 0 && iHour < 23) && (iMin >= 0 && iMin < 60) &&(iDay >= 0 && iDay <= 31) && (iMonth >= 0 && iMonth < 12) && (iYear >= 2018))
         {
             dataValidation = true;
             time = timeInput;
@@ -101,12 +101,12 @@ public class Bag {
 
     }
 
-    public String getAmount()
+    public int getAmount()
     {
         return amount;
     }
 
-    public Date getTime()
+    public String getTime()
     {
         return time;
     }
