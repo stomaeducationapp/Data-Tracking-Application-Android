@@ -11,6 +11,19 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/bagListAmount"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/mi_bag_list_amount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bagListConsis"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/bagListConsis"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -26,19 +39,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/bagListAmount"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="@string/mi_bag_list_amount"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bagListConsis"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

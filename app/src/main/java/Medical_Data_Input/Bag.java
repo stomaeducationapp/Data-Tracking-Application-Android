@@ -18,22 +18,28 @@ import java.util.*;
  * Updated class to have specific constructor and fixed setTime - Jeremy Dunnet
  * 6th February
  * Updated class to use more appropriate variable types for its field - Jeremy Dunnet
+ * <p>
+ * 8th February
+ * Updated class methods after MedicalInput was changed - Jeremy Dunnet
  */
 
 
 public class Bag {
 
     private int amount;
+    private String consistency;
     private String time;
 
 
-    public Bag(int inAmount, String inTime)
+    public Bag(int inAmount, String inConsis, String inTime)
     {
 
         amount = 0; //If either set fails - other classes can check by getting the value and checking if null
+        consistency = null;
         time = null;
 
         setAmount(inAmount); //Setters validate the input
+        setConsistency(inConsis);
         setTime(inTime);
 
     }
@@ -61,6 +67,27 @@ public class Bag {
         return dataValidation;
     }
 
+    public boolean setConsistency(String inConsis)
+    {
+        boolean dataValidation = false;
+
+        String[] consis = {"Watery", "Thick", "Toothpaste-like"};
+
+        for(int ii = 0 ; ii < consis.length; ii++)
+        {
+            if (inConsis.equals(consis[ii])) {
+                dataValidation = true;
+            }
+        }
+
+        if(dataValidation == true)
+        {
+            consistency = inConsis;
+        }
+
+        return dataValidation;
+    }
+
     /**
      * @param timeInput Represents the time which the bag was updated
      * @return True if the input data is valid, otherwise false.
@@ -71,7 +98,7 @@ public class Bag {
         boolean dataValidation;
         int iHour, iMin, iDay,iYear,iMonth;
 
-        //assuming the time string will be entered as HH-mm-DD-MM-YY (mm is minutes)
+        //assuming the time string will be entered as HH-mm-DD-MM-YYYY (mm is minutes)
         String[] timeArray = timeInput.split("-");
 
         String hour = timeArray[0];
@@ -104,6 +131,11 @@ public class Bag {
     public int getAmount()
     {
         return amount;
+    }
+
+    public String getConsistency()
+    {
+        return consistency;
     }
 
     public String getTime()

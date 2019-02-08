@@ -42,4 +42,5 @@
     <string name="mi_bag_frag_consis_option_3">Toothpaste-like</string>
     <string name="mi_bag_frag_time_text">Time of emptying:</string>
     <string name="mi_bag_frag_submit_butt">Add bag</string>
+    <string name="mi_bag_frag_cancel_butt">Cancel</string>
 </resources>

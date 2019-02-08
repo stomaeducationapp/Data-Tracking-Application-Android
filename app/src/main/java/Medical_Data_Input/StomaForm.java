@@ -14,6 +14,9 @@ import java.util.*;
  * <p>
  * 6th February
  * Updated class to contain objects with validation - Jeremy Dunnet
+ * <p>
+ * 8th February
+ * Updated class methods after MedicalInput was changed - Jeremy Dunnet
  */
 
 public class StomaForm {
@@ -22,7 +25,7 @@ public class StomaForm {
     private Dehydration dehydration;
     private Urine urine;
     private String wellbeing;
-    private Date entryTime; // need to set DateTime java class
+    private String entryTime; // need to set DateTime java class
     //private Object location; //This class field may not be needed for the final demo, but can be implemented in the future
 
     public StomaForm()
@@ -53,22 +56,11 @@ public class StomaForm {
 
     /**
      * @param newBag Represents bag which will be added to the list of Bags
-     * @return True if Bag is valid and added, or false if otherwise
      * @throws NullPointerException if the bag number is null
      */
-    public boolean addBag(Bag newBag)
+    public void addBag(Bag newBag)
     {
-
-        boolean checkBag = false;
-
-        if((newBag.getAmount() > 0) && (newBag.getTime() != null)) // A valid bag has information tied to it
-        {
-            checkBag = true;
-            bags.add(newBag);
-        }
-
-        return checkBag;
-
+        bags.add(newBag);
     }
 
 
@@ -82,40 +74,25 @@ public class StomaForm {
     }
 
     /**
-     * @param u Represents the urine object we are validating to add to the form
-     * @return True if Urine is valid and added, or false if otherwise
+     * @param inAmount Represents the urine amount we are adding to the form
+     * @param inColour Represents the urine amount we are adding to the form
      * @throws NullPointerException if any of the imported values are null
      */
-    public boolean addUrine(Urine u)
+    public void setUrine(int inAmount, String inColour)
     {
-        boolean checkUrine = false;
 
-        if((u.getAmount() >= 0) && (u.getColour() != null))
-        {
-            checkUrine = true;
-            urine = u;
-        }
+        urine = new Urine(inAmount, inColour);
 
-        return checkUrine;
     }
 
     /**
-     * @param inDehydration Represents a new dehydration value which needs to be set
-     * @return True if dehydration is valid and added, or false if otherwise
+     * @param inSymptoms Represents a new dehydration value which needs to be set
      * @throws NullPointerException if inDehydration is null
      */
 
-    public boolean setDehydration(Dehydration inDehydration) throws NullPointerException
+    public void setDehydration(String[] inSymptoms) throws NullPointerException
     {
-        boolean checkDehydration = false;
-
-        if(inDehydration.getSymptoms() != null)
-        {
-            checkDehydration = true;
-            dehydration = inDehydration;
-        }
-
-        return checkDehydration;
+        dehydration = new Dehydration(inSymptoms);
     }
 
     public Dehydration getDehydration()
@@ -124,21 +101,14 @@ public class StomaForm {
     }
 
     /**
-     * @param inWellbeing Represents a String whcih describes the user's well being(good/bad)
-     * @return True if well being is valid, and false if otherwise
-     * @throws NullPointerException if inDehydration is null
+     * @param inWellbeing Represents a String which describes the user's well being(good/bad)
+     * @throws NullPointerException if inWellbeing is null
      */
-    public boolean setWellbeing(String inWellbeing)
+    public void setWellbeing(String inWellbeing)
     {
-        boolean checkWellbeing = false;
 
-        if((wellbeing != null) && (!wellbeing.equals("")))
-        {
-            wellbeing = inWellbeing;
-            checkWellbeing = true;
-        }
+        wellbeing = inWellbeing;
 
-        return checkWellbeing;
     }
 
     public String getWellbeing()
@@ -147,24 +117,15 @@ public class StomaForm {
     }
 
     /**
-     * @param inTime Represents a Date object of the time the entry was given(java object)
-     * @return True if well being is valid, and false if otherwise
-     * @throws NullPointerException if inDehydration is null
+     * @param inTime Represents the time the entry was given
+     * @throws NullPointerException if inTime is null
      */
-    public boolean setTime(Date inTime)
+    public void setTime(String inTime)
     {
-        boolean checkTime = false;
-
-        if(inTime != null)
-        {
-            entryTime = inTime;
-            checkTime = true;
-        }
-
-        return checkTime;
+        entryTime = inTime;
     }
 
-    public Date getTime()
+    public String getTime()
     {
         return entryTime;
     }

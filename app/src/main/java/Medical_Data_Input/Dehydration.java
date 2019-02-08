@@ -12,6 +12,9 @@ package Medical_Data_Input;
  * <p>
  * 5th February
  * Updated class to have specific constructor and fixed setSymptoms - Jeremy Dunnet
+ * <p>
+ * 8th February
+ * Updated class methods after MedicalInput was changed - Jeremy Dunnet
  */
 
 public class Dehydration {
@@ -34,14 +37,25 @@ public class Dehydration {
     {
 
         boolean dataValidation;
-        dataValidation = true;
+        dataValidation = false;
 
-        for(String value : symptomsInput)
+        String[] s = {"Thirsty","Headache", "Light Headed", "Stomach Cramps", "Muscle Cramps", "Fatigue", "Dry Mouth", "Confusion", "Tiredness"};
+
+        if(symptomsInput.length > 0) //If symtpoms were recorded - 0 is a valid answer
         {
-            if(value == null)
+            for(String sympt : symptomsInput)
             {
-                dataValidation = false;
+                for(int ii = 0 ; ii < s.length; ii++)
+                {
+                    if (sympt.equals(s[ii])) {
+                        dataValidation = true;
+                    }
+                }
             }
+        }
+        else if (symptomsInput.length == 0)
+        {
+            dataValidation = true;
         }
 
         if(dataValidation == true)

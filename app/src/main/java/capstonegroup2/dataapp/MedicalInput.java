@@ -1,62 +1,59 @@
 package capstonegroup2.dataapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 import Factory.Factory;
+import Medical_Data_Input.Bag;
+import Medical_Data_Input.BagAdapter;
+import Medical_Data_Input.BagFragment;
 import Medical_Data_Input.StomaForm;
 import Observers.State_Observer;
 
-public class MedicalInput extends Activity{
-
+public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInterface, BagFragment.BagAddedListener
+{
 
     private Factory factory;
     private StomaForm stomaForm;
     private State_Observer state_observer;
 
-    //Buttons which indicate the colour of Urine input
-    private Button light_butt;
-    private Button medium_butt;
-    private Button dark_butt;
-    private int urine_value;
+    private RecyclerView recyclerView;
+    private ScrollView scrollLayout;
+    private ConstraintLayout fragLayout;
+    private ArrayList<Bag> bagList;
+    private BagAdapter bAdapter;
 
-    //Button for creating a new bag input
-    private Button new_bag;
-
-    //Check Boxes for the user's symptoms of dehydration
-    private CheckBox thirsty, headache, light_headed, stomach_cramps, muscle_cramps, fatigue, dry_mouth, confusion, tiredness;
-
-    //Contains all the check boxes
-    private LinearLayout check_group;
-
-    //Wellbeing
-    private RadioButton good_butt, okay_butt, bad_butt;
-
-    //NEW BAG BUTTON WHICH NAVIGATES TO THE BAG FRAGMENT
-    private Button bagButton;
-
-    //SUBMIT BUTTONS
-    private Button main_submit;
-    private Button bag_submit;
-
-    //NUMBER OF TIMES URINATED ON AVERAGE
-    private EditText urine_number;
-
-    private RadioButton watery_butt;
-    private RadioButton thick_butt;
-    private RadioButton toothpaste_butt;
+    private String uColourVal;
+    private String wellBVal;
 
     //TODO CHECK ALL BUTTON ALLOCATIONS AND MAKE SURE SUBMIT COLLECTS ALL INFO
     //TODO ADD BUNDLE EXTRACTION OF MEDICAL FILE FOR USE IN SAVING DATA
@@ -72,336 +69,274 @@ public class MedicalInput extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.medical_input);
 
-        //Urine Input
-        light_butt = findViewById(R.id.Light);
-        medium_butt = findViewById(R.id.Medium);
-        dark_butt = findViewById(R.id.Dark);
+        recyclerView = findViewById(R.id.bagList);
+        scrollLayout = findViewById(R.id.medScroll);
+        fragLayout = findViewById(R.id.bagFraglayout);
 
-        //Button pressed when entering a new bag
-        bagButton = findViewById(R.id.bag_fragment);
+        bagList = new ArrayList<Bag>();
+        stomaForm = new StomaForm(); //TODO CHANGE TO FACTORY CALL
 
-        //Contains all symptoms
-        check_group = findViewById(R.id.check_group);
+        uColourVal = null; //Allow us to check they were selected when submission comes
+        wellBVal = null;
 
-        //Symptoms of dehydration
-        thirsty = findViewById(R.id.Thirsty);
-        headache = findViewById(R.id.Headache);
-        light_headed = findViewById(R.id.Light_headed);
-        stomach_cramps = findViewById(R.id.stomach_cramps);
-        muscle_cramps = findViewById(R.id.Muscle_cramps);
-        fatigue = findViewById(R.id.Fatigue);
-        dry_mouth = findViewById(R.id.dry_mouth);
-        confusion = findViewById(R.id.Confusion);
-        tiredness = findViewById(R.id.Tiredness);
-
-        //Well being weightings
-        good_butt = findViewById(R.id.Good);
-        okay_butt= findViewById(R.id.Okay);
-        bad_butt = findViewById(R.id.Bad);
-
-        //SUBMIT BUTTON FOR MAIN MEDICAL INPUT PAGE
-        main_submit= findViewById(R.id.submit_main);
-        bag_submit = findViewById(R.id.submit_bag);
-
-        //URINE INPUT BY USER
-        urine_number = findViewById(R.id.urine_input);
-
-        watery_butt = findViewById(R.id.watery);
-        thick_butt = findViewById(R.id.thick_liquid);
-        toothpaste_butt = findViewById(R.id.toothpaste);
-
-
-        /* TODO REWORK SO RECYLERVIEW WORKS IN THIS ACTIVITY
-
-            //Set up recycler view
-        fAdapter = new FineAdapter(fineList, this);
+        //Set up recycler view
+        bAdapter = new BagAdapter(bagList, this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(fAdapter);
-
-         */
-
+        recyclerView.setAdapter(bAdapter);
 
     }
 
-    //ALL CHECKED VALUES ARE ADDED TO THE VALUES ARRAY AND SENT TO BE SAVED
-    //IF A VALUE IS NOT CHECKED IT WILL NOT BE ADDED
-    public void checkBoxes(View view)
+    /* FUNCTION INFORMATION
+     * NAME - addBag
+     * INPUTS - view
+     * OUTPUTS - none
+     * PURPOSE - This is the function that calls up the fragment to add a new bag the user has emptied
+     */
+    public void addBag(View view)
     {
-        Button submit = findViewById(R.id.submit_main);
-        submit.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
 
-                //SYMPTOMS RESULTS NEED TO BE ADDED INTO AN ARRAY "RESULT"
-                String result = "";
-                if(thirsty.isChecked()){
-                    result += "Thirsty";
-                }
-                if(headache.isChecked()){
-                    result += "Headache";
-                }
-                if(light_headed.isChecked()){
-                    result += "Light Headed";
-                }
-                if(stomach_cramps.isChecked()){
-                    result += "Stomach Cramps";
-                }
-                if(muscle_cramps.isChecked()){
-                    result += "Muscle Cramps";
-                }
-                if(fatigue.isChecked()){
-                    result += "Fatigue";
-                }
-                if(dry_mouth.isChecked()){
-                    result += "Dry Mouth";
-                }
-                if(confusion.isChecked()){
-                    result += "Confusion";
-                }
-                if(tiredness.isChecked()){
-                    result += "Tiredness";
-                }
+        BagFragment fragment = BagFragment.newInstance(bagList, bAdapter); //Create a fragment to display the challenge
+        scrollLayout.setVisibility(View.INVISIBLE);
+        fragLayout.setVisibility(View.VISIBLE); //Make sure layouts are the right way
 
-                //Call fillForm for adding colour of urine
-                //Select one of the buttons to fill urine colour
-                //Light button can be set to 1, 2, 3
-                /*light_butt.setOnClickListener(new View.OnClickListener()
+        //Could move to Form_Change if desired but since this is a container within an activity - not seen to be needed
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.bagFraglayout, fragment);
+        fragmentTransaction.addToBackStack("bag_fragment"); //Display the fragment
+        fragmentTransaction.commit();
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - checkBoxClicked
+     * INPUTS - none
+     * OUTPUTS - none
+     * PURPOSE - This is the function that records which check boxes are clicked to store that data for submission
+     */
+    public String[] checkBoxClicked()
+    {
+        //Grab all the checkboxes and store the results
+        CheckBox thirsty = findViewById(R.id.dehyOptSeven);
+        CheckBox headache = findViewById(R.id.dehyOptNine);
+        CheckBox stomach_cramps = findViewById(R.id.dehyOptFour);
+        CheckBox light_headed = findViewById(R.id.dehyOptEight);
+        CheckBox muscle_cramps = findViewById(R.id.dehyOptFive);
+        CheckBox fatigue = findViewById(R.id.dehyOptSix);
+        CheckBox dry_mouth = findViewById(R.id.dehyOptOne);
+        CheckBox confusion = findViewById(R.id.dehyOptTwo);
+        CheckBox tiredness = findViewById(R.id.dehyOptThree);
+
+        //SYMPTOMS RESULTS NEED TO BE ADDED INTO AN ARRAY "RESULT"
+        ArrayList<String> result = new ArrayList<String>();
+        if(thirsty.isChecked()){
+            result.add("Thirsty");
+        }
+        if(headache.isChecked()){
+            result.add("Headache");
+        }
+        if(light_headed.isChecked()){
+            result.add("Light Headed");
+        }
+        if(stomach_cramps.isChecked()){
+            result.add("Stomach Cramps");
+        }
+        if(muscle_cramps.isChecked()){
+            result.add("Muscle Cramps");
+        }
+        if(fatigue.isChecked()){
+            result.add("Fatigue");
+        }
+        if(dry_mouth.isChecked()){
+            result.add("Dry Mouth");
+        }
+        if(confusion.isChecked()){
+            result.add("Confusion");
+        }
+        if(tiredness.isChecked()){
+            result.add("Tiredness");
+        }
+
+        return result.toArray(new String[result.size()]);
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - radioButtClicked
+     * INPUTS - view (RadioButton that was clicked)
+     * OUTPUTS - none
+     * PURPOSE - This is the function that records which radiobutton is clicked to store that data for submission
+     */
+    public void radioButtClicked (View view){
+        boolean checked = ((RadioButton) view).isChecked(); //Find out if the button was checked
+
+        // Check which radio button was clicked
+        switch (view.getId())
+        {
+            case R.id.urineOptOne:
+                if (checked)
                 {
-                    @Override
-                    public void onClick(View v){
-                        stomaForm.addUrine(urine_value = 1);
-                    }
-                });
-
-                //User selects the medium button
-                medium_butt.setOnClickListener(new View.OnClickListener()
+                    uColourVal = (String) (((RadioButton) view).getText()); //Set the value to the text of the button
+                }
+                break;
+            case R.id.urineOptTwo:
+                if (checked)
                 {
-                    @Override
-                    public void onClick(View v){
-                        stomaForm.addUrine(urine_value = 2);
-                    }
-                });
-
-                //User selects the dark button
-                dark_butt.setOnClickListener(new View.OnClickListener()
+                    uColourVal = (String) (((RadioButton) view).getText()); //Set the value to the text of the button
+                }
+                break;
+            case R.id.urineOptThree:
+                if (checked)
                 {
-                    @Override
-                    public void onClick(View v){
-                        stomaForm.addUrine(urine_value = 3);
-                    }
-                });
-
-                //This loads the bag page where the user can enter their bag details
-                //the loadBagFragment method is called when clicking on the bag button
-                //In the loadBagFragment method, the fragment xml is called and overwrites the current page
-                bagButton.setOnClickListener(new View.OnClickListener()
+                    uColourVal = (String) (((RadioButton) view).getText()); //Set the value to the text of the button
+                }
+                break;
+            case R.id.wellBOptOne:
+                if (checked)
                 {
-                    @Override
-                    public void onClick(View v){
-                        loadBagFragment(new BagFragment());
-                    }
-                });
-
-                //TIMES URINATED ON AVERAGE ENTERED BY THE USER
-                String times_urinated = urine_number.getText().toString();
-                stomaForm.addTimesUrinated(times_urinated);*/
-
-                //WELLBEING RADIO BUTTONS
-                good_butt.setOnClickListener(new View.OnClickListener()
+                    wellBVal = (String) (((RadioButton) view).getText()); //Set the value to the text of the button
+                }
+                break;
+            case R.id.wellBOptTwo:
+                if (checked)
                 {
-                    @Override
-                    public void onClick(View v){
-                        String good_value = good_butt.getText().toString();
-                        stomaForm.setWellbeing(good_value);
-                    }
-                });
-
-                //WELLBEING RADIO BUTTONS
-                okay_butt.setOnClickListener(new View.OnClickListener()
+                    wellBVal = (String) (((RadioButton) view).getText()); //Set the value to the text of the button
+                }
+                break;
+            case R.id.wellBOptThree:
+                if (checked)
                 {
-                    @Override
-                    public void onClick(View v){
-                        String okay_value = okay_butt.getText().toString();
-                        stomaForm.setWellbeing(okay_value);
-                    }
-                });
+                    wellBVal = (String) (((RadioButton) view).getText()); //Set the value to the text of the button
+                }
+                break;
+            default:
+                break;
 
-                //WELLBEING RADIO BUTTONS
-                bad_butt.setOnClickListener(new View.OnClickListener()
-                {
-                    @Override
-                    public void onClick(View v){
-                        String bad_value = bad_butt.getText().toString();
-                        stomaForm.setWellbeing(bad_value);
-                    }
-                });
+        }
+    }
 
+    public void submitForm(View view)
+    {
+        boolean created = false;
+        EditText urineInput = (EditText) findViewById(R.id.urine_input);
+
+        //Get all the values that the user may have set
+        String[] dehySympt = checkBoxClicked();
+        String urineAmount = (urineInput.getText()).toString();
+
+        //Do a rolling check for empty for values set
+        if(urineInput.equals(""))
+        {
+            urineInput.requestFocus();
+            urineInput.setError("Please provide an average urine output");
+        }
+        else
+        {
+            if(uColourVal == null)
+            {
+                TextView uColText = findViewById(R.id.urineColourText);
+
+                uColText.requestFocus();
+                uColText.setError("Please provide an average urine colour");
             }
-        });
+            else
+            {
+                if(wellBVal == null)
+                {
+                    TextView wellBText = findViewById(R.id.wellBText);
 
+                    wellBText.requestFocus();
+                    wellBText.setError("Please provide an average welllbeing value");
+                }
+                else
+                {
+                    if(bagList.size() == 0) //MAY WANT TO REMOVE IF NOT NECESSARY TO EMPTY A BAG PER INPUT
+                    {
+                        TextView bagText = findViewById(R.id.bagTitle);
 
+                        bagText.requestFocus();
+                        bagText.setError("Please provide a bag that has been emptied");
+                    }
+                    else
+                    {
+                            created = true;
+                    }
+                }
+            }
+        }
+
+        if(created == true)
+        {
+            //TODO ADD VALIDATION HERE BEFORE ADDING ANYTHING TO STOMAFORM
+
+            //TODO DELETE WHEN UNIT TESTED
+            // Creating alert Dialog with one Button
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(MedicalInput.this);
+
+            // Setting Dialog Title
+            alertDialog.setTitle("Submission results");
+
+            // Setting Dialog Message
+            alertDialog.setMessage("Result are:" + urineAmount + uColourVal + wellBVal + getCurrentDate() + dehySympt.length + bagList.size());
+
+            // Setting the finished button
+            alertDialog.setNegativeButton("OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            finish();
+                        }
+                    });
+
+            // Showing Alert Message
+            alertDialog.show();
+
+            /*stomaForm.setUrine(Integer.parseInt(urineAmount), uColourVal);
+            stomaForm.setDehydration(dehySympt);
+            stomaForm.setTime(getCurrentDate());
+            stomaForm.setWellbeing(wellBVal);
+            for(int ii = 0; ii < bagList.size(); ii++)
+            {
+                stomaForm.addBag(bagList.get(ii));
+            }*/
+
+            //Call stomastatecalculator and write to file
+        }
+
+    }
+
+    /* FUNCTION INFORMATION
+     * NAME - hideFragment
+     * INPUTS - none
+     * OUTPUTS - none
+     * PURPOSE - This is the function that hides the fragmentArea so the rest of the activity is still visible
+     */
+    @Override
+    public void hideFragment()
+    {
+        fragLayout.setVisibility(View.INVISIBLE);
+        scrollLayout.setVisibility(View.VISIBLE);
     }
 
     //This nested class is used for fragments. It is inside since it is used inside this activity
     //This class is called when needing to inflate the page for viewing
     //This is tied to a button which when selected opens the fragment
-    public static class BagFragment extends Fragment {
-
-        //VOLUME INSIDE OF BAG
-        private EditText bag_amount;
-        private StomaForm stomaForm;
-        //BAG FRAGMENT: CONSISTENCY
-        private Button submit_bag;
 
 
-
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.bag_fragment, container, false);
-
-            //TODO SET THE INITIAL TIME AND DATE OF THE TWO SPINNERS TO CURRENT TIME
-            //USE https://www.tutorialspoint.com/android/android_timepicker_control.htm and https://developer.android.com/guide/topics/ui/controls/pickers
-
-        }
-
-    }
-
-    /* TODO REWITE FOR HOLDING A BAG ENTRY TO DISPLAY BACK TO USER
-    private class FineAdapter extends RecyclerView.Adapter<FineAdapter.MyViewHolder> {
-
-
-        private List<Fine> finesList;
-        private ItemDeleteInterface itemDeleteInterface;
-
-        public FineAdapter(List<Fine> finesList, ItemDeleteInterface mainActivity)
-        {
-
-            this.finesList = finesList;
-            this.itemDeleteInterface = mainActivity; //Attach interface implementation
-        }
-
-        public class MyViewHolder extends RecyclerView.ViewHolder
-        {
-            public TextView name, amount;
-            public Button fineButt;
-            public ImageButton deleteButt;
-            public RelativeLayout fineLayout;
-
-            public MyViewHolder(View view) {
-                super(view);
-                name = (TextView) view.findViewById(R.id.fineName); //Find all the layout objects in the fine row
-                amount = (TextView) view.findViewById(R.id.amount);
-                fineButt = (Button) view.findViewById(R.id.fine_button);
-                deleteButt = (ImageButton) view.findViewById(R.id.delete_entry_button);
-                fineLayout = (RelativeLayout) view.findViewById(R.id.fineRow);
-            }
-        }
-
-        @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.fine_list_row, parent, false);
-
-            return new MyViewHolder(itemView);
-        }
-
-        @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
-            final int pos = position;
-            Fine fine = finesList.get(pos); //Get the fine object and assign all the values to the layout objects
-            holder.name.setText(fine.getName());
-            if(fine.getAmount().equals("DOUBLE MAX"))
-            {
-                holder.amount.setText(fine.getAmount());
-
-                holder.fineLayout.setClickable(false);
-
-                holder.fineButt.setOnClickListener(null);
-                holder.fineButt.setClickable(false); //Disable fine button as hit the cap
-            }
-            else
-            {
-                holder.amount.setText(fine.getAmount());
-                holder.fineButt.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Fine finee = finesList.get(pos); //Click listener for adding a fine increment
-                        finee.fine();
-                        finesList.set(pos, finee);
-                        notifyItemChanged(pos);
-                    }
-                });
-            }
-            holder.deleteButt.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    itemDeleteInterface.deleteRecyclerItem(pos); //Set up listener for deleting the item
-                }
-            });
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return finesList.size();
-        }
-
-        /* FUNCTION INFORMATION
-         * NAME - removeAt
-         * INPUTS - position (position of the element to be deleted)
-         * OUTPUTS - none
-         * PURPOSE - This is the function that facilitates removal of a member from the list
-         *
-        public void removeAt(int position) {
-            finesList.remove(position);
-            notifyItemRemoved(position);
-            notifyItemRangeChanged(position, finesList.size()); //Need to tell adapter to reorganise list order (in case element had elements after it)
-        }
-
-        /* AUTHOR INFORMATION
-         * CREATOR - Jeremy Dunnet ??/??/2018 (Project went on hiatus early 2018 so no concrete date on when I first designed each class)
-         * LAST MODIFIED BY - Jeremy Dunnet 30/01/2019 (when comment sweep was done)
-         */
-
-        /* CLASS/FILE DESCRIPTION
-         * This is the recyclerview interface for the ability to remove an item from the adapter and list
-         */
-
-        /* VERSION HISTORY
-         * 30/01/2019 - Created comment log block and swept through and updated comments/references
-         */
-
-        /* REFERENCES
-         * RecyclerView Item Removal/Addition Interface learned from https://stackoverflow.com/questions/26076965/android-recyclerview-addition-removal-of-items
-         * Developer tutorials from https://developer.android.com/
-         *
-        public interface ItemDeleteInterface
-        {
-            void deleteRecyclerItem(int pos);
-        }
-
-    }*/
-
-
-    /* TODO REWRITE DELETERECYLERITEM TO MAKE SURE WORKS WITH REMOVING A BAG
-       TODO REWRITE GETCURRENTDATE FOR USE IN RECORDING ENTRY TIME
-       /* FUNCTION INFORMATION
+     /* FUNCTION INFORMATION
      * NAME - deleteRecyclerItem
      * INPUTS - pos (position of the element to be deleted)
      * OUTPUTS - none
      * PURPOSE - This is the function that facilitates removal of a member from the list
      * NOTE - This is an override of the FineAdapter Interface to allow connection between activity and list
-     *
+     */
     @Override
     public void deleteRecyclerItem(final int pos)
     {
         // Creating alert Dialog with two buttons
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MedicalInput.this);
 
         // Setting Dialog Title
         alertDialog.setTitle("Delete entry");
@@ -413,7 +348,7 @@ public class MedicalInput extends Activity{
         alertDialog.setPositiveButton("I'm sure",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        fAdapter.removeAt(pos);
+                        bAdapter.removeAt(pos);
                     }
                 }); //Call the adapter to delete at that position
         // Setting Negative "NO" Button
@@ -428,11 +363,12 @@ public class MedicalInput extends Activity{
         alertDialog.show();
     }
 
-    /* FUNCTION INFORMATION
+     /* FUNCTION INFORMATION
      * NAME - getCurrentDate
      * INPUTS - none
      * OUTPUTS - date (A string representing today's date
      * PURPOSE - This is the function that returns a string detailing today's date for use in file recording
+     */
 
     private String getCurrentDate()
     {
@@ -444,35 +380,6 @@ public class MedicalInput extends Activity{
 
         return date;
     }
-     */
 
-        private void loadBagFragment(Fragment fragment) {
-        // create a FragmentManager
-            FragmentManager fm = getFragmentManager();
-        // create a FragmentTransaction to begin the transaction and replace the Fragment
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        // replace the FrameLayout with new Fragment
-            fragmentTransaction.replace(R.id.bag_fragment, fragment);
-            fragmentTransaction.commit(); // save the changes
-
-            Button submit_bag = findViewById(R.id.submit_bag);
-            submit_bag.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    //SYMPTOMS RESULTS NEED TO BE ADDED INTO AN ARRAY "RESULT"
-                    String consistency = "";
-                    if (watery_butt.isChecked()) {
-                        consistency = "Watery";
-                    }
-                    if (thick_butt.isChecked()) {
-                        consistency = "Thick";
-                    }
-                    if (toothpaste_butt.isChecked()) {
-                        consistency = "Toothpaste";
-                    }
-                }
-            });
-        }
 
 }
