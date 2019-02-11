@@ -34,6 +34,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/mi_bag_title"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -140,6 +142,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/mi_urine_colour_text"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/urine_input" />
 
@@ -325,6 +329,8 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/mi_wellB_text"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/wellBTitle" />
 

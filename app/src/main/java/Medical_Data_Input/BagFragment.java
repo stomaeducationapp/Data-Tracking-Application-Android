@@ -78,6 +78,7 @@ public class BagFragment extends Fragment {
         //Now chuck in all the required information the fragment will need
         args.putSerializable(ARG_BAGS, bList);
         args.putSerializable(ARG_ADPT, bAdapter);
+        //TODO ADD A VALIDATOR HERE
 
         fragment.setArguments(args);
         return fragment;
@@ -217,6 +218,8 @@ public class BagFragment extends Fragment {
                 int month = datePick.getMonth();
                 int year = datePick.getYear();
 
+                //TODO DO VALIDATION CHECKS HERE
+
                 //Do a rolling check for all values set
                 if(bagAmount.equals(""))
                 {
@@ -254,13 +257,13 @@ public class BagFragment extends Fragment {
 
                                 bags.add(b);
                                 bagAdapter.notifyItemInserted(bags.size());
+
+                                cancelButt.callOnClick(); //Close window - allows user to see list updated with new bag before adding another one (if they need to)
                             }
                         }
 
                     }
                 }
-
-                cancelButt.callOnClick(); //Close window - allows user to see list updated with new bag before adding another one (if they need to)
             }
         });
 

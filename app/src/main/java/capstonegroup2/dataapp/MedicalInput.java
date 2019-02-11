@@ -97,7 +97,7 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
     public void addBag(View view)
     {
 
-        BagFragment fragment = BagFragment.newInstance(bagList, bAdapter); //Create a fragment to display the challenge
+        BagFragment fragment = BagFragment.newInstance(bagList, bAdapter /*TODO ADD VALIDATOR*/); //Create a fragment to display the challenge
         scrollLayout.setVisibility(View.INVISIBLE);
         fragLayout.setVisibility(View.VISIBLE); //Make sure layouts are the right way
 
@@ -227,37 +227,40 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
         String urineAmount = (urineInput.getText()).toString();
 
         //Do a rolling check for empty for values set
-        if(urineInput.equals(""))
+
+        if(bagList.size() == 0) //MAY WANT TO REMOVE IF NOT NECESSARY TO EMPTY A BAG PER INPUT
         {
-            urineInput.requestFocus();
-            urineInput.setError("Please provide an average urine output");
+            TextView bagText = findViewById(R.id.bagTitle);
+
+            bagText.requestFocus();
+            bagText.setError("Please provide a bag that has been emptied");
         }
         else
         {
-            if(uColourVal == null)
-            {
-                TextView uColText = findViewById(R.id.urineColourText);
 
-                uColText.requestFocus();
-                uColText.setError("Please provide an average urine colour");
+            if(urineAmount.equals(""))
+            {
+                urineInput.requestFocus();
+                urineInput.setError("Please provide an average urine output");
             }
             else
             {
-                if(wellBVal == null)
-                {
-                    TextView wellBText = findViewById(R.id.wellBText);
 
-                    wellBText.requestFocus();
-                    wellBText.setError("Please provide an average welllbeing value");
+                if(uColourVal == null)
+                {
+                    TextView uColText = findViewById(R.id.urineColourText);
+
+                    uColText.requestFocus();
+                    uColText.setError("Please provide an average urine colour");
                 }
                 else
                 {
-                    if(bagList.size() == 0) //MAY WANT TO REMOVE IF NOT NECESSARY TO EMPTY A BAG PER INPUT
+                    if(wellBVal == null)
                     {
-                        TextView bagText = findViewById(R.id.bagTitle);
+                        TextView wellBText = findViewById(R.id.wellBText);
 
-                        bagText.requestFocus();
-                        bagText.setError("Please provide a bag that has been emptied");
+                        wellBText.requestFocus(); //TODO POSSIBLE FIX TO REMOVE ERROR TEXT
+                        wellBText.setError("Please provide an average welllbeing value");
                     }
                     else
                     {
