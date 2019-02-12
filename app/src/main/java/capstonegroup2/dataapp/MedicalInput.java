@@ -260,7 +260,7 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
                         TextView wellBText = findViewById(R.id.wellBText);
 
                         wellBText.requestFocus(); //TODO POSSIBLE FIX TO REMOVE ERROR TEXT
-                        wellBText.setError("Please provide an average welllbeing value");
+                        wellBText.setError("Please provide an average wellbeing value");
                     }
                     else
                     {

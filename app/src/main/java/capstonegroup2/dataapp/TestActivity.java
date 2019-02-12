@@ -29,7 +29,8 @@ import Observers.Time_Observer;
 
 /* VERSION HISTORY
  * 17/12/2018 - Created file and added first test code
- * 21/09/2019 - Rewrote to match Daily review test harness
+ * 21/01/2019 - Rewrote to match Daily review test harness
+ * 12/02/2019 - Rewrote to match MedicalInput test harness
  */
 
 /* REFERENCES
@@ -44,12 +45,11 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
         Factory f= Factory.Get_Factory();
-        final Daily_Review d = (Daily_Review) f.Make_Time_Observer(Factory.Time_Observer_Choice.Daily_Review);
         final Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
 
-        File medFile = new File(this.getFilesDir().getPath() + "/accounts/test_review_file.xml");
-        final HashMap<Time_Observer.Files, File> files = new HashMap<Time_Observer.Files, File>();
-        files.put(Time_Observer.Files.Medical, medFile);
+        //File medFile = new File(this.getFilesDir().getPath() + "/accounts/test_review_file.xml"); Use later!!!!!
+        //final HashMap<Time_Observer.Files, File> files = new HashMap<Time_Observer.Files, File>();
+        //files.put(Time_Observer.Files.Medical, medFile);
 
         final Context context = this;
 
@@ -57,7 +57,11 @@ public class TestActivity extends AppCompatActivity {
         testButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                d.Notify(files, context, fc);
+                try {
+                    fc.Change_Form(Form_Change_Observer.Activity_Control.Medical_Data_Input, context);
+                } catch (Invalid_Enum_Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
