@@ -1,11 +1,12 @@
 package Validation;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 4/12/2018
- * LAST MODIFIED BY - Jeremy Dunnet 5/12/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 13/02/2018
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -16,6 +17,7 @@ import java.util.Map;
 /* VERSION HISTORY
  * 4/12/2018 - Created basic code setup from previous iteration by Oliver Yeudall (Combined since splitting into separate classes seemed redundant)
  * 5/12/2018 - Implemented functionality and unit tested
+ * 13/02/2018 - Implemented Serializable to allow Validation to be sent around activity fragments
  */
 
 /* REFERENCES
@@ -24,7 +26,7 @@ import java.util.Map;
  *
  */
 
-public class Validation
+public class Validation implements Serializable
 {
     
     public enum Validate_Result

@@ -28,8 +28,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 import Factory.Factory;
@@ -38,11 +40,15 @@ import Medical_Data_Input.BagAdapter;
 import Medical_Data_Input.BagFragment;
 import Medical_Data_Input.StomaForm;
 import Observers.State_Observer;
+import Observers.Time_Observer;
+import Validation.Validation;
 
 public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInterface, BagFragment.BagAddedListener
 {
 
     private Factory factory;
+    private Validation validator;
+    private File medFile;
     private StomaForm stomaForm;
     private State_Observer state_observer;
 
@@ -73,6 +79,13 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
         scrollLayout = findViewById(R.id.medScroll);
         fragLayout = findViewById(R.id.bagFraglayout);
 
+        factory =  Factory.Get_Factory();
+        validator = factory.Make_Validation();
+
+        Bundle bundle = this.getIntent().getExtras();
+        HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) bundle.getSerializable("fileMap");
+        medFile = files.get(Time_Observer.Files.Medical);
+
         bagList = new ArrayList<Bag>();
         stomaForm = new StomaForm(); //TODO CHANGE TO FACTORY CALL
 
@@ -97,7 +110,7 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
     public void addBag(View view)
     {
 
-        BagFragment fragment = BagFragment.newInstance(bagList, bAdapter /*TODO ADD VALIDATOR*/); //Create a fragment to display the challenge
+        BagFragment fragment = BagFragment.newInstance(bagList, bAdapter, validator); //Create a fragment to display the challenge
         scrollLayout.setVisibility(View.INVISIBLE);
         fragLayout.setVisibility(View.VISIBLE); //Make sure layouts are the right way
 
@@ -246,25 +259,34 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
             else
             {
 
-                if(uColourVal == null)
-                {
-                    TextView uColText = findViewById(R.id.urineColourText);
-
-                    uColText.requestFocus();
-                    uColText.setError("Please provide an average urine colour");
+                Validation.Validate_Result validResult = validator.validateFreeInput(urineAmount, 1, 2, false, false, true, false); //Check the bag amount is is valid
+                if (validResult != Validation.Validate_Result.Pass) {
+                    String err = validator.getValidatorError(validResult); //Get the specific error code
+                    urineInput.requestFocus();
+                    urineInput.setError(err); //Display to the user
                 }
                 else
                 {
-                    if(wellBVal == null)
+                    if(uColourVal == null)
                     {
-                        TextView wellBText = findViewById(R.id.wellBText);
+                        TextView uColText = findViewById(R.id.urineColourText);
 
-                        wellBText.requestFocus(); //TODO POSSIBLE FIX TO REMOVE ERROR TEXT
-                        wellBText.setError("Please provide an average wellbeing value");
+                        uColText.requestFocus();
+                        uColText.setError("Please provide an average urine colour");
                     }
                     else
                     {
+                        if(wellBVal == null)
+                        {
+                            TextView wellBText = findViewById(R.id.wellBText);
+
+                            wellBText.requestFocus(); //TODO POSSIBLE FIX TO REMOVE ERROR TEXT
+                            wellBText.setError("Please provide an average wellbeing value");
+                        }
+                        else
+                        {
                             created = true;
+                        }
                     }
                 }
             }
@@ -272,7 +294,6 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
 
         if(created == true)
         {
-            //TODO ADD VALIDATION HERE BEFORE ADDING ANYTHING TO STOMAFORM
 
             //TODO DELETE WHEN UNIT TESTED
             // Creating alert Dialog with one Button
@@ -305,7 +326,9 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
                 stomaForm.addBag(bagList.get(ii));
             }*/
 
-            //Call stomastatecalculator and write to file
+            //TODO READ STOMATCALCULATOR AND CALL IT HERE
+
+            //TODO FIGURE OUT HOW TO PACKAGE INFO TO BE WRITTEN TO FILE
         }
 
     }

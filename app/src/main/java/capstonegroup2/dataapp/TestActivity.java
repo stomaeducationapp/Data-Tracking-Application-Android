@@ -47,9 +47,12 @@ public class TestActivity extends AppCompatActivity {
         Factory f= Factory.Get_Factory();
         final Form_Change fc = (Form_Change) f.Make_Form_Change_Observer();
 
-        //File medFile = new File(this.getFilesDir().getPath() + "/accounts/test_review_file.xml"); Use later!!!!!
-        //final HashMap<Time_Observer.Files, File> files = new HashMap<Time_Observer.Files, File>();
-        //files.put(Time_Observer.Files.Medical, medFile);
+        File medFile = new File(this.getFilesDir().getPath() + "/accounts/medical_file.xml");
+        final HashMap<Time_Observer.Files, File> files = new HashMap<Time_Observer.Files, File>();
+        files.put(Time_Observer.Files.Medical, medFile);
+
+        final Bundle bundle = new Bundle();
+        bundle.putSerializable("fileMap", files);
 
         final Context context = this;
 
@@ -58,7 +61,7 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    fc.Change_Form(Form_Change_Observer.Activity_Control.Medical_Data_Input, context);
+                    fc.Change_Form_Bundle(Form_Change_Observer.Activity_Control.Medical_Data_Input, context, bundle);
                 } catch (Invalid_Enum_Exception e) {
                     e.printStackTrace();
                 }

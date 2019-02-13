@@ -20,6 +20,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import Validation.Validation;
 import capstonegroup2.dataapp.R;
 
 /* AUTHOR INFORMATION
@@ -33,6 +34,7 @@ import capstonegroup2.dataapp.R;
 
 /* VERSION HISTORY
  * 08/02/2019 - Created class
+ * 11/02/2019 - Updated to fix bugs found in testing
  */
 
 /* REFERENCES
@@ -45,6 +47,7 @@ public class BagFragment extends Fragment {
     private ArrayList<Bag> bags;
     private BagAdapter bagAdapter;
     private BagAddedListener bListener;
+    private Validation validator;
 
     private EditText bagInput;
     private TextView consisText;
@@ -59,6 +62,7 @@ public class BagFragment extends Fragment {
 
     public static final String ARG_BAGS = "BAG_LIST";
     public static final String ARG_ADPT = "BAG_ADAPTER";
+    public static final String ARG_VAL = "VALIDATION";
 
     public BagFragment()
     {
@@ -71,14 +75,14 @@ public class BagFragment extends Fragment {
      * OUTPUTS - Challenge_Fragment (instance of this class)
      * PURPOSE - This is the function that generates a new instance and stores all data we need so that it can be loaded on fragment load
      */
-    public static BagFragment newInstance(ArrayList<Bag> bList, BagAdapter bAdapter) {
+    public static BagFragment newInstance(ArrayList<Bag> bList, BagAdapter bAdapter, Validation validator) {
         BagFragment fragment = new BagFragment();
 
         Bundle args = new Bundle();
         //Now chuck in all the required information the fragment will need
         args.putSerializable(ARG_BAGS, bList);
         args.putSerializable(ARG_ADPT, bAdapter);
-        //TODO ADD A VALIDATOR HERE
+        args.putSerializable(ARG_VAL, validator);
 
         fragment.setArguments(args);
         return fragment;
@@ -97,6 +101,7 @@ public class BagFragment extends Fragment {
         //Grab all needed values
         bags = (ArrayList<Bag>) getArguments().getSerializable(ARG_BAGS);
         bagAdapter = (BagAdapter) getArguments().getSerializable(ARG_ADPT);
+        validator = (Validation) getArguments().getSerializable(ARG_VAL);
 
         bagInput = view.findViewById(R.id.bagAmount);
         consisText = view.findViewById(R.id.consisText);
@@ -218,8 +223,6 @@ public class BagFragment extends Fragment {
                 int month = datePick.getMonth();
                 int year = datePick.getYear();
 
-                //TODO DO VALIDATION CHECKS HERE
-
                 //Do a rolling check for all values set
                 if(bagAmount.equals(""))
                 {
@@ -228,40 +231,50 @@ public class BagFragment extends Fragment {
                 }
                 else
                 {
-                    if(consisVal == null)
-                    {
-                        consisText.requestFocus();
-                        consisText.setError("Please provide a consistency");
+
+                    Validation.Validate_Result validResult = validator.validateFreeInput(bagAmount, 1, 3, false, false, true, false); //Check the bag amount is is valid
+                    if (validResult != Validation.Validate_Result.Pass) {
+                        String err = validator.getValidatorError(validResult); //Get the specific error code
+                        bagInput.requestFocus();
+                        bagInput.setError(err); //Display to the user
                     }
                     else
                     {
-
-                        //THESE LAST TWO IFS ARE PROBABLY NOT NEEDED - BUT HERE JUST IN CASE
-                        if((min < 0) || (hour < 0))
+                        if(consisVal == null)
                         {
-                            timeText.requestFocus();
-                            timeText.setError("Please provide a correct date");
+                            consisText.requestFocus();
+                            consisText.setError("Please provide a consistency");
                         }
                         else
                         {
-                            if((day < 0) || (month < 0) || (year < 2018))
+
+                            //THESE LAST TWO IFS ARE PROBABLY NOT NEEDED - BUT HERE JUST IN CASE
+                            if((min < 0) || (hour < 0))
                             {
                                 timeText.requestFocus();
                                 timeText.setError("Please provide a correct date");
                             }
                             else
                             {
-                                String date = "" + hour + "-" + min + "-" + day + "-" + month + "-" + year;
+                                if((day < 0) || (month < 0) || (year < 2018))
+                                {
+                                    timeText.requestFocus();
+                                    timeText.setError("Please provide a correct date");
+                                }
+                                else
+                                {
+                                    String date = "" + hour + "-" + min + "-" + day + "-" + month + "-" + year;
 
-                                Bag b = new Bag(Integer.parseInt(bagAmount), consisVal, date);
+                                    Bag b = new Bag(Integer.parseInt(bagAmount), consisVal, date);
 
-                                bags.add(b);
-                                bagAdapter.notifyItemInserted(bags.size());
+                                    bags.add(b);
+                                    bagAdapter.notifyItemInserted(bags.size());
 
-                                cancelButt.callOnClick(); //Close window - allows user to see list updated with new bag before adding another one (if they need to)
+                                    cancelButt.callOnClick(); //Close window - allows user to see list updated with new bag before adding another one (if they need to)
+                                }
                             }
-                        }
 
+                        }
                     }
                 }
             }
