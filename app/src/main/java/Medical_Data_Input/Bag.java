@@ -21,6 +21,9 @@ import java.util.*;
  * <p>
  * 8th February
  * Updated class methods after MedicalInput was changed - Jeremy Dunnet
+ * <p>
+ * 14th February
+ * Added toString method - Jeremy Dunnet
  */
 
 
@@ -141,6 +144,16 @@ public class Bag {
     public String getTime()
     {
         return time;
+    }
+
+    @Override
+    public String toString()
+    {
+        String str = "";
+
+        str = str + getAmount() + "," + getConsistency() + "," + getTime();
+
+        return str;
     }
 
 }

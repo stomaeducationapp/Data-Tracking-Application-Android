@@ -33,15 +33,21 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import Factory.Factory;
 import Medical_Data_Input.Bag;
 import Medical_Data_Input.BagAdapter;
 import Medical_Data_Input.BagFragment;
 import Medical_Data_Input.StomaForm;
+import Observers.Check_State;
 import Observers.State_Observer;
 import Observers.Time_Observer;
 import Validation.Validation;
+import XML.Medical_Writer;
+import XML.XML_Writer;
+import XML.XML_Writer_Failure_Exception;
+import XML.XML_Writer_File_Layout_Exception;
 
 public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInterface, BagFragment.BagAddedListener
 {
@@ -49,7 +55,6 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
     private Factory factory;
     private Validation validator;
     private File medFile;
-    private StomaForm stomaForm;
     private State_Observer state_observer;
 
     private RecyclerView recyclerView;
@@ -60,9 +65,6 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
 
     private String uColourVal;
     private String wellBVal;
-
-    //TODO CHECK ALL BUTTON ALLOCATIONS AND MAKE SURE SUBMIT COLLECTS ALL INFO
-    //TODO ADD BUNDLE EXTRACTION OF MEDICAL FILE FOR USE IN SAVING DATA
 
     /**
      * @param savedInstanceState is the state of the app when opened, allowing to set the layout view
@@ -81,13 +83,13 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
 
         factory =  Factory.Get_Factory();
         validator = factory.Make_Validation();
+        state_observer = (Check_State) factory.Make_State_Observer();
 
         Bundle bundle = this.getIntent().getExtras();
         HashMap<Time_Observer.Files, File> files = (HashMap<Time_Observer.Files, File>) bundle.getSerializable("fileMap");
         medFile = files.get(Time_Observer.Files.Medical);
 
         bagList = new ArrayList<Bag>();
-        stomaForm = new StomaForm(); //TODO CHANGE TO FACTORY CALL
 
         uColourVal = null; //Allow us to check they were selected when submission comes
         wellBVal = null;
@@ -303,7 +305,7 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
             alertDialog.setTitle("Submission results");
 
             // Setting Dialog Message
-            alertDialog.setMessage("Result are:" + urineAmount + uColourVal + wellBVal + getCurrentDate() + dehySympt.length + bagList.size());
+            alertDialog.setMessage("Result are:" + urineAmount + uColourVal + wellBVal + dehySympt.length + bagList.size());
 
             // Setting the finished button
             alertDialog.setNegativeButton("OK",
@@ -317,18 +319,60 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
             // Showing Alert Message
             alertDialog.show();
 
-            /*stomaForm.setUrine(Integer.parseInt(urineAmount), uColourVal);
-            stomaForm.setDehydration(dehySympt);
-            stomaForm.setTime(getCurrentDate());
-            stomaForm.setWellbeing(wellBVal);
-            for(int ii = 0; ii < bagList.size(); ii++)
+            //Write newly created account to file
+            boolean success;
+            String dehy = "";
+            String bags = "";
+            Medical_Writer mw = (Medical_Writer) factory.Make_Writer(Factory.XML_Writer_Choice.Medical);
+            XML_Writer.Tags_To_Write job = XML_Writer.Tags_To_Write.New;
+            Map<String, String> values = new HashMap<String, String>();
+
+            values.put("WellBeing", wellBVal);
+            values.put("Urine", ("" + urineAmount + "," + uColourVal));
+            //NOTE -  I have concatenated all of the large datasets to not upset the XML writing system too much
+            //Since creating multiple tags per root tag would get extremely complex and confusing to unpack
+            //With this setup - simple string.split() is needed following a standard of "," separated values and
+            //";" separated objects (bag;bag;bag etc)
+
+            if(dehySympt.length > 0) //If the user selected no dehydration symptoms we skip
             {
-                stomaForm.addBag(bagList.get(ii));
-            }*/
+                dehy = dehy + dehySympt[0]; //Add the first part so the for loop does not add an unnecessary "," at the end
+                if(dehySympt.length > 1) //More than one symptom entered
+                {
+                    for (int ii = 1; ii < dehySympt.length; ii++) {
+                        dehy = dehy + "," + dehySympt[ii];
+                    }
+                }
+                values.put("Hydration", dehy);
+            }
 
-            //TODO READ STOMATCALCULATOR AND CALL IT HERE
+            //Add first bag - ALWAYS at least one
+            bags = bags + (bagList.get(0)).toString(); //Add the first part so the for loop does not add an unnecessary ";" at the end
+            if(bagList.size() > 1) //More than one bag entered
+            {
+                for(int ii = 1; ii < bagList.size(); ii++)
+                {
+                    bags = bags + (bagList.get(ii)).toString(); //The toString handles the comma separation of values
+                }
+            }
+            values.put("Bags", bags);
 
-            //TODO FIGURE OUT HOW TO PACKAGE INFO TO BE WRITTEN TO FILE
+            try{
+                success = mw.Write_File(medFile, values, job); //Create the account in the system
+            }
+            catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
+            {
+                throw new RuntimeException("FIX THIS" + e.getMessage());
+            }
+
+            if(success == true)
+            {
+                state_observer.Notify(medFile, medFile); //TODO UPDATE IF ACCOUNT FILE NOT NEEDED
+            }
+            else
+            {
+                throw new RuntimeException("The write failed");
+            }
         }
 
     }
@@ -387,24 +431,6 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
 
         // Showing Alert Message
         alertDialog.show();
-    }
-
-     /* FUNCTION INFORMATION
-     * NAME - getCurrentDate
-     * INPUTS - none
-     * OUTPUTS - date (A string representing today's date
-     * PURPOSE - This is the function that returns a string detailing today's date for use in file recording
-     */
-
-    private String getCurrentDate()
-    {
-        String date =  "";
-        Calendar rightNow = Calendar.getInstance();
-
-        date = date + rightNow.get(Calendar.DAY_OF_MONTH) + "_" + (rightNow.get(Calendar.MONTH) + 1) + "_" + rightNow.get(Calendar.YEAR);
-        //Month is 0-indexed so we add one to display correctly to the user
-
-        return date;
     }
 
 
