@@ -3,6 +3,7 @@ package Observers;
 import java.io.File;
 
 import Factory.Factory;
+import MedicalStates.StomaStateCalculator;
 
 /**
  * <h>Check_State</h>
@@ -38,10 +39,9 @@ public class Check_State implements State_Observer {
     @Override
     public boolean Notify(File medical, File account) throws NullPointerException {
         if (medical != null && account != null) {
-            boolean valid = false;
-            // TODO: 17-Sep-18 Uncomment and modify when State Calculator package has been created
-            //Stoma_State_Calculator stoma_state_calculator = Factory.Create_Stoma_State_Calculator();
-            //stoma_state_calculator.Calculate_State();
+            boolean valid;
+            StomaStateCalculator stoma_state_calculator = factory.Make_Stoma_State_Calculator();
+            valid = stoma_state_calculator.Calculate_State(medical, account);
             return valid;
         } else {
             if (medical == null) {

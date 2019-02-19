@@ -14,11 +14,14 @@ import Factory.Factory;
 import XML.Medical_Reader;
 import XML.XML_Reader;
 import XML.XML_Reader.Tags_To_Read;
+import XML.XML_Reader_Exception;
 import XML.XML_Writer_Failure_Exception;
 import XML.XML_Writer_File_Layout_Exception;
 
+import static XML.XML_Reader.Tags_To_Read.Bags;
 import static XML.XML_Reader.Tags_To_Read.Colour;
 import static XML.XML_Reader.Tags_To_Read.Consistency;
+import static XML.XML_Reader.Tags_To_Read.Hydration;
 import static XML.XML_Reader.Tags_To_Read.Physical;
 import static XML.XML_Reader.Tags_To_Read.Urine;
 import static XML.XML_Reader.Tags_To_Read.Volume;
@@ -117,28 +120,27 @@ public class StomaStateCalculator {
      * recent data input in a map
      * @return the map storing the data in attribute - value pairs
      */
-    //Implement when XML reader becomes available
     public Map<String, String> Get_Account_Data(File medical) {
         Map<String, String> data = new HashMap<>();
         List<XML_Reader.Tags_To_Read> tags = new ArrayList<>();
-        tags.add(Colour);
+        tags.add(Bags);
         tags.add(Urine);
-        tags.add(Volume);
-        tags.add(Consistency);
-        tags.add(Physical);
+        tags.add(Hydration);
 
         //read in medical data from file
-        //todo: make sure this file stuff actually works in integration
-        /*Medical_Reader dataIn = factory.Make_Medical_Reader(); //TODO FIX
+        Medical_Reader dataIn = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         try {
             data = dataIn.Read_File(medical, tags, null);  //update method call when reader becomes available
         }
-        catch (Exception e) {//todo:add catch block}*/
+        catch (XML_Reader_Exception e)
+        {
+            throw new RuntimeException("Something has gone wrong trying to read" + e.getMessage()); //TODO FIX IF BETTER OPTION
+        }
+
+        data = sortMedData(data); //Reformat the string so we can easily access the information
 
         return data;
     }
-
-    //TODO UPDATE ABOVE TO READ PROPERLY, UPDATE BELOW TO PULL DATA FROM MAP PROPERLY
 
     /**
      * This method takes the map with all of the user data and extracts only the key - value pairs
@@ -177,9 +179,9 @@ public class StomaStateCalculator {
                 int value = Integer.parseInt(data.get(temp));
                 presentFlags.put("Consistency", value); //may need to change depending on format of stored data
             }
-            else if (temp.contains("Physical")) {
+            else if (temp.contains("Hydration")) {
                 //Physical characteristics should be stored as CSV format
-                String value = data.get("PhysicalCharacteristics");
+                String value = data.get("Hydration");
                 String[] splitString = value.split(",");
                 int charIdx = 0;
 
@@ -192,7 +194,7 @@ public class StomaStateCalculator {
                         charIdx += 3;
                     }
                 }
-                presentFlags.put("PhysicalCharacteristics", charIdx);
+                presentFlags.put("Dehydration", charIdx);
             }
         }
         return presentFlags;
@@ -259,7 +261,7 @@ public class StomaStateCalculator {
                     }
                     break;
                 }
-                case "PhysicalCharacteristics":
+                case "Dehydration":
                     int numTrue = currFlags.get(temp);
                     if (numTrue == 0) {
                         stateIdx -= 1.0;
@@ -358,4 +360,56 @@ public class StomaStateCalculator {
     public String getState() {
         return account_State.getState();
     }
+
+    /* FUNCTION INFORMATION
+     * NAME - sortMedData
+     * INPUTS - fileData (data that needs to be looked through)
+     * OUTPUTS - sortedData (map that has only relevant data inside)
+     * PURPOSE - This is the function that formats freshly read file data into a format the calculator can use
+     */
+    private Map<String, String> sortMedData (Map<String, String> fileData)
+    {
+        String[] attributes;
+        String numEntry ="";
+
+        attributes = fileData.keySet().toArray(new String[0]);
+
+        //Parse full data and extract only relevant key-value pairs
+        for (String temp : attributes) {
+            //Iterate all data elements and pull out the needed data from the compound strings
+            if (temp.contains("Urine")) {
+                if(temp.contains("-")) //If multiple entries of the same tag exist
+                {
+                    String[] keyVals = temp.split("-"); //Collect the number of entry so different values don't overwrite each other
+                    numEntry = keyVals[1];
+                }
+
+                String urineVal = fileData.get(temp);
+                String[] urineData = urineVal.split(",");
+                fileData.put(("UrineFrequency" + numEntry), urineData[0]); //Always built the same way so can pull it out without issue
+                fileData.put(("UrineColour" + numEntry), urineData[1]);
+                fileData.remove(temp); //Remove the old value since we don't need it anymore
+
+            }
+            else if (temp.contains("Bags")) {
+                if(temp.contains("-")) //If multiple entries of the same tag exist
+                {
+                    String[] keyVals = temp.split("-"); //Collect the number of entry so different values don't overwrite each other
+                    numEntry = keyVals[1];
+                }
+
+                String bagList = fileData.get(temp);
+                String[] bags = bagList.split(";"); //Could be multiple bags so we iterate over each one separated by ;
+                for(int ii = 0; ii < bags.length; ii++)
+                {
+                    String[] bagData = bags[ii].split(",");
+                    fileData.put(("Volume" + numEntry), bagData[0]); //Always built the same way so can pull it out without issue
+                    fileData.put(("Consistency" + numEntry), bagData[1]);
+                }
+                fileData.remove(temp); //Remove the old value since we don't need it anymore
+            }
+        }
+        return fileData;
+    }
+
 }
