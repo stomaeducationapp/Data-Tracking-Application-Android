@@ -239,7 +239,7 @@ public class Encrypt
         boolean validKey = false;
 
         int index = key.indexOf("-"); //All tags have '-X' to mark what entry they are (we need to remove this for now to do a check)
-        if(index != -1) //One tag does not contain the '-X' which is the number of entries retrieved
+        if(index != -1) //If tag does not contain the '-X' which is the number of entries retrieved
         {
             key = key.substring(0, index);
         }

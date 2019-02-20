@@ -130,8 +130,6 @@ public class ReviewHandler {
         int day, month, year, hour; //Integers we will use to create a entry time from string we retrieve from file
         int min = 0; //As of now we do not store the minutes recorded - TODO CONSIDER ADDING THIS TO FILE
 
-        //TODO REWORK WHEN FILE READ SUCCESS TO HANDLE READING IN ORDER IF THE POINTS ARE OUT OF WACK
-
         //gets ALL data in type value pairs
         String[] attributes = temp.keySet().toArray(new String[0]);
 
@@ -148,31 +146,39 @@ public class ReviewHandler {
                     month = Integer.parseInt(dElements[2]);
                     year = Integer.parseInt(dElements[3]);
                     Calendar c = Calendar.getInstance();
-                    //TODO TEST WHETHER NEED + 1990 IN YEAR
                     c.set(year, month, day, hour, min); //We need to do this variant since older versions of creating Date objects using this method are deprecated
 
                     String value = temp.get(name); //grab the value associated with our key
-                    ret.put(c.getTime(), Integer.parseInt(value));
+                    ret.put(c.getTime(), Integer.parseInt(value)); //TODO CHECK AFTER STATE CALCULATOR WORKS TO SEE IF STATE RECORDED AS INT
                 }
             }
         }
         else if (type == TYPE.VOLUMELINE || type == TYPE.BAGBAR) {  //only want output entries
             for (String name: attributes) {
-                if (name.contains("Volume")) {
-                    //Lets find the date associated with this entry
-                    String[] dElements = name.split("-"); //Since multiple entries have been retrieved - there is a -X indicating the number of the entry
-                    String numEntry =  dElements[1]; //Should always be second entry due to our xml structure
-                    String dateValue = temp.get( ("Entry_Time-" + numEntry) ); //Extract the date string
-                    dElements = dateValue.split("-"); //Split the date string into the individual numbers
+                if (name.contains("Bags")) {
+                    //Lets find the date and volume associated with each bag
+                    String value = "0";
+                    String entryTime = "-";
+
+                    String bagList = temp.get(name);
+                    String[] bags = bagList.split(";"); //Could be multiple bags so we iterate over each one separated by ;
+                    for(int ii = 0; ii < bags.length; ii++)
+                    {
+                        String[] bagData = bags[ii].split(",");
+                        value =  bagData[0]; //Always built the same way so can pull it out without issue
+                        entryTime = bagData[2];
+                    }
+
+                    //Now extract the date values from the time string we obtained
+                    String[] dElements = entryTime.split("-");
                     hour = Integer.parseInt(dElements[0]);
-                    day = Integer.parseInt(dElements[1]);
-                    month = Integer.parseInt(dElements[2]);
-                    year = Integer.parseInt(dElements[3]);
+                    min = Integer.parseInt(dElements[1]);
+                    day = Integer.parseInt(dElements[2]);
+                    month = Integer.parseInt(dElements[3]);
+                    year = Integer.parseInt(dElements[4]);
                     Calendar c = Calendar.getInstance();
-                    //TODO TEST WHETHER NEED + 1990 IN YEAR
                     c.set(year, month, day, hour, min); //We need to do this variant since older versions of creating Date objects using this method are deprecated
 
-                    String value = temp.get(name); //grab the value associated with our key
                     ret.put(c.getTime(), Integer.parseInt(value));
                 }
             }
@@ -190,12 +196,14 @@ public class ReviewHandler {
                     month = Integer.parseInt(dElements[2]);
                     year = Integer.parseInt(dElements[3]);
                     Calendar c = Calendar.getInstance();
-                    //TODO TEST WHETHER NEED + 1990 IN YEAR
                     c.set(year, month, day, hour, min); //We need to do this variant since older versions of creating Date objects using this method are deprecated
 
                     String value = temp.get(name); //grab the value associated with our key
                     //Temporary assumption that values for wellbeing are good (1) or bad (0)
                     if (value.equals("Good")){
+                        ret.put(c.getTime(), 2);
+                    }
+                    else if (value.equals("Okay")) {
                         ret.put(c.getTime(), 1);
                     }
                     else if (value.equals("Bad")) {

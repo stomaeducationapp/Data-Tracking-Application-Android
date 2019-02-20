@@ -367,7 +367,17 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
 
             if(success == true)
             {
-                state_observer.Notify(medFile, medFile); //TODO UPDATE IF ACCOUNT FILE NOT NEEDED
+                boolean stateSuccess = state_observer.Notify(medFile, medFile); //TODO UPDATE IF ACCOUNT FILE NOT NEEDED
+
+                if(stateSuccess == true)
+                {
+                    finish(); //Each activity submits one form at a time
+                }
+                else
+                {
+                    throw new RuntimeException("State calculation failed");
+                }
+
             }
             else
             {

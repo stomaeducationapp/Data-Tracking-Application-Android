@@ -11,13 +11,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c7136df-ed80-4a6c-97b9-93fcbd99bc32" name="Default" comment="- Added logic for XML_Writer to MedicalInput&#10;- Updated Bag to include toString method">
-      <change afterPath="$PROJECT_DIR$/app/src/test/assets/sample_med_file.xml" afterDir="false" />
+    <list default="true" id="7c7136df-ed80-4a6c-97b9-93fcbd99bc32" name="Default" comment="- Updated stomastatecalculator to read in data from file&#10;- Added new method to help break up data from file into format needed&#10;- Broke other classes due to the new format of the medical file from figuring out how medical input works (will fix next)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/Integration/Stream Two/medical_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Integration/Stream Two/medical_file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" afterDir="false" />
     </list>
     <list id="8271ab47-8813-49ee-9ede-df9ff9af9e6e" name="- Updated container classes to work more optimally with activity - Reworked layout to represent all fields better and look more structured for user - Included validation methods in both container and form classes" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" />
@@ -44,10 +44,10 @@
     <session id="-254623144">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.30" value="2" />
-          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="3" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="1" />
@@ -55,34 +55,34 @@
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14255" />
-          <entry key="txt" value="1467" />
+          <entry key="java" value="14662" />
+          <entry key="txt" value="1745" />
           <entry key="xml" value="1541" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14255" />
-          <entry key="PLAIN_TEXT" value="1467" />
+          <entry key="JAVA" value="14662" />
+          <entry key="PLAIN_TEXT" value="1745" />
           <entry key="XML" value="1541" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="1" />
-          <entry key="java" value="129" />
+          <entry key="java" value="134" />
           <entry key="xml" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="129" />
+          <entry key="JAVA" value="134" />
           <entry key="XML" value="43" />
         </counts>
       </usages-collector>
@@ -98,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="714">
               <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
             </state>
           </provider>
@@ -116,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="369" column="24" selection-start-line="369" selection-start-column="24" selection-end-line="369" selection-end-column="24" />
+            <state relative-caret-position="346">
+              <caret line="371" column="40" lean-forward="true" selection-start-line="371" selection-start-column="40" selection-end-line="371" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -128,8 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
+            <state relative-caret-position="907">
+              <caret line="154" selection-start-line="154" selection-end-line="154" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,19 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="394" column="82" lean-forward="true" selection-start-line="394" selection-start-column="82" selection-end-line="394" selection-end-column="82" />
-              <folding>
-                <element signature="e#13722#13723#0" expanded="true" />
-                <element signature="e#13767#13768#0" expanded="true" />
-                <element signature="e#13961#13962#0" expanded="true" />
-                <element signature="e#14011#14012#0" expanded="true" />
-                <element signature="e#14201#14202#0" expanded="true" />
-                <element signature="e#14248#14249#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -158,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/Stream Two/medical_file.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -167,7 +159,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="43" column="77" lean-forward="true" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
+              <caret line="43" column="77" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -2486,8 +2478,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Export_Data.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamOne/StreamOneTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Daily_Review.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamFiveTest.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/capstonegroup2/dataapp/StreamThreeTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/StreamThree/test_review_file.xml" />
@@ -2510,12 +2500,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/BagFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java" />
         <option value="$PROJECT_DIR$/app/src/test/assets/sample_med_file.xml" />
         <option value="$PROJECT_DIR$/app/src/test/java/Integration/Stream Two/medical_file.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/XML/XML_Reader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java" />
       </list>
     </option>
   </component>
@@ -2533,17 +2526,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
-              <item name="app" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2555,120 +2537,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dataapp" type="462c0819:PsiDirectoryNode" />
-              <item name="accountCreation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Medical_Data_Input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="MedicalReview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="MedicalStates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Observers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="XML" type="462c0819:PsiDirectoryNode" />
+              <item name="2018-02-healthcare-visualization-data-tracking-application" type="58d84e3e:PackageViewProjectNode" />
+              <item name="app" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -2865,6 +2739,61 @@
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="test/java" type="cbb8eebc:String" user="test/java" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="EncryptExport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data-Tracking-Application-Android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data-Tracking-Application-Android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Medical_Data_Input" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -3336,7 +3265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550112156935</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- Updated stomastatecalculator to read in data from file&#10;- Added new method to help break up data from file into format needed&#10;- Broke other classes due to the new format of the medical file from figuring out how medical input works (will fix next)">
+      <created>1550549468327</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1550549468327</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -3375,7 +3311,7 @@
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -3394,7 +3330,7 @@
       <window_info anchor="bottom" id="Logcat" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061125" side_tool="true" weight="0.32995495" />
-      <window_info anchor="bottom" id="Build" order="11" sideWeight="0.49938875" visible="true" weight="0.3295964" />
+      <window_info active="true" anchor="bottom" id="Build" order="11" sideWeight="0.49938875" visible="true" weight="0.3295964" />
       <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -3483,7 +3419,8 @@
     <MESSAGE value="- Completed automated testing of Activity" />
     <MESSAGE value="- Integrated Validation to both Activity and Fragment where needed&#10;- Begun adding file write functionality" />
     <MESSAGE value="- Added logic for XML_Writer to MedicalInput&#10;- Updated Bag to include toString method" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added logic for XML_Writer to MedicalInput&#10;- Updated Bag to include toString method" />
+    <MESSAGE value="- Updated stomastatecalculator to read in data from file&#10;- Added new method to help break up data from file into format needed&#10;- Broke other classes due to the new format of the medical file from figuring out how medical input works (will fix next)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Updated stomastatecalculator to read in data from file&#10;- Added new method to help break up data from file into format needed&#10;- Broke other classes due to the new format of the medical file from figuring out how medical input works (will fix next)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3497,17 +3434,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/challenge.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/challenge_fragment.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_account_creation.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/c_Strings.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -3520,8 +3453,8 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_challenges.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/Challenges/Challenge.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3534,14 +3467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
           <caret line="127" column="17" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
-          <folding>
-            <element signature="e#1661#1662#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#3241#3242#0" expanded="true" />
-            <element signature="e#3275#3276#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#3346#3347#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3592,12 +3517,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bag_list_row.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Dehydration.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3607,12 +3532,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_account_creation.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="140" column="16" lean-forward="true" selection-start-line="140" selection-start-column="16" selection-end-line="141" selection-end-column="51" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Form_Change_Observer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3672,20 +3597,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/medical_input.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="997">
           <caret line="332" column="55" selection-start-line="332" selection-start-column="55" selection-end-line="332" selection-end-column="55" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bag_fragment.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1921">
           <caret line="113" column="51" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Urine.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3718,20 +3643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="259" column="72" selection-start-line="259" selection-start-column="72" selection-end-line="259" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Factory/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -3760,31 +3671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="43" column="77" lean-forward="true" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/Stream Two/medical_file.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Retrieval.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-552">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -3802,6 +3692,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/DailyReviewGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1745">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/TestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/XML/Medical_Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4760">
+          <caret line="303" column="72" selection-start-line="303" selection-start-column="72" selection-end-line="303" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/DailyReview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5893">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="907">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="181" column="59" selection-start-line="181" selection-start-column="59" selection-end-line="181" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/EncryptExport/Encrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="241" column="28" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/BagFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -3812,56 +3761,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="369" column="24" selection-start-line="369" selection-start-column="24" selection-end-line="369" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/Medical_Data_Input/Bag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/DailyReviewGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1745">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalReview/ReviewHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1836">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/MedicalStates/StomaStateCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="394" column="82" lean-forward="true" selection-start-line="394" selection-start-column="82" selection-end-line="394" selection-end-column="82" />
-          <folding>
-            <element signature="e#13722#13723#0" expanded="true" />
-            <element signature="e#13767#13768#0" expanded="true" />
-            <element signature="e#13961#13962#0" expanded="true" />
-            <element signature="e#14011#14012#0" expanded="true" />
-            <element signature="e#14201#14202#0" expanded="true" />
-            <element signature="e#14248#14249#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/Integration/Stream Two/medical_file.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Observers/Check_State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="77" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/capstonegroup2/dataapp/MedicalInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="371" column="40" lean-forward="true" selection-start-line="371" selection-start-column="40" selection-end-line="371" selection-end-column="40" />
         </state>
       </provider>
     </entry>

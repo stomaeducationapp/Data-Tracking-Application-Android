@@ -1,30 +1,19 @@
 package MedicalStates;
 
-import android.content.Context;
-
-import org.xml.sax.XMLReader;
-
 import java.io.File;
 import java.util.ArrayList;
-import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import Factory.Factory;
 import XML.Medical_Reader;
 import XML.XML_Reader;
-import XML.XML_Reader.Tags_To_Read;
 import XML.XML_Reader_Exception;
-import XML.XML_Writer_Failure_Exception;
-import XML.XML_Writer_File_Layout_Exception;
 
 import static XML.XML_Reader.Tags_To_Read.Bags;
-import static XML.XML_Reader.Tags_To_Read.Colour;
-import static XML.XML_Reader.Tags_To_Read.Consistency;
 import static XML.XML_Reader.Tags_To_Read.Hydration;
-import static XML.XML_Reader.Tags_To_Read.Physical;
 import static XML.XML_Reader.Tags_To_Read.Urine;
-import static XML.XML_Reader.Tags_To_Read.Volume;
 
 /**
  * <h1>StomaStateCalculator</h1>

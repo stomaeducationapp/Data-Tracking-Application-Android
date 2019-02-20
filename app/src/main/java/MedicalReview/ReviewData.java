@@ -43,7 +43,7 @@ public class ReviewData {
         File medicalFile = fileMap.get(Time_Observer.Files.Medical);
         Medical_Reader reader = (Medical_Reader) factory.Make_Reader(Factory.XML_Reader_Choice.Medical);
         Map<String, String> data;
-        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Daily_Data, XML_Reader.Tags_To_Read.Volume, XML_Reader.Tags_To_Read.Medical_State,
+        List<XML_Reader.Tags_To_Read> list = new ArrayList<>(Arrays.asList(XML_Reader.Tags_To_Read.Daily_Data, XML_Reader.Tags_To_Read.Bags, XML_Reader.Tags_To_Read.Medical_State,
                                                             XML_Reader.Tags_To_Read.Wellbeing, XML_Reader.Tags_To_Read.Entries_Retrieved, XML_Reader.Tags_To_Read.Entry_Time));
 
         try{
