@@ -10,6 +10,7 @@ import java.util.Map;
 
 import Factory.Factory;
 import XML.Account_Writer;
+import XML.Medical_Writer;
 import XML.XML_Writer;
 import XML.XML_Writer_Failure_Exception;
 import XML.XML_Writer_File_Layout_Exception;
@@ -19,7 +20,7 @@ import XML.XML_Writer_File_Layout_Exception;
  * This class encompasses the functionality specific to the yellow state.
  *
  * @author Ethan Bell
- * @version 1.0
+ * @version 1.1
  *
  */
 public class YellowState implements StomaState {
@@ -64,14 +65,16 @@ public class YellowState implements StomaState {
      */
     //TODO: Verify if writer working in integration
     @Override
-    public boolean Account_State_Information(Factory factory, File acc) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
-        /*Account_Writer writer = factory.Make_Account_Writer(); //TODO FIX
+    public boolean Account_State_Information(Factory factory, File med) throws XML_Writer_File_Layout_Exception, XML_Writer_Failure_Exception {
+        boolean success;
+        Medical_Writer mw = (Medical_Writer) factory.Make_Writer(Factory.XML_Writer_Choice.Medical);
+        XML_Writer.Tags_To_Write job = XML_Writer.Tags_To_Write.Modify;
 
         Map<String, String> content = new HashMap<>();
+        content.put("Medical_State", Double.toString(stateVal));
 
-        content.put("State", Double.toString(stateVal));
+        success = mw.Write_File(med, content, job); //Update the state in the system
 
-        writer.Write_File(acc, content, XML_Writer.Tags_To_Write.State);*/
-        return true;
+        return success;
     }
 }

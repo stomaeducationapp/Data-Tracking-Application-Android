@@ -13,10 +13,10 @@ import MedicalStates.StomaStateCalculator;
  * Implements State_Observer
  *
  * @author Patrick Crockford
- * @version 1.0 <h>Changes</h1>
+ * @version 1.1 <h>Changes</h1>
  * <h1>Last Edited</h1>
- * 17 Oct 2018
- * Patrick Crockford
+ * 25th Feb 2019
+ * Jeremy Dunnet
  */
 public class Check_State implements State_Observer {
 
@@ -32,23 +32,18 @@ public class Check_State implements State_Observer {
 
     /**
      * @param medical Represents the File Object of the medical information file for the account currently logged in
-     * @param account Represents the File Object of the account information file for the account currently logged in
      * @return True if state was successfully calculated and written to file, otherwise false
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
     @Override
-    public boolean Notify(File medical, File account) throws NullPointerException {
-        if (medical != null && account != null) {
+    public boolean Notify(File medical) throws NullPointerException {
+        if (medical != null) {
             boolean valid;
             StomaStateCalculator stoma_state_calculator = factory.Make_Stoma_State_Calculator();
-            valid = stoma_state_calculator.Calculate_State(medical, account);
+            valid = stoma_state_calculator.Calculate_State(medical);
             return valid;
         } else {
-            if (medical == null) {
-                throw new NullPointerException("Medical File Object is Null");
-            } else {
-                throw new NullPointerException("Account File Object is Null");
-            }
+            throw new NullPointerException("Medical File Object is Null");
         }
     }
 }

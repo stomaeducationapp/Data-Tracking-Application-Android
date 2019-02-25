@@ -9,18 +9,17 @@ import java.io.File;
  * Check_State Java Class inherit from this interface
  *
  * @author Patrick Crockford
- * @version 1.0
+ * @version 1.1
  * <h1>Last Edited</h1>
- * 17 Oct 2018
- * Patrick Crockford
+ * 25th Feb 2019
+ * Jeremy Dunnet
  */
 public interface State_Observer {
 
     /**
      * @param medical Represents the File Object of the medical information file for the account currently logged in
-     * @param account Represents the File Object of the account information file for the account currently logged in
      * @return True if state was successfully calculated and written to file, otherwise false
      * @throws NullPointerException if input_Stream and/or output_Stream Objects are null
      */
-    boolean Notify(File medical, File account) throws NullPointerException;
+    boolean Notify(File medical) throws NullPointerException;
 }

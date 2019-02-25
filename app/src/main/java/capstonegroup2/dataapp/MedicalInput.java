@@ -356,9 +356,11 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
                 }
             }
             values.put("Bags", bags);
+            values.put("Medical_State", ""); //Since the calculator will generate this value we give no input - but the modification of file nodes only modifies nodes already in
+                                             //the file so we must add it at creation to be able to update it
 
             try{
-                success = mw.Write_File(medFile, values, job); //Create the account in the system
+                success = mw.Write_File(medFile, values, job); //Create the new entry in the medical file
             }
             catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
             {
@@ -367,7 +369,7 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
 
             if(success == true)
             {
-                boolean stateSuccess = state_observer.Notify(medFile, medFile); //TODO UPDATE IF ACCOUNT FILE NOT NEEDED
+                boolean stateSuccess = state_observer.Notify(medFile); //TODO UPDATE IF ACCOUNT FILE NOT NEEDED
 
                 if(stateSuccess == true)
                 {

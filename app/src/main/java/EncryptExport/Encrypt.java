@@ -2,7 +2,7 @@ package EncryptExport;
 
 /* AUTHOR INFORMATION
  * CREATOR - Jeremy Dunnet 02/10/2018
- * LAST MODIFIED BY - Jeremy Dunnet 28/11/2018
+ * LAST MODIFIED BY - Jeremy Dunnet 25/02/2019
  */
 
 /* CLASS/FILE DESCRIPTION
@@ -18,6 +18,7 @@ package EncryptExport;
  * 18/10/2018 - Edited functionality to work with map objects we are using to transport user data
  * 27/11/2018 - Added some additional functionality to shore up some weaknesses and prepared for integration.
  * 28/11/2018 - Updated new methods to work as intended
+ * 25/02/2019 - Removed tags no longer needed
  */
 
 /* REFERENCES
@@ -255,10 +256,6 @@ public class Encrypt
             case "Hydration":
             case "Wellbeing":
             case "Medical_State":
-            case "Volume":
-            case "Colour":
-            case "Physical":
-            case "Consistency":
             case "Entries_Retrieved":
                 validKey = true;
                 break;

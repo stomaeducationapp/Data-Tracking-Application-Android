@@ -10,6 +10,8 @@ import Factory.Factory;
 import XML.Medical_Reader;
 import XML.XML_Reader;
 import XML.XML_Reader_Exception;
+import XML.XML_Writer_Failure_Exception;
+import XML.XML_Writer_File_Layout_Exception;
 
 import static XML.XML_Reader.Tags_To_Read.Bags;
 import static XML.XML_Reader.Tags_To_Read.Hydration;
@@ -33,7 +35,6 @@ public class StomaStateCalculator {
     private int urineCount;      //total urine frequency counter
     private int outputVolume;    //total output record
     private File med;
-    private File acc;
 
     /**
      * Constructor for the state calculator class. Initialises the state to Green, with a value of 3.
@@ -45,7 +46,6 @@ public class StomaStateCalculator {
         outputVolume = 0;
         userDailyOutput = 1200; //DECIDED UPON CONSTANT?
         med = null;
-        acc = null;
     }
 
     /**
@@ -74,7 +74,6 @@ public class StomaStateCalculator {
         outputVolume = 0;
         userDailyOutput = userOutput;
         med = null;
-        acc = null;
     }
 
     /**
@@ -83,14 +82,13 @@ public class StomaStateCalculator {
      * this method the target for the app when it wants to calculate a new state.
      * @return boolean representing success/failure
      */
-    public boolean Calculate_State(File medical, File account) {
+    public boolean Calculate_State(File medical) {
         boolean success = true;
         try {
             //Read in the account data
             Map<String, String> data = new HashMap<>();
             Map<String, Integer> flags = new HashMap<>();
             med = medical;
-            acc = account;
 
             data = Get_Account_Data(medical);
             flags = Get_Flags_From_Data(data); //retrieve and simplify the flag info from the input data
@@ -290,27 +288,27 @@ public class StomaStateCalculator {
      */
     public boolean Change_State(int stateIdx) {
         boolean success;
-        //try {
-        //Change to the required state
-        if (stateIdx > 0 && stateIdx < 5) {
-            //must be green state
-            account_State = new GreenState(stateIdx);
-            success = true;
-        } else if (stateIdx > 4 && stateIdx < 8) {
-            //must be yellow state
-            account_State = new YellowState(stateIdx);
-            success = true;
-        } else if (stateIdx > 7 && stateIdx < 11) {
-            //must be red state
-            account_State = new RedState(stateIdx);
-            success = true;
-        } else {
-            success = false;
+        try {
+            //Change to the required state
+            if (stateIdx > 0 && stateIdx < 5) {
+                //must be green state
+                account_State = new GreenState(stateIdx);
+                success = true;
+            } else if (stateIdx > 4 && stateIdx < 8) {
+                //must be yellow state
+                account_State = new YellowState(stateIdx);
+                success = true;
+            } else if (stateIdx > 7 && stateIdx < 11) {
+                //must be red state
+                account_State = new RedState(stateIdx);
+                success = true;
+            } else {
+                success = false;
+            }
+            account_State.Account_State_Information(factory, med);
         }
-        //todo: uncomment this line and try/catch block when account writer integrated
-        //account_State.Account_State_Information(factory, acc);
-        //}
-        //catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e) {success = false;}
+        catch (XML_Writer_File_Layout_Exception | XML_Writer_Failure_Exception e)
+        {success = false;}
 
         return success;
     }
