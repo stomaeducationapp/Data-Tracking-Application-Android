@@ -30,7 +30,7 @@ import static org.hamcrest.Matchers.not;
  */
 
 /* CLASS/FILE DESCRIPTION
- * This is the unit test fotr Medical Data Input - testing all created functionality works in isolation (BagFragment included since it is a directly connected class)
+ * This is the unit test for Medical Data Input - testing all created functionality works in isolation (BagFragment included since it is a directly connected class)
  */
 
 /* VERSION HISTORY
@@ -92,8 +92,8 @@ public class MedicalInputTest {
      * PURPOSE - This is the test that checks the activity loads the form
      */
     @Test
-    public void cLoad() {
-        mSwitch(); //Make sure we are on the Challenges screen
+    public void mLoad() {
+        mSwitch(); //Make sure we are on the MedicalInput screen
 
         onView(withId(R.id.bagList)).check(matches(isDisplayed()));
 
