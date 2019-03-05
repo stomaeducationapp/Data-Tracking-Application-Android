@@ -1,5 +1,5 @@
 package Account_Information;
-//container class
+//Container class
 public class Account_Data {
 //Gamification, Notification, State, Name, Last_Daily_Review_Date, Last_Export_Date
     private String account_Name;
