@@ -352,7 +352,7 @@ public class MedicalInput extends Activity implements BagAdapter.ItemDeleteInter
             {
                 for(int ii = 1; ii < bagList.size(); ii++)
                 {
-                    bags = bags + (bagList.get(ii)).toString(); //The toString handles the comma separation of values
+                    bags = bags + ";" + (bagList.get(ii)).toString(); //The toString handles the comma separation of values
                 }
             }
             values.put("Bags", bags);

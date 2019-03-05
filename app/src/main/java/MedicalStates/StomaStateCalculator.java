@@ -15,6 +15,7 @@ import XML.XML_Writer_File_Layout_Exception;
 
 import static XML.XML_Reader.Tags_To_Read.Bags;
 import static XML.XML_Reader.Tags_To_Read.Hydration;
+import static XML.XML_Reader.Tags_To_Read.Last_Entry;
 import static XML.XML_Reader.Tags_To_Read.Urine;
 
 /**
@@ -110,6 +111,7 @@ public class StomaStateCalculator {
     public Map<String, String> Get_Account_Data(File medical) {
         Map<String, String> data = new HashMap<>();
         List<XML_Reader.Tags_To_Read> tags = new ArrayList<>();
+        tags.add(Last_Entry); //Tell the Reader we are only looking for the last entry
         tags.add(Bags);
         tags.add(Urine);
         tags.add(Hydration);
@@ -147,8 +149,21 @@ public class StomaStateCalculator {
         for (String temp : attributes) {
             //iterate all data elements and only copy relevant fields to the new Map
             if (temp.contains("UrineColour")) {
-                int value = Integer.parseInt(data.get(temp));
-                presentFlags.put("UrineColour", value); //may need to change depending on format of stored data
+                int uIdx = 0;
+                String tmp = data.get(temp);
+                if (tmp.equals("Light"))
+                {
+                    uIdx += 1;
+                }
+                else if (tmp.equals("Medium"))
+                {
+                    uIdx += 2;
+                }
+                else if (tmp.equals("Dark"))
+                {
+                    uIdx += 3;
+                }
+                presentFlags.put("UrineColour", uIdx);
             }
             else if (temp.contains("UrineFrequency")) {
                 //frequency code
@@ -163,25 +178,38 @@ public class StomaStateCalculator {
                 presentFlags.put("Volume", outputVolume);
             }
             else if (temp.contains("Consistency")) {
-                int value = Integer.parseInt(data.get(temp));
-                presentFlags.put("Consistency", value); //may need to change depending on format of stored data
+                int cIdx = 0;
+                String tmp = data.get(temp);
+                if (tmp.equals("Watery"))
+                {
+                    cIdx += 1;
+                }
+                else if (tmp.equals("Thick"))
+                {
+                    cIdx += 2;
+                }
+                else if (tmp.equals("Toothpaste-like"))
+                {
+                    cIdx += 3;
+                }
+                presentFlags.put("Consistency", cIdx); //TODO CONSIDER MAKING CIDX A CLASSFIELD TOF ALLOW VALUE TO ACCUMULATE OVER MULTIPLE BAGS
             }
             else if (temp.contains("Hydration")) {
                 //Physical characteristics should be stored as CSV format
-                String value = data.get("Hydration");
+                String value = data.get(temp);
                 String[] splitString = value.split(",");
-                int charIdx = 0;
+                int dIdx = 0;
 
                 for (String tmp : splitString) {
-                    if (tmp.equals("thirsty") || tmp.equals("headache") || tmp.equals("lightheaded")) {
-                        charIdx += 1;
-                    } else if (tmp.equals("stomach cramps") || tmp.equals("muscle cramps") || tmp.equals("fatigue")) {
-                        charIdx += 2;
-                    } else if (tmp.equals("dry mouth") || tmp.equals("confusion") || tmp.equals("tiredness")) {
-                        charIdx += 3;
+                    if (tmp.equals("Thirsty") || tmp.equals("Headache") || tmp.equals("Light Headed")) {
+                        dIdx += 1;
+                    } else if (tmp.equals("Stomach Cramps") || tmp.equals("Muscle Cramps") || tmp.equals("Fatigue")) {
+                        dIdx += 2;
+                    } else if (tmp.equals("Dry Mouth") || tmp.equals("Confusion") || tmp.equals("Tiredness")) {
+                        dIdx += 3;
                     }
                 }
-                presentFlags.put("Dehydration", charIdx);
+                presentFlags.put("Dehydration", dIdx);
             }
         }
         return presentFlags;
@@ -226,7 +254,7 @@ public class StomaStateCalculator {
                     }
                     break;
                 }
-                case "Consistency": {
+                case "Consistency": { //TODO CONSIDER REWORKING TO USE AN AVERAGE OF SOME SORT
                     int scale = currFlags.get(temp);
                     if (scale == 1) {
                         stateIdx += 1.0;
@@ -357,7 +385,6 @@ public class StomaStateCalculator {
     private Map<String, String> sortMedData (Map<String, String> fileData)
     {
         String[] attributes;
-        String numEntry ="";
 
         attributes = fileData.keySet().toArray(new String[0]);
 
@@ -365,35 +392,26 @@ public class StomaStateCalculator {
         for (String temp : attributes) {
             //Iterate all data elements and pull out the needed data from the compound strings
             if (temp.contains("Urine")) {
-                if(temp.contains("-")) //If multiple entries of the same tag exist
-                {
-                    String[] keyVals = temp.split("-"); //Collect the number of entry so different values don't overwrite each other
-                    numEntry = keyVals[1];
-                }
 
                 String urineVal = fileData.get(temp);
                 String[] urineData = urineVal.split(",");
-                fileData.put(("UrineFrequency" + numEntry), urineData[0]); //Always built the same way so can pull it out without issue
-                fileData.put(("UrineColour" + numEntry), urineData[1]);
+                fileData.put(("UrineFrequency"), urineData[0]); //Always built the same way so can pull it out without issue
+                fileData.put(("UrineColour"), urineData[1]);
                 fileData.remove(temp); //Remove the old value since we don't need it anymore
 
             }
             else if (temp.contains("Bags")) {
-                if(temp.contains("-")) //If multiple entries of the same tag exist
-                {
-                    String[] keyVals = temp.split("-"); //Collect the number of entry so different values don't overwrite each other
-                    numEntry = keyVals[1];
-                }
 
                 String bagList = fileData.get(temp);
                 String[] bags = bagList.split(";"); //Could be multiple bags so we iterate over each one separated by ;
                 for(int ii = 0; ii < bags.length; ii++)
                 {
                     String[] bagData = bags[ii].split(",");
-                    fileData.put(("Volume" + numEntry), bagData[0]); //Always built the same way so can pull it out without issue
-                    fileData.put(("Consistency" + numEntry), bagData[1]);
+                    fileData.put(("Volume" + "-" + ii), bagData[0]); //Always built the same way so can pull it out without issue
+                    fileData.put(("Consistency" + "-" + ii), bagData[1]); //Include the ii value so each bag has unique tag
                 }
                 fileData.remove(temp); //Remove the old value since we don't need it anymore
+
             }
         }
         return fileData;

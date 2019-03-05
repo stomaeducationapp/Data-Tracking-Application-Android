@@ -1,4 +1,4 @@
-#Mon Feb 25 10:22:49 AWST 2019
-base.0=E\:\\Uni\\Project\\Android\\Data-Tracking-Application-Android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Tue Mar 05 16:20:39 AWST 2019
+base.0=C\:\\Users\\jerst_000\\Documents\\AndroidStudio\\Projects\\Data-Tracking-Application-Android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex
